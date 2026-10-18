@@ -146,29 +146,59 @@ class CvSource(Source):
 
 class TelloSource(Source):
     def __init__(self, downward: bool) -> None:
+        import logging
+
         from djitellopy import Tello
 
+        Tello.LOGGER.setLevel(logging.WARNING)  # sin el spam de cada 'wifi?'
         self.t = Tello()
         self.t.connect()
         print(f"[tello] batería {self.t.get_battery()} %")
-        for q in ("query_sdk_version", "query_serial_number"):
-            try:
-                print(f"[tello] {q}: {getattr(self.t, q)()}")
-            except Exception as e:  # el modelo estándar no responde a todo
-                print(f"[tello] {q}: falló ({e})")
-        self.t.streamon()
+        print(f"[tello] sdk? -> {self._ask('sdk?')!r}")
+        print(f"[tello] sn?  -> {self._ask('sn?')!r}")
+        print(f"[tello] streamon -> {self._ask('streamon')!r}")
         if downward:
-            try:
-                self.t.set_video_direction(Tello.CAMERA_DOWNWARD)
-                print("[tello] cámara inferior: comando aceptado")
-            except Exception as e:
-                print(f"[tello] cámara inferior: RECHAZADA ({e})")
-        self.reader = self.t.get_frame_read()
+            print(f"[tello] downvision 1 -> {self._ask('downvision 1')!r}")
+        # cola de 1: cada frame se entrega una sola vez y siempre el más reciente
+        self.reader = self.t.get_frame_read(with_queue=True, max_queue_len=1)
+        self._report_camera(downward)
         self.snr = "?"
-        self._last_id: int | None = None
         self.last_new = time.monotonic()
         self._stop = threading.Event()
         threading.Thread(target=self._poll_snr, daemon=True).start()
+
+    def _ask(self, cmd: str) -> str:
+        """Manda un comando y devuelve SU respuesta.
+
+        djitellopy empareja cada comando con la primera respuesta en cola; una
+        respuesta tardía o corrupta desfasa todas las siguientes. Se vacía la
+        cola antes de mandar.
+        """
+        responses = self.t.get_own_udp_object()["responses"]
+        time.sleep(0.3)
+        if responses:
+            print(f"[tello] (descartadas {len(responses)} respuestas viejas: {responses})")
+            responses.clear()
+        return self.t.send_command_with_return(cmd, timeout=5)
+
+    def _report_camera(self, downward: bool) -> None:
+        """El 'ok' no prueba nada: se verifica la cámara mirando la imagen."""
+        # el último frame tras ~4 s (el cambio de cámara tarda), máximo 8 s
+        f, t0 = None, time.monotonic()
+        while (dt := time.monotonic() - t0) < 4 or (f is None and dt < 8):
+            if (g := self.reader.frame) is not None:
+                f = g
+            time.sleep(0.05)
+        if f is None:
+            print("[tello] no llegaron frames de video")
+            return
+        h, w = f.shape[:2]
+        spread = float(np.abs(f.astype(int) - f.mean(axis=2, keepdims=True)).mean())
+        gray = spread < 2.0
+        print(f"[tello] imagen {w}x{h}, {'GRIS' if gray else 'COLOR'} (dispersión color {spread:.1f})")
+        if downward:
+            verdict = "parece INFERIOR" if gray or w <= 320 else "sigue siendo la FRONTAL"
+            print(f"[tello] cámara pedida: inferior -> {verdict}. Confírmalo viendo la ventana.")
 
     def _poll_snr(self) -> None:
         # comando bloqueante: fuera del lazo de video
@@ -180,11 +210,9 @@ class TelloSource(Source):
 
     def read(self) -> np.ndarray | None:
         f = self.reader.frame
-        if f is None or not f.any():
+        if f is None:  # todavía no llega un frame nuevo
             return None
-        if id(f) != self._last_id:
-            self._last_id = id(f)
-            self.last_new = time.monotonic()
+        self.last_new = time.monotonic()
         # djitellopy 2.5 entrega RGB (PIL), no BGR
         return cv2.cvtColor(f, cv2.COLOR_RGB2BGR)
 
@@ -248,7 +276,9 @@ def run_live(args: argparse.Namespace, detector: TagDetector) -> None:
                 if frame is None:
                     if isinstance(src, CvSource) and src.is_file:
                         break
-                    time.sleep(0.01)
+                    # sin frame nuevo: seguir atendiendo el teclado
+                    if cv2.waitKey(5) & 0xFF in (ord("q"), 27):
+                        break
                     continue
                 if args.record:
                     if writer is None:
