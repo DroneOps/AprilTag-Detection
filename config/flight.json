@@ -1,0 +1,23 @@
+{
+  "rc_hz": 20,
+  "rc_limit": 20,
+  "hover_s": 10,
+  "max_flight_s": 60,
+  "takeoff_timeout_s": 10,
+  "takeoff_min_height_cm": 30,
+  "land_timeout_s": 10,
+  "land_resend_s": 1.5,
+  "landed_height_cm": 10,
+  "battery_min_takeoff": 30,
+  "battery_land": 15,
+  "temp_max_takeoff_c": 80,
+  "temp_land_c": 90,
+  "video_hover_s": 0.3,
+  "video_land_s": 3.0,
+  "state_lost_s": 1.0,
+  "yaw_kp": 1.0,
+  "yaw_rate_limit": 30,
+  "yaw_min_rate": 10,
+  "yaw_tol_deg": 3,
+  "yaw_timeout_s": 10
+}
