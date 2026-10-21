@@ -52,7 +52,7 @@ class FlightConfig:
     takeoff_timeout_s: float = 10.0
     takeoff_min_height_cm: int = 30
     takeoff_settle_s: float = 2.0  # el Tello reporta h en pasos de 10 cm: ventana corta da falsos 'estable'
-    takeoff_settle_cm: int = 5
+    takeoff_settle_cm: int = 8  # tof oscila ±3–4 cm en estacionario
     land_timeout_s: float = 10.0
     land_resend_s: float = 1.5
     landed_height_cm: int = 10
@@ -100,6 +100,16 @@ class Telemetry:
         return s or {}, now - self._t
 
 
+def altitude(s: dict) -> int:
+    """Altura sobre el piso en cm, por el sensor tof (en tierra marca ~10).
+
+    'h' del Tello deriva: en vuelos reales marcó 10 cm volando a 76 y -30 en el
+    piso. tof fuera de rango (>1000) cae a 'h' como respaldo.
+    """
+    tof = s.get("tof", 0)
+    return tof - 10 if 0 < tof < 1000 else s.get("h", 0)
+
+
 def wrap_deg(a: float) -> float:
     return (a + 180.0) % 360.0 - 180.0
 
@@ -117,6 +127,7 @@ class Flight:
     """
 
     AIRBORNE_STATES = AIRBORNE
+    LOG_EXTRA: list[str] = []  # columnas extra de la bitácora (ver _log_extra)
 
     def __init__(self, tello, cfg: FlightConfig, log_path: Path, yaw_test: float | None) -> None:
         self.t = tello
@@ -145,7 +156,8 @@ class Flight:
         self._log_file = log_path.open("w", newline="", buffering=1)  # por línea: sobrevive a un cierre brusco
         self._log = csv.writer(self._log_file)
         self._log.writerow(["t", "state", "bat", "h", "tof", "yaw", "pitch", "roll", "temph",
-                            "rc_lr", "rc_fb", "rc_ud", "rc_yaw", "state_age", "video_age", "reason"])
+                            "rc_lr", "rc_fb", "rc_ud", "rc_yaw", "state_age", "video_age", "reason",
+                            "vgx", "vgy", "vgz", *self.LOG_EXTRA])
         self._t0 = time.monotonic()
 
     # ------------------------------------------------ API para la HMI
@@ -230,10 +242,11 @@ class Flight:
     def _step(self) -> None:
         cfg, now = self.cfg, time.monotonic()
         s, state_age = self.tel.snapshot()
-        h, bat, temp, yaw = s.get("h", 0), s.get("bat", 0), s.get("temph", 0), s.get("yaw", 0)
-        self._log.writerow([f"{now - self._t0:.3f}", self.state, bat, h, s.get("tof", ""), yaw,
+        h, bat, temp, yaw = altitude(s), s.get("bat", 0), s.get("temph", 0), s.get("yaw", 0)
+        self._log.writerow([f"{now - self._t0:.3f}", self.state, bat, s.get("h", ""), s.get("tof", ""), yaw,
                             s.get("pitch", ""), s.get("roll", ""), temp, *self.rc,
-                            f"{state_age:.2f}", f"{self.video_age:.2f}", self.reason])
+                            f"{state_age:.2f}", f"{self.video_age:.2f}", self.reason,
+                            s.get("vgx", ""), s.get("vgy", ""), s.get("vgz", ""), *self._log_extra()])
 
         if self._kill_req.is_set() and self.state != "KILLED":
             for _ in range(3):
@@ -356,6 +369,9 @@ class Flight:
     def status_lines(self) -> list[str]:
         return []
 
+    def _log_extra(self) -> list:
+        return []
+
 
 # ---------------------------------------------------------------- HMI
 
@@ -382,7 +398,7 @@ class Hmi:
         lines = [
             f"ESTADO: {f.state}",
             f.reason,
-            f"bat {s.get('bat', '?')}%  h {s.get('h', '?')} cm  tof {s.get('tof', '?')} cm  "
+            f"bat {s.get('bat', '?')}%  altura {altitude(s)} cm (tof {s.get('tof', '?')}, h {s.get('h', '?')})  "
             f"yaw {s.get('yaw', '?')}  temp {s.get('temph', '?')} C",
             f"rc {f.rc}   telemetria {age * 1000:.0f} ms   video {f.video_age * 1000:.0f} ms",
         ]

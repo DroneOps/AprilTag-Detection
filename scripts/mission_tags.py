@@ -31,7 +31,7 @@ from pathlib import Path
 import cv2
 import numpy as np
 
-from first_flight import AIRBORNE, ROOT, Flight, FlightConfig, clamp, connect, run_app, wrap_deg
+from first_flight import AIRBORNE, ROOT, Flight, FlightConfig, altitude, clamp, connect, run_app, wrap_deg
 from test_tags import DEFAULT_CALIB, TAG_FUNCTIONS, Confirmer, Detection, PoseEstimator, TagDetector, TagPose, draw
 
 MISSION_STATES = {"ADVANCE", "APPROACH", "EXECUTE"}
@@ -62,6 +62,7 @@ class MissionConfig:
     heading_kp: float = 1.0
     heading_max: int = 20
     min_front_cm: float = 50.0
+    obstacle_drop_cm: float = 25.0
     blind_speed_cms: float = 20.0
     approach_start_cm: float = 250.0
     stop_cm: float = 60.0
@@ -71,6 +72,7 @@ class MissionConfig:
     approach_fb_min: int = 8
     az_kp: float = 1.0
     az_max: int = 25
+    az_min: int = 15
     az_tol_deg: float = 5.0
     hold_s: float = 0.5
     approach_timeout_s: float = 15.0
@@ -114,6 +116,7 @@ def with_min(value: float, minimum: float, limit: float) -> int:
 
 class TagMission(Flight):
     AIRBORNE_STATES = AIRBORNE | MISSION_STATES
+    LOG_EXTRA = ["n_tags", "objetivo", "obj_z", "obj_az", "frente_cm"]
 
     def __init__(self, tello, cfg: FlightConfig, mcfg: MissionConfig, log_path: Path, calib: Path) -> None:
         super().__init__(tello, cfg, log_path, None)
@@ -138,6 +141,9 @@ class TagMission(Flight):
         self._prim_start = 0.0
         self._prim_goal = 0.0
         self.executed: list[str] = []
+        self._alt_ref: float | None = None  # altura al entrar a ADVANCE/APPROACH
+        self._ref_state = ""
+        self._obj: tuple[float, float] | None = None  # (z, az) del objetivo, para la bitácora
 
     # ------------------------------------------------ visión (hilo de la HMI)
 
@@ -185,15 +191,33 @@ class TagMission(Flight):
         self._heading = yaw
         self._goto("ADVANCE", "avanzando, buscando tag")
 
+    def _log_extra(self) -> list:
+        v = self._vis
+        z, az = self._obj if self._obj else ("", "")
+        front = "" if self._front_cm is None else f"{self._front_cm:.0f}"
+        z = f"{z:.0f}" if z != "" else ""
+        az = f"{az:.1f}" if az != "" else ""
+        return [len(v.dets) if v else "", self._target or "", z, az, front]
+
     def _extra_step(self, st: str, s: dict, now: float, elapsed: float) -> None:
         yaw = s.get("yaw", 0)
         if self._yaw_prev is not None:
             self._turned += wrap_deg(yaw - self._yaw_prev)
         self._yaw_prev = yaw
+        # algo bajo el dron (caja, obstáculo): el tof baja sin que pidamos bajar
+        if st in ("ADVANCE", "APPROACH"):
+            alt = altitude(s)
+            if self._ref_state != st or self._alt_ref is None:
+                self._alt_ref, self._ref_state = alt, st
+            elif alt < self._alt_ref - self.m.obstacle_drop_cm:
+                return self._begin_landing("EMERGENCY_LAND",
+                                           f"obstaculo debajo: altura {alt} cm (era {self._alt_ref:.0f})")
+        else:
+            self._ref_state = st
         if st == "ADVANCE":
             self._advance(yaw, now, elapsed)
         elif st == "APPROACH":
-            self._approach(now, elapsed)
+            self._approach(yaw, now, elapsed)
         elif st == "EXECUTE":
             self._execute(s, now)
 
@@ -238,10 +262,11 @@ class TagMission(Flight):
         self._t_front = now
         return self._front_cm is not None and self._front_cm < self.m.min_front_cm
 
-    def _approach(self, now: float, elapsed: float) -> None:
+    def _approach(self, yaw: float, now: float, elapsed: float) -> None:
         m, v = self.m, self._vision(now)
         if v is None:
             return self._send_rc(0, 0, 0, 0)
+        self._front_blocked(v, yaw, now)  # mantiene fresca la memoria del frente para después de EXECUTE
         match = [p for d, p in zip(v.dets, v.poses) if d.tag_id == self._target and p is not None]
         if not match:
             if now - self._t_target_seen > m.lost_s:
@@ -250,8 +275,9 @@ class TagMission(Flight):
         self._t_target_seen = now
         p = min(match, key=lambda q: q.t[2])
         err, az = float(p.t[2]) - m.stop_cm, p.azimuth_deg
+        self._obj = (float(p.t[2]), az)
         fb = 0 if abs(err) <= m.stop_tol_cm else with_min(m.approach_kp * err, m.approach_fb_min, m.approach_fb_max)
-        yaw = 0 if abs(az) <= m.az_tol_deg else with_min(m.az_kp * az, self.cfg.yaw_min_rate, m.az_max)
+        yaw = 0 if abs(az) <= m.az_tol_deg else with_min(m.az_kp * az, m.az_min, m.az_max)
         self._send_rc(0, fb, 0, yaw)
         if fb == 0 and yaw == 0:
             self._t_hold = self._t_hold or now
@@ -285,7 +311,7 @@ class TagMission(Flight):
             if kind == "yaw":
                 self._prim_goal = self._turned + prim[1]
             elif kind == "climb":
-                goal = s.get("tof", 0) + prim[1] * self.m.climb_cm
+                goal = s.get("tof", 0) + prim[1] * self.m.climb_cm  # tof crudo, igual que en _execute
                 self._prim_goal = max(goal, self.m.min_tof_cm)
             elif kind == "flip":
                 self._send_rc(0, 0, 0, 0)
@@ -293,6 +319,7 @@ class TagMission(Flight):
             return
         # sin primitivas pendientes: seguir hacia el frente con el rumbo actual
         self._heading = s.get("yaw", 0)
+        self._obj = None
         self._goto("ADVANCE", f"tag {self._target} ejecutado, avanzando")
         self._target = None
 
