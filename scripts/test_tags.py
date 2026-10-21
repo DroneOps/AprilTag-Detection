@@ -16,6 +16,7 @@ Teclas: q/ESC salir · espacio pausa · s guardar captura.
 from __future__ import annotations
 
 import argparse
+import json
 import math
 import threading
 import time
@@ -40,6 +41,8 @@ TAG_FUNCTIONS: dict[int, str] = {
     9: "Pausa 5 s",
     10: "Giro 360",
 }
+
+DEFAULT_CALIB = Path(__file__).resolve().parent.parent / "config" / "camera_tello.json"
 
 GREEN = (0, 200, 0)
 YELLOW = (0, 220, 255)
@@ -90,6 +93,54 @@ class TagDetector:
             ok = self.whitelist is None or tag_id in self.whitelist
             out.append(Detection(tag_id, c.reshape(4, 2), ok))
         return out
+
+
+@dataclass
+class TagPose:
+    """Posición del tag en el marco de la cámara, en cm: x derecha, y abajo, z adelante."""
+    t: np.ndarray
+    normal: np.ndarray  # normal del plano del tag (piso o pared)
+
+    @property
+    def range_cm(self) -> float:
+        return float(np.linalg.norm(self.t))
+
+    @property
+    def azimuth_deg(self) -> float:
+        """Positivo = el tag está a la derecha."""
+        return math.degrees(math.atan2(self.t[0], self.t[2]))
+
+    @property
+    def elevation_deg(self) -> float:
+        """Positivo = el tag está por debajo del eje de la cámara."""
+        return math.degrees(math.atan2(self.t[1], self.t[2]))
+
+    @property
+    def plane_cm(self) -> float:
+        """Distancia de la cámara al plano del tag: altura si está en el piso,
+        distancia a la pared si está vertical."""
+        return abs(float(self.normal @ self.t))
+
+
+class PoseEstimator:
+    def __init__(self, calib_path: Path, tag_cm: float) -> None:
+        cal = json.loads(calib_path.read_text())
+        self.K = np.array(cal["K"])
+        self.dist = np.array(cal["dist"])
+        self.size = tuple(cal["resolution"])
+        self.tag_cm = tag_cm
+        self.name = calib_path.name
+        s = tag_cm / 2
+        # mismo orden de esquinas que ArUco: sup-izq, sup-der, inf-der, inf-izq
+        self.obj = np.array([[-s, s, 0], [s, s, 0], [s, -s, 0], [-s, -s, 0]], np.float32)
+
+    def estimate(self, d: Detection) -> TagPose | None:
+        ok, rvec, tvec = cv2.solvePnP(self.obj, d.corners.astype(np.float32), self.K, self.dist,
+                                      flags=cv2.SOLVEPNP_IPPE_SQUARE)
+        if not ok:
+            return None
+        R, _ = cv2.Rodrigues(rvec)
+        return TagPose(tvec.ravel(), R[:, 2])
 
 
 class Confirmer:
@@ -230,8 +281,9 @@ class TelloSource(Source):
 
 # ---------------------------------------------------------------- dibujo
 
-def draw(frame: np.ndarray, dets: list[Detection], confirmed: set[int]) -> None:
-    for d in dets:
+def draw(frame: np.ndarray, dets: list[Detection], confirmed: set[int],
+         poses: list[TagPose | None] | None = None) -> None:
+    for d, pose in zip(dets, poses or [None] * len(dets)):
         color = GRAY if not d.accepted else (GREEN if d.tag_id in confirmed else YELLOW)
         pts = d.corners.astype(np.int32)
         cv2.polylines(frame, [pts], True, color, 2)
@@ -242,22 +294,30 @@ def draw(frame: np.ndarray, dets: list[Detection], confirmed: set[int]) -> None:
         label = f"ID {d.tag_id}: {name}"
         cv2.putText(frame, label, (cx - 60, cy), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 0), 4)
         cv2.putText(frame, label, (cx - 60, cy), cv2.FONT_HERSHEY_SIMPLEX, 0.6, color, 2)
-        cv2.putText(frame, f"{d.angle_deg:+.0f} deg  {d.side_px:.0f}px",
-                    (cx - 60, cy + 20), cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 1)
+        info = [f"rot {d.angle_deg:+.0f} deg  {d.side_px:.0f}px"]
+        if pose is not None:
+            info.insert(0, f"{pose.range_cm / 100:.2f} m  az {pose.azimuth_deg:+.0f}  el {pose.elevation_deg:+.0f}")
+            info.append(f"plano a {pose.plane_cm:.0f} cm")
+        for k, s in enumerate(info):
+            cv2.putText(frame, s, (cx - 60, cy + 20 + 18 * k), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 3)
+            cv2.putText(frame, s, (cx - 60, cy + 20 + 18 * k), cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 1)
     h, w = frame.shape[:2]
     cv2.drawMarker(frame, (w // 2, h // 2), (255, 255, 255), cv2.MARKER_CROSS, 20, 1)
 
 
 def hud(frame: np.ndarray, lines: list[str]) -> None:
+    # fondo oscuro detrás del texto: legible sin el contorno grueso que se encima
+    font, scale = cv2.FONT_HERSHEY_SIMPLEX, 0.55
+    width = max((cv2.getTextSize(s, font, scale, 1)[0][0] for s in lines), default=0)
+    box = frame[0:12 + 22 * len(lines), 0:min(frame.shape[1], width + 16)]
+    box[:] = (box * 0.35).astype(frame.dtype)
     for k, s in enumerate(lines):
-        y = 22 + 22 * k
-        cv2.putText(frame, s, (8, y), cv2.FONT_HERSHEY_SIMPLEX, 0.55, (0, 0, 0), 4)
-        cv2.putText(frame, s, (8, y), cv2.FONT_HERSHEY_SIMPLEX, 0.55, (255, 255, 255), 1)
+        cv2.putText(frame, s, (8, 22 + 22 * k), font, scale, (255, 255, 255), 1, cv2.LINE_AA)
 
 
 # ---------------------------------------------------------------- modos
 
-def run_live(args: argparse.Namespace, detector: TagDetector) -> None:
+def run_live(args: argparse.Namespace, detector: TagDetector, pose_est: PoseEstimator | None) -> None:
     src: Source = TelloSource(args.downward) if args.source == "tello" else CvSource(args.source)
     confirmer = Confirmer(args.confirm)
     writer: cv2.VideoWriter | None = None
@@ -286,6 +346,10 @@ def run_live(args: argparse.Namespace, detector: TagDetector) -> None:
                         writer = cv2.VideoWriter(args.record, cv2.VideoWriter_fourcc(*"mp4v"), 30, (w, h))
                     writer.write(frame)
 
+                if pose_est is not None and (frame.shape[1], frame.shape[0]) != pose_est.size:
+                    print(f"[pose] la calibración es de {pose_est.size[0]}x{pose_est.size[1]} y el video "
+                          f"es {frame.shape[1]}x{frame.shape[0]}: distancias desactivadas")
+                    pose_est = None
                 gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
                 t0 = time.perf_counter()
                 dets = detector.detect(gray)
@@ -301,9 +365,12 @@ def run_live(args: argparse.Namespace, detector: TagDetector) -> None:
                     fps, n_fps, t_fps = n_fps / (now - t_fps), 0, now
 
                 shown = frame.copy()
-                draw(shown, dets, confirmed)
+                poses = [pose_est.estimate(d) if pose_est and d.accepted else None for d in dets]
+                draw(shown, dets, confirmed, poses)
                 h, w = frame.shape[:2]
                 hud(shown, [
+                    f"pose: tag de {pose_est.tag_cm:g} cm, {pose_est.name}" if pose_est
+                    else "pose: desactivada (sin calibracion)",
                     f"{w}x{h}  {fps:.1f} fps  deteccion {dt:.1f} ms",
                     f"confirmados (N={args.confirm}): "
                     + (", ".join(f"{i}={TAG_FUNCTIONS.get(i, '?')}" for i in sorted(confirmed)) or "-"),
@@ -404,6 +471,9 @@ def main() -> None:
     ap.add_argument("--no-refine", action="store_true", help="sin refinamiento subpíxel de esquinas")
     ap.add_argument("--record", help="guardar el video crudo (mp4) para repetirlo después")
     ap.add_argument("--selftest", action="store_true", help="prueba sintética, sin cámara")
+    ap.add_argument("--calib", default=str(DEFAULT_CALIB), help="calibración de la cámara (json)")
+    ap.add_argument("--tag-cm", type=float, default=15.0,
+                    help="lado REAL del cuadro negro del tag en cm (mídelo con regla)")
     args = ap.parse_args()
 
     print(f"OpenCV {cv2.__version__}")
@@ -411,7 +481,11 @@ def main() -> None:
     if args.selftest:
         run_selftest(detector)
     else:
-        run_live(args, detector)
+        calib = Path(args.calib)
+        pose_est = PoseEstimator(calib, args.tag_cm) if calib.exists() else None
+        if pose_est is None:
+            print(f"[pose] no existe {calib}: se detecta sin medir distancias")
+        run_live(args, detector, pose_est)
 
 
 if __name__ == "__main__":
