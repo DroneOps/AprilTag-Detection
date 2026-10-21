@@ -5,6 +5,8 @@
   "max_flight_s": 60,
   "takeoff_timeout_s": 10,
   "takeoff_min_height_cm": 30,
+  "takeoff_settle_s": 2.0,
+  "takeoff_settle_cm": 5,
   "land_timeout_s": 10,
   "land_resend_s": 1.5,
   "landed_height_cm": 10,
@@ -15,9 +17,9 @@
   "video_hover_s": 0.3,
   "video_land_s": 3.0,
   "state_lost_s": 1.0,
-  "yaw_kp": 1.0,
-  "yaw_rate_limit": 30,
-  "yaw_min_rate": 10,
+  "yaw_kp": 2.0,
+  "yaw_rate_limit": 60,
+  "yaw_min_rate": 20,
   "yaw_tol_deg": 3,
   "yaw_timeout_s": 10
 }

@@ -51,6 +51,8 @@ class FlightConfig:
     max_flight_s: float = 60.0
     takeoff_timeout_s: float = 10.0
     takeoff_min_height_cm: int = 30
+    takeoff_settle_s: float = 2.0  # el Tello reporta h en pasos de 10 cm: ventana corta da falsos 'estable'
+    takeoff_settle_cm: int = 5
     land_timeout_s: float = 10.0
     land_resend_s: float = 1.5
     landed_height_cm: int = 10
@@ -61,9 +63,9 @@ class FlightConfig:
     video_hover_s: float = 0.3
     video_land_s: float = 3.0
     state_lost_s: float = 1.0
-    yaw_kp: float = 1.0
-    yaw_rate_limit: int = 30
-    yaw_min_rate: int = 10
+    yaw_kp: float = 2.0
+    yaw_rate_limit: int = 60
+    yaw_min_rate: int = 20  # rc 10 casi no gira (zona muerta medida)
     yaw_tol_deg: float = 3.0
     yaw_timeout_s: float = 10.0
 
@@ -129,6 +131,7 @@ class Flight:
         self._h_at_land_sent = math.inf
         self._t_low: float | None = None
         self._t_on_target: float | None = None
+        self._takeoff_h: list[tuple[float, int]] = []
         self._yaw_target = 0.0
         self._yaw_done = False
         log_path.parent.mkdir(exist_ok=True)
@@ -238,6 +241,7 @@ class Flight:
             if self._takeoff_req.is_set():
                 self._takeoff_req.clear()
                 self.t.send_command_without_return("takeoff")
+                self._takeoff_h = []
                 self._goto("TAKEOFF", "despegando")
             return
         if st in TERMINAL:
@@ -262,11 +266,18 @@ class Flight:
 
         elapsed = now - self._t_state
         if st == "TAKEOFF":
-            # el Tello no acepta rc mientras despega; se confirma por altura
-            if h >= cfg.takeoff_min_height_cm:
+            # El despegue automático sigue subiendo ~6 s después de pasar 30 cm; mandar
+            # rc antes lo interrumpe. Sin rc hasta que la altura se estabilice.
+            self._takeoff_h.append((now, h))
+            while self._takeoff_h and now - self._takeoff_h[0][0] > cfg.takeoff_settle_s:
+                self._takeoff_h.pop(0)
+            hs = [x for _, x in self._takeoff_h]
+            settled = elapsed > cfg.takeoff_settle_s and max(hs) - min(hs) <= cfg.takeoff_settle_cm
+            if h >= cfg.takeoff_min_height_cm and (settled or elapsed > cfg.takeoff_timeout_s):
                 self._t_air = now
                 self.t.is_flying = True  # Tello.end() aterriza si esto queda en True
-                self._goto("HOVER", f"en el aire a {h} cm")
+                how = "estable" if settled else "sin estabilizar"
+                self._goto("HOVER", f"en el aire a {h} cm ({how}, despegue {elapsed:.1f} s)")
             elif elapsed > cfg.takeoff_timeout_s:
                 self._begin_landing("EMERGENCY_LAND", f"no subio ({h} cm en {elapsed:.0f} s)")
 
