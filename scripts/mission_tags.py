@@ -15,8 +15,9 @@ PARO, k mata motores. Parámetros en config/mission_tags.json y config/flight.js
 
 Estados de la misión:
     ADVANCE   avanza despacio manteniendo el rumbo, buscando un tag confirmado
-    APPROACH  se acerca a stop_cm del tag: lejos lo centra girando, cerca
-              (< lateral_start_cm) fija el rumbo y se corrige de lado (rc lr)
+    APPROACH  se acerca a stop_cm del tag: lejos le apunta girando; cerca
+              (< lateral_start_cm) se pone de frente a su pared girando y lo
+              centra deslizándose de lado (rc lr)
     EXECUTE   ejecuta la función del tag (lista de primitivas) y vuelve a ADVANCE
 """
 from __future__ import annotations
@@ -26,7 +27,8 @@ import json
 import math
 import threading
 import time
-from dataclasses import dataclass, fields
+from collections import deque
+from dataclasses import dataclass, field, fields
 from pathlib import Path
 
 import cv2
@@ -80,6 +82,10 @@ class MissionConfig:
     lat_min: int = 12
     lat_max: int = 20
     lat_tol_cm: float = 5.0
+    align_kp: float = 1.0
+    align_tol_deg: float = 3.0
+    align_window: int = 9
+    camera_pitch_deg: float = 11.0
     hold_s: float = 0.5
     approach_timeout_s: float = 25.0
     lost_s: float = 2.0
@@ -111,6 +117,20 @@ class Vision:
     dets: list[Detection]
     poses: list[TagPose | None]
     confirmed: set[int]
+    rel_yaw: dict[int, float] = field(default_factory=dict)  # mediana por tag, ver relative_yaw
+
+
+def relative_yaw(pose: TagPose, pitch_deg: float) -> float:
+    """Cuántos grados está girado el dron respecto a estar de frente al tag.
+
+    Positivo = girado a la derecha. Sale de la normal del plano del tag, pasada
+    a un marco nivelado (la cámara mira 11° hacia abajo). Ruido medido con un
+    tag de 8 cm: ~2° por frame a 1.1–1.6 m; 4–5° más allá de 2 m.
+    """
+    p = math.radians(pitch_deg)
+    nx, ny, nz = pose.normal
+    z_level = -math.sin(p) * ny + math.cos(p) * nz
+    return math.degrees(math.atan2(nx, -z_level))
 
 
 def with_min(value: float, minimum: float, limit: float) -> int:
@@ -122,7 +142,7 @@ def with_min(value: float, minimum: float, limit: float) -> int:
 
 class TagMission(Flight):
     AIRBORNE_STATES = AIRBORNE | MISSION_STATES
-    LOG_EXTRA = ["n_tags", "objetivo", "obj_z", "obj_az", "obj_x", "frente_cm"]
+    LOG_EXTRA = ["n_tags", "objetivo", "obj_z", "obj_az", "obj_x", "obj_angulo", "frente_cm"]
 
     def __init__(self, tello, cfg: FlightConfig, mcfg: MissionConfig, log_path: Path, calib: Path) -> None:
         super().__init__(tello, cfg, log_path, None)
@@ -149,8 +169,8 @@ class TagMission(Flight):
         self.executed: list[str] = []
         self._alt_ref: float | None = None  # altura al entrar a ADVANCE/APPROACH
         self._ref_state = ""
-        self._obj: tuple[float, float, float] | None = None  # (z, az, x) del objetivo, para la bitácora
-        self._near_heading: float | None = None  # rumbo fijado al entrar a la fase cercana
+        self._obj: tuple[float, float, float, float] | None = None  # (z, az, x, angulo) para la bitácora
+        self._ryaw_hist: dict[int, deque] = {}  # últimos ángulos relativos por tag
 
     # ------------------------------------------------ visión (hilo de la HMI)
 
@@ -161,8 +181,16 @@ class TagMission(Flight):
         dets = self.detector.detect(cv2.cvtColor(bgr, cv2.COLOR_BGR2GRAY))
         poses = [self.pose_est.estimate(d) if d.accepted else None for d in dets]
         confirmed = self.confirmer.update({d.tag_id for d in dets if d.accepted})
+        rel = {}
+        for d, p in zip(dets, poses):
+            if p is not None:
+                hist = self._ryaw_hist.setdefault(d.tag_id, deque(maxlen=self.m.align_window))
+                hist.append(relative_yaw(p, self.m.camera_pitch_deg))
+                rel[d.tag_id] = float(np.median(hist))
+        for tid in set(self._ryaw_hist) - set(rel):  # tag no visto: historia vieja fuera
+            del self._ryaw_hist[tid]
         with self._vis_lock:
-            self._vis = Vision(t, dets, poses, confirmed)
+            self._vis = Vision(t, dets, poses, confirmed, rel)
             for d in dets:
                 if d.tag_id in self._last_seen:
                     self._last_seen[d.tag_id] = t
@@ -200,7 +228,8 @@ class TagMission(Flight):
 
     def _log_extra(self) -> list:
         v = self._vis
-        obj = [f"{self._obj[0]:.0f}", f"{self._obj[1]:.1f}", f"{self._obj[2]:+.0f}"] if self._obj else ["", "", ""]
+        o = self._obj
+        obj = [f"{o[0]:.0f}", f"{o[1]:.1f}", f"{o[2]:+.0f}", f"{o[3]:+.1f}"] if o else ["", "", "", ""]
         front = "" if self._front_cm is None else f"{self._front_cm:.0f}"
         return [len(v.dets) if v else "", self._target or "", *obj, front]
 
@@ -241,7 +270,6 @@ class TagMission(Flight):
         if candidates:
             fwd, tid = min(candidates)
             self._target, self._t_target_seen, self._t_hold = tid, now, None
-            self._near_heading = None
             return self._goto("APPROACH", f"tag {tid} ({TAG_FUNCTIONS[tid]}) a {fwd:.0f} cm")
         if elapsed > self.m.advance_timeout_s:
             why = "bloqueado por un tag al frente" if blocked else "sin tags al frente"
@@ -281,28 +309,29 @@ class TagMission(Flight):
         self._t_target_seen = now
         p = min(match, key=lambda q: q.t[2])
         z, x, az = float(p.t[2]), float(p.t[0]), p.azimuth_deg
-        self._obj = (z, az, x)
+        ryaw = v.rel_yaw.get(self._target, 0.0)
+        self._obj = (z, az, x, ryaw)
         err = z - m.stop_cm
         fb = 0 if abs(err) <= m.stop_tol_cm else with_min(m.approach_kp * err, m.approach_fb_min, m.approach_fb_max)
         if z > m.lateral_start_cm:
-            # lejos: apuntar al tag girando
+            # lejos: apuntar al tag girando (el ángulo del plano aún es ruidoso)
             lr = 0
             yr = 0 if abs(az) <= m.az_tol_deg else with_min(m.az_kp * az, m.az_min, m.az_max)
-            centered = yr == 0
+            ready = False
         else:
-            # cerca: un cm de deriva lateral ya son ~1°; girar no alcanza. Se fija el
-            # rumbo y se corrige de lado con lr usando el desplazamiento x del tag.
-            if self._near_heading is None:
-                self._near_heading = yaw
-            herr = wrap_deg(self._near_heading - yaw)
-            yr = 0 if abs(herr) <= 3 else clamp(self.m.heading_kp * herr, self.m.heading_max)
+            # cerca: ponerse de frente al tag (paralelo a su pared) girando, y
+            # centrarlo deslizándose de lado. Así los giros del tag quedan
+            # referidos a la pista y no a cómo despegó el dron.
+            aligned = abs(ryaw) <= m.align_tol_deg
+            yr = 0 if aligned else with_min(-m.align_kp * ryaw, m.az_min, m.az_max)
             centered = abs(x) <= m.lat_tol_cm
             lr = 0 if centered else with_min(m.lat_kp * x, m.lat_min, m.lat_max)
+            ready = aligned and centered
         self._send_rc(lr, fb, 0, yr)
-        if fb == 0 and centered:
+        if fb == 0 and ready:
             self._t_hold = self._t_hold or now
             if now - self._t_hold >= m.hold_s:
-                return self._start_execute(now, f"a {z:.0f} cm, lateral {x:+.0f} cm")
+                return self._start_execute(now, f"a {z:.0f} cm, lateral {x:+.0f} cm, angulo {ryaw:+.0f}")
         else:
             self._t_hold = None
         if elapsed > m.approach_timeout_s:

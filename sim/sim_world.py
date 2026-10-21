@@ -10,7 +10,7 @@ Uso:
     python sim/sim_world.py circuito          # un escenario
     python sim/sim_world.py todos             # todos, en paralelo
 Escenarios: circuito pausa giro360 sube_ciego perdido flip8 caja deriva
-            deriva_sin_lateral sin_tags
+            deriva_sin_lateral ladeado ladeado_sin_alinear sin_tags
 
 Corre en tiempo real (cada escenario tarda 30–70 s). Las bitácoras van a sim/logs/.
 """
@@ -62,10 +62,11 @@ def dead(rc: float, db: float = 5) -> float:
 class SimTello:
     """Imita la interfaz de djitellopy que usa la misión."""
 
-    def __init__(self, tags, drift=2.0, seed=0, boxes=(), bias=(0.0, 0.0)) -> None:
+    def __init__(self, tags, drift=2.0, seed=0, boxes=(), bias=(0.0, 0.0), yaw0=0.0) -> None:
         self.tags, self.boxes, self.bias = tags, boxes, np.array(bias, float)
         self.udp = {"state": {}, "responses": []}
-        self.x = self.y = self.z = self.yaw = 0.0
+        self.x = self.y = self.z = 0.0
+        self.yaw = yaw0  # rumbo respecto a la pista (el Tello real no lo sabe)
         self.v = np.zeros(3)
         self.yaw_rate = 0.0
         self.mode, self.rc, self.sent, self.is_flying = "ground", (0, 0, 0, 0), [], False
@@ -175,13 +176,13 @@ class SimTello:
         return cv2.cvtColor(img, cv2.COLOR_GRAY2BGR)
 
 
-def run(name, tags, limit=120, events=None, drift=2.0, boxes=(), bias=(0.0, 0.0)):
+def run(name, tags, limit=120, events=None, drift=2.0, boxes=(), bias=(0.0, 0.0), yaw0=0.0):
     cfg = F.FlightConfig.load(ROOT / "config" / "flight.json")
     mcfg = M.MissionConfig.load(ROOT / "config" / "mission_tags.json")
     cfg.hover_s, cfg.max_flight_s = mcfg.start_hover_s, mcfg.mission_max_s
     for k, v in OVER.items():
         setattr(mcfg, k, v)
-    sim = SimTello(tags, drift=drift, boxes=boxes, bias=bias)
+    sim = SimTello(tags, drift=drift, boxes=boxes, bias=bias, yaw0=yaw0)
     mis = M.TagMission(sim, cfg, mcfg, ROOT / "sim" / "logs" / f"{name}.csv", ROOT / "config" / "camera_tello.json")
     time.sleep(0.3)
     stop = threading.Event()
@@ -245,6 +246,10 @@ def scenario(sc: str) -> None:
         if sc == "deriva_sin_lateral":
             OVER["lateral_start_cm"] = 0
         run(sc, [Tag(9, (0, 230, 85), south)], bias=(5.0, 0.0))
+    elif sc in ("ladeado", "ladeado_sin_alinear"):  # despega girado 8° a la derecha; tras el tag 2 debe quedar a -90° de la pista
+        if sc == "ladeado_sin_alinear":
+            OVER["lateral_start_cm"] = 0
+        run(sc, [Tag(2, (0, 230, 85), south), Tag(7, (-230, 170, 85), (1, 0, 0))], yaw0=8.0)
     elif sc == "sin_tags":
         run(sc, [], limit=60)
     else:
@@ -252,7 +257,7 @@ def scenario(sc: str) -> None:
 
 
 ALL = ["circuito", "pausa", "giro360", "sube_ciego", "perdido", "flip8", "caja",
-       "deriva", "deriva_sin_lateral", "sin_tags"]
+       "deriva", "deriva_sin_lateral", "ladeado", "ladeado_sin_alinear", "sin_tags"]
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
