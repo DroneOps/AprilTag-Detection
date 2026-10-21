@@ -109,7 +109,14 @@ def clamp(v: float, lim: float) -> int:
 
 
 class Flight:
-    """Máquina de estados del vuelo. Corre en su propio hilo (run)."""
+    """Máquina de estados del vuelo. Corre en su propio hilo (run).
+
+    Una misión hereda de aquí y usa los ganchos: AIRBORNE_STATES, _hover_done,
+    _extra_step, on_frame, overlay y status_lines. Paro, vigilantes, despegue y
+    aterrizaje se quedan en esta clase.
+    """
+
+    AIRBORNE_STATES = AIRBORNE
 
     def __init__(self, tello, cfg: FlightConfig, log_path: Path, yaw_test: float | None) -> None:
         self.t = tello
@@ -172,7 +179,7 @@ class Flight:
 
     @property
     def airborne(self) -> bool:
-        return self.state in AIRBORNE | LANDING
+        return self.state in self.AIRBORNE_STATES | LANDING
 
     def stop(self) -> None:
         self._stop.set()
@@ -189,7 +196,7 @@ class Flight:
                 except Exception as e:  # ninguna excepción mata el lazo: se aterriza
                     self.reason = f"excepcion: {e!r}"
                     try:
-                        if self.state in AIRBORNE:
+                        if self.state in self.AIRBORNE_STATES:
                             self._begin_landing("EMERGENCY_LAND", self.reason)
                     except Exception:
                         pass
@@ -248,7 +255,7 @@ class Flight:
             return
 
         # ---- en el aire: paro y vigilantes (en orden de prioridad)
-        if st in AIRBORNE:
+        if st in self.AIRBORNE_STATES:
             with self._lock:
                 land_req = self._land_req
             if land_req:
@@ -285,12 +292,7 @@ class Flight:
             self._send_rc(0, 0, 0, 0)
             duration = 3.0 if self._yaw_done else cfg.hover_s
             if elapsed >= duration:
-                if self.yaw_test and not self._yaw_done:
-                    self._yaw_target = wrap_deg(yaw + self.yaw_test)
-                    self._t_on_target = None
-                    self._goto("YAW_TEST", f"girando {self.yaw_test:+.0f} grados hacia {self._yaw_target:.0f}")
-                else:
-                    self._begin_landing("LANDING", "fin de la prueba")
+                self._hover_done(yaw)
 
         elif st == "YAW_TEST":
             err = wrap_deg(self._yaw_target - yaw)
@@ -328,17 +330,44 @@ class Flight:
                 if elapsed > cfg.land_timeout_s:
                     self.reason = f"aterrizaje sin confirmar ({h} cm), reenviando land"
 
+        else:
+            self._extra_step(st, s, now, elapsed)
+
+    # ------------------------------------------------ ganchos para misiones
+
+    def _hover_done(self, yaw: float) -> None:
+        """Al terminar el estacionario: giro de prueba o aterrizar."""
+        if self.yaw_test and not self._yaw_done:
+            self._yaw_target = wrap_deg(yaw + self.yaw_test)
+            self._t_on_target = None
+            self._goto("YAW_TEST", f"girando {self.yaw_test:+.0f} grados hacia {self._yaw_target:.0f}")
+        else:
+            self._begin_landing("LANDING", "fin de la prueba")
+
+    def _extra_step(self, st: str, s: dict, now: float, elapsed: float) -> None:
+        """Estados propios de una misión."""
+
+    def on_frame(self, bgr: np.ndarray, t: float) -> None:
+        """Cada frame nuevo de video (hilo de la HMI)."""
+
+    def overlay(self, img: np.ndarray) -> None:
+        """Dibujo extra sobre el video de la HMI."""
+
+    def status_lines(self) -> list[str]:
+        return []
+
 
 # ---------------------------------------------------------------- HMI
 
 class Hmi:
     BAR_H = 70
 
-    def __init__(self, flight: Flight) -> None:
+    def __init__(self, flight: Flight, title: str = "primer vuelo") -> None:
         self.flight = flight
+        self.title = title
         self.size = (960, 720)
-        cv2.namedWindow("primer vuelo", cv2.WINDOW_AUTOSIZE)
-        cv2.setMouseCallback("primer vuelo", self._on_mouse)
+        cv2.namedWindow(title, cv2.WINDOW_AUTOSIZE)
+        cv2.setMouseCallback(title, self._on_mouse)
 
     def _on_mouse(self, event, x, y, flags, param) -> None:
         if event == cv2.EVENT_LBUTTONDOWN and y >= self.size[1] - self.BAR_H:
@@ -357,6 +386,8 @@ class Hmi:
             f"yaw {s.get('yaw', '?')}  temp {s.get('temph', '?')} C",
             f"rc {f.rc}   telemetria {age * 1000:.0f} ms   video {f.video_age * 1000:.0f} ms",
         ]
+        lines += f.status_lines()
+        f.overlay(img)
         if f.state == "IDLE":
             lines += ["chequeo previo:"] + [f"  [{'OK' if ok else 'NO'}] {name}" for name, ok in f.preflight()]
             lines.append("t = despegar")
@@ -387,7 +418,7 @@ class Hmi:
         return False
 
     def closed(self) -> bool:
-        return cv2.getWindowProperty("primer vuelo", cv2.WND_PROP_VISIBLE) < 1
+        return cv2.getWindowProperty(self.title, cv2.WND_PROP_VISIBLE) < 1
 
 
 def ask(tello, cmd: str) -> str:
@@ -398,42 +429,36 @@ def ask(tello, cmd: str) -> str:
     return tello.send_command_with_return(cmd, timeout=5)
 
 
-def main() -> None:
-    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--config", default=str(ROOT / "config" / "flight.json"))
-    ap.add_argument("--yaw-test", type=float, help="grados a girar por rc tras el estacionario (p.ej. 90)")
-    ap.add_argument("--record", help="grabar el video (mp4)")
-    args = ap.parse_args()
-
-    cfg = FlightConfig.load(Path(args.config))
+def connect():
+    """Conecta, enciende el video y devuelve (tello, lector de frames)."""
     from djitellopy import Tello
 
     Tello.LOGGER.setLevel(logging.WARNING)
     tello = Tello()
     tello.connect()
     print(f"[tello] streamon -> {ask(tello, 'streamon')!r}")
-    reader = tello.get_frame_read(with_queue=True, max_queue_len=1)
+    return tello, tello.get_frame_read(with_queue=True, max_queue_len=1)
 
-    log_path = ROOT / "logs" / time.strftime("vuelo_%Y%m%d_%H%M%S.csv")
-    flight = Flight(tello, cfg, log_path, args.yaw_test)
+
+def run_app(flight: Flight, tello, reader, record: str | None, title: str) -> None:
+    """Hilo de control + HMI en el hilo principal hasta salir; aterriza si hace falta."""
     threading.Thread(target=flight.run, daemon=True, name="control").start()
-    hmi = Hmi(flight)
+    hmi = Hmi(flight, title)
     writer = None
     last_frame, t_frame = None, -math.inf
-    print(f"[hmi] bitácora: {log_path}")
-
     try:
         while True:
             rgb = reader.frame
             if rgb is not None:
                 last_frame, t_frame = cv2.cvtColor(rgb, cv2.COLOR_RGB2BGR), time.monotonic()
-                if args.record:
+                if record:
                     if writer is None:
                         hh, ww = last_frame.shape[:2]
-                        writer = cv2.VideoWriter(args.record, cv2.VideoWriter_fourcc(*"mp4v"), 30, (ww, hh))
+                        writer = cv2.VideoWriter(record, cv2.VideoWriter_fourcc(*"mp4v"), 30, (ww, hh))
                     writer.write(last_frame)
+                flight.on_frame(last_frame, t_frame)
             flight.video_age = time.monotonic() - t_frame
-            cv2.imshow("primer vuelo", hmi.render(last_frame))
+            cv2.imshow(title, hmi.render(last_frame))
             if hmi.handle_key(cv2.waitKey(15) & 0xFF):
                 break
             if hmi.closed():
@@ -444,7 +469,7 @@ def main() -> None:
         flight.request_land("PARO: Ctrl+C")
     finally:
         # si sigue en el aire, esperar a que aterrice antes de cerrar todo
-        t_end = time.monotonic() + cfg.land_timeout_s + 5
+        t_end = time.monotonic() + flight.cfg.land_timeout_s + 5
         while flight.airborne and time.monotonic() < t_end:
             flight.request_land("cerrando programa")
             time.sleep(0.1)
@@ -455,6 +480,20 @@ def main() -> None:
         tello.send_command_without_return("streamoff")
         tello.end()  # si is_flying quedó en True, djitellopy manda land
         print(f"[vuelo] final: {flight.state} — {flight.reason}")
+
+
+def main() -> None:
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--config", default=str(ROOT / "config" / "flight.json"))
+    ap.add_argument("--yaw-test", type=float, help="grados a girar por rc tras el estacionario (p.ej. 90)")
+    ap.add_argument("--record", help="grabar el video (mp4)")
+    args = ap.parse_args()
+
+    cfg = FlightConfig.load(Path(args.config))
+    tello, reader = connect()
+    log_path = ROOT / "logs" / time.strftime("vuelo_%Y%m%d_%H%M%S.csv")
+    print(f"[hmi] bitácora: {log_path}")
+    run_app(Flight(tello, cfg, log_path, args.yaw_test), tello, reader, args.record, "primer vuelo")
 
 
 if __name__ == "__main__":
