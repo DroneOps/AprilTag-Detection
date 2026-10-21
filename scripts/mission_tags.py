@@ -101,7 +101,7 @@ class MissionConfig:
     climb_tol_cm: float = 5.0
     climb_timeout_s: float = 6.0
     min_tof_cm: float = 30.0
-    flip_dir: str = "b"
+    flip_dir: str = "auto"  # auto = lejos del tag; o f, b, l, r fijo
     flip_min_battery: int = 50
     flip_wait_s: float = 3.0
     wait_s: float = 5.0
@@ -175,6 +175,8 @@ class TagMission(Flight):
         self._alt_ref: float | None = None  # altura al entrar a ADVANCE/APPROACH
         self._ref_state = ""
         self._obj: tuple[float, float, float, float] | None = None  # (z, az, x, angulo) para la bitácora
+        self._exit_heading = 0.0
+        self._exec_yaw0 = 0.0
         self._tf_hist: dict[int, deque] = {}  # últimas (ángulo, lateral, distancia) por tag
         self._last_az = 0.0  # para buscar hacia el lado por donde se fue el tag
 
@@ -225,6 +227,11 @@ class TagMission(Flight):
                  + (f"{self._target} ({TAG_FUNCTIONS[self._target]})" if self._target else "-")]
         if self.executed:
             lines.append("ejecutados: " + ", ".join(self.executed[-6:]))
+        bat = self.tel.snapshot()[0].get("bat", 0)
+        if 0 < bat < self.m.flip_min_battery:
+            lines.append(f"AVISO: bateria {bat}% < {self.m.flip_min_battery}%: los flips se omitiran")
+        elif 0 < bat < self.m.flip_min_battery + 15:
+            lines.append(f"aviso: bateria {bat}%, cerca del limite para flips ({self.m.flip_min_battery}%)")
         return lines
 
     # ------------------------------------------------ misión (hilo de control)
@@ -282,7 +289,7 @@ class TagMission(Flight):
             why = "bloqueado por un tag al frente" if blocked else "sin tags al frente"
             return self._begin_landing("LANDING", f"{why} por {self.m.advance_timeout_s:.0f} s: fin")
         err = wrap_deg(self._heading - yaw)
-        rate = 0 if abs(err) < 2 else clamp(self.m.heading_kp * err, self.m.heading_max)
+        rate = 0 if abs(err) <= 3 else with_min(self.m.heading_kp * err, self.m.az_min, self.m.heading_max)
         self._send_rc(0, 0 if blocked else self.m.advance_fb, 0, rate)
 
     def _front_blocked(self, v: Vision, yaw: float, now: float) -> bool:
@@ -368,6 +375,11 @@ class TagMission(Flight):
         with self._vis_lock:
             self._last_seen[tid] = now
         self._plan = list(ACTIONS[tid])
+        # rumbo de salida = rumbo alineado con el tag + los giros del tag; un flip
+        # o una deriva en la ejecución no lo cambian (ADVANCE lo corrige)
+        yaw = self.tel.snapshot()[0].get("yaw", 0)
+        self._exec_yaw0 = yaw  # rumbo de frente al tag
+        self._exit_heading = wrap_deg(yaw + sum(p[1] for p in self._plan if p[0] == "yaw"))
         self._goto("EXECUTE", f"tag {tid} ({TAG_FUNCTIONS[tid]}) {how}")
         self._next_primitive(now)
 
@@ -379,7 +391,9 @@ class TagMission(Flight):
             if kind == "land":
                 return self._begin_landing("LANDING", f"tag {self._target}: aterrizar")
             if kind == "flip" and s.get("bat", 0) < self.m.flip_min_battery:
-                self.reason = f"flip omitido: bateria {s.get('bat')}% < {self.m.flip_min_battery}%"
+                note = f"flip omitido: bateria {s.get('bat')}% < {self.m.flip_min_battery}%"
+                self.executed[-1] += f" ({note})"  # visible en la HMI aunque el estado cambie enseguida
+                print(f"[vuelo] {note}")
                 continue
             self._prim, self._prim_start, self._t_hold = prim, now, None
             if kind == "yaw":
@@ -388,14 +402,23 @@ class TagMission(Flight):
                 goal = s.get("tof", 0) + prim[1] * self.m.climb_cm  # tof crudo, igual que en _execute
                 self._prim_goal = max(goal, self.m.min_tof_cm)
             elif kind == "flip":
-                self._send_rc(0, 0, 0, 0)
-                self.t.send_command_without_return(f"flip {self.m.flip_dir}")
+                # después del flip, regresar a la altura de antes (si bajó)
+                self._plan.insert(0, ("restore", s.get("tof", 0)))
+                self._start_flip(self._flip_direction(s.get("yaw", 0)))
+            elif kind == "restore":
+                self._prim_goal = prim[1]
             return
-        # sin primitivas pendientes: seguir hacia el frente con el rumbo actual
-        self._heading = s.get("yaw", 0)
+        # sin primitivas pendientes: seguir hacia el frente con el rumbo de salida
+        self._heading = self._exit_heading
         self._obj = None
         self._goto("ADVANCE", f"tag {self._target} ejecutado, avanzando")
         self._target = None
+
+    def _flip_direction(self, yaw: float) -> str:
+        """Flip lejos del tag: de frente a él, hacia atrás; de espaldas (tag 8), hacia adelante."""
+        if self.m.flip_dir != "auto":
+            return self.m.flip_dir
+        return "b" if abs(wrap_deg(yaw - self._exec_yaw0)) < 90 else "f"
 
     def _execute(self, s: dict, now: float) -> None:
         cfg, m = self.cfg, self.m
@@ -409,14 +432,18 @@ class TagMission(Flight):
                 rate = 0
             self._send_rc(0, 0, 0, rate)
             done = self._held(on_goal, now, 0.3) or el > cfg.yaw_timeout_s * max(1.0, abs(self._prim[1]) / 180)
-        elif kind == "climb":
+        elif kind in ("climb", "restore"):
             err = self._prim_goal - s.get("tof", self._prim_goal)
             on_goal = abs(err) <= m.climb_tol_cm
             ud = 0 if on_goal else with_min(m.climb_kp * err, m.climb_min, m.climb_max)
             self._send_rc(0, 0, ud, 0)
             done = self._held(on_goal, now, 0.5) or el > m.climb_timeout_s
         elif kind == "flip":
-            done = el > m.flip_wait_s  # sin rc mientras voltea
+            self._flip_progress(s)  # sin rc mientras voltea
+            done = el > m.flip_wait_s
+            if done:
+                result = self._flip_result()
+                self.executed[-1] += " (" + result.split(":")[0] + ")"
         elif kind == "wait":
             self._send_rc(0, 0, 0, 0)
             done = el > m.wait_s

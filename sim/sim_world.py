@@ -11,7 +11,7 @@ Uso:
     python sim/sim_world.py todos             # todos, en paralelo
 Escenarios: circuito pausa giro360 sube_ciego perdido flip8 caja deriva
             deriva_sin_lateral ladeado ladeado_sin_alinear angulo25 angulo38
-            angulo38_deriva sin_tags
+            angulo38_deriva flip_prueba flip_prueba_bateria flip4 flip4_bateria sin_tags
 
 Corre en tiempo real (cada escenario tarda 30–70 s). Las bitácoras van a sim/logs/.
 """
@@ -63,7 +63,7 @@ def dead(rc: float, db: float = 5) -> float:
 class SimTello:
     """Imita la interfaz de djitellopy que usa la misión."""
 
-    def __init__(self, tags, drift=2.0, seed=0, boxes=(), bias=(0.0, 0.0), yaw0=0.0) -> None:
+    def __init__(self, tags, drift=2.0, seed=0, boxes=(), bias=(0.0, 0.0), yaw0=0.0, bat=90.0) -> None:
         self.tags, self.boxes, self.bias = tags, boxes, np.array(bias, float)
         self.udp = {"state": {}, "responses": []}
         self.x = self.y = self.z = 0.0
@@ -71,7 +71,8 @@ class SimTello:
         self.v = np.zeros(3)
         self.yaw_rate = 0.0
         self.mode, self.rc, self.sent, self.is_flying = "ground", (0, 0, 0, 0), [], False
-        self.t_flip, self.flips, self.crash, self.min_wall, self.bat = -1e9, 0, None, 1e9, 90.0
+        self.t_flip, self.flips, self.crash, self.min_wall, self.bat = -1e9, 0, None, 1e9, bat
+        self.flip_dir, self.pitch = "b", 0
         self.rng, self.drift, self.wind = np.random.default_rng(seed), drift, np.zeros(2)
         self.t0 = time.monotonic()
         self.lock = threading.Lock()
@@ -91,7 +92,19 @@ class SimTello:
                     self.z = max(0.0, self.z - 40 * dt)
                     if self.z <= 0:
                         self.mode = "ground"
-                elif self.mode == "air" and now - self.t_flip > 1.5:
+                elif self.mode == "air" and now - self.t_flip < 1.0:
+                    # flip: una vuelta en ~1 s, baja ~20 cm, se corre ~30 cm y queda un poco girado
+                    frac = (now - self.t_flip) / 1.0
+                    self.pitch = int(F.wrap_deg(360 * frac))
+                    self.z = max(0.0, self.z - 20 * dt)
+                    ps = math.radians(self.yaw)
+                    sgn = {"f": 1, "b": -1}.get(self.flip_dir, 0)
+                    self.x += sgn * 30 * math.sin(ps) * dt
+                    self.y += sgn * 30 * math.cos(ps) * dt
+                    self.yaw = F.wrap_deg(self.yaw + 6 * dt)
+                elif self.mode == "air" and now - self.t_flip < 1.5:
+                    self.pitch = 0  # se estabiliza tras el flip; ignora rc
+                elif self.mode == "air":
                     lr, fb, ud, yr = self.rc
                     want = 0.9 * np.array([dead(fb), dead(lr), dead(ud)])
                     self.v += (want - self.v) * min(1, dt / 0.4)
@@ -113,7 +126,7 @@ class SimTello:
                     tof = int(self.z - floor + 10 + self.rng.normal(0, 2)) if self.z > 0 else 10
                     self.udp["state"] = {"h": int(round(h_bad / 10) * 10), "tof": max(10, tof),
                                          "bat": int(self.bat), "yaw": int(round(self.yaw)),
-                                         "temph": 65, "pitch": 0, "roll": 0, "vgx": 0, "vgy": 0, "vgz": 0}
+                                         "temph": 65, "pitch": self.pitch, "roll": 0, "vgx": 0, "vgy": 0, "vgz": 0}
 
     def _check_walls(self) -> None:
         p = np.array([self.x, self.y, self.z])
@@ -143,7 +156,11 @@ class SimTello:
             elif c == "emergency":
                 self.mode, self.z = "ground", 0.0
             elif c.startswith("flip"):
-                self.t_flip, self.flips = time.monotonic(), self.flips + 1
+                if self.bat < 50:  # el Tello real rechaza flips con poca carga
+                    self.udp["responses"].append(b"error")
+                else:
+                    self.t_flip, self.flips, self.flip_dir = time.monotonic(), self.flips + 1, c.split()[-1]
+                    self.udp["responses"].append(b"ok")
 
     def render(self) -> np.ndarray:
         with self.lock:
@@ -177,20 +194,26 @@ class SimTello:
         return cv2.cvtColor(img, cv2.COLOR_GRAY2BGR)
 
 
-def run(name, tags, limit=120, events=None, drift=2.0, boxes=(), bias=(0.0, 0.0), yaw0=0.0):
+def run(name, tags, limit=120, events=None, drift=2.0, boxes=(), bias=(0.0, 0.0), yaw0=0.0, bat=90.0,
+        flip_test=None):
     cfg = F.FlightConfig.load(ROOT / "config" / "flight.json")
     mcfg = M.MissionConfig.load(ROOT / "config" / "mission_tags.json")
     cfg.hover_s, cfg.max_flight_s = mcfg.start_hover_s, mcfg.mission_max_s
     for k, v in OVER.items():
         setattr(mcfg, k, v)
-    sim = SimTello(tags, drift=drift, boxes=boxes, bias=bias, yaw0=yaw0)
-    mis = M.TagMission(sim, cfg, mcfg, ROOT / "sim" / "logs" / f"{name}.csv", ROOT / "config" / "camera_tello.json")
+    sim = SimTello(tags, drift=drift, boxes=boxes, bias=bias, yaw0=yaw0, bat=bat)
+    log = ROOT / "sim" / "logs" / f"{name}.csv"
+    if flip_test:  # prueba de first_flight.py --flip-test, sin misión
+        mis = F.Flight(sim, cfg, log, None, flip_test)
+        mis.executed, mis._turned = [], 0.0
+    else:
+        mis = M.TagMission(sim, cfg, mcfg, log, ROOT / "config" / "camera_tello.json")
     time.sleep(0.3)
     stop = threading.Event()
 
     def video() -> None:
         while not stop.is_set():
-            mis.on_frame(sim.render(), time.monotonic())
+            mis.on_frame(sim.render(), time.monotonic()) if not flip_test else sim.render()
             mis.video_age = 0.0
             time.sleep(1 / 30)
 
@@ -255,6 +278,14 @@ def scenario(sc: str) -> None:
         th = math.radians(25 if sc == "angulo25" else 38)  # al quedar de frente: yaw = th; tras girar: th - 90
         run(sc, [Tag(2, (0, 230, 85), (-math.sin(th), -math.cos(th), 0))],
             bias=(-4.0, 0.0) if sc.endswith("deriva") else (0.0, 0.0))
+    elif sc == "flip_prueba":  # first_flight.py --flip-test b
+        run(sc, [], limit=40, flip_test="b")
+    elif sc == "flip_prueba_bateria":  # con 45 %: no debe intentar el flip
+        run(sc, [], limit=40, flip_test="b", bat=45.0)
+    elif sc == "flip4":  # misión con tag 4: flip y luego seguir con el rumbo de antes
+        run(sc, [Tag(4, (0, 200, 85), south)])
+    elif sc == "flip4_bateria":  # misión con tag 4 y 45 %: flip omitido y visible
+        run(sc, [Tag(4, (0, 200, 85), south)], bat=45.0)
     elif sc == "sin_tags":
         run(sc, [], limit=60)
     else:
@@ -263,7 +294,8 @@ def scenario(sc: str) -> None:
 
 ALL = ["circuito", "pausa", "giro360", "sube_ciego", "perdido", "flip8", "caja",
        "deriva", "deriva_sin_lateral", "ladeado", "ladeado_sin_alinear",
-       "angulo25", "angulo38", "angulo38_deriva", "sin_tags"]
+       "angulo25", "angulo38", "angulo38_deriva", "flip_prueba", "flip_prueba_bateria",
+       "flip4", "flip4_bateria", "sin_tags"]
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:

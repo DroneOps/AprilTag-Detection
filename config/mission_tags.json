@@ -42,7 +42,7 @@
   "climb_tol_cm": 5,
   "climb_timeout_s": 6,
   "min_tof_cm": 30,
-  "flip_dir": "b",
+  "flip_dir": "auto",
   "flip_min_battery": 50,
   "flip_wait_s": 3.0,
   "wait_s": 5.0

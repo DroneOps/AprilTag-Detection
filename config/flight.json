@@ -21,5 +21,7 @@
   "yaw_rate_limit": 60,
   "yaw_min_rate": 20,
   "yaw_tol_deg": 3,
-  "yaw_timeout_s": 10
+  "yaw_timeout_s": 10,
+  "flip_min_battery": 50,
+  "flip_wait_s": 3.0
 }

@@ -4,6 +4,7 @@
 Uso:
     python scripts/first_flight.py                    # despega, se mantiene, aterriza
     python scripts/first_flight.py --yaw-test 90      # además gira 90° por rc en lazo cerrado
+    python scripts/first_flight.py --flip-test b      # además un flip hacia atrás (f, b, l, r)
     python scripts/first_flight.py --record vuelo1.mp4
 
 Controles (con la ventana enfocada):
@@ -38,7 +39,7 @@ import numpy as np
 from test_tags import hud
 
 ROOT = Path(__file__).resolve().parent.parent
-AIRBORNE = {"TAKEOFF", "HOVER", "YAW_TEST"}
+AIRBORNE = {"TAKEOFF", "HOVER", "YAW_TEST", "FLIP_TEST"}
 LANDING = {"LANDING", "EMERGENCY_LAND"}
 TERMINAL = {"DONE", "KILLED", "ABORTED"}
 
@@ -68,6 +69,8 @@ class FlightConfig:
     yaw_min_rate: int = 20  # rc 10 casi no gira (zona muerta medida)
     yaw_tol_deg: float = 3.0
     yaw_timeout_s: float = 10.0
+    flip_min_battery: int = 50  # el Tello rechaza flips con poca carga
+    flip_wait_s: float = 3.0  # sin rc mientras voltea y se estabiliza
 
     @classmethod
     def load(cls, path: Path) -> FlightConfig:
@@ -129,11 +132,16 @@ class Flight:
     AIRBORNE_STATES = AIRBORNE
     LOG_EXTRA: list[str] = []  # columnas extra de la bitácora (ver _log_extra)
 
-    def __init__(self, tello, cfg: FlightConfig, log_path: Path, yaw_test: float | None) -> None:
+    def __init__(self, tello, cfg: FlightConfig, log_path: Path, yaw_test: float | None,
+                 flip_test: str | None = None) -> None:
         self.t = tello
         self.cfg = cfg
         self.tel = Telemetry(tello)
         self.yaw_test = yaw_test
+        self.flip_test = flip_test
+        self._flip_done = False
+        self._flip_peak = 0.0
+        self._flip_alt_min = math.inf
         self.state = "IDLE"
         self.reason = "esperando despegue (t)"
         self.rc = (0, 0, 0, 0)
@@ -303,7 +311,7 @@ class Flight:
 
         elif st == "HOVER":
             self._send_rc(0, 0, 0, 0)
-            duration = 3.0 if self._yaw_done else cfg.hover_s
+            duration = 3.0 if self._yaw_done or self._flip_done else cfg.hover_s
             if elapsed >= duration:
                 self._hover_done(yaw)
 
@@ -327,6 +335,12 @@ class Flight:
                 self._yaw_done = True
                 self._goto("HOVER", f"giro NO completado en {cfg.yaw_timeout_s:.0f} s (error {err:+.0f})")
 
+        elif st == "FLIP_TEST":
+            self._flip_progress(s)
+            if elapsed > cfg.flip_wait_s:
+                self._flip_done = True
+                self._goto("HOVER", self._flip_result())
+
         elif st in LANDING:
             if h <= cfg.landed_height_cm:
                 self._t_low = self._t_low or now
@@ -349,13 +363,44 @@ class Flight:
     # ------------------------------------------------ ganchos para misiones
 
     def _hover_done(self, yaw: float) -> None:
-        """Al terminar el estacionario: giro de prueba o aterrizar."""
+        """Al terminar el estacionario: giro de prueba, flip de prueba o aterrizar."""
         if self.yaw_test and not self._yaw_done:
             self._yaw_target = wrap_deg(yaw + self.yaw_test)
             self._t_on_target = None
             self._goto("YAW_TEST", f"girando {self.yaw_test:+.0f} grados hacia {self._yaw_target:.0f}")
+        elif self.flip_test and not self._flip_done:
+            bat = self.tel.snapshot()[0].get("bat", 0)
+            if bat < self.cfg.flip_min_battery:
+                self._begin_landing("LANDING", f"flip no permitido: bateria {bat}% < {self.cfg.flip_min_battery}%")
+            else:
+                self._start_flip(self.flip_test)
+                self._goto("FLIP_TEST", f"flip {self.flip_test}")
         else:
             self._begin_landing("LANDING", "fin de la prueba")
+
+    # ------------------------------------------------ flip verificado
+
+    def _start_flip(self, direction: str) -> None:
+        """Manda el flip. Se vacían las respuestas viejas para poder leer la suya."""
+        self._send_rc(0, 0, 0, 0)
+        self.t.get_own_udp_object()["responses"].clear()
+        self.t.send_command_without_return(f"flip {direction}")
+        self._flip_peak, self._flip_alt_min = 0.0, math.inf
+
+    def _flip_progress(self, s: dict) -> None:
+        """Mientras voltea: sin rc; se registra la inclinación máxima y la altura mínima."""
+        self._flip_peak = max(self._flip_peak, abs(s.get("pitch", 0)), abs(s.get("roll", 0)))
+        self._flip_alt_min = min(self._flip_alt_min, altitude(s))
+
+    def _flip_result(self) -> str:
+        """El 'ok' no basta (respuestas desfasadas): se confirma por la telemetría."""
+        resp = [r.decode(errors="replace").strip() if isinstance(r, bytes) else str(r)
+                for r in list(self.t.get_own_udp_object()["responses"])]
+        done = self._flip_peak >= 60
+        text = (f"flip {'HECHO' if done else 'NO detectado'}: inclinacion max {self._flip_peak:.0f} grados, "
+                f"altura min {self._flip_alt_min:.0f} cm, respuesta {resp or 'ninguna'}")
+        print(f"[vuelo] {text}")
+        return text
 
     def _extra_step(self, st: str, s: dict, now: float, elapsed: float) -> None:
         """Estados propios de una misión."""
@@ -502,6 +547,7 @@ def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--config", default=str(ROOT / "config" / "flight.json"))
     ap.add_argument("--yaw-test", type=float, help="grados a girar por rc tras el estacionario (p.ej. 90)")
+    ap.add_argument("--flip-test", choices=["f", "b", "l", "r"], help="flip de prueba tras el estacionario")
     ap.add_argument("--record", help="grabar el video (mp4)")
     args = ap.parse_args()
 
@@ -509,7 +555,7 @@ def main() -> None:
     tello, reader = connect()
     log_path = ROOT / "logs" / time.strftime("vuelo_%Y%m%d_%H%M%S.csv")
     print(f"[hmi] bitácora: {log_path}")
-    run_app(Flight(tello, cfg, log_path, args.yaw_test), tello, reader, args.record, "primer vuelo")
+    run_app(Flight(tello, cfg, log_path, args.yaw_test, args.flip_test), tello, reader, args.record, "primer vuelo")
 
 
 if __name__ == "__main__":
