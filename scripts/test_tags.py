@@ -305,6 +305,16 @@ def draw(frame: np.ndarray, dets: list[Detection], confirmed: set[int],
     cv2.drawMarker(frame, (w // 2, h // 2), (255, 255, 255), cv2.MARKER_CROSS, 20, 1)
 
 
+def draw_clock(frame: np.ndarray) -> None:
+    """Reloj en ms abajo a la izquierda. Con la cámara apuntando a la pantalla, la
+    captura muestra dos relojes: el actual y el que vio la cámara. Latencia = resta."""
+    text = f"{time.time() % 100:06.3f}"
+    h = frame.shape[0]
+    (tw, th), _ = cv2.getTextSize(text, cv2.FONT_HERSHEY_SIMPLEX, 2.5, 6)
+    cv2.rectangle(frame, (0, h - th - 40), (tw + 40, h), (0, 0, 0), -1)
+    cv2.putText(frame, text, (20, h - 20), cv2.FONT_HERSHEY_SIMPLEX, 2.5, (255, 255, 255), 6, cv2.LINE_AA)
+
+
 def hud(frame: np.ndarray, lines: list[str]) -> None:
     # fondo oscuro detrás del texto: legible sin el contorno grueso que se encima
     font, scale = cv2.FONT_HERSHEY_SIMPLEX, 0.55
@@ -376,6 +386,8 @@ def run_live(args: argparse.Namespace, detector: TagDetector, pose_est: PoseEsti
                     + (", ".join(f"{i}={TAG_FUNCTIONS.get(i, '?')}" for i in sorted(confirmed)) or "-"),
                     src.status(),
                 ])
+                if args.clock:
+                    draw_clock(shown)
             if shown is not None:
                 cv2.imshow("tag25h9", shown)
             key = cv2.waitKey(1) & 0xFF
@@ -472,6 +484,8 @@ def main() -> None:
     ap.add_argument("--record", help="guardar el video crudo (mp4) para repetirlo después")
     ap.add_argument("--selftest", action="store_true", help="prueba sintética, sin cámara")
     ap.add_argument("--calib", default=str(DEFAULT_CALIB), help="calibración de la cámara (json)")
+    ap.add_argument("--clock", action="store_true",
+                    help="reloj grande para medir la latencia: apunta la cámara a esta ventana")
     ap.add_argument("--tag-cm", type=float, default=15.0,
                     help="lado REAL del cuadro negro del tag en cm (mídelo con regla)")
     args = ap.parse_args()
