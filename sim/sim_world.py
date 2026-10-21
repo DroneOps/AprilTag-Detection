@@ -10,7 +10,8 @@ Uso:
     python sim/sim_world.py circuito          # un escenario
     python sim/sim_world.py todos             # todos, en paralelo
 Escenarios: circuito pausa giro360 sube_ciego perdido flip8 caja deriva
-            deriva_sin_lateral ladeado ladeado_sin_alinear sin_tags
+            deriva_sin_lateral ladeado ladeado_sin_alinear angulo25 angulo38
+            angulo38_deriva sin_tags
 
 Corre en tiempo real (cada escenario tarda 30–70 s). Las bitácoras van a sim/logs/.
 """
@@ -250,6 +251,10 @@ def scenario(sc: str) -> None:
         if sc == "ladeado_sin_alinear":
             OVER["lateral_start_cm"] = 0
         run(sc, [Tag(2, (0, 230, 85), south), Tag(7, (-230, 170, 85), (1, 0, 0))], yaw0=8.0)
+    elif sc in ("angulo25", "angulo38", "angulo38_deriva"):  # tag girado (como en las pruebas reales)
+        th = math.radians(25 if sc == "angulo25" else 38)  # al quedar de frente: yaw = th; tras girar: th - 90
+        run(sc, [Tag(2, (0, 230, 85), (-math.sin(th), -math.cos(th), 0))],
+            bias=(-4.0, 0.0) if sc.endswith("deriva") else (0.0, 0.0))
     elif sc == "sin_tags":
         run(sc, [], limit=60)
     else:
@@ -257,7 +262,8 @@ def scenario(sc: str) -> None:
 
 
 ALL = ["circuito", "pausa", "giro360", "sube_ciego", "perdido", "flip8", "caja",
-       "deriva", "deriva_sin_lateral", "ladeado", "ladeado_sin_alinear", "sin_tags"]
+       "deriva", "deriva_sin_lateral", "ladeado", "ladeado_sin_alinear",
+       "angulo25", "angulo38", "angulo38_deriva", "sin_tags"]
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
@@ -265,7 +271,11 @@ if __name__ == "__main__":
     names = ALL if sys.argv[1] == "todos" else sys.argv[1:]
     if len(names) == 1:
         scenario(names[0])
-    else:  # un proceso por escenario, en paralelo
-        procs = [subprocess.Popen([sys.executable, __file__, n], stdout=subprocess.PIPE, text=True) for n in names]
-        for p in procs:
-            print(p.communicate()[0], end="")
+    else:  # en paralelo, en tandas: con demasiados a la vez el CPU no alcanza, la visión
+        # se atrasa y los acercamientos se alargan por algo que en vuelo real no pasa
+        batch = 4
+        for i in range(0, len(names), batch):
+            procs = [subprocess.Popen([sys.executable, __file__, n], stdout=subprocess.PIPE, text=True)
+                     for n in names[i:i + batch]]
+            for p in procs:
+                print(p.communicate()[0], end="", flush=True)

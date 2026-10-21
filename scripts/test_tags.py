@@ -100,6 +100,14 @@ class TagPose:
     """Posición del tag en el marco de la cámara, en cm: x derecha, y abajo, z adelante."""
     t: np.ndarray
     normal: np.ndarray  # normal del plano del tag (piso o pared)
+    R: np.ndarray | None = None  # rotación tag -> cámara
+
+    @property
+    def cam_in_tag(self) -> np.ndarray:
+        """Posición de la cámara en el marco del tag, en cm: x a la derecha del tag
+        visto de frente, y arriba, z distancia perpendicular al plano. No cambia
+        si el dron gira en su lugar."""
+        return -self.R.T @ self.t
 
     @property
     def range_cm(self) -> float:
@@ -140,7 +148,7 @@ class PoseEstimator:
         if not ok:
             return None
         R, _ = cv2.Rodrigues(rvec)
-        return TagPose(tvec.ravel(), R[:, 2])
+        return TagPose(tvec.ravel(), R[:, 2], R)
 
 
 class Confirmer:

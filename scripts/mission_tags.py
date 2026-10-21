@@ -15,9 +15,11 @@ PARO, k mata motores. Parámetros en config/mission_tags.json y config/flight.js
 
 Estados de la misión:
     ADVANCE   avanza despacio manteniendo el rumbo, buscando un tag confirmado
-    APPROACH  se acerca a stop_cm del tag: lejos le apunta girando; cerca
-              (< lateral_start_cm) se pone de frente a su pared girando y lo
-              centra deslizándose de lado (rc lr)
+    APPROACH  se acerca a stop_cm del tag. Lejos: avanza apuntándole. Cerca
+              (< lateral_start_cm): control en el marco del tag (ángulo,
+              lateral y distancia al plano) para quedar de frente y centrado.
+              Si el tag se acerca al borde de la imagen, deja de avanzar y lo
+              recentra; si se pierde, gira hacia donde se fue antes de aterrizar
     EXECUTE   ejecuta la función del tag (lista de primitivas) y vuelve a ADVANCE
 """
 from __future__ import annotations
@@ -73,8 +75,8 @@ class MissionConfig:
     approach_kp: float = 0.3
     approach_fb_max: int = 15
     approach_fb_min: int = 8
-    az_kp: float = 1.0
-    az_max: int = 25
+    az_kp: float = 1.2
+    az_max: int = 40
     az_min: int = 15
     az_tol_deg: float = 5.0
     lateral_start_cm: float = 130.0
@@ -82,6 +84,8 @@ class MissionConfig:
     lat_min: int = 12
     lat_max: int = 20
     lat_tol_cm: float = 5.0
+    az_keep_deg: float = 15.0
+    search_rate: int = 25
     align_kp: float = 1.0
     align_tol_deg: float = 3.0
     align_window: int = 9
@@ -117,7 +121,8 @@ class Vision:
     dets: list[Detection]
     poses: list[TagPose | None]
     confirmed: set[int]
-    rel_yaw: dict[int, float] = field(default_factory=dict)  # mediana por tag, ver relative_yaw
+    # por tag: medianas de (ángulo relativo, lateral en el marco del tag, distancia al plano)
+    tagframe: dict[int, tuple[float, float, float]] = field(default_factory=dict)
 
 
 def relative_yaw(pose: TagPose, pitch_deg: float) -> float:
@@ -170,7 +175,8 @@ class TagMission(Flight):
         self._alt_ref: float | None = None  # altura al entrar a ADVANCE/APPROACH
         self._ref_state = ""
         self._obj: tuple[float, float, float, float] | None = None  # (z, az, x, angulo) para la bitácora
-        self._ryaw_hist: dict[int, deque] = {}  # últimos ángulos relativos por tag
+        self._tf_hist: dict[int, deque] = {}  # últimas (ángulo, lateral, distancia) por tag
+        self._last_az = 0.0  # para buscar hacia el lado por donde se fue el tag
 
     # ------------------------------------------------ visión (hilo de la HMI)
 
@@ -181,16 +187,17 @@ class TagMission(Flight):
         dets = self.detector.detect(cv2.cvtColor(bgr, cv2.COLOR_BGR2GRAY))
         poses = [self.pose_est.estimate(d) if d.accepted else None for d in dets]
         confirmed = self.confirmer.update({d.tag_id for d in dets if d.accepted})
-        rel = {}
+        tf = {}
         for d, p in zip(dets, poses):
             if p is not None:
-                hist = self._ryaw_hist.setdefault(d.tag_id, deque(maxlen=self.m.align_window))
-                hist.append(relative_yaw(p, self.m.camera_pitch_deg))
-                rel[d.tag_id] = float(np.median(hist))
-        for tid in set(self._ryaw_hist) - set(rel):  # tag no visto: historia vieja fuera
-            del self._ryaw_hist[tid]
+                c = p.cam_in_tag
+                hist = self._tf_hist.setdefault(d.tag_id, deque(maxlen=self.m.align_window))
+                hist.append((relative_yaw(p, self.m.camera_pitch_deg), float(c[0]), float(c[2])))
+                tf[d.tag_id] = tuple(float(v) for v in np.median(np.array(hist), axis=0))
+        for tid in set(self._tf_hist) - set(tf):  # tag no visto: historia vieja fuera
+            del self._tf_hist[tid]
         with self._vis_lock:
-            self._vis = Vision(t, dets, poses, confirmed, rel)
+            self._vis = Vision(t, dets, poses, confirmed, tf)
             for d in dets:
                 if d.tag_id in self._last_seen:
                     self._last_seen[d.tag_id] = t
@@ -303,39 +310,57 @@ class TagMission(Flight):
         self._front_blocked(v, yaw, now)  # mantiene fresca la memoria del frente para después de EXECUTE
         match = [p for d, p in zip(v.dets, v.poses) if d.tag_id == self._target and p is not None]
         if not match:
+            # buscar girando hacia el lado por donde se fue, antes de rendirse
             if now - self._t_target_seen > m.lost_s:
                 return self._begin_landing("EMERGENCY_LAND", f"tag {self._target} perdido en el acercamiento")
-            return self._send_rc(0, 0, 0, 0)
+            return self._send_rc(0, 0, 0, math.copysign(m.search_rate, self._last_az))
         self._t_target_seen = now
         p = min(match, key=lambda q: q.t[2])
-        z, x, az = float(p.t[2]), float(p.t[0]), p.azimuth_deg
-        ryaw = v.rel_yaw.get(self._target, 0.0)
-        self._obj = (z, az, x, ryaw)
-        err = z - m.stop_cm
-        fb = 0 if abs(err) <= m.stop_tol_cm else with_min(m.approach_kp * err, m.approach_fb_min, m.approach_fb_max)
+        z, az = float(p.t[2]), p.azimuth_deg
+        self._last_az = az
+        ang, lat, dist = v.tagframe.get(self._target, (0.0, float(p.t[0]), z))
+        self._obj = (z, az, lat, ang)
+        ready = False
+
+        keep = abs(az) > m.az_keep_deg  # el tag se acerca al borde de la imagen
         if z > m.lateral_start_cm:
-            # lejos: apuntar al tag girando (el ángulo del plano aún es ruidoso)
+            # lejos: avanzar apuntándole (la orientación del plano aún es ruidosa);
+            # si el tag se va hacia el borde, no avanzar hasta recentrarlo
             lr = 0
+            fb = 0 if keep else with_min(m.approach_kp * (z - m.stop_cm), m.approach_fb_min, m.approach_fb_max)
             yr = 0 if abs(az) <= m.az_tol_deg else with_min(m.az_kp * az, m.az_min, m.az_max)
-            ready = False
         else:
-            # cerca: ponerse de frente al tag (paralelo a su pared) girando, y
-            # centrarlo deslizándose de lado. Así los giros del tag quedan
-            # referidos a la pista y no a cómo despegó el dron.
-            aligned = abs(ryaw) <= m.align_tol_deg
-            yr = 0 if aligned else with_min(-m.align_kp * ryaw, m.az_min, m.az_max)
-            centered = abs(x) <= m.lat_tol_cm
-            lr = 0 if centered else with_min(m.lat_kp * x, m.lat_min, m.lat_max)
-            ready = aligned and centered
+            # cerca: control en el marco del TAG. lateral y distancia no cambian
+            # cuando el dron gira, así que girar (alinear) y deslizarse (centrar)
+            # ya no se estorban. La velocidad deseada se pide en el marco del tag
+            # y se rota al marco del dron según cuánto está girado (ang).
+            aligned = abs(ang) <= m.align_tol_deg
+            centered = abs(lat) <= m.lat_tol_cm
+            at_dist = abs(dist - m.stop_cm) <= m.stop_tol_cm
+            yr = 0 if aligned else with_min(-m.align_kp * ang, m.az_min, m.az_max)
+            # girar a la derecha mueve el tag a la izquierda de la imagen (az baja):
+            # no seguir girando hacia donde el tag se saldría; el deslizamiento
+            # lateral es lo que lo deja de frente y libera el giro
+            soft = m.az_keep_deg - 3
+            if (yr > 0 and az < -soft) or (yr < 0 and az > soft):
+                yr = 0
+            if keep:  # ya está en el borde: recentrarlo, sin dejar de deslizarse
+                yr = with_min(m.az_kp * az, m.az_min, m.az_max)
+            v_right = 0 if centered else with_min(-m.lat_kp * lat, m.lat_min, m.lat_max)
+            v_fwd = 0 if at_dist else with_min(m.approach_kp * (dist - m.stop_cm), m.approach_fb_min, m.approach_fb_max)
+            a = math.radians(ang)
+            lr = v_right * math.cos(a) - v_fwd * math.sin(a)
+            fb = v_right * math.sin(a) + v_fwd * math.cos(a)
+            ready = aligned and centered and at_dist
         self._send_rc(lr, fb, 0, yr)
-        if fb == 0 and ready:
+        if ready:
             self._t_hold = self._t_hold or now
             if now - self._t_hold >= m.hold_s:
-                return self._start_execute(now, f"a {z:.0f} cm, lateral {x:+.0f} cm, angulo {ryaw:+.0f}")
+                return self._start_execute(now, f"a {dist:.0f} cm, lateral {lat:+.0f} cm, angulo {ang:+.0f}")
         else:
             self._t_hold = None
         if elapsed > m.approach_timeout_s:
-            self._start_execute(now, f"acercamiento incompleto ({p.t[2]:.0f} cm)")
+            self._start_execute(now, f"acercamiento incompleto ({z:.0f} cm, lateral {lat:+.0f}, angulo {ang:+.0f})")
 
     def _start_execute(self, now: float, how: str) -> None:
         tid = self._target
