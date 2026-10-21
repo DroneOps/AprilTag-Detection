@@ -15,7 +15,8 @@ PARO, k mata motores. Parámetros en config/mission_tags.json y config/flight.js
 
 Estados de la misión:
     ADVANCE   avanza despacio manteniendo el rumbo, buscando un tag confirmado
-    APPROACH  se acerca a stop_cm del tag y lo centra girando
+    APPROACH  se acerca a stop_cm del tag: lejos lo centra girando, cerca
+              (< lateral_start_cm) fija el rumbo y se corrige de lado (rc lr)
     EXECUTE   ejecuta la función del tag (lista de primitivas) y vuelve a ADVANCE
 """
 from __future__ import annotations
@@ -74,8 +75,13 @@ class MissionConfig:
     az_max: int = 25
     az_min: int = 15
     az_tol_deg: float = 5.0
+    lateral_start_cm: float = 130.0
+    lat_kp: float = 1.5
+    lat_min: int = 12
+    lat_max: int = 20
+    lat_tol_cm: float = 5.0
     hold_s: float = 0.5
-    approach_timeout_s: float = 15.0
+    approach_timeout_s: float = 25.0
     lost_s: float = 2.0
     reacquire_s: float = 1.5
     climb_cm: float = 30.0
@@ -116,7 +122,7 @@ def with_min(value: float, minimum: float, limit: float) -> int:
 
 class TagMission(Flight):
     AIRBORNE_STATES = AIRBORNE | MISSION_STATES
-    LOG_EXTRA = ["n_tags", "objetivo", "obj_z", "obj_az", "frente_cm"]
+    LOG_EXTRA = ["n_tags", "objetivo", "obj_z", "obj_az", "obj_x", "frente_cm"]
 
     def __init__(self, tello, cfg: FlightConfig, mcfg: MissionConfig, log_path: Path, calib: Path) -> None:
         super().__init__(tello, cfg, log_path, None)
@@ -143,7 +149,8 @@ class TagMission(Flight):
         self.executed: list[str] = []
         self._alt_ref: float | None = None  # altura al entrar a ADVANCE/APPROACH
         self._ref_state = ""
-        self._obj: tuple[float, float] | None = None  # (z, az) del objetivo, para la bitácora
+        self._obj: tuple[float, float, float] | None = None  # (z, az, x) del objetivo, para la bitácora
+        self._near_heading: float | None = None  # rumbo fijado al entrar a la fase cercana
 
     # ------------------------------------------------ visión (hilo de la HMI)
 
@@ -193,11 +200,9 @@ class TagMission(Flight):
 
     def _log_extra(self) -> list:
         v = self._vis
-        z, az = self._obj if self._obj else ("", "")
+        obj = [f"{self._obj[0]:.0f}", f"{self._obj[1]:.1f}", f"{self._obj[2]:+.0f}"] if self._obj else ["", "", ""]
         front = "" if self._front_cm is None else f"{self._front_cm:.0f}"
-        z = f"{z:.0f}" if z != "" else ""
-        az = f"{az:.1f}" if az != "" else ""
-        return [len(v.dets) if v else "", self._target or "", z, az, front]
+        return [len(v.dets) if v else "", self._target or "", *obj, front]
 
     def _extra_step(self, st: str, s: dict, now: float, elapsed: float) -> None:
         yaw = s.get("yaw", 0)
@@ -236,6 +241,7 @@ class TagMission(Flight):
         if candidates:
             fwd, tid = min(candidates)
             self._target, self._t_target_seen, self._t_hold = tid, now, None
+            self._near_heading = None
             return self._goto("APPROACH", f"tag {tid} ({TAG_FUNCTIONS[tid]}) a {fwd:.0f} cm")
         if elapsed > self.m.advance_timeout_s:
             why = "bloqueado por un tag al frente" if blocked else "sin tags al frente"
@@ -274,15 +280,29 @@ class TagMission(Flight):
             return self._send_rc(0, 0, 0, 0)
         self._t_target_seen = now
         p = min(match, key=lambda q: q.t[2])
-        err, az = float(p.t[2]) - m.stop_cm, p.azimuth_deg
-        self._obj = (float(p.t[2]), az)
+        z, x, az = float(p.t[2]), float(p.t[0]), p.azimuth_deg
+        self._obj = (z, az, x)
+        err = z - m.stop_cm
         fb = 0 if abs(err) <= m.stop_tol_cm else with_min(m.approach_kp * err, m.approach_fb_min, m.approach_fb_max)
-        yaw = 0 if abs(az) <= m.az_tol_deg else with_min(m.az_kp * az, m.az_min, m.az_max)
-        self._send_rc(0, fb, 0, yaw)
-        if fb == 0 and yaw == 0:
+        if z > m.lateral_start_cm:
+            # lejos: apuntar al tag girando
+            lr = 0
+            yr = 0 if abs(az) <= m.az_tol_deg else with_min(m.az_kp * az, m.az_min, m.az_max)
+            centered = yr == 0
+        else:
+            # cerca: un cm de deriva lateral ya son ~1°; girar no alcanza. Se fija el
+            # rumbo y se corrige de lado con lr usando el desplazamiento x del tag.
+            if self._near_heading is None:
+                self._near_heading = yaw
+            herr = wrap_deg(self._near_heading - yaw)
+            yr = 0 if abs(herr) <= 3 else clamp(self.m.heading_kp * herr, self.m.heading_max)
+            centered = abs(x) <= m.lat_tol_cm
+            lr = 0 if centered else with_min(m.lat_kp * x, m.lat_min, m.lat_max)
+        self._send_rc(lr, fb, 0, yr)
+        if fb == 0 and centered:
             self._t_hold = self._t_hold or now
             if now - self._t_hold >= m.hold_s:
-                return self._start_execute(now, f"a {p.t[2]:.0f} cm, az {az:+.0f}")
+                return self._start_execute(now, f"a {z:.0f} cm, lateral {x:+.0f} cm")
         else:
             self._t_hold = None
         if elapsed > m.approach_timeout_s:
