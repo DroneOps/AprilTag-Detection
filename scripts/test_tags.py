@@ -342,6 +342,8 @@ def run_live(args: argparse.Namespace, detector: TagDetector, pose_est: PoseEsti
     stats_seen: dict[int, int] = defaultdict(int)
     stats_rejected: dict[int, int] = defaultdict(int)
     n_frames, det_ms_total = 0, 0.0
+    gaps: list[float] = []  # ms entre frames que llegan: calidad del enlace
+    t_prev_frame: float | None = None
     t_fps, n_fps, fps = time.monotonic(), 0, 0.0
     paused, shown, frame = False, None, None
     out_dir = Path("capturas")
@@ -374,6 +376,10 @@ def run_live(args: argparse.Namespace, detector: TagDetector, pose_est: PoseEsti
                 dt = (time.perf_counter() - t0) * 1000
                 det_ms_total += dt
                 n_frames += 1
+                t_arr = time.monotonic()
+                if t_prev_frame is not None:
+                    gaps.append((t_arr - t_prev_frame) * 1000)
+                t_prev_frame = t_arr
                 for d in dets:
                     (stats_seen if d.accepted else stats_rejected)[d.tag_id] += 1
                 confirmed = confirmer.update({d.tag_id for d in dets if d.accepted})
@@ -425,6 +431,12 @@ def run_live(args: argparse.Namespace, detector: TagDetector, pose_est: PoseEsti
                          f"({100 * stats_seen[i] / n_frames:.0f} %)")
         if stats_rejected:
             lines.append(f"  IDs fuera de lista blanca (posibles falsos positivos): {dict(stats_rejected)}")
+        if len(gaps) > 60:
+            g = np.array(gaps[30:])  # el primer segundo incluye abrir la ventana
+            minutes = g.sum() / 60000
+            lines.append(f"enlace: {len(g) + 1} frames en {g.sum() / 1000:.0f} s | intervalo mediano {np.median(g):.0f} ms | "
+                         f"> 100 ms: {(g > 100).sum()} ({(g > 100).sum() / minutes:.1f}/min) | "
+                         f"> 300 ms: {(g > 300).sum()} | maximo {g.max():.0f} ms")
         summary = out_dir / f"resumen_{time.strftime('%Y%m%d_%H%M%S')}.txt"
         summary.write_text("\n".join(lines) + "\n")
         print("\n" + "\n".join(lines) + f"\nresumen guardado en {summary}")

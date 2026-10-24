@@ -12,7 +12,7 @@ Uso:
 Escenarios: circuito pausa giro360 sube_ciego perdido flip8 caja deriva
             deriva_sin_lateral ladeado ladeado_sin_alinear angulo25 angulo38
             angulo38_deriva flip_prueba flip_prueba_bateria flip4 flip4_bateria tag_alto
-            tag_bajo sin_tags
+            tag_bajo rc_calib sin_tags
 
 Corre en tiempo real (cada escenario tarda 30–70 s). Las bitácoras van a sim/logs/.
 """
@@ -33,6 +33,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 import first_flight as F  # noqa: E402
 import mission_tags as M  # noqa: E402
+import rc_calib as RC  # noqa: E402
 
 CAL = json.loads((ROOT / "config" / "camera_tello.json").read_text())
 K, D = np.array(CAL["K"]), np.array(CAL["dist"])
@@ -207,7 +208,7 @@ class SimTello:
 
 
 def run(name, tags, limit=120, events=None, drift=2.0, boxes=(), bias=(0.0, 0.0), yaw0=0.0, bat=90.0,
-        flip_test=None):
+        flip_test=None, rc_calib=False):
     cfg = F.FlightConfig.load(ROOT / "config" / "flight.json")
     mcfg = M.MissionConfig.load(ROOT / "config" / "mission_tags.json")
     cfg.hover_s, cfg.max_flight_s = mcfg.start_hover_s, mcfg.mission_max_s
@@ -217,6 +218,10 @@ def run(name, tags, limit=120, events=None, drift=2.0, boxes=(), bias=(0.0, 0.0)
     log = ROOT / "sim" / "logs" / f"{name}.csv"
     if flip_test:  # prueba de first_flight.py --flip-test, sin misión
         mis = F.Flight(sim, cfg, log, None, flip_test)
+        mis.executed, mis._turned = [], 0.0
+    elif rc_calib:  # scripts/rc_calib.py
+        cfg.hover_s, cfg.max_flight_s = 3.0, 150.0
+        mis = RC.RcCalib(sim, cfg, log, ROOT / "config" / "camera_tello.json", 8.0, ["fb", "lr", "ud"])
         mis.executed, mis._turned = [], 0.0
     else:
         mis = M.TagMission(sim, cfg, mcfg, log, ROOT / "config" / "camera_tello.json")
@@ -303,6 +308,8 @@ def scenario(sc: str) -> None:
         run(sc, [Tag(3, (0, 220, 105), south)])
     elif sc == "tag_bajo":  # tag más bajo: debe bajar sin pasar de min_alt_cm
         run(sc, [Tag(3, (0, 220, 45), south)])
+    elif sc == "rc_calib":  # simulador: zona muerta 5, ganancia 0.9 -> ~4.5 / 9 / 13.5 cm/s
+        run(sc, [Tag(1, (0, 160, 90), south)], limit=150, drift=0.5, rc_calib=True)
     elif sc == "sin_tags":
         run(sc, [], limit=60)
     else:
@@ -312,7 +319,7 @@ def scenario(sc: str) -> None:
 ALL = ["circuito", "pausa", "giro360", "sube_ciego", "perdido", "flip8", "caja",
        "deriva", "deriva_sin_lateral", "ladeado", "ladeado_sin_alinear",
        "angulo25", "angulo38", "angulo38_deriva", "flip_prueba", "flip_prueba_bateria",
-       "flip4", "flip4_bateria", "tag_alto", "tag_bajo", "sin_tags"]
+       "flip4", "flip4_bateria", "tag_alto", "tag_bajo", "rc_calib", "sin_tags"]
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
