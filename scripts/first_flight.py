@@ -39,7 +39,7 @@ import numpy as np
 from test_tags import hud
 
 ROOT = Path(__file__).resolve().parent.parent
-AIRBORNE = {"TAKEOFF", "HOVER", "YAW_TEST", "FLIP_TEST"}
+AIRBORNE = {"TAKEOFF", "HOVER", "YAW_TEST", "FLIP_CLIMB", "FLIP_TEST", "FLIP_RECOVER"}
 LANDING = {"LANDING", "EMERGENCY_LAND"}
 TERMINAL = {"DONE", "KILLED", "ABORTED"}
 
@@ -70,7 +70,16 @@ class FlightConfig:
     yaw_tol_deg: float = 3.0
     yaw_timeout_s: float = 10.0
     flip_min_battery: int = 50  # el Tello rechaza flips con poca carga
-    flip_wait_s: float = 3.0  # sin rc mientras voltea y se estabiliza
+    flip_min_alt_cm: float = 120.0  # tras un flip el Tello baja 30–70 cm: voltear con margen
+    flip_min_s: float = 1.0  # mínimo antes de dar la vuelta por terminada
+    flip_wait_s: float = 3.0  # máximo sin rc esperando que termine la vuelta
+    flip_settle_deg: float = 15.0  # nivelado de nuevo = vuelta terminada
+    alt_kp: float = 1.0  # control de altura (subir antes del flip, recuperar después)
+    alt_min: int = 15
+    alt_max: int = 30
+    alt_tol_cm: float = 5.0
+    alt_timeout_s: float = 8.0
+    floor_alt_cm: float = 3.0  # en el aire pero con esta altura por 1 s = en el piso
 
     @classmethod
     def load(cls, path: Path) -> FlightConfig:
@@ -121,6 +130,13 @@ def clamp(v: float, lim: float) -> int:
     return int(max(-lim, min(lim, v)))
 
 
+def with_min(value: float, minimum: float, limit: float) -> int:
+    """P con piso: el Tello no se mueve con rc pequeños (zona muerta)."""
+    if value == 0:
+        return 0
+    return clamp(math.copysign(max(abs(value), minimum), value), limit)
+
+
 class Flight:
     """Máquina de estados del vuelo. Corre en su propio hilo (run).
 
@@ -142,6 +158,9 @@ class Flight:
         self._flip_done = False
         self._flip_peak = 0.0
         self._flip_alt_min = math.inf
+        self._flip_ref_alt = 0.0  # altura a la que se regresa después del flip
+        self._t_level: float | None = None
+        self._t_floor: float | None = None
         self.state = "IDLE"
         self.reason = "esperando despegue (t)"
         self.rc = (0, 0, 0, 0)
@@ -289,6 +308,12 @@ class Flight:
                 return self._begin_landing("EMERGENCY_LAND", f"temperatura {temp} C")
             if self.video_age > cfg.video_land_s:
                 return self._begin_landing("EMERGENCY_LAND", f"sin video {self.video_age:.1f} s")
+            if st != "TAKEOFF" and 0 < s.get("tof", 0) < 1000 and h <= cfg.floor_alt_cm:
+                self._t_floor = self._t_floor or now  # p. ej. se hundió tras un flip
+                if now - self._t_floor > 1.0:
+                    return self._begin_landing("EMERGENCY_LAND", "dron en el piso sin pedirlo")
+            else:
+                self._t_floor = None
             if self._t_air is not None and now - self._t_air > cfg.max_flight_s:
                 return self._begin_landing("EMERGENCY_LAND", "tiempo maximo de vuelo")
 
@@ -335,11 +360,28 @@ class Flight:
                 self._yaw_done = True
                 self._goto("HOVER", f"giro NO completado en {cfg.yaw_timeout_s:.0f} s (error {err:+.0f})")
 
+        elif st == "FLIP_CLIMB":
+            ud, on_goal = self._alt_rc(max(cfg.flip_min_alt_cm, self._flip_ref_alt), s)
+            self._send_rc(0, 0, ud, 0)
+            if self._held_alt(on_goal, now):
+                self._start_flip(self.flip_test)
+                self._goto("FLIP_TEST", f"flip {self.flip_test} a {h} cm")
+            elif elapsed > cfg.alt_timeout_s:
+                self._flip_done = True
+                self._goto("HOVER", f"flip omitido: no alcanzo {cfg.flip_min_alt_cm:.0f} cm (esta a {h})")
+
         elif st == "FLIP_TEST":
             self._flip_progress(s)
-            if elapsed > cfg.flip_wait_s:
+            if self._flip_finished(s, now, elapsed):
+                self._goto("FLIP_RECOVER", self._flip_result())
+
+        elif st == "FLIP_RECOVER":
+            # el Tello se hunde tras el flip: corregir en cuanto termina la vuelta
+            ud, on_goal = self._alt_rc(self._flip_ref_alt, s)
+            self._send_rc(0, 0, ud, 0)
+            if self._held_alt(on_goal, now) or elapsed > cfg.alt_timeout_s:
                 self._flip_done = True
-                self._goto("HOVER", self._flip_result())
+                self._goto("HOVER", f"altura recuperada: {h} cm ({self.reason})")
 
         elif st in LANDING:
             if h <= cfg.landed_height_cm:
@@ -373,19 +415,48 @@ class Flight:
             if bat < self.cfg.flip_min_battery:
                 self._begin_landing("LANDING", f"flip no permitido: bateria {bat}% < {self.cfg.flip_min_battery}%")
             else:
-                self._start_flip(self.flip_test)
-                self._goto("FLIP_TEST", f"flip {self.flip_test}")
+                self._flip_ref_alt = altitude(self.tel.snapshot()[0])
+                self._t_on_target = None
+                self._goto("FLIP_CLIMB", f"subiendo a {self.cfg.flip_min_alt_cm:.0f} cm para el flip")
         else:
             self._begin_landing("LANDING", "fin de la prueba")
 
     # ------------------------------------------------ flip verificado
+
+    def _alt_rc(self, target: float, s: dict) -> tuple[int, bool]:
+        """rc vertical para llegar a una altura (cm sobre el piso, por tof)."""
+        c = self.cfg
+        err = target - altitude(s)
+        on_goal = abs(err) <= c.alt_tol_cm
+        return (0 if on_goal else with_min(c.alt_kp * err, c.alt_min, c.alt_max)), on_goal
+
+    def _held_alt(self, on_goal: bool, now: float) -> bool:
+        """En la altura objetivo durante 0.5 s seguidos."""
+        if not on_goal:
+            self._t_on_target = None
+            return False
+        self._t_on_target = self._t_on_target or now
+        return now - self._t_on_target >= 0.5
 
     def _start_flip(self, direction: str) -> None:
         """Manda el flip. Se vacían las respuestas viejas para poder leer la suya."""
         self._send_rc(0, 0, 0, 0)
         self.t.get_own_udp_object()["responses"].clear()
         self.t.send_command_without_return(f"flip {direction}")
-        self._flip_peak, self._flip_alt_min = 0.0, math.inf
+        self._flip_peak, self._flip_alt_min, self._t_level = 0.0, math.inf, None
+
+    def _flip_finished(self, s: dict, now: float, elapsed: float) -> bool:
+        """La vuelta terminó: ya hubo inclinación grande y volvió a nivel 0.3 s.
+        Si nunca se inclinó (flip rechazado), se espera hasta flip_wait_s."""
+        c = self.cfg
+        level = abs(s.get("pitch", 0)) <= c.flip_settle_deg and abs(s.get("roll", 0)) <= c.flip_settle_deg
+        if self._flip_peak >= 60 and level and elapsed >= c.flip_min_s:
+            self._t_level = self._t_level or now
+            if now - self._t_level >= 0.3:
+                return True
+        else:
+            self._t_level = None
+        return elapsed > c.flip_wait_s
 
     def _flip_progress(self, s: dict) -> None:
         """Mientras voltea: sin rc; se registra la inclinación máxima y la altura mínima."""
@@ -507,6 +578,7 @@ def run_app(flight: Flight, tello, reader, record: str | None, title: str) -> No
     hmi = Hmi(flight, title)
     writer = None
     last_frame, t_frame = None, -math.inf
+    t_start = time.monotonic()
     try:
         while True:
             rgb = reader.frame
@@ -525,6 +597,11 @@ def run_app(flight: Flight, tello, reader, record: str | None, title: str) -> No
             if hmi.closed():
                 if flight.airborne:
                     flight.request_land("PARO: ventana cerrada")
+                break
+            # en tierra y sin telemetría ni video: el Tello se apagó; no dejar la ventana abierta
+            if (not flight.airborne and time.monotonic() - t_start > 15
+                    and flight.tel.snapshot()[1] > 15 and flight.video_age > 15):
+                print("[hmi] el dron no responde desde hace 15 s (¿apagado?): cerrando")
                 break
     except KeyboardInterrupt:
         flight.request_land("PARO: Ctrl+C")

@@ -14,6 +14,7 @@ Controles iguales a first_flight.py: t despega, ESPACIO / clic en la barra =
 PARO, k mata motores. Parámetros en config/mission_tags.json y config/flight.json.
 
 Estados de la misión:
+    CRUISE    tras despegar, sube o baja a cruise_alt_cm
     ADVANCE   avanza despacio manteniendo el rumbo, buscando un tag confirmado
     APPROACH  se acerca a stop_cm del tag. Lejos: avanza apuntándole. Cerca
               (< lateral_start_cm): control en el marco del tag (ángulo,
@@ -36,10 +37,10 @@ from pathlib import Path
 import cv2
 import numpy as np
 
-from first_flight import AIRBORNE, ROOT, Flight, FlightConfig, altitude, clamp, connect, run_app, wrap_deg
+from first_flight import AIRBORNE, ROOT, Flight, FlightConfig, altitude, clamp, connect, run_app, with_min, wrap_deg
 from test_tags import DEFAULT_CALIB, TAG_FUNCTIONS, Confirmer, Detection, PoseEstimator, TagDetector, TagPose, draw
 
-MISSION_STATES = {"ADVANCE", "APPROACH", "EXECUTE"}
+MISSION_STATES = {"CRUISE", "ADVANCE", "APPROACH", "EXECUTE"}
 
 # Función de cada tag como primitivas. Giro + = a la derecha del dron (horario visto desde arriba).
 ACTIONS: dict[int, list[tuple]] = {
@@ -100,10 +101,14 @@ class MissionConfig:
     climb_min: int = 15
     climb_tol_cm: float = 5.0
     climb_timeout_s: float = 6.0
-    min_tof_cm: float = 30.0
+    min_alt_cm: float = 30.0  # nunca bajar de aquí (tags 6, seguimiento vertical)
+    max_alt_cm: float = 180.0
+    cruise_alt_cm: float = 80.0  # tras despegar (el despegue deja 50–75 cm según el día)
+    vert_kp: float = 0.8  # seguimiento vertical: cámara a la altura del tag
+    vert_min: int = 15
+    vert_max: int = 25
+    vert_tol_cm: float = 8.0
     flip_dir: str = "auto"  # auto = lejos del tag; o f, b, l, r fijo
-    flip_min_battery: int = 50
-    flip_wait_s: float = 3.0
     wait_s: float = 5.0
 
     @classmethod
@@ -138,16 +143,9 @@ def relative_yaw(pose: TagPose, pitch_deg: float) -> float:
     return math.degrees(math.atan2(nx, -z_level))
 
 
-def with_min(value: float, minimum: float, limit: float) -> int:
-    """P con piso: el Tello no se mueve con rc pequeños (zona muerta)."""
-    if value == 0:
-        return 0
-    return clamp(math.copysign(max(abs(value), minimum), value), limit)
-
-
 class TagMission(Flight):
     AIRBORNE_STATES = AIRBORNE | MISSION_STATES
-    LOG_EXTRA = ["n_tags", "objetivo", "obj_z", "obj_az", "obj_x", "obj_angulo", "frente_cm"]
+    LOG_EXTRA = ["n_tags", "objetivo", "obj_z", "obj_az", "obj_x", "obj_angulo", "obj_dz", "frente_cm"]
 
     def __init__(self, tello, cfg: FlightConfig, mcfg: MissionConfig, log_path: Path, calib: Path) -> None:
         super().__init__(tello, cfg, log_path, None)
@@ -179,6 +177,7 @@ class TagMission(Flight):
         self._exec_yaw0 = 0.0
         self._tf_hist: dict[int, deque] = {}  # últimas (ángulo, lateral, distancia) por tag
         self._last_az = 0.0  # para buscar hacia el lado por donde se fue el tag
+        self._last_dz = 0.0  # ... y hacia arriba si se fue por arriba
 
     # ------------------------------------------------ visión (hilo de la HMI)
 
@@ -228,22 +227,24 @@ class TagMission(Flight):
         if self.executed:
             lines.append("ejecutados: " + ", ".join(self.executed[-6:]))
         bat = self.tel.snapshot()[0].get("bat", 0)
-        if 0 < bat < self.m.flip_min_battery:
-            lines.append(f"AVISO: bateria {bat}% < {self.m.flip_min_battery}%: los flips se omitiran")
-        elif 0 < bat < self.m.flip_min_battery + 15:
-            lines.append(f"aviso: bateria {bat}%, cerca del limite para flips ({self.m.flip_min_battery}%)")
+        fmin = self.cfg.flip_min_battery
+        if 0 < bat < fmin:
+            lines.append(f"AVISO: bateria {bat}% < {fmin}%: los flips se omitiran")
+        elif 0 < bat < fmin + 15:
+            lines.append(f"aviso: bateria {bat}%, cerca del limite para flips ({fmin}%)")
         return lines
 
     # ------------------------------------------------ misión (hilo de control)
 
     def _hover_done(self, yaw: float) -> None:
         self._heading = yaw
-        self._goto("ADVANCE", "avanzando, buscando tag")
+        self._t_hold = None
+        self._goto("CRUISE", f"a altura de crucero ({self.m.cruise_alt_cm:.0f} cm)")
 
     def _log_extra(self) -> list:
         v = self._vis
         o = self._obj
-        obj = [f"{o[0]:.0f}", f"{o[1]:.1f}", f"{o[2]:+.0f}", f"{o[3]:+.1f}"] if o else ["", "", "", ""]
+        obj = [f"{o[0]:.0f}", f"{o[1]:.1f}", f"{o[2]:+.0f}", f"{o[3]:+.1f}", f"{o[4]:+.0f}"] if o else [""] * 5
         front = "" if self._front_cm is None else f"{self._front_cm:.0f}"
         return [len(v.dets) if v else "", self._target or "", *obj, front]
 
@@ -255,17 +256,23 @@ class TagMission(Flight):
         # algo bajo el dron (caja, obstáculo): el tof baja sin que pidamos bajar
         if st in ("ADVANCE", "APPROACH"):
             alt = altitude(s)
-            if self._ref_state != st or self._alt_ref is None:
+            if self._ref_state != st or self._alt_ref is None or self.rc[2] != 0:
+                # sin referencia, o subiendo/bajando a propósito: la altura de ahora es la buena
                 self._alt_ref, self._ref_state = alt, st
             elif alt < self._alt_ref - self.m.obstacle_drop_cm:
                 return self._begin_landing("EMERGENCY_LAND",
                                            f"obstaculo debajo: altura {alt} cm (era {self._alt_ref:.0f})")
         else:
             self._ref_state = st
-        if st == "ADVANCE":
+        if st == "CRUISE":
+            ud, on_goal = self._climb_rc(self.m.cruise_alt_cm, s)
+            self._send_rc(0, 0, ud, 0)
+            if self._held(on_goal, now, 0.5) or elapsed > self.m.climb_timeout_s:
+                self._goto("ADVANCE", f"avanzando a {altitude(s)} cm, buscando tag")
+        elif st == "ADVANCE":
             self._advance(yaw, now, elapsed)
         elif st == "APPROACH":
-            self._approach(yaw, now, elapsed)
+            self._approach(yaw, altitude(s), now, elapsed)
         elif st == "EXECUTE":
             self._execute(s, now)
 
@@ -290,7 +297,16 @@ class TagMission(Flight):
             return self._begin_landing("LANDING", f"{why} por {self.m.advance_timeout_s:.0f} s: fin")
         err = wrap_deg(self._heading - yaw)
         rate = 0 if abs(err) <= 3 else with_min(self.m.heading_kp * err, self.m.az_min, self.m.heading_max)
-        self._send_rc(0, 0 if blocked else self.m.advance_fb, 0, rate)
+        fb = self.m.advance_fb
+        if blocked:
+            # con el tag a la vista, sostener la distancia (retroceder si la deriva lo
+            # acerca); a ciegas, solo no avanzar
+            fwds = [float(p.t[2]) for p in v.poses if p is not None]
+            err = (min(fwds) - self.m.min_front_cm - 10) if fwds else 0
+            fb = 0 if not fwds or abs(err) <= 5 else with_min(self.m.approach_kp * err, self.m.approach_fb_min,
+                                                               self.m.approach_fb_max)
+            fb = min(fb, 0)  # bloqueado: nunca hacia adelante
+        self._send_rc(0, fb, 0, rate)
 
     def _front_blocked(self, v: Vision, yaw: float, now: float) -> bool:
         """¿Hay un tag (pared) a menos de min_front_cm al frente?
@@ -310,7 +326,15 @@ class TagMission(Flight):
         self._t_front = now
         return self._front_cm is not None and self._front_cm < self.m.min_front_cm
 
-    def _approach(self, yaw: float, now: float, elapsed: float) -> None:
+    def _climb_rc(self, target: float, s: dict) -> tuple[int, bool]:
+        """rc vertical hacia una altura, con los límites de la misión."""
+        m = self.m
+        target = min(max(target, m.min_alt_cm), m.max_alt_cm)
+        err = target - altitude(s)
+        on_goal = abs(err) <= m.climb_tol_cm
+        return (0 if on_goal else with_min(m.climb_kp * err, m.climb_min, m.climb_max)), on_goal
+
+    def _approach(self, yaw: float, alt: float, now: float, elapsed: float) -> None:
         m, v = self.m, self._vision(now)
         if v is None:
             return self._send_rc(0, 0, 0, 0)
@@ -320,13 +344,23 @@ class TagMission(Flight):
             # buscar girando hacia el lado por donde se fue, antes de rendirse
             if now - self._t_target_seen > m.lost_s:
                 return self._begin_landing("EMERGENCY_LAND", f"tag {self._target} perdido en el acercamiento")
-            return self._send_rc(0, 0, 0, math.copysign(m.search_rate, self._last_az))
+            # si se fue por arriba (tag más alto que la cámara), también subir
+            ud = m.vert_min if self._last_dz > m.vert_tol_cm and alt < m.max_alt_cm else 0
+            return self._send_rc(0, 0, ud, math.copysign(m.search_rate, self._last_az))
         self._t_target_seen = now
         p = min(match, key=lambda q: q.t[2])
         z, az = float(p.t[2]), p.azimuth_deg
         self._last_az = az
         ang, lat, dist = v.tagframe.get(self._target, (0.0, float(p.t[0]), z))
-        self._obj = (z, az, lat, ang)
+        # altura del tag respecto a la cámara (marco nivelado: la cámara mira 11° abajo).
+        # Un tag más alto que el vuelo se sale por arriba de la imagen al acercarse.
+        pt = math.radians(m.camera_pitch_deg)
+        dz = -(float(p.t[1]) * math.cos(pt) + float(p.t[2]) * math.sin(pt))
+        self._last_dz = dz
+        ud = 0 if abs(dz) <= m.vert_tol_cm else with_min(m.vert_kp * dz, m.vert_min, m.vert_max)
+        if (ud < 0 and alt <= m.min_alt_cm) or (ud > 0 and alt >= m.max_alt_cm):
+            ud = 0  # límites de altura
+        self._obj = (z, az, lat, ang, dz)
         ready = False
 
         keep = abs(az) > m.az_keep_deg  # el tag se acerca al borde de la imagen
@@ -358,8 +392,8 @@ class TagMission(Flight):
             a = math.radians(ang)
             lr = v_right * math.cos(a) - v_fwd * math.sin(a)
             fb = v_right * math.sin(a) + v_fwd * math.cos(a)
-            ready = aligned and centered and at_dist
-        self._send_rc(lr, fb, 0, yr)
+            ready = aligned and centered and at_dist and ud == 0
+        self._send_rc(lr, fb, ud, yr)
         if ready:
             self._t_hold = self._t_hold or now
             if now - self._t_hold >= m.hold_s:
@@ -390,23 +424,25 @@ class TagMission(Flight):
             kind = prim[0]
             if kind == "land":
                 return self._begin_landing("LANDING", f"tag {self._target}: aterrizar")
-            if kind == "flip" and s.get("bat", 0) < self.m.flip_min_battery:
-                note = f"flip omitido: bateria {s.get('bat')}% < {self.m.flip_min_battery}%"
+            if kind == "flip" and s.get("bat", 0) < self.cfg.flip_min_battery:
+                note = f"flip omitido: bateria {s.get('bat')}% < {self.cfg.flip_min_battery}%"
                 self.executed[-1] += f" ({note})"  # visible en la HMI aunque el estado cambie enseguida
                 print(f"[vuelo] {note}")
                 continue
+            if kind == "climb":  # tags 5 y 6: ±climb_cm desde la altura actual
+                prim = ("alt_to", altitude(s) + prim[1] * self.m.climb_cm)
+            elif kind == "flip":
+                # el Tello se hunde 30–70 cm tras un flip: subir antes, voltear, y
+                # regresar a la altura de ahora en cuanto termine la vuelta
+                ref = altitude(s)
+                self._plan[0:0] = [("flip_go",), ("alt_to", ref)]
+                prim = ("alt_to", max(self.cfg.flip_min_alt_cm, ref), "para_flip")
+            kind = prim[0]
             self._prim, self._prim_start, self._t_hold = prim, now, None
             if kind == "yaw":
                 self._prim_goal = self._turned + prim[1]
-            elif kind == "climb":
-                goal = s.get("tof", 0) + prim[1] * self.m.climb_cm  # tof crudo, igual que en _execute
-                self._prim_goal = max(goal, self.m.min_tof_cm)
-            elif kind == "flip":
-                # después del flip, regresar a la altura de antes (si bajó)
-                self._plan.insert(0, ("restore", s.get("tof", 0)))
+            elif kind == "flip_go":
                 self._start_flip(self._flip_direction(s.get("yaw", 0)))
-            elif kind == "restore":
-                self._prim_goal = prim[1]
             return
         # sin primitivas pendientes: seguir hacia el frente con el rumbo de salida
         self._heading = self._exit_heading
@@ -432,15 +468,22 @@ class TagMission(Flight):
                 rate = 0
             self._send_rc(0, 0, 0, rate)
             done = self._held(on_goal, now, 0.3) or el > cfg.yaw_timeout_s * max(1.0, abs(self._prim[1]) / 180)
-        elif kind in ("climb", "restore"):
-            err = self._prim_goal - s.get("tof", self._prim_goal)
+        elif kind == "alt_to":
+            # el flip necesita más tope que los límites normales de la misión
+            target = self._prim[1] if len(self._prim) > 2 else min(max(self._prim[1], m.min_alt_cm), m.max_alt_cm)
+            err = target - altitude(s)
             on_goal = abs(err) <= m.climb_tol_cm
             ud = 0 if on_goal else with_min(m.climb_kp * err, m.climb_min, m.climb_max)
             self._send_rc(0, 0, ud, 0)
             done = self._held(on_goal, now, 0.5) or el > m.climb_timeout_s
-        elif kind == "flip":
+            if done and not on_goal and len(self._prim) > 2 and self._plan and self._plan[0][0] == "flip_go":
+                self._plan.pop(0)  # no se alcanzó la altura segura: sin flip
+                note = f"flip omitido: no alcanzo {target:.0f} cm (esta a {altitude(s)})"
+                self.executed[-1] += f" ({note})"
+                print(f"[vuelo] {note}")
+        elif kind == "flip_go":
             self._flip_progress(s)  # sin rc mientras voltea
-            done = el > m.flip_wait_s
+            done = self._flip_finished(s, now, el)  # en cuanto termina la vuelta, a recuperar altura
             if done:
                 result = self._flip_result()
                 self.executed[-1] += " (" + result.split(":")[0] + ")"

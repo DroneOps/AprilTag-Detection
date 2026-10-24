@@ -41,9 +41,13 @@
   "climb_min": 15,
   "climb_tol_cm": 5,
   "climb_timeout_s": 6,
-  "min_tof_cm": 30,
+  "min_alt_cm": 30,
+  "max_alt_cm": 180,
+  "cruise_alt_cm": 80,
+  "vert_kp": 0.8,
+  "vert_min": 15,
+  "vert_max": 25,
+  "vert_tol_cm": 8,
   "flip_dir": "auto",
-  "flip_min_battery": 50,
-  "flip_wait_s": 3.0,
   "wait_s": 5.0
 }

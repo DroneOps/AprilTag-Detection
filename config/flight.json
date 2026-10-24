@@ -23,5 +23,14 @@
   "yaw_tol_deg": 3,
   "yaw_timeout_s": 10,
   "flip_min_battery": 50,
-  "flip_wait_s": 3.0
+  "flip_wait_s": 3.0,
+  "flip_min_alt_cm": 120,
+  "flip_min_s": 1.0,
+  "flip_settle_deg": 15,
+  "alt_kp": 1.0,
+  "alt_min": 15,
+  "alt_max": 30,
+  "alt_tol_cm": 5,
+  "alt_timeout_s": 8,
+  "floor_alt_cm": 3
 }

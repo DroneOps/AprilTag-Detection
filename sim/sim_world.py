@@ -11,7 +11,8 @@ Uso:
     python sim/sim_world.py todos             # todos, en paralelo
 Escenarios: circuito pausa giro360 sube_ciego perdido flip8 caja deriva
             deriva_sin_lateral ladeado ladeado_sin_alinear angulo25 angulo38
-            angulo38_deriva flip_prueba flip_prueba_bateria flip4 flip4_bateria sin_tags
+            angulo38_deriva flip_prueba flip_prueba_bateria flip4 flip4_bateria tag_alto
+            tag_bajo sin_tags
 
 Corre en tiempo real (cada escenario tarda 30–70 s). Las bitácoras van a sim/logs/.
 """
@@ -72,7 +73,8 @@ class SimTello:
         self.yaw_rate = 0.0
         self.mode, self.rc, self.sent, self.is_flying = "ground", (0, 0, 0, 0), [], False
         self.t_flip, self.flips, self.crash, self.min_wall, self.bat = -1e9, 0, None, 1e9, bat
-        self.flip_dir, self.pitch = "b", 0
+        self.flip_dir, self.pitch, self.sink_end, self.tof_garbage = "b", 0, -1e9, None
+        self.min_z_after_takeoff = 1e9
         self.rng, self.drift, self.wind = np.random.default_rng(seed), drift, np.zeros(2)
         self.t0 = time.monotonic()
         self.lock = threading.Lock()
@@ -84,26 +86,32 @@ class SimTello:
         while not self._stop.wait(dt):
             with self.lock:
                 now = time.monotonic()
-                if self.mode == "takeoff":
-                    self.z = min(80.0, self.z + 30 * dt)
-                    if self.z >= 80:
+                if self.mode == "takeoff":  # el despegue real deja 50–75 cm
+                    self.z = min(65.0, self.z + 30 * dt)
+                    if self.z >= 65:
                         self.mode = "air"
                 elif self.mode == "land":
                     self.z = max(0.0, self.z - 40 * dt)
                     if self.z <= 0:
                         self.mode = "ground"
                 elif self.mode == "air" and now - self.t_flip < 1.0:
-                    # flip: una vuelta en ~1 s, baja ~20 cm, se corre ~30 cm y queda un poco girado
+                    # flip: una vuelta en ~1 s, baja ~20 cm, se corre ~30 cm y queda un poco girado;
+                    # el tof da basura mientras voltea (real: 154, 454, 567)
                     frac = (now - self.t_flip) / 1.0
                     self.pitch = int(F.wrap_deg(360 * frac))
+                    self.tof_garbage = int(self.rng.uniform(150, 600)) if 0.2 < frac < 0.8 else None
                     self.z = max(0.0, self.z - 20 * dt)
                     ps = math.radians(self.yaw)
                     sgn = {"f": 1, "b": -1}.get(self.flip_dir, 0)
                     self.x += sgn * 30 * math.sin(ps) * dt
                     self.y += sgn * 30 * math.cos(ps) * dt
                     self.yaw = F.wrap_deg(self.yaw + 6 * dt)
-                elif self.mode == "air" and now - self.t_flip < 1.5:
-                    self.pitch = 0  # se estabiliza tras el flip; ignora rc
+                elif self.mode == "air" and now < self.sink_end and (now - self.t_flip < 1.3 or self.rc[2] <= 0):
+                    # tras el flip el Tello se hunde (real: 30 cm, y hasta el piso si nadie corrige)
+                    self.pitch, self.tof_garbage = 0, None
+                    self.z = max(0.0, self.z - 45 * dt)
+                    if self.z <= 0:
+                        self.mode = "ground"  # tocó el piso: el Tello apaga motores
                 elif self.mode == "air":
                     lr, fb, ud, yr = self.rc
                     want = 0.9 * np.array([dead(fb), dead(lr), dead(ud)])
@@ -117,6 +125,7 @@ class SimTello:
                     self.y += (self.v[0] * math.cos(ps) - self.v[1] * math.sin(ps) + self.wind[1] + self.bias[1]) * dt
                     self.z = max(0.0, self.z + self.v[2] * dt)
                     self._check_walls()
+                    self.min_z_after_takeoff = min(self.min_z_after_takeoff, self.z)
                 k += 1
                 if k % 5 == 0:  # estado UDP a 10 Hz
                     self.bat -= 0.01
@@ -124,6 +133,8 @@ class SimTello:
                                  if x0 <= self.x <= x1 and y0 <= self.y <= y1] or [0])
                     h_bad = self.z * 0.6 - 3 * (now - self.t0)  # 'h' que deriva, como el real
                     tof = int(self.z - floor + 10 + self.rng.normal(0, 2)) if self.z > 0 else 10
+                    if self.tof_garbage is not None:
+                        tof = self.tof_garbage
                     self.udp["state"] = {"h": int(round(h_bad / 10) * 10), "tof": max(10, tof),
                                          "bat": int(self.bat), "yaw": int(round(self.yaw)),
                                          "temph": 65, "pitch": self.pitch, "roll": 0, "vgx": 0, "vgy": 0, "vgz": 0}
@@ -160,6 +171,7 @@ class SimTello:
                     self.udp["responses"].append(b"error")
                 else:
                     self.t_flip, self.flips, self.flip_dir = time.monotonic(), self.flips + 1, c.split()[-1]
+                    self.sink_end = self.t_flip + 1.0 + self.rng.uniform(0.6, 2.5)
                     self.udp["responses"].append(b"ok")
 
     def render(self) -> np.ndarray:
@@ -236,7 +248,8 @@ def run(name, tags, limit=120, events=None, drift=2.0, boxes=(), bias=(0.0, 0.0)
     mis.stop()
     sim._stop.set()
     print(f"===== {name}: final {mis.state} | choque: {sim.crash} | min pared {sim.min_wall:.0f} cm | "
-          f"ejecutados: {mis.executed} | giro acumulado {mis._turned:.0f} | flips {sim.flips}")
+          f"ejecutados: {mis.executed} | giro acumulado {mis._turned:.0f} | flips {sim.flips} | "
+          f"altura min en vuelo {sim.min_z_after_takeoff:.0f} cm")
     for line in log:
         print("   ", line)
 
@@ -286,6 +299,10 @@ def scenario(sc: str) -> None:
         run(sc, [Tag(4, (0, 200, 85), south)])
     elif sc == "flip4_bateria":  # misión con tag 4 y 45 %: flip omitido y visible
         run(sc, [Tag(4, (0, 200, 85), south)], bat=45.0)
+    elif sc == "tag_alto":  # tag 25 cm más alto que el crucero (como la prueba real): subir y no perderlo
+        run(sc, [Tag(3, (0, 220, 105), south)])
+    elif sc == "tag_bajo":  # tag más bajo: debe bajar sin pasar de min_alt_cm
+        run(sc, [Tag(3, (0, 220, 45), south)])
     elif sc == "sin_tags":
         run(sc, [], limit=60)
     else:
@@ -295,7 +312,7 @@ def scenario(sc: str) -> None:
 ALL = ["circuito", "pausa", "giro360", "sube_ciego", "perdido", "flip8", "caja",
        "deriva", "deriva_sin_lateral", "ladeado", "ladeado_sin_alinear",
        "angulo25", "angulo38", "angulo38_deriva", "flip_prueba", "flip_prueba_bateria",
-       "flip4", "flip4_bateria", "sin_tags"]
+       "flip4", "flip4_bateria", "tag_alto", "tag_bajo", "sin_tags"]
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
