@@ -14,7 +14,8 @@ Uso:
 Escenarios: circuito pausa giro360 sube_ciego perdido flip8 caja deriva
             deriva_sin_lateral ladeado ladeado_sin_alinear angulo25 angulo38
             angulo38_deriva flip_prueba flip_prueba_bateria flip4 flip4_bateria tag_alto
-            tag_bajo rc_calib sin_tags
+            tag_bajo rc_calib sin_tags espejo_uno espejo_circuito espejo_quieto
+            espejo_deriva espejo_flip espejo_inclinado espejo_inclinado_sin_config
 
 Corre en tiempo real (cada escenario tarda 30–70 s). Las bitácoras van a sim/logs/.
 """
@@ -36,6 +37,8 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import first_flight as F  # noqa: E402
 import mission_tags as M  # noqa: E402
 import rc_calib as RC  # noqa: E402
+import mision_espejo as ME  # noqa: E402
+import test_tags as TT  # noqa: E402
 
 CAL = json.loads((ROOT / "config" / "camera_tello.json").read_text())
 K, D = np.array(CAL["K"]), np.array(CAL["dist"])
@@ -45,13 +48,14 @@ OVER: dict = {}  # cambios a MissionConfig por escenario
 
 
 class Tag:
-    """Tag vertical en una pared. facing = hacia dónde mira (hacia el dron)."""
+    """Tag en una pared (facing = hacia dónde mira) o en el piso (facing = (0,0,1) y
+    top = hacia dónde apunta su borde de arriba, p. ej. (0,1,0) = norte)."""
 
-    def __init__(self, tag_id: int, pos, facing, size: float = 8.0) -> None:
+    def __init__(self, tag_id: int, pos, facing, size: float = 8.0, top=(0, 0, 1)) -> None:
         self.id, self.c = tag_id, np.array(pos, float)
         self.n = np.array(facing, float) / np.linalg.norm(facing)
-        self.right = np.cross([0, 0, 1], self.n)
-        up = np.array([0, 0, 1.0])
+        up = np.array(top, float) / np.linalg.norm(top)
+        self.right = np.cross(up, self.n)
         a = size * 9 / 7 / 2  # medio lado exterior, con 1 módulo de borde blanco
         self.corners = [self.c - a * self.right + a * up, self.c + a * self.right + a * up,
                         self.c + a * self.right - a * up, self.c - a * self.right - a * up]
@@ -67,7 +71,14 @@ def dead(rc: float, db: float = 5) -> float:
 class SimTello:
     """Imita la interfaz de djitellopy que usa la misión."""
 
-    def __init__(self, tags, drift=2.0, seed=0, boxes=(), bias=(0.0, 0.0), yaw0=0.0, bat=90.0) -> None:
+    def __init__(self, tags, drift=2.0, seed=0, boxes=(), bias=(0.0, 0.0), yaw0=0.0, bat=90.0,
+                 mirror=None, mirror_tilt=0.0) -> None:
+        # mirror: None = cámara al frente; "v" = espejo hacia abajo (la imagen sale espejada,
+        # como la real). mirror_tilt: grados que la vista se inclina hacia adelante.
+        self.mirror, self.mirror_tilt = mirror, math.radians(mirror_tilt)
+        if mirror:
+            pm = TT.PoseEstimator(ROOT / "config" / "camera_tello.json", 8.0).mirrored(mirror)
+            self.Km, self.Dm = pm.K, pm.dist
         self.tags, self.boxes, self.bias = tags, boxes, np.array(bias, float)
         self.udp = {"state": {}, "responses": []}
         self.x = self.y = self.z = 0.0
@@ -182,11 +193,19 @@ class SimTello:
     def render(self) -> np.ndarray:
         with self.lock:
             O, ps = np.array([self.x, self.y, self.z]), math.radians(self.yaw)
-        f = np.array([math.sin(ps) * math.cos(PITCH), math.cos(ps) * math.cos(PITCH), -math.sin(PITCH)])
+        heading = np.array([math.sin(ps), math.cos(ps), 0.0])
         r = np.array([math.cos(ps), -math.sin(ps), 0.0])
+        if self.mirror:  # cámara virtual mirando abajo; arriba de la imagen = adelante del dron
+            tau = self.mirror_tilt
+            f = math.cos(tau) * np.array([0, 0, -1.0]) + math.sin(tau) * heading
+            Kc, Dc = self.Km, self.Dm
+        else:
+            f = math.cos(PITCH) * heading + np.array([0, 0, -math.sin(PITCH)])
+            Kc, Dc = K, D
         d = np.cross(f, r)
         img = np.full((720, 960), 110, np.uint8)
-        img[400:] = 80
+        if not self.mirror:
+            img[400:] = 80
         for t in self.tags:
             if not t.visible or ((O - t.c) @ t.n) <= 0:
                 continue
@@ -196,9 +215,9 @@ class SimTello:
             # La distorsión solo vale dentro de la imagen: fuera del campo de visión
             # "dobla" los puntos de regreso y pinta manchas enormes. Esos tags no se dibujan.
             nx, ny = pc[:, 0] / pc[:, 2], pc[:, 1] / pc[:, 2]
-            if (np.abs(nx) > 1.1 * 480 / K[0, 0]).any() or (np.abs(ny) > 1.1 * 386 / K[1, 1]).any():
+            if (np.abs(nx) > 1.1 * 480 / Kc[0, 0]).any() or (np.abs(ny) > 1.1 * 386 / Kc[1, 1]).any():
                 continue
-            uv, _ = cv2.projectPoints(pc.reshape(-1, 1, 3), np.zeros(3), np.zeros(3), K, D)
+            uv, _ = cv2.projectPoints(pc.reshape(-1, 1, 3), np.zeros(3), np.zeros(3), Kc, Dc)
             uv = uv.reshape(-1, 2).astype(np.float32)
             if (np.abs(uv) > 5000).any():
                 continue
@@ -208,17 +227,24 @@ class SimTello:
                                 borderMode=cv2.BORDER_TRANSPARENT)
         img = cv2.GaussianBlur(img, (3, 3), 0.6)
         img = np.clip(img + self.rng.normal(0, 3, img.shape), 0, 255).astype(np.uint8)
+        if self.mirror:  # lo que entrega la cámara real: la imagen reflejada
+            img = cv2.flip(img, 0 if self.mirror == "v" else 1)
         return cv2.cvtColor(img, cv2.COLOR_GRAY2BGR)
 
 
+OVER_E: dict = {}  # cambios a MirrorConfig por escenario
+
+
 def run(name, tags, limit=120, events=None, drift=2.0, boxes=(), bias=(0.0, 0.0), yaw0=0.0, bat=90.0,
-        flip_test=None, rc_calib=False):
+        flip_test=None, rc_calib=False, mirror=None, mirror_tilt=0.0, start=(0.0, 0.0)):
     cfg = F.FlightConfig.load(ROOT / "config" / "flight.json")
     mcfg = M.MissionConfig.load(ROOT / "config" / "mission_tags.json")
     cfg.hover_s, cfg.max_flight_s = mcfg.start_hover_s, mcfg.mission_max_s
     for k, v in OVER.items():
         setattr(mcfg, k, v)
-    sim = SimTello(tags, drift=drift, boxes=boxes, bias=bias, yaw0=yaw0, bat=bat)
+    sim = SimTello(tags, drift=drift, boxes=boxes, bias=bias, yaw0=yaw0, bat=bat, mirror=mirror,
+                   mirror_tilt=mirror_tilt)
+    sim.x, sim.y = start
     log = ROOT / "sim" / "logs" / f"{name}.csv"
     if flip_test:  # prueba de first_flight.py --flip-test, sin misión
         mis = F.Flight(sim, cfg, log, None, flip_test)
@@ -228,6 +254,12 @@ def run(name, tags, limit=120, events=None, drift=2.0, boxes=(), bias=(0.0, 0.0)
         mis = RC.RcCalib(sim, cfg, log, ROOT / "config" / "camera_tello.json", 8.0, ["fb", "lr", "ud"],
                          report_dir=ROOT / "sim" / "logs")  # no mezclar con las calibraciones reales
         mis.executed, mis._turned = [], 0.0
+    elif mirror:  # scripts/mision_espejo.py
+        ecfg = ME.MirrorConfig.load(ROOT / "config" / "mission_espejo.json")
+        ecfg.espejo = mirror
+        for k, v in OVER_E.items():
+            setattr(ecfg, k, v)
+        mis = ME.MirrorMission(sim, cfg, mcfg, ecfg, log, ROOT / "config" / "camera_tello.json")
     else:
         mis = M.TagMission(sim, cfg, mcfg, log, ROOT / "config" / "camera_tello.json")
     time.sleep(0.3)
@@ -315,6 +347,32 @@ def scenario(sc: str) -> None:
         run(sc, [Tag(3, (0, 220, 45), south)])
     elif sc == "rc_calib":  # simulador: fb/lr 1.5*(|rc|-5) -> 7.5 / 15 / 22.5 cm/s; ud 0.5*(|rc|-3)
         run(sc, [Tag(1, (0, 160, 90), south)], limit=150, drift=0.5, rc_calib=True)
+    # ---- misión con espejo (cámara hacia abajo, tags en el piso)
+    elif sc.startswith("espejo"):
+        up = (0, 0, 1)
+
+        def floor(tid, x, y, rot=0.0):  # rot: grados que el tag está girado (horario visto desde arriba)
+            a = math.radians(rot)
+            return Tag(tid, (x, y, 0), up, top=(math.sin(a), math.cos(a), 0))
+        if sc == "espejo_uno":  # tag 2 girado 12°: se alinea (yaw 12) y gira a la izquierda (yaw -78)
+            run(sc, [floor(2, 6, 90, 12)], mirror="v")
+        elif sc == "espejo_circuito":  # 1 (derecha) -> 2 (izquierda) -> 7 (aterrizar), a 70 cm
+            run(sc, [floor(1, 0, 80), floor(2, 70, 80), floor(7, 70, 150)], mirror="v")
+        elif sc == "espejo_quieto":  # sin avanzar: el tag ya está debajo, desplazado y girado
+            OVER_E["quieto"] = True
+            OVER_E["quieto_timeout_s"] = 8
+            run(sc, [floor(9, 10, 15, -20)], mirror="v", limit=70)
+        elif sc == "espejo_deriva":
+            run(sc, [floor(2, 0, 90)], mirror="v", bias=(3.0, 0.0))
+        elif sc == "espejo_flip":
+            run(sc, [floor(4, 0, 90)], mirror="v")
+        elif sc == "espejo_inclinado":  # espejo 8° hacia adelante, medido y puesto en la config
+            OVER_E["vista_adelante_deg"] = 8.0
+            run(sc, [floor(2, 0, 90)], mirror="v", mirror_tilt=8.0)
+        elif sc == "espejo_inclinado_sin_config":  # mismo espejo sin decirle a la misión: se centra mal
+            run(sc, [floor(2, 0, 90)], mirror="v", mirror_tilt=8.0)
+        else:
+            raise SystemExit(f"escenario desconocido: {sc}")
     elif sc == "sin_tags":
         run(sc, [], limit=60)
     else:
@@ -324,7 +382,9 @@ def scenario(sc: str) -> None:
 ALL = ["circuito", "pausa", "giro360", "sube_ciego", "perdido", "flip8", "caja",
        "deriva", "deriva_sin_lateral", "ladeado", "ladeado_sin_alinear",
        "angulo25", "angulo38", "angulo38_deriva", "flip_prueba", "flip_prueba_bateria",
-       "flip4", "flip4_bateria", "tag_alto", "tag_bajo", "rc_calib", "sin_tags"]
+       "flip4", "flip4_bateria", "tag_alto", "tag_bajo", "rc_calib", "sin_tags",
+       "espejo_uno", "espejo_circuito", "espejo_quieto", "espejo_deriva", "espejo_flip",
+       "espejo_inclinado", "espejo_inclinado_sin_config"]
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:

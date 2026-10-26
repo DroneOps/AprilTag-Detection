@@ -204,6 +204,55 @@ que el máximo sea menor.
 
 ---
 
+## Pruebas con espejo (cámara hacia abajo, tags en el piso)
+
+Con el espejo cubriendo toda la cámara **no hay vista al frente**: el dron no ve
+paredes ni obstáculos. Prueba en espacio abierto, con los tags en el piso.
+
+**E1 — Detección y orientación** (sin volar). Sostén el dron a ~80 cm sobre un tag en el piso:
+
+```bash
+python scripts/test_tags.py --source tello --espejo --tag-cm 8 --record espejo1.mp4
+```
+
+Revisa:
+
+- `altura` igual a la cinta métrica (±5 cm).
+- La flecha amarilla "ADELANTE" debe apuntar hacia la **nariz** del dron. Con el tag frente a la nariz, `adelante` debe ser positivo.
+  **Si sale al revés:** usa `--espejo h` aquí y en la misión, y pon `"espejo": "h"` en `config/mission_espejo.json`.
+- Al salir se imprime `espejo: inclinacion de la vista ...`. **Copia esos dos números** a
+  `config/mission_espejo.json` (`vista_adelante_deg`, `vista_lado_deg`). Sin ellos, el dron
+  se coloca mal encima del tag (~11 cm de error a 80 cm con un espejo inclinado 8°).
+
+**E2 — Estacionario y giro con espejo:**
+
+```bash
+python scripts/first_flight.py --yaw-test 90 --record espejo_giro.mp4
+```
+
+Aprueba si no deriva más que sin espejo y si el espejo no se mueve.
+
+**E3 — Tag debajo, sin avanzar.** Pon el tag 9 (pausa) en el piso, ~10–20 cm frente al despegue:
+
+```bash
+python scripts/mision_espejo.py --quieto --record espejo_quieto.mp4
+```
+
+Debe colocarse encima, alinearse con los bordes del tag y hacer la pausa de 5 s.
+
+**E4 — Avanzar y encontrar el tag.** Pon el tag 2 en el piso, ~1 m adelante; el lado izquierdo debe quedar libre:
+
+```bash
+python scripts/mision_espejo.py --record espejo_m1.mp4
+```
+
+Avanza despacio, se coloca encima, gira a la izquierda, avanza 8 s y aterriza.
+
+**E5 — Circuito en el piso:** tag 1 a 80 cm al frente; tag 2 a 70 cm a la derecha del 1;
+tag 7 a 70 cm adelante del 2. Mismo comando que E4.
+
+Los flips con espejo, **solo con el montaje firme**.
+
 ## Al terminar (2 min)
 
 ```bash

@@ -167,20 +167,33 @@ class PoseEstimator:
         return TagPose(tvec.ravel(), R[:, 2], R)
 
 
-def floor_view(pose: TagPose) -> tuple[float, float, float, float, float]:
+def floor_view(pose: TagPose, tilt: tuple[float, float] | None = None) -> tuple[float, float, float, float, float]:
     """Con espejo (vista hacia abajo; imagen ya volteada: arriba = adelante del dron).
     Devuelve (adelante, derecha, altura) del tag respecto a la cámara en cm, medidos
-    sobre el piso aunque el espejo no apunte exactamente hacia abajo, y la
-    inclinación de la vista (adelante, derecha) en grados: 0, 0 = justo hacia abajo."""
+    sobre el piso, y la inclinación de la vista (adelante, derecha) en grados medida
+    con la orientación del tag (0, 0 = justo hacia abajo).
+
+    tilt: inclinación FIJA de la vista (adelante, derecha) en grados. El espejo no se
+    mueve, así que conviene medirla una vez y pasarla: con la orientación medida en
+    cada frame el error llega a ~15 cm con el tag de frente; con la fija, < 1 cm."""
     n = pose.normal  # normal del piso (del tag) en la cámara, apuntando hacia la cámara
-    right_cam = np.array([1.0, 0.0, 0.0])
-    fwd_h = np.cross(n, right_cam)
-    fwd_h /= np.linalg.norm(fwd_h)
-    right_h = np.cross(fwd_h, n)
-    t = pose.t
     tilt_fwd = math.degrees(math.atan2(-n[1], -n[2]))
     tilt_right = math.degrees(math.atan2(n[0], -n[2]))
-    return float(t @ fwd_h), float(t @ right_h), abs(float(n @ t)), tilt_fwd, tilt_right
+    t = pose.t
+    if tilt is None:
+        right_cam = np.array([1.0, 0.0, 0.0])
+        fwd_h = np.cross(n, right_cam)
+        fwd_h /= np.linalg.norm(fwd_h)
+        right_h = np.cross(fwd_h, n)
+        return float(t @ fwd_h), float(t @ right_h), abs(float(n @ t)), tilt_fwd, tilt_right
+    # ejes de la cámara virtual en un marco nivelado (X derecha, Y adelante, Z arriba)
+    f = np.array([math.tan(math.radians(tilt[1])), math.tan(math.radians(tilt[0])), -1.0])
+    f /= np.linalg.norm(f)
+    r = np.cross(f, [0.0, 1.0, 0.0])
+    r /= np.linalg.norm(r)
+    d = np.cross(f, r)
+    w = t[0] * r + t[1] * d + t[2] * f
+    return float(w[1]), float(w[0]), float(-w[2]), tilt_fwd, tilt_right
 
 
 class Confirmer:
@@ -380,6 +393,7 @@ def run_live(args: argparse.Namespace, detector: TagDetector, pose_est: PoseEsti
     stats_rejected: dict[int, int] = defaultdict(int)
     n_frames, det_ms_total = 0, 0.0
     gaps: list[float] = []  # ms entre frames que llegan: calidad del enlace
+    tilts: list[tuple[float, float]] = []  # con --espejo: inclinación de la vista medida
     t_prev_frame: float | None = None
     t_fps, n_fps, fps = time.monotonic(), 0, 0.0
     paused, shown, frame = False, None, None
@@ -430,6 +444,8 @@ def run_live(args: argparse.Namespace, detector: TagDetector, pose_est: PoseEsti
                 shown = frame.copy()
                 poses = [pose_est.estimate(d) if pose_est and d.accepted else None for d in dets]
                 draw(shown, dets, confirmed, poses, floor=bool(args.espejo))
+                if args.espejo:
+                    tilts += [floor_view(p)[3:] for p in poses if p is not None]
                 h, w = frame.shape[:2]
                 if args.espejo:  # dirección que el programa supone como "adelante del dron"
                     cv2.arrowedLine(shown, (w // 2, 120), (w // 2, 50), (0, 255, 255), 3, tipLength=0.35)
@@ -474,6 +490,11 @@ def run_live(args: argparse.Namespace, detector: TagDetector, pose_est: PoseEsti
                          f"({100 * stats_seen[i] / n_frames:.0f} %)")
         if stats_rejected:
             lines.append(f"  IDs fuera de lista blanca (posibles falsos positivos): {dict(stats_rejected)}")
+        if tilts:
+            tf, tr = np.median(np.array(tilts), axis=0)
+            lines.append(f"espejo: inclinacion de la vista (mediana de {len(tilts)}): {tf:+.1f} adelante, "
+                         f"{tr:+.1f} lado -> config/mission_espejo.json: "
+                         f'"vista_adelante_deg": {tf:.1f}, "vista_lado_deg": {tr:.1f}')
         if len(gaps) > 60:
             g = np.array(gaps[30:])  # el primer segundo incluye abrir la ventana
             minutes = g.sum() / 60000
