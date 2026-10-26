@@ -11,6 +11,6 @@
   "rot_kp": 1.0,
   "rot_tol_deg": 4,
   "window": 7,
-  "vista_adelante_deg": 0.0,
-  "vista_lado_deg": 0.0
+  "vista_adelante_deg": 7.9,
+  "vista_lado_deg": 4.3
 }

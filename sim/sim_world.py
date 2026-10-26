@@ -4,7 +4,7 @@
 Renderiza la cámara del Tello (K, distorsión e inclinación de 11° reales de
 config/camera_tello.json) con tags en paredes, y la misión los procesa con el
 detector y el PnP reales. La física del dron está ajustada a bitácoras reales y
-a la calibración de rc del 24-oct: horizontal 1.5*(|rc|-5) cm/s, vertical
+a la calibración de rc del 24-oct: horizontal 1.7*(|rc|-5) cm/s, vertical
 0.5*(|rc|-3) cm/s, giro ~0.73*(|rc|-6.6) grados/s, 'h' que deriva, tof con
 ruido, y tras un flip se hunde ~25 cm/s por 1.2–3 s (real: cayó 30–78 cm).
 
@@ -16,6 +16,7 @@ Escenarios: circuito pausa giro360 sube_ciego perdido flip8 caja deriva
             angulo38_deriva flip_prueba flip_prueba_bateria flip4 flip4_bateria tag_alto
             tag_bajo rc_calib sin_tags espejo_uno espejo_circuito espejo_quieto
             espejo_deriva espejo_flip espejo_inclinado espejo_inclinado_sin_config
+            piso_uno piso_girado piso_circuito piso_deriva piso_flip piso_velocidad_mal
 
 Corre en tiempo real (cada escenario tarda 30–70 s). Las bitácoras van a sim/logs/.
 """
@@ -38,6 +39,7 @@ import first_flight as F  # noqa: E402
 import mission_tags as M  # noqa: E402
 import rc_calib as RC  # noqa: E402
 import mision_espejo as ME  # noqa: E402
+import mision_piso as MP  # noqa: E402
 import test_tags as TT  # noqa: E402
 
 CAL = json.loads((ROOT / "config" / "camera_tello.json").read_text())
@@ -130,7 +132,7 @@ class SimTello:
                         self.mode = "ground"  # tocó el piso: el Tello apaga motores
                 elif self.mode == "air":
                     lr, fb, ud, yr = self.rc
-                    want = np.array([1.5 * dead(fb), 1.5 * dead(lr), 0.5 * dead(ud, 3)])
+                    want = np.array([1.7 * dead(fb), 1.7 * dead(lr), 0.5 * dead(ud, 3)])
                     self.v += (want - self.v) * min(1, dt / 0.4)
                     wy = math.copysign(max(0, 0.73 * (abs(yr) - 6.6)), yr)
                     self.yaw_rate += (wy - self.yaw_rate) * min(1, dt / 0.15)
@@ -233,10 +235,11 @@ class SimTello:
 
 
 OVER_E: dict = {}  # cambios a MirrorConfig por escenario
+OVER_P: dict = {}  # cambios a FloorConfig por escenario
 
 
 def run(name, tags, limit=120, events=None, drift=2.0, boxes=(), bias=(0.0, 0.0), yaw0=0.0, bat=90.0,
-        flip_test=None, rc_calib=False, mirror=None, mirror_tilt=0.0, start=(0.0, 0.0)):
+        flip_test=None, rc_calib=False, mirror=None, mirror_tilt=0.0, start=(0.0, 0.0), piso=False):
     cfg = F.FlightConfig.load(ROOT / "config" / "flight.json")
     mcfg = M.MissionConfig.load(ROOT / "config" / "mission_tags.json")
     cfg.hover_s, cfg.max_flight_s = mcfg.start_hover_s, mcfg.mission_max_s
@@ -254,6 +257,11 @@ def run(name, tags, limit=120, events=None, drift=2.0, boxes=(), bias=(0.0, 0.0)
         mis = RC.RcCalib(sim, cfg, log, ROOT / "config" / "camera_tello.json", 8.0, ["fb", "lr", "ud"],
                          report_dir=ROOT / "sim" / "logs")  # no mezclar con las calibraciones reales
         mis.executed, mis._turned = [], 0.0
+    elif piso:  # scripts/mision_piso.py
+        fcfg = MP.FloorConfig.load(ROOT / "config" / "mission_piso.json")
+        for k, v in OVER_P.items():
+            setattr(fcfg, k, v)
+        mis = MP.FloorMission(sim, cfg, mcfg, fcfg, log, ROOT / "config" / "camera_tello.json")
     elif mirror:  # scripts/mision_espejo.py
         ecfg = ME.MirrorConfig.load(ROOT / "config" / "mission_espejo.json")
         ecfg.espejo = mirror
@@ -373,6 +381,26 @@ def scenario(sc: str) -> None:
             run(sc, [floor(2, 0, 90)], mirror="v", mirror_tilt=8.0)
         else:
             raise SystemExit(f"escenario desconocido: {sc}")
+    # ---- tags en el piso con la cámara al frente (sin espejo)
+    elif sc.startswith("piso"):
+        def floor(tid, x, y, rot=0.0):
+            a = math.radians(rot)
+            return Tag(tid, (x, y, 0), (0, 0, 1), top=(math.sin(a), math.cos(a), 0))
+        if sc == "piso_uno":  # tag 2 a ~1.7 m: acercarse, ~1 m a ciegas, girar a la izquierda
+            run(sc, [floor(2, 5, 170)], piso=True)
+        elif sc == "piso_girado":  # tag girado 15° y corrido: alinearse con él
+            run(sc, [floor(2, -10, 160, 15)], piso=True)
+        elif sc == "piso_circuito":  # 1 (derecha) -> 2 (izquierda) -> 7 (aterrizar), a 1.5 m
+            run(sc, [floor(1, 0, 170), floor(2, 150, 170), floor(7, 150, 320)], piso=True)
+        elif sc == "piso_deriva":
+            run(sc, [floor(2, 0, 170)], piso=True, bias=(3.0, 0.0))
+        elif sc == "piso_flip":
+            run(sc, [floor(4, 0, 170)], piso=True)
+        elif sc == "piso_velocidad_mal":  # la velocidad real es 15 % mayor que la calibrada: se pasa
+            OVER_P["ciegas_cms"] = 17.0 / 1.15
+            run(sc, [floor(2, 0, 170)], piso=True)
+        else:
+            raise SystemExit(f"escenario desconocido: {sc}")
     elif sc == "sin_tags":
         run(sc, [], limit=60)
     else:
@@ -384,7 +412,8 @@ ALL = ["circuito", "pausa", "giro360", "sube_ciego", "perdido", "flip8", "caja",
        "angulo25", "angulo38", "angulo38_deriva", "flip_prueba", "flip_prueba_bateria",
        "flip4", "flip4_bateria", "tag_alto", "tag_bajo", "rc_calib", "sin_tags",
        "espejo_uno", "espejo_circuito", "espejo_quieto", "espejo_deriva", "espejo_flip",
-       "espejo_inclinado", "espejo_inclinado_sin_config"]
+       "espejo_inclinado", "espejo_inclinado_sin_config",
+       "piso_uno", "piso_girado", "piso_circuito", "piso_deriva", "piso_flip", "piso_velocidad_mal"]
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:

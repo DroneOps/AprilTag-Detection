@@ -204,6 +204,51 @@ que el máximo sea menor.
 
 ---
 
+## Pruebas de piso SIN espejo (cámara al frente, tags en el piso)
+
+**Quita el espejo.** El dron vuela a 60 cm y ve un tag de 8 cm en el piso entre
+~1.0 y ~1.7 m adelante. Cuando el tag sale por abajo de la imagen, recorre a
+ciegas lo que faltaba (~1 m) con la velocidad calibrada y ejecuta encima.
+
+**F1 — Un tag.** Tag **2** en el piso a **~1.7 m** frente al despegue (3–4 cuadros de 50 cm).
+Deja el lado izquierdo libre.
+
+```bash
+python scripts/mision_piso.py --record piso_m1.mp4
+```
+
+Debe avanzar, acercarse, recorrer ~1 m a ciegas, detenerse **encima del tag**,
+girar a la izquierda, avanzar ~10 s y aterrizar.
+
+**Lo que hay que medir:** cuando se detiene para girar, ¿qué tan lejos queda la
+**nariz** del centro del tag, adelante/atrás y de lado? Anótalo; el video también sirve.
+
+- **Si se queda corto** (se detiene antes del tag), baja `ciegas_cms` en
+  `config/mission_piso.json`. Ejemplo: si le faltan 15 cm de 100, cambia 17 por ~14.5.
+- **Si se pasa,** súbelo de la misma forma.
+
+**F2 — Tag girado y corrido.** Igual que F1, pero con el tag girado ~15–20° y
+corrido ~10 cm de lado. Debe alinearse con sus bordes antes de girar.
+
+**F3 — Circuito.** Visto desde arriba, con el dron mirando hacia "adelante":
+
+```
+                       [7]   ← 1.5 m adelante del 2
+                        |
+  [1] ──── 1.5 m ──── [2]
+   |
+ 1.7 m
+   |
+ (dron)
+```
+
+```bash
+python scripts/mision_piso.py --record piso_circuito.mp4
+```
+
+**F4 — Flip en el piso** (opcional, batería ≥ 70 %, ~1.7 m libres hacia arriba).
+Tag **4** a 1.7 m. Mismo comando que F1.
+
 ## Pruebas con espejo (cámara hacia abajo, tags en el piso)
 
 Con el espejo cubriendo toda la cámara **no hay vista al frente**: el dron no ve

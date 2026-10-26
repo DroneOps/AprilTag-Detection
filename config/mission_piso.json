@@ -1,0 +1,21 @@
+{
+  "cruise_alt_cm": 60,
+  "advance_fb": 15,
+  "advance_timeout_s": 10,
+  "detect_max_cm": 220,
+  "approach_fb": 15,
+  "lat_kp": 0.8,
+  "lat_min": 10,
+  "lat_max": 15,
+  "lat_tol_cm": 4,
+  "rot_kp": 1.0,
+  "rot_tol_deg": 4,
+  "align_max_cm": 170,
+  "ciegas_rc": 15,
+  "ciegas_cms": 17.0,
+  "salida_abajo": 0.75,
+  "gracia_s": 0.3,
+  "quieto_s": 0.8,
+  "piso_min": 0.8,
+  "window": 5
+}

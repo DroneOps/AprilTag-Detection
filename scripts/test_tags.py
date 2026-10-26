@@ -196,6 +196,20 @@ def floor_view(pose: TagPose, tilt: tuple[float, float] | None = None) -> tuple[
     return float(w[1]), float(w[0]), float(-w[2]), tilt_fwd, tilt_right
 
 
+def floor_from_front(pose: TagPose, pitch_deg: float) -> tuple[float, float, float, float, float]:
+    """Tag en el PISO visto con la cámara al frente (inclinada pitch_deg hacia abajo).
+    Devuelve (adelante, derecha, altura) de la cámara al tag en cm sobre el piso, el
+    giro del tag respecto al rumbo del dron en grados (+ = su borde de arriba apunta a
+    la derecha) y qué tan "de piso" es (1 = tag horizontal, 0 = vertical)."""
+    p = math.radians(pitch_deg)
+
+    def level(v):  # cámara -> marco nivelado (x derecha, y abajo, z adelante)
+        return np.array([v[0], v[1] * math.cos(p) + v[2] * math.sin(p), -v[1] * math.sin(p) + v[2] * math.cos(p)])
+
+    t, top, n = level(pose.t), level(pose.R[:, 1]), level(pose.R[:, 2])
+    return float(t[2]), float(t[0]), float(t[1]), math.degrees(math.atan2(top[0], top[2])), float(-n[1])
+
+
 class Confirmer:
     """Un ID se confirma tras verse en N frames consecutivos."""
 
