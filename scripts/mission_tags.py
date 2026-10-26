@@ -69,6 +69,11 @@ class MissionConfig:
     heading_max: int = 20
     min_front_cm: float = 50.0
     obstacle_drop_cm: float = 25.0
+    obstacle_h_ratio: float = 0.4  # si 'h' bajó menos que esto x lo que bajó el tof: obstáculo; si no, se hundió
+    hold_tol_cm: float = 6.0  # sostener altura en ADVANCE/APPROACH/EXECUTE cuando no se pide subir/bajar
+    hold_kp: float = 0.8
+    hold_min: int = 15
+    hold_max: int = 25
     blind_speed_cms: float = 20.0
     approach_start_cm: float = 250.0
     stop_cm: float = 60.0
@@ -171,7 +176,10 @@ class TagMission(Flight):
         self._prim_goal = 0.0
         self.executed: list[str] = []
         self._alt_ref: float | None = None  # altura al entrar a ADVANCE/APPROACH
+        self._h_ref = 0.0
         self._ref_state = ""
+        self._hold_alt: float | None = None  # altura a sostener (ver _send_rc)
+        self._ud_intent = 0  # último rc vertical pedido a propósito (no por sostener)
         self._obj: tuple[float, float, float, float] | None = None  # (z, az, x, angulo) para la bitácora
         self._exit_heading = 0.0
         self._exec_yaw0 = 0.0
@@ -253,15 +261,19 @@ class TagMission(Flight):
         if self._yaw_prev is not None:
             self._turned += wrap_deg(yaw - self._yaw_prev)
         self._yaw_prev = yaw
-        # algo bajo el dron (caja, obstáculo): el tof baja sin que pidamos bajar
+        # algo bajo el dron (caja, obstáculo): el tof baja sin que pidamos bajar y la
+        # altura propia del Tello ('h') no. Si 'h' también bajó, el dron se hundió
+        # (pasó en vuelos reales a 60 cm): eso lo corrige el sostener altura.
         if st in ("ADVANCE", "APPROACH"):
-            alt = altitude(s)
-            if self._ref_state != st or self._alt_ref is None or self.rc[2] != 0:
+            alt, hh = altitude(s), s.get("h", 0)
+            if self._ref_state != st or self._alt_ref is None or self._ud_intent != 0:
                 # sin referencia, o subiendo/bajando a propósito: la altura de ahora es la buena
-                self._alt_ref, self._ref_state = alt, st
+                self._alt_ref, self._h_ref, self._ref_state = alt, hh, st
             elif alt < self._alt_ref - self.m.obstacle_drop_cm:
-                return self._begin_landing("EMERGENCY_LAND",
-                                           f"obstaculo debajo: altura {alt} cm (era {self._alt_ref:.0f})")
+                drop = self._alt_ref - alt
+                if self._h_ref - hh < self.m.obstacle_h_ratio * drop:
+                    return self._begin_landing("EMERGENCY_LAND", f"obstaculo debajo: altura {alt} cm "
+                                               f"(era {self._alt_ref:.0f}; h bajo {self._h_ref - hh:.0f})")
         else:
             self._ref_state = st
         if st == "CRUISE":
@@ -325,6 +337,25 @@ class TagMission(Flight):
                 self._front_cm -= self.m.blind_speed_cms * (now - self._t_front)
         self._t_front = now
         return self._front_cm is not None and self._front_cm < self.m.min_front_cm
+
+    HOLD_STATES = {"ADVANCE", "APPROACH", "EXECUTE"}
+
+    def _send_rc(self, lr: float, fb: float, ud: float, yaw: float) -> None:
+        """En la misión, rc vertical 0 significa "mantener esta altura": el Tello se
+        hunde solo (real: de 60 a 33 cm avanzando). Un rc vertical distinto de 0 es a
+        propósito y mueve la altura a sostener."""
+        self._ud_intent = ud
+        # el flip y su recuperación llevan su propio control de altura
+        flipping = self.state == "EXECUTE" and (self._prim[:1] == ("flip_go",) or self._prim[2:3] == ("tras_flip",))
+        if self.state in self.HOLD_STATES and not flipping:
+            alt = altitude(self.tel.snapshot()[0])
+            if ud != 0 or self._hold_alt is None:
+                self._hold_alt = alt
+            elif abs(self._hold_alt - alt) > self.m.hold_tol_cm:
+                ud = with_min(self.m.hold_kp * (self._hold_alt - alt), self.m.hold_min, self.m.hold_max)
+        else:
+            self._hold_alt = None
+        super()._send_rc(lr, fb, ud, yaw)
 
     def _climb_rc(self, target: float, s: dict) -> tuple[int, bool]:
         """rc vertical hacia una altura, con los límites de la misión."""
@@ -473,10 +504,9 @@ class TagMission(Flight):
             if tag == "para_flip":  # en o arriba de la altura segura (mismo criterio que first_flight)
                 ud, on_goal = self._flip_climb_rc(s)
                 done = self._held(on_goal, now, 0.3) or el > cfg.alt_timeout_s
-            elif tag == "tras_flip":  # sin bajar mientras cae y solo con altura estable
-                ud, on_goal = self._recover_rc(self._prim[1], s, el)
-                self._recover_min = min(self._recover_min, altitude(s))
-                done = (self._held(on_goal, now, 1.0) and el >= cfg.flip_hold_s) or el > cfg.alt_timeout_s
+            elif tag == "tras_flip":  # frenar la caída subiendo a fondo, luego asentar
+                ud, on_goal = self._recover_rc(self._prim[1], s, now)
+                done = (self._rec_phase == "asentar" and self._held(on_goal, now, 1.0)) or el > cfg.alt_timeout_s
                 if done:
                     self.executed[-1] += f" (minima tras el flip {self._recover_min:.0f} cm)"
             else:  # tags 5 y 6
@@ -492,7 +522,7 @@ class TagMission(Flight):
             self._flip_progress(s)  # sin rc mientras voltea
             done = self._flip_finished(s, now, el)  # en cuanto termina la vuelta, a recuperar altura
             if done:
-                self._recover_min = math.inf
+                self._recover_reset()
                 result = self._flip_result()
                 self.executed[-1] += " (" + result.split(":")[0] + ")"
         elif kind == "wait":

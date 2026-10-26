@@ -16,7 +16,8 @@ Escenarios: circuito pausa giro360 sube_ciego perdido flip8 caja deriva
             angulo38_deriva flip_prueba flip_prueba_bateria flip4 flip4_bateria tag_alto
             tag_bajo rc_calib sin_tags espejo_uno espejo_circuito espejo_quieto
             espejo_deriva espejo_flip espejo_inclinado espejo_inclinado_sin_config
-            piso_uno piso_girado piso_circuito piso_deriva piso_flip piso_velocidad_mal
+            piso_uno piso_girado piso_circuito piso_deriva piso_flip piso_lento piso_rapido
+            piso_hundimiento piso_lado
 
 Corre en tiempo real (cada escenario tarda 30–70 s). Las bitácoras van a sim/logs/.
 """
@@ -74,7 +75,10 @@ class SimTello:
     """Imita la interfaz de djitellopy que usa la misión."""
 
     def __init__(self, tags, drift=2.0, seed=0, boxes=(), bias=(0.0, 0.0), yaw0=0.0, bat=90.0,
-                 mirror=None, mirror_tilt=0.0) -> None:
+                 mirror=None, mirror_tilt=0.0, speed_factor=1.0, sag=0.0) -> None:
+        # speed_factor: la misma rc mueve más o menos (real: rc 15 dio 12–20 cm/s entre vuelos).
+        # sag: cm/s que se hunde al avanzar sin rc vertical (real: 60 -> 33 cm a 60 cm de altura).
+        self.speed_factor, self.sag, self.vz_sink = speed_factor, sag, 0.0
         # mirror: None = cámara al frente; "v" = espejo hacia abajo (la imagen sale espejada,
         # como la real). mirror_tilt: grados que la vista se inclina hacia adelante.
         self.mirror, self.mirror_tilt = mirror, math.radians(mirror_tilt)
@@ -123,16 +127,20 @@ class SimTello:
                     self.y += sgn * 30 * math.cos(ps) * dt
                     self.yaw = F.wrap_deg(self.yaw + 6 * dt)
                 elif self.mode == "air" and now < self.sink_end:
-                    # tras el flip el Tello se hunde (real: 30–78 cm, y hasta el piso si nadie
-                    # corrige); pedir subir solo lo contrarresta en parte
+                    # tras el flip el Tello CAE ~50 cm/s (real, 26-oct: de 130 al piso) y su
+                    # propia altura no se entera; pedir subir a fondo lo frena en ~1 s
                     self.pitch, self.tof_garbage = 0, None
-                    climb = 0.5 * dead(self.rc[2], 3) if now - self.t_flip >= 1.3 and self.rc[2] > 0 else 0.0
-                    self.z = max(0.0, self.z - (25 - climb) * dt)
+                    climb = 1.25 * dead(self.rc[2], 3) if now - self.t_flip >= 1.2 and self.rc[2] > 0 else 0.0
+                    self.vz_sink += ((-50 + climb) - self.vz_sink) * min(1, dt / 0.3)
+                    self.z = max(0.0, self.z + self.vz_sink * dt)
                     if self.z <= 0:
                         self.mode = "ground"  # tocó el piso: el Tello apaga motores
                 elif self.mode == "air":
                     lr, fb, ud, yr = self.rc
-                    want = np.array([1.7 * dead(fb), 1.7 * dead(lr), 0.5 * dead(ud, 3)])
+                    gain = 1.7 * self.speed_factor
+                    want = np.array([gain * dead(fb), gain * dead(lr), 0.5 * dead(ud, 3)])
+                    if self.sag and dead(fb) and not dead(ud, 3):
+                        want[2] -= self.sag  # se hunde avanzando si nadie le pide altura
                     self.v += (want - self.v) * min(1, dt / 0.4)
                     wy = math.copysign(max(0, 0.73 * (abs(yr) - 6.6)), yr)
                     self.yaw_rate += (wy - self.yaw_rate) * min(1, dt / 0.15)
@@ -189,7 +197,8 @@ class SimTello:
                     self.udp["responses"].append(b"error")
                 else:
                     self.t_flip, self.flips, self.flip_dir = time.monotonic(), self.flips + 1, c.split()[-1]
-                    self.sink_end = self.t_flip + 1.0 + self.rng.uniform(1.2, 3.0)
+                    self.sink_end = self.t_flip + 1.0 + self.rng.uniform(1.0, 3.0)
+                    self.vz_sink = -30.0
                     self.udp["responses"].append(b"ok")
 
     def render(self) -> np.ndarray:
@@ -239,14 +248,15 @@ OVER_P: dict = {}  # cambios a FloorConfig por escenario
 
 
 def run(name, tags, limit=120, events=None, drift=2.0, boxes=(), bias=(0.0, 0.0), yaw0=0.0, bat=90.0,
-        flip_test=None, rc_calib=False, mirror=None, mirror_tilt=0.0, start=(0.0, 0.0), piso=False):
+        flip_test=None, rc_calib=False, mirror=None, mirror_tilt=0.0, start=(0.0, 0.0), piso=False,
+        speed_factor=1.0, sag=0.0):
     cfg = F.FlightConfig.load(ROOT / "config" / "flight.json")
     mcfg = M.MissionConfig.load(ROOT / "config" / "mission_tags.json")
     cfg.hover_s, cfg.max_flight_s = mcfg.start_hover_s, mcfg.mission_max_s
     for k, v in OVER.items():
         setattr(mcfg, k, v)
     sim = SimTello(tags, drift=drift, boxes=boxes, bias=bias, yaw0=yaw0, bat=bat, mirror=mirror,
-                   mirror_tilt=mirror_tilt)
+                   mirror_tilt=mirror_tilt, speed_factor=speed_factor, sag=sag)
     sim.x, sim.y = start
     log = ROOT / "sim" / "logs" / f"{name}.csv"
     if flip_test:  # prueba de first_flight.py --flip-test, sin misión
@@ -396,9 +406,14 @@ def scenario(sc: str) -> None:
             run(sc, [floor(2, 0, 170)], piso=True, bias=(3.0, 0.0))
         elif sc == "piso_flip":
             run(sc, [floor(4, 0, 170)], piso=True)
-        elif sc == "piso_velocidad_mal":  # la velocidad real es 15 % mayor que la calibrada: se pasa
-            OVER_P["ciegas_cms"] = 17.0 / 1.15
-            run(sc, [floor(2, 0, 170)], piso=True)
+        elif sc == "piso_lento":  # rc 15 mueve 28 % menos que lo calibrado (real: 12 vs 17 cm/s)
+            run(sc, [floor(2, 0, 170)], piso=True, speed_factor=0.72)
+        elif sc == "piso_rapido":  # 15 % más rápido que lo calibrado
+            run(sc, [floor(2, 0, 170)], piso=True, speed_factor=1.15)
+        elif sc == "piso_hundimiento":  # se hunde 13 cm/s al avanzar (real): sostener altura, sin falso obstáculo
+            run(sc, [floor(2, 0, 170)], piso=True, sag=13.0)
+        elif sc == "piso_lado":  # tag muy de lado: debe girar hacia él, no irse a ciegas
+            run(sc, [floor(2, 75, 175)], piso=True)
         else:
             raise SystemExit(f"escenario desconocido: {sc}")
     elif sc == "sin_tags":
@@ -413,7 +428,8 @@ ALL = ["circuito", "pausa", "giro360", "sube_ciego", "perdido", "flip8", "caja",
        "flip4", "flip4_bateria", "tag_alto", "tag_bajo", "rc_calib", "sin_tags",
        "espejo_uno", "espejo_circuito", "espejo_quieto", "espejo_deriva", "espejo_flip",
        "espejo_inclinado", "espejo_inclinado_sin_config",
-       "piso_uno", "piso_girado", "piso_circuito", "piso_deriva", "piso_flip", "piso_velocidad_mal"]
+       "piso_uno", "piso_girado", "piso_circuito", "piso_deriva", "piso_flip", "piso_lento", "piso_rapido",
+       "piso_hundimiento", "piso_lado"]
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:

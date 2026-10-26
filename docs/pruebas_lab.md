@@ -6,10 +6,13 @@ tiempo, lo que falte es lo menos importante.
 
 Tiempo estimado: **~30 min para P1–P5**, contando cambios de batería.
 
-> **Estado al 24-oct:** P3, P4 y P5 aprobadas. **Pendientes:** P1 (repetir: se
-> corrigió la recuperación tras el flip, que dejó caer el dron de 117 a 39 cm),
-> P2 y P6 (no se corrieron), y P7 (faltan tags de 15 cm). La próxima sesión
-> empieza por **P1 → P2 → P6**.
+> **Estado al 26-oct:** P3, P4 y P5 aprobadas; F1–F4 corridas (se quedaba corto
+> en el tramo a ciegas). **Cambios desde entonces:** tras el flip sube a fondo en
+> cuanto termina el giro, hasta frenar la caída; en el piso, el tramo a ciegas usa
+> la velocidad medida en ese mismo acercamiento; sostiene la altura al avanzar y
+> distingue hundimiento de obstáculo. **Pendientes:** P1, P2 y P6 (repetir con la
+> recuperación nueva), F1 y F3 (repetir con la velocidad medida) y P7 (faltan
+> tags de 15 cm). La próxima sesión empieza por **P1 → P2 → F1 → F3 → P6**.
 
 ---
 
@@ -43,9 +46,10 @@ Tiempo estimado: **~30 min para P1–P5**, contando cambios de batería.
 
 **Para qué:** confirmar que el flip ya no deja al dron cerca del piso. En
 pruebas reales cayó de 77 cm al piso, a 20 cm en una misión y de 117 a 39 cm
-el 24-oct (la recuperación se daba por buena mientras seguía cayendo). Ahora
-sube a 130 cm, no baja durante 3 s tras el flip y solo da por recuperada una
-altura estable.
+el 24-oct (después del flip el Tello cae ~50 cm/s aunque su `h` no cambie). Ahora
+sube a 130 cm, y en cuanto termina el giro **sube a fondo hasta que deja de caer**,
+sostiene esa altura 2 s sin bajar y solo entonces baja suave a la de crucero. Si
+vuelve a caer, frena otra vez.
 
 **Montaje:** espacio abierto; nada encima del dron hasta ~1.7 m.
 
@@ -61,7 +65,8 @@ python scripts/first_flight.py --flip-test b --record flip3.mp4
 4. `altura recuperada: ~70 cm, minima XX cm`: la **mínima** es la que importa.
 5. Aterriza solo.
 
-**Aprueba si:** la `minima` es de **40 cm o más**. En simulación sale ~65 cm.
+**Aprueba si:** la `minima` es de **40 cm o más**. En simulación sale 60–80 cm
+(con la recuperación anterior salía 18–24 cm, como en el vuelo real).
 
 **Si no llega a 130 cm** (techo o red baja): sale `flip omitido: no alcanzo 130 cm`.
 Baja `flip_min_alt_cm` en `config/flight.json` (por ejemplo, a 115). Es el único
@@ -207,8 +212,10 @@ que el máximo sea menor.
 ## Pruebas de piso SIN espejo (cámara al frente, tags en el piso)
 
 **Quita el espejo.** El dron vuela a 60 cm y ve un tag de 8 cm en el piso entre
-~1.0 y ~1.7 m adelante. Cuando el tag sale por abajo de la imagen, recorre a
-ciegas lo que faltaba (~1 m) con la velocidad calibrada y ejecuta encima.
+~1.0 y ~1.7 m adelante. Mientras lo ve, mide su velocidad real con la distancia
+al tag. Cuando el tag sale por abajo de la imagen, recorre a ciegas lo que faltaba
+(~1 m) **con esa velocidad medida** y ejecuta encima. Si el tag se va por un
+costado, se detiene y gira hacia él; no se va a ciegas.
 
 **F1 — Un tag.** Tag **2** en el piso a **~1.7 m** frente al despegue (3–4 cuadros de 50 cm).
 Deja el lado izquierdo libre.
@@ -223,9 +230,15 @@ girar a la izquierda, avanzar ~10 s y aterrizar.
 **Lo que hay que medir:** cuando se detiene para girar, ¿qué tan lejos queda la
 **nariz** del centro del tag, adelante/atrás y de lado? Anótalo; el video también sirve.
 
-- **Si se queda corto** (se detiene antes del tag), baja `ciegas_cms` en
-  `config/mission_piso.json`. Ejemplo: si le faltan 15 cm de 100, cambia 17 por ~14.5.
-- **Si se pasa,** súbelo de la misma forma.
+La consola dice `... cm a ciegas, velocidad medida XX cm/s`; anota ese número.
+
+- **Si dice `supuesta`** en vez de `medida`, no alcanzó a medir y usó `ciegas_cms`
+  de `config/mission_piso.json`. Si así se queda corto, bájalo (ejemplo: le faltan
+  15 cm de 100 → cambia 17 por ~14.5); si se pasa, súbelo.
+- **Si dice `medida` y aun así se pasa o se queda corto siempre por lo mismo**
+  (en simulación se pasa ~10 cm: frena tarde), ajusta `ciegas_ajuste_cm`: si se pasa
+  10 cm, ponlo en -10; si le faltan 10, en +10. Si el error cambia mucho entre
+  corridas, no lo ajustes: anótalo y lo vemos.
 
 **F2 — Tag girado y corrido.** Igual que F1, pero con el tag girado ~15–20° y
 corrido ~10 cm de lado. Debe alinearse con sus bordes antes de girar.

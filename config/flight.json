@@ -26,13 +26,15 @@
   "flip_min_battery": 50,
   "flip_wait_s": 3.0,
   "flip_min_alt_cm": 130,
-  "flip_hold_s": 3.0,
-  "flip_min_s": 1.0,
+  "flip_hold_s": 2.0,
+  "flip_min_s": 0.6,
   "flip_settle_deg": 15,
   "alt_kp": 1.0,
   "alt_min": 15,
   "alt_max": 40,
   "alt_tol_cm": 5,
   "alt_timeout_s": 12,
-  "floor_alt_cm": 3
+  "floor_alt_cm": 3,
+  "flip_brake_vz": -8.0,
+  "flip_fall_vz": -25.0
 }

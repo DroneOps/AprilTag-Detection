@@ -30,6 +30,7 @@ import logging
 import math
 import threading
 import time
+from collections import deque
 from dataclasses import dataclass, fields
 from pathlib import Path
 
@@ -72,8 +73,10 @@ class FlightConfig:
     yaw_timeout_s: float = 10.0
     flip_min_battery: int = 50  # el Tello rechaza flips con poca carga
     flip_min_alt_cm: float = 130.0  # tras un flip el Tello cae 30–80 cm (medido): voltear con margen
-    flip_hold_s: float = 3.0  # tras el flip: no bajar en este tiempo (sigue cayendo) y sostener altura
-    flip_min_s: float = 1.0  # mínimo antes de dar la vuelta por terminada
+    flip_hold_s: float = 2.0  # ya frenado, no bajar durante esto: el hundimiento puede seguir
+    flip_brake_vz: float = -8.0  # cm/s: con esta velocidad vertical o más, ya dejó de caer
+    flip_fall_vz: float = -25.0  # cm/s: más rápido que esto ya no es bajar a propósito: frenar otra vez
+    flip_min_s: float = 0.6  # mínimo antes de dar la vuelta por terminada (la vuelta real dura ~0.5 s)
     flip_wait_s: float = 3.0  # máximo sin rc esperando que termine la vuelta
     flip_settle_deg: float = 15.0  # nivelado de nuevo = vuelta terminada
     alt_kp: float = 1.0  # control de altura (subir antes del flip, recuperar después)
@@ -164,6 +167,10 @@ class Flight:
         self._t_level: float | None = None
         self._t_floor: float | None = None
         self._recover_min = math.inf
+        self._rec_phase = "frenar"
+        self._rec_hist: deque = deque(maxlen=20)
+        self._t_arrest: float | None = None
+        self._arrest_alt = 0.0
         self.state = "IDLE"
         self.reason = "esperando despegue (t)"
         self.rc = (0, 0, 0, 0)
@@ -335,7 +342,8 @@ class Flight:
                 how = "estable" if settled else "sin estabilizar"
                 self._goto("HOVER", f"en el aire a {h} cm ({how}, despegue {elapsed:.1f} s)")
             elif elapsed > cfg.takeoff_timeout_s:
-                self._begin_landing("EMERGENCY_LAND", f"no subio ({h} cm en {elapsed:.0f} s)")
+                hint = " - h dice que si subio: algo tapa el sensor tof de abajo?" if s.get("h", 0) >= 50 else ""
+                self._begin_landing("EMERGENCY_LAND", f"no subio ({h} cm en {elapsed:.0f} s){hint}")
 
         elif st == "HOVER":
             self._send_rc(0, 0, 0, 0)
@@ -376,19 +384,18 @@ class Flight:
         elif st == "FLIP_TEST":
             self._flip_progress(s)
             if self._flip_finished(s, now, elapsed):
-                self._recover_min, self._t_on_target = math.inf, None
+                self._recover_reset()
                 self._goto("FLIP_RECOVER", self._flip_result())
 
         elif st == "FLIP_RECOVER":
             # el Tello se hunde tras el flip: corregir en cuanto termina la vuelta,
             # sin bajar mientras sigue cayendo, y solo dar por buena una altura estable
-            ud, on_goal = self._recover_rc(self._flip_ref_alt, s, elapsed)
+            ud, on_goal = self._recover_rc(self._flip_ref_alt, s, now)
             self._send_rc(0, 0, ud, 0)
-            stable = self._held_alt(on_goal, now, 1.0) and elapsed >= cfg.flip_hold_s
+            stable = self._rec_phase == "asentar" and self._held_alt(on_goal, now, 1.0)
             if stable or elapsed > cfg.alt_timeout_s:
                 self._flip_done = True
                 self._goto("HOVER", f"altura recuperada: {h} cm, minima {self._recover_min:.0f} cm ({self.reason})")
-            self._recover_min = min(self._recover_min, h)
 
         elif st in LANDING:
             if h <= cfg.landed_height_cm:
@@ -452,14 +459,45 @@ class Flight:
         ud, _ = self._alt_rc(c.flip_min_alt_cm + 5, s)
         return ud, altitude(s) >= c.flip_min_alt_cm - c.alt_tol_cm
 
-    def _recover_rc(self, target: float, s: dict, since_flip: float) -> tuple[int, bool]:
-        """Tras el flip: hacia la altura objetivo, pero sin bajar durante flip_hold_s.
-        En una prueba real, al terminar la vuelta estaba a 80 cm *cayendo*; como el
-        objetivo era 74, se dio por recuperado y siguió cayendo hasta 39 cm."""
+    def _recover_reset(self) -> None:
+        self._rec_phase, self._t_arrest, self._t_on_target = "frenar", None, None
+        self._rec_hist.clear()
+        self._recover_min = math.inf
+
+    def _recover_rc(self, target: float, s: dict, now: float) -> tuple[int, bool]:
+        """Recuperación tras el flip, en tres fases.
+
+        frenar: subir a fondo hasta que deje de caer. En vuelos reales el Tello cae
+        ~50 cm/s tras el flip mientras su propia altura ('h') dice que no se movió,
+        así que no se corrige solo; esperar a pasar la altura objetivo para pedir
+        subir (como antes) era tarde: tocó el piso.
+        sostener: quedarse donde se frenó flip_hold_s. Que ya no caiga puede ser solo
+        porque se le pide subir a fondo; si se baja en seguida, vuelve a caer.
+        asentar: ir a la altura objetivo bajando suave.
+        Si en cualquier momento vuelve a caer rápido, regresa a frenar."""
+        c = self.cfg
+        tof = s.get("tof", 0)
+        alt = altitude(s)
+        if 0 < tof < 300:  # durante la vuelta el tof da basura (400–600)
+            self._rec_hist.append((now, alt))
+            self._recover_min = min(self._recover_min, alt)
+        pts = [(t, a) for t, a in self._rec_hist if now - t <= 0.5]
+        vz = np.polyfit([t for t, _ in pts], [a for _, a in pts], 1)[0] if len(pts) >= 4 else None
+        if self._rec_phase != "frenar" and vz is not None and vz < c.flip_fall_vz:
+            self._rec_phase, self._t_arrest = "frenar", None
+        if self._rec_phase == "frenar":
+            arrested = vz is not None and vz >= c.flip_brake_vz
+            self._t_arrest = (self._t_arrest or now) if arrested else None
+            if (self._t_arrest is not None and now - self._t_arrest >= 0.3) or alt > c.flip_min_alt_cm + 30:
+                self._rec_phase, self._arrest_alt, self._t_arrest = "sostener", alt, self._t_arrest or now
+            else:
+                return c.ud_limit, False
+        if self._rec_phase == "sostener":
+            if now - self._t_arrest < c.flip_hold_s:
+                return (c.ud_limit if alt < self._arrest_alt - c.alt_tol_cm else 0), False
+            self._rec_phase = "asentar"
         ud, on_goal = self._alt_rc(target, s)
-        if since_flip < self.cfg.flip_hold_s:
-            ud = max(ud, 0)
-        return ud, on_goal
+        return max(ud, -c.alt_min), on_goal  # bajar despacio
 
     def _start_flip(self, direction: str) -> None:
         """Manda el flip. Se vacían las respuestas viejas para poder leer la suya."""
