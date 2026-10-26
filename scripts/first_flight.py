@@ -47,7 +47,8 @@ TERMINAL = {"DONE", "KILLED", "ABORTED"}
 @dataclass
 class FlightConfig:
     rc_hz: float = 20.0
-    rc_limit: int = 20
+    rc_limit: int = 20  # adelante/atrás y lados (rc 20 ≈ 20–28 cm/s medido)
+    ud_limit: int = 40  # vertical aparte: el Tello sube lento (rc 20 ≈ 5–14 cm/s medido)
     hover_s: float = 10.0
     max_flight_s: float = 60.0
     takeoff_timeout_s: float = 10.0
@@ -70,15 +71,16 @@ class FlightConfig:
     yaw_tol_deg: float = 3.0
     yaw_timeout_s: float = 10.0
     flip_min_battery: int = 50  # el Tello rechaza flips con poca carga
-    flip_min_alt_cm: float = 120.0  # tras un flip el Tello baja 30–70 cm: voltear con margen
+    flip_min_alt_cm: float = 130.0  # tras un flip el Tello cae 30–80 cm (medido): voltear con margen
+    flip_hold_s: float = 3.0  # tras el flip: no bajar en este tiempo (sigue cayendo) y sostener altura
     flip_min_s: float = 1.0  # mínimo antes de dar la vuelta por terminada
     flip_wait_s: float = 3.0  # máximo sin rc esperando que termine la vuelta
     flip_settle_deg: float = 15.0  # nivelado de nuevo = vuelta terminada
     alt_kp: float = 1.0  # control de altura (subir antes del flip, recuperar después)
     alt_min: int = 15
-    alt_max: int = 30
+    alt_max: int = 40
     alt_tol_cm: float = 5.0
-    alt_timeout_s: float = 8.0
+    alt_timeout_s: float = 12.0
     floor_alt_cm: float = 3.0  # en el aire pero con esta altura por 1 s = en el piso
 
     @classmethod
@@ -161,6 +163,7 @@ class Flight:
         self._flip_ref_alt = 0.0  # altura a la que se regresa después del flip
         self._t_level: float | None = None
         self._t_floor: float | None = None
+        self._recover_min = math.inf
         self.state = "IDLE"
         self.reason = "esperando despegue (t)"
         self.rc = (0, 0, 0, 0)
@@ -250,7 +253,7 @@ class Flight:
 
     def _send_rc(self, lr: float, fb: float, ud: float, yaw: float) -> None:
         lim = self.cfg.rc_limit
-        self.rc = (clamp(lr, lim), clamp(fb, lim), clamp(ud, lim), clamp(yaw, self.cfg.yaw_rate_limit))
+        self.rc = (clamp(lr, lim), clamp(fb, lim), clamp(ud, self.cfg.ud_limit), clamp(yaw, self.cfg.yaw_rate_limit))
         self.t.send_rc_control(*self.rc)
 
     def _begin_landing(self, state: str, reason: str) -> None:
@@ -361,9 +364,9 @@ class Flight:
                 self._goto("HOVER", f"giro NO completado en {cfg.yaw_timeout_s:.0f} s (error {err:+.0f})")
 
         elif st == "FLIP_CLIMB":
-            ud, on_goal = self._alt_rc(max(cfg.flip_min_alt_cm, self._flip_ref_alt), s)
+            ud, high_enough = self._flip_climb_rc(s)
             self._send_rc(0, 0, ud, 0)
-            if self._held_alt(on_goal, now):
+            if self._held_alt(high_enough, now, 0.3):
                 self._start_flip(self.flip_test)
                 self._goto("FLIP_TEST", f"flip {self.flip_test} a {h} cm")
             elif elapsed > cfg.alt_timeout_s:
@@ -373,15 +376,19 @@ class Flight:
         elif st == "FLIP_TEST":
             self._flip_progress(s)
             if self._flip_finished(s, now, elapsed):
+                self._recover_min, self._t_on_target = math.inf, None
                 self._goto("FLIP_RECOVER", self._flip_result())
 
         elif st == "FLIP_RECOVER":
-            # el Tello se hunde tras el flip: corregir en cuanto termina la vuelta
-            ud, on_goal = self._alt_rc(self._flip_ref_alt, s)
+            # el Tello se hunde tras el flip: corregir en cuanto termina la vuelta,
+            # sin bajar mientras sigue cayendo, y solo dar por buena una altura estable
+            ud, on_goal = self._recover_rc(self._flip_ref_alt, s, elapsed)
             self._send_rc(0, 0, ud, 0)
-            if self._held_alt(on_goal, now) or elapsed > cfg.alt_timeout_s:
+            stable = self._held_alt(on_goal, now, 1.0) and elapsed >= cfg.flip_hold_s
+            if stable or elapsed > cfg.alt_timeout_s:
                 self._flip_done = True
-                self._goto("HOVER", f"altura recuperada: {h} cm ({self.reason})")
+                self._goto("HOVER", f"altura recuperada: {h} cm, minima {self._recover_min:.0f} cm ({self.reason})")
+            self._recover_min = min(self._recover_min, h)
 
         elif st in LANDING:
             if h <= cfg.landed_height_cm:
@@ -430,13 +437,29 @@ class Flight:
         on_goal = abs(err) <= c.alt_tol_cm
         return (0 if on_goal else with_min(c.alt_kp * err, c.alt_min, c.alt_max)), on_goal
 
-    def _held_alt(self, on_goal: bool, now: float) -> bool:
-        """En la altura objetivo durante 0.5 s seguidos."""
+    def _held_alt(self, on_goal: bool, now: float, hold: float = 0.5) -> bool:
+        """En la altura objetivo durante `hold` s seguidos."""
         if not on_goal:
             self._t_on_target = None
             return False
         self._t_on_target = self._t_on_target or now
-        return now - self._t_on_target >= 0.5
+        return now - self._t_on_target >= hold
+
+    def _flip_climb_rc(self, s: dict) -> tuple[int, bool]:
+        """Subir para el flip. Basta con estar en o arriba de flip_min_alt_cm: pasarse un
+        poco no importa, y esperar a clavar la altura con rc pequeños tardaba demasiado."""
+        c = self.cfg
+        ud, _ = self._alt_rc(c.flip_min_alt_cm + 5, s)
+        return ud, altitude(s) >= c.flip_min_alt_cm - c.alt_tol_cm
+
+    def _recover_rc(self, target: float, s: dict, since_flip: float) -> tuple[int, bool]:
+        """Tras el flip: hacia la altura objetivo, pero sin bajar durante flip_hold_s.
+        En una prueba real, al terminar la vuelta estaba a 80 cm *cayendo*; como el
+        objetivo era 74, se dio por recuperado y siguió cayendo hasta 39 cm."""
+        ud, on_goal = self._alt_rc(target, s)
+        if since_flip < self.cfg.flip_hold_s:
+            ud = max(ud, 0)
+        return ud, on_goal
 
     def _start_flip(self, direction: str) -> None:
         """Manda el flip. Se vacían las respuestas viejas para poder leer la suya."""

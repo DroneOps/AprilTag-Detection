@@ -6,6 +6,11 @@ tiempo, lo que falte es lo menos importante.
 
 Tiempo estimado: **~30 min para P1–P5**, contando cambios de batería.
 
+> **Estado al 24-oct:** P3, P4 y P5 aprobadas. **Pendientes:** P1 (repetir: se
+> corrigió la recuperación tras el flip, que dejó caer el dron de 117 a 39 cm),
+> P2 y P6 (no se corrieron), y P7 (faltan tags de 15 cm). La próxima sesión
+> empieza por **P1 → P2 → P6**.
+
 ---
 
 ## Antes de salir
@@ -25,8 +30,8 @@ Tiempo estimado: **~30 min para P1–P5**, contando cambios de batería.
    ```bash
    cd /home/faraday/AprilTag-Detection
    ```
-2. **Espacio de vuelo**: ~2 m libres alrededor y **~1.5 m libres hacia arriba**,
-   porque antes de cada flip el dron ahora sube a 120 cm.
+2. **Espacio de vuelo**: ~2 m libres alrededor y **~1.7 m libres hacia arriba**,
+   porque antes de cada flip el dron ahora sube a 130 cm (y puede pasarse un poco).
 3. Recordatorios de seguridad:
    - Una persona en el teclado, con la ventana enfocada y el dedo sobre **ESPACIO** (paro = aterrizaje).
    - `k` mata motores (el dron cae): úsala **solo** si va hacia una persona.
@@ -36,10 +41,13 @@ Tiempo estimado: **~30 min para P1–P5**, contando cambios de batería.
 
 ## P1 — Flip solo, con subida previa ⭐ (3 min, batería ≥ 70 %)
 
-**Para qué:** confirmar que el flip ya no deja al dron cerca del piso. La vez
-pasada bajó de 77 cm al piso y en una misión quedó a 20 cm.
+**Para qué:** confirmar que el flip ya no deja al dron cerca del piso. En
+pruebas reales cayó de 77 cm al piso, a 20 cm en una misión y de 117 a 39 cm
+el 24-oct (la recuperación se daba por buena mientras seguía cayendo). Ahora
+sube a 130 cm, no baja durante 3 s tras el flip y solo da por recuperada una
+altura estable.
 
-**Montaje:** espacio abierto; nada encima del dron hasta ~1.5 m.
+**Montaje:** espacio abierto; nada encima del dron hasta ~1.7 m.
 
 ```bash
 python scripts/first_flight.py --flip-test b --record flip3.mp4
@@ -47,16 +55,16 @@ python scripts/first_flight.py --flip-test b --record flip3.mp4
 
 **Qué debe pasar** (la consola lo va diciendo):
 
-1. `FLIP_CLIMB: subiendo a 120 cm para el flip`
-2. `FLIP_TEST: flip b a ~120 cm`
+1. `FLIP_CLIMB: subiendo a 130 cm para el flip`
+2. `FLIP_TEST: flip b a ~130 cm`
 3. `flip HECHO: ...`
-4. `altura recuperada: ~65 cm`
+4. `altura recuperada: ~70 cm, minima XX cm`: la **mínima** es la que importa.
 5. Aterriza solo.
 
-**Aprueba si:** nunca baja de ~30 cm después del flip.
+**Aprueba si:** la `minima` es de **40 cm o más**. En simulación sale ~65 cm.
 
-**Si no llega a 120 cm** (techo o red baja): sale `flip omitido: no alcanzo 120 cm`.
-Baja `flip_min_alt_cm` en `config/flight.json` (por ejemplo, a 100). Es el único
+**Si no llega a 130 cm** (techo o red baja): sale `flip omitido: no alcanzo 130 cm`.
+Baja `flip_min_alt_cm` en `config/flight.json` (por ejemplo, a 115). Es el único
 cambio de configuración que vale la pena hacer en el momento.
 
 ## P2 — Misión con tag 4 (flip en misión) ⭐ (4 min, batería ≥ 70 %)
@@ -75,13 +83,14 @@ python scripts/mission_tags.py --record mision_flip5.mp4
 
 1. Sube o baja a 80 cm (`CRUISE`).
 2. Avanza, se acerca y se alinea frente al tag.
-3. Sube a 120 cm, hace el flip **hacia atrás** y recupera la altura.
+3. Sube a 130 cm, hace el flip **hacia atrás** y recupera la altura.
 4. Avanza un poco, se detiene frente al tag y aterriza a los 6 s.
 
 Si te pones nervioso cuando avanza hacia la caja después del flip, presiona `q`:
 la prueba ya se cumplió.
 
-**Aprueba si:** en la HMI, en "ejecutados", aparece `4=Flip 360 (flip HECHO)`, y no baja de ~30 cm.
+**Aprueba si:** en la HMI, en "ejecutados", aparece
+`4=Flip 360 (flip HECHO) (minima tras el flip XX cm)` con XX de 40 o más.
 
 ## P3 — Calibración de rc (4 min, batería ≥ 60 %)
 
@@ -130,8 +139,11 @@ desde la altura de crucero, y eso es esperado.
 
 ## P5 — Tag girado y despegue ladeado (4 min, batería ≥ 50 %)
 
-**Para qué:** verificar con el código nuevo que se pone de frente al tag y que
-el giro queda referido a la pista.
+**Para qué:** verificar que se pone de frente al tag aunque despegue chueco o
+el tag esté girado. Los giros quedan referidos **al tag**: si la caja está
+girada respecto a la pista, el dron termina igual de girado respecto a las
+líneas, y eso es lo correcto. Para comprobar el giro contra la pista, pon la
+caja derecha (paralela a las líneas) y solo el dron ladeado.
 
 **Montaje:**
 
@@ -145,7 +157,8 @@ python scripts/mission_tags.py --record mision_alineado2.mp4
 **Aprueba si:**
 
 - La consola dice `EXECUTE: tag 2 ... a ~60–70 cm, lateral ±5 cm, angulo ±3`.
-- Después del giro, el dron queda paralelo o perpendicular a las líneas de la pista.
+- Al ejecutar, el dron queda de frente a la cara de la caja; después del giro, a 90° de esa cara.
+- Si la caja estaba derecha respecto a la pista, el dron termina paralelo o perpendicular a las líneas.
 
 ---
 

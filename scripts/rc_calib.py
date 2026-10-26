@@ -44,7 +44,8 @@ class RcCalib(Flight):
     AIRBORNE_STATES = AIRBORNE | {"RC_ALT", "RC_STEP"}
     LOG_EXTRA = ["tag_z", "tag_x", "paso"]
 
-    def __init__(self, tello, cfg: FlightConfig, log_path: Path, calib: Path, tag_cm: float, axes) -> None:
+    def __init__(self, tello, cfg: FlightConfig, log_path: Path, calib: Path, tag_cm: float, axes,
+                 report_dir: Path = ROOT / "capturas") -> None:
         super().__init__(tello, cfg, log_path, None)
         self.detector = TagDetector(set(TAG_FUNCTIONS), True, 2.0)
         self.pose_est = PoseEstimator(calib, tag_cm)
@@ -55,6 +56,7 @@ class RcCalib(Flight):
         self.steps = [(a, sign * v) for a in axes for v in VALUES for sign in (1, -1)]
         self.results: list[tuple[str, int, float | None, str]] = []
         self._i, self._phase, self._t_phase, self._pre = 0, "start", 0.0, None
+        self.report_dir = report_dir
 
     # ---- visión (hilo de la HMI)
     def on_frame(self, bgr: np.ndarray, t: float) -> None:
@@ -182,7 +184,7 @@ class RcCalib(Flight):
             lines.append("")
         text = "\n".join(lines)
         print("\n" + text)
-        out = ROOT / "capturas" / time.strftime("rc_calib_%Y%m%d_%H%M%S.txt")
+        out = self.report_dir / time.strftime("rc_calib_%Y%m%d_%H%M%S.txt")
         out.parent.mkdir(exist_ok=True)
         out.write_text(text + "\n")
         print(f"[rc] guardado en {out}")

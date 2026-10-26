@@ -3,8 +3,10 @@
 
 Renderiza la cámara del Tello (K, distorsión e inclinación de 11° reales de
 config/camera_tello.json) con tags en paredes, y la misión los procesa con el
-detector y el PnP reales. La física del dron está ajustada a bitácoras reales:
-zona muerta de rc, giro ~0.73*(|rc|-6.6) grados/s, 'h' que deriva y tof con ruido.
+detector y el PnP reales. La física del dron está ajustada a bitácoras reales y
+a la calibración de rc del 24-oct: horizontal 1.5*(|rc|-5) cm/s, vertical
+0.5*(|rc|-3) cm/s, giro ~0.73*(|rc|-6.6) grados/s, 'h' que deriva, tof con
+ruido, y tras un flip se hunde ~25 cm/s por 1.2–3 s (real: cayó 30–78 cm).
 
 Uso:
     python sim/sim_world.py circuito          # un escenario
@@ -107,15 +109,17 @@ class SimTello:
                     self.x += sgn * 30 * math.sin(ps) * dt
                     self.y += sgn * 30 * math.cos(ps) * dt
                     self.yaw = F.wrap_deg(self.yaw + 6 * dt)
-                elif self.mode == "air" and now < self.sink_end and (now - self.t_flip < 1.3 or self.rc[2] <= 0):
-                    # tras el flip el Tello se hunde (real: 30 cm, y hasta el piso si nadie corrige)
+                elif self.mode == "air" and now < self.sink_end:
+                    # tras el flip el Tello se hunde (real: 30–78 cm, y hasta el piso si nadie
+                    # corrige); pedir subir solo lo contrarresta en parte
                     self.pitch, self.tof_garbage = 0, None
-                    self.z = max(0.0, self.z - 45 * dt)
+                    climb = 0.5 * dead(self.rc[2], 3) if now - self.t_flip >= 1.3 and self.rc[2] > 0 else 0.0
+                    self.z = max(0.0, self.z - (25 - climb) * dt)
                     if self.z <= 0:
                         self.mode = "ground"  # tocó el piso: el Tello apaga motores
                 elif self.mode == "air":
                     lr, fb, ud, yr = self.rc
-                    want = 0.9 * np.array([dead(fb), dead(lr), dead(ud)])
+                    want = np.array([1.5 * dead(fb), 1.5 * dead(lr), 0.5 * dead(ud, 3)])
                     self.v += (want - self.v) * min(1, dt / 0.4)
                     wy = math.copysign(max(0, 0.73 * (abs(yr) - 6.6)), yr)
                     self.yaw_rate += (wy - self.yaw_rate) * min(1, dt / 0.15)
@@ -172,7 +176,7 @@ class SimTello:
                     self.udp["responses"].append(b"error")
                 else:
                     self.t_flip, self.flips, self.flip_dir = time.monotonic(), self.flips + 1, c.split()[-1]
-                    self.sink_end = self.t_flip + 1.0 + self.rng.uniform(0.6, 2.5)
+                    self.sink_end = self.t_flip + 1.0 + self.rng.uniform(1.2, 3.0)
                     self.udp["responses"].append(b"ok")
 
     def render(self) -> np.ndarray:
@@ -221,7 +225,8 @@ def run(name, tags, limit=120, events=None, drift=2.0, boxes=(), bias=(0.0, 0.0)
         mis.executed, mis._turned = [], 0.0
     elif rc_calib:  # scripts/rc_calib.py
         cfg.hover_s, cfg.max_flight_s = 3.0, 150.0
-        mis = RC.RcCalib(sim, cfg, log, ROOT / "config" / "camera_tello.json", 8.0, ["fb", "lr", "ud"])
+        mis = RC.RcCalib(sim, cfg, log, ROOT / "config" / "camera_tello.json", 8.0, ["fb", "lr", "ud"],
+                         report_dir=ROOT / "sim" / "logs")  # no mezclar con las calibraciones reales
         mis.executed, mis._turned = [], 0.0
     else:
         mis = M.TagMission(sim, cfg, mcfg, log, ROOT / "config" / "camera_tello.json")
@@ -308,7 +313,7 @@ def scenario(sc: str) -> None:
         run(sc, [Tag(3, (0, 220, 105), south)])
     elif sc == "tag_bajo":  # tag más bajo: debe bajar sin pasar de min_alt_cm
         run(sc, [Tag(3, (0, 220, 45), south)])
-    elif sc == "rc_calib":  # simulador: zona muerta 5, ganancia 0.9 -> ~4.5 / 9 / 13.5 cm/s
+    elif sc == "rc_calib":  # simulador: fb/lr 1.5*(|rc|-5) -> 7.5 / 15 / 22.5 cm/s; ud 0.5*(|rc|-3)
         run(sc, [Tag(1, (0, 160, 90), south)], limit=150, drift=0.5, rc_calib=True)
     elif sc == "sin_tags":
         run(sc, [], limit=60)

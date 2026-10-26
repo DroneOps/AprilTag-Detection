@@ -75,15 +75,15 @@ class MissionConfig:
     stop_tol_cm: float = 10.0
     approach_kp: float = 0.3
     approach_fb_max: int = 15
-    approach_fb_min: int = 8
+    approach_fb_min: int = 10
     az_kp: float = 1.2
     az_max: int = 40
     az_min: int = 15
     az_tol_deg: float = 5.0
     lateral_start_cm: float = 130.0
-    lat_kp: float = 1.5
-    lat_min: int = 12
-    lat_max: int = 20
+    lat_kp: float = 0.8  # rc 15 ≈ 17–20 cm/s medido: con 1.5 oscilaba ±15 cm
+    lat_min: int = 10  # rc 10 ya mueve 5–7 cm/s (medido)
+    lat_max: int = 15
     lat_tol_cm: float = 5.0
     az_keep_deg: float = 15.0
     search_rate: int = 25
@@ -97,7 +97,7 @@ class MissionConfig:
     reacquire_s: float = 1.5
     climb_cm: float = 30.0
     climb_kp: float = 1.0
-    climb_max: int = 30
+    climb_max: int = 40  # vertical lento: rc 20 ≈ 5–14 cm/s medido
     climb_min: int = 15
     climb_tol_cm: float = 5.0
     climb_timeout_s: float = 6.0
@@ -106,7 +106,7 @@ class MissionConfig:
     cruise_alt_cm: float = 80.0  # tras despegar (el despegue deja 50–75 cm según el día)
     vert_kp: float = 0.8  # seguimiento vertical: cámara a la altura del tag
     vert_min: int = 15
-    vert_max: int = 25
+    vert_max: int = 30
     vert_tol_cm: float = 8.0
     flip_dir: str = "auto"  # auto = lejos del tag; o f, b, l, r fijo
     wait_s: float = 5.0
@@ -435,8 +435,8 @@ class TagMission(Flight):
                 # el Tello se hunde 30–70 cm tras un flip: subir antes, voltear, y
                 # regresar a la altura de ahora en cuanto termine la vuelta
                 ref = altitude(s)
-                self._plan[0:0] = [("flip_go",), ("alt_to", ref)]
-                prim = ("alt_to", max(self.cfg.flip_min_alt_cm, ref), "para_flip")
+                self._plan[0:0] = [("flip_go",), ("alt_to", ref, "tras_flip")]
+                prim = ("alt_to", self.cfg.flip_min_alt_cm, "para_flip")
             kind = prim[0]
             self._prim, self._prim_start, self._t_hold = prim, now, None
             if kind == "yaw":
@@ -469,22 +469,30 @@ class TagMission(Flight):
             self._send_rc(0, 0, 0, rate)
             done = self._held(on_goal, now, 0.3) or el > cfg.yaw_timeout_s * max(1.0, abs(self._prim[1]) / 180)
         elif kind == "alt_to":
-            # el flip necesita más tope que los límites normales de la misión
-            target = self._prim[1] if len(self._prim) > 2 else min(max(self._prim[1], m.min_alt_cm), m.max_alt_cm)
-            err = target - altitude(s)
-            on_goal = abs(err) <= m.climb_tol_cm
-            ud = 0 if on_goal else with_min(m.climb_kp * err, m.climb_min, m.climb_max)
+            tag = self._prim[2] if len(self._prim) > 2 else ""
+            if tag == "para_flip":  # en o arriba de la altura segura (mismo criterio que first_flight)
+                ud, on_goal = self._flip_climb_rc(s)
+                done = self._held(on_goal, now, 0.3) or el > cfg.alt_timeout_s
+            elif tag == "tras_flip":  # sin bajar mientras cae y solo con altura estable
+                ud, on_goal = self._recover_rc(self._prim[1], s, el)
+                self._recover_min = min(self._recover_min, altitude(s))
+                done = (self._held(on_goal, now, 1.0) and el >= cfg.flip_hold_s) or el > cfg.alt_timeout_s
+                if done:
+                    self.executed[-1] += f" (minima tras el flip {self._recover_min:.0f} cm)"
+            else:  # tags 5 y 6
+                ud, on_goal = self._climb_rc(self._prim[1], s)
+                done = self._held(on_goal, now, 0.5) or el > m.climb_timeout_s
             self._send_rc(0, 0, ud, 0)
-            done = self._held(on_goal, now, 0.5) or el > m.climb_timeout_s
-            if done and not on_goal and len(self._prim) > 2 and self._plan and self._plan[0][0] == "flip_go":
+            if done and not on_goal and tag == "para_flip" and self._plan and self._plan[0][0] == "flip_go":
                 self._plan.pop(0)  # no se alcanzó la altura segura: sin flip
-                note = f"flip omitido: no alcanzo {target:.0f} cm (esta a {altitude(s)})"
+                note = f"flip omitido: no alcanzo {cfg.flip_min_alt_cm:.0f} cm (esta a {altitude(s)})"
                 self.executed[-1] += f" ({note})"
                 print(f"[vuelo] {note}")
         elif kind == "flip_go":
             self._flip_progress(s)  # sin rc mientras voltea
             done = self._flip_finished(s, now, el)  # en cuanto termina la vuelta, a recuperar altura
             if done:
+                self._recover_min = math.inf
                 result = self._flip_result()
                 self.executed[-1] += " (" + result.split(":")[0] + ")"
         elif kind == "wait":
