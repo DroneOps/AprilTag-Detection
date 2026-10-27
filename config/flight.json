@@ -8,6 +8,7 @@
   "takeoff_min_height_cm": 30,
   "takeoff_settle_s": 2.0,
   "takeoff_settle_cm": 8,
+  "takeoff_ok_max_s": 7.0,
   "land_timeout_s": 10,
   "land_resend_s": 1.5,
   "landed_height_cm": 10,

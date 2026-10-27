@@ -13,8 +13,17 @@ Tiempo estimado: **~30 min para P1–P5**, contando cambios de batería.
 > hay aterrizaje por obstáculo y sostiene la altura con más fuerza); pedir adelante
 > y de lado a la vez lo frenaba, así que medía ~10 cm/s y a ciegas iba a ~19 (se
 > pasaba hasta 90 cm: ahora se centra primero y luego va recto); y la detección en
-> movimiento era pobre (ahora corrige más bits). **Siguiente sesión:**
-> **F1 → F3 → F4 → F2** (las de pared, P2/P4–P7, ya no son prioridad).
+> movimiento era pobre (ahora corrige más bits).
+>
+> **Segunda tanda del 27-oct:** el dron subía de más (no veía tags a menos de 1.5 m)
+> y se inclinaba solo. Las bitácoras muestran que **su estimación interna estaba
+> mal**: pidiendo quedarse y subir a fondo, avanzó 120 cm y bajó 45 cm con el IMU
+> diciendo "nivelado"; pidiendo bajar, subió. Eso es IMU descalibrado o hélice
+> dañada (hubo varias caídas con paro de motores). En código: el sostener altura
+> es más suave y apunta a la de crucero, el despegue espera el "ok" del Tello, y
+> si el dron va al revés de lo pedido **aterriza solo** ("el dron no obedece" /
+> "avanza solo"). **Siguiente sesión: primero "Revisar el dron" (abajo), luego
+> F1 → F3 → F4 → F2.**
 
 ---
 
@@ -41,6 +50,26 @@ Tiempo estimado: **~30 min para P1–P5**, contando cambios de batería.
    - Una persona en el teclado, con la ventana enfocada y el dedo sobre **ESPACIO** (paro = aterrizaje).
    - `k` mata motores (el dron cae): úsala **solo** si va hacia una persona.
 4. Cada prueba lleva `--record` con un **nombre distinto**, para no sobrescribir videos.
+
+## Revisar el dron (10 min) ⭐ — después de cualquier caída
+
+Si el dron se inclina solo, deriva mucho o sube/baja sin que se le pida, el
+problema es del dron, no del código: ninguna misión va a funcionar así.
+
+1. **Hélices**: revisa las 4. Si alguna está astillada, doblada o floja, cámbiala
+   por una **del mismo tipo** que la que quitas (hay dos tipos que giran al revés;
+   vienen marcadas).
+2. **Calibrar el IMU** en la app oficial Tello: en *Ajustes* (engrane) → *Más*,
+   la opción de calibrar IMU. Sigue las posiciones que pide sobre una mesa plana.
+   Ahí mismo está la de calibrar el centro de gravedad: hazla también.
+3. **Enfriar**: que la temperatura esté abajo de ~70 °C antes de despegar (con el
+   ventilador, dron apagado entre corridas). Hoy voló a 80–86 °C.
+4. **Prueba de estacionario** (sin tags):
+   ```bash
+   python scripts/first_flight.py --record estacionario.mp4
+   ```
+   Durante los 10 s quieto **no debe moverse más de ~30 cm ni subir/bajar más de
+   ~10 cm**. Si lo hace, repite la calibración del IMU antes de seguir.
 
 ---
 
@@ -224,7 +253,11 @@ que el máximo sea menor.
 
 Si el tag se va por un costado, se desliza hacia él; no se va a ciegas. La
 consola y la HMI muestran la fase. Ya **no aterriza por "obstáculo debajo"**: el
-dron se hunde al avanzar y eso lo corrige sosteniendo la altura.
+dron se hunde al avanzar y eso lo corrige sosteniendo la altura de crucero.
+
+Aterriza solo si el dron **no obedece** (pide subir y cae 15 cm en 0.7 s, o al
+revés) o si **avanza solo** mientras se centra (40 cm en 2 s). Si pasa, no es un
+error de la misión: haz "Revisar el dron".
 
 **F1 — Un tag.** Tag **2** en el piso a **~1.7 m** frente al despegue (3–4 cuadros de 50 cm).
 Deja el lado izquierdo libre.
@@ -245,8 +278,10 @@ La consola dice `... cm a ciegas, velocidad medida XX cm/s`; anota ese número.
   de `config/mission_piso.json`. Si así se queda corto, bájalo (ejemplo: le faltan
   15 cm de 100 → cambia 17 por ~14.5); si se pasa, súbelo.
 - **Si dice `medida` y aun así se pasa o se queda corto siempre por lo mismo**
-  (en simulación se pasa ~10 cm: frena tarde), ajusta `ciegas_ajuste_cm`: si se pasa
-  10 cm, ponlo en -10; si le faltan 10, en +10. Si el error cambia mucho entre
+  (en simulación se pasa ~10 cm: frena tarde), ajusta `ciegas_ajuste_cm` **en
+  `config/mission_piso.json`** (no en el `.py`: el `.json` manda): si se pasa 10 cm,
+  ponlo en -10; si le faltan 10, en +10. Solo sirve en corridas que **sí** llegaron
+  al tramo a ciegas (la consola dice `a ciegas`). Si el error cambia mucho entre
   corridas, no lo ajustes: anótalo y lo vemos.
 
 **F2 — Tag girado y corrido.** Igual que F1, pero con el tag girado ~15–20° y

@@ -58,6 +58,7 @@ class FloorConfig:
     centrar_max_s: float = 8.0  # si no logra centrarse, sigue de todos modos
     recentrar_cm: float = 10.0  # yendo recto, si se corre más de esto de lado: parar y centrar otra vez,
     recentrar_min_cm: float = 125.0  # pero solo si falta más que esto (cerca ya no da tiempo de medir)
+    solo_cm: float = 40.0  # centrando (sin avanzar), si se acerca esto al tag en 2 s: avanza solo, aterrizar
     ciegas_cms: float = 17.0  # respaldo si no se pudo medir la velocidad en el acercamiento
     ciegas_ajuste_cm: float = 0.0  # se suma al tramo a ciegas: negativo si siempre se pasa, positivo si se queda corto
     vel_ventana_s: float = 2.5  # se mide con la distancia al tag de los últimos N s visibles
@@ -97,6 +98,7 @@ class FloorMission(TagMission):
         self._fb_req, self._t_fb = 0.0, 0.0  # último avance pedido y desde cuándo
         self._t_phase = 0.0
         self._t_ok: float | None = None  # desde cuándo está centrado
+        self._still: deque = deque()  # (t, adelante) mientras centra: no debería acercarse
         self._blind_cm = 0.0
         self._blind_s = 0.0
 
@@ -161,6 +163,7 @@ class FloorMission(TagMission):
             self._phase = "recto" if abs(right) <= f.lat_tol_cm else "centrar"
             self._t_phase, self._t_ok, self._blind_cm, self._speed = now, None, 0.0, None
             self._samples.clear()
+            self._still.clear()
             return self._goto("APPROACH", f"tag {tid} ({TAG_FUNCTIONS[tid]}) en el piso a {fwd:.0f} cm, "
                                           f"lado {right:+.0f} cm")
         if elapsed > f.advance_timeout_s:
@@ -236,7 +239,16 @@ class FloorMission(TagMission):
         lr = 0 if abs(right) <= f.lat_tol_cm else with_min(f.lat_kp * right, f.lat_min, f.lat_max)
         if self._phase == "recto" and abs(right) > f.recentrar_cm and fwd > f.recentrar_min_cm:
             self._phase, self._t_phase, self._t_ok = "centrar", now, None
+            self._still.clear()
         if self._phase == "centrar":
+            # sin pedir avanzar no debería acercarse (real 27-oct: avanzó 120 cm y bajó 45 cm
+            # pidiendo quedarse y subir, con el IMU diciendo que estaba nivelado)
+            self._still.append((now, fwd))
+            while now - self._still[0][0] > 2.0:
+                self._still.popleft()
+            if self._still[0][1] - fwd > f.solo_cm:
+                return self._begin_landing("EMERGENCY_LAND", f"avanza solo sin pedirlo ({self._still[0][1] - fwd:.0f} cm "
+                                                             f"en 2 s); revisar IMU y helices")
             self._t_ok = (self._t_ok or now) if lr == 0 else None
             if (self._t_ok is None or now - self._t_ok < f.centrar_s) and now - self._t_phase < f.centrar_max_s:
                 return self._send_rc(lr, 0, 0, head)

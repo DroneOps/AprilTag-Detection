@@ -73,12 +73,18 @@ class MissionConfig:
     obstacle_drop_cm: float = 25.0
     obstacle_h_ratio: float = 0.4  # si 'h' bajó menos que esto x lo que bajó el tof: obstáculo; si no, se hundió
     hold_tol_cm: float = 4.0  # sostener altura en ADVANCE/APPROACH/EXECUTE cuando no se pide subir/bajar
-    hold_kp: float = 1.5  # real: avanzando se hunde ~10–13 cm/s aun pidiendo rc 15–18 hacia arriba
-    hold_ki: float = 1.0  # rc por cm·s: aprende cuánto empuje necesita para no hundirse
+    hold_kp: float = 1.2  # real: avanzando se hunde ~10–13 cm/s aun pidiendo rc 15–18 hacia arriba
+    hold_ki: float = 0.5  # rc por cm·s: aprende cuánto empuje necesita para no hundirse...
+    hold_i_max: float = 15.0  # ...hasta esto (con 40 se quedaba pegado subiendo a fondo)
     hold_min: int = 20
-    hold_max: int = 40
+    hold_max: int = 30  # real 27-oct: rc 40 hacia arriba subió ~40 cm/s y se pasó de 45 a 89 cm
     tof_salto_cm: float = 20.0  # un salto así del tof que dura menos que tof_salto_s es lectura falsa
     tof_salto_s: float = 0.6  # (real: 81 -> 14 -> 83 cm en 0.4 s)
+    tof_vel_max: float = 30.0  # cm/s: un hundimiento es más lento; un escalón se sigue a esta velocidad
+    desobedece_ud: int = 20  # pidiendo subir/bajar con al menos esto...
+    desobedece_s: float = 0.7  # ...durante esto (15 cm en 0.7 s: cae a más de ~21 cm/s; hundirse es ~10–13)...
+    desobedece_cm: float = 15.0  # ...y moverse esto al revés: aterrizar (IMU descalibrado o hélice dañada)
+    desobedece_paso_cm: float = 10.0  # saltos mayores entre lecturas seguidas (caja, lectura falsa) no cuentan
     blind_speed_cms: float = 20.0
     approach_start_cm: float = 250.0
     stop_cm: float = 60.0
@@ -188,6 +194,8 @@ class TagMission(Flight):
         self._t_hold_prev: float | None = None
         self._alt_f: float | None = None  # altura sin saltos sueltos del tof
         self._t_salto: float | None = None
+        self._t_alt_f: float | None = None
+        self._obey: deque = deque()  # (t, altura, rc vertical) para ver si obedece
         self._ud_intent = 0  # último rc vertical pedido a propósito (no por sostener)
         self._obj: tuple[float, float, float, float] | None = None  # (z, az, x, angulo) para la bitácora
         self._exit_heading = 0.0
@@ -270,6 +278,13 @@ class TagMission(Flight):
         if self._yaw_prev is not None:
             self._turned += wrap_deg(yaw - self._yaw_prev)
         self._yaw_prev = yaw
+        # el dron va al revés de lo que se le pide: aterrizar antes de que se vaya al piso
+        if (st == "CRUISE" or st in self.HOLD_STATES) and not self._flipping():
+            why = self._disobeys(s, now)
+            if why:
+                return self._begin_landing("EMERGENCY_LAND", f"el dron no obedece: {why}; revisar IMU y helices")
+        else:
+            self._obey.clear()
         # algo bajo el dron (caja, obstáculo): el tof baja sin que pidamos bajar y la
         # altura propia del Tello ('h') no. Si 'h' también bajó, el dron se hundió
         # (pasó en vuelos reales a 60 cm): eso lo corrige el sostener altura.
@@ -354,37 +369,73 @@ class TagMission(Flight):
         hunde solo (real: de 60 a 33 cm avanzando). Un rc vertical distinto de 0 es a
         propósito y mueve la altura a sostener."""
         self._ud_intent = ud
-        # el flip y su recuperación llevan su propio control de altura
-        flipping = self.state == "EXECUTE" and (self._prim[:1] == ("flip_go",) or self._prim[2:3] == ("tras_flip",))
-        if self.state in self.HOLD_STATES and not flipping:
+        if self.state in self.HOLD_STATES and not self._flipping():
             m, now = self.m, time.monotonic()
             alt = self._filtered_alt(altitude(self.tel.snapshot()[0]), now)
             dt = min(0.2, now - self._t_hold_prev) if self._t_hold_prev else 0.0
             self._t_hold_prev = now
-            if ud != 0 or self._hold_alt is None:
-                self._hold_alt = alt
+            if ud != 0:
+                self._hold_alt = alt  # subir/bajar a propósito: esta es la nueva altura a sostener
             else:
+                if self._hold_alt is None:
+                    self._hold_alt = m.cruise_alt_cm  # la de crucero, aunque el despegue lo haya dejado más alto
                 # PI: la parte integral es el empuje que hace falta para no hundirse
                 err = self._hold_alt - alt
-                self._hold_i = max(-m.hold_max, min(m.hold_max, self._hold_i + m.hold_ki * err * dt))
+                self._hold_i = max(-m.hold_i_max, min(m.hold_i_max, self._hold_i + m.hold_ki * err * dt))
                 u = m.hold_kp * err + self._hold_i
                 if abs(u) >= m.hold_min or abs(err) > m.hold_tol_cm:
                     ud = with_min(u, m.hold_min, m.hold_max)
         else:
-            self._hold_alt, self._hold_i, self._t_hold_prev = None, 0.0, None
+            # la altura a sostener se conserva (tras un flip, la que recupera) y el filtro
+            # vuelve a empezar: congelado durante el flip parecía una caída al volver
+            if self._prim[2:3] == ("tras_flip",):
+                self._hold_alt = self._prim[1]
+            self._hold_i, self._t_hold_prev, self._alt_f, self._t_alt_f = 0.0, None, None, None
         super()._send_rc(lr, fb, ud, yaw)
 
+    def _flipping(self) -> bool:
+        """El flip y su recuperación llevan su propio control de altura."""
+        return self.state == "EXECUTE" and (self._prim[:1] == ("flip_go",) or self._prim[2:3] == ("tras_flip",))
+
     def _filtered_alt(self, alt: float, now: float) -> float:
-        """Altura para sostener, sin saltos sueltos del tof. Un salto que se mantiene
-        (escalón, caja) sí se acepta pasado tof_salto_s."""
+        """Altura para sostener, sin saltos sueltos del tof y sin cambios más rápidos
+        que tof_vel_max: un hundimiento real es más lento; un escalón (caja) se sigue
+        poco a poco en vez de mandar a subir a fondo."""
         m = self.m
-        if self._alt_f is None or abs(alt - self._alt_f) <= m.tof_salto_cm:
-            self._alt_f, self._t_salto = alt, None
-        else:
+        dt = min(0.2, now - self._t_alt_f) if self._t_alt_f else 0.0
+        self._t_alt_f = now
+        if self._alt_f is None:
+            self._alt_f = alt
+            return alt
+        if abs(alt - self._alt_f) > m.tof_salto_cm:
             self._t_salto = self._t_salto or now
-            if now - self._t_salto >= m.tof_salto_s:
-                self._alt_f, self._t_salto = alt, None
+            if now - self._t_salto < m.tof_salto_s:
+                return self._alt_f  # salto suelto: ignorarlo mientras no dure
+        else:
+            self._t_salto = None
+        step = m.tof_vel_max * dt
+        self._alt_f += max(-step, min(step, alt - self._alt_f))
         return self._alt_f
+
+    def _disobeys(self, s: dict, now: float) -> str | None:
+        """El dron va al revés de lo que se le pide (real 27-oct: pidiendo subir a fondo
+        bajó de 70 a 22 cm y avanzó solo; pidiendo bajar subió de 89 a 109). Con el IMU
+        descalibrado o una hélice dañada no hay control que valga: mejor aterrizar."""
+        m = self.m
+        self._obey.append((now, altitude(s), self.rc[2]))
+        while now - self._obey[0][0] > m.desobedece_s:
+            self._obey.popleft()
+        if len(self._obey) < 10 or now - self._obey[0][0] < 0.9 * m.desobedece_s:
+            return None
+        # lo que se movió, sin los saltos: pasar sobre una caja no es caer
+        alts = [a for _, a, _ in self._obey]
+        moved = sum(d for d in np.diff(alts) if abs(d) <= m.desobedece_paso_cm)
+        uds = [u for _, _, u in self._obey]
+        if min(uds) >= m.desobedece_ud and moved <= -m.desobedece_cm:
+            return f"pide subir y baja ({moved:+.0f} cm en {m.desobedece_s:.1f} s)"
+        if max(uds) <= -m.desobedece_ud and moved >= m.desobedece_cm:
+            return f"pide bajar y sube ({moved:+.0f} cm en {m.desobedece_s:.1f} s)"
+        return None
 
     def _climb_rc(self, target: float, s: dict) -> tuple[int, bool]:
         """rc vertical hacia una altura, con los límites de la misión."""

@@ -17,7 +17,7 @@ Escenarios: circuito pausa giro360 sube_ciego perdido flip8 caja deriva
             tag_bajo rc_calib sin_tags espejo_uno espejo_circuito espejo_quieto
             espejo_deriva espejo_flip espejo_inclinado espejo_inclinado_sin_config
             piso_uno piso_girado piso_circuito piso_deriva piso_flip piso_lento piso_rapido
-            piso_hundimiento piso_lado piso_tof_falso
+            piso_hundimiento piso_lado piso_tof_falso piso_imu_mal
 
 Corre en tiempo real (cada escenario tarda 30–70 s). Las bitácoras van a sim/logs/.
 """
@@ -75,13 +75,17 @@ class SimTello:
     """Imita la interfaz de djitellopy que usa la misión."""
 
     def __init__(self, tags, drift=2.0, seed=0, boxes=(), bias=(0.0, 0.0), yaw0=0.0, bat=90.0,
-                 mirror=None, mirror_tilt=0.0, speed_factor=1.0, sag=0.0, combo=1.0, glitches=()) -> None:
+                 mirror=None, mirror_tilt=0.0, speed_factor=1.0, sag=0.0, combo=1.0, glitches=(),
+                 imu_mal=None) -> None:
         # speed_factor: la misma rc mueve más o menos (real: rc 15 dio 12–20 cm/s entre vuelos).
         # sag: cm/s que se hunde al avanzar sin rc vertical (real: 60 -> 33 cm a 60 cm de altura).
         self.speed_factor, self.sag, self.vz_sink = speed_factor, sag, 0.0
         # combo: pedir adelante y de lado a la vez lo frena (real 27-oct: fb 15 + lr 15 -> ~10 y ~3 cm/s)
         # glitches: (desde, hasta, valor) en s desde el arranque: el tof da ese valor (real: 81 -> 14 -> 83)
         self.combo, self.glitches = combo, glitches
+        # imu_mal: (desde s, cm/s adelante, cm/s vertical) que se mueve solo, pida lo que se pida
+        # (real 27-oct: avanzó 120 cm y bajó 45 cm pidiendo quedarse y subir a fondo)
+        self.imu_mal = imu_mal
         # mirror: None = cámara al frente; "v" = espejo hacia abajo (la imagen sale espejada,
         # como la real). mirror_tilt: grados que la vista se inclina hacia adelante.
         self.mirror, self.mirror_tilt = mirror, math.radians(mirror_tilt)
@@ -116,6 +120,7 @@ class SimTello:
                     self.z = min(65.0, self.z + 30 * dt)
                     if self.z >= 65:
                         self.mode = "air"
+                        self.udp["responses"].append(b"ok")
                 elif self.mode == "land":
                     self.z = max(0.0, self.z - 40 * dt)
                     if self.z <= 0:
@@ -144,7 +149,8 @@ class SimTello:
                 elif self.mode == "air":
                     lr, fb, ud, yr = self.rc
                     gain = 1.7 * self.speed_factor
-                    want = np.array([gain * dead(fb), gain * dead(lr), 0.5 * dead(ud, 3)])
+                    # subir es más rápido que bajar (real 27-oct: rc 40 subió ~40 cm/s; rc -40 bajó ~7)
+                    want = np.array([gain * dead(fb), gain * dead(lr), (0.9 if ud > 0 else 0.5) * dead(ud, 3)])
                     if dead(fb) and dead(lr):
                         want[:2] *= self.combo
                     if self.sag and dead(fb):
@@ -158,6 +164,10 @@ class SimTello:
                     self.x += (self.v[0] * math.sin(ps) + self.v[1] * math.cos(ps) + self.wind[0] + self.bias[0]) * dt
                     self.y += (self.v[0] * math.cos(ps) - self.v[1] * math.sin(ps) + self.wind[1] + self.bias[1]) * dt
                     self.z = max(0.0, self.z + self.v[2] * dt)
+                    if self.imu_mal and now - self.t0 >= self.imu_mal[0]:
+                        self.x += self.imu_mal[1] * math.sin(ps) * dt
+                        self.y += self.imu_mal[1] * math.cos(ps) * dt
+                        self.z = max(0.0, self.z + self.imu_mal[2] * dt)
                     self._check_walls()
                     self.min_z_after_takeoff = min(self.min_z_after_takeoff, self.z)
                 k += 1
@@ -260,7 +270,7 @@ OVER_P: dict = {}  # cambios a FloorConfig por escenario
 
 def run(name, tags, limit=120, events=None, drift=2.0, boxes=(), bias=(0.0, 0.0), yaw0=0.0, bat=90.0,
         flip_test=None, rc_calib=False, mirror=None, mirror_tilt=0.0, start=(0.0, 0.0), piso=False,
-        speed_factor=1.0, sag=None, combo=None, glitches=()):
+        speed_factor=1.0, sag=None, combo=None, glitches=(), imu_mal=None):
     # piso: con lo visto en vuelo real (27-oct) se hunde al avanzar y el mando combinado lo frena
     sag = (15.0 if piso else 0.0) if sag is None else sag
     combo = (0.55 if piso else 1.0) if combo is None else combo
@@ -270,7 +280,8 @@ def run(name, tags, limit=120, events=None, drift=2.0, boxes=(), bias=(0.0, 0.0)
     for k, v in OVER.items():
         setattr(mcfg, k, v)
     sim = SimTello(tags, drift=drift, boxes=boxes, bias=bias, yaw0=yaw0, bat=bat, mirror=mirror,
-                   mirror_tilt=mirror_tilt, speed_factor=speed_factor, sag=sag, combo=combo, glitches=glitches)
+                   mirror_tilt=mirror_tilt, speed_factor=speed_factor, sag=sag, combo=combo, glitches=glitches,
+                   imu_mal=imu_mal)
     sim.x, sim.y = start
     log = ROOT / "sim" / "logs" / f"{name}.csv"
     if flip_test:  # prueba de first_flight.py --flip-test, sin misión
@@ -430,6 +441,8 @@ def scenario(sc: str) -> None:
             run(sc, [floor(2, 75, 175)], piso=True)
         elif sc == "piso_tof_falso":  # el tof da 14 cm 0.4 s en pleno avance (real): no aterrizar ni brincar
             run(sc, [floor(2, 0, 170)], piso=True, glitches=[(9.0, 9.4, 14)])
+        elif sc == "piso_imu_mal":  # se va solo hacia adelante y abajo: debe aterrizar antes del piso
+            run(sc, [floor(2, 25, 170)], piso=True, imu_mal=(10.0, 30.0, -35.0))
         else:
             raise SystemExit(f"escenario desconocido: {sc}")
     elif sc == "sin_tags":
@@ -445,7 +458,7 @@ ALL = ["circuito", "pausa", "giro360", "sube_ciego", "perdido", "flip8", "caja",
        "espejo_uno", "espejo_circuito", "espejo_quieto", "espejo_deriva", "espejo_flip",
        "espejo_inclinado", "espejo_inclinado_sin_config",
        "piso_uno", "piso_girado", "piso_circuito", "piso_deriva", "piso_flip", "piso_lento", "piso_rapido",
-       "piso_hundimiento", "piso_lado", "piso_tof_falso"]
+       "piso_hundimiento", "piso_lado", "piso_tof_falso", "piso_imu_mal"]
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:

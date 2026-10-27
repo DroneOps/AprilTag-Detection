@@ -12,6 +12,7 @@
   "centrar_max_s": 8.0,
   "recentrar_cm": 10.0,
   "recentrar_min_cm": 125.0,
+  "solo_cm": 40.0,
   "ciegas_cms": 17.0,
   "ciegas_ajuste_cm": 0.0,
   "vel_ventana_s": 2.5,

@@ -56,6 +56,7 @@ class FlightConfig:
     takeoff_min_height_cm: int = 30
     takeoff_settle_s: float = 2.0  # el Tello reporta h en pasos de 10 cm: ventana corta da falsos 'estable'
     takeoff_settle_cm: int = 8  # tof oscila ±3–4 cm en estacionario
+    takeoff_ok_max_s: float = 7.0  # esperar el "ok" del despegue hasta esto (antes, el Tello sigue subiendo solo)
     land_timeout_s: float = 10.0
     land_resend_s: float = 1.5
     landed_height_cm: int = 10
@@ -297,6 +298,7 @@ class Flight:
         if st == "IDLE":
             if self._takeoff_req.is_set():
                 self._takeoff_req.clear()
+                self.t.get_own_udp_object()["responses"].clear()  # para leer el "ok" del despegue
                 self.t.send_command_without_return("takeoff")
                 self._takeoff_h = []
                 self._goto("TAKEOFF", "despegando")
@@ -336,10 +338,15 @@ class Flight:
                 self._takeoff_h.pop(0)
             hs = [x for _, x in self._takeoff_h]
             settled = elapsed > cfg.takeoff_settle_s and max(hs) - min(hs) <= cfg.takeoff_settle_cm
-            if h >= cfg.takeoff_min_height_cm and (settled or elapsed > cfg.takeoff_timeout_s):
+            # el Tello contesta "ok" al terminar su despegue; mientras, ignora el rc y puede
+            # seguir subiendo aunque la altura parezca estable un momento (real: 73 -> 109 cm)
+            ok = any(r.strip() == b"ok" if isinstance(r, bytes) else str(r).strip() == "ok"
+                     for r in list(self.t.get_own_udp_object()["responses"]))
+            ready = settled and (ok or elapsed > cfg.takeoff_ok_max_s)
+            if h >= cfg.takeoff_min_height_cm and (ready or elapsed > cfg.takeoff_timeout_s):
                 self._t_air = now
                 self.t.is_flying = True  # Tello.end() aterriza si esto queda en True
-                how = "estable" if settled else "sin estabilizar"
+                how = ("estable" if settled else "sin estabilizar") + (", ok del Tello" if ok else ", sin ok")
                 self._goto("HOVER", f"en el aire a {h} cm ({how}, despegue {elapsed:.1f} s)")
             elif elapsed > cfg.takeoff_timeout_s:
                 hint = " - h dice que si subio: algo tapa el sensor tof de abajo?" if s.get("h", 0) >= 50 else ""
