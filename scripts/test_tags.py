@@ -81,6 +81,10 @@ class TagDetector:
         if refine:
             params.cornerRefinementMethod = cv2.aruco.CORNER_REFINE_SUBPIX
         params.aprilTagQuadDecimate = decimate
+        # corregir más bits: en los videos de vuelo del 27-oct, +15–130 % de detecciones y
+        # ningún ID falso entre 1 y 10 (con 1.0 ya salían 5, 6 y 7 falsos)
+        params.errorCorrectionRate = 0.8
+        params.maxErroneousBitsInBorderRate = 0.5
         self._det = cv2.aruco.ArucoDetector(dictionary, params)
         self.whitelist = whitelist
 

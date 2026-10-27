@@ -6,13 +6,15 @@ tiempo, lo que falte es lo menos importante.
 
 Tiempo estimado: **~30 min para P1–P5**, contando cambios de batería.
 
-> **Estado al 26-oct:** P3, P4 y P5 aprobadas; F1–F4 corridas (se quedaba corto
-> en el tramo a ciegas). **Cambios desde entonces:** tras el flip sube a fondo en
-> cuanto termina el giro, hasta frenar la caída; en el piso, el tramo a ciegas usa
-> la velocidad medida en ese mismo acercamiento; sostiene la altura al avanzar y
-> distingue hundimiento de obstáculo. **Pendientes:** P1, P2 y P6 (repetir con la
-> recuperación nueva), F1 y F3 (repetir con la velocidad medida) y P7 (faltan
-> tags de 15 cm). La próxima sesión empieza por **P1 → P2 → F1 → F3 → P6**.
+> **Estado al 27-oct:** P1 aprobada (flip a 125 cm, mínima 72–81 cm). Confirmado
+> por los organizadores: **tags en el piso**, el espejo se permite y el recorrido
+> no se conoce. F1/F3 del 27-oct fallaron por tres cosas, ya corregidas en código:
+> el dron **se hunde ~10–13 cm/s al avanzar** (se tomaba como obstáculo: ahora no
+> hay aterrizaje por obstáculo y sostiene la altura con más fuerza); pedir adelante
+> y de lado a la vez lo frenaba, así que medía ~10 cm/s y a ciegas iba a ~19 (se
+> pasaba hasta 90 cm: ahora se centra primero y luego va recto); y la detección en
+> movimiento era pobre (ahora corrige más bits). **Siguiente sesión:**
+> **F1 → F3 → F4 → F2** (las de pared, P2/P4–P7, ya no son prioridad).
 
 ---
 
@@ -212,10 +214,17 @@ que el máximo sea menor.
 ## Pruebas de piso SIN espejo (cámara al frente, tags en el piso)
 
 **Quita el espejo.** El dron vuela a 60 cm y ve un tag de 8 cm en el piso entre
-~1.0 y ~1.7 m adelante. Mientras lo ve, mide su velocidad real con la distancia
-al tag. Cuando el tag sale por abajo de la imagen, recorre a ciegas lo que faltaba
-(~1 m) **con esa velocidad medida** y ejecuta encima. Si el tag se va por un
-costado, se detiene y gira hacia él; no se va a ciegas.
+~1.0 y ~1.7 m adelante. Al verlo:
+
+1. **centrar**: se detiene y se desliza de lado hasta tenerlo enfrente (no gira:
+   sostiene el rumbo del tramo).
+2. **recto**: avanza solo hacia adelante y mide su velocidad real con la distancia al tag.
+3. **ciegas**: cuando el tag sale por abajo de la imagen, recorre lo que faltaba
+   (~1 m) con esa velocidad, se detiene y ejecuta.
+
+Si el tag se va por un costado, se desliza hacia él; no se va a ciegas. La
+consola y la HMI muestran la fase. Ya **no aterriza por "obstáculo debajo"**: el
+dron se hunde al avanzar y eso lo corrige sosteniendo la altura.
 
 **F1 — Un tag.** Tag **2** en el piso a **~1.7 m** frente al despegue (3–4 cuadros de 50 cm).
 Deja el lado izquierdo libre.
@@ -241,7 +250,8 @@ La consola dice `... cm a ciegas, velocidad medida XX cm/s`; anota ese número.
   corridas, no lo ajustes: anótalo y lo vemos.
 
 **F2 — Tag girado y corrido.** Igual que F1, pero con el tag girado ~15–20° y
-corrido ~10 cm de lado. Debe alinearse con sus bordes antes de girar.
+corrido ~10 cm de lado. Debe centrarse de lado y girar 90° **respecto a su rumbo**,
+sin importar cómo esté girado el tag (el reglamento pide eso).
 
 **F3 — Circuito.** Visto desde arriba, con el dron mirando hacia "adelante":
 

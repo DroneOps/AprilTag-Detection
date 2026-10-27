@@ -68,12 +68,17 @@ class MissionConfig:
     heading_kp: float = 1.0
     heading_max: int = 20
     min_front_cm: float = 50.0
+    obstacle_guard: bool = False  # aterrizar si el tof baja de golpe. Apagado: en vuelo real el dron se hunde
+    # al avanzar y 'h' no se entera, así que se confundía con un obstáculo (27-oct: 5 aterrizajes falsos)
     obstacle_drop_cm: float = 25.0
     obstacle_h_ratio: float = 0.4  # si 'h' bajó menos que esto x lo que bajó el tof: obstáculo; si no, se hundió
-    hold_tol_cm: float = 6.0  # sostener altura en ADVANCE/APPROACH/EXECUTE cuando no se pide subir/bajar
-    hold_kp: float = 0.8
-    hold_min: int = 15
-    hold_max: int = 25
+    hold_tol_cm: float = 4.0  # sostener altura en ADVANCE/APPROACH/EXECUTE cuando no se pide subir/bajar
+    hold_kp: float = 1.5  # real: avanzando se hunde ~10–13 cm/s aun pidiendo rc 15–18 hacia arriba
+    hold_ki: float = 1.0  # rc por cm·s: aprende cuánto empuje necesita para no hundirse
+    hold_min: int = 20
+    hold_max: int = 40
+    tof_salto_cm: float = 20.0  # un salto así del tof que dura menos que tof_salto_s es lectura falsa
+    tof_salto_s: float = 0.6  # (real: 81 -> 14 -> 83 cm en 0.4 s)
     blind_speed_cms: float = 20.0
     approach_start_cm: float = 250.0
     stop_cm: float = 60.0
@@ -179,6 +184,10 @@ class TagMission(Flight):
         self._h_ref = 0.0
         self._ref_state = ""
         self._hold_alt: float | None = None  # altura a sostener (ver _send_rc)
+        self._hold_i = 0.0  # parte integral del sostener altura
+        self._t_hold_prev: float | None = None
+        self._alt_f: float | None = None  # altura sin saltos sueltos del tof
+        self._t_salto: float | None = None
         self._ud_intent = 0  # último rc vertical pedido a propósito (no por sostener)
         self._obj: tuple[float, float, float, float] | None = None  # (z, az, x, angulo) para la bitácora
         self._exit_heading = 0.0
@@ -264,7 +273,7 @@ class TagMission(Flight):
         # algo bajo el dron (caja, obstáculo): el tof baja sin que pidamos bajar y la
         # altura propia del Tello ('h') no. Si 'h' también bajó, el dron se hundió
         # (pasó en vuelos reales a 60 cm): eso lo corrige el sostener altura.
-        if st in ("ADVANCE", "APPROACH"):
+        if st in ("ADVANCE", "APPROACH") and self.m.obstacle_guard:
             alt, hh = altitude(s), s.get("h", 0)
             if self._ref_state != st or self._alt_ref is None or self._ud_intent != 0:
                 # sin referencia, o subiendo/bajando a propósito: la altura de ahora es la buena
@@ -348,14 +357,34 @@ class TagMission(Flight):
         # el flip y su recuperación llevan su propio control de altura
         flipping = self.state == "EXECUTE" and (self._prim[:1] == ("flip_go",) or self._prim[2:3] == ("tras_flip",))
         if self.state in self.HOLD_STATES and not flipping:
-            alt = altitude(self.tel.snapshot()[0])
+            m, now = self.m, time.monotonic()
+            alt = self._filtered_alt(altitude(self.tel.snapshot()[0]), now)
+            dt = min(0.2, now - self._t_hold_prev) if self._t_hold_prev else 0.0
+            self._t_hold_prev = now
             if ud != 0 or self._hold_alt is None:
                 self._hold_alt = alt
-            elif abs(self._hold_alt - alt) > self.m.hold_tol_cm:
-                ud = with_min(self.m.hold_kp * (self._hold_alt - alt), self.m.hold_min, self.m.hold_max)
+            else:
+                # PI: la parte integral es el empuje que hace falta para no hundirse
+                err = self._hold_alt - alt
+                self._hold_i = max(-m.hold_max, min(m.hold_max, self._hold_i + m.hold_ki * err * dt))
+                u = m.hold_kp * err + self._hold_i
+                if abs(u) >= m.hold_min or abs(err) > m.hold_tol_cm:
+                    ud = with_min(u, m.hold_min, m.hold_max)
         else:
-            self._hold_alt = None
+            self._hold_alt, self._hold_i, self._t_hold_prev = None, 0.0, None
         super()._send_rc(lr, fb, ud, yaw)
+
+    def _filtered_alt(self, alt: float, now: float) -> float:
+        """Altura para sostener, sin saltos sueltos del tof. Un salto que se mantiene
+        (escalón, caja) sí se acepta pasado tof_salto_s."""
+        m = self.m
+        if self._alt_f is None or abs(alt - self._alt_f) <= m.tof_salto_cm:
+            self._alt_f, self._t_salto = alt, None
+        else:
+            self._t_salto = self._t_salto or now
+            if now - self._t_salto >= m.tof_salto_s:
+                self._alt_f, self._t_salto = alt, None
+        return self._alt_f
 
     def _climb_rc(self, target: float, s: dict) -> tuple[int, bool]:
         """rc vertical hacia una altura, con los límites de la misión."""
