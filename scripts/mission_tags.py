@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Prototipo de misión AprilTags: avanzar, detectar un tag VERTICAL, acercarse
-con la distancia estimada, ejecutar su función y seguir avanzando.
+"""Misión base: avanzar, detectar un tag, acercarse, ejecutar su función y seguir.
 
-Supone tags verticales (pared o poste) frente al dron. Si el comité confirma
-que van en el piso, cambia la fase de acercamiento; la detección y las
-funciones se quedan igual.
+Este archivo trae el acercamiento a tags VERTICALES (pared o poste). El comité
+confirmó que en la competencia van en el piso: la misión principal es
+mision_piso.py (o mision_espejo.py con espejo), que heredan de aquí las
+acciones de cada tag, el flip seguro, el sostener altura y los vigilantes.
 
 Uso:
     python scripts/mission_tags.py

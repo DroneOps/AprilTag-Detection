@@ -3,3 +3,5 @@ capturas/
 *.mp4
 logs/
 sim/logs/
+.venv/
+*screenshot*.png

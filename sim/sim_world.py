@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
-"""Mundo 3D simulado para probar mission_tags.py sin volar.
+"""Mundo 3D simulado para probar las misiones sin volar (ver docs/simulador.md).
 
 Renderiza la cámara del Tello (K, distorsión e inclinación de 11° reales de
-config/camera_tello.json) con tags en paredes, y la misión los procesa con el
-detector y el PnP reales. La física del dron está ajustada a bitácoras reales y
-a la calibración de rc del 24-oct: horizontal 1.7*(|rc|-5) cm/s, vertical
-0.5*(|rc|-3) cm/s, giro ~0.73*(|rc|-6.6) grados/s, 'h' que deriva, tof con
-ruido, y tras un flip se hunde ~25 cm/s por 1.2–3 s (real: cayó 30–78 cm).
+config/camera_tello.json) con tags en paredes o en el piso, también a través del
+espejo, y la misión los procesa con el detector y el PnP reales. La física del
+dron está ajustada a bitácoras reales y a la calibración de rc del 24-oct:
+horizontal 1.7*(|rc|-5) cm/s, vertical 0.9*(|rc|-3) subiendo y 0.5*(|rc|-3)
+bajando, giro ~0.73*(|rc|-6.6) grados/s, 'h' que deriva, tof con ruido, y tras
+un flip cae ~50 cm/s por 1–3 s. En piso, además, se hunde al avanzar y el mando
+adelante + lado a la vez lo frena (como el 27-oct).
 
 Uso:
     python sim/sim_world.py circuito          # un escenario
@@ -362,7 +364,7 @@ def scenario(sc: str) -> None:
         run(sc, [Tag(3, (0, 200, 85), south)], events=ev)
     elif sc == "flip8":
         run(sc, [Tag(8, (0, 200, 85), south)])
-    elif sc == "caja":  # caja de 35 cm en el camino: aterrizar por obstáculo debajo
+    elif sc == "caja":  # caja de 35 cm en el camino: pasar por encima sin falsos avisos
         run(sc, [Tag(3, (0, 260, 85), south)], boxes=[(-40, 90, 40, 140, 35)])
     elif sc in ("deriva", "deriva_sin_lateral"):  # viento lateral constante, como el vuelo real del tag 9
         if sc == "deriva_sin_lateral":
@@ -388,7 +390,7 @@ def scenario(sc: str) -> None:
         run(sc, [Tag(3, (0, 220, 105), south)])
     elif sc == "tag_bajo":  # tag más bajo: debe bajar sin pasar de min_alt_cm
         run(sc, [Tag(3, (0, 220, 45), south)])
-    elif sc == "rc_calib":  # simulador: fb/lr 1.5*(|rc|-5) -> 7.5 / 15 / 22.5 cm/s; ud 0.5*(|rc|-3)
+    elif sc == "rc_calib":  # simulador: fb/lr 1.7*(|rc|-5) -> 8.5 / 17 / 25.5 cm/s; ud 0.9/0.5*(|rc|-3)
         run(sc, [Tag(1, (0, 160, 90), south)], limit=150, drift=0.5, rc_calib=True)
     # ---- misión con espejo (cámara hacia abajo, tags en el piso)
     elif sc.startswith("espejo"):
@@ -423,7 +425,7 @@ def scenario(sc: str) -> None:
             return Tag(tid, (x, y, 0), (0, 0, 1), top=(math.sin(a), math.cos(a), 0))
         if sc == "piso_uno":  # tag 2 a ~1.7 m: acercarse, ~1 m a ciegas, girar a la izquierda
             run(sc, [floor(2, 5, 170)], piso=True)
-        elif sc == "piso_girado":  # tag girado 15° y corrido: alinearse con él
+        elif sc == "piso_girado":  # tag girado 15° y corrido: centrarse y girar respecto al rumbo, no al tag
             run(sc, [floor(2, -10, 160, 15)], piso=True)
         elif sc == "piso_circuito":  # 1 (derecha) -> 2 (izquierda) -> 7 (aterrizar), a 1.5 m
             run(sc, [floor(1, 0, 170), floor(2, 150, 170), floor(7, 150, 320)], piso=True)

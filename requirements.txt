@@ -1,0 +1,5 @@
+# Versiones con las que se probó todo (Python 3.12)
+djitellopy==2.5.0
+opencv-python==5.0.0.93
+numpy==2.5.3
+Pillow==10.2.0
