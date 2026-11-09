@@ -1,4 +1,4 @@
-Resumen de sesión — 2026-11-09 17:21 — 11 bitácoras
+Resumen de sesión — 2026-11-09 17:35 — 17 bitácoras
 
 == vuelo_20261109_140758.csv  (vuelo)
    NO DESPEGÓ: NO despega: bateria 17% >= 30%; temperatura 93 C < 80 C
@@ -70,6 +70,44 @@ Resumen de sesión — 2026-11-09 17:21 — 11 bitácoras
 == vuelo_20261109_171459.csv  (vuelo)
    vuelo 10 s | batería 90% -> 89% | temp max 67 C
    final: DONE — aterrizado (el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo)
+   VEREDICTO: REVISAR
+
+== vuelo_20261109_172230.csv  (vuelo)
+   vuelo 4 s | batería 71% -> 71% | temp max 74 C
+   final: KILLED — motores apagados por el usuario
+   VEREDICTO: REVISAR
+
+== vuelo_20261109_172904.csv  (vuelo)
+   NO DESPEGÓ: esperando despegue (t)
+   batería 41.0%, temperatura 83.0 C
+   VEREDICTO: sin vuelo
+
+== vuelo_20261109_172928.csv  (vuelo)
+   vuelo 13 s | batería 39% -> 38% | temp max 81 C
+   despegue: en el aire a 65 cm (sin estabilizar, ok del Tello, despegue 5.8 s)
+   altura en vuelo: min 45 cm, max 68 cm
+   final: DONE — aterrizado (PARO: q en el aire)
+   detenido a mano: PARO: q en el aire
+   VEREDICTO: OK hasta que se detuvo a mano
+
+== espejo_20261109_173021.csv  (espejo)
+   NO DESPEGÓ: esperando despegue (t)
+   batería 38.0%, temperatura 84.0 C
+   VEREDICTO: sin vuelo
+
+== espejo_20261109_173137.csv  (espejo)
+   vuelo 8 s | batería 72% -> 68% | temp max 73 C
+   despegue: en el aire a 68 cm (estable, ok del Tello, despegue 5.9 s)
+   altura en vuelo: min 67 cm, max 70 cm
+   final: KILLED — motores apagados por el usuario
+   VEREDICTO: REVISAR
+
+== espejo_20261109_173207.csv  (espejo)
+   vuelo 14 s | batería 68% -> 62% | temp max 78 C
+   despegue: en el aire a 74 cm (estable, ok del Tello, despegue 4.5 s)
+   altura en vuelo: min 70 cm, max 103 cm
+   final: KILLED — motores apagados por el usuario
+   detenido a mano: PARO: q en el aire
    VEREDICTO: REVISAR
 
 == enlace (test_tags.py)

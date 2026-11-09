@@ -17,3 +17,7 @@ Tras calibrar el IMU, volando con la app oficial Tello aparece 'Aviso de posicio
 ## 17:21
 
 El aviso de 'posicionamiento visual no disponible' sigue con buena luz, piso con textura y la panza limpia: el sistema de visión de abajo (VPS) de este Tello parece dañado (cámara, sensor o cable, probablemente por las caídas). Con este dron no se puede seguir; hay que usar otro Tello o reparar el módulo.
+
+## 17:35
+
+Con OTRO Tello (17:22–17:32) también deriva hacia atrás y se tambalea, durante el despegue y el estacionario con rc en 0 (el programa no manda nada). Voló a 73–84 °C y en dos corridas con 38–41 % de batería. Se revisó DroneOps/Line_Follower (funciona con ese mismo dron): no tiene configuración especial del Tello (connect, streamon, takeoff bloqueante, rc ~30 Hz) y también usa espejo (voltea la imagen). Conclusión: la diferencia es el lugar (luz y textura del piso para la cámara de abajo) y la temperatura, no el código. Siguiente: estacionario sobre la pista donde vuela el seguidor de línea, con el dron frío y batería > 70 %.
