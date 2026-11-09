@@ -1,0 +1,307 @@
+t,state,bat,h,tof,yaw,pitch,roll,temph,rc_lr,rc_fb,rc_ud,rc_yaw,state_age,video_age,reason
+0.000,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.00,inf,esperando despegue (t)
+0.050,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.05,inf,esperando despegue (t)
+0.102,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.00,inf,esperando despegue (t)
+0.152,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.05,inf,esperando despegue (t)
+0.202,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.10,inf,esperando despegue (t)
+0.253,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.03,0.01,esperando despegue (t)
+0.303,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.00,0.01,esperando despegue (t)
+0.353,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.05,0.00,esperando despegue (t)
+0.403,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.00,0.01,esperando despegue (t)
+0.453,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.05,0.01,esperando despegue (t)
+0.503,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.00,0.01,esperando despegue (t)
+0.554,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.05,0.00,esperando despegue (t)
+0.605,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.00,0.01,esperando despegue (t)
+0.655,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.05,0.01,esperando despegue (t)
+0.705,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.00,0.01,esperando despegue (t)
+0.755,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.05,0.01,esperando despegue (t)
+0.805,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.00,0.03,esperando despegue (t)
+0.855,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.05,0.01,esperando despegue (t)
+0.906,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.10,0.01,esperando despegue (t)
+0.956,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.04,0.03,esperando despegue (t)
+1.006,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.09,0.01,esperando despegue (t)
+1.056,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.03,0.01,esperando despegue (t)
+1.106,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.08,0.03,esperando despegue (t)
+1.156,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.03,0.01,esperando despegue (t)
+1.206,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.08,0.01,esperando despegue (t)
+1.257,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.02,0.03,esperando despegue (t)
+1.307,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.08,0.01,esperando despegue (t)
+1.357,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.04,0.01,esperando despegue (t)
+1.407,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.09,0.01,esperando despegue (t)
+1.457,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.03,0.03,esperando despegue (t)
+1.507,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.08,0.01,esperando despegue (t)
+1.558,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.03,0.01,esperando despegue (t)
+1.608,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.08,0.01,esperando despegue (t)
+1.658,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.02,0.01,esperando despegue (t)
+1.708,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.07,0.01,esperando despegue (t)
+1.758,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.01,0.01,esperando despegue (t)
+1.808,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.06,0.01,esperando despegue (t)
+1.859,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.00,0.01,esperando despegue (t)
+1.909,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.05,0.01,esperando despegue (t)
+1.959,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.00,0.03,esperando despegue (t)
+2.009,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.05,0.01,esperando despegue (t)
+2.059,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.00,0.03,esperando despegue (t)
+2.109,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.05,0.01,esperando despegue (t)
+2.159,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.00,0.01,esperando despegue (t)
+2.210,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.03,0.01,esperando despegue (t)
+2.265,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.08,0.01,esperando despegue (t)
+2.315,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.02,0.01,esperando despegue (t)
+2.365,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.07,0.03,esperando despegue (t)
+2.415,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.02,0.01,esperando despegue (t)
+2.468,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.08,0.05,esperando despegue (t)
+2.518,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.02,0.01,esperando despegue (t)
+2.568,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.07,0.01,esperando despegue (t)
+2.619,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.00,0.01,esperando despegue (t)
+2.669,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.05,0.03,esperando despegue (t)
+2.719,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.00,0.01,esperando despegue (t)
+2.769,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.05,0.01,esperando despegue (t)
+2.819,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.00,0.03,esperando despegue (t)
+2.869,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.05,0.01,esperando despegue (t)
+2.919,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.00,0.01,esperando despegue (t)
+2.969,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.05,0.01,esperando despegue (t)
+3.020,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.10,0.03,esperando despegue (t)
+3.070,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.04,0.01,esperando despegue (t)
+3.120,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.02,0.03,esperando despegue (t)
+3.170,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.07,0.02,esperando despegue (t)
+3.220,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.00,0.01,esperando despegue (t)
+3.270,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.05,0.01,esperando despegue (t)
+3.320,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.00,0.01,esperando despegue (t)
+3.370,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.05,0.01,esperando despegue (t)
+3.421,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.00,0.01,esperando despegue (t)
+3.471,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.05,0.01,esperando despegue (t)
+3.521,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.00,0.01,esperando despegue (t)
+3.571,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.05,0.01,esperando despegue (t)
+3.621,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.00,0.01,esperando despegue (t)
+3.672,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.05,0.01,esperando despegue (t)
+3.722,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.00,0.01,esperando despegue (t)
+3.772,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.05,0.01,esperando despegue (t)
+3.822,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.00,0.01,esperando despegue (t)
+3.873,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.05,0.03,esperando despegue (t)
+3.923,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.00,0.01,esperando despegue (t)
+3.974,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.05,0.01,esperando despegue (t)
+4.024,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.00,0.03,esperando despegue (t)
+4.075,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.05,0.01,esperando despegue (t)
+4.125,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.10,0.01,esperando despegue (t)
+4.175,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.03,0.03,esperando despegue (t)
+4.225,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.09,0.01,esperando despegue (t)
+4.275,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.03,0.03,esperando despegue (t)
+4.325,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.08,0.01,esperando despegue (t)
+4.376,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.04,0.01,esperando despegue (t)
+4.426,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.09,0.01,esperando despegue (t)
+4.476,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.01,0.03,esperando despegue (t)
+4.528,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.07,0.01,esperando despegue (t)
+4.578,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.03,0.01,esperando despegue (t)
+4.631,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.08,0.01,esperando despegue (t)
+4.681,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.05,0.01,esperando despegue (t)
+4.731,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.10,0.03,esperando despegue (t)
+4.782,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.02,0.01,esperando despegue (t)
+4.832,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.07,0.01,esperando despegue (t)
+4.883,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.03,0.01,esperando despegue (t)
+4.933,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.08,0.01,esperando despegue (t)
+4.983,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.03,0.01,esperando despegue (t)
+5.034,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.08,0.01,esperando despegue (t)
+5.084,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.02,0.01,esperando despegue (t)
+5.134,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.07,0.03,esperando despegue (t)
+5.184,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.02,0.01,esperando despegue (t)
+5.234,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.07,0.01,esperando despegue (t)
+5.285,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.03,0.01,esperando despegue (t)
+5.335,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.08,0.01,esperando despegue (t)
+5.385,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.04,0.03,esperando despegue (t)
+5.435,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.09,0.01,esperando despegue (t)
+5.485,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.02,0.04,NO despega: temperatura 82 C < 80 C
+5.535,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.07,0.01,NO despega: temperatura 82 C < 80 C
+5.585,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.04,0.01,NO despega: temperatura 82 C < 80 C
+5.636,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.09,0.01,NO despega: temperatura 82 C < 80 C
+5.686,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.03,0.01,NO despega: temperatura 82 C < 80 C
+5.736,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.01,0.01,NO despega: temperatura 82 C < 80 C
+5.786,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.06,0.01,NO despega: temperatura 82 C < 80 C
+5.836,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.00,0.01,NO despega: temperatura 82 C < 80 C
+5.886,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.05,0.01,NO despega: temperatura 82 C < 80 C
+5.937,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.01,0.01,NO despega: temperatura 82 C < 80 C
+5.987,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.06,0.01,NO despega: temperatura 82 C < 80 C
+6.037,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.00,0.01,NO despega: temperatura 82 C < 80 C
+6.087,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.05,0.01,NO despega: temperatura 82 C < 80 C
+6.137,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.02,0.01,NO despega: temperatura 82 C < 80 C
+6.187,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.07,0.03,NO despega: temperatura 82 C < 80 C
+6.237,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.01,0.01,NO despega: temperatura 82 C < 80 C
+6.288,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.06,0.01,NO despega: temperatura 82 C < 80 C
+6.338,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.11,0.03,NO despega: temperatura 82 C < 80 C
+6.388,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.03,0.01,NO despega: temperatura 82 C < 80 C
+6.438,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.01,0.01,NO despega: temperatura 82 C < 80 C
+6.488,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.06,0.05,NO despega: temperatura 82 C < 80 C
+6.539,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.01,0.01,NO despega: temperatura 82 C < 80 C
+6.589,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.06,0.01,NO despega: temperatura 82 C < 80 C
+6.639,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.00,0.01,NO despega: temperatura 82 C < 80 C
+6.689,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.05,0.03,NO despega: temperatura 82 C < 80 C
+6.739,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.00,0.01,NO despega: temperatura 82 C < 80 C
+6.790,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.05,0.01,NO despega: temperatura 82 C < 80 C
+6.840,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.01,0.01,NO despega: temperatura 82 C < 80 C
+6.890,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.06,0.01,NO despega: temperatura 82 C < 80 C
+6.940,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.00,0.01,NO despega: temperatura 82 C < 80 C
+6.990,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.05,0.04,NO despega: temperatura 82 C < 80 C
+7.040,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.00,0.01,NO despega: temperatura 82 C < 80 C
+7.090,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.05,0.01,NO despega: temperatura 82 C < 80 C
+7.141,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.00,0.01,NO despega: temperatura 82 C < 80 C
+7.192,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.05,0.03,NO despega: temperatura 82 C < 80 C
+7.242,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.00,0.01,NO despega: temperatura 82 C < 80 C
+7.292,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.05,0.01,NO despega: temperatura 82 C < 80 C
+7.342,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.00,0.01,NO despega: temperatura 82 C < 80 C
+7.392,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.05,0.03,NO despega: temperatura 82 C < 80 C
+7.442,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.00,0.03,NO despega: temperatura 82 C < 80 C
+7.493,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.05,0.05,NO despega: temperatura 82 C < 80 C
+7.543,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.00,0.01,NO despega: temperatura 82 C < 80 C
+7.593,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.05,0.01,NO despega: temperatura 82 C < 80 C
+7.643,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.00,0.01,NO despega: temperatura 82 C < 80 C
+7.696,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.05,0.01,NO despega: temperatura 82 C < 80 C
+7.746,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.00,0.01,NO despega: temperatura 82 C < 80 C
+7.796,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.05,0.01,NO despega: temperatura 82 C < 80 C
+7.846,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.00,0.01,NO despega: temperatura 82 C < 80 C
+7.898,IDLE,55,0,10,4,0,0,82,0,0,0,0,0.05,0.03,NO despega: temperatura 82 C < 80 C
+7.948,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.00,0.01,NO despega: temperatura 82 C < 80 C
+7.998,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.05,0.01,NO despega: temperatura 82 C < 80 C
+8.048,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.10,0.03,NO despega: temperatura 82 C < 80 C
+8.098,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.01,0.01,NO despega: temperatura 82 C < 80 C
+8.148,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.06,0.03,NO despega: temperatura 82 C < 80 C
+8.200,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.03,0.01,NO despega: temperatura 82 C < 80 C
+8.250,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.08,0.01,NO despega: temperatura 82 C < 80 C
+8.300,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.03,0.01,NO despega: temperatura 82 C < 80 C
+8.350,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.08,0.01,NO despega: temperatura 82 C < 80 C
+8.400,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.04,0.01,NO despega: temperatura 82 C < 80 C
+8.450,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.09,0.01,NO despega: temperatura 82 C < 80 C
+8.500,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.02,0.01,NO despega: temperatura 82 C < 80 C
+8.550,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.07,0.01,NO despega: temperatura 82 C < 80 C
+8.600,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.02,0.01,NO despega: temperatura 82 C < 80 C
+8.651,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.07,0.03,NO despega: temperatura 82 C < 80 C
+8.701,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.01,0.01,NO despega: temperatura 82 C < 80 C
+8.751,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.06,0.01,NO despega: temperatura 82 C < 80 C
+8.801,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.02,0.03,NO despega: temperatura 82 C < 80 C
+8.851,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.07,0.03,NO despega: temperatura 83 C < 80 C
+8.901,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.03,0.01,NO despega: temperatura 83 C < 80 C
+8.951,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.08,0.01,NO despega: temperatura 83 C < 80 C
+9.002,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.01,0.01,NO despega: temperatura 83 C < 80 C
+9.052,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.06,0.01,NO despega: temperatura 83 C < 80 C
+9.102,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.01,0.01,NO despega: temperatura 83 C < 80 C
+9.152,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.06,0.01,NO despega: temperatura 83 C < 80 C
+9.202,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.01,0.01,NO despega: temperatura 83 C < 80 C
+9.253,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.00,0.01,NO despega: temperatura 83 C < 80 C
+9.304,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.05,0.03,NO despega: temperatura 83 C < 80 C
+9.354,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.03,0.01,NO despega: temperatura 83 C < 80 C
+9.404,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.08,0.03,NO despega: temperatura 83 C < 80 C
+9.454,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.03,0.03,NO despega: temperatura 83 C < 80 C
+9.504,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.08,0.01,NO despega: temperatura 83 C < 80 C
+9.554,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.00,0.01,NO despega: temperatura 83 C < 80 C
+9.605,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.05,0.01,NO despega: temperatura 83 C < 80 C
+9.655,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.00,0.01,NO despega: temperatura 83 C < 80 C
+9.706,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.05,0.03,NO despega: temperatura 83 C < 80 C
+9.756,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.02,0.01,NO despega: temperatura 83 C < 80 C
+9.806,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.07,0.01,NO despega: temperatura 83 C < 80 C
+9.856,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.00,0.01,NO despega: temperatura 83 C < 80 C
+9.906,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.05,0.01,NO despega: temperatura 83 C < 80 C
+9.956,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.00,0.01,NO despega: temperatura 83 C < 80 C
+10.006,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.05,0.01,NO despega: temperatura 83 C < 80 C
+10.056,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.00,0.03,NO despega: temperatura 83 C < 80 C
+10.106,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.05,0.01,NO despega: temperatura 83 C < 80 C
+10.157,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.01,0.01,NO despega: temperatura 83 C < 80 C
+10.207,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.06,0.01,NO despega: temperatura 83 C < 80 C
+10.257,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.00,0.01,NO despega: temperatura 83 C < 80 C
+10.307,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.05,0.01,NO despega: temperatura 83 C < 80 C
+10.357,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.01,0.01,NO despega: temperatura 83 C < 80 C
+10.407,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.06,0.01,NO despega: temperatura 83 C < 80 C
+10.457,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.01,0.03,NO despega: temperatura 83 C < 80 C
+10.508,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.06,0.01,NO despega: temperatura 83 C < 80 C
+10.558,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.00,0.01,NO despega: temperatura 83 C < 80 C
+10.608,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.05,0.03,NO despega: temperatura 83 C < 80 C
+10.658,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.00,0.01,NO despega: temperatura 83 C < 80 C
+10.708,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.05,0.01,NO despega: temperatura 83 C < 80 C
+10.758,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.00,0.01,NO despega: temperatura 83 C < 80 C
+10.808,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.05,0.01,NO despega: temperatura 83 C < 80 C
+10.859,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.00,0.01,NO despega: temperatura 83 C < 80 C
+10.909,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.05,0.03,NO despega: temperatura 83 C < 80 C
+10.959,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.10,0.01,NO despega: temperatura 83 C < 80 C
+11.009,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.04,0.01,NO despega: temperatura 83 C < 80 C
+11.059,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.09,0.01,NO despega: temperatura 83 C < 80 C
+11.109,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.03,0.03,NO despega: temperatura 83 C < 80 C
+11.160,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.08,0.01,NO despega: temperatura 83 C < 80 C
+11.210,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.05,0.01,NO despega: temperatura 83 C < 80 C
+11.260,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.10,0.01,NO despega: temperatura 83 C < 80 C
+11.310,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.03,0.03,NO despega: temperatura 83 C < 80 C
+11.360,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.08,0.01,NO despega: temperatura 83 C < 80 C
+11.410,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.02,0.01,NO despega: temperatura 83 C < 80 C
+11.461,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.07,0.03,NO despega: temperatura 83 C < 80 C
+11.511,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.03,0.01,NO despega: temperatura 83 C < 80 C
+11.562,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.08,0.01,NO despega: temperatura 83 C < 80 C
+11.612,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.02,0.01,NO despega: temperatura 83 C < 80 C
+11.666,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.08,0.01,NO despega: temperatura 83 C < 80 C
+11.716,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.02,0.01,NO despega: temperatura 83 C < 80 C
+11.766,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.07,0.01,NO despega: temperatura 83 C < 80 C
+11.816,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.02,0.01,NO despega: temperatura 83 C < 80 C
+11.866,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.07,0.01,NO despega: temperatura 83 C < 80 C
+11.917,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.03,0.03,NO despega: temperatura 83 C < 80 C
+11.967,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.08,0.01,NO despega: temperatura 83 C < 80 C
+12.017,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.02,0.01,NO despega: temperatura 83 C < 80 C
+12.067,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.07,0.01,NO despega: temperatura 83 C < 80 C
+12.118,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.04,0.03,NO despega: temperatura 83 C < 80 C
+12.168,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.09,0.01,NO despega: temperatura 83 C < 80 C
+12.218,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.03,0.01,NO despega: temperatura 83 C < 80 C
+12.268,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.08,0.05,NO despega: temperatura 83 C < 80 C
+12.318,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.01,0.01,NO despega: temperatura 83 C < 80 C
+12.368,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.06,0.01,NO despega: temperatura 83 C < 80 C
+12.419,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.01,0.01,NO despega: temperatura 83 C < 80 C
+12.469,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.01,0.03,NO despega: temperatura 83 C < 80 C
+12.519,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.06,0.01,NO despega: temperatura 83 C < 80 C
+12.569,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.02,0.01,NO despega: temperatura 83 C < 80 C
+12.619,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.07,0.03,NO despega: temperatura 83 C < 80 C
+12.669,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.01,0.01,NO despega: temperatura 83 C < 80 C
+12.719,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.06,0.01,NO despega: temperatura 83 C < 80 C
+12.769,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.03,0.03,NO despega: temperatura 83 C < 80 C
+12.820,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.08,0.01,NO despega: temperatura 83 C < 80 C
+12.870,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.02,0.01,NO despega: temperatura 83 C < 80 C
+12.920,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.07,0.03,NO despega: temperatura 83 C < 80 C
+12.970,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.01,0.01,NO despega: temperatura 83 C < 80 C
+13.020,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.06,0.01,NO despega: temperatura 83 C < 80 C
+13.071,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.00,0.01,NO despega: temperatura 83 C < 80 C
+13.122,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.05,0.03,NO despega: temperatura 83 C < 80 C
+13.172,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.00,0.01,NO despega: temperatura 83 C < 80 C
+13.222,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.05,0.01,NO despega: temperatura 83 C < 80 C
+13.272,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.01,0.03,NO despega: temperatura 83 C < 80 C
+13.322,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.06,0.01,NO despega: temperatura 83 C < 80 C
+13.372,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.00,0.01,NO despega: temperatura 83 C < 80 C
+13.422,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.05,0.01,NO despega: temperatura 83 C < 80 C
+13.472,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.01,0.05,NO despega: temperatura 83 C < 80 C
+13.523,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.06,0.01,NO despega: temperatura 83 C < 80 C
+13.573,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.00,0.01,NO despega: temperatura 83 C < 80 C
+13.623,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.05,0.01,NO despega: temperatura 83 C < 80 C
+13.673,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.10,0.01,NO despega: temperatura 83 C < 80 C
+13.723,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.04,0.01,NO despega: temperatura 83 C < 80 C
+13.774,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.00,0.03,NO despega: temperatura 83 C < 80 C
+13.824,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.05,0.03,NO despega: temperatura 83 C < 80 C
+13.874,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.00,0.01,NO despega: temperatura 83 C < 80 C
+13.924,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.05,0.01,NO despega: temperatura 83 C < 80 C
+13.974,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.00,0.01,NO despega: temperatura 83 C < 80 C
+14.024,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.05,0.03,NO despega: temperatura 83 C < 80 C
+14.074,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.00,0.01,NO despega: temperatura 83 C < 80 C
+14.125,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.05,0.01,NO despega: temperatura 83 C < 80 C
+14.175,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.00,0.03,NO despega: temperatura 83 C < 80 C
+14.225,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.05,0.01,NO despega: temperatura 83 C < 80 C
+14.275,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.00,0.03,NO despega: temperatura 83 C < 80 C
+14.325,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.05,0.01,NO despega: temperatura 83 C < 80 C
+14.375,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.00,0.01,NO despega: temperatura 83 C < 80 C
+14.425,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.05,0.01,NO despega: temperatura 83 C < 80 C
+14.475,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.10,0.03,NO despega: temperatura 83 C < 80 C
+14.526,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.03,0.01,NO despega: temperatura 83 C < 80 C
+14.576,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.08,0.01,NO despega: temperatura 83 C < 80 C
+14.628,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.03,0.01,NO despega: temperatura 83 C < 80 C
+14.679,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.08,0.01,NO despega: temperatura 83 C < 80 C
+14.730,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.04,0.01,NO despega: temperatura 83 C < 80 C
+14.780,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.09,0.03,NO despega: temperatura 83 C < 80 C
+14.830,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.03,0.01,NO despega: temperatura 83 C < 80 C
+14.880,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.08,0.01,NO despega: temperatura 83 C < 80 C
+14.930,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.03,0.01,NO despega: temperatura 83 C < 80 C
+14.981,IDLE,55,0,10,4,0,0,83,0,0,0,0,0.08,0.01,NO despega: temperatura 83 C < 80 C
+15.032,IDLE,55,0,10,4,0,0,84,0,0,0,0,0.00,0.01,NO despega: temperatura 83 C < 80 C
+15.082,IDLE,55,0,10,4,0,0,84,0,0,0,0,0.05,0.01,NO despega: temperatura 83 C < 80 C
+15.133,IDLE,55,0,10,4,0,0,84,0,0,0,0,0.03,0.01,NO despega: temperatura 83 C < 80 C
+15.183,IDLE,55,0,10,4,0,0,84,0,0,0,0,0.08,0.01,NO despega: temperatura 83 C < 80 C
+15.234,IDLE,55,0,10,4,0,0,84,0,0,0,0,0.00,0.01,NO despega: temperatura 83 C < 80 C
+15.286,IDLE,55,0,10,4,0,0,84,0,0,0,0,0.05,0.01,NO despega: temperatura 83 C < 80 C
+15.336,IDLE,55,0,10,4,0,0,84,0,0,0,0,0.02,0.01,NO despega: temperatura 83 C < 80 C

@@ -1,0 +1,344 @@
+t,state,bat,h,tof,yaw,pitch,roll,temph,rc_lr,rc_fb,rc_ud,rc_yaw,state_age,video_age,reason
+0.000,IDLE,56,0,10,15,0,0,77,0,0,0,0,0.00,inf,esperando despegue (t)
+0.050,IDLE,56,0,10,15,0,0,77,0,0,0,0,0.00,inf,esperando despegue (t)
+0.101,IDLE,56,0,10,15,0,0,77,0,0,0,0,0.05,inf,esperando despegue (t)
+0.151,IDLE,56,0,10,15,0,0,77,0,0,0,0,0.00,inf,esperando despegue (t)
+0.201,IDLE,56,0,10,15,0,0,77,0,0,0,0,0.05,0.01,esperando despegue (t)
+0.252,IDLE,56,0,10,15,0,0,77,0,0,0,0,0.00,0.01,esperando despegue (t)
+0.303,IDLE,56,0,10,15,0,0,77,0,0,0,0,0.05,0.01,esperando despegue (t)
+0.353,IDLE,56,0,10,15,0,0,77,0,0,0,0,0.10,0.01,esperando despegue (t)
+0.403,IDLE,56,0,10,15,0,0,77,0,0,0,0,0.15,0.01,esperando despegue (t)
+0.453,IDLE,56,0,10,15,0,0,77,0,0,0,0,0.03,0.01,esperando despegue (t)
+0.504,IDLE,56,0,10,15,0,0,77,0,0,0,0,0.02,0.01,esperando despegue (t)
+0.554,IDLE,56,0,10,15,0,0,77,0,0,0,0,0.07,0.01,esperando despegue (t)
+0.605,IDLE,56,0,10,10,0,0,77,0,0,0,0,0.03,0.01,esperando despegue (t)
+0.655,IDLE,56,0,10,10,0,0,77,0,0,0,0,0.08,0.01,esperando despegue (t)
+0.705,IDLE,56,0,10,6,0,0,77,0,0,0,0,0.01,0.01,esperando despegue (t)
+0.755,IDLE,56,0,10,6,0,0,77,0,0,0,0,0.06,0.05,esperando despegue (t)
+0.805,IDLE,56,0,10,1,0,0,77,0,0,0,0,0.01,0.01,esperando despegue (t)
+0.855,IDLE,56,0,10,1,0,0,77,0,0,0,0,0.00,0.01,esperando despegue (t)
+0.906,IDLE,56,0,10,1,0,0,77,0,0,0,0,0.05,0.01,esperando despegue (t)
+0.956,IDLE,56,0,10,0,0,0,77,0,0,0,0,0.00,0.01,esperando despegue (t)
+1.006,IDLE,56,0,10,0,0,0,77,0,0,0,0,0.05,0.01,esperando despegue (t)
+1.056,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.00,0.01,esperando despegue (t)
+1.108,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.05,0.01,esperando despegue (t)
+1.158,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.00,0.01,esperando despegue (t)
+1.208,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.05,0.01,esperando despegue (t)
+1.258,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.10,0.01,esperando despegue (t)
+1.308,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.04,0.01,esperando despegue (t)
+1.359,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.09,0.01,esperando despegue (t)
+1.409,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.02,0.01,esperando despegue (t)
+1.459,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.07,0.01,esperando despegue (t)
+1.511,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.04,0.01,esperando despegue (t)
+1.561,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.00,0.01,esperando despegue (t)
+1.612,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.05,0.01,esperando despegue (t)
+1.662,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.00,0.03,esperando despegue (t)
+1.712,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.05,0.01,esperando despegue (t)
+1.762,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.00,0.01,esperando despegue (t)
+1.812,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.05,0.03,esperando despegue (t)
+1.862,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.00,0.01,esperando despegue (t)
+1.912,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.00,0.01,esperando despegue (t)
+1.963,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.05,0.01,esperando despegue (t)
+2.013,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.10,0.01,esperando despegue (t)
+2.063,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.01,0.01,esperando despegue (t)
+2.113,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.06,0.03,esperando despegue (t)
+2.163,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.01,0.03,esperando despegue (t)
+2.213,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.07,0.01,esperando despegue (t)
+2.263,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.01,0.01,esperando despegue (t)
+2.314,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.06,0.01,esperando despegue (t)
+2.364,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.00,0.01,esperando despegue (t)
+2.414,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.05,0.01,esperando despegue (t)
+2.469,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.02,0.01,esperando despegue (t)
+2.519,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.07,0.01,esperando despegue (t)
+2.569,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.02,0.01,esperando despegue (t)
+2.619,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.07,0.01,esperando despegue (t)
+2.671,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.01,0.01,esperando despegue (t)
+2.721,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.06,0.01,esperando despegue (t)
+2.773,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.01,0.01,esperando despegue (t)
+2.823,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.06,0.01,esperando despegue (t)
+2.873,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.00,0.01,esperando despegue (t)
+2.924,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.05,0.05,esperando despegue (t)
+2.974,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.00,0.01,esperando despegue (t)
+3.024,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.05,0.01,esperando despegue (t)
+3.074,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.01,0.01,esperando despegue (t)
+3.124,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.06,0.01,esperando despegue (t)
+3.175,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.01,0.03,esperando despegue (t)
+3.225,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.06,0.01,esperando despegue (t)
+3.275,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.01,0.01,esperando despegue (t)
+3.325,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.06,0.01,esperando despegue (t)
+3.375,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.01,0.01,esperando despegue (t)
+3.426,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.06,0.01,esperando despegue (t)
+3.477,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.00,0.01,esperando despegue (t)
+3.528,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.05,0.01,esperando despegue (t)
+3.578,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.00,0.01,esperando despegue (t)
+3.628,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.05,0.01,esperando despegue (t)
+3.678,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.01,0.01,esperando despegue (t)
+3.728,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.06,0.01,esperando despegue (t)
+3.778,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.01,0.01,esperando despegue (t)
+3.828,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.06,0.01,esperando despegue (t)
+3.879,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.00,0.01,esperando despegue (t)
+3.929,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.05,0.05,esperando despegue (t)
+3.979,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.00,0.01,esperando despegue (t)
+4.034,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.05,0.03,esperando despegue (t)
+4.084,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.00,0.01,esperando despegue (t)
+4.136,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.05,0.01,esperando despegue (t)
+4.186,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.10,0.01,esperando despegue (t)
+4.236,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.01,0.01,esperando despegue (t)
+4.286,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.06,0.01,esperando despegue (t)
+4.336,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.00,0.01,esperando despegue (t)
+4.386,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.05,0.01,esperando despegue (t)
+4.437,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.00,0.01,esperando despegue (t)
+4.488,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.05,0.01,esperando despegue (t)
+4.538,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.01,0.01,esperando despegue (t)
+4.588,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.06,0.01,esperando despegue (t)
+4.638,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.01,0.01,esperando despegue (t)
+4.689,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.06,0.01,esperando despegue (t)
+4.739,IDLE,56,0,10,-2,0,0,77,0,0,0,0,0.00,0.01,esperando despegue (t)
+4.789,TAKEOFF,56,0,10,-2,0,0,77,0,0,0,0,0.05,0.03,despegando
+4.839,TAKEOFF,56,0,10,-2,0,0,77,0,0,0,0,0.10,0.01,despegando
+4.889,TAKEOFF,56,0,10,-2,0,0,77,0,0,0,0,0.03,0.01,despegando
+4.939,TAKEOFF,56,0,10,-2,0,0,77,0,0,0,0,0.08,0.05,despegando
+4.990,TAKEOFF,56,0,10,-2,0,0,77,0,0,0,0,0.01,0.01,despegando
+5.040,TAKEOFF,56,0,10,-2,0,0,77,0,0,0,0,0.06,0.01,despegando
+5.090,TAKEOFF,56,0,10,-2,0,0,77,0,0,0,0,0.01,0.03,despegando
+5.140,TAKEOFF,56,0,10,-2,0,0,77,0,0,0,0,0.06,0.01,despegando
+5.190,TAKEOFF,56,0,10,-2,0,0,77,0,0,0,0,0.03,0.01,despegando
+5.240,TAKEOFF,56,0,10,-2,0,0,77,0,0,0,0,0.08,0.01,despegando
+5.291,TAKEOFF,56,0,10,-3,0,0,77,0,0,0,0,0.02,0.01,despegando
+5.341,TAKEOFF,56,0,10,-3,0,0,77,0,0,0,0,0.07,0.01,despegando
+5.391,TAKEOFF,56,0,10,-4,0,0,77,0,0,0,0,0.02,0.01,despegando
+5.442,TAKEOFF,56,0,10,-4,0,0,77,0,0,0,0,0.07,0.03,despegando
+5.492,TAKEOFF,56,0,10,-4,0,0,77,0,0,0,0,0.02,0.01,despegando
+5.542,TAKEOFF,56,0,10,-4,0,0,77,0,0,0,0,0.07,0.01,despegando
+5.592,TAKEOFF,56,0,10,-5,0,0,77,0,0,0,0,0.02,0.03,despegando
+5.643,TAKEOFF,56,0,10,-5,0,0,77,0,0,0,0,0.07,0.01,despegando
+5.694,TAKEOFF,56,0,10,-5,0,-1,77,0,0,0,0,0.04,0.03,despegando
+5.744,TAKEOFF,56,0,10,-5,0,-1,77,0,0,0,0,0.09,0.01,despegando
+5.795,TAKEOFF,56,0,16,-5,0,-3,77,0,0,0,0,0.01,0.01,despegando
+5.847,TAKEOFF,56,0,16,-5,0,-3,77,0,0,0,0,0.06,0.01,despegando
+5.898,TAKEOFF,56,10,23,-4,0,-3,77,0,0,0,0,0.00,0.01,despegando
+5.948,TAKEOFF,56,10,23,-4,0,-3,77,0,0,0,0,0.05,0.01,despegando
+5.998,TAKEOFF,56,10,26,-4,0,-3,77,0,0,0,0,0.02,0.01,despegando
+6.050,TAKEOFF,56,10,26,-4,0,-3,77,0,0,0,0,0.07,0.01,despegando
+6.100,TAKEOFF,56,20,35,-5,0,-2,78,0,0,0,0,0.03,0.01,despegando
+6.150,TAKEOFF,56,20,35,-5,0,-2,78,0,0,0,0,0.08,0.01,despegando
+6.201,TAKEOFF,56,30,43,-5,0,-1,78,0,0,0,0,0.01,0.01,despegando
+6.251,HOVER,56,30,43,-5,0,-1,78,0,0,0,0,0.06,0.01,en el aire a 30 cm
+6.301,HOVER,56,30,51,-5,0,-2,78,0,0,0,0,0.00,0.01,en el aire a 30 cm
+6.351,HOVER,56,30,51,-5,0,-2,78,0,0,0,0,0.05,0.02,en el aire a 30 cm
+6.401,HOVER,56,30,51,-5,0,-2,78,0,0,0,0,0.10,0.01,en el aire a 30 cm
+6.451,HOVER,56,40,59,-4,0,-2,78,0,0,0,0,0.04,0.01,en el aire a 30 cm
+6.501,HOVER,56,40,59,-4,0,-2,78,0,0,0,0,0.09,0.01,en el aire a 30 cm
+6.551,HOVER,56,40,63,-4,0,-1,78,0,0,0,0,0.03,0.03,en el aire a 30 cm
+6.602,HOVER,56,40,63,-4,0,-1,78,0,0,0,0,0.08,0.01,en el aire a 30 cm
+6.652,HOVER,56,50,68,-4,0,3,78,0,0,0,0,0.02,0.01,en el aire a 30 cm
+6.702,HOVER,56,50,70,-4,0,1,78,0,0,0,0,0.00,0.03,en el aire a 30 cm
+6.752,HOVER,56,50,72,-4,0,0,78,0,0,0,0,0.01,0.01,en el aire a 30 cm
+6.802,HOVER,56,50,72,-4,0,0,78,0,0,0,0,0.06,0.01,en el aire a 30 cm
+6.852,HOVER,56,50,72,-4,1,0,78,0,0,0,0,0.01,0.03,en el aire a 30 cm
+6.903,HOVER,56,50,72,-4,1,0,78,0,0,0,0,0.06,0.01,en el aire a 30 cm
+6.953,HOVER,56,50,72,-4,1,0,78,0,0,0,0,0.11,0.01,en el aire a 30 cm
+7.003,HOVER,56,50,73,-4,0,0,78,0,0,0,0,0.02,0.01,en el aire a 30 cm
+7.053,HOVER,56,50,73,-4,0,0,78,0,0,0,0,0.07,0.01,en el aire a 30 cm
+7.104,HOVER,56,50,74,-4,0,0,78,0,0,0,0,0.01,0.01,en el aire a 30 cm
+7.154,HOVER,56,50,75,-4,0,0,78,0,0,0,0,0.00,0.01,en el aire a 30 cm
+7.208,HOVER,56,50,75,-4,0,0,78,0,0,0,0,0.05,0.03,en el aire a 30 cm
+7.258,HOVER,56,50,75,-4,0,0,78,0,0,0,0,0.01,0.01,en el aire a 30 cm
+7.308,EMERGENCY_LAND,56,50,75,-4,0,0,78,0,0,0,0,0.06,0.01,PARO: teclado
+7.358,EMERGENCY_LAND,56,50,75,-4,0,0,78,0,0,0,0,0.00,0.01,PARO: teclado
+7.408,EMERGENCY_LAND,56,50,75,-4,0,0,78,0,0,0,0,0.05,0.01,PARO: teclado
+7.459,EMERGENCY_LAND,56,50,75,-4,0,0,78,0,0,0,0,0.00,0.01,PARO: teclado
+7.509,EMERGENCY_LAND,56,50,75,-4,0,0,78,0,0,0,0,0.05,0.01,PARO: teclado
+7.559,EMERGENCY_LAND,56,50,76,-4,0,0,78,0,0,0,0,0.00,0.01,PARO: teclado
+7.609,EMERGENCY_LAND,56,50,76,-4,0,0,78,0,0,0,0,0.05,0.01,PARO: teclado
+7.659,EMERGENCY_LAND,56,50,77,-4,0,0,78,0,0,0,0,0.00,0.01,PARO: teclado
+7.709,EMERGENCY_LAND,56,50,77,-4,0,0,78,0,0,0,0,0.05,0.01,PARO: teclado
+7.759,EMERGENCY_LAND,56,50,78,-4,0,0,78,0,0,0,0,0.00,0.01,PARO: teclado
+7.810,EMERGENCY_LAND,56,50,78,-4,0,0,78,0,0,0,0,0.05,0.03,PARO: teclado
+7.860,EMERGENCY_LAND,56,60,79,-4,0,0,78,0,0,0,0,0.00,0.01,PARO: teclado
+7.910,EMERGENCY_LAND,56,60,79,-4,0,0,78,0,0,0,0,0.05,0.05,PARO: teclado
+7.960,EMERGENCY_LAND,56,60,79,-4,0,0,78,0,0,0,0,0.00,0.01,PARO: teclado
+8.010,EMERGENCY_LAND,56,60,79,-4,0,0,78,0,0,0,0,0.05,0.01,PARO: teclado
+8.060,EMERGENCY_LAND,56,60,80,-4,0,0,78,0,0,0,0,0.00,0.01,PARO: teclado
+8.111,EMERGENCY_LAND,56,60,80,-4,0,0,78,0,0,0,0,0.05,0.01,PARO: teclado
+8.161,EMERGENCY_LAND,56,60,80,-4,0,0,78,0,0,0,0,0.10,0.01,PARO: teclado
+8.211,EMERGENCY_LAND,56,60,80,-4,0,0,78,0,0,0,0,0.03,0.03,PARO: teclado
+8.261,EMERGENCY_LAND,56,60,80,-4,0,0,78,0,0,0,0,0.08,0.01,PARO: teclado
+8.311,EMERGENCY_LAND,56,60,81,-4,0,0,78,0,0,0,0,0.02,0.01,PARO: teclado
+8.361,EMERGENCY_LAND,56,60,81,-4,0,0,78,0,0,0,0,0.07,0.03,PARO: teclado
+8.412,EMERGENCY_LAND,56,60,82,-4,0,0,78,0,0,0,0,0.01,0.01,PARO: teclado
+8.462,EMERGENCY_LAND,56,60,82,-4,0,0,78,0,0,0,0,0.06,0.01,PARO: teclado
+8.512,EMERGENCY_LAND,56,60,82,-4,0,0,78,0,0,0,0,0.01,0.01,PARO: teclado
+8.562,EMERGENCY_LAND,56,60,82,-4,0,0,78,0,0,0,0,0.06,0.01,PARO: teclado
+8.612,EMERGENCY_LAND,56,60,81,-5,0,0,78,0,0,0,0,0.03,0.03,PARO: teclado
+8.662,EMERGENCY_LAND,56,60,81,-5,0,0,78,0,0,0,0,0.08,0.02,PARO: teclado
+8.713,EMERGENCY_LAND,56,60,82,-5,0,0,78,0,0,0,0,0.01,0.01,PARO: teclado
+8.763,EMERGENCY_LAND,56,60,82,-5,0,0,78,0,0,0,0,0.06,0.01,PARO: teclado
+8.813,EMERGENCY_LAND,56,60,81,-5,0,0,78,0,0,0,0,0.02,0.01,PARO: teclado
+8.863,EMERGENCY_LAND,56,60,81,-5,0,0,78,0,0,0,0,0.07,0.03,PARO: teclado
+8.913,EMERGENCY_LAND,56,60,82,-5,0,0,78,0,0,0,0,0.02,0.01,PARO: teclado
+8.966,EMERGENCY_LAND,56,60,82,-5,0,0,78,0,0,0,0,0.07,0.01,PARO: teclado
+9.016,EMERGENCY_LAND,56,60,82,-5,0,-1,78,0,0,0,0,0.03,0.01,PARO: teclado
+9.067,EMERGENCY_LAND,56,60,82,-5,0,-1,78,0,0,0,0,0.08,0.01,PARO: teclado
+9.117,EMERGENCY_LAND,56,60,81,-5,0,-1,78,0,0,0,0,0.02,0.01,PARO: teclado
+9.167,EMERGENCY_LAND,56,60,81,-5,0,-1,78,0,0,0,0,0.07,0.01,PARO: teclado
+9.217,EMERGENCY_LAND,56,60,81,-5,0,0,78,0,0,0,0,0.01,0.01,PARO: teclado
+9.267,EMERGENCY_LAND,56,60,81,-5,0,0,78,0,0,0,0,0.06,0.01,PARO: teclado
+9.318,EMERGENCY_LAND,56,60,81,-5,0,0,78,0,0,0,0,0.03,0.01,PARO: teclado
+9.370,EMERGENCY_LAND,56,60,81,-5,0,0,78,0,0,0,0,0.08,0.03,PARO: teclado
+9.420,EMERGENCY_LAND,56,60,80,-5,0,0,78,0,0,0,0,0.02,0.01,PARO: teclado
+9.470,EMERGENCY_LAND,56,60,80,-5,0,0,78,0,0,0,0,0.07,0.01,PARO: teclado
+9.520,EMERGENCY_LAND,56,60,81,-5,0,0,78,0,0,0,0,0.02,0.03,PARO: teclado
+9.570,EMERGENCY_LAND,56,60,81,-5,0,0,78,0,0,0,0,0.07,0.01,PARO: teclado
+9.620,EMERGENCY_LAND,56,60,81,-5,0,0,78,0,0,0,0,0.01,0.01,PARO: teclado
+9.670,EMERGENCY_LAND,56,60,81,-5,0,0,78,0,0,0,0,0.06,0.01,PARO: teclado
+9.721,EMERGENCY_LAND,56,60,81,-5,0,0,78,0,0,0,0,0.01,0.01,PARO: teclado
+9.771,EMERGENCY_LAND,56,60,81,-5,0,0,78,0,0,0,0,0.06,0.01,PARO: teclado
+9.821,EMERGENCY_LAND,56,60,81,-5,0,-1,78,0,0,0,0,0.00,0.01,PARO: teclado
+9.871,EMERGENCY_LAND,56,60,81,-5,0,-1,78,0,0,0,0,0.05,0.01,PARO: teclado
+9.921,EMERGENCY_LAND,56,60,81,-5,0,-1,78,0,0,0,0,0.00,0.03,PARO: teclado
+9.971,EMERGENCY_LAND,56,60,82,-5,0,-1,78,0,0,0,0,0.02,0.01,PARO: teclado
+10.022,EMERGENCY_LAND,56,60,82,-5,0,-1,78,0,0,0,0,0.07,0.03,PARO: teclado
+10.072,EMERGENCY_LAND,56,60,82,-5,0,-1,78,0,0,0,0,0.12,0.01,PARO: teclado
+10.122,EMERGENCY_LAND,56,60,81,-5,0,-1,77,0,0,0,0,0.01,0.01,PARO: teclado
+10.172,EMERGENCY_LAND,56,60,81,-5,0,-1,77,0,0,0,0,0.06,0.01,PARO: teclado
+10.222,EMERGENCY_LAND,56,60,80,-5,0,-1,77,0,0,0,0,0.01,0.01,PARO: teclado
+10.272,EMERGENCY_LAND,56,60,79,-5,0,0,77,0,0,0,0,0.00,0.01,PARO: teclado
+10.323,EMERGENCY_LAND,56,60,79,-5,0,0,77,0,0,0,0,0.05,0.01,PARO: teclado
+10.373,EMERGENCY_LAND,56,60,79,-5,0,0,77,0,0,0,0,0.10,0.01,PARO: teclado
+10.423,EMERGENCY_LAND,56,60,79,-5,0,0,77,0,0,0,0,0.04,0.01,PARO: teclado
+10.473,EMERGENCY_LAND,56,60,79,-5,0,0,77,0,0,0,0,0.09,0.01,PARO: teclado
+10.523,EMERGENCY_LAND,56,60,79,-5,0,0,77,0,0,0,0,0.01,0.03,PARO: teclado
+10.573,EMERGENCY_LAND,56,60,79,-5,0,0,77,0,0,0,0,0.00,0.01,PARO: teclado
+10.623,EMERGENCY_LAND,56,60,79,-5,0,0,77,0,0,0,0,0.05,0.01,PARO: teclado
+10.674,EMERGENCY_LAND,56,60,79,-5,0,0,77,0,0,0,0,0.00,0.01,PARO: teclado
+10.724,EMERGENCY_LAND,56,60,79,-5,0,0,77,0,0,0,0,0.05,0.03,PARO: teclado
+10.774,EMERGENCY_LAND,56,60,76,-5,0,0,77,0,0,0,0,0.00,0.01,PARO: teclado
+10.824,EMERGENCY_LAND,56,60,76,-5,0,0,77,0,0,0,0,0.05,0.01,PARO: teclado
+10.874,EMERGENCY_LAND,56,60,76,-5,0,0,77,0,0,0,0,0.10,0.01,PARO: teclado
+10.924,EMERGENCY_LAND,56,60,75,-5,0,0,77,0,0,0,0,0.04,0.04,PARO: teclado
+10.974,EMERGENCY_LAND,56,50,75,-5,0,0,77,0,0,0,0,0.00,0.01,PARO: teclado
+11.025,EMERGENCY_LAND,56,50,75,-5,0,0,77,0,0,0,0,0.05,0.01,PARO: teclado
+11.075,EMERGENCY_LAND,56,50,72,-5,0,0,78,0,0,0,0,0.00,0.01,PARO: teclado
+11.125,EMERGENCY_LAND,56,50,72,-5,0,0,78,0,0,0,0,0.05,0.01,PARO: teclado
+11.175,EMERGENCY_LAND,56,50,72,-5,0,0,78,0,0,0,0,0.10,0.02,PARO: teclado
+11.225,EMERGENCY_LAND,56,50,68,-5,0,-1,78,0,0,0,0,0.02,0.01,PARO: teclado
+11.275,EMERGENCY_LAND,56,50,68,-5,0,-1,78,0,0,0,0,0.07,0.01,PARO: teclado
+11.326,EMERGENCY_LAND,56,50,63,-5,0,0,78,0,0,0,0,0.04,0.03,PARO: teclado
+11.376,EMERGENCY_LAND,56,50,63,-5,0,0,78,0,0,0,0,0.09,0.01,PARO: teclado
+11.426,EMERGENCY_LAND,56,40,59,-5,0,0,78,0,0,0,0,0.03,0.01,PARO: teclado
+11.476,EMERGENCY_LAND,56,40,59,-5,0,0,78,0,0,0,0,0.08,0.01,PARO: teclado
+11.526,EMERGENCY_LAND,56,40,54,-5,0,0,78,0,0,0,0,0.03,0.01,PARO: teclado
+11.577,EMERGENCY_LAND,56,40,54,-5,0,0,78,0,0,0,0,0.08,0.01,PARO: teclado
+11.627,EMERGENCY_LAND,56,30,49,-4,0,-1,78,0,0,0,0,0.02,0.01,PARO: teclado
+11.678,EMERGENCY_LAND,56,30,49,-4,0,-1,78,0,0,0,0,0.07,0.01,PARO: teclado
+11.728,EMERGENCY_LAND,56,30,43,-4,0,0,78,0,0,0,0,0.03,0.01,PARO: teclado
+11.778,EMERGENCY_LAND,56,30,43,-4,0,0,78,0,0,0,0,0.08,0.03,PARO: teclado
+11.829,EMERGENCY_LAND,56,20,38,-4,0,0,78,0,0,0,0,0.03,0.01,PARO: teclado
+11.879,EMERGENCY_LAND,56,20,38,-4,0,0,78,0,0,0,0,0.08,0.01,PARO: teclado
+11.929,EMERGENCY_LAND,56,20,32,-4,0,0,78,0,0,0,0,0.03,0.03,PARO: teclado
+11.979,EMERGENCY_LAND,56,20,32,-4,0,0,78,0,0,0,0,0.08,0.01,PARO: teclado
+12.029,EMERGENCY_LAND,56,10,27,-4,0,0,78,0,0,0,0,0.03,0.03,PARO: teclado
+12.079,EMERGENCY_LAND,56,10,27,-4,0,0,78,0,0,0,0,0.08,0.01,PARO: teclado
+12.130,EMERGENCY_LAND,56,10,22,-4,0,0,78,0,0,0,0,0.03,0.01,PARO: teclado
+12.180,EMERGENCY_LAND,56,10,22,-4,0,0,78,0,0,0,0,0.08,0.01,PARO: teclado
+12.230,EMERGENCY_LAND,56,0,17,-4,0,0,78,0,0,0,0,0.02,0.01,PARO: teclado
+12.280,EMERGENCY_LAND,56,0,17,-4,0,0,78,0,0,0,0,0.07,0.01,PARO: teclado
+12.330,EMERGENCY_LAND,56,0,18,-4,0,1,78,0,0,0,0,0.00,0.01,PARO: teclado
+12.380,EMERGENCY_LAND,56,0,18,-4,0,1,78,0,0,0,0,0.05,0.01,PARO: teclado
+12.431,EMERGENCY_LAND,56,0,11,-4,0,0,78,0,0,0,0,0.02,0.03,PARO: teclado
+12.482,EMERGENCY_LAND,56,0,11,-4,0,0,78,0,0,0,0,0.07,0.01,PARO: teclado
+12.532,EMERGENCY_LAND,56,0,10,-4,0,0,78,0,0,0,0,0.00,0.01,PARO: teclado
+12.582,EMERGENCY_LAND,56,0,10,-4,0,0,78,0,0,0,0,0.05,0.01,PARO: teclado
+12.632,EMERGENCY_LAND,56,-10,10,-6,0,0,78,0,0,0,0,0.00,0.01,PARO: teclado
+12.682,EMERGENCY_LAND,56,-10,10,-6,0,0,78,0,0,0,0,0.05,0.01,PARO: teclado
+12.732,EMERGENCY_LAND,56,0,10,-9,-2,3,78,0,0,0,0,0.00,0.01,PARO: teclado
+12.782,EMERGENCY_LAND,56,0,10,-9,-2,3,78,0,0,0,0,0.05,0.01,PARO: teclado
+12.833,EMERGENCY_LAND,56,0,10,-10,0,0,78,0,0,0,0,0.02,0.03,PARO: teclado
+12.883,EMERGENCY_LAND,56,0,10,-10,0,0,78,0,0,0,0,0.07,0.01,PARO: teclado
+12.933,EMERGENCY_LAND,56,0,10,-10,0,0,78,0,0,0,0,0.02,0.01,PARO: teclado
+12.983,EMERGENCY_LAND,56,0,10,-10,0,0,78,0,0,0,0,0.07,0.03,PARO: teclado
+13.033,EMERGENCY_LAND,56,0,10,-10,0,0,78,0,0,0,0,0.02,0.01,PARO: teclado
+13.083,EMERGENCY_LAND,56,0,10,-10,0,0,78,0,0,0,0,0.07,0.03,PARO: teclado
+13.133,EMERGENCY_LAND,56,0,10,-10,0,0,78,0,0,0,0,0.02,0.01,PARO: teclado
+13.184,EMERGENCY_LAND,56,0,10,-10,0,0,78,0,0,0,0,0.07,0.03,PARO: teclado
+13.234,EMERGENCY_LAND,56,0,10,-10,0,0,78,0,0,0,0,0.00,0.03,PARO: teclado
+13.284,EMERGENCY_LAND,56,0,10,-10,0,0,78,0,0,0,0,0.05,0.01,PARO: teclado
+13.335,EMERGENCY_LAND,56,0,10,-10,0,0,78,0,0,0,0,0.00,0.03,PARO: teclado
+13.385,EMERGENCY_LAND,56,0,10,-10,0,0,78,0,0,0,0,0.06,0.01,PARO: teclado
+13.435,EMERGENCY_LAND,56,0,10,-10,0,0,78,0,0,0,0,0.00,0.01,PARO: teclado
+13.485,EMERGENCY_LAND,56,0,10,-10,0,0,78,0,0,0,0,0.05,0.01,PARO: teclado
+13.537,EMERGENCY_LAND,56,0,10,-10,0,0,78,0,0,0,0,0.00,0.01,PARO: teclado
+13.587,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.05,0.01,aterrizado (PARO: teclado)
+13.637,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.00,0.01,aterrizado (PARO: teclado)
+13.687,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.00,0.01,aterrizado (PARO: teclado)
+13.737,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.05,0.03,aterrizado (PARO: teclado)
+13.787,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.00,0.01,aterrizado (PARO: teclado)
+13.837,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.05,0.03,aterrizado (PARO: teclado)
+13.888,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.00,0.03,aterrizado (PARO: teclado)
+13.938,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.05,0.01,aterrizado (PARO: teclado)
+13.988,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.00,0.01,aterrizado (PARO: teclado)
+14.038,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.05,0.01,aterrizado (PARO: teclado)
+14.088,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.00,0.01,aterrizado (PARO: teclado)
+14.138,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.05,0.03,aterrizado (PARO: teclado)
+14.188,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.00,0.01,aterrizado (PARO: teclado)
+14.238,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.05,0.03,aterrizado (PARO: teclado)
+14.289,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.10,0.01,aterrizado (PARO: teclado)
+14.339,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.02,0.03,aterrizado (PARO: teclado)
+14.389,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.07,0.01,aterrizado (PARO: teclado)
+14.439,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.01,0.01,aterrizado (PARO: teclado)
+14.489,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.06,0.01,aterrizado (PARO: teclado)
+14.539,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.01,0.01,aterrizado (PARO: teclado)
+14.589,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.06,0.01,aterrizado (PARO: teclado)
+14.640,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.03,0.03,aterrizado (PARO: teclado)
+14.690,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.08,0.01,aterrizado (PARO: teclado)
+14.740,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.04,0.01,aterrizado (PARO: teclado)
+14.790,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.09,0.01,aterrizado (PARO: teclado)
+14.840,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.00,0.03,aterrizado (PARO: teclado)
+14.890,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.05,0.01,aterrizado (PARO: teclado)
+14.940,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.03,0.01,aterrizado (PARO: teclado)
+14.991,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.08,0.01,aterrizado (PARO: teclado)
+15.041,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.01,0.01,aterrizado (PARO: teclado)
+15.091,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.06,0.01,aterrizado (PARO: teclado)
+15.141,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.02,0.01,aterrizado (PARO: teclado)
+15.191,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.07,0.03,aterrizado (PARO: teclado)
+15.242,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.02,0.01,aterrizado (PARO: teclado)
+15.292,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.07,0.01,aterrizado (PARO: teclado)
+15.342,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.02,0.01,aterrizado (PARO: teclado)
+15.393,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.07,0.03,aterrizado (PARO: teclado)
+15.443,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.02,0.01,aterrizado (PARO: teclado)
+15.494,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.07,0.03,aterrizado (PARO: teclado)
+15.544,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.02,0.01,aterrizado (PARO: teclado)
+15.594,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.07,0.01,aterrizado (PARO: teclado)
+15.644,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.02,0.01,aterrizado (PARO: teclado)
+15.694,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.07,0.01,aterrizado (PARO: teclado)
+15.744,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.01,0.03,aterrizado (PARO: teclado)
+15.795,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.06,0.01,aterrizado (PARO: teclado)
+15.845,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.01,0.03,aterrizado (PARO: teclado)
+15.895,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.06,0.03,aterrizado (PARO: teclado)
+15.945,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.00,0.01,aterrizado (PARO: teclado)
+15.995,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.05,0.01,aterrizado (PARO: teclado)
+16.045,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.00,0.01,aterrizado (PARO: teclado)
+16.098,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.05,0.01,aterrizado (PARO: teclado)
+16.148,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.01,0.03,aterrizado (PARO: teclado)
+16.198,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.06,0.01,aterrizado (PARO: teclado)
+16.248,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.00,0.01,aterrizado (PARO: teclado)
+16.299,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.05,0.01,aterrizado (PARO: teclado)
+16.349,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.00,0.01,aterrizado (PARO: teclado)
+16.401,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.05,0.03,aterrizado (PARO: teclado)
+16.452,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.00,0.01,aterrizado (PARO: teclado)
+16.502,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.05,0.03,aterrizado (PARO: teclado)
+16.552,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.00,0.01,aterrizado (PARO: teclado)
+16.602,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.05,0.01,aterrizado (PARO: teclado)
+16.652,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.01,0.03,aterrizado (PARO: teclado)
+16.702,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.06,0.01,aterrizado (PARO: teclado)
+16.752,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.00,0.01,aterrizado (PARO: teclado)
+16.802,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.05,0.03,aterrizado (PARO: teclado)
+16.852,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.00,0.01,aterrizado (PARO: teclado)
+16.902,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.05,0.05,aterrizado (PARO: teclado)
+16.953,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.00,0.01,aterrizado (PARO: teclado)
+17.003,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.05,0.01,aterrizado (PARO: teclado)
+17.053,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.00,0.03,aterrizado (PARO: teclado)
+17.104,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.05,0.01,aterrizado (PARO: teclado)
+17.154,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.00,0.01,aterrizado (PARO: teclado)
+17.204,DONE,56,0,10,-10,0,0,78,0,0,0,0,0.05,0.01,aterrizado (PARO: teclado)

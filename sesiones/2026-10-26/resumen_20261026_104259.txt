@@ -1,0 +1,4 @@
+fuente: tello   frames: 1533   detección media: 4.7 ms
+  ID  7 (Aterrizar): 1204 frames (79 %)
+espejo: inclinacion de la vista (mediana de 1204): +7.9 adelante, +4.3 lado -> config/mission_espejo.json: "vista_adelante_deg": 7.9, "vista_lado_deg": 4.3
+enlace: 1503 frames en 50 s | intervalo mediano 33 ms | > 100 ms: 0 (0.0/min) | > 300 ms: 0 | maximo 88 ms

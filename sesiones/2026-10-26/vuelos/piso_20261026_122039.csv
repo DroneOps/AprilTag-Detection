@@ -1,0 +1,1276 @@
+t,state,bat,h,tof,yaw,pitch,roll,temph,rc_lr,rc_fb,rc_ud,rc_yaw,state_age,video_age,reason,vgx,vgy,vgz,n_tags,objetivo,piso_adelante,piso_lado,piso_giro,fase,a_ciegas_cm
+0.001,IDLE,85,0,10,2,1,0,76,0,0,0,0,0.00,inf,esperando despegue (t),0,0,0,,,,,,,
+0.056,IDLE,85,0,10,2,1,0,76,0,0,0,0,0.00,inf,esperando despegue (t),0,0,0,,,,,,,
+0.106,IDLE,85,0,10,2,1,0,76,0,0,0,0,0.05,inf,esperando despegue (t),0,0,0,,,,,,,
+0.156,IDLE,85,0,10,2,1,0,76,0,0,0,0,0.00,inf,esperando despegue (t),0,0,0,,,,,,,
+0.208,IDLE,85,0,10,2,1,0,76,0,0,0,0,0.05,inf,esperando despegue (t),0,0,0,,,,,,,
+0.259,IDLE,85,0,10,2,1,0,77,0,0,0,0,0.00,0.02,esperando despegue (t),0,0,0,0,,,,,,
+0.309,IDLE,85,0,10,2,1,0,77,0,0,0,0,0.05,0.02,esperando despegue (t),0,0,0,0,,,,,,
+0.359,IDLE,85,0,10,2,1,0,77,0,0,0,0,0.00,0.02,esperando despegue (t),0,0,0,0,,,,,,
+0.411,IDLE,85,0,10,2,1,0,77,0,0,0,0,0.05,0.02,esperando despegue (t),0,0,0,0,,,,,,
+0.462,IDLE,85,0,10,2,1,0,77,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0,0,,,,,,
+0.512,IDLE,85,0,10,2,1,0,77,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0,0,,,,,,
+0.563,IDLE,85,0,10,2,1,0,77,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0,0,,,,,,
+0.614,IDLE,85,0,10,2,1,0,77,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0,0,,,,,,
+0.664,IDLE,85,0,10,2,1,0,77,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0,0,,,,,,
+0.714,IDLE,85,0,10,2,1,0,77,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0,0,,,,,,
+0.764,IDLE,85,0,10,2,1,0,77,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0,0,,,,,,
+0.814,IDLE,85,0,10,2,1,0,77,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0,0,,,,,,
+0.864,IDLE,85,0,10,2,1,0,77,0,0,0,0,0.10,0.02,esperando despegue (t),0,0,0,0,,,,,,
+0.914,IDLE,85,0,10,2,1,0,77,0,0,0,0,0.03,0.01,esperando despegue (t),0,0,0,0,,,,,,
+0.964,IDLE,85,0,10,2,1,0,77,0,0,0,0,0.08,0.01,esperando despegue (t),0,0,0,0,,,,,,
+1.015,IDLE,85,0,10,2,1,0,77,0,0,0,0,0.03,0.01,esperando despegue (t),0,0,0,0,,,,,,
+1.065,IDLE,85,0,10,2,1,0,77,0,0,0,0,0.09,0.01,esperando despegue (t),0,0,0,0,,,,,,
+1.115,IDLE,85,0,10,2,1,0,77,0,0,0,0,0.03,0.01,esperando despegue (t),0,0,0,0,,,,,,
+1.165,IDLE,85,0,10,2,1,0,77,0,0,0,0,0.08,0.01,esperando despegue (t),0,0,0,0,,,,,,
+1.215,IDLE,85,0,10,2,1,0,77,0,0,0,0,0.03,0.01,esperando despegue (t),0,0,0,0,,,,,,
+1.265,IDLE,85,0,10,2,1,0,77,0,0,0,0,0.08,0.01,esperando despegue (t),0,0,0,0,,,,,,
+1.315,IDLE,85,0,10,2,1,0,77,0,0,0,0,0.03,0.01,esperando despegue (t),0,0,0,0,,,,,,
+1.365,IDLE,85,0,10,2,1,0,77,0,0,0,0,0.08,0.01,esperando despegue (t),0,0,0,0,,,,,,
+1.415,TAKEOFF,85,0,10,2,1,0,77,0,0,0,0,0.04,0.02,despegando,0,0,0,0,,,,,,
+1.466,TAKEOFF,85,0,10,2,1,0,77,0,0,0,0,0.09,0.01,despegando,0,0,0,0,,,,,,
+1.516,TAKEOFF,85,0,10,2,1,0,77,0,0,0,0,0.03,0.02,despegando,0,0,0,0,,,,,,
+1.566,TAKEOFF,85,0,10,2,1,0,77,0,0,0,0,0.08,0.01,despegando,0,0,0,0,,,,,,
+1.616,TAKEOFF,85,0,10,2,1,0,77,0,0,0,0,0.03,0.01,despegando,0,0,0,0,,,,,,
+1.666,TAKEOFF,85,0,10,2,1,0,77,0,0,0,0,0.08,0.03,despegando,0,0,0,0,,,,,,
+1.716,TAKEOFF,85,0,10,2,1,0,77,0,0,0,0,0.01,0.01,despegando,0,0,0,0,,,,,,
+1.767,TAKEOFF,85,0,10,2,1,0,77,0,0,0,0,0.06,0.02,despegando,0,0,0,0,,,,,,
+1.817,TAKEOFF,85,0,10,2,1,0,77,0,0,0,0,0.00,0.01,despegando,0,0,0,0,,,,,,
+1.867,TAKEOFF,85,0,10,2,1,0,77,0,0,0,0,0.05,0.01,despegando,0,0,0,0,,,,,,
+1.917,TAKEOFF,85,0,10,2,1,0,77,0,0,0,0,0.04,0.01,despegando,0,0,0,0,,,,,,
+1.967,TAKEOFF,85,0,10,2,1,0,77,0,0,0,0,0.09,0.01,despegando,0,0,0,0,,,,,,
+2.017,TAKEOFF,85,0,10,2,1,0,77,0,0,0,0,0.00,0.01,despegando,0,0,0,0,,,,,,
+2.067,TAKEOFF,85,0,10,2,0,1,77,0,0,0,0,0.02,0.01,despegando,0,0,0,0,,,,,,
+2.117,TAKEOFF,85,0,10,2,0,1,77,0,0,0,0,0.07,0.01,despegando,0,0,0,0,,,,,,
+2.168,TAKEOFF,85,0,10,2,0,0,77,0,0,0,0,0.01,0.02,despegando,0,0,-1,0,,,,,,
+2.218,TAKEOFF,85,0,10,2,0,0,77,0,0,0,0,0.06,0.01,despegando,0,0,-1,0,,,,,,
+2.268,TAKEOFF,85,0,10,2,0,-1,77,0,0,0,0,0.00,0.01,despegando,0,0,-4,0,,,,,,
+2.318,TAKEOFF,85,0,10,2,0,-1,77,0,0,0,0,0.05,0.03,despegando,0,0,-4,0,,,,,,
+2.368,TAKEOFF,85,0,20,2,0,0,77,0,0,0,0,0.01,0.02,despegando,0,0,-6,0,,,,,,
+2.419,TAKEOFF,85,0,20,2,0,0,77,0,0,0,0,0.06,0.02,despegando,0,0,-6,0,,,,,,
+2.469,TAKEOFF,85,10,24,2,0,0,77,0,0,0,0,0.01,0.01,despegando,0,0,-7,0,,,,,,
+2.519,TAKEOFF,85,10,24,2,0,0,77,0,0,0,0,0.06,0.02,despegando,0,0,-7,0,,,,,,
+2.569,TAKEOFF,85,20,32,2,0,-1,77,0,0,0,0,0.00,0.02,despegando,0,1,-8,0,,,,,,
+2.619,TAKEOFF,85,20,32,2,0,-1,77,0,0,0,0,0.05,0.02,despegando,0,1,-8,0,,,,,,
+2.670,TAKEOFF,85,20,42,2,0,-3,77,0,0,0,0,0.02,0.02,despegando,0,0,-7,0,,,,,,
+2.720,TAKEOFF,85,20,42,2,0,-3,77,0,0,0,0,0.07,0.02,despegando,0,0,-7,0,,,,,,
+2.770,TAKEOFF,85,30,51,2,0,-3,77,0,0,0,0,0.01,0.02,despegando,0,0,-7,0,,,,,,
+2.820,TAKEOFF,85,30,51,2,0,-3,77,0,0,0,0,0.06,0.02,despegando,0,0,-7,0,,,,,,
+2.870,TAKEOFF,85,40,58,2,0,-3,77,0,0,0,0,0.00,0.02,despegando,0,0,-6,0,,,,,,
+2.920,TAKEOFF,85,40,58,2,0,-3,77,0,0,0,0,0.05,0.02,despegando,0,0,-6,0,,,,,,
+2.970,TAKEOFF,85,40,65,2,0,-3,77,0,0,0,0,0.00,0.02,despegando,0,0,-5,0,,,,,,
+3.021,TAKEOFF,85,40,65,2,0,-3,77,0,0,0,0,0.05,0.02,despegando,0,0,-5,0,,,,,,
+3.071,TAKEOFF,85,50,70,2,0,-1,77,0,0,0,0,0.01,0.02,despegando,0,0,-4,0,,,,,,
+3.122,TAKEOFF,85,50,70,2,0,-1,77,0,0,0,0,0.06,0.02,despegando,0,0,-4,0,,,,,,
+3.172,TAKEOFF,85,50,74,2,0,-1,77,0,0,0,0,0.00,0.02,despegando,0,0,-3,0,,,,,,
+3.222,TAKEOFF,85,50,74,2,0,-1,77,0,0,0,0,0.05,0.02,despegando,0,0,-3,0,,,,,,
+3.272,TAKEOFF,85,50,78,2,0,1,77,0,0,0,0,0.00,0.02,despegando,0,0,-2,0,,,,,,
+3.322,TAKEOFF,85,50,78,2,0,1,77,0,0,0,0,0.05,0.02,despegando,0,0,-2,1,,,,,,
+3.373,TAKEOFF,85,60,79,2,0,0,77,0,0,0,0,0.00,0.02,despegando,0,0,-1,1,,,,,,
+3.423,TAKEOFF,85,60,79,2,0,0,77,0,0,0,0,0.05,0.02,despegando,0,0,-1,1,,,,,,
+3.474,TAKEOFF,85,60,81,2,0,0,77,0,0,0,0,0.00,0.02,despegando,0,0,0,1,,,,,,
+3.524,TAKEOFF,85,60,81,2,0,0,77,0,0,0,0,0.05,0.03,despegando,0,0,0,1,,,,,,
+3.575,TAKEOFF,85,60,83,2,0,0,77,0,0,0,0,0.01,0.02,despegando,0,0,0,0,,,,,,
+3.625,TAKEOFF,85,60,83,2,0,0,77,0,0,0,0,0.06,0.02,despegando,0,0,0,1,,,,,,
+3.675,TAKEOFF,85,60,83,2,0,0,77,0,0,0,0,0.11,0.02,despegando,0,0,0,0,,,,,,
+3.725,TAKEOFF,85,60,83,2,0,0,77,0,0,0,0,0.03,0.02,despegando,0,0,0,0,,,,,,
+3.777,TAKEOFF,85,60,83,2,0,0,77,0,0,0,0,0.00,0.02,despegando,0,0,0,0,,,,,,
+3.827,TAKEOFF,85,60,83,2,0,0,77,0,0,0,0,0.05,0.02,despegando,0,0,0,1,,,,,,
+3.878,TAKEOFF,85,60,84,2,0,0,77,0,0,0,0,0.00,0.02,despegando,0,0,0,1,,,,,,
+3.929,TAKEOFF,85,60,84,2,0,0,77,0,0,0,0,0.05,0.02,despegando,0,0,0,1,,,,,,
+3.979,TAKEOFF,85,60,84,2,0,0,77,0,0,0,0,0.10,0.03,despegando,0,0,0,0,,,,,,
+4.029,TAKEOFF,85,60,84,2,0,0,77,0,0,0,0,0.03,0.02,despegando,0,0,0,1,,,,,,
+4.081,TAKEOFF,85,60,84,2,0,0,77,0,0,0,0,0.08,0.02,despegando,0,0,0,1,,,,,,
+4.131,TAKEOFF,85,60,84,2,0,0,77,0,0,0,0,0.04,0.03,despegando,0,0,0,0,,,,,,
+4.182,TAKEOFF,85,60,85,2,0,0,77,0,0,0,0,0.00,0.03,despegando,0,0,0,1,,,,,,
+4.232,TAKEOFF,85,60,85,2,0,0,77,0,0,0,0,0.05,0.02,despegando,0,0,0,0,,,,,,
+4.282,TAKEOFF,85,60,85,2,1,0,77,0,0,0,0,0.00,0.02,despegando,0,0,0,0,,,,,,
+4.332,TAKEOFF,85,60,85,2,1,0,77,0,0,0,0,0.05,0.03,despegando,0,0,0,1,,,,,,
+4.383,TAKEOFF,85,60,86,2,1,0,77,0,0,0,0,0.00,0.02,despegando,0,0,0,1,,,,,,
+4.433,TAKEOFF,85,60,86,2,1,0,77,0,0,0,0,0.05,0.02,despegando,0,0,0,0,,,,,,
+4.483,TAKEOFF,85,60,84,2,0,0,77,0,0,0,0,0.00,0.03,despegando,0,0,0,1,,,,,,
+4.533,TAKEOFF,85,60,84,2,0,0,77,0,0,0,0,0.05,0.03,despegando,0,0,0,0,,,,,,
+4.583,TAKEOFF,85,60,84,2,0,0,77,0,0,0,0,0.10,0.03,despegando,0,0,0,0,,,,,,
+4.633,TAKEOFF,85,60,86,2,0,0,77,0,0,0,0,0.01,0.02,despegando,0,0,0,1,,,,,,
+4.685,TAKEOFF,85,60,86,2,0,0,77,0,0,0,0,0.06,0.02,despegando,0,0,0,1,,,,,,
+4.735,TAKEOFF,85,60,85,2,0,0,77,0,0,0,0,0.02,0.02,despegando,0,0,0,1,,,,,,
+4.785,TAKEOFF,85,60,85,2,0,0,77,0,0,0,0,0.07,0.02,despegando,0,0,0,0,,,,,,
+4.835,TAKEOFF,85,60,83,2,0,-1,77,0,0,0,0,0.04,0.02,despegando,0,0,0,1,,,,,,
+4.885,TAKEOFF,85,60,83,2,0,-1,77,0,0,0,0,0.09,0.02,despegando,0,0,0,1,,,,,,
+4.935,TAKEOFF,85,60,84,2,0,0,77,0,0,0,0,0.01,0.02,despegando,0,0,0,0,,,,,,
+4.986,TAKEOFF,85,60,84,2,0,0,77,0,0,0,0,0.06,0.02,despegando,0,0,0,0,,,,,,
+5.036,TAKEOFF,85,60,84,1,0,0,77,0,0,0,0,0.04,0.02,despegando,0,0,0,1,,,,,,
+5.086,TAKEOFF,85,60,84,1,0,0,77,0,0,0,0,0.09,0.02,despegando,0,0,0,1,,,,,,
+5.136,TAKEOFF,85,60,83,1,0,0,77,0,0,0,0,0.00,0.02,despegando,0,0,0,1,,,,,,
+5.186,TAKEOFF,85,60,83,1,0,0,77,0,0,0,0,0.05,0.02,despegando,0,0,0,0,,,,,,
+5.236,TAKEOFF,85,60,82,1,0,0,77,0,0,0,0,0.03,0.02,despegando,0,0,0,0,,,,,,
+5.286,HOVER,85,60,82,1,0,0,77,0,0,0,0,0.08,0.02,"en el aire a 72 cm (estable, despegue 3.9 s)",0,0,0,1,,,,,,
+5.336,HOVER,85,60,81,1,0,0,77,0,0,0,0,0.00,0.02,"en el aire a 72 cm (estable, despegue 3.9 s)",0,0,0,1,,,,,,
+5.386,HOVER,85,60,81,1,0,0,77,0,0,0,0,0.05,0.02,"en el aire a 72 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+5.437,HOVER,85,60,79,1,0,0,77,0,0,0,0,0.01,0.02,"en el aire a 72 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+5.487,HOVER,85,60,79,1,0,0,77,0,0,0,0,0.06,0.02,"en el aire a 72 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+5.537,HOVER,85,60,79,1,0,0,77,0,0,0,0,0.00,0.02,"en el aire a 72 cm (estable, despegue 3.9 s)",0,0,0,1,,,,,,
+5.587,HOVER,85,60,79,1,0,0,77,0,0,0,0,0.05,0.02,"en el aire a 72 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+5.642,HOVER,85,60,79,1,0,0,77,0,0,0,0,0.02,0.02,"en el aire a 72 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+5.692,HOVER,85,60,79,1,0,0,77,0,0,0,0,0.07,0.02,"en el aire a 72 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+5.742,HOVER,85,60,78,1,0,-1,77,0,0,0,0,0.00,0.02,"en el aire a 72 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+5.792,HOVER,85,60,75,1,0,0,77,0,0,0,0,0.01,0.01,"en el aire a 72 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+5.842,HOVER,85,60,75,1,0,0,77,0,0,0,0,0.07,0.02,"en el aire a 72 cm (estable, despegue 3.9 s)",0,0,0,1,,,,,,
+5.893,HOVER,85,60,74,1,0,0,77,0,0,0,0,0.00,0.02,"en el aire a 72 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+5.943,HOVER,85,60,74,1,0,0,77,0,0,0,0,0.05,0.02,"en el aire a 72 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+5.993,HOVER,85,60,74,1,0,0,77,0,0,0,0,0.01,0.02,"en el aire a 72 cm (estable, despegue 3.9 s)",0,0,0,1,,,,,,
+6.047,HOVER,85,60,74,1,0,0,77,0,0,0,0,0.07,0.02,"en el aire a 72 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+6.097,HOVER,85,60,72,1,0,-1,77,0,0,0,0,0.00,0.02,"en el aire a 72 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+6.147,HOVER,85,60,72,1,0,-1,77,0,0,0,0,0.05,0.02,"en el aire a 72 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+6.198,HOVER,85,60,71,1,0,-1,77,0,0,0,0,0.02,0.02,"en el aire a 72 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+6.248,HOVER,85,60,71,1,0,-1,77,0,0,0,0,0.07,0.02,"en el aire a 72 cm (estable, despegue 3.9 s)",0,0,0,1,,,,,,
+6.299,HOVER,85,60,69,1,0,0,78,0,0,0,0,0.00,0.02,"en el aire a 72 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+6.349,HOVER,85,60,69,1,0,0,78,0,0,0,0,0.05,0.02,"en el aire a 72 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+6.399,HOVER,85,50,69,2,0,-1,78,0,0,0,0,0.01,0.02,"en el aire a 72 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+6.449,HOVER,85,50,69,2,0,-1,78,0,0,0,0,0.06,0.02,"en el aire a 72 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+6.500,HOVER,85,50,68,2,0,-2,78,0,0,0,0,0.00,0.02,"en el aire a 72 cm (estable, despegue 3.9 s)",0,1,0,0,,,,,,
+6.550,HOVER,85,50,68,2,0,-2,78,0,0,0,0,0.05,0.02,"en el aire a 72 cm (estable, despegue 3.9 s)",0,1,0,1,,,,,,
+6.600,HOVER,85,50,68,2,0,-2,78,0,0,0,0,0.02,0.02,"en el aire a 72 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+6.650,HOVER,85,50,68,2,0,-2,78,0,0,0,0,0.07,0.02,"en el aire a 72 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+6.704,HOVER,85,50,69,2,0,-2,78,0,0,0,0,0.01,0.02,"en el aire a 72 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+6.754,HOVER,85,50,69,2,0,-2,78,0,0,0,0,0.06,0.02,"en el aire a 72 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+6.804,HOVER,85,50,68,2,0,-2,78,0,0,0,0,0.00,0.02,"en el aire a 72 cm (estable, despegue 3.9 s)",0,0,-1,0,,,,,,
+6.854,HOVER,85,50,68,2,0,-2,78,0,0,0,0,0.05,0.02,"en el aire a 72 cm (estable, despegue 3.9 s)",0,0,-1,0,,,,,,
+6.906,HOVER,85,50,68,2,0,-1,78,0,0,0,0,0.02,0.02,"en el aire a 72 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+6.956,HOVER,85,50,68,2,0,-1,78,0,0,0,0,0.07,0.02,"en el aire a 72 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+7.006,HOVER,85,50,68,2,0,-1,78,0,0,0,0,0.01,0.01,"en el aire a 72 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+7.056,HOVER,85,50,68,2,0,-1,78,0,0,0,0,0.06,0.02,"en el aire a 72 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+7.107,HOVER,85,50,67,2,0,-1,78,0,0,0,0,0.00,0.02,"en el aire a 72 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+7.157,HOVER,85,50,67,2,0,-1,78,0,0,0,0,0.05,0.02,"en el aire a 72 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+7.211,HOVER,85,50,67,2,0,-2,78,0,0,0,0,0.02,0.02,"en el aire a 72 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+7.261,HOVER,85,50,67,2,0,-2,78,0,0,0,0,0.07,0.02,"en el aire a 72 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+7.311,CRUISE,85,50,67,2,-1,-1,78,0,0,0,0,0.00,0.02,a altura de crucero (60 cm),0,0,0,0,,,,,,
+7.361,CRUISE,85,50,67,2,-1,-1,78,0,0,0,0,0.05,0.02,a altura de crucero (60 cm),0,0,0,0,,,,,,
+7.411,CRUISE,85,50,67,2,-1,-1,78,0,0,0,0,0.02,0.02,a altura de crucero (60 cm),0,0,0,0,,,,,,
+7.461,CRUISE,85,50,67,2,-1,-1,78,0,0,0,0,0.07,0.02,a altura de crucero (60 cm),0,0,0,0,,,,,,
+7.511,CRUISE,85,50,67,2,-1,-1,78,0,0,0,0,0.00,0.02,a altura de crucero (60 cm),0,0,-1,0,,,,,,
+7.561,CRUISE,85,50,67,2,-1,-1,78,0,0,0,0,0.05,0.02,a altura de crucero (60 cm),0,0,-1,0,,,,,,
+7.612,CRUISE,85,50,67,2,0,-1,78,0,0,0,0,0.00,0.02,a altura de crucero (60 cm),0,0,-1,0,,,,,,
+7.662,CRUISE,85,50,67,2,0,-1,78,0,0,0,0,0.05,0.02,a altura de crucero (60 cm),0,0,-1,0,,,,,,
+7.712,CRUISE,85,50,67,2,-1,-2,78,0,0,0,0,0.00,0.02,a altura de crucero (60 cm),0,0,0,0,,,,,,
+7.762,CRUISE,85,50,67,2,-1,-2,78,0,0,0,0,0.05,0.02,a altura de crucero (60 cm),0,0,0,0,,,,,,
+7.812,CRUISE,85,50,68,2,0,0,78,0,0,0,0,0.00,0.02,a altura de crucero (60 cm),0,0,0,0,,,,,,
+7.862,ADVANCE,85,50,68,2,0,0,78,0,0,0,0,0.05,0.02,"avanzando a 58 cm, buscando tag",0,0,0,0,,,,,,
+7.913,ADVANCE,85,50,69,2,-1,-2,78,0,15,0,0,0.00,0.02,"avanzando a 58 cm, buscando tag",0,0,-1,0,,,,,,
+7.963,ADVANCE,85,50,69,2,-1,-2,78,0,15,0,0,0.05,0.02,"avanzando a 58 cm, buscando tag",0,0,-1,0,,,,,,
+8.013,ADVANCE,85,50,71,2,0,-2,78,0,15,0,0,0.00,0.02,"avanzando a 58 cm, buscando tag",0,0,-1,0,,,,,,
+8.063,ADVANCE,85,50,71,2,0,-2,78,0,15,0,0,0.05,0.02,"avanzando a 58 cm, buscando tag",0,0,-1,0,,,,,,
+8.113,ADVANCE,85,50,71,1,0,-1,78,0,15,0,0,0.00,0.02,"avanzando a 58 cm, buscando tag",0,0,-1,0,,,,,,
+8.163,ADVANCE,85,50,71,1,0,-1,78,0,15,0,0,0.05,0.02,"avanzando a 58 cm, buscando tag",0,0,-1,0,,,,,,
+8.213,ADVANCE,85,50,71,1,0,-1,78,0,15,0,0,0.00,0.02,"avanzando a 58 cm, buscando tag",0,0,-1,0,,,,,,
+8.264,ADVANCE,85,50,71,1,0,-1,78,0,15,0,0,0.05,0.02,"avanzando a 58 cm, buscando tag",0,0,-1,0,,,,,,
+8.314,ADVANCE,85,50,72,1,0,-1,78,0,15,0,0,0.00,0.02,"avanzando a 58 cm, buscando tag",0,0,0,0,,,,,,
+8.364,ADVANCE,85,50,72,1,0,-1,78,0,15,0,0,0.05,0.02,"avanzando a 58 cm, buscando tag",0,0,0,0,,,,,,
+8.414,ADVANCE,85,50,71,1,0,0,78,0,15,0,0,0.00,0.02,"avanzando a 58 cm, buscando tag",0,0,0,0,,,,,,
+8.464,ADVANCE,85,50,71,1,0,0,78,0,15,0,0,0.05,0.02,"avanzando a 58 cm, buscando tag",0,0,0,0,,,,,,
+8.515,ADVANCE,85,50,71,1,0,0,78,0,15,0,0,0.10,0.02,"avanzando a 58 cm, buscando tag",0,0,0,0,,,,,,
+8.565,ADVANCE,85,50,71,1,0,0,78,0,15,0,0,0.03,0.02,"avanzando a 58 cm, buscando tag",0,0,0,0,,,,,,
+8.615,ADVANCE,85,50,71,1,0,0,78,0,15,0,0,0.08,0.02,"avanzando a 58 cm, buscando tag",0,0,0,0,,,,,,
+8.665,ADVANCE,85,50,70,1,0,0,78,0,15,0,0,0.01,0.02,"avanzando a 58 cm, buscando tag",0,0,0,0,,,,,,
+8.715,ADVANCE,85,50,70,1,0,0,78,0,15,0,0,0.06,0.02,"avanzando a 58 cm, buscando tag",0,0,0,0,,,,,,
+8.765,ADVANCE,85,50,69,1,-1,0,78,0,15,0,0,0.04,0.02,"avanzando a 58 cm, buscando tag",0,0,0,0,,,,,,
+8.816,ADVANCE,85,50,69,1,-1,0,78,0,15,0,0,0.09,0.02,"avanzando a 58 cm, buscando tag",0,0,0,0,,,,,,
+8.866,ADVANCE,85,50,68,1,-1,0,78,0,15,0,0,0.02,0.02,"avanzando a 58 cm, buscando tag",0,0,0,0,,,,,,
+8.916,ADVANCE,85,50,68,1,-1,0,78,0,15,0,0,0.07,0.02,"avanzando a 58 cm, buscando tag",0,0,0,0,,,,,,
+8.966,ADVANCE,85,50,67,1,-1,0,78,0,15,0,0,0.01,0.02,"avanzando a 58 cm, buscando tag",0,0,0,0,,,,,,
+9.016,ADVANCE,85,50,67,1,-1,0,78,0,15,0,0,0.06,0.02,"avanzando a 58 cm, buscando tag",0,0,0,0,,,,,,
+9.066,ADVANCE,85,50,65,1,0,-1,78,0,15,0,0,0.04,0.01,"avanzando a 58 cm, buscando tag",1,0,0,0,,,,,,
+9.116,ADVANCE,85,50,65,1,0,-1,78,0,15,0,0,0.09,0.03,"avanzando a 58 cm, buscando tag",1,0,0,0,,,,,,
+9.167,ADVANCE,85,50,65,1,0,-1,78,0,15,0,0,0.01,0.02,"avanzando a 58 cm, buscando tag",1,0,0,0,,,,,,
+9.217,ADVANCE,85,50,65,1,0,-1,78,0,15,0,0,0.06,0.02,"avanzando a 58 cm, buscando tag",1,0,0,0,,,,,,
+9.267,ADVANCE,85,50,64,2,0,-1,78,0,15,0,0,0.01,0.02,"avanzando a 58 cm, buscando tag",1,0,0,0,,,,,,
+9.317,ADVANCE,85,50,64,2,0,-1,78,0,15,0,0,0.06,0.02,"avanzando a 58 cm, buscando tag",1,0,0,0,,,,,,
+9.367,ADVANCE,85,50,64,2,0,-3,78,0,15,0,0,0.00,0.02,"avanzando a 58 cm, buscando tag",0,0,0,0,,,,,,
+9.417,ADVANCE,85,50,64,2,0,-3,78,0,15,0,0,0.05,0.02,"avanzando a 58 cm, buscando tag",0,0,0,0,,,,,,
+9.467,ADVANCE,85,50,64,2,-1,-2,78,0,15,0,0,0.01,0.02,"avanzando a 58 cm, buscando tag",0,0,0,0,,,,,,
+9.517,ADVANCE,85,50,64,2,-1,-2,78,0,15,0,0,0.06,0.02,"avanzando a 58 cm, buscando tag",0,0,0,0,,,,,,
+9.568,ADVANCE,85,50,64,2,0,-2,78,0,15,0,0,0.01,0.02,"avanzando a 58 cm, buscando tag",1,0,0,0,,,,,,
+9.618,ADVANCE,85,50,64,2,0,-2,78,0,15,0,0,0.06,0.02,"avanzando a 58 cm, buscando tag",1,0,0,0,,,,,,
+9.672,ADVANCE,85,50,64,2,0,-2,78,0,15,0,0,0.03,0.02,"avanzando a 58 cm, buscando tag",0,0,0,0,,,,,,
+9.722,ADVANCE,85,50,64,2,0,-2,78,0,15,0,0,0.08,0.02,"avanzando a 58 cm, buscando tag",0,0,0,0,,,,,,
+9.775,ADVANCE,85,50,65,2,-1,-1,78,0,15,0,0,0.02,0.02,"avanzando a 58 cm, buscando tag",0,0,0,0,,,,,,
+9.825,ADVANCE,85,50,65,2,-1,-1,78,0,15,0,0,0.07,0.02,"avanzando a 58 cm, buscando tag",0,0,0,0,,,,,,
+9.876,ADVANCE,85,50,65,2,0,0,78,0,15,0,0,0.01,0.02,"avanzando a 58 cm, buscando tag",1,0,0,0,,,,,,
+9.926,ADVANCE,85,50,65,2,0,0,78,0,15,0,0,0.06,0.02,"avanzando a 58 cm, buscando tag",1,0,0,0,,,,,,
+9.976,ADVANCE,85,50,66,2,0,0,78,0,15,0,0,0.00,0.02,"avanzando a 58 cm, buscando tag",1,0,0,0,,,,,,
+10.026,ADVANCE,85,50,67,2,0,-1,78,0,15,0,0,0.00,0.02,"avanzando a 58 cm, buscando tag",1,0,0,0,,,,,,
+10.076,ADVANCE,85,50,67,2,0,-1,78,0,15,0,0,0.05,0.02,"avanzando a 58 cm, buscando tag",1,0,0,0,,,,,,
+10.127,ADVANCE,85,50,67,2,0,-1,78,0,15,0,0,0.00,0.02,"avanzando a 58 cm, buscando tag",1,0,0,0,,,,,,
+10.177,ADVANCE,85,50,67,2,0,-1,78,0,15,0,0,0.05,0.02,"avanzando a 58 cm, buscando tag",1,0,0,0,,,,,,
+10.227,ADVANCE,85,50,68,2,0,-1,78,0,15,0,0,0.00,0.02,"avanzando a 58 cm, buscando tag",0,0,0,0,,,,,,
+10.277,ADVANCE,85,50,68,2,0,-1,78,0,15,0,0,0.05,0.02,"avanzando a 58 cm, buscando tag",0,0,0,0,,,,,,
+10.327,ADVANCE,85,50,68,2,0,0,77,0,15,0,0,0.00,0.02,"avanzando a 58 cm, buscando tag",0,0,0,0,,,,,,
+10.378,ADVANCE,85,50,68,2,0,0,77,0,15,0,0,0.05,0.02,"avanzando a 58 cm, buscando tag",0,0,0,0,,,,,,
+10.428,ADVANCE,85,50,69,2,0,0,77,0,15,0,0,0.00,0.02,"avanzando a 58 cm, buscando tag",1,0,0,0,,,,,,
+10.478,ADVANCE,85,50,69,2,0,0,77,0,15,0,0,0.05,0.02,"avanzando a 58 cm, buscando tag",1,0,0,0,,,,,,
+10.528,ADVANCE,85,50,70,2,0,-1,77,0,15,0,0,0.01,0.02,"avanzando a 58 cm, buscando tag",1,0,0,0,,,,,,
+10.578,ADVANCE,85,50,70,2,0,-1,77,0,15,0,0,0.06,0.04,"avanzando a 58 cm, buscando tag",1,0,0,0,,,,,,
+10.629,ADVANCE,85,50,71,2,0,0,77,0,15,0,0,0.01,0.02,"avanzando a 58 cm, buscando tag",0,0,0,1,,,,,,
+10.679,ADVANCE,85,50,71,2,0,0,77,0,15,0,0,0.06,0.02,"avanzando a 58 cm, buscando tag",0,0,0,1,,,,,,
+10.729,ADVANCE,85,50,73,2,0,0,77,0,15,0,0,0.02,0.04,"avanzando a 58 cm, buscando tag",1,0,0,0,,,,,,
+10.779,ADVANCE,85,50,73,2,0,0,77,0,15,0,0,0.07,0.02,"avanzando a 58 cm, buscando tag",1,0,0,0,,,,,,
+10.829,ADVANCE,85,50,74,2,0,-1,77,0,15,0,0,0.00,0.02,"avanzando a 58 cm, buscando tag",0,0,0,0,,,,,,
+10.879,ADVANCE,85,50,74,2,0,-1,77,0,15,0,0,0.05,0.02,"avanzando a 58 cm, buscando tag",0,0,0,1,,,,,,
+10.930,ADVANCE,85,50,76,2,0,-2,77,0,15,0,0,0.00,0.02,"avanzando a 58 cm, buscando tag",0,0,0,0,,,,,,
+10.980,ADVANCE,85,50,76,2,0,-2,77,0,15,0,0,0.05,0.02,"avanzando a 58 cm, buscando tag",0,0,0,0,,,,,,
+11.030,ADVANCE,85,50,76,2,0,-2,77,0,15,0,0,0.00,0.02,"avanzando a 58 cm, buscando tag",0,0,0,0,,,,,,
+11.080,ADVANCE,85,50,76,2,0,-2,77,0,15,0,0,0.05,0.02,"avanzando a 58 cm, buscando tag",0,0,0,1,,,,,,
+11.130,ADVANCE,85,60,77,2,0,-1,77,0,15,0,0,0.00,0.02,"avanzando a 58 cm, buscando tag",0,0,0,0,,,,,,
+11.180,ADVANCE,85,60,77,2,0,-1,77,0,15,0,0,0.05,0.02,"avanzando a 58 cm, buscando tag",0,0,0,0,,,,,,
+11.231,ADVANCE,85,60,78,2,0,-1,77,0,15,0,0,0.00,0.02,"avanzando a 58 cm, buscando tag",1,0,0,1,,,,,,
+11.281,ADVANCE,85,60,78,2,0,-1,77,0,15,0,0,0.05,0.02,"avanzando a 58 cm, buscando tag",1,0,0,0,,,,,,
+11.331,ADVANCE,85,60,81,2,0,-1,77,0,15,0,0,0.00,0.02,"avanzando a 58 cm, buscando tag",1,0,0,0,,,,,,
+11.381,ADVANCE,85,60,81,2,0,-1,77,0,15,0,0,0.05,0.02,"avanzando a 58 cm, buscando tag",1,0,0,0,,,,,,
+11.432,ADVANCE,85,60,81,2,0,-1,77,0,15,0,0,0.00,0.02,"avanzando a 58 cm, buscando tag",0,0,0,0,,,,,,
+11.482,ADVANCE,85,60,81,2,0,-1,77,0,15,0,0,0.05,0.02,"avanzando a 58 cm, buscando tag",0,0,0,0,,,,,,
+11.533,ADVANCE,85,60,83,2,0,-1,77,0,15,0,0,0.00,0.02,"avanzando a 58 cm, buscando tag",1,0,0,1,,,,,,
+11.583,ADVANCE,85,60,83,2,0,-1,77,0,15,0,0,0.05,0.02,"avanzando a 58 cm, buscando tag",1,0,0,0,,,,,,
+11.633,ADVANCE,85,60,83,2,0,-1,77,0,15,0,0,0.00,0.02,"avanzando a 58 cm, buscando tag",1,0,0,0,,,,,,
+11.683,ADVANCE,85,60,83,2,0,-1,77,0,15,0,0,0.05,0.02,"avanzando a 58 cm, buscando tag",1,0,0,0,,,,,,
+11.733,ADVANCE,85,60,83,2,0,0,77,0,15,0,0,0.00,0.02,"avanzando a 58 cm, buscando tag",1,0,0,1,,,,,,
+11.783,ADVANCE,85,60,83,2,0,0,77,0,15,0,0,0.05,0.02,"avanzando a 58 cm, buscando tag",1,0,0,0,,,,,,
+11.834,ADVANCE,85,60,83,2,0,0,77,0,15,0,0,0.10,0.02,"avanzando a 58 cm, buscando tag",1,0,0,1,,,,,,
+11.884,ADVANCE,85,60,84,2,0,0,77,0,15,0,0,0.04,0.02,"avanzando a 58 cm, buscando tag",1,0,0,0,,,,,,
+11.934,ADVANCE,85,60,84,2,0,0,77,0,15,0,0,0.09,0.02,"avanzando a 58 cm, buscando tag",1,0,0,0,,,,,,
+11.984,ADVANCE,85,60,83,2,0,0,77,0,15,0,0,0.02,0.02,"avanzando a 58 cm, buscando tag",1,0,0,1,,,,,,
+12.034,ADVANCE,85,60,83,2,0,0,77,0,15,0,0,0.07,0.02,"avanzando a 58 cm, buscando tag",1,0,0,1,,,,,,
+12.084,ADVANCE,85,60,84,2,0,0,77,0,15,0,0,0.03,0.02,"avanzando a 58 cm, buscando tag",1,0,0,1,,,,,,
+12.134,APPROACH,85,60,84,2,0,0,77,0,15,0,0,0.08,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,0,1,,,,visible,
+12.185,APPROACH,85,60,84,2,0,0,77,0,15,0,0,0.04,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,199,+35,+2,visible,
+12.235,APPROACH,85,60,84,2,0,0,77,15,15,0,0,0.09,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,0,1,,,,visible,
+12.285,APPROACH,85,60,85,2,0,-1,77,0,15,0,0,0.02,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,0,1,,,,visible,
+12.335,APPROACH,85,60,85,2,0,-1,77,0,15,0,0,0.07,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,199,+34,+1,visible,
+12.385,APPROACH,85,60,85,2,0,-1,78,15,15,0,0,0.04,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,198,+34,+1,visible,
+12.435,APPROACH,85,60,85,2,0,-1,78,15,15,0,0,0.09,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,0,1,,,,visible,
+12.485,APPROACH,85,60,85,2,0,-1,78,0,15,0,0,0.01,0.03,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,197,+34,+1,visible,
+12.536,APPROACH,85,60,85,2,0,-1,78,15,15,0,0,0.06,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,0,1,,,,visible,
+12.587,APPROACH,85,60,85,2,0,-1,78,0,15,0,0,0.02,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,195,+34,+1,visible,
+12.637,APPROACH,85,60,85,2,0,-1,78,15,15,0,0,0.07,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,0,1,,,,visible,
+12.687,APPROACH,85,60,85,2,0,-1,78,0,15,0,0,0.03,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,0,0,0,1,1,199,+34,-1,visible,
+12.739,APPROACH,85,60,85,2,0,-1,78,15,15,0,0,0.09,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,0,0,0,0,1,,,,visible,
+12.789,APPROACH,85,60,84,2,0,-1,78,0,15,0,0,0.01,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,199,+35,-1,visible,
+12.839,APPROACH,85,60,84,2,0,-1,78,15,15,0,0,0.06,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,196,+34,+1,visible,
+12.889,APPROACH,85,60,83,2,0,0,78,15,15,0,0,0.03,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,193,+34,+2,visible,
+12.939,APPROACH,85,60,83,2,0,0,78,15,15,0,0,0.08,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,193,+34,+1,visible,
+12.990,APPROACH,85,60,83,2,0,0,78,15,15,0,0,0.00,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,193,+34,+1,visible,
+13.040,APPROACH,85,60,83,2,0,0,78,15,15,0,0,0.05,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,192,+34,+2,visible,
+13.090,APPROACH,85,60,81,2,0,0,78,15,15,0,0,0.01,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,191,+34,+2,visible,
+13.140,APPROACH,85,60,81,2,0,0,78,15,15,0,0,0.06,0.03,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,191,+34,+2,visible,
+13.190,APPROACH,85,60,81,2,0,0,78,15,15,0,0,0.02,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,0,1,,,,visible,
+13.243,APPROACH,85,60,81,2,0,0,78,0,15,0,0,0.08,0.03,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,191,+34,+0,visible,
+13.293,APPROACH,85,60,81,2,0,0,78,15,15,0,0,0.00,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,0,1,,,,visible,
+13.343,APPROACH,85,60,81,2,0,0,78,0,15,0,0,0.05,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,187,+34,+1,visible,
+13.393,APPROACH,85,60,81,2,0,0,78,15,15,0,0,0.00,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,187,+34,+1,visible,
+13.443,APPROACH,85,60,81,2,0,0,78,15,15,0,0,0.05,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,187,+34,+1,visible,
+13.493,APPROACH,85,60,80,2,0,0,78,15,15,0,0,0.02,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,1,0,0,1,,,,visible,
+13.543,APPROACH,85,60,80,2,0,0,78,0,15,0,0,0.07,0.03,tag 1 (Giro derecha 90) en el piso a 199 cm,1,1,0,1,1,185,+33,+3,visible,
+13.593,APPROACH,85,60,79,2,0,-2,78,15,15,0,0,0.03,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,1,0,1,1,183,+33,+3,visible,
+13.643,APPROACH,85,60,79,2,0,-2,78,15,15,0,0,0.08,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,1,0,1,1,,,,visible,
+13.694,APPROACH,85,60,79,2,0,-1,78,0,15,0,0,0.00,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,183,+32,+1,visible,
+13.744,APPROACH,85,60,78,2,0,0,78,15,15,0,0,0.00,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,1,0,1,1,183,+32,+2,visible,
+13.794,APPROACH,85,60,78,2,0,0,78,15,15,0,0,0.05,0.03,tag 1 (Giro derecha 90) en el piso a 199 cm,1,1,0,1,1,183,+32,+2,visible,
+13.845,APPROACH,85,60,78,2,0,-1,78,15,15,0,0,0.02,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,183,+32,+2,visible,
+13.895,APPROACH,85,60,78,2,0,-1,78,15,15,0,0,0.07,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,0,1,,,,visible,
+13.945,APPROACH,85,60,78,2,0,0,78,0,15,0,0,0.00,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,179,+31,+2,visible,
+13.995,APPROACH,85,60,78,2,0,0,78,15,15,0,0,0.05,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,179,+31,+2,visible,
+14.045,APPROACH,85,60,78,2,0,0,78,15,15,0,0,0.00,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,178,+31,+2,visible,
+14.095,APPROACH,85,60,78,2,0,0,78,15,15,0,0,0.05,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,177,+31,+2,visible,
+14.146,APPROACH,85,60,78,2,0,0,78,15,15,0,0,0.01,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,176,+31,+2,visible,
+14.196,APPROACH,85,60,78,2,0,0,78,15,15,0,0,0.06,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,176,+31,+2,visible,
+14.246,APPROACH,85,60,78,2,0,0,78,15,15,0,0,0.11,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,176,+31,+2,visible,
+14.296,APPROACH,85,60,77,2,0,-1,78,15,15,0,0,0.03,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,1,0,1,1,176,+31,+1,visible,
+14.346,APPROACH,85,60,77,2,0,-2,78,15,15,0,0,0.00,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,1,0,1,1,176,+31,+1,visible,
+14.397,APPROACH,85,60,77,2,0,-2,78,15,15,0,0,0.05,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,1,0,1,1,176,+31,+1,visible,
+14.447,APPROACH,85,60,77,2,0,-1,78,15,15,0,0,0.00,0.03,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,175,+31,+1,visible,
+14.497,APPROACH,85,60,77,2,0,-1,78,15,15,0,0,0.05,0.03,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,174,+30,+1,visible,
+14.547,APPROACH,85,60,77,2,0,-1,78,15,15,0,0,0.10,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,174,+30,+1,visible,
+14.597,APPROACH,85,60,77,2,0,0,78,15,15,0,0,0.02,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,173,+30,+1,visible,
+14.647,APPROACH,85,60,77,2,0,0,78,15,15,0,0,0.00,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,0,1,,,,visible,
+14.698,APPROACH,85,60,77,2,0,0,78,0,15,0,0,0.05,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,0,1,,,,visible,
+14.748,APPROACH,85,60,77,2,0,0,78,0,15,0,0,0.10,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,0,1,,,,visible,
+14.798,APPROACH,85,60,77,2,0,0,78,0,15,0,0,0.01,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,168,+29,+2,visible,
+14.848,APPROACH,85,60,77,2,0,0,78,15,15,0,0,0.06,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,167,+29,+2,visible,
+14.898,APPROACH,85,60,78,2,0,0,78,15,15,0,0,0.02,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,1,0,1,1,168,+29,+2,visible,
+14.948,APPROACH,85,60,78,2,0,0,78,15,15,0,0,0.07,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,1,0,1,1,168,+29,+2,visible,
+15.001,APPROACH,85,60,77,2,0,-1,78,15,15,0,0,0.03,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,1,0,0,1,,,,visible,
+15.051,APPROACH,85,60,77,2,0,-1,78,0,15,0,0,0.08,0.03,tag 1 (Giro derecha 90) en el piso a 199 cm,1,1,0,1,1,165,+27,+2,visible,
+15.101,APPROACH,85,60,79,2,0,-1,78,15,15,0,0,0.04,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,1,0,1,1,165,+27,+2,visible,
+15.151,APPROACH,85,60,79,2,0,-1,78,15,15,0,0,0.09,0.03,tag 1 (Giro derecha 90) en el piso a 199 cm,1,1,0,1,1,164,+26,+2,visible,
+15.201,APPROACH,85,60,78,2,0,-1,78,15,15,0,0,0.01,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,164,+26,+2,visible,
+15.251,APPROACH,85,60,78,2,0,-1,78,15,15,0,0,0.06,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,164,+26,+3,visible,
+15.302,APPROACH,85,60,80,2,0,0,78,15,15,0,0,0.03,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,163,+26,+3,visible,
+15.352,APPROACH,85,60,80,2,0,0,78,15,15,0,0,0.08,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,0,1,,,,visible,
+15.402,APPROACH,85,60,81,2,0,0,78,0,15,0,0,0.00,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,159,+24,+2,visible,
+15.452,APPROACH,85,60,81,2,0,0,78,15,15,0,0,0.05,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,160,+24,+2,visible,
+15.502,APPROACH,85,60,80,2,0,0,78,15,15,0,0,0.01,0.03,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,159,+24,+2,visible,
+15.552,APPROACH,85,60,80,2,0,0,78,15,15,0,0,0.06,0.03,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,158,+23,+2,visible,
+15.602,APPROACH,85,60,79,2,0,0,78,15,15,0,0,0.00,0.03,tag 1 (Giro derecha 90) en el piso a 199 cm,1,1,0,1,1,158,+23,+1,visible,
+15.652,APPROACH,85,60,79,2,0,0,78,15,15,0,0,0.05,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,1,0,1,1,157,+22,+1,visible,
+15.707,APPROACH,85,60,79,2,0,-1,78,15,15,0,0,0.01,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,1,0,1,1,157,+22,+1,visible,
+15.757,APPROACH,85,60,79,2,0,-1,78,15,15,0,0,0.06,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,1,0,1,1,157,+22,+1,visible,
+15.807,APPROACH,85,60,79,2,0,0,78,15,15,0,0,0.02,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,1,0,1,1,156,+21,+2,visible,
+15.857,APPROACH,85,60,79,2,0,0,78,15,15,0,0,0.07,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,1,0,1,1,155,+21,+2,visible,
+15.907,APPROACH,85,60,79,2,0,0,78,15,15,0,0,0.00,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,154,+20,+2,visible,
+15.958,APPROACH,85,60,79,2,0,0,78,15,15,0,0,0.05,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,153,+19,+2,visible,
+16.008,APPROACH,85,60,80,2,0,0,78,15,15,0,0,0.01,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,152,+19,+2,visible,
+16.058,APPROACH,85,60,80,2,0,0,78,15,15,0,0,0.06,0.03,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,152,+19,+2,visible,
+16.108,APPROACH,85,60,78,2,0,0,78,14,15,0,0,0.01,0.03,tag 1 (Giro derecha 90) en el piso a 199 cm,1,1,0,1,1,152,+18,+2,visible,
+16.158,APPROACH,85,60,78,2,0,0,78,14,15,0,0,0.06,0.03,tag 1 (Giro derecha 90) en el piso a 199 cm,1,1,0,1,1,151,+17,+2,visible,
+16.208,APPROACH,85,60,78,2,0,-2,78,13,15,0,0,0.02,0.03,tag 1 (Giro derecha 90) en el piso a 199 cm,1,1,0,1,1,151,+17,+2,visible,
+16.258,APPROACH,85,60,78,2,0,-2,78,13,15,0,0,0.07,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,1,0,1,1,151,+17,+2,visible,
+16.310,APPROACH,85,60,78,2,0,-2,78,13,15,0,0,0.03,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,1,0,1,1,150,+16,+2,visible,
+16.360,APPROACH,85,60,78,2,0,-2,78,12,15,0,0,0.08,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,1,0,1,1,148,+15,+2,visible,
+16.412,APPROACH,85,60,78,2,0,-2,78,12,15,0,0,0.00,0.03,tag 1 (Giro derecha 90) en el piso a 199 cm,1,1,0,1,1,147,+15,+2,visible,
+16.462,APPROACH,85,60,78,2,0,-2,78,11,15,0,0,0.05,0.03,tag 1 (Giro derecha 90) en el piso a 199 cm,1,1,0,1,1,147,+15,+2,visible,
+16.512,APPROACH,85,60,79,2,0,-2,78,11,15,0,0,0.00,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,1,0,1,1,145,+14,+2,visible,
+16.562,APPROACH,85,60,79,2,0,-2,78,11,15,0,0,0.05,0.03,tag 1 (Giro derecha 90) en el piso a 199 cm,1,1,0,1,1,145,+14,+2,visible,
+16.613,APPROACH,85,60,78,2,0,-1,78,10,15,0,0,0.00,0.05,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,145,+14,+2,visible,
+16.663,APPROACH,85,60,78,2,0,-1,78,10,15,0,0,0.05,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,143,+13,+2,visible,
+16.713,APPROACH,85,60,77,2,0,0,78,10,15,0,0,0.01,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,143,+13,+2,visible,
+16.763,APPROACH,85,60,77,2,0,0,78,10,15,0,0,0.06,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,143,+13,+2,visible,
+16.813,APPROACH,85,60,78,2,0,0,78,10,15,0,0,0.00,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,141,+12,+2,visible,
+16.864,APPROACH,85,60,78,2,0,0,78,10,15,0,0,0.05,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,140,+12,+2,visible,
+16.915,APPROACH,85,60,78,2,0,0,78,10,15,0,0,0.00,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,140,+12,+2,visible,
+16.965,APPROACH,85,60,78,2,0,0,78,10,15,0,0,0.05,0.03,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,139,+11,+2,visible,
+17.015,APPROACH,85,60,79,2,0,0,78,10,15,0,0,0.01,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,138,+11,+2,visible,
+17.065,APPROACH,85,60,79,2,0,0,78,10,15,0,0,0.06,0.03,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,1,1,137,+10,+2,visible,
+17.115,APPROACH,85,60,80,2,0,0,78,10,15,0,0,0.00,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,0,1,,,,visible,
+17.166,APPROACH,85,60,80,2,0,0,78,0,15,0,0,0.05,0.03,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,0,1,,,,visible,
+17.216,APPROACH,85,60,80,2,0,0,78,0,15,0,0,0.00,0.03,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,0,1,,,,visible,
+17.266,APPROACH,85,60,80,2,0,0,78,0,15,0,0,0.05,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,0,0,0,1,,,,visible,
+17.316,APPROACH,85,60,79,2,0,-2,78,0,15,0,0,0.00,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,2,0,0,1,,,,visible,
+17.366,APPROACH,85,60,79,2,0,-2,78,0,15,0,0,0.05,0.02,tag 1 (Giro derecha 90) en el piso a 199 cm,1,2,0,0,1,,,,visible,
+17.417,APPROACH,85,60,79,2,0,-3,78,0,15,0,0,0.01,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,2,0,0,1,,,,ciegas,132
+17.467,APPROACH,85,60,79,2,0,-3,78,0,15,0,0,0.06,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,2,0,0,1,,,,ciegas,132
+17.517,APPROACH,85,60,79,2,0,-3,78,0,15,0,0,0.00,0.03,tag 1 debajo de la imagen: 132 cm a ciegas,1,1,0,0,1,,,,ciegas,132
+17.567,APPROACH,85,60,78,2,0,-3,78,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,1,0,0,1,,,,ciegas,132
+17.617,APPROACH,85,60,78,2,0,-3,78,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,1,0,0,1,,,,ciegas,132
+17.668,APPROACH,85,60,78,2,0,-2,78,0,15,0,0,0.00,0.01,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+17.718,APPROACH,85,60,78,2,0,-2,78,0,15,0,0,0.05,0.01,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+17.768,APPROACH,85,60,78,2,0,-1,78,0,15,0,0,0.00,0.01,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+17.818,APPROACH,85,60,78,2,0,-1,78,0,15,0,0,0.05,0.03,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+17.869,APPROACH,85,60,78,2,0,0,78,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+17.919,APPROACH,85,60,78,2,0,0,78,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+17.972,APPROACH,85,60,78,2,0,0,78,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+18.022,APPROACH,85,60,78,2,0,0,78,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+18.075,APPROACH,85,60,77,2,0,0,78,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+18.125,APPROACH,85,60,77,2,0,0,78,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+18.178,APPROACH,85,60,77,2,0,-1,78,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+18.228,APPROACH,85,60,77,2,0,-1,78,0,15,0,0,0.05,0.03,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+18.278,APPROACH,85,60,76,2,0,-1,78,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+18.328,APPROACH,85,60,76,2,0,-1,78,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+18.378,APPROACH,85,60,77,2,0,-1,78,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+18.428,APPROACH,85,60,77,2,0,-1,78,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+18.478,APPROACH,85,60,78,2,0,-1,78,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+18.529,APPROACH,85,60,78,2,0,-1,78,0,15,0,0,0.05,0.03,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+18.580,APPROACH,85,60,77,1,0,-1,78,0,15,0,0,0.00,0.04,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+18.630,APPROACH,85,60,77,1,0,-1,78,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+18.680,APPROACH,85,60,75,1,0,-2,78,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+18.730,APPROACH,85,60,75,1,0,-2,78,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+18.781,APPROACH,85,60,78,2,0,-3,78,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+18.831,APPROACH,85,60,78,2,0,-3,78,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+18.881,APPROACH,85,60,78,2,0,-3,78,0,15,0,0,0.10,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+18.931,APPROACH,85,60,78,2,0,-2,78,0,15,0,0,0.03,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+18.981,APPROACH,85,60,78,2,0,-2,78,0,15,0,0,0.08,0.03,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+19.032,APPROACH,85,60,77,1,0,-2,78,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+19.082,APPROACH,85,60,77,1,0,-2,78,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+19.132,APPROACH,85,60,79,2,0,-2,78,0,15,0,0,0.01,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+19.182,APPROACH,85,60,79,2,0,-2,78,0,15,0,0,0.06,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+19.232,APPROACH,85,60,80,2,0,-1,78,0,15,0,0,0.03,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+19.282,APPROACH,85,60,80,2,0,-1,78,0,15,0,0,0.08,0.03,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+19.332,APPROACH,85,60,79,2,0,-1,78,0,15,0,0,0.04,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+19.383,APPROACH,85,60,79,2,0,-1,78,0,15,0,0,0.09,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+19.434,APPROACH,85,60,80,2,0,-1,78,0,15,0,0,0.01,0.03,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+19.484,APPROACH,85,60,80,2,0,-1,78,0,15,0,0,0.06,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+19.534,APPROACH,85,60,80,2,0,0,78,0,15,0,0,0.03,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+19.584,APPROACH,85,60,80,2,0,0,78,0,15,0,0,0.08,0.04,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+19.634,APPROACH,85,60,81,2,0,0,78,0,15,0,0,0.02,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+19.684,APPROACH,85,60,81,2,0,0,78,0,15,0,0,0.07,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+19.736,APPROACH,85,60,81,2,0,0,78,0,15,0,0,0.01,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+19.786,APPROACH,85,60,81,2,0,0,78,0,15,0,0,0.06,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+19.836,APPROACH,85,60,79,2,0,0,78,0,15,0,0,0.02,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+19.886,APPROACH,85,60,79,2,0,0,78,0,15,0,0,0.07,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+19.936,APPROACH,85,60,80,2,0,0,78,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+19.987,APPROACH,85,60,80,2,0,0,78,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+20.037,APPROACH,85,60,80,2,0,0,78,0,15,0,0,0.01,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+20.087,APPROACH,85,60,80,2,0,0,78,0,15,0,0,0.06,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+20.137,APPROACH,85,60,79,2,0,0,78,0,15,0,0,0.03,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+20.187,APPROACH,85,60,79,2,0,0,78,0,15,0,0,0.08,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+20.237,APPROACH,85,60,79,2,0,-1,78,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+20.287,APPROACH,85,60,79,2,0,-1,78,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+20.337,APPROACH,84,60,78,2,0,-1,78,0,15,0,0,0.01,0.03,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+20.388,APPROACH,84,60,78,2,0,-1,78,0,15,0,0,0.06,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+20.438,APPROACH,84,60,76,2,0,0,78,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+20.488,APPROACH,84,60,76,2,0,0,78,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+20.538,APPROACH,84,60,76,2,0,-1,78,0,15,0,0,0.01,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+20.588,APPROACH,84,60,76,2,0,-1,78,0,15,0,0,0.06,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+20.638,APPROACH,84,60,75,2,0,-1,78,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+20.688,APPROACH,84,60,75,2,0,-1,78,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+20.740,APPROACH,84,60,74,2,0,-1,78,0,15,0,0,0.01,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+20.790,APPROACH,84,60,74,2,0,-1,78,0,15,0,0,0.06,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+20.841,APPROACH,84,60,74,2,0,-1,78,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+20.891,APPROACH,84,60,74,2,0,-1,78,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+20.942,APPROACH,84,60,73,2,0,-1,78,0,15,0,0,0.01,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+20.992,APPROACH,84,60,73,2,0,-1,78,0,15,0,0,0.07,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+21.044,APPROACH,84,50,72,2,0,-1,78,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+21.094,APPROACH,84,50,72,2,0,0,78,0,15,0,0,0.01,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+21.146,APPROACH,84,50,72,2,0,0,78,0,15,0,0,0.06,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+21.196,APPROACH,84,50,71,2,0,0,78,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+21.246,APPROACH,84,50,71,2,0,0,78,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+21.296,APPROACH,84,50,70,2,0,-1,78,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+21.347,APPROACH,84,50,70,2,0,-1,78,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+21.397,APPROACH,84,50,68,1,0,0,79,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+21.447,APPROACH,84,50,68,1,0,0,79,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+21.497,APPROACH,84,50,68,2,0,-2,79,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+21.547,APPROACH,84,50,68,2,0,-2,79,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+21.597,APPROACH,84,50,68,2,0,-2,79,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+21.647,APPROACH,84,50,68,2,0,-2,79,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+21.698,APPROACH,84,50,68,2,0,-1,79,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+21.748,APPROACH,84,50,68,2,0,-1,79,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+21.798,APPROACH,84,50,68,2,0,-1,79,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+21.848,APPROACH,84,50,68,2,0,-1,79,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+21.898,APPROACH,84,50,69,2,0,-1,79,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+21.948,APPROACH,84,50,69,2,0,-1,79,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+21.999,APPROACH,84,50,68,2,0,-1,79,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+22.049,APPROACH,84,50,68,2,0,-1,79,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+22.099,APPROACH,84,50,68,2,0,-1,79,0,15,0,0,0.10,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+22.149,APPROACH,84,50,69,2,0,-1,79,0,15,0,0,0.03,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+22.199,APPROACH,84,50,69,2,0,-1,79,0,15,0,0,0.08,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+22.249,APPROACH,84,50,68,2,0,-1,79,0,15,0,0,0.02,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+22.300,APPROACH,84,50,68,2,0,-1,79,0,15,0,0,0.07,0.03,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+22.350,APPROACH,84,50,68,2,0,-1,79,0,15,0,0,0.03,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+22.400,APPROACH,84,50,68,2,0,-1,79,0,15,0,0,0.08,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+22.450,APPROACH,84,50,69,1,0,-2,80,0,15,0,0,0.02,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+22.500,APPROACH,84,50,69,1,0,-2,80,0,15,0,0,0.07,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+22.550,APPROACH,84,50,70,1,0,-2,80,0,15,0,0,0.04,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+22.600,APPROACH,84,50,70,1,0,-2,80,0,15,0,0,0.09,0.04,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+22.651,APPROACH,84,50,70,1,0,-2,80,0,15,0,0,0.03,0.03,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+22.702,APPROACH,84,50,70,1,0,-2,80,0,15,0,0,0.09,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+22.752,APPROACH,84,50,71,1,0,-2,80,0,15,0,0,0.02,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+22.802,APPROACH,84,50,71,1,0,-2,80,0,15,0,0,0.07,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+22.852,APPROACH,84,50,70,1,0,-2,80,0,15,0,0,0.03,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+22.906,APPROACH,84,50,70,1,0,-2,80,0,15,0,0,0.09,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+22.956,APPROACH,84,50,71,2,0,-1,80,0,15,0,0,0.03,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+23.007,APPROACH,84,50,71,2,0,-1,80,0,15,0,0,0.08,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+23.057,APPROACH,84,50,72,2,0,-1,80,0,15,0,0,0.00,0.03,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+23.107,APPROACH,84,50,72,2,0,-1,80,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+23.157,APPROACH,84,50,72,2,0,-1,80,0,15,0,0,0.03,0.01,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+23.208,APPROACH,84,50,72,2,0,-1,80,0,15,0,0,0.08,0.01,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+23.258,APPROACH,84,50,72,2,0,-1,80,0,15,0,0,0.03,0.03,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+23.308,APPROACH,84,50,72,2,0,-1,80,0,15,0,0,0.08,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+23.358,APPROACH,84,50,73,2,0,-1,80,0,15,0,0,0.04,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+23.409,APPROACH,84,50,73,2,0,-1,80,0,15,0,0,0.09,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+23.459,APPROACH,84,50,73,2,0,-1,79,0,15,0,0,0.02,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+23.509,APPROACH,84,50,73,2,0,-1,79,0,15,0,0,0.07,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+23.560,APPROACH,84,50,72,2,0,-1,79,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+23.610,APPROACH,84,50,72,2,0,-1,79,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+23.660,APPROACH,84,50,74,2,0,0,79,0,15,0,0,0.02,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+23.711,APPROACH,84,50,74,2,0,0,79,0,15,0,0,0.07,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+23.761,APPROACH,84,50,75,2,0,0,79,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+23.811,APPROACH,84,50,75,2,0,0,79,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+23.861,APPROACH,84,50,73,2,0,0,79,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+23.912,APPROACH,84,50,73,2,0,0,79,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+23.962,APPROACH,84,50,72,2,0,-1,79,0,15,0,0,0.01,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+24.012,APPROACH,84,50,72,2,0,-1,79,0,15,0,0,0.06,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+24.062,APPROACH,84,50,72,2,0,-2,79,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+24.112,APPROACH,84,50,72,2,0,-2,79,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+24.163,APPROACH,84,50,71,2,0,-1,79,0,15,0,0,0.01,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+24.213,APPROACH,84,50,71,2,0,-1,79,0,15,0,0,0.06,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+24.263,APPROACH,84,50,72,2,0,-3,79,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+24.313,APPROACH,84,50,72,2,0,-3,79,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+24.363,APPROACH,84,50,72,2,0,-3,79,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+24.413,APPROACH,84,50,72,2,0,-3,79,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+24.464,APPROACH,84,50,72,2,0,-1,78,0,15,0,0,0.01,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+24.514,APPROACH,84,50,72,2,0,-1,78,0,15,0,0,0.06,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+24.564,APPROACH,84,50,73,2,0,-1,78,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+24.614,APPROACH,84,50,73,2,0,-1,78,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+24.664,APPROACH,84,50,73,2,0,-1,78,0,15,0,0,0.02,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+24.714,APPROACH,84,50,73,2,0,-1,78,0,15,0,0,0.07,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+24.764,APPROACH,84,50,75,2,0,-1,78,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+24.814,APPROACH,84,50,75,2,0,-1,78,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+24.865,APPROACH,84,50,75,2,0,0,78,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+24.916,APPROACH,84,50,75,2,0,0,78,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+24.966,APPROACH,84,50,75,2,0,0,78,0,15,0,0,0.01,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+25.016,APPROACH,84,50,75,2,0,0,78,0,15,0,0,0.06,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+25.066,APPROACH,84,50,75,2,0,-1,78,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+25.116,APPROACH,84,50,75,2,0,-1,78,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+25.166,APPROACH,84,50,76,2,0,-1,78,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,ciegas,132
+25.217,APPROACH,84,60,76,2,0,-2,78,0,0,0,0,0.00,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,quieto,132
+25.267,APPROACH,84,60,76,2,0,-2,78,0,0,0,0,0.05,0.01,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,quieto,132
+25.317,APPROACH,83,60,75,2,0,-3,78,0,0,0,0,0.00,0.03,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,quieto,132
+25.367,APPROACH,83,60,75,2,0,-3,78,0,0,0,0,0.05,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,quieto,132
+25.417,APPROACH,83,60,75,2,0,-3,78,0,0,0,0,0.10,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,quieto,132
+25.468,APPROACH,83,60,76,2,1,-2,79,0,0,0,0,0.00,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,quieto,132
+25.518,APPROACH,83,60,77,2,0,-1,79,0,0,0,0,0.00,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,quieto,132
+25.568,APPROACH,83,60,77,2,0,-1,79,0,0,0,0,0.05,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,quieto,132
+25.618,APPROACH,83,60,79,2,0,0,79,0,0,0,0,0.00,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,quieto,132
+25.669,APPROACH,83,60,79,2,0,0,79,0,0,0,0,0.05,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,quieto,132
+25.719,APPROACH,83,60,79,2,0,0,79,0,0,0,0,0.10,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,1,0,0,0,1,,,,quieto,132
+25.769,APPROACH,83,60,78,2,1,0,79,0,0,0,0,0.05,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,0,0,0,0,1,,,,quieto,132
+25.820,APPROACH,83,60,78,2,1,0,79,0,0,0,0,0.10,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,0,0,0,0,1,,,,quieto,132
+25.870,APPROACH,83,60,77,2,1,0,79,0,0,0,0,0.04,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,0,0,0,0,1,,,,quieto,132
+25.920,APPROACH,83,60,77,2,1,0,79,0,0,0,0,0.09,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,0,0,0,0,1,,,,quieto,132
+25.970,APPROACH,83,60,78,2,2,0,79,0,0,0,0,0.02,0.02,tag 1 debajo de la imagen: 132 cm a ciegas,0,0,0,0,1,,,,quieto,132
+26.020,EXECUTE,83,60,78,2,2,0,79,0,0,0,0,0.07,0.02,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+26.070,EXECUTE,83,60,78,2,1,0,79,0,0,0,60,0.01,0.02,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+26.120,EXECUTE,83,60,78,2,1,0,79,0,0,0,60,0.06,0.02,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+26.171,EXECUTE,83,60,76,2,1,-1,79,0,0,0,60,0.04,0.02,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+26.221,EXECUTE,83,60,76,2,1,-1,79,0,0,0,60,0.09,0.02,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+26.271,EXECUTE,83,60,78,5,0,-3,79,0,0,0,60,0.02,0.02,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+26.321,EXECUTE,83,60,78,5,0,-3,79,0,0,0,60,0.07,0.01,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+26.374,EXECUTE,83,60,78,8,1,-3,79,0,0,0,60,0.01,0.01,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+26.424,EXECUTE,83,60,78,8,1,-3,79,0,0,0,60,0.06,0.01,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+26.474,EXECUTE,83,60,79,12,1,-2,79,0,0,0,60,0.03,0.03,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+26.524,EXECUTE,83,60,79,12,1,-2,79,0,0,0,60,0.08,0.02,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+26.575,EXECUTE,83,60,78,16,1,-2,79,0,0,0,60,0.02,0.02,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+26.625,EXECUTE,83,60,78,16,1,-2,79,0,0,0,60,0.07,0.02,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+26.675,EXECUTE,83,60,78,20,1,-1,79,0,0,0,60,0.01,0.02,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+26.725,EXECUTE,83,60,78,20,1,-1,79,0,0,0,60,0.06,0.01,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+26.776,EXECUTE,83,60,78,24,0,-1,79,0,0,0,60,0.01,0.02,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+26.826,EXECUTE,83,60,78,24,0,-1,79,0,0,0,60,0.06,0.02,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+26.879,EXECUTE,83,60,78,29,0,0,79,0,0,0,60,0.03,0.02,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+26.929,EXECUTE,83,60,78,29,0,0,79,0,0,0,60,0.08,0.02,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+26.979,EXECUTE,83,60,77,34,0,0,79,0,0,0,60,0.02,0.01,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+27.029,EXECUTE,83,60,77,34,0,0,79,0,0,0,60,0.07,0.01,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+27.080,EXECUTE,83,60,77,38,0,0,79,0,0,0,60,0.02,0.01,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+27.130,EXECUTE,83,60,77,38,0,0,79,0,0,0,60,0.07,0.01,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+27.180,EXECUTE,83,60,77,43,0,0,79,0,0,0,60,0.01,0.01,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+27.230,EXECUTE,83,60,77,43,0,0,79,0,0,0,60,0.06,0.01,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+27.280,EXECUTE,83,60,77,48,1,0,79,0,0,0,60,0.01,0.01,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+27.330,EXECUTE,83,60,77,48,1,0,79,0,0,0,60,0.06,0.02,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+27.381,EXECUTE,83,60,76,53,1,0,79,0,0,0,60,0.03,0.02,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+27.431,EXECUTE,83,60,76,53,1,0,79,0,0,0,60,0.08,0.02,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+27.484,EXECUTE,83,60,75,58,0,-1,80,0,0,0,60,0.02,0.01,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+27.534,EXECUTE,83,60,75,58,0,-1,80,0,0,0,60,0.07,0.02,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+27.584,EXECUTE,83,60,74,63,1,0,80,0,0,0,60,0.01,0.02,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+27.634,EXECUTE,83,60,74,63,1,0,80,0,0,0,58,0.06,0.02,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+27.684,EXECUTE,83,60,73,68,1,0,80,0,0,0,58,0.00,0.02,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+27.734,EXECUTE,83,60,73,68,1,0,80,0,0,0,48,0.05,0.01,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+27.784,EXECUTE,83,50,72,73,1,0,80,0,0,0,48,0.00,0.01,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+27.835,EXECUTE,83,50,72,73,1,0,80,0,0,0,38,0.05,0.01,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+27.887,EXECUTE,83,50,72,77,1,0,80,0,0,0,38,0.00,0.01,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+27.937,EXECUTE,83,50,72,77,1,0,80,0,0,0,30,0.05,0.02,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,1,1,,,,,132
+27.987,EXECUTE,83,50,70,80,1,0,80,0,0,0,30,0.02,0.01,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+28.037,EXECUTE,83,50,70,80,1,0,80,0,0,0,24,0.07,0.01,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,1,1,,,,,132
+28.087,EXECUTE,83,50,70,83,2,0,80,0,0,0,24,0.00,0.02,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+28.137,EXECUTE,83,50,70,83,2,0,80,0,0,0,20,0.05,0.02,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,1,1,,,,,132
+28.187,EXECUTE,83,50,69,85,2,0,80,0,0,0,20,0.00,0.02,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+28.238,EXECUTE,83,50,69,85,2,0,80,0,0,0,20,0.05,0.01,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+28.288,EXECUTE,83,50,69,87,2,0,80,0,0,0,20,0.01,0.02,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+28.338,EXECUTE,83,50,69,87,2,0,80,0,0,0,20,0.06,0.02,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+28.388,EXECUTE,83,50,68,88,2,0,80,0,0,0,20,0.00,0.02,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,1,1,,,,,132
+28.438,EXECUTE,83,50,68,88,2,0,80,0,0,0,20,0.05,0.02,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+28.488,EXECUTE,83,50,68,89,2,0,80,0,0,0,20,0.00,0.02,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+28.538,EXECUTE,83,50,68,89,2,0,80,0,0,0,0,0.05,0.02,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+28.588,EXECUTE,83,50,67,90,1,0,80,0,0,0,0,0.00,0.02,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+28.639,EXECUTE,83,50,67,90,1,0,80,0,0,0,0,0.05,0.02,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+28.689,EXECUTE,83,50,68,91,1,0,80,0,0,0,0,0.00,0.02,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,0,1,,,,,132
+28.742,EXECUTE,83,50,68,91,1,0,80,0,0,0,0,0.05,0.02,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,1,1,,,,,132
+28.792,EXECUTE,83,50,68,91,1,0,80,0,0,0,0,0.00,0.02,"tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)",0,0,0,1,1,,,,,132
+28.842,ADVANCE,83,50,68,91,1,0,80,0,0,0,0,0.05,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,132
+28.892,ADVANCE,83,50,68,91,1,0,80,0,15,0,0,0.00,0.02,"tag 1 ejecutado, avanzando",0,0,0,1,,,,,,132
+28.943,ADVANCE,83,50,68,91,1,0,80,0,15,0,0,0.05,0.02,"tag 1 ejecutado, avanzando",0,0,0,1,,,,,,132
+28.993,ADVANCE,83,50,68,91,1,0,80,0,15,0,0,0.00,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,132
+29.043,ADVANCE,83,50,67,91,0,0,80,0,15,0,0,0.00,0.02,"tag 1 ejecutado, avanzando",0,0,0,1,,,,,,132
+29.093,ADVANCE,83,50,67,91,0,0,80,0,15,0,0,0.05,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,132
+29.143,ADVANCE,83,50,67,91,0,0,80,0,15,0,0,0.10,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,132
+29.193,ADVANCE,83,50,68,91,0,0,80,0,15,0,0,0.04,0.02,"tag 1 ejecutado, avanzando",0,0,0,1,,,,,,132
+29.243,ADVANCE,82,50,68,91,0,0,80,0,15,0,0,0.00,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,132
+29.293,ADVANCE,82,50,68,91,0,0,80,0,15,0,0,0.05,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,132
+29.344,ADVANCE,82,50,68,91,1,0,80,0,15,0,0,0.00,0.02,"tag 1 ejecutado, avanzando",0,0,0,1,,,,,,132
+29.394,ADVANCE,82,50,68,91,1,0,80,0,15,0,0,0.05,0.02,"tag 1 ejecutado, avanzando",0,0,0,1,,,,,,132
+29.444,ADVANCE,82,50,69,91,1,0,80,0,15,0,0,0.00,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,132
+29.494,ADVANCE,82,50,69,91,1,0,80,0,15,0,0,0.05,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,132
+29.544,ADVANCE,82,50,69,91,1,0,80,0,15,0,0,0.10,0.02,"tag 1 ejecutado, avanzando",0,0,0,1,,,,,,132
+29.594,ADVANCE,82,50,69,91,0,0,80,0,15,0,0,0.04,0.06,"tag 1 ejecutado, avanzando",0,0,0,1,,,,,,132
+29.645,ADVANCE,82,50,69,91,0,0,80,0,15,0,0,0.09,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,132
+29.695,ADVANCE,82,50,69,91,0,0,80,0,15,0,0,0.04,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,132
+29.745,ADVANCE,82,50,69,91,0,0,80,0,15,0,0,0.09,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,132
+29.795,ADVANCE,82,50,69,91,0,0,80,0,15,0,0,0.03,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,132
+29.845,ADVANCE,82,50,69,91,0,0,80,0,15,0,0,0.08,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,132
+29.895,ADVANCE,82,50,69,91,0,-1,80,0,15,0,0,0.01,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,132
+29.945,ADVANCE,82,50,69,91,0,-1,80,0,15,0,0,0.06,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,132
+29.996,ADVANCE,82,50,68,91,0,-1,80,0,15,0,0,0.03,0.02,"tag 1 ejecutado, avanzando",0,0,0,1,,,,,,132
+30.046,ADVANCE,82,50,68,91,0,-1,80,0,15,0,0,0.08,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,132
+30.096,ADVANCE,82,50,69,91,0,-1,80,0,15,0,0,0.01,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,132
+30.146,ADVANCE,82,50,69,91,0,-1,80,0,15,0,0,0.06,0.02,"tag 1 ejecutado, avanzando",0,0,0,1,,,,,,132
+30.196,ADVANCE,82,50,69,91,0,0,80,0,15,0,0,0.03,0.02,"tag 1 ejecutado, avanzando",0,0,0,1,,,,,,132
+30.247,ADVANCE,82,50,69,91,0,0,80,0,15,0,0,0.08,0.02,"tag 1 ejecutado, avanzando",0,0,0,1,,,,,,132
+30.297,APPROACH,82,50,69,91,0,0,80,0,15,0,0,0.01,0.02,tag 4 (Flip 360) en el piso a 198 cm,0,0,0,0,4,,,,visible,
+30.347,APPROACH,82,50,69,91,0,0,80,0,15,0,0,0.06,0.02,tag 4 (Flip 360) en el piso a 198 cm,0,0,0,1,4,194,-38,+3,visible,
+30.397,APPROACH,82,50,69,91,0,-3,80,-15,15,0,0,0.00,0.01,tag 4 (Flip 360) en el piso a 198 cm,-1,0,0,1,4,,,,visible,
+30.447,APPROACH,82,50,69,91,0,-3,80,0,15,0,0,0.05,0.02,tag 4 (Flip 360) en el piso a 198 cm,-1,0,0,0,4,,,,visible,
+30.497,APPROACH,82,50,69,91,0,-3,79,0,15,0,0,0.01,0.02,tag 4 (Flip 360) en el piso a 198 cm,-1,0,0,1,4,193,-36,+4,visible,
+30.548,APPROACH,82,50,69,91,0,-3,79,-15,15,0,0,0.06,0.02,tag 4 (Flip 360) en el piso a 198 cm,-1,0,0,0,4,,,,visible,
+30.598,APPROACH,82,50,69,91,0,-3,79,0,15,0,0,0.00,0.02,tag 4 (Flip 360) en el piso a 198 cm,0,0,0,0,4,,,,visible,
+30.648,APPROACH,82,50,69,91,0,-3,79,0,15,0,0,0.05,0.01,tag 4 (Flip 360) en el piso a 198 cm,0,0,0,1,4,193,-34,+5,visible,
+30.698,APPROACH,82,50,69,91,0,-2,79,-15,15,0,0,0.02,0.02,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,1,4,193,-33,+4,visible,
+30.748,APPROACH,82,50,69,91,0,-2,79,-15,15,0,0,0.07,0.02,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,0,4,,,,visible,
+30.799,APPROACH,82,50,68,91,1,0,79,0,15,0,0,0.01,0.02,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,0,4,,,,visible,
+30.849,APPROACH,82,50,68,91,1,0,79,0,15,0,0,0.06,0.02,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,1,4,194,-30,+3,visible,
+30.899,APPROACH,82,50,68,91,1,0,79,-15,15,0,0,0.00,0.02,tag 4 (Flip 360) en el piso a 198 cm,1,1,0,1,4,192,-28,+4,visible,
+30.949,APPROACH,82,50,68,91,1,0,79,-15,15,0,0,0.05,0.02,tag 4 (Flip 360) en el piso a 198 cm,1,1,0,1,4,190,-27,+4,visible,
+30.999,APPROACH,82,50,69,91,0,0,79,-15,15,0,0,0.02,0.02,tag 4 (Flip 360) en el piso a 198 cm,1,1,0,1,4,188,-26,+4,visible,
+31.049,APPROACH,82,50,69,91,0,0,79,-15,15,0,0,0.07,0.02,tag 4 (Flip 360) en el piso a 198 cm,1,1,0,0,4,,,,visible,
+31.100,APPROACH,82,50,68,91,0,0,79,0,15,0,0,0.01,0.02,tag 4 (Flip 360) en el piso a 198 cm,1,1,0,1,4,187,-24,+3,visible,
+31.150,APPROACH,82,50,68,91,0,0,79,-15,15,0,0,0.06,0.02,tag 4 (Flip 360) en el piso a 198 cm,1,1,0,1,4,186,-23,+3,visible,
+31.200,APPROACH,82,50,68,91,1,1,79,-15,15,0,0,0.00,0.02,tag 4 (Flip 360) en el piso a 198 cm,1,1,0,1,4,,,,visible,
+31.250,APPROACH,82,50,68,91,1,1,79,0,15,0,0,0.05,0.02,tag 4 (Flip 360) en el piso a 198 cm,1,1,0,1,4,184,-21,+4,visible,
+31.300,APPROACH,82,50,69,91,0,1,79,-15,15,0,0,0.00,0.02,tag 4 (Flip 360) en el piso a 198 cm,1,1,0,1,4,184,-21,+3,visible,
+31.351,APPROACH,82,50,69,91,0,1,79,-15,15,0,0,0.05,0.02,tag 4 (Flip 360) en el piso a 198 cm,1,1,0,1,4,183,-20,+3,visible,
+31.401,APPROACH,82,50,69,91,0,1,79,-15,15,0,0,0.01,0.02,tag 4 (Flip 360) en el piso a 198 cm,1,1,0,1,4,182,-20,+3,visible,
+31.451,APPROACH,82,50,69,91,0,1,79,-15,15,0,0,0.06,0.02,tag 4 (Flip 360) en el piso a 198 cm,1,1,0,1,4,182,-19,+3,visible,
+31.501,APPROACH,82,50,69,91,0,0,79,-15,15,0,0,0.00,0.02,tag 4 (Flip 360) en el piso a 198 cm,1,0,0,1,4,181,-18,+3,visible,
+31.551,APPROACH,82,50,69,91,0,0,79,-14,15,0,0,0.05,0.03,tag 4 (Flip 360) en el piso a 198 cm,1,0,0,1,4,,,,visible,
+31.601,APPROACH,82,50,70,91,0,0,79,0,15,0,0,0.00,0.04,tag 4 (Flip 360) en el piso a 198 cm,0,0,0,1,4,180,-16,+3,visible,
+31.652,APPROACH,82,50,70,91,0,0,79,-13,15,0,0,0.05,0.02,tag 4 (Flip 360) en el piso a 198 cm,0,0,0,1,4,180,-16,+3,visible,
+31.705,APPROACH,82,50,70,91,0,0,79,-12,15,0,0,0.00,0.02,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,1,4,178,-16,+3,visible,
+31.755,APPROACH,82,50,70,91,0,0,79,-12,15,0,0,0.05,0.02,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,1,4,177,-15,+3,visible,
+31.806,APPROACH,82,50,71,91,0,0,79,-12,15,0,0,0.00,0.02,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,0,4,,,,visible,
+31.856,APPROACH,82,50,71,91,0,0,79,0,15,0,0,0.05,0.02,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,1,4,178,-14,+4,visible,
+31.906,APPROACH,82,50,72,91,0,0,79,-11,15,0,0,0.00,0.02,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,0,4,,,,visible,
+31.957,APPROACH,82,50,72,91,0,0,79,0,15,0,0,0.05,0.02,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,0,4,,,,visible,
+32.007,APPROACH,82,50,73,91,0,0,79,0,15,0,0,0.00,0.02,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,1,4,174,-12,+3,visible,
+32.057,APPROACH,82,50,73,91,0,0,79,-10,15,0,0,0.05,0.02,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,0,4,,,,visible,
+32.109,APPROACH,82,50,74,91,0,0,79,0,15,0,0,0.00,0.02,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,1,4,172,-11,+4,visible,
+32.159,APPROACH,82,50,74,91,0,0,79,-10,15,0,0,0.05,0.03,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,1,4,171,-11,+3,visible,
+32.214,APPROACH,82,50,74,91,0,0,79,-10,15,0,0,0.00,0.02,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,1,4,169,-10,+3,visible,
+32.264,APPROACH,82,50,75,91,1,0,79,-10,15,0,0,0.00,0.02,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,1,4,169,-10,+3,visible,
+32.314,APPROACH,82,50,75,91,1,0,79,-10,15,0,0,0.05,0.03,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,1,4,169,-10,+3,visible,
+32.364,APPROACH,82,50,77,91,1,0,79,-10,15,0,0,0.00,0.03,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,1,4,169,-10,+3,visible,
+32.414,APPROACH,82,50,77,91,1,0,79,-10,15,0,0,0.05,0.03,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,1,4,169,-10,+3,visible,
+32.465,APPROACH,82,50,77,91,1,0,79,-10,15,0,0,0.10,0.03,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,1,4,168,-9,+3,visible,
+32.515,APPROACH,82,60,77,91,1,0,80,-10,15,0,0,0.00,0.03,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,1,4,167,-9,+3,visible,
+32.565,APPROACH,82,60,77,91,1,0,80,-10,15,0,0,0.05,0.03,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,1,4,166,-9,+4,visible,
+32.615,APPROACH,82,60,79,91,0,-1,80,-10,15,0,0,0.00,0.02,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,0,4,,,,visible,
+32.665,APPROACH,82,60,79,91,0,-1,80,0,15,0,0,0.05,0.02,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,1,4,162,-8,+3,visible,
+32.716,APPROACH,82,60,79,91,1,0,80,-10,15,0,0,0.01,0.02,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,0,4,,,,visible,
+32.766,APPROACH,82,60,79,91,1,0,80,0,15,0,0,0.06,0.02,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,1,4,160,-7,+3,visible,
+32.816,APPROACH,82,60,79,91,1,0,80,-10,15,0,0,0.03,0.02,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,1,4,160,-7,+2,visible,
+32.866,APPROACH,82,60,79,91,1,0,80,-10,15,0,0,0.08,0.02,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,0,4,,,,visible,
+32.916,APPROACH,82,60,81,91,1,-1,80,0,15,0,0,0.04,0.02,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,1,4,157,-6,+3,visible,
+32.967,APPROACH,82,60,81,91,1,-1,80,-10,15,0,0,0.09,0.02,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,1,4,156,-6,+3,visible,
+33.017,APPROACH,82,60,82,91,1,0,80,-10,15,0,0,0.01,0.02,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,1,4,156,-6,+2,visible,
+33.067,APPROACH,82,60,82,91,1,0,80,-10,15,0,0,0.07,0.03,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,1,4,156,-5,+2,visible,
+33.117,APPROACH,82,60,82,91,1,0,80,-10,15,0,0,0.02,0.02,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,1,4,154,-5,+2,visible,
+33.167,APPROACH,82,60,82,91,1,0,80,-10,15,0,0,0.07,0.03,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,1,4,154,-5,+2,visible,
+33.218,APPROACH,82,60,82,91,1,0,80,-10,15,0,0,0.03,0.02,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,1,4,154,-4,+2,visible,
+33.268,APPROACH,82,60,82,91,1,0,80,0,15,0,0,0.08,0.02,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,1,4,154,-4,+2,visible,
+33.318,APPROACH,81,60,83,91,1,0,80,0,15,0,0,0.00,0.02,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,1,4,153,-3,+2,visible,
+33.368,APPROACH,81,60,83,91,1,0,80,0,15,0,0,0.05,0.02,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,1,4,152,-2,+2,visible,
+33.418,APPROACH,81,60,84,91,1,0,80,0,15,0,0,0.02,0.02,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,1,4,152,-2,+2,visible,
+33.469,APPROACH,81,60,84,91,1,0,80,0,15,0,0,0.07,0.02,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,1,4,151,-2,+2,visible,
+33.520,APPROACH,81,60,85,91,1,0,80,0,15,0,0,0.03,0.02,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,1,4,148,-1,+2,visible,
+33.572,APPROACH,81,60,85,91,1,0,80,0,15,0,0,0.09,0.02,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,1,4,148,-0,+2,visible,
+33.622,APPROACH,81,60,85,91,2,0,80,0,15,0,0,0.01,0.02,tag 4 (Flip 360) en el piso a 198 cm,1,1,0,1,4,148,+0,+2,visible,
+33.672,APPROACH,81,60,85,91,2,0,80,0,15,0,0,0.06,0.02,tag 4 (Flip 360) en el piso a 198 cm,1,1,0,1,4,145,+0,+3,visible,
+33.722,APPROACH,81,60,84,91,2,1,80,0,15,0,0,0.03,0.02,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,1,4,144,+1,+3,visible,
+33.773,APPROACH,81,60,84,91,2,1,80,0,15,0,0,0.08,0.02,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,1,4,143,+1,+3,visible,
+33.823,APPROACH,81,60,84,91,1,0,80,0,15,0,0,0.01,0.02,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,0,4,,,,visible,
+33.873,APPROACH,81,60,84,91,1,0,80,0,15,0,0,0.06,0.02,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,0,4,,,,visible,
+33.925,APPROACH,81,60,84,91,1,0,80,0,15,0,0,0.02,0.02,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,0,4,,,,visible,
+33.975,APPROACH,81,60,84,91,1,0,80,0,15,0,0,0.07,0.02,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,0,4,,,,visible,
+34.025,APPROACH,81,60,83,91,1,0,80,0,15,0,0,0.03,0.03,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,0,4,,,,visible,
+34.075,APPROACH,81,60,83,91,1,0,80,0,15,0,0,0.08,0.03,tag 4 (Flip 360) en el piso a 198 cm,0,1,0,0,4,,,,visible,
+34.125,APPROACH,81,60,83,91,0,0,80,0,15,0,0,0.03,0.03,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+34.175,APPROACH,81,60,83,91,0,0,80,0,15,0,0,0.08,0.03,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+34.225,APPROACH,81,60,83,91,0,0,80,0,15,0,0,0.03,0.03,tag 4 debajo de la imagen: 138 cm a ciegas,0,0,0,0,4,,,,ciegas,138
+34.276,APPROACH,81,60,83,91,0,0,80,0,15,0,0,0.08,0.03,tag 4 debajo de la imagen: 138 cm a ciegas,0,0,0,0,4,,,,ciegas,138
+34.326,APPROACH,81,60,82,91,0,0,80,0,15,0,0,0.00,0.03,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+34.376,APPROACH,81,60,82,91,0,0,80,0,15,0,0,0.05,0.03,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+34.426,APPROACH,81,60,81,91,0,0,80,0,15,0,0,0.00,0.03,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+34.478,APPROACH,81,60,81,91,0,0,80,0,15,0,0,0.05,0.03,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+34.528,APPROACH,81,60,81,91,0,0,80,0,15,0,0,0.00,0.03,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+34.578,APPROACH,81,60,81,91,0,0,80,0,15,0,0,0.05,0.03,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+34.628,APPROACH,81,60,79,91,0,0,80,0,15,0,0,0.00,0.03,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+34.678,APPROACH,81,60,79,91,0,0,80,0,15,0,0,0.05,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+34.729,APPROACH,81,60,78,91,0,0,80,0,15,0,0,0.01,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+34.779,APPROACH,81,60,78,91,0,0,80,0,15,0,0,0.06,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+34.829,APPROACH,81,60,77,91,0,0,80,0,15,0,0,0.00,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+34.881,APPROACH,81,60,77,91,0,0,80,0,15,0,0,0.05,0.03,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,1,4,129,-4,+3,ciegas,138
+34.931,APPROACH,81,60,75,91,0,-1,80,0,15,0,0,0.00,0.03,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,1,4,129,-4,+3,ciegas,138
+34.981,APPROACH,81,60,75,91,0,-1,80,0,15,0,0,0.05,0.03,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,1,4,129,-4,+3,ciegas,138
+35.032,APPROACH,81,60,75,91,0,0,80,0,15,0,0,0.00,0.03,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,1,4,128,-5,+3,ciegas,138
+35.082,APPROACH,81,60,75,91,0,0,80,0,15,0,0,0.05,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,1,4,127,-5,+3,ciegas,138
+35.132,APPROACH,81,60,75,91,1,0,80,0,15,0,0,0.00,0.03,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+35.182,APPROACH,81,60,75,91,1,0,80,0,15,0,0,0.05,0.03,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,1,4,125,-6,+3,ciegas,138
+35.232,APPROACH,81,60,73,91,0,0,80,0,15,0,0,0.01,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,1,4,125,-6,+3,ciegas,138
+35.282,APPROACH,81,60,73,91,0,0,80,0,15,0,0,0.06,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,1,4,125,-6,+3,ciegas,138
+35.333,APPROACH,81,50,72,91,0,0,80,0,15,0,0,0.00,0.03,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+35.383,APPROACH,81,50,72,91,0,0,80,0,15,0,0,0.05,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,1,4,123,-7,+3,ciegas,138
+35.433,APPROACH,81,50,70,91,0,0,80,0,15,0,0,0.00,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,1,4,123,-7,+3,ciegas,138
+35.483,APPROACH,81,50,70,91,0,0,80,0,15,0,0,0.05,0.03,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,1,4,122,-8,+3,ciegas,138
+35.533,APPROACH,81,50,70,91,0,0,80,0,15,0,0,0.00,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+35.583,APPROACH,81,50,70,91,0,0,80,0,15,0,0,0.05,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+35.633,APPROACH,81,50,69,91,1,0,80,0,15,0,0,0.00,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,1,4,119,-10,+3,ciegas,138
+35.683,APPROACH,81,50,69,91,1,0,80,0,15,0,0,0.05,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,1,4,119,-10,+3,ciegas,138
+35.733,APPROACH,81,50,68,91,0,0,80,0,15,0,0,0.00,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,1,4,118,-10,+3,ciegas,138
+35.783,APPROACH,81,50,68,91,0,0,80,0,15,0,0,0.05,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+35.833,APPROACH,81,50,67,91,0,0,80,0,15,0,0,0.00,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+35.884,APPROACH,81,50,67,91,0,0,80,0,15,0,0,0.05,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,1,4,116,-12,+3,ciegas,138
+35.934,APPROACH,81,50,66,91,0,0,80,0,15,0,0,0.00,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+35.984,APPROACH,81,50,66,91,0,0,80,0,15,0,0,0.05,0.03,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+36.034,APPROACH,81,50,66,91,0,0,80,0,15,0,0,0.00,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+36.084,APPROACH,81,50,66,91,0,0,80,0,15,0,0,0.05,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,1,4,113,-14,+3,ciegas,138
+36.134,APPROACH,81,50,66,91,0,0,80,0,15,0,0,0.10,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,1,4,113,-14,+3,ciegas,138
+36.185,APPROACH,81,50,66,91,0,0,80,0,15,0,0,0.02,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+36.235,APPROACH,81,50,66,91,0,0,80,0,15,0,0,0.07,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+36.285,APPROACH,81,50,66,91,0,0,80,0,15,0,0,0.03,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+36.335,APPROACH,81,50,66,91,0,0,80,0,15,0,0,0.08,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+36.385,APPROACH,81,50,66,91,0,0,80,0,15,0,0,0.01,0.03,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+36.435,APPROACH,81,50,66,91,0,0,80,0,15,0,0,0.06,0.03,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+36.485,APPROACH,81,50,66,91,0,-1,80,0,15,0,0,0.01,0.03,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+36.536,APPROACH,81,50,66,91,0,-1,80,0,15,0,0,0.06,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+36.586,APPROACH,81,50,66,91,1,-1,81,0,15,0,0,0.03,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+36.637,APPROACH,81,50,66,91,1,-1,81,0,15,0,0,0.08,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+36.687,APPROACH,81,50,65,91,1,-1,81,0,15,0,0,0.00,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+36.737,APPROACH,81,50,65,91,1,-1,81,0,15,0,0,0.05,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+36.787,APPROACH,81,50,65,91,0,-1,81,0,15,0,0,0.02,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+36.840,APPROACH,81,50,65,91,0,-1,81,0,15,0,0,0.08,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+36.890,APPROACH,81,50,65,91,0,-1,81,0,15,0,0,0.00,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+36.940,APPROACH,81,50,65,91,0,-1,81,0,15,0,0,0.05,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+36.991,APPROACH,81,50,66,91,0,-1,81,0,15,0,0,0.03,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,0,0,0,4,,,,ciegas,138
+37.043,APPROACH,81,50,66,91,0,-1,81,0,15,0,0,0.08,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,0,0,0,4,,,,ciegas,138
+37.093,APPROACH,81,50,65,91,0,-1,81,0,15,0,0,0.01,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,0,0,0,4,,,,ciegas,138
+37.143,APPROACH,81,50,65,91,0,-1,81,0,15,0,0,0.06,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,0,0,0,4,,,,ciegas,138
+37.193,APPROACH,81,50,65,91,0,-1,81,0,15,0,0,0.03,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+37.244,APPROACH,81,50,65,91,0,-1,81,0,15,0,0,0.08,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+37.294,APPROACH,81,50,65,91,0,-1,81,0,15,0,0,0.04,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+37.346,APPROACH,81,50,65,91,0,-1,81,0,15,0,0,0.09,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+37.397,APPROACH,81,50,66,91,1,-1,81,0,15,0,0,0.02,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+37.447,APPROACH,81,50,66,91,1,-1,81,0,15,0,0,0.07,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+37.497,APPROACH,81,50,66,91,1,0,81,0,15,0,0,0.00,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+37.547,APPROACH,81,50,66,91,1,0,81,0,15,0,0,0.05,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+37.597,APPROACH,81,50,66,91,0,0,81,0,15,0,0,0.02,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+37.647,APPROACH,81,50,66,91,0,0,81,0,15,0,0,0.07,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+37.698,APPROACH,81,50,66,91,1,0,81,0,15,0,0,0.00,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+37.748,APPROACH,81,50,66,91,1,0,81,0,15,0,0,0.01,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+37.798,APPROACH,81,50,66,91,1,0,81,0,15,0,0,0.06,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+37.848,APPROACH,81,50,66,91,1,0,81,0,15,0,0,0.03,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+37.898,APPROACH,81,50,66,91,1,0,81,0,15,0,0,0.08,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+37.948,APPROACH,81,50,65,91,1,0,81,0,15,0,0,0.00,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,0,0,0,4,,,,ciegas,138
+37.999,APPROACH,81,50,65,91,1,0,81,0,15,0,0,0.05,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,0,0,0,4,,,,ciegas,138
+38.049,APPROACH,81,50,66,91,0,-1,81,0,15,0,0,0.02,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,0,0,0,4,,,,ciegas,138
+38.099,APPROACH,81,50,66,91,0,-1,81,0,15,0,0,0.07,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,0,0,0,4,,,,ciegas,138
+38.149,APPROACH,81,50,66,91,0,-1,81,0,15,0,0,0.01,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+38.199,APPROACH,81,50,66,91,0,-1,81,0,15,0,0,0.06,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+38.249,APPROACH,81,50,67,91,0,-1,81,0,15,0,0,0.00,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+38.300,APPROACH,81,50,67,91,0,-1,81,0,15,0,0,0.05,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+38.350,APPROACH,81,50,67,91,0,0,81,0,15,0,0,0.02,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+38.400,APPROACH,81,50,67,91,0,0,81,0,15,0,0,0.07,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+38.450,APPROACH,81,50,67,91,1,-1,81,0,15,0,0,0.00,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+38.500,APPROACH,81,50,67,91,1,-1,81,0,15,0,0,0.05,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+38.550,APPROACH,81,50,67,91,0,-2,80,0,15,0,0,0.00,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+38.600,APPROACH,81,50,67,91,0,-2,80,0,15,0,0,0.05,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+38.651,APPROACH,81,50,68,91,0,-2,80,0,15,0,0,0.00,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,-1,0,0,0,4,,,,ciegas,138
+38.701,APPROACH,81,50,68,91,0,-2,80,0,15,0,0,0.05,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,-1,0,0,0,4,,,,ciegas,138
+38.751,APPROACH,81,50,68,91,0,-2,80,0,15,0,0,0.00,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,0,0,0,4,,,,ciegas,138
+38.801,APPROACH,81,50,68,91,0,-2,80,0,15,0,0,0.05,0.01,tag 4 debajo de la imagen: 138 cm a ciegas,0,0,0,0,4,,,,ciegas,138
+38.851,APPROACH,81,50,67,91,0,-2,80,0,15,0,0,0.00,0.01,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+38.901,APPROACH,81,50,67,91,0,-2,80,0,15,0,0,0.05,0.01,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+38.952,APPROACH,81,50,68,91,1,-1,80,0,15,0,0,0.00,0.03,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+39.002,APPROACH,81,50,68,91,1,-1,80,0,15,0,0,0.05,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+39.052,APPROACH,81,50,70,91,1,-1,80,0,15,0,0,0.00,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+39.102,APPROACH,81,50,70,91,1,-1,80,0,15,0,0,0.05,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+39.152,APPROACH,81,50,69,91,1,-1,80,0,15,0,0,0.00,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+39.202,APPROACH,81,50,69,91,1,-1,80,0,15,0,0,0.05,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+39.253,APPROACH,81,50,70,91,0,-1,80,0,15,0,0,0.00,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,0,0,0,4,,,,ciegas,138
+39.303,APPROACH,81,50,70,91,0,-1,80,0,15,0,0,0.05,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,0,0,0,4,,,,ciegas,138
+39.353,APPROACH,81,50,69,91,0,-1,80,0,15,0,0,0.00,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+39.403,APPROACH,81,50,69,91,0,-1,80,0,15,0,0,0.05,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+39.453,APPROACH,81,50,69,91,0,-1,80,0,15,0,0,0.00,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+39.503,APPROACH,81,50,69,91,0,-1,80,0,15,0,0,0.05,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+39.553,APPROACH,81,50,69,91,0,-1,80,0,15,0,0,0.10,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+39.605,APPROACH,81,50,68,91,0,-1,81,0,15,0,0,0.02,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+39.655,APPROACH,81,50,68,91,1,-1,81,0,15,0,0,0.00,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+39.705,APPROACH,81,50,68,91,1,-1,81,0,15,0,0,0.05,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+39.756,APPROACH,81,50,68,91,1,-1,81,0,15,0,0,0.10,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+39.809,APPROACH,81,50,66,91,0,-1,81,0,15,0,0,0.05,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+39.859,APPROACH,81,50,66,91,0,-1,81,0,15,0,0,0.10,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+39.909,APPROACH,81,50,66,91,0,-1,81,0,15,0,0,0.04,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,0,0,0,4,,,,ciegas,138
+39.959,APPROACH,81,50,66,91,0,-1,81,0,15,0,0,0.09,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,0,0,0,4,,,,ciegas,138
+40.009,APPROACH,81,50,65,91,0,-1,81,0,15,0,0,0.02,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+40.059,APPROACH,81,50,65,91,0,-1,81,0,15,0,0,0.07,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+40.109,APPROACH,81,50,64,91,0,-1,81,0,15,0,0,0.04,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+40.159,APPROACH,81,50,64,91,0,-1,81,0,15,0,0,0.09,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+40.212,APPROACH,81,50,63,91,1,-1,81,0,15,0,0,0.02,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+40.262,APPROACH,81,50,63,91,1,-1,81,0,15,0,0,0.07,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+40.316,APPROACH,81,50,62,91,1,-2,81,0,15,0,0,0.04,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+40.366,APPROACH,81,50,62,91,1,-2,81,0,15,0,0,0.09,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+40.416,APPROACH,81,50,62,91,1,-3,81,0,15,0,0,0.01,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+40.467,APPROACH,81,50,62,91,1,-3,81,0,15,0,0,0.06,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+40.521,APPROACH,81,50,62,91,1,-2,81,0,15,0,0,0.03,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+40.571,APPROACH,81,50,62,91,1,-2,81,0,15,0,0,0.08,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+40.621,APPROACH,81,50,61,91,0,-2,80,0,15,0,0,0.02,0.01,tag 4 debajo de la imagen: 138 cm a ciegas,0,0,0,0,4,,,,ciegas,138
+40.673,APPROACH,81,50,61,91,0,-2,80,0,15,0,0,0.08,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,0,0,0,4,,,,ciegas,138
+40.723,APPROACH,81,50,61,91,0,-2,80,0,15,0,0,0.01,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,0,0,0,4,,,,ciegas,138
+40.773,APPROACH,81,50,61,91,0,-2,80,0,15,0,0,0.06,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,0,0,0,4,,,,ciegas,138
+40.823,APPROACH,81,40,60,91,0,-3,80,0,15,0,0,0.04,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,0,0,0,4,,,,ciegas,138
+40.875,APPROACH,81,40,60,91,0,-3,80,0,15,0,0,0.09,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,0,0,0,4,,,,ciegas,138
+40.925,APPROACH,81,40,59,91,0,-2,80,0,15,0,0,0.03,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+40.975,APPROACH,81,40,59,91,0,-2,80,0,15,0,0,0.08,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+41.026,APPROACH,81,40,58,91,1,-2,80,0,15,0,0,0.03,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+41.078,APPROACH,81,40,58,91,1,-2,80,0,15,0,0,0.08,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+41.128,APPROACH,81,40,58,90,1,-2,80,0,15,0,0,0.01,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+41.178,APPROACH,81,40,58,90,1,-2,80,0,15,0,0,0.06,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+41.228,APPROACH,81,40,59,91,1,-1,80,0,15,0,0,0.04,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+41.278,APPROACH,81,40,59,91,1,-1,80,0,15,0,0,0.09,0.01,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+41.328,APPROACH,80,50,58,91,1,-1,80,0,15,0,0,0.04,0.01,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+41.378,APPROACH,80,50,58,91,1,0,80,0,15,0,0,0.02,0.01,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+41.428,APPROACH,80,50,58,91,1,0,80,0,15,0,0,0.07,0.01,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+41.481,APPROACH,80,50,59,90,1,0,80,0,15,0,0,0.02,0.01,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+41.532,APPROACH,80,50,59,90,1,0,80,0,15,0,0,0.07,0.04,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+41.583,APPROACH,80,50,59,90,1,0,80,0,15,0,0,0.12,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+41.633,APPROACH,80,50,60,90,0,-1,80,0,15,0,0,0.01,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+41.684,APPROACH,80,50,60,90,0,-1,80,0,15,0,0,0.06,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+41.734,APPROACH,80,50,60,90,0,-1,80,0,15,0,0,0.00,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+41.784,APPROACH,80,50,60,90,0,-1,80,0,15,0,0,0.05,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+41.834,APPROACH,80,50,60,90,1,-1,80,0,15,0,0,0.01,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+41.884,APPROACH,80,50,60,90,1,-1,80,0,15,0,0,0.06,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+41.934,APPROACH,80,50,61,90,0,-1,80,0,15,0,0,0.00,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+41.985,APPROACH,80,50,61,90,0,-1,80,0,15,0,0,0.05,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+42.035,APPROACH,80,50,62,90,1,-1,80,0,15,0,0,0.02,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+42.086,APPROACH,80,50,62,90,1,-1,80,0,15,0,0,0.07,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+42.136,APPROACH,80,50,62,90,1,-1,80,0,15,0,0,0.01,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,1,0,0,4,,,,ciegas,138
+42.186,APPROACH,80,50,63,90,0,-1,80,0,15,0,0,0.02,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,0,0,0,4,,,,ciegas,138
+42.236,APPROACH,80,50,63,90,0,-1,80,0,0,0,0,0.07,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,0,0,0,4,,,,quieto,138
+42.286,APPROACH,80,50,64,90,0,-2,80,0,0,0,0,0.00,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,0,0,0,4,,,,quieto,138
+42.336,APPROACH,80,50,64,90,0,-2,80,0,0,0,0,0.05,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,0,0,0,4,,,,quieto,138
+42.387,APPROACH,80,50,65,90,0,-1,80,0,0,0,0,0.02,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,0,0,0,4,,,,quieto,138
+42.437,APPROACH,80,50,65,90,0,-1,80,0,0,0,0,0.07,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,0,0,0,4,,,,quieto,138
+42.487,APPROACH,80,50,66,90,0,-1,80,0,0,0,0,0.00,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,0,0,0,4,,,,quieto,138
+42.537,APPROACH,80,50,66,90,0,-1,80,0,0,0,0,0.05,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,0,0,0,4,,,,quieto,138
+42.587,APPROACH,80,50,67,90,1,-1,80,0,0,0,0,0.02,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,0,0,0,4,,,,quieto,138
+42.637,APPROACH,80,50,67,90,1,-1,80,0,0,0,0,0.07,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,0,0,0,4,,,,quieto,138
+42.688,APPROACH,80,50,67,90,1,-2,80,0,0,0,0,0.00,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,0,0,0,4,,,,quieto,138
+42.739,APPROACH,80,50,67,90,1,-2,80,0,0,0,0,0.05,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,0,0,0,4,,,,quieto,138
+42.789,APPROACH,80,50,68,90,1,-1,80,0,0,0,0,0.00,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,0,0,0,4,,,,quieto,138
+42.840,APPROACH,80,50,68,90,1,-1,80,0,0,0,0,0.05,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,0,0,0,4,,,,quieto,138
+42.890,APPROACH,80,50,68,90,1,-1,80,0,0,0,0,0.01,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,0,0,0,4,,,,quieto,138
+42.940,APPROACH,80,50,68,90,1,-1,80,0,0,0,0,0.06,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,0,0,0,4,,,,quieto,138
+42.991,APPROACH,80,50,68,90,2,-1,80,0,0,0,0,0.00,0.02,tag 4 debajo de la imagen: 138 cm a ciegas,0,0,0,0,4,,,,quieto,138
+43.042,EXECUTE,80,50,68,90,2,-1,80,0,0,0,0,0.05,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+43.094,EXECUTE,80,50,69,91,1,-1,80,0,0,40,0,0.00,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+43.144,EXECUTE,80,50,69,91,1,-1,80,0,0,40,0,0.05,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+43.194,EXECUTE,80,50,69,91,1,-1,80,0,0,40,0,0.00,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+43.244,EXECUTE,80,50,69,91,1,-1,80,0,0,40,0,0.05,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+43.295,EXECUTE,80,50,70,91,1,-1,80,0,0,40,0,0.01,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+43.345,EXECUTE,80,50,70,91,1,-1,80,0,0,40,0,0.06,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+43.395,EXECUTE,80,50,71,91,0,-1,80,0,0,40,0,0.00,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-1,0,4,,,,,138
+43.445,EXECUTE,80,50,71,91,0,-1,80,0,0,40,0,0.05,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-1,0,4,,,,,138
+43.495,EXECUTE,80,60,73,91,0,-1,80,0,0,40,0,0.01,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-1,0,4,,,,,138
+43.546,EXECUTE,80,60,73,91,0,-1,80,0,0,40,0,0.06,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-1,0,4,,,,,138
+43.596,EXECUTE,80,60,75,91,0,-1,80,0,0,40,0,0.00,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+43.646,EXECUTE,80,60,75,91,0,-1,80,0,0,40,0,0.05,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+43.696,EXECUTE,80,60,77,91,0,-3,80,0,0,40,0,0.00,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+43.746,EXECUTE,80,60,77,91,0,-3,80,0,0,40,0,0.05,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+43.796,EXECUTE,80,60,80,91,0,-3,80,0,0,40,0,0.00,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+43.847,EXECUTE,80,60,80,91,0,-3,80,0,0,40,0,0.05,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+43.897,EXECUTE,80,70,82,91,0,-3,80,0,0,40,0,0.00,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+43.947,EXECUTE,80,70,82,91,0,-3,80,0,0,40,0,0.05,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+43.997,EXECUTE,80,70,86,91,0,-2,80,0,0,40,0,0.00,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+44.047,EXECUTE,80,70,86,91,0,-2,80,0,0,40,0,0.05,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+44.097,EXECUTE,80,70,89,91,0,-2,80,0,0,40,0,0.00,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+44.147,EXECUTE,80,70,89,91,0,-2,80,0,0,40,0,0.05,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+44.197,EXECUTE,80,70,92,91,0,-1,80,0,0,40,0,0.00,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+44.248,EXECUTE,80,70,92,91,0,-1,80,0,0,40,0,0.05,0.03,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+44.298,EXECUTE,80,70,92,91,0,-1,80,0,0,40,0,0.10,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+44.348,EXECUTE,80,80,96,91,0,-1,80,0,0,40,0,0.03,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+44.398,EXECUTE,80,80,96,91,0,-1,80,0,0,40,0,0.08,0.03,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+44.448,EXECUTE,80,80,99,91,0,0,80,0,0,40,0,0.04,0.03,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+44.498,EXECUTE,80,80,99,91,0,0,80,0,0,40,0,0.09,0.03,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+44.549,EXECUTE,80,80,103,91,1,0,80,0,0,40,0,0.04,0.03,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+44.599,EXECUTE,80,80,103,91,1,0,80,0,0,40,0,0.09,0.04,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+44.649,EXECUTE,80,90,107,91,1,0,80,0,0,40,0,0.02,0.03,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+44.699,EXECUTE,80,90,107,91,1,0,80,0,0,38,0,0.07,0.03,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+44.749,EXECUTE,80,90,110,91,1,0,80,0,0,38,0,0.02,0.03,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+44.799,EXECUTE,80,90,110,91,1,0,80,0,0,35,0,0.08,0.03,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+44.849,EXECUTE,80,90,113,91,0,0,80,0,0,35,0,0.02,0.03,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+44.900,EXECUTE,80,90,113,91,0,0,80,0,0,32,0,0.07,0.03,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+44.950,EXECUTE,80,100,117,91,1,-1,80,0,0,32,0,0.02,0.03,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+45.001,EXECUTE,80,100,117,91,1,-1,80,0,0,28,0,0.07,0.03,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+45.051,EXECUTE,80,100,121,91,0,-2,80,0,0,28,0,0.02,0.03,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+45.101,EXECUTE,80,100,121,91,0,-2,80,0,0,24,0,0.07,0.03,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+45.151,EXECUTE,80,100,125,91,0,-2,80,0,0,24,0,0.01,0.03,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+45.202,EXECUTE,80,100,125,91,0,-2,80,0,0,20,0,0.06,0.03,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+45.252,EXECUTE,80,110,125,91,1,-2,80,0,0,20,0,0.01,0.03,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+45.303,EXECUTE,80,110,125,91,1,-2,80,0,0,20,0,0.06,0.03,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+45.353,EXECUTE,80,110,128,91,1,-1,80,0,0,20,0,0.00,0.04,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+45.403,EXECUTE,80,110,128,91,1,-1,80,0,0,17,0,0.05,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+45.453,EXECUTE,80,110,132,91,0,-1,80,0,0,17,0,0.00,0.03,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-1,0,4,,,,,138
+45.504,EXECUTE,80,110,132,91,0,-1,80,0,0,15,0,0.05,0.03,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-1,0,4,,,,,138
+45.554,EXECUTE,80,110,130,91,1,-2,80,0,0,15,0,0.01,0.03,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-1,0,4,,,,,138
+45.607,EXECUTE,80,110,130,91,1,-2,80,0,0,15,0,0.06,0.04,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-1,0,4,,,,,138
+45.657,EXECUTE,80,120,133,91,1,-3,80,0,0,15,0,0.01,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-1,0,4,,,,,138
+45.707,EXECUTE,80,120,133,91,1,-3,80,0,0,15,0,0.06,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-1,0,4,,,,,138
+45.757,EXECUTE,80,120,137,91,1,-3,80,0,0,15,0,0.03,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",-1,0,-1,0,4,,,,,138
+45.807,EXECUTE,80,120,138,91,1,-5,80,0,0,15,0,0.00,0.03,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+45.857,EXECUTE,80,120,138,91,1,-5,80,0,0,15,0,0.05,0.03,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+45.907,EXECUTE,80,120,138,91,1,-2,80,0,0,15,0,0.00,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+45.958,EXECUTE,80,120,138,91,1,-2,80,0,0,15,0,0.05,0.03,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+46.008,EXECUTE,80,120,140,91,1,-1,80,0,0,15,0,0.00,0.03,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",1,0,0,0,4,,,,,138
+46.058,EXECUTE,80,120,140,91,1,-1,80,0,0,0,0,0.05,0.03,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",1,0,0,0,4,,,,,138
+46.109,EXECUTE,80,120,141,91,0,0,80,0,0,0,0,0.00,0.03,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",1,0,0,0,4,,,,,138
+46.159,EXECUTE,80,120,141,91,0,0,80,0,0,0,0,0.05,0.04,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",1,0,0,0,4,,,,,138
+46.209,EXECUTE,80,120,141,91,0,0,80,0,0,0,0,0.00,0.04,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+46.259,EXECUTE,80,120,141,91,0,0,80,0,0,0,0,0.05,0.03,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+46.313,EXECUTE,80,130,148,91,0,0,80,0,0,0,0,0.00,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-3,0,4,,,,,138
+46.364,EXECUTE,80,130,148,91,0,0,80,0,0,0,0,0.05,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-3,0,4,,,,,138
+46.414,EXECUTE,80,130,175,91,7,0,80,0,0,0,0,0.01,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-11,0,4,,,,,138
+46.464,EXECUTE,80,130,175,91,7,0,80,0,0,0,0,0.06,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-11,0,4,,,,,138
+46.514,EXECUTE,80,150,404,127,86,36,80,0,0,0,0,0.00,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",-1,-5,-13,0,4,,,,,138
+46.565,EXECUTE,80,150,404,127,86,36,80,0,0,0,0,0.05,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",-1,-5,-13,0,4,,,,,138
+46.615,EXECUTE,80,140,397,90,-27,0,81,0,0,0,0,0.01,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",-1,-3,11,0,4,,,,,138
+46.665,EXECUTE,80,140,397,90,-27,0,81,0,0,0,0,0.06,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",-1,-3,11,0,4,,,,,138
+46.715,EXECUTE,80,130,148,90,16,0,81,0,0,0,0,0.00,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",-4,-4,7,0,4,,,,,138
+46.765,EXECUTE,80,130,148,90,16,0,81,0,0,0,0,0.05,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",-4,-4,7,0,4,,,,,138
+46.815,EXECUTE,80,130,130,91,-2,-3,81,0,0,0,0,0.00,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",-4,-6,2,0,4,,,,,138
+46.866,EXECUTE,80,130,130,91,-2,-3,81,0,0,0,0,0.05,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",-4,-6,2,0,4,,,,,138
+46.916,EXECUTE,80,130,124,92,-6,-3,81,0,0,0,0,0.00,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",-4,-5,0,0,4,,,,,138
+46.966,EXECUTE,80,130,124,92,-6,-3,81,0,0,0,0,0.05,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",-4,-5,0,0,4,,,,,138
+47.016,EXECUTE,80,130,124,92,-6,-3,81,0,0,0,0,0.10,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",-4,-5,0,0,4,,,,,138
+47.066,EXECUTE,80,130,115,91,-5,-4,81,0,0,0,0,0.04,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",-4,-3,-1,0,4,,,,,138
+47.116,EXECUTE,80,130,110,91,-3,-4,81,0,0,0,0,0.00,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",-3,-1,-2,0,4,,,,,138
+47.166,EXECUTE,80,130,110,91,-3,-4,81,0,0,0,0,0.05,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",-3,-1,-2,0,4,,,,,138
+47.216,EXECUTE,80,130,105,91,-1,-4,81,0,0,0,0,0.00,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",-2,0,-2,0,4,,,,,138
+47.267,EXECUTE,80,130,105,91,-1,-4,81,0,0,0,0,0.05,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",-2,0,-2,0,4,,,,,138
+47.317,EXECUTE,80,130,100,91,0,-3,81,0,0,0,0,0.00,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",-2,0,-2,0,4,,,,,138
+47.367,EXECUTE,80,130,100,91,0,-3,81,0,0,0,0,0.05,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",-2,0,-2,0,4,,,,,138
+47.418,EXECUTE,80,130,95,91,0,-2,81,0,0,0,0,0.00,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",-2,0,-2,0,4,,,,,138
+47.468,EXECUTE,80,130,95,91,0,-2,81,0,0,0,0,0.05,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",-2,0,-2,0,4,,,,,138
+47.519,EXECUTE,80,140,91,91,1,-2,81,0,0,0,0,0.00,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+47.570,EXECUTE,80,140,91,91,1,-2,81,0,0,0,0,0.05,0.03,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+47.620,EXECUTE,80,140,87,91,1,0,80,0,0,0,0,0.00,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",1,0,-2,0,4,,,,,138
+47.670,EXECUTE,80,140,87,91,1,0,80,0,0,0,0,0.05,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",1,0,-2,0,4,,,,,138
+47.720,EXECUTE,80,140,82,91,1,2,80,0,0,0,0,0.00,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",1,0,-2,0,4,,,,,138
+47.770,EXECUTE,80,140,82,91,1,2,80,0,0,0,0,0.05,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",1,0,-2,0,4,,,,,138
+47.821,EXECUTE,80,140,82,91,1,2,80,0,0,0,0,0.10,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",1,0,-2,0,4,,,,,138
+47.872,EXECUTE,80,140,77,91,0,0,80,0,0,0,0,0.03,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",1,0,-1,0,4,,,,,138
+47.922,EXECUTE,80,140,77,91,0,0,80,0,0,0,0,0.08,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",1,0,-1,0,4,,,,,138
+47.973,EXECUTE,80,140,73,90,0,1,80,0,0,0,0,0.02,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-1,0,4,,,,,138
+48.023,EXECUTE,80,140,73,90,0,1,80,0,0,0,0,0.07,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-1,0,4,,,,,138
+48.073,EXECUTE,80,140,68,90,0,1,80,0,0,0,0,0.04,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+48.124,EXECUTE,80,140,68,90,0,1,80,0,0,0,0,0.09,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+48.175,EXECUTE,80,140,63,90,0,1,80,0,0,0,0,0.02,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+48.226,EXECUTE,80,140,63,90,0,1,80,0,0,0,0,0.07,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+48.278,EXECUTE,80,130,57,90,0,1,80,0,0,0,0,0.04,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+48.328,EXECUTE,80,130,57,90,0,1,80,0,0,15,0,0.09,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+48.379,EXECUTE,79,130,52,90,0,1,80,0,0,15,0,0.02,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+48.429,EXECUTE,79,130,52,90,0,1,80,0,0,16,0,0.07,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+48.479,EXECUTE,79,130,45,91,0,0,80,0,0,16,0,0.04,0.03,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+48.529,EXECUTE,79,130,45,91,0,0,80,0,0,23,0,0.09,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,1,4,89,-14,+2,,138
+48.579,EXECUTE,79,130,40,91,0,0,80,0,0,23,0,0.02,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+48.629,EXECUTE,79,130,40,91,0,0,80,0,0,28,0,0.07,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,1,4,91,-16,+2,,138
+48.680,EXECUTE,79,130,35,91,0,0,81,0,0,28,0,0.01,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,1,4,91,-17,+2,,138
+48.730,EXECUTE,79,130,35,91,0,0,81,0,0,33,0,0.06,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+48.780,EXECUTE,79,130,30,91,0,0,81,0,0,33,0,0.00,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+48.830,EXECUTE,79,130,30,91,0,0,81,0,0,38,0,0.05,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+48.880,EXECUTE,79,120,25,91,0,0,81,0,0,38,0,0.02,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+48.931,EXECUTE,79,120,25,91,0,0,81,0,0,40,0,0.07,0.03,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+48.981,EXECUTE,79,120,21,91,0,0,81,0,0,40,0,0.02,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+49.031,EXECUTE,79,120,21,91,0,0,81,0,0,40,0,0.07,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+49.081,EXECUTE,79,120,17,91,0,-1,81,0,0,40,0,0.02,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-1,0,4,,,,,138
+49.131,EXECUTE,79,120,17,91,0,-1,81,0,0,40,0,0.07,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-1,0,4,,,,,138
+49.181,EXECUTE,79,120,14,91,0,-1,81,0,0,40,0,0.02,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-1,0,4,,,,,138
+49.232,EXECUTE,79,120,14,91,0,-1,81,0,0,40,0,0.07,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-1,0,4,,,,,138
+49.282,EXECUTE,79,120,11,91,0,-1,81,0,0,40,0,0.02,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-1,0,4,,,,,138
+49.332,EXECUTE,79,120,10,91,0,0,81,0,0,40,0,0.00,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-1,0,4,,,,,138
+49.382,EXECUTE,79,120,10,91,0,0,81,0,0,40,0,0.05,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-1,0,4,,,,,138
+49.432,EXECUTE,79,120,13,91,1,0,81,0,0,40,0,0.03,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+49.482,EXECUTE,79,120,13,91,1,0,81,0,0,40,0,0.08,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+49.533,EXECUTE,79,110,12,91,1,0,81,0,0,40,0,0.01,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+49.583,EXECUTE,79,110,12,91,1,0,81,0,0,40,0,0.06,0.03,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+49.633,EXECUTE,79,110,12,91,1,0,81,0,0,40,0,0.11,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+49.683,EXECUTE,79,110,11,91,0,0,81,0,0,40,0,0.00,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+49.733,EXECUTE,79,110,11,91,0,0,81,0,0,40,0,0.02,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+49.783,EXECUTE,79,110,11,91,0,0,81,0,0,40,0,0.07,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+49.833,EXECUTE,79,120,12,91,0,0,81,0,0,40,0,0.01,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+49.884,EXECUTE,79,120,12,91,0,0,81,0,0,40,0,0.06,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+49.937,EXECUTE,79,120,12,91,0,0,81,0,0,40,0,0.01,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+49.987,EXECUTE,79,120,12,91,0,0,81,0,0,40,0,0.06,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+50.037,EXECUTE,79,120,13,91,0,0,81,0,0,40,0,0.01,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+50.087,EXECUTE,79,120,13,91,0,0,81,0,0,40,0,0.06,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+50.137,EXECUTE,79,120,14,91,0,0,81,0,0,40,0,0.00,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+50.188,EXECUTE,79,120,14,91,0,0,81,0,0,40,0,0.05,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+50.241,EXECUTE,79,120,16,90,0,0,81,0,0,40,0,0.02,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+50.292,EXECUTE,79,120,16,90,0,0,81,0,0,40,0,0.07,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+50.344,EXECUTE,78,130,15,90,1,0,81,0,0,40,0,0.02,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+50.394,EXECUTE,78,130,15,90,1,0,81,0,0,40,0,0.07,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+50.447,EXECUTE,78,130,16,91,1,0,81,0,0,40,0,0.00,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+50.497,EXECUTE,78,130,16,91,1,0,81,0,0,40,0,0.05,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+50.547,EXECUTE,78,130,14,91,1,0,81,0,0,40,0,0.00,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+50.597,EXECUTE,78,130,14,91,1,0,81,0,0,40,0,0.05,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+50.648,EXECUTE,78,140,18,91,1,0,81,0,0,40,0,0.00,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+50.698,EXECUTE,78,140,18,91,1,0,81,0,0,40,0,0.05,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+50.748,EXECUTE,78,140,19,91,1,0,81,0,0,40,0,0.01,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+50.799,EXECUTE,78,140,19,91,1,0,81,0,0,40,0,0.06,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+50.849,EXECUTE,78,140,20,91,1,0,81,0,0,40,0,0.00,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+50.900,EXECUTE,78,140,20,91,1,0,81,0,0,40,0,0.05,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+50.950,EXECUTE,78,140,21,91,1,0,81,0,0,40,0,0.00,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+51.000,EXECUTE,78,140,21,91,1,0,81,0,0,40,0,0.05,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+51.050,EXECUTE,78,140,23,91,1,0,81,0,0,40,0,0.00,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+51.100,EXECUTE,78,140,23,91,1,0,81,0,0,40,0,0.05,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+51.150,EXECUTE,78,150,24,91,1,0,81,0,0,40,0,0.00,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+51.200,EXECUTE,78,150,24,91,1,0,81,0,0,40,0,0.05,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+51.250,EXECUTE,78,150,26,91,0,0,81,0,0,40,0,0.01,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+51.301,EXECUTE,78,150,26,91,0,0,81,0,0,40,0,0.06,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+51.351,EXECUTE,78,150,27,91,0,0,81,0,0,40,0,0.00,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+51.401,EXECUTE,78,150,27,91,0,0,81,0,0,40,0,0.05,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+51.451,EXECUTE,78,150,24,91,0,0,81,0,0,40,0,0.00,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+51.501,EXECUTE,78,150,24,91,0,0,81,0,0,40,0,0.05,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+51.551,EXECUTE,78,150,26,91,0,0,81,0,0,40,0,0.00,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,1,4,151,-68,+3,,138
+51.601,EXECUTE,78,150,26,91,0,0,81,0,0,40,0,0.05,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,1,4,149,-67,+2,,138
+51.652,EXECUTE,78,150,28,91,0,0,81,0,0,40,0,0.00,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+51.702,EXECUTE,78,150,28,91,0,0,81,0,0,40,0,0.05,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+51.752,EXECUTE,78,150,30,91,0,0,81,0,0,40,0,0.00,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+51.802,EXECUTE,78,150,30,91,0,0,81,0,0,38,0,0.05,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+51.853,EXECUTE,78,150,33,91,0,0,81,0,0,38,0,0.00,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+51.906,EXECUTE,78,150,33,91,0,0,81,0,0,35,0,0.05,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+51.957,EXECUTE,78,160,34,91,0,0,81,0,0,35,0,0.00,0.03,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+52.010,EXECUTE,78,160,34,91,0,0,81,0,0,34,0,0.05,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+52.060,EXECUTE,78,160,36,91,0,0,81,0,0,34,0,0.00,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+52.110,EXECUTE,78,160,36,91,0,0,81,0,0,32,0,0.05,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+52.160,EXECUTE,78,160,38,91,0,0,81,0,0,32,0,0.00,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+52.210,EXECUTE,78,160,38,91,0,0,81,0,0,30,0,0.05,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+52.260,EXECUTE,78,160,38,91,0,0,81,0,0,30,0,0.10,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-2,0,4,,,,,138
+52.310,EXECUTE,78,160,39,91,0,0,81,0,0,30,0,0.04,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-1,0,4,,,,,138
+52.361,EXECUTE,78,160,39,91,0,0,81,0,0,29,0,0.09,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-1,0,4,,,,,138
+52.413,EXECUTE,78,160,41,91,0,0,81,0,0,29,0,0.03,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-1,0,4,,,,,138
+52.463,EXECUTE,78,160,41,91,0,0,81,0,0,27,0,0.08,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-1,0,4,,,,,138
+52.513,EXECUTE,78,160,42,91,0,0,81,0,0,27,0,0.02,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-1,0,4,,,,,138
+52.563,EXECUTE,78,160,42,91,0,0,81,0,0,26,0,0.07,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,-1,0,4,,,,,138
+52.614,EXECUTE,78,160,43,91,0,0,81,0,0,26,0,0.01,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",-3,-2,-1,0,4,,,,,138
+52.664,EXECUTE,78,160,43,91,0,0,81,0,0,25,0,0.06,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",-3,-2,-1,0,4,,,,,138
+52.714,EXECUTE,78,170,45,91,-1,-2,81,0,0,25,0,0.03,0.01,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",-3,-2,-1,0,4,,,,,138
+52.764,EXECUTE,78,170,45,91,-1,-2,81,0,0,23,0,0.08,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",-3,-2,-1,0,4,,,,,138
+52.814,EXECUTE,78,170,46,91,-1,-3,81,0,0,23,0,0.02,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",-2,-1,-1,0,4,,,,,138
+52.864,EXECUTE,78,170,46,91,-1,-3,81,0,0,22,0,0.07,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",-2,-1,-1,0,4,,,,,138
+52.914,EXECUTE,78,170,48,91,-2,-3,81,0,0,22,0,0.02,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",-2,-1,-1,0,4,,,,,138
+52.965,EXECUTE,78,170,48,91,-2,-3,81,0,0,20,0,0.07,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",-2,-1,-1,0,4,,,,,138
+53.015,EXECUTE,78,170,50,91,-1,-3,81,0,0,20,0,0.00,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",-1,0,-1,0,4,,,,,138
+53.065,EXECUTE,78,170,50,91,-1,-3,81,0,0,18,0,0.05,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",-1,0,-1,0,4,,,,,138
+53.115,EXECUTE,78,170,51,91,-1,-3,81,0,0,18,0,0.02,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",-1,0,-1,0,4,,,,,138
+53.165,EXECUTE,78,170,51,91,-1,-3,81,0,0,17,0,0.07,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",-1,0,-1,0,4,,,,,138
+53.216,EXECUTE,78,170,52,91,0,-4,81,0,0,17,0,0.02,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",-1,0,-1,0,4,,,,,138
+53.266,EXECUTE,78,170,52,91,0,-4,81,0,0,16,0,0.07,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",-1,0,-1,0,4,,,,,138
+53.316,EXECUTE,78,170,54,91,0,-3,81,0,0,16,0,0.00,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",-1,0,0,0,4,,,,,138
+53.366,EXECUTE,78,170,54,91,0,-3,81,0,0,15,0,0.05,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",-1,0,0,0,4,,,,,138
+53.416,EXECUTE,78,170,56,91,0,-3,81,0,0,15,0,0.02,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+53.466,EXECUTE,78,180,57,91,0,-3,81,0,0,15,0,0.00,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+53.516,EXECUTE,78,180,57,91,0,-3,81,0,0,15,0,0.05,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+53.566,EXECUTE,78,180,58,91,0,-1,81,0,0,15,0,0.02,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+53.616,EXECUTE,78,180,58,91,0,-1,81,0,0,15,0,0.07,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+53.667,EXECUTE,78,180,60,91,0,-1,80,0,0,15,0,0.00,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+53.717,EXECUTE,78,180,60,91,0,-1,80,0,0,15,0,0.05,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+53.767,EXECUTE,78,180,61,91,0,-1,80,0,0,15,0,0.02,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+53.817,EXECUTE,78,180,61,91,0,-1,80,0,0,15,0,0.07,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+53.867,EXECUTE,78,180,63,91,0,-1,80,0,0,15,0,0.01,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+53.917,EXECUTE,78,180,63,91,0,-1,80,0,0,0,0,0.06,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+53.967,EXECUTE,78,180,64,91,0,0,80,0,0,0,0,0.00,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+54.017,EXECUTE,78,180,64,91,0,0,80,0,0,0,0,0.05,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+54.068,EXECUTE,78,180,66,91,0,0,80,0,0,0,0,0.01,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+54.118,EXECUTE,78,180,66,91,0,0,80,0,0,0,0,0.06,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+54.168,EXECUTE,78,180,67,91,0,0,80,0,0,0,0,0.00,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+54.218,EXECUTE,78,180,67,91,0,0,80,0,0,0,0,0.05,0.03,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+54.268,EXECUTE,78,180,68,91,0,0,80,0,0,0,0,0.00,0.03,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+54.318,EXECUTE,78,180,68,91,0,0,80,0,0,0,0,0.05,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+54.368,EXECUTE,78,190,69,91,0,0,80,0,0,0,0,0.00,0.03,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+54.419,EXECUTE,78,190,69,91,0,0,80,0,0,0,0,0.05,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+54.472,EXECUTE,78,190,70,91,0,0,80,0,0,0,0,0.01,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+54.523,EXECUTE,78,190,70,91,0,0,80,0,0,0,0,0.06,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+54.574,EXECUTE,78,190,71,91,0,0,80,0,0,0,0,0.01,0.04,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+54.624,EXECUTE,78,190,71,91,0,0,80,0,0,0,0,0.06,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+54.674,EXECUTE,78,190,71,91,0,-1,82,0,0,0,0,0.00,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+54.725,EXECUTE,78,190,71,91,0,-1,82,0,0,0,0,0.05,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+54.775,EXECUTE,78,190,73,91,0,-1,82,0,0,0,0,0.00,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+54.825,EXECUTE,78,190,73,91,0,-1,82,0,0,0,0,0.05,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+54.875,EXECUTE,78,190,74,91,0,-1,82,0,0,0,0,0.00,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+54.925,EXECUTE,78,190,74,91,0,-1,82,0,0,-15,0,0.05,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+54.978,EXECUTE,78,190,73,91,0,-1,82,0,0,-15,0,0.00,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+55.028,EXECUTE,78,190,73,91,0,-1,82,0,0,0,0,0.05,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+55.078,EXECUTE,78,190,75,91,0,-1,82,0,0,0,0,0.00,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+55.128,EXECUTE,78,190,75,91,0,-1,82,0,0,-15,0,0.05,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+55.178,EXECUTE,78,190,75,91,0,-1,82,0,0,-15,0,0.00,0.03,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+55.228,EXECUTE,78,190,75,91,0,-1,82,0,0,-15,0,0.05,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+55.278,EXECUTE,78,190,76,91,0,0,82,0,0,-15,0,0.00,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+55.329,EXECUTE,78,190,76,91,0,0,82,0,0,-15,0,0.05,0.03,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+55.379,EXECUTE,78,190,75,91,0,0,82,0,0,-15,0,0.00,0.03,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+55.429,EXECUTE,78,190,75,91,0,0,82,0,0,-15,0,0.05,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,1,4,,,,,138
+55.479,EXECUTE,78,190,76,91,0,0,82,0,0,-15,0,0.00,0.03,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+55.529,EXECUTE,78,190,76,91,0,0,82,0,0,-15,0,0.05,0.03,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,1,4,,,,,138
+55.580,EXECUTE,78,190,76,91,0,0,82,0,0,-15,0,0.00,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+55.630,EXECUTE,78,190,76,91,0,0,82,0,0,-15,0,0.05,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+55.680,EXECUTE,78,190,76,91,0,0,82,0,0,-15,0,0.10,0.02,"tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)",0,0,0,0,4,,,,,138
+55.730,EMERGENCY_LAND,78,190,77,91,0,-1,82,0,0,0,0,0.01,0.02,PARO: teclado,0,0,0,0,4,,,,,138
+55.781,EMERGENCY_LAND,78,190,77,91,0,-1,82,0,0,0,0,0.06,0.02,PARO: teclado,0,0,0,0,4,,,,,138
+55.831,EMERGENCY_LAND,78,190,78,91,0,-1,82,0,0,0,0,0.04,0.02,PARO: teclado,0,0,0,0,4,,,,,138
+55.881,EMERGENCY_LAND,78,190,78,91,0,-1,82,0,0,0,0,0.09,0.02,PARO: teclado,0,0,0,0,4,,,,,138
+55.931,EMERGENCY_LAND,78,190,79,91,0,-1,82,0,0,0,0,0.01,0.02,PARO: teclado,0,0,0,0,4,,,,,138
+55.981,EMERGENCY_LAND,78,190,79,91,0,-1,82,0,0,0,0,0.06,0.02,PARO: teclado,0,0,0,0,4,,,,,138
+56.031,EMERGENCY_LAND,78,200,79,91,0,-1,82,0,0,0,0,0.03,0.02,PARO: teclado,0,0,0,0,4,,,,,138
+56.081,EMERGENCY_LAND,78,200,79,91,0,-1,82,0,0,0,0,0.08,0.02,PARO: teclado,0,0,0,0,4,,,,,138
+56.131,EMERGENCY_LAND,78,200,79,91,0,-2,82,0,0,0,0,0.01,0.02,PARO: teclado,0,0,0,0,4,,,,,138
+56.182,EMERGENCY_LAND,78,200,79,91,0,-2,82,0,0,0,0,0.06,0.02,PARO: teclado,0,0,0,0,4,,,,,138
+56.232,EMERGENCY_LAND,78,200,79,91,0,-1,82,0,0,0,0,0.02,0.02,PARO: teclado,0,0,0,0,4,,,,,138
+56.282,EMERGENCY_LAND,78,200,79,91,0,-1,82,0,0,0,0,0.07,0.02,PARO: teclado,0,0,0,0,4,,,,,138
+56.332,EMERGENCY_LAND,78,200,80,90,0,-2,82,0,0,0,0,0.04,0.02,PARO: teclado,0,0,0,0,4,,,,,138
+56.382,EMERGENCY_LAND,78,200,80,90,0,-2,82,0,0,0,0,0.09,0.02,PARO: teclado,0,0,0,0,4,,,,,138
+56.432,EMERGENCY_LAND,78,200,79,90,0,-3,82,0,0,0,0,0.00,0.02,PARO: teclado,0,0,0,0,4,,,,,138
+56.482,EMERGENCY_LAND,78,200,79,90,0,-3,82,0,0,0,0,0.05,0.03,PARO: teclado,0,0,0,0,4,,,,,138
+56.532,EMERGENCY_LAND,78,200,78,91,0,-1,82,0,0,0,0,0.01,0.03,PARO: teclado,0,0,1,0,4,,,,,138
+56.583,EMERGENCY_LAND,78,200,78,91,0,-1,82,0,0,0,0,0.06,0.03,PARO: teclado,0,0,1,0,4,,,,,138
+56.633,EMERGENCY_LAND,78,190,75,91,0,0,82,0,0,0,0,0.02,0.02,PARO: teclado,0,0,2,0,4,,,,,138
+56.683,EMERGENCY_LAND,78,190,75,91,0,0,82,0,0,0,0,0.07,0.02,PARO: teclado,0,0,2,0,4,,,,,138
+56.733,EMERGENCY_LAND,78,190,72,91,0,0,82,0,0,0,0,0.01,0.01,PARO: teclado,0,0,3,0,4,,,,,138
+56.783,EMERGENCY_LAND,78,190,72,91,0,0,82,0,0,0,0,0.06,0.02,PARO: teclado,0,0,3,0,4,,,,,138
+56.833,EMERGENCY_LAND,78,190,68,91,0,0,82,0,0,0,0,0.00,0.02,PARO: teclado,0,0,3,0,4,,,,,138
+56.883,EMERGENCY_LAND,78,190,68,91,0,0,82,0,0,0,0,0.05,0.02,PARO: teclado,0,0,3,0,4,,,,,138
+56.934,EMERGENCY_LAND,78,190,65,91,0,0,82,0,0,0,0,0.02,0.02,PARO: teclado,0,0,4,0,4,,,,,138
+56.984,EMERGENCY_LAND,78,190,65,91,0,0,82,0,0,0,0,0.07,0.02,PARO: teclado,0,0,4,0,4,,,,,138
+57.034,EMERGENCY_LAND,78,180,60,91,0,-2,82,0,0,0,0,0.00,0.02,PARO: teclado,0,0,4,0,4,,,,,138
+57.084,EMERGENCY_LAND,78,180,56,91,0,-1,82,0,0,0,0,0.01,0.02,PARO: teclado,0,0,4,0,4,,,,,138
+57.135,EMERGENCY_LAND,78,180,56,91,0,-1,82,0,0,0,0,0.06,0.02,PARO: teclado,0,0,4,0,4,,,,,138
+57.185,EMERGENCY_LAND,78,170,52,91,0,0,82,0,0,0,0,0.00,0.02,PARO: teclado,0,0,4,0,4,,,,,138
+57.235,EMERGENCY_LAND,78,170,52,91,0,0,82,0,0,0,0,0.05,0.02,PARO: teclado,0,0,4,0,4,,,,,138
+57.285,EMERGENCY_LAND,78,170,47,91,0,0,82,0,0,0,0,0.01,0.02,PARO: teclado,0,0,4,0,4,,,,,138
+57.335,EMERGENCY_LAND,78,170,47,91,0,0,82,0,0,0,0,0.06,0.02,PARO: teclado,0,0,4,0,4,,,,,138
+57.385,EMERGENCY_LAND,78,170,43,91,0,0,82,0,0,0,0,0.00,0.02,PARO: teclado,0,0,4,0,4,,,,,138
+57.436,EMERGENCY_LAND,78,170,43,91,0,0,82,0,0,0,0,0.05,0.02,PARO: teclado,0,0,4,0,4,,,,,138
+57.486,EMERGENCY_LAND,78,160,38,91,0,0,82,0,0,0,0,0.00,0.02,PARO: teclado,0,0,4,0,4,,,,,138
+57.536,EMERGENCY_LAND,78,160,38,91,0,0,82,0,0,0,0,0.05,0.02,PARO: teclado,0,0,4,0,4,,,,,138
+57.586,EMERGENCY_LAND,78,160,35,91,0,0,82,0,0,0,0,0.00,0.04,PARO: teclado,0,0,4,0,4,,,,,138
+57.636,EMERGENCY_LAND,78,160,35,91,0,0,82,0,0,0,0,0.05,0.02,PARO: teclado,0,0,4,0,4,,,,,138
+57.686,EMERGENCY_LAND,78,150,31,91,0,0,82,0,0,0,0,0.01,0.02,PARO: teclado,0,0,5,0,4,,,,,138
+57.737,EMERGENCY_LAND,78,150,31,91,0,0,82,0,0,0,0,0.06,0.02,PARO: teclado,0,0,5,0,4,,,,,138
+57.787,EMERGENCY_LAND,78,150,27,91,0,-1,82,0,0,0,0,0.00,0.01,PARO: teclado,0,0,4,0,4,,,,,138
+57.837,EMERGENCY_LAND,78,150,27,91,0,-1,82,0,0,0,0,0.05,0.01,PARO: teclado,0,0,4,0,4,,,,,138
+57.887,EMERGENCY_LAND,78,140,23,91,0,-2,82,0,0,0,0,0.00,0.02,PARO: teclado,0,0,3,0,4,,,,,138
+57.937,EMERGENCY_LAND,78,140,23,91,0,-2,82,0,0,0,0,0.05,0.03,PARO: teclado,0,0,3,0,4,,,,,138
+57.988,EMERGENCY_LAND,78,140,20,91,0,-2,82,0,0,0,0,0.00,0.02,PARO: teclado,0,0,3,0,4,,,,,138
+58.038,EMERGENCY_LAND,78,140,20,91,0,-2,82,0,0,0,0,0.05,0.01,PARO: teclado,0,0,3,0,4,,,,,138
+58.088,EMERGENCY_LAND,78,140,15,91,0,-2,82,0,0,0,0,0.00,0.01,PARO: teclado,0,0,4,0,4,,,,,138
+58.138,EMERGENCY_LAND,78,140,15,91,0,-2,82,0,0,0,0,0.05,0.01,PARO: teclado,0,0,4,0,4,,,,,138
+58.188,EMERGENCY_LAND,78,130,11,91,0,-2,82,0,0,0,0,0.00,0.01,PARO: teclado,0,0,4,0,4,,,,,138
+58.241,EMERGENCY_LAND,78,130,11,91,0,-2,82,0,0,0,0,0.05,0.01,PARO: teclado,0,0,4,0,4,,,,,138
+58.291,EMERGENCY_LAND,78,130,13,91,0,-3,82,0,0,0,0,0.00,0.01,PARO: teclado,0,0,3,0,4,,,,,138
+58.344,EMERGENCY_LAND,78,130,13,91,0,-3,82,0,0,0,0,0.05,0.01,PARO: teclado,0,0,3,0,4,,,,,138
+58.394,EMERGENCY_LAND,78,120,10,91,0,-3,82,0,0,0,0,0.00,0.01,PARO: teclado,0,0,3,0,4,,,,,138
+58.445,EMERGENCY_LAND,78,120,10,91,0,-3,82,0,0,0,0,0.05,0.01,PARO: teclado,0,0,3,0,4,,,,,138
+58.495,EMERGENCY_LAND,78,120,10,91,0,-1,82,0,0,0,0,0.00,0.01,PARO: teclado,0,0,3,0,4,,,,,138
+58.545,EMERGENCY_LAND,78,120,10,91,0,-1,82,0,0,0,0,0.05,0.01,PARO: teclado,0,0,3,0,4,,,,,138
+58.595,EMERGENCY_LAND,78,120,10,91,0,0,82,0,0,0,0,0.00,0.01,PARO: teclado,0,0,2,0,4,,,,,138
+58.647,EMERGENCY_LAND,78,120,10,91,0,0,82,0,0,0,0,0.05,0.01,PARO: teclado,0,0,2,0,4,,,,,138
+58.697,EMERGENCY_LAND,78,120,10,91,0,0,82,0,0,0,0,0.00,0.02,PARO: teclado,0,0,0,0,4,,,,,138
+58.747,EMERGENCY_LAND,78,120,10,91,0,0,82,0,0,0,0,0.05,0.01,PARO: teclado,0,0,0,0,4,,,,,138
+58.797,EMERGENCY_LAND,78,120,10,91,0,0,82,0,0,0,0,0.00,0.01,PARO: teclado,0,0,0,0,4,,,,,138
+58.848,EMERGENCY_LAND,78,120,10,91,0,0,82,0,0,0,0,0.05,0.01,PARO: teclado,0,0,0,0,4,,,,,138
+58.898,EMERGENCY_LAND,78,110,10,90,0,0,82,0,0,0,0,0.00,0.01,PARO: teclado,0,0,0,0,4,,,,,138
+58.948,EMERGENCY_LAND,78,110,10,90,0,0,82,0,0,0,0,0.05,0.01,PARO: teclado,0,0,0,0,4,,,,,138
+58.998,EMERGENCY_LAND,78,110,10,90,0,0,82,0,0,0,0,0.10,0.01,PARO: teclado,0,0,0,0,4,,,,,138
+59.049,EMERGENCY_LAND,78,110,10,90,0,-1,82,0,0,0,0,0.03,0.01,PARO: teclado,0,0,0,0,4,,,,,138
+59.099,EMERGENCY_LAND,78,110,10,90,0,-1,82,0,0,0,0,0.08,0.02,PARO: teclado,0,0,0,0,4,,,,,138
+59.149,EMERGENCY_LAND,78,110,10,89,0,-2,82,0,0,0,0,0.03,0.01,PARO: teclado,0,0,0,0,4,,,,,138
+59.199,EMERGENCY_LAND,78,110,10,89,0,-2,82,0,0,0,0,0.08,0.01,PARO: teclado,0,0,0,0,4,,,,,138
+59.249,EMERGENCY_LAND,78,110,10,89,0,-2,82,0,0,0,0,0.00,0.01,PARO: teclado,0,0,0,0,4,,,,,138
+59.303,EMERGENCY_LAND,78,110,10,89,0,-2,82,0,0,0,0,0.06,0.01,PARO: teclado,0,0,0,0,4,,,,,138
+59.353,EMERGENCY_LAND,78,110,10,89,0,-2,82,0,0,0,0,0.03,0.01,PARO: teclado,0,0,0,0,4,,,,,138
+59.403,EMERGENCY_LAND,78,110,10,89,0,-2,82,0,0,0,0,0.08,0.03,PARO: teclado,0,0,0,0,4,,,,,138
+59.453,EMERGENCY_LAND,78,110,10,89,0,-2,82,0,0,0,0,0.02,0.02,PARO: teclado,0,0,1,0,4,,,,,138
+59.507,EMERGENCY_LAND,78,110,10,89,0,-2,82,0,0,0,0,0.07,0.02,PARO: teclado,0,0,1,0,4,,,,,138
+59.557,DONE,78,110,10,89,0,-1,82,0,0,0,0,0.04,0.02,aterrizado (PARO: teclado),0,1,1,0,4,,,,,138
+59.607,DONE,78,110,10,89,0,-1,82,0,0,0,0,0.09,0.01,aterrizado (PARO: teclado),0,1,1,0,4,,,,,138
+59.657,DONE,78,110,10,89,0,-1,82,0,0,0,0,0.03,0.01,aterrizado (PARO: teclado),0,1,1,0,4,,,,,138
+59.707,DONE,78,110,10,89,0,-1,82,0,0,0,0,0.08,0.01,aterrizado (PARO: teclado),0,1,1,0,4,,,,,138
+59.757,DONE,78,110,10,89,0,-1,82,0,0,0,0,0.03,0.01,aterrizado (PARO: teclado),1,1,1,0,4,,,,,138
+59.807,DONE,78,110,10,89,0,-1,82,0,0,0,0,0.08,0.01,aterrizado (PARO: teclado),1,1,1,0,4,,,,,138
+59.858,DONE,78,110,10,89,0,-1,82,0,0,0,0,0.04,0.01,aterrizado (PARO: teclado),1,1,1,0,4,,,,,138
+59.908,DONE,78,110,10,89,0,-1,82,0,0,0,0,0.09,0.02,aterrizado (PARO: teclado),1,1,1,0,4,,,,,138
+59.958,DONE,78,110,10,89,0,-1,82,0,0,0,0,0.04,0.01,aterrizado (PARO: teclado),1,1,1,0,4,,,,,138
+60.008,DONE,78,110,10,89,0,-1,82,0,0,0,0,0.09,0.02,aterrizado (PARO: teclado),1,1,1,0,4,,,,,138
+60.058,DONE,78,0,10,89,0,-1,82,0,0,0,0,0.03,0.02,aterrizado (PARO: teclado),1,1,0,0,4,,,,,138
+60.108,DONE,78,0,10,89,0,-1,82,0,0,0,0,0.08,0.02,aterrizado (PARO: teclado),1,1,0,0,4,,,,,138
+60.158,DONE,78,0,10,89,0,-1,82,0,0,0,0,0.03,0.02,aterrizado (PARO: teclado),1,1,0,0,4,,,,,138
+60.209,DONE,78,0,10,89,0,-1,82,0,0,0,0,0.08,0.01,aterrizado (PARO: teclado),1,1,0,0,4,,,,,138
+60.259,DONE,78,0,10,89,0,-1,82,0,0,0,0,0.02,0.01,aterrizado (PARO: teclado),1,1,0,0,4,,,,,138
+60.309,DONE,78,0,10,89,0,-1,82,0,0,0,0,0.07,0.01,aterrizado (PARO: teclado),1,1,0,0,4,,,,,138
+60.359,DONE,78,0,10,89,0,-1,82,0,0,0,0,0.02,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+60.409,DONE,78,0,10,89,0,-1,82,0,0,0,0,0.07,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+60.459,DONE,78,0,10,89,0,-1,82,0,0,0,0,0.02,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+60.509,DONE,78,0,10,89,0,-1,82,0,0,0,0,0.02,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+60.560,DONE,78,0,10,89,0,-1,82,0,0,0,0,0.07,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+60.610,DONE,78,0,10,89,0,-1,82,0,0,0,0,0.02,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+60.660,DONE,78,0,10,89,0,-1,82,0,0,0,0,0.07,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+60.710,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.01,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+60.760,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.06,0.02,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+60.811,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.01,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+60.861,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.06,0.03,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+60.911,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.02,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+60.961,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.07,0.02,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+61.011,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.01,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+61.061,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.06,0.02,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+61.111,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.01,0.04,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+61.161,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.06,0.02,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+61.212,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.01,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+61.262,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.06,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+61.312,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.01,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+61.362,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.06,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+61.412,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.01,0.01,aterrizado (PARO: teclado),0,0,-1,0,4,,,,,138
+61.462,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.06,0.01,aterrizado (PARO: teclado),0,0,-1,0,4,,,,,138
+61.513,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.01,0.02,aterrizado (PARO: teclado),0,0,-1,0,4,,,,,138
+61.563,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.06,0.02,aterrizado (PARO: teclado),0,0,-1,0,4,,,,,138
+61.614,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.00,0.01,aterrizado (PARO: teclado),0,0,-2,0,4,,,,,138
+61.664,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.05,0.01,aterrizado (PARO: teclado),0,0,-2,0,4,,,,,138
+61.715,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.01,0.02,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+61.770,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.06,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+61.820,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.01,0.02,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+61.870,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.06,0.02,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+61.920,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.00,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+61.970,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.05,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+62.021,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.00,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+62.071,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.05,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+62.121,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.00,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+62.171,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.05,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+62.221,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.00,0.02,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+62.272,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.05,0.02,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+62.322,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.00,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+62.372,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.05,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+62.422,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.00,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+62.472,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.05,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+62.522,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.00,0.02,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+62.575,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.05,0.02,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+62.625,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.00,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+62.675,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.05,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+62.725,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.00,0.02,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+62.775,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.05,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+62.825,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.10,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+62.876,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.03,0.02,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+62.926,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.08,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+62.976,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.04,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+63.026,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.09,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+63.076,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.04,0.02,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+63.126,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.09,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+63.177,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.03,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+63.227,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.08,0.02,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+63.277,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.03,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+63.327,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.08,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+63.377,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.04,0.02,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+63.427,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.09,0.02,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+63.478,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.03,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+63.528,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.08,0.02,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+63.578,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.02,0.02,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+63.629,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.07,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+63.680,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.03,0.02,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+63.732,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.08,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+63.782,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.02,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+63.832,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.07,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+63.882,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.02,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+63.933,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.02,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+63.983,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.07,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+64.033,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.02,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+64.083,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.07,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138
+64.134,DONE,78,0,10,89,0,-1,81,0,0,0,0,0.01,0.01,aterrizado (PARO: teclado),0,0,0,0,4,,,,,138

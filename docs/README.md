@@ -13,6 +13,10 @@ Si eres nuevo en el proyecto, léelos en este orden:
 6. [`bitacora.md`](bitacora.md): qué se probó en cada sesión, qué salió, qué está pendiente
    y las decisiones que conviene no deshacer.
 
+Cada día de laboratorio, con sus bitácoras de vuelo, notas y veredictos, está en
+[`../sesiones/`](../sesiones/). Las instrucciones para Claude Code están en
+[`../CLAUDE.md`](../CLAUDE.md).
+
 ## Anexos
 
 - [`anexos/correo_comite.md`](anexos/correo_comite.md): dudas que le mandamos al comité.
@@ -21,7 +25,8 @@ Si eres nuevo en el proyecto, léelos en este orden:
 
 ## Mantener esto al día
 
-- Al terminar una sesión de laboratorio, agrega una entrada en `bitacora.md`.
+- Al terminar una sesión de laboratorio: `python scripts/guardar_sesion.py --notas "..."`,
+  y una entrada en `bitacora.md`.
 - Si cambia el protocolo, actualiza `laboratorio.md`.
 - Si medimos algo nuevo del dron, va en `tello.md`.
 - Si cambia la estructura del código o se agrega un archivo de configuración, actualiza

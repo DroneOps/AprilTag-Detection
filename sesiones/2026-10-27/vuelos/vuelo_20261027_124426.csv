@@ -1,0 +1,918 @@
+t,state,bat,h,tof,yaw,pitch,roll,temph,rc_lr,rc_fb,rc_ud,rc_yaw,state_age,video_age,reason,vgx,vgy,vgz
+0.000,IDLE,86,-80,10,175,0,0,62,0,0,0,0,0.00,inf,esperando despegue (t),0,0,0
+0.050,IDLE,86,0,10,175,0,0,62,0,0,0,0,0.00,inf,esperando despegue (t),0,0,0
+0.101,IDLE,86,0,10,175,0,0,62,0,0,0,0,0.05,inf,esperando despegue (t),0,0,0
+0.153,IDLE,86,0,10,175,0,0,62,0,0,0,0,0.00,inf,esperando despegue (t),0,0,0
+0.203,IDLE,86,0,10,175,0,0,62,0,0,0,0,0.00,inf,esperando despegue (t),0,0,0
+0.253,IDLE,86,0,10,175,0,0,62,0,0,0,0,0.05,inf,esperando despegue (t),0,0,0
+0.304,IDLE,86,0,10,175,0,0,62,0,0,0,0,0.10,inf,esperando despegue (t),0,0,0
+0.354,IDLE,86,0,10,175,0,0,62,0,0,0,0,0.00,inf,esperando despegue (t),0,0,0
+0.404,IDLE,86,0,10,175,0,0,62,0,0,0,0,0.05,inf,esperando despegue (t),0,0,0
+0.454,IDLE,86,0,10,175,0,0,62,0,0,0,0,0.00,inf,esperando despegue (t),0,0,0
+0.504,IDLE,86,0,10,175,0,0,62,0,0,0,0,0.05,inf,esperando despegue (t),0,0,0
+0.554,IDLE,86,0,10,175,0,0,62,0,0,0,0,0.00,inf,esperando despegue (t),0,0,0
+0.604,IDLE,86,0,10,175,0,0,62,0,0,0,0,0.05,inf,esperando despegue (t),0,0,0
+0.654,IDLE,86,0,10,175,0,0,62,0,0,0,0,0.01,0.03,esperando despegue (t),0,0,0
+0.705,IDLE,86,0,10,174,0,0,62,0,0,0,0,0.00,0.03,esperando despegue (t),0,0,0
+0.755,IDLE,86,0,10,174,0,0,62,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+0.805,IDLE,86,0,10,174,0,0,62,0,0,0,0,0.10,0.01,esperando despegue (t),0,0,0
+0.855,IDLE,86,0,10,174,0,0,61,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0
+0.905,IDLE,86,0,10,174,0,0,61,0,0,0,0,0.00,0.03,esperando despegue (t),0,0,0
+0.955,IDLE,86,0,10,174,0,0,61,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+1.006,IDLE,86,0,10,174,0,0,61,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+1.056,IDLE,86,0,10,174,0,0,61,0,0,0,0,0.06,0.01,esperando despegue (t),0,0,0
+1.106,IDLE,86,0,10,174,0,0,61,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0
+1.156,IDLE,86,0,10,174,0,0,61,0,0,0,0,0.07,0.03,esperando despegue (t),0,0,0
+1.207,IDLE,86,0,10,175,0,0,61,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0
+1.257,IDLE,86,0,10,175,0,0,61,0,0,0,0,0.07,0.01,esperando despegue (t),0,0,0
+1.307,IDLE,86,0,10,175,0,0,61,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+1.357,IDLE,86,0,10,175,0,0,61,0,0,0,0,0.06,0.01,esperando despegue (t),0,0,0
+1.408,IDLE,86,0,10,175,0,0,61,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0
+1.458,IDLE,86,0,10,175,0,0,61,0,0,0,0,0.07,0.03,esperando despegue (t),0,0,0
+1.508,IDLE,86,0,10,175,0,0,61,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0
+1.558,IDLE,86,0,10,175,0,0,61,0,0,0,0,0.07,0.01,esperando despegue (t),0,0,0
+1.608,IDLE,86,0,10,175,0,0,61,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+1.658,IDLE,86,0,10,175,0,0,61,0,0,0,0,0.06,0.01,esperando despegue (t),0,0,0
+1.708,IDLE,86,0,10,175,0,0,61,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+1.759,IDLE,86,0,10,175,0,0,61,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+1.809,IDLE,86,0,10,175,0,0,62,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+1.859,IDLE,86,0,10,175,0,0,62,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+1.909,IDLE,86,0,10,175,0,0,62,0,0,0,0,0.10,0.01,esperando despegue (t),0,0,0
+1.959,IDLE,86,0,10,175,0,0,62,0,0,0,0,0.03,0.03,esperando despegue (t),0,0,0
+2.009,IDLE,86,0,10,175,0,0,62,0,0,0,0,0.08,0.01,esperando despegue (t),0,0,0
+2.060,IDLE,86,0,10,175,0,0,62,0,0,0,0,0.03,0.01,esperando despegue (t),0,0,0
+2.110,IDLE,86,0,10,175,0,0,62,0,0,0,0,0.08,0.01,esperando despegue (t),0,0,0
+2.160,IDLE,86,0,10,175,0,0,62,0,0,0,0,0.03,0.01,esperando despegue (t),0,0,0
+2.210,IDLE,86,0,10,175,0,0,62,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+2.262,IDLE,86,0,10,175,0,0,62,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+2.312,IDLE,86,0,10,175,0,0,62,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+2.362,IDLE,86,0,10,175,0,0,62,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+2.412,IDLE,86,0,10,175,0,0,62,0,0,0,0,0.00,0.03,esperando despegue (t),0,0,0
+2.464,IDLE,86,0,10,175,0,0,62,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+2.514,IDLE,86,0,10,175,0,0,62,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+2.565,IDLE,86,0,10,175,0,0,62,0,0,0,0,0.05,0.03,esperando despegue (t),0,0,0
+2.615,IDLE,86,0,10,175,0,0,62,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+2.665,IDLE,86,0,10,175,0,0,62,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+2.715,IDLE,86,0,10,175,0,0,62,0,0,0,0,0.00,0.03,esperando despegue (t),0,0,0
+2.765,IDLE,86,0,10,175,0,0,62,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+2.816,IDLE,86,0,10,175,0,0,62,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+2.866,IDLE,86,0,10,175,0,0,62,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+2.916,IDLE,86,0,10,175,0,0,62,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+2.966,IDLE,86,0,10,175,0,0,62,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+3.016,IDLE,86,0,10,175,0,0,62,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+3.067,IDLE,86,0,10,175,0,0,62,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+3.117,IDLE,86,0,10,175,0,0,62,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+3.168,IDLE,86,0,10,175,0,0,62,0,0,0,0,0.05,0.03,esperando despegue (t),0,0,0
+3.218,IDLE,86,0,10,175,0,0,62,0,0,0,0,0.10,0.01,esperando despegue (t),0,0,0
+3.268,IDLE,86,0,10,175,0,0,62,0,0,0,0,0.03,0.03,esperando despegue (t),0,0,0
+3.318,IDLE,86,0,10,175,0,0,62,0,0,0,0,0.08,0.01,esperando despegue (t),0,0,0
+3.369,IDLE,86,0,10,175,0,0,62,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0
+3.419,IDLE,86,0,10,175,0,0,62,0,0,0,0,0.07,0.03,esperando despegue (t),0,0,0
+3.469,IDLE,86,0,10,176,0,0,62,0,0,0,0,0.03,0.01,esperando despegue (t),0,0,0
+3.519,IDLE,86,0,10,176,0,0,62,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0
+3.569,IDLE,86,0,10,176,0,0,62,0,0,0,0,0.07,0.01,esperando despegue (t),0,0,0
+3.619,IDLE,86,0,10,176,0,0,62,0,0,0,0,0.03,0.03,esperando despegue (t),0,0,0
+3.671,IDLE,86,0,10,176,0,0,62,0,0,0,0,0.09,0.01,esperando despegue (t),0,0,0
+3.721,IDLE,86,0,10,176,0,0,62,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0
+3.772,IDLE,86,0,10,176,0,0,62,0,0,0,0,0.07,0.01,esperando despegue (t),0,0,0
+3.823,IDLE,86,0,10,176,0,0,62,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0
+3.873,IDLE,86,0,10,176,0,0,62,0,0,0,0,0.07,0.01,esperando despegue (t),0,0,0
+3.923,IDLE,86,0,10,176,0,0,62,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0
+3.974,IDLE,86,0,10,176,0,0,62,0,0,0,0,0.07,0.01,esperando despegue (t),0,0,0
+4.024,IDLE,86,0,10,176,-1,0,62,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0
+4.074,IDLE,86,0,10,176,-1,0,62,0,0,0,0,0.07,0.02,esperando despegue (t),0,0,0
+4.124,IDLE,86,0,10,176,-1,0,62,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0
+4.175,IDLE,86,0,10,176,-1,0,62,0,0,0,0,0.07,0.01,esperando despegue (t),0,0,0
+4.225,IDLE,86,0,10,176,-1,0,62,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0
+4.277,IDLE,86,0,10,176,-1,0,62,0,0,0,0,0.07,0.03,esperando despegue (t),0,0,0
+4.327,IDLE,86,0,10,176,-1,0,62,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0
+4.377,IDLE,86,0,10,176,-1,0,62,0,0,0,0,0.07,0.01,esperando despegue (t),0,0,0
+4.427,IDLE,86,0,10,176,-1,0,62,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+4.477,IDLE,86,0,10,176,-1,0,62,0,0,0,0,0.06,0.03,esperando despegue (t),0,0,0
+4.529,IDLE,86,0,10,176,-1,0,62,0,0,0,0,0.03,0.01,esperando despegue (t),0,0,0
+4.579,IDLE,86,0,10,176,-1,0,62,0,0,0,0,0.08,0.01,esperando despegue (t),0,0,0
+4.630,IDLE,86,0,10,176,-1,0,62,0,0,0,0,0.02,0.03,esperando despegue (t),0,0,0
+4.680,IDLE,86,0,10,176,-1,0,62,0,0,0,0,0.07,0.01,esperando despegue (t),0,0,0
+4.730,IDLE,86,0,10,176,-1,0,62,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+4.780,IDLE,86,0,10,176,-1,0,62,0,0,0,0,0.06,0.01,esperando despegue (t),0,0,0
+4.833,IDLE,86,0,10,176,-1,0,62,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+4.883,IDLE,86,0,10,176,-1,0,62,0,0,0,0,0.06,0.01,esperando despegue (t),0,0,0
+4.936,IDLE,86,0,10,176,-1,0,62,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+4.986,IDLE,86,0,10,176,-1,0,62,0,0,0,0,0.06,0.01,esperando despegue (t),0,0,0
+5.036,IDLE,85,0,10,176,-1,0,62,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+5.086,IDLE,85,0,10,176,-1,0,62,0,0,0,0,0.06,0.01,esperando despegue (t),0,0,0
+5.136,IDLE,85,0,10,176,-1,0,62,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+5.186,IDLE,85,0,10,176,-1,0,62,0,0,0,0,0.06,0.01,esperando despegue (t),0,0,0
+5.236,IDLE,85,0,10,176,-1,0,62,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0
+5.287,IDLE,85,0,10,176,-1,0,62,0,0,0,0,0.07,0.03,esperando despegue (t),0,0,0
+5.337,IDLE,85,0,10,176,-1,0,62,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+5.387,IDLE,85,0,10,176,-1,0,62,0,0,0,0,0.06,0.01,esperando despegue (t),0,0,0
+5.437,IDLE,85,0,10,176,-1,0,62,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+5.487,IDLE,85,0,10,176,-1,0,62,0,0,0,0,0.06,0.01,esperando despegue (t),0,0,0
+5.537,IDLE,85,0,10,176,-1,0,62,0,0,0,0,0.00,0.03,esperando despegue (t),0,0,0
+5.587,IDLE,85,0,10,176,-1,0,62,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+5.638,IDLE,85,0,10,176,-1,0,62,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+5.688,IDLE,85,0,10,176,-1,0,62,0,0,0,0,0.06,0.01,esperando despegue (t),0,0,0
+5.739,IDLE,85,0,10,176,-1,0,62,0,0,0,0,0.00,0.05,esperando despegue (t),0,0,0
+5.790,IDLE,85,0,10,176,-1,0,62,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+5.840,IDLE,85,0,10,176,-1,0,62,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+5.890,IDLE,85,0,10,176,-1,0,62,0,0,0,0,0.06,0.01,esperando despegue (t),0,0,0
+5.940,IDLE,85,0,10,176,-1,0,62,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+5.990,IDLE,85,0,10,176,-1,0,62,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+6.040,IDLE,85,0,10,176,-1,0,62,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+6.090,IDLE,85,0,10,176,-1,0,62,0,0,0,0,0.06,0.01,esperando despegue (t),0,0,0
+6.141,IDLE,85,0,10,176,-1,0,62,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+6.191,IDLE,85,0,10,176,-1,0,62,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+6.241,IDLE,85,0,10,176,-1,0,62,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+6.291,IDLE,85,0,10,176,-1,0,62,0,0,0,0,0.05,0.05,esperando despegue (t),0,0,0
+6.341,IDLE,85,0,10,176,-1,0,62,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+6.393,IDLE,85,0,10,176,-1,0,62,0,0,0,0,0.05,0.03,esperando despegue (t),0,0,0
+6.443,IDLE,85,0,10,176,-1,0,62,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+6.493,IDLE,85,0,10,176,-1,0,62,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+6.543,IDLE,85,0,10,176,-1,0,62,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+6.593,IDLE,85,0,10,176,-1,0,62,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+6.643,IDLE,85,0,10,176,-1,0,62,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+6.694,IDLE,85,0,10,176,-1,0,62,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+6.744,IDLE,85,0,10,176,-1,0,62,0,0,0,0,0.00,0.03,esperando despegue (t),0,0,0
+6.795,IDLE,85,0,10,176,-1,0,62,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+6.845,TAKEOFF,85,0,10,176,-1,0,63,0,0,0,0,0.00,0.01,despegando,0,0,0
+6.896,TAKEOFF,85,0,10,176,-1,0,63,0,0,0,0,0.05,0.01,despegando,0,0,0
+6.946,TAKEOFF,85,0,10,176,-1,0,63,0,0,0,0,0.00,0.03,despegando,0,0,0
+6.996,TAKEOFF,85,0,10,176,-1,0,63,0,0,0,0,0.05,0.03,despegando,0,0,0
+7.046,TAKEOFF,85,0,10,176,-1,0,63,0,0,0,0,0.04,0.01,despegando,0,0,0
+7.096,TAKEOFF,85,0,10,176,-1,0,63,0,0,0,0,0.09,0.01,despegando,0,0,0
+7.146,TAKEOFF,85,0,10,176,-1,0,63,0,0,0,0,0.03,0.03,despegando,0,0,0
+7.197,TAKEOFF,85,0,10,176,-1,0,63,0,0,0,0,0.08,0.01,despegando,0,0,0
+7.247,TAKEOFF,85,0,10,177,-1,0,63,0,0,0,0,0.02,0.01,despegando,0,0,0
+7.297,TAKEOFF,85,0,10,177,-1,0,63,0,0,0,0,0.07,0.05,despegando,0,0,0
+7.347,TAKEOFF,85,0,10,179,-1,0,63,0,0,0,0,0.04,0.01,despegando,0,0,0
+7.397,TAKEOFF,85,0,10,179,-1,0,63,0,0,0,0,0.09,0.03,despegando,0,0,0
+7.447,TAKEOFF,85,0,10,-179,-1,0,63,0,0,0,0,0.04,0.01,despegando,0,0,0
+7.497,TAKEOFF,85,0,10,-179,-1,0,63,0,0,0,0,0.09,0.01,despegando,0,0,0
+7.548,TAKEOFF,85,0,10,-179,0,0,63,0,0,0,0,0.03,0.03,despegando,0,0,0
+7.598,TAKEOFF,85,0,10,-179,0,0,63,0,0,0,0,0.08,0.01,despegando,0,0,0
+7.648,TAKEOFF,85,0,10,-179,0,0,63,0,0,0,0,0.02,0.01,despegando,0,0,-2
+7.698,TAKEOFF,85,0,10,-179,0,0,63,0,0,0,0,0.07,0.03,despegando,0,0,-2
+7.749,TAKEOFF,85,0,10,-179,2,0,63,0,0,0,0,0.01,0.01,despegando,0,0,-5
+7.799,TAKEOFF,85,0,10,-179,2,0,63,0,0,0,0,0.06,0.01,despegando,0,0,-5
+7.849,TAKEOFF,85,10,21,-179,0,-1,63,0,0,0,0,0.01,0.01,despegando,0,0,-7
+7.899,TAKEOFF,85,10,21,-179,0,-1,63,0,0,0,0,0.06,0.01,despegando,0,0,-7
+7.949,TAKEOFF,85,10,25,-179,0,0,63,0,0,0,0,0.02,0.03,despegando,0,0,-8
+7.999,TAKEOFF,85,10,25,-179,0,0,63,0,0,0,0,0.07,0.01,despegando,0,0,-8
+8.050,TAKEOFF,85,20,35,-179,1,0,63,0,0,0,0,0.01,0.01,despegando,0,0,-8
+8.100,TAKEOFF,85,20,35,-179,1,0,63,0,0,0,0,0.06,0.01,despegando,0,0,-8
+8.150,TAKEOFF,85,30,44,-179,1,0,63,0,0,0,0,0.02,0.01,despegando,0,0,-8
+8.200,TAKEOFF,85,30,44,-179,1,0,63,0,0,0,0,0.07,0.03,despegando,0,0,-8
+8.250,TAKEOFF,85,40,52,-179,1,-1,63,0,0,0,0,0.02,0.01,despegando,0,0,-7
+8.303,TAKEOFF,85,40,52,-179,1,-1,63,0,0,0,0,0.07,0.01,despegando,0,0,-7
+8.353,TAKEOFF,85,40,61,-179,0,-1,63,0,0,0,0,0.01,0.01,despegando,0,0,-6
+8.404,TAKEOFF,85,40,61,-179,0,-1,63,0,0,0,0,0.06,0.01,despegando,0,0,-6
+8.454,TAKEOFF,85,50,66,-179,0,0,63,0,0,0,0,0.03,0.03,despegando,0,0,-5
+8.504,TAKEOFF,85,50,66,-179,0,0,63,0,0,0,0,0.08,0.01,despegando,0,0,-5
+8.554,TAKEOFF,85,50,72,-179,0,-1,63,0,0,0,0,0.01,0.01,despegando,0,0,-4
+8.604,TAKEOFF,85,50,72,-179,0,-1,63,0,0,0,0,0.06,0.01,despegando,0,0,-4
+8.655,TAKEOFF,85,60,75,-179,1,-1,63,0,0,0,0,0.03,0.01,despegando,0,0,-2
+8.705,TAKEOFF,85,60,75,-179,1,-1,63,0,0,0,0,0.08,0.03,despegando,0,0,-2
+8.756,TAKEOFF,85,60,78,-179,1,-1,63,0,0,0,0,0.02,0.01,despegando,1,0,-1
+8.806,TAKEOFF,85,60,78,-179,1,-1,63,0,0,0,0,0.07,0.01,despegando,1,0,-1
+8.856,TAKEOFF,85,60,80,-179,-2,0,63,0,0,0,0,0.00,0.01,despegando,0,0,-1
+8.906,TAKEOFF,85,60,80,-179,-2,0,63,0,0,0,0,0.05,0.01,despegando,0,0,-1
+8.956,TAKEOFF,85,60,81,-179,0,0,63,0,0,0,0,0.00,0.01,despegando,0,0,0
+9.007,TAKEOFF,85,60,81,-179,0,0,63,0,0,0,0,0.05,0.03,despegando,0,0,0
+9.057,TAKEOFF,85,60,82,-179,0,-1,63,0,0,0,0,0.00,0.01,despegando,0,-1,0
+9.107,TAKEOFF,85,60,82,-179,0,-1,63,0,0,0,0,0.05,0.01,despegando,0,-1,0
+9.157,TAKEOFF,85,60,83,-179,0,-3,63,0,0,0,0,0.00,0.03,despegando,0,0,0
+9.207,TAKEOFF,85,60,83,-179,0,-3,63,0,0,0,0,0.05,0.01,despegando,0,0,0
+9.258,TAKEOFF,85,60,83,-179,0,-1,63,0,0,0,0,0.01,0.03,despegando,0,0,0
+9.308,TAKEOFF,85,60,83,-179,0,-1,63,0,0,0,0,0.06,0.01,despegando,0,0,0
+9.358,TAKEOFF,85,70,85,-179,0,-2,63,0,0,0,0,0.00,0.01,despegando,0,0,0
+9.408,TAKEOFF,85,70,85,-179,0,-2,63,0,0,0,0,0.05,0.03,despegando,0,0,0
+9.458,TAKEOFF,85,70,86,-179,-1,-1,63,0,0,0,0,0.01,0.03,despegando,0,0,0
+9.508,TAKEOFF,85,70,86,-179,-1,-1,63,0,0,0,0,0.06,0.01,despegando,0,0,0
+9.558,TAKEOFF,85,70,87,-179,-1,0,63,0,0,0,0,0.00,0.01,despegando,0,0,0
+9.609,TAKEOFF,85,70,87,-179,-1,0,63,0,0,0,0,0.05,0.01,despegando,0,0,0
+9.659,TAKEOFF,85,70,88,-179,0,0,63,0,0,0,0,0.00,0.01,despegando,0,0,0
+9.709,TAKEOFF,85,70,88,-179,0,0,63,0,0,0,0,0.05,0.01,despegando,0,0,0
+9.759,TAKEOFF,85,70,88,-179,0,0,63,0,0,0,0,0.00,0.01,despegando,0,0,0
+9.809,TAKEOFF,85,70,88,-179,0,0,63,0,0,0,0,0.05,0.01,despegando,0,0,0
+9.859,TAKEOFF,85,70,91,-179,1,0,63,0,0,0,0,0.00,0.01,despegando,0,0,0
+9.910,TAKEOFF,85,70,91,-179,1,0,63,0,0,0,0,0.05,0.01,despegando,0,0,0
+9.960,TAKEOFF,85,70,91,-179,1,0,63,0,0,0,0,0.00,0.02,despegando,0,0,0
+10.010,TAKEOFF,85,70,91,-179,1,0,63,0,0,0,0,0.05,0.01,despegando,0,0,0
+10.060,TAKEOFF,85,70,91,-179,1,0,63,0,0,0,0,0.10,0.01,despegando,0,0,0
+10.111,TAKEOFF,85,70,92,-179,0,1,63,0,0,0,0,0.03,0.03,despegando,0,0,0
+10.161,TAKEOFF,85,70,92,-179,0,1,63,0,0,0,0,0.08,0.01,despegando,0,0,0
+10.211,TAKEOFF,85,70,93,-179,0,1,63,0,0,0,0,0.02,0.01,despegando,0,0,0
+10.261,TAKEOFF,85,70,93,-179,0,1,63,0,0,0,0,0.07,0.01,despegando,0,0,0
+10.311,TAKEOFF,85,70,94,-179,0,1,63,0,0,0,0,0.03,0.03,despegando,0,0,0
+10.361,TAKEOFF,85,70,94,-179,0,1,63,0,0,0,0,0.08,0.01,despegando,0,0,0
+10.412,TAKEOFF,85,70,95,-179,0,1,63,0,0,0,0,0.02,0.01,despegando,0,0,0
+10.462,TAKEOFF,85,70,94,-179,0,0,63,0,0,0,0,0.04,0.01,despegando,0,0,0
+10.512,TAKEOFF,85,70,94,-179,0,0,63,0,0,0,0,0.09,0.03,despegando,0,0,0
+10.562,TAKEOFF,85,70,95,-179,0,0,63,0,0,0,0,0.03,0.01,despegando,0,0,0
+10.612,TAKEOFF,85,70,95,-179,0,0,63,0,0,0,0,0.08,0.03,despegando,0,0,0
+10.662,TAKEOFF,85,70,94,-179,-1,0,63,0,0,0,0,0.03,0.01,despegando,0,0,0
+10.712,TAKEOFF,85,70,94,-179,-1,0,63,0,0,0,0,0.08,0.01,despegando,0,0,0
+10.763,TAKEOFF,85,70,93,-179,-1,0,63,0,0,0,0,0.03,0.01,despegando,0,0,0
+10.813,TAKEOFF,85,70,93,-179,-1,0,63,0,0,0,0,0.08,0.01,despegando,0,0,0
+10.863,TAKEOFF,85,70,93,-179,-1,0,63,0,0,0,0,0.13,0.03,despegando,0,0,0
+10.913,TAKEOFF,85,70,93,-179,-1,0,64,0,0,0,0,0.00,0.03,despegando,0,0,1
+10.963,TAKEOFF,85,70,93,-179,-1,0,64,0,0,0,0,0.05,0.03,despegando,0,0,1
+11.013,TAKEOFF,85,70,93,-179,-1,0,64,0,0,0,0,0.00,0.01,despegando,0,0,1
+11.063,TAKEOFF,85,70,92,-179,-1,0,64,0,0,0,0,0.02,0.01,despegando,0,0,1
+11.114,TAKEOFF,85,70,92,-179,-1,0,64,0,0,0,0,0.07,0.01,despegando,0,0,1
+11.168,TAKEOFF,85,70,92,-179,0,0,64,0,0,0,0,0.01,0.01,despegando,0,0,0
+11.218,TAKEOFF,85,70,92,-179,0,0,64,0,0,0,0,0.06,0.01,despegando,0,0,0
+11.272,TAKEOFF,85,70,92,-179,0,0,64,0,0,0,0,0.03,0.03,despegando,0,0,0
+11.322,TAKEOFF,85,70,92,-179,0,0,64,0,0,0,0,0.08,0.01,despegando,0,0,0
+11.372,TAKEOFF,85,70,91,-179,-1,0,64,0,0,0,0,0.01,0.01,despegando,0,0,1
+11.422,TAKEOFF,85,70,91,-179,-1,0,64,0,0,0,0,0.06,0.01,despegando,0,0,1
+11.472,TAKEOFF,85,70,90,-179,-1,0,64,0,0,0,0,0.01,0.01,despegando,0,0,0
+11.522,TAKEOFF,85,70,90,-179,-1,0,64,0,0,0,0,0.06,0.01,despegando,0,0,0
+11.573,HOVER,85,70,90,-179,-1,0,64,0,0,0,0,0.02,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+11.623,HOVER,85,70,90,-179,-1,0,64,0,0,0,0,0.07,0.03,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+11.673,HOVER,85,70,90,-179,-1,0,64,0,0,0,0,0.01,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,1
+11.723,HOVER,85,70,90,-179,-1,0,64,0,0,0,0,0.06,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,1
+11.773,HOVER,85,70,89,-179,0,0,64,0,0,0,0,0.02,0.03,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+11.823,HOVER,85,70,89,-179,0,0,64,0,0,0,0,0.07,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+11.873,HOVER,85,70,89,-179,0,0,64,0,0,0,0,0.02,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",-1,0,1
+11.924,HOVER,85,70,89,-179,0,0,64,0,0,0,0,0.07,0.03,"en el aire a 80 cm (estable, despegue 4.7 s)",-1,0,1
+11.974,HOVER,84,70,89,-179,0,0,64,0,0,0,0,0.01,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",-1,0,0
+12.024,HOVER,84,70,89,-179,0,0,64,0,0,0,0,0.06,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",-1,0,0
+12.075,HOVER,84,70,88,-179,0,0,64,0,0,0,0,0.00,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",-1,0,0
+12.125,HOVER,84,70,88,-179,0,0,64,0,0,0,0,0.05,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",-1,0,0
+12.175,HOVER,84,70,87,-179,0,-1,64,0,0,0,0,0.01,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+12.225,HOVER,84,70,87,-179,0,-1,64,0,0,0,0,0.06,0.03,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+12.275,HOVER,84,70,87,-179,0,-1,64,0,0,0,0,0.11,0.03,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+12.325,HOVER,84,70,86,-179,0,0,64,0,0,0,0,0.05,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,1
+12.376,HOVER,84,70,85,-179,-1,0,64,0,0,0,0,0.01,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,1
+12.426,HOVER,84,70,85,-179,-1,0,64,0,0,0,0,0.06,0.03,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,1
+12.476,HOVER,84,70,85,-179,-1,-1,64,0,0,0,0,0.00,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+12.526,HOVER,84,70,85,-179,-1,-1,64,0,0,0,0,0.05,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+12.577,HOVER,84,70,84,-179,-1,-1,64,0,0,0,0,0.00,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+12.627,HOVER,84,70,84,-179,-1,-1,64,0,0,0,0,0.05,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+12.677,HOVER,84,70,84,-179,-1,-1,64,0,0,0,0,0.10,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+12.727,HOVER,84,70,83,-179,-1,-1,64,0,0,0,0,0.03,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+12.777,HOVER,84,70,82,-179,-1,0,64,0,0,0,0,0.01,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+12.828,HOVER,84,70,82,-179,-1,0,64,0,0,0,0,0.06,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+12.878,HOVER,84,70,81,-179,0,0,64,0,0,0,0,0.00,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+12.928,HOVER,84,70,81,-179,0,0,64,0,0,0,0,0.05,0.03,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+12.978,HOVER,84,70,80,-179,0,0,64,0,0,0,0,0.00,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,1
+13.028,HOVER,84,70,80,-179,0,0,64,0,0,0,0,0.05,0.03,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,1
+13.078,HOVER,84,60,79,-179,0,0,64,0,0,0,0,0.00,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+13.128,HOVER,84,60,79,-179,0,0,64,0,0,0,0,0.05,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+13.179,HOVER,84,60,79,-179,0,0,64,0,0,0,0,0.10,0.03,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+13.229,HOVER,84,60,78,-179,0,0,64,0,0,0,0,0.03,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+13.279,HOVER,84,60,77,-179,0,0,64,0,0,0,0,0.00,0.05,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+13.329,HOVER,84,60,77,-179,0,0,64,0,0,0,0,0.05,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+13.379,HOVER,84,60,77,-179,0,0,64,0,0,0,0,0.10,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+13.429,HOVER,84,60,76,-179,0,0,64,0,0,0,0,0.03,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+13.480,HOVER,84,60,76,-179,0,0,64,0,0,0,0,0.08,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+13.530,HOVER,84,60,76,-179,-1,0,64,0,0,0,0,0.05,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+13.580,HOVER,84,60,76,-179,-1,0,64,0,0,0,0,0.10,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+13.630,HOVER,84,60,75,-179,-1,0,64,0,0,0,0,0.04,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+13.680,HOVER,84,60,75,-179,-1,0,64,0,0,0,0,0.09,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+13.730,HOVER,84,60,75,-179,-1,0,64,0,0,0,0,0.03,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+13.780,HOVER,84,60,75,-179,-1,0,64,0,0,0,0,0.08,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+13.830,HOVER,84,60,74,-179,0,0,64,0,0,0,0,0.04,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+13.881,HOVER,84,60,74,-179,0,0,64,0,0,0,0,0.09,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+13.935,HOVER,84,60,72,-179,-1,0,65,0,0,0,0,0.04,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+13.985,HOVER,84,60,72,-179,-1,0,65,0,0,0,0,0.09,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+14.035,HOVER,83,60,72,-179,0,0,65,0,0,0,0,0.01,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",-1,0,0
+14.086,HOVER,83,60,72,-179,0,0,65,0,0,0,0,0.06,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",-1,0,0
+14.136,HOVER,83,60,71,-179,0,0,65,0,0,0,0,0.03,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",-1,0,0
+14.186,HOVER,83,60,71,-179,0,0,65,0,0,0,0,0.08,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",-1,0,0
+14.236,HOVER,83,60,71,-179,0,0,65,0,0,0,0,0.02,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+14.286,HOVER,83,60,71,-179,0,0,65,0,0,0,0,0.07,0.03,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+14.336,HOVER,83,60,71,-179,0,0,65,0,0,0,0,0.04,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+14.386,HOVER,83,60,71,-179,0,0,65,0,0,0,0,0.03,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+14.437,HOVER,83,60,71,-179,0,0,65,0,0,0,0,0.08,0.03,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+14.487,HOVER,83,60,71,-179,-1,-1,65,0,0,0,0,0.01,0.03,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+14.537,HOVER,83,60,71,-179,-1,-1,65,0,0,0,0,0.06,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+14.587,HOVER,83,60,72,-179,-1,-1,65,0,0,0,0,0.02,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+14.638,HOVER,83,60,72,-179,-1,-1,65,0,0,0,0,0.07,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+14.688,HOVER,83,60,73,-179,-1,-1,65,0,0,0,0,0.03,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+14.739,HOVER,83,60,73,-179,-1,-1,65,0,0,0,0,0.08,0.03,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+14.789,HOVER,83,60,74,-179,0,-1,65,0,0,0,0,0.02,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+14.839,HOVER,83,60,74,-179,0,-1,65,0,0,0,0,0.07,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+14.889,HOVER,83,60,75,-179,0,-1,65,0,0,0,0,0.02,0.03,"en el aire a 80 cm (estable, despegue 4.7 s)",-1,0,-1
+14.939,HOVER,83,60,75,-179,0,-1,65,0,0,0,0,0.07,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",-1,0,-1
+14.989,HOVER,83,60,75,-179,0,-1,65,0,0,0,0,0.01,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+15.040,HOVER,83,60,75,-179,0,-1,65,0,0,0,0,0.06,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+15.090,HOVER,83,60,76,-179,0,0,65,0,0,0,0,0.00,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+15.140,HOVER,83,60,76,-179,0,0,65,0,0,0,0,0.05,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+15.190,HOVER,83,60,76,-179,0,0,65,0,0,0,0,0.10,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+15.240,HOVER,83,60,76,-179,0,0,65,0,0,0,0,0.04,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+15.290,HOVER,83,60,76,-179,0,0,65,0,0,0,0,0.09,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+15.341,HOVER,83,60,77,-179,0,0,65,0,0,0,0,0.03,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+15.391,HOVER,83,60,76,-179,-1,0,65,0,0,0,0,0.00,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+15.441,HOVER,83,60,76,-179,-1,0,65,0,0,0,0,0.05,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+15.492,HOVER,83,60,76,-179,-1,0,65,0,0,0,0,0.01,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+15.543,HOVER,83,60,76,-179,-1,0,65,0,0,0,0,0.06,0.03,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+15.593,HOVER,83,60,76,-179,-1,0,65,0,0,0,0,0.00,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+15.643,HOVER,83,60,76,-179,-1,0,65,0,0,0,0,0.05,0.03,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+15.693,HOVER,83,60,76,-179,0,0,65,0,0,0,0,0.00,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+15.743,HOVER,83,60,76,-179,0,0,65,0,0,0,0,0.05,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+15.793,HOVER,83,60,76,-179,-1,0,65,0,0,0,0,0.00,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+15.843,HOVER,83,60,76,-179,-1,0,65,0,0,0,0,0.05,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+15.893,HOVER,83,60,76,-179,0,0,65,0,0,0,0,0.00,0.03,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+15.944,HOVER,83,60,76,-179,0,0,65,0,0,0,0,0.05,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+15.994,HOVER,82,60,77,-179,0,0,65,0,0,0,0,0.01,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+16.044,HOVER,82,60,77,-179,0,0,65,0,0,0,0,0.06,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+16.094,HOVER,82,60,77,-179,0,0,65,0,0,0,0,0.00,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+16.144,HOVER,82,60,77,-179,0,0,65,0,0,0,0,0.05,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+16.194,HOVER,82,60,77,-179,0,0,65,0,0,0,0,0.00,0.03,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+16.244,HOVER,82,60,77,-179,0,0,65,0,0,0,0,0.05,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+16.294,HOVER,82,60,77,-179,0,-1,65,0,0,0,0,0.00,0.05,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+16.345,HOVER,82,60,77,-179,0,-1,65,0,0,0,0,0.05,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+16.398,HOVER,82,60,77,-179,0,-1,65,0,0,0,0,0.10,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+16.448,HOVER,82,60,78,-179,0,-1,65,0,0,0,0,0.03,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+16.498,HOVER,82,60,77,-179,-1,0,65,0,0,0,0,0.00,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+16.548,HOVER,82,60,77,-179,-1,0,65,0,0,0,0,0.05,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+16.602,HOVER,82,60,77,-179,-1,0,65,0,0,0,0,0.10,0.03,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+16.652,HOVER,82,60,78,-179,-1,0,65,0,0,0,0,0.03,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+16.704,HOVER,82,60,78,-179,-2,0,65,0,0,0,0,0.00,0.03,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+16.754,HOVER,82,60,78,-179,-2,0,65,0,0,0,0,0.05,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+16.804,HOVER,82,60,79,-179,-1,0,65,0,0,0,0,0.00,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+16.854,HOVER,82,60,79,-179,-1,0,65,0,0,0,0,0.05,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+16.904,HOVER,82,60,79,-179,-1,0,66,0,0,0,0,0.00,0.03,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+16.955,HOVER,82,60,79,-179,-1,0,66,0,0,0,0,0.05,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+17.005,HOVER,82,60,79,-179,-1,0,66,0,0,0,0,0.10,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+17.055,HOVER,82,60,79,-179,-1,0,66,0,0,0,0,0.03,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+17.109,HOVER,82,60,79,-179,-1,0,66,0,0,0,0,0.09,0.03,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+17.159,HOVER,82,60,79,-179,-1,0,66,0,0,0,0,0.04,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+17.209,HOVER,82,60,80,-179,-1,0,66,0,0,0,0,0.00,0.03,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+17.259,HOVER,82,60,80,-179,-1,0,66,0,0,0,0,0.05,0.03,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+17.310,HOVER,82,60,80,-179,-1,-1,66,0,0,0,0,0.00,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",-1,0,0
+17.360,HOVER,82,60,80,-179,-1,-1,66,0,0,0,0,0.05,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",-1,0,0
+17.410,HOVER,82,60,79,-179,-1,-2,66,0,0,0,0,0.00,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+17.460,HOVER,82,60,79,-179,-1,-2,66,0,0,0,0,0.05,0.03,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+17.510,HOVER,82,60,79,-179,-1,-2,66,0,0,0,0,0.10,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+17.560,HOVER,82,60,79,-179,-1,-3,66,0,0,0,0,0.04,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+17.610,HOVER,82,60,79,-179,-1,-3,66,0,0,0,0,0.09,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+17.660,HOVER,82,60,79,-179,-1,-3,66,0,0,0,0,0.03,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+17.711,HOVER,82,60,79,-179,-1,-3,66,0,0,0,0,0.08,0.03,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+17.761,HOVER,82,60,78,-179,0,-2,66,0,0,0,0,0.03,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",-1,0,0
+17.811,HOVER,82,60,78,-179,0,-2,66,0,0,0,0,0.08,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",-1,0,0
+17.861,HOVER,82,60,78,-179,0,-1,66,0,0,0,0,0.03,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",-1,0,0
+17.911,HOVER,82,60,78,-179,0,-1,66,0,0,0,0,0.08,0.03,"en el aire a 80 cm (estable, despegue 4.7 s)",-1,0,0
+17.961,HOVER,82,60,77,-179,0,0,66,0,0,0,0,0.03,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",-1,1,0
+18.011,HOVER,82,60,77,-179,0,0,66,0,0,0,0,0.08,0.03,"en el aire a 80 cm (estable, despegue 4.7 s)",-1,1,0
+18.061,HOVER,81,60,76,-179,0,1,66,0,0,0,0,0.02,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",-1,1,0
+18.112,HOVER,81,60,76,-179,0,1,66,0,0,0,0,0.07,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",-1,1,0
+18.162,HOVER,81,60,75,-179,0,1,66,0,0,0,0,0.02,0.03,"en el aire a 80 cm (estable, despegue 4.7 s)",-1,0,0
+18.213,HOVER,81,60,75,-179,0,1,66,0,0,0,0,0.01,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",-1,0,0
+18.263,HOVER,81,60,75,-179,0,1,66,0,0,0,0,0.06,0.03,"en el aire a 80 cm (estable, despegue 4.7 s)",-1,0,0
+18.313,HOVER,81,60,74,-179,0,0,66,0,0,0,0,0.01,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",-1,0,0
+18.363,HOVER,81,60,74,-179,0,0,66,0,0,0,0,0.06,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",-1,0,0
+18.414,HOVER,81,60,74,-179,0,0,66,0,0,0,0,0.03,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+18.465,HOVER,81,60,74,-179,0,0,66,0,0,0,0,0.08,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+18.515,HOVER,81,60,73,-179,0,0,66,0,0,0,0,0.02,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+18.567,HOVER,81,60,73,-179,0,0,66,0,0,0,0,0.07,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+18.617,HOVER,81,60,71,-179,-1,0,66,0,0,0,0,0.02,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+18.667,HOVER,81,60,71,-179,-1,0,66,0,0,0,0,0.07,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+18.718,HOVER,81,60,71,-179,-1,0,66,0,0,0,0,0.03,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+18.768,HOVER,81,60,71,-179,-1,0,66,0,0,0,0,0.08,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+18.818,HOVER,81,60,70,-179,-1,0,66,0,0,0,0,0.02,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+18.868,HOVER,81,60,70,-179,-1,0,66,0,0,0,0,0.07,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+18.918,HOVER,81,60,69,-179,-1,0,66,0,0,0,0,0.02,0.03,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+18.968,HOVER,81,60,69,-179,-1,0,66,0,0,0,0,0.07,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+19.019,HOVER,81,60,70,-179,-1,0,66,0,0,0,0,0.00,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+19.069,HOVER,81,60,70,-179,-1,0,66,0,0,0,0,0.05,0.03,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+19.119,HOVER,81,60,69,-179,-1,0,66,0,0,0,0,0.00,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+19.173,HOVER,81,60,69,-179,-1,0,66,0,0,0,0,0.05,0.03,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+19.223,HOVER,81,60,69,-179,-1,0,66,0,0,0,0,0.02,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+19.273,HOVER,81,60,69,-179,-1,0,66,0,0,0,0,0.07,0.05,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+19.324,HOVER,81,60,70,-179,-1,0,66,0,0,0,0,0.00,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+19.374,HOVER,81,60,70,-179,-1,0,66,0,0,0,0,0.05,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+19.424,HOVER,81,60,69,-179,-1,0,66,0,0,0,0,0.01,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+19.474,HOVER,81,60,69,-179,-1,0,66,0,0,0,0,0.06,0.03,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+19.524,HOVER,81,60,69,-179,-1,0,66,0,0,0,0,0.00,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+19.574,HOVER,81,60,69,-179,-1,0,66,0,0,0,0,0.05,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+19.625,HOVER,81,60,70,-179,-1,0,66,0,0,0,0,0.00,0.03,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+19.675,HOVER,81,60,70,-179,-1,0,66,0,0,0,0,0.05,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+19.725,HOVER,81,60,69,-179,-1,0,66,0,0,0,0,0.01,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+19.775,HOVER,81,60,69,-179,-1,0,66,0,0,0,0,0.06,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+19.825,HOVER,81,60,70,-179,-1,0,66,0,0,0,0,0.00,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+19.875,HOVER,81,60,70,-179,-1,0,66,0,0,0,0,0.05,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+19.925,HOVER,81,60,71,-179,0,0,66,0,0,0,0,0.00,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",-1,0,0
+19.976,HOVER,81,60,71,-179,0,0,66,0,0,0,0,0.05,0.03,"en el aire a 80 cm (estable, despegue 4.7 s)",-1,0,0
+20.026,HOVER,80,60,71,-179,0,0,66,0,0,0,0,0.00,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",-1,0,0
+20.076,HOVER,80,60,71,-179,0,0,66,0,0,0,0,0.05,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",-1,0,0
+20.126,HOVER,80,60,72,-179,0,0,66,0,0,0,0,0.01,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+20.177,HOVER,80,60,72,-179,0,0,66,0,0,0,0,0.06,0.03,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+20.227,HOVER,80,60,72,-179,0,0,66,0,0,0,0,0.00,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+20.277,HOVER,80,60,72,-179,0,0,66,0,0,0,0,0.05,0.05,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+20.327,HOVER,80,60,72,-179,-1,0,66,0,0,0,0,0.00,0.02,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+20.377,HOVER,80,60,72,-179,-1,0,66,0,0,0,0,0.05,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+20.429,HOVER,80,60,73,-179,-1,0,66,0,0,0,0,0.00,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+20.480,HOVER,80,60,73,-179,-1,0,66,0,0,0,0,0.05,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+20.530,HOVER,80,60,73,-179,-1,0,66,0,0,0,0,0.00,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+20.580,HOVER,80,60,73,-179,-1,0,66,0,0,0,0,0.05,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+20.630,HOVER,80,60,74,-179,-1,0,66,0,0,0,0,0.00,0.03,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+20.680,HOVER,80,60,74,-179,-1,0,66,0,0,0,0,0.05,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+20.730,HOVER,80,60,75,-179,-1,0,66,0,0,0,0,0.00,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+20.781,HOVER,80,60,75,-179,-1,0,66,0,0,0,0,0.05,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+20.836,HOVER,80,60,75,-179,-1,0,66,0,0,0,0,0.11,0.03,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+20.887,HOVER,80,60,75,-179,-1,0,66,0,0,0,0,0.05,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+20.937,HOVER,80,60,76,-179,-1,0,66,0,0,0,0,0.00,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+20.987,HOVER,80,60,76,-179,-1,0,66,0,0,0,0,0.05,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+21.037,HOVER,80,60,76,-179,-1,0,66,0,0,0,0,0.10,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+21.087,HOVER,80,60,77,-179,0,0,66,0,0,0,0,0.02,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+21.138,HOVER,80,60,77,-179,0,0,66,0,0,0,0,0.07,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+21.189,HOVER,80,60,77,-179,0,0,66,0,0,0,0,0.02,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+21.239,HOVER,80,60,78,-179,-1,0,66,0,0,0,0,0.00,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+21.289,HOVER,80,60,78,-179,-1,0,66,0,0,0,0,0.05,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+21.339,HOVER,80,60,78,-179,-1,0,66,0,0,0,0,0.00,0.03,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+21.389,HOVER,80,60,78,-179,-1,0,66,0,0,0,0,0.05,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+21.440,HOVER,80,60,78,-179,-1,0,66,0,0,0,0,0.10,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+21.490,HOVER,80,60,78,-179,-1,0,66,0,0,0,0,0.04,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+21.540,HOVER,80,60,78,-179,-1,0,66,0,0,0,0,0.09,0.01,"en el aire a 80 cm (estable, despegue 4.7 s)",0,0,0
+21.590,FLIP_CLIMB,80,60,78,-179,-1,0,66,0,0,0,0,0.03,0.01,subiendo a 130 cm para el flip,0,0,0
+21.640,FLIP_CLIMB,80,60,78,-179,-1,0,66,0,0,40,0,0.09,0.01,subiendo a 130 cm para el flip,0,0,0
+21.690,FLIP_CLIMB,80,60,78,-179,-1,0,66,0,0,40,0,0.03,0.01,subiendo a 130 cm para el flip,0,0,0
+21.740,FLIP_CLIMB,80,60,78,-179,-1,0,66,0,0,40,0,0.08,0.01,subiendo a 130 cm para el flip,0,0,0
+21.791,FLIP_CLIMB,80,60,79,-179,-1,0,66,0,0,40,0,0.03,0.01,subiendo a 130 cm para el flip,0,0,0
+21.841,FLIP_CLIMB,80,60,79,-179,-1,0,66,0,0,40,0,0.08,0.03,subiendo a 130 cm para el flip,0,0,0
+21.891,FLIP_CLIMB,80,60,80,-179,-1,0,66,0,0,40,0,0.03,0.01,subiendo a 130 cm para el flip,0,0,0
+21.941,FLIP_CLIMB,80,60,80,-179,-1,0,66,0,0,40,0,0.08,0.03,subiendo a 130 cm para el flip,0,0,0
+21.991,FLIP_CLIMB,80,60,82,-179,0,0,67,0,0,40,0,0.03,0.01,subiendo a 130 cm para el flip,0,0,-1
+22.041,FLIP_CLIMB,80,60,82,-179,0,0,67,0,0,40,0,0.08,0.03,subiendo a 130 cm para el flip,0,0,-1
+22.091,FLIP_CLIMB,79,70,84,-179,-1,0,67,0,0,40,0,0.02,0.01,subiendo a 130 cm para el flip,0,0,-2
+22.141,FLIP_CLIMB,79,70,84,-179,-1,0,67,0,0,40,0,0.07,0.01,subiendo a 130 cm para el flip,0,0,-2
+22.192,FLIP_CLIMB,79,70,87,-179,-1,0,67,0,0,40,0,0.01,0.01,subiendo a 130 cm para el flip,0,0,-2
+22.242,FLIP_CLIMB,79,70,87,-179,-1,0,67,0,0,40,0,0.06,0.01,subiendo a 130 cm para el flip,0,0,-2
+22.292,FLIP_CLIMB,79,70,90,-179,-1,0,67,0,0,40,0,0.02,0.05,subiendo a 130 cm para el flip,0,0,-2
+22.342,FLIP_CLIMB,79,70,93,-179,-1,0,67,0,0,40,0,0.01,0.01,subiendo a 130 cm para el flip,0,0,-3
+22.392,FLIP_CLIMB,79,70,93,-179,-1,0,67,0,0,40,0,0.06,0.01,subiendo a 130 cm para el flip,0,0,-3
+22.442,FLIP_CLIMB,79,80,95,-179,-1,-1,67,0,0,40,0,0.00,0.02,subiendo a 130 cm para el flip,0,0,-2
+22.494,FLIP_CLIMB,79,80,95,-179,-1,-1,67,0,0,40,0,0.05,0.01,subiendo a 130 cm para el flip,0,0,-2
+22.544,FLIP_CLIMB,79,80,99,-179,-1,0,67,0,0,40,0,0.00,0.01,subiendo a 130 cm para el flip,-1,0,-3
+22.594,FLIP_CLIMB,79,80,99,-179,-1,0,67,0,0,40,0,0.05,0.01,subiendo a 130 cm para el flip,-1,0,-3
+22.644,FLIP_CLIMB,79,80,101,-179,0,0,67,0,0,40,0,0.00,0.01,subiendo a 130 cm para el flip,-1,0,-2
+22.694,FLIP_CLIMB,79,80,101,-179,0,0,67,0,0,40,0,0.05,0.01,subiendo a 130 cm para el flip,-1,0,-2
+22.745,FLIP_CLIMB,79,90,104,-179,0,0,67,0,0,40,0,0.01,0.01,subiendo a 130 cm para el flip,-1,0,-2
+22.795,FLIP_CLIMB,79,90,104,-179,0,0,67,0,0,40,0,0.06,0.01,subiendo a 130 cm para el flip,-1,0,-2
+22.845,FLIP_CLIMB,79,90,107,-179,0,-1,67,0,0,40,0,0.01,0.01,subiendo a 130 cm para el flip,0,0,-2
+22.895,FLIP_CLIMB,79,90,107,-179,0,-1,67,0,0,38,0,0.06,0.01,subiendo a 130 cm para el flip,0,0,-2
+22.945,FLIP_CLIMB,79,90,109,-179,0,0,67,0,0,38,0,0.01,0.01,subiendo a 130 cm para el flip,0,0,-2
+22.995,FLIP_CLIMB,79,90,109,-179,0,0,67,0,0,36,0,0.06,0.01,subiendo a 130 cm para el flip,0,0,-2
+23.045,FLIP_CLIMB,79,90,113,-179,-1,0,67,0,0,36,0,0.00,0.01,subiendo a 130 cm para el flip,0,0,-2
+23.095,FLIP_CLIMB,79,90,113,-179,-1,0,67,0,0,32,0,0.05,0.01,subiendo a 130 cm para el flip,0,0,-2
+23.145,FLIP_CLIMB,79,100,116,-179,-1,0,67,0,0,32,0,0.01,0.01,subiendo a 130 cm para el flip,0,0,-2
+23.196,FLIP_CLIMB,79,100,116,-179,-1,0,67,0,0,29,0,0.06,0.01,subiendo a 130 cm para el flip,0,0,-2
+23.246,FLIP_CLIMB,79,100,118,-179,-2,0,67,0,0,29,0,0.01,0.01,subiendo a 130 cm para el flip,0,0,-2
+23.296,FLIP_CLIMB,79,100,118,-179,-2,0,67,0,0,27,0,0.06,0.05,subiendo a 130 cm para el flip,0,0,-2
+23.346,FLIP_CLIMB,79,100,121,-179,-1,0,67,0,0,27,0,0.00,0.01,subiendo a 130 cm para el flip,0,0,-2
+23.399,FLIP_CLIMB,79,100,121,-179,-1,0,67,0,0,24,0,0.05,0.01,subiendo a 130 cm para el flip,0,0,-2
+23.449,FLIP_CLIMB,79,100,123,-179,0,0,67,0,0,24,0,0.00,0.01,subiendo a 130 cm para el flip,-1,0,-2
+23.500,FLIP_CLIMB,79,100,123,-179,0,0,67,0,0,22,0,0.05,0.01,subiendo a 130 cm para el flip,-1,0,-2
+23.550,FLIP_CLIMB,79,110,126,-179,0,0,67,0,0,22,0,0.00,0.01,subiendo a 130 cm para el flip,0,0,-1
+23.601,FLIP_CLIMB,79,110,126,-179,0,0,67,0,0,19,0,0.05,0.03,subiendo a 130 cm para el flip,0,0,-1
+23.651,FLIP_CLIMB,79,110,129,-179,0,0,67,0,0,19,0,0.00,0.03,subiendo a 130 cm para el flip,-1,0,-1
+23.701,FLIP_CLIMB,79,110,129,-179,0,0,67,0,0,16,0,0.05,0.01,subiendo a 130 cm para el flip,-1,0,-1
+23.751,FLIP_CLIMB,79,110,131,-179,0,-1,67,0,0,16,0,0.00,0.03,subiendo a 130 cm para el flip,0,0,-1
+23.801,FLIP_CLIMB,79,110,131,-179,0,-1,67,0,0,15,0,0.05,0.01,subiendo a 130 cm para el flip,0,0,-1
+23.851,FLIP_CLIMB,79,110,132,-179,0,0,67,0,0,15,0,0.00,0.01,subiendo a 130 cm para el flip,0,0,-1
+23.904,FLIP_CLIMB,79,110,132,-179,0,0,67,0,0,15,0,0.05,0.01,subiendo a 130 cm para el flip,0,0,-1
+23.954,FLIP_CLIMB,78,110,132,-179,0,0,67,0,0,15,0,0.00,0.01,subiendo a 130 cm para el flip,0,0,-1
+24.004,FLIP_CLIMB,78,110,132,-179,0,0,67,0,0,15,0,0.05,0.01,subiendo a 130 cm para el flip,0,0,-1
+24.054,FLIP_CLIMB,78,120,134,-179,0,0,67,0,0,15,0,0.00,0.01,subiendo a 130 cm para el flip,-1,0,-1
+24.104,FLIP_CLIMB,78,120,134,-179,0,0,67,0,0,15,0,0.05,0.01,subiendo a 130 cm para el flip,-1,0,-1
+24.154,FLIP_CLIMB,78,120,133,-179,0,0,67,0,0,15,0,0.00,0.01,subiendo a 130 cm para el flip,0,0,0
+24.205,FLIP_CLIMB,78,120,133,-179,0,0,67,0,0,15,0,0.05,0.01,subiendo a 130 cm para el flip,0,0,0
+24.255,FLIP_CLIMB,78,120,135,-179,0,0,67,0,0,15,0,0.00,0.03,subiendo a 130 cm para el flip,0,0,0
+24.305,FLIP_CLIMB,78,120,135,-179,0,0,67,0,0,15,0,0.05,0.01,subiendo a 130 cm para el flip,0,0,0
+24.355,FLIP_CLIMB,78,120,135,-179,0,0,67,0,0,15,0,0.00,0.01,subiendo a 130 cm para el flip,0,0,0
+24.405,FLIP_CLIMB,78,120,135,-179,0,0,67,0,0,15,0,0.05,0.01,subiendo a 130 cm para el flip,0,0,0
+24.455,FLIP_CLIMB,78,120,135,-179,0,0,67,0,0,15,0,0.10,0.01,subiendo a 130 cm para el flip,0,0,0
+24.506,FLIP_CLIMB,78,120,133,-179,-1,0,67,0,0,15,0,0.01,0.01,subiendo a 130 cm para el flip,0,0,0
+24.556,FLIP_CLIMB,78,120,133,-179,-1,0,67,0,0,15,0,0.06,0.01,subiendo a 130 cm para el flip,0,0,0
+24.606,FLIP_CLIMB,78,120,134,-179,-1,0,67,0,0,15,0,0.03,0.03,subiendo a 130 cm para el flip,0,0,0
+24.656,FLIP_CLIMB,78,120,134,-179,-1,0,67,0,0,15,0,0.08,0.01,subiendo a 130 cm para el flip,0,0,0
+24.706,FLIP_CLIMB,78,120,134,-179,-1,0,67,0,0,15,0,0.01,0.01,subiendo a 130 cm para el flip,0,0,0
+24.757,FLIP_CLIMB,78,120,134,-179,-1,0,67,0,0,15,0,0.06,0.01,subiendo a 130 cm para el flip,0,0,0
+24.807,FLIP_CLIMB,78,120,136,-179,-1,0,67,0,0,15,0,0.03,0.03,subiendo a 130 cm para el flip,0,0,0
+24.857,FLIP_CLIMB,78,120,136,-179,-1,0,67,0,0,15,0,0.08,0.01,subiendo a 130 cm para el flip,0,0,0
+24.907,FLIP_CLIMB,78,120,136,-179,0,-1,67,0,0,15,0,0.02,0.01,subiendo a 130 cm para el flip,0,0,0
+24.957,FLIP_CLIMB,78,120,136,-179,0,-1,67,0,0,15,0,0.07,0.03,subiendo a 130 cm para el flip,0,0,0
+25.008,FLIP_CLIMB,78,120,137,-179,0,-1,68,0,0,15,0,0.01,0.01,subiendo a 130 cm para el flip,-1,0,0
+25.058,FLIP_CLIMB,78,120,137,-179,0,-1,68,0,0,15,0,0.06,0.01,subiendo a 130 cm para el flip,-1,0,0
+25.108,FLIP_CLIMB,78,120,138,-179,0,-1,68,0,0,15,0,0.01,0.01,subiendo a 130 cm para el flip,0,0,0
+25.158,FLIP_TEST,78,120,138,-179,0,-1,68,0,0,0,0,0.06,0.01,flip b a 128 cm,0,0,0
+25.209,FLIP_TEST,78,120,137,-179,0,0,68,0,0,0,0,0.02,0.01,flip b a 128 cm,0,0,0
+25.259,FLIP_TEST,78,120,137,-179,0,0,68,0,0,0,0,0.07,0.01,flip b a 128 cm,0,0,0
+25.309,FLIP_TEST,78,120,135,-179,0,0,68,0,0,0,0,0.01,0.01,flip b a 128 cm,0,0,0
+25.359,FLIP_TEST,78,120,138,178,0,0,68,0,0,0,0,0.01,0.01,flip b a 128 cm,0,0,-3
+25.410,FLIP_TEST,78,120,138,178,0,0,68,0,0,0,0,0.06,0.01,flip b a 128 cm,0,0,-3
+25.460,FLIP_TEST,78,130,149,175,3,0,68,0,0,0,0,0.01,0.01,flip b a 128 cm,0,0,-9
+25.510,FLIP_TEST,78,130,149,175,3,0,68,0,0,0,0,0.06,0.03,flip b a 128 cm,0,0,-9
+25.560,FLIP_TEST,78,140,356,165,62,-10,68,0,0,0,0,0.02,0.01,flip b a 128 cm,3,-1,-12
+25.610,FLIP_TEST,78,140,356,165,62,-10,68,0,0,0,0,0.08,0.01,flip b a 128 cm,3,-1,-12
+25.660,FLIP_TEST,78,150,326,3,-9,-177,68,0,0,0,0,0.00,0.01,flip b a 128 cm,10,-1,0
+25.710,FLIP_TEST,78,150,326,3,-9,-177,68,0,0,0,0,0.05,0.01,flip b a 128 cm,10,-1,0
+25.760,FLIP_TEST,78,140,173,-178,-43,0,68,0,0,0,0,0.02,0.01,flip b a 128 cm,3,-2,11
+25.811,FLIP_TEST,78,140,173,-178,-43,0,68,0,0,0,0,0.07,0.01,flip b a 128 cm,3,-2,11
+25.861,FLIP_TEST,78,130,143,-179,14,1,68,0,0,0,0,0.00,0.01,flip b a 128 cm,3,-3,7
+25.912,FLIP_TEST,78,130,143,-179,14,1,68,0,0,0,0,0.05,0.01,flip b a 128 cm,3,-3,7
+25.962,FLIP_TEST,77,120,129,-177,0,-1,67,0,0,0,0,0.00,0.01,flip b a 128 cm,5,-3,5
+26.012,FLIP_TEST,77,120,129,-177,0,-1,67,0,0,0,0,0.05,0.01,flip b a 128 cm,5,-3,5
+26.062,FLIP_TEST,77,120,122,-176,-5,-1,67,0,0,0,0,0.00,0.01,flip b a 128 cm,3,-2,2
+26.113,FLIP_TEST,77,120,122,-176,-5,-1,67,0,0,0,0,0.05,0.03,flip b a 128 cm,3,-2,2
+26.163,FLIP_TEST,77,120,117,-178,-4,-1,67,0,0,0,0,0.00,0.02,flip b a 128 cm,2,-2,0
+26.213,FLIP_RECOVER,77,120,117,-178,-4,-1,67,0,0,0,0,0.05,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",2,-2,0
+26.263,FLIP_RECOVER,77,120,113,-178,-2,-1,67,0,0,40,0,0.00,0.03,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",1,-2,-1
+26.313,FLIP_RECOVER,77,120,113,-178,-2,-1,67,0,0,40,0,0.05,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",1,-2,-1
+26.363,FLIP_RECOVER,77,120,111,-178,0,-2,67,0,0,40,0,0.00,0.03,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,-2,-2
+26.414,FLIP_RECOVER,77,120,111,-178,0,-2,67,0,0,40,0,0.05,0.04,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,-2,-2
+26.464,FLIP_RECOVER,77,120,109,-178,0,-2,67,0,0,40,0,0.00,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,-2,-3
+26.514,FLIP_RECOVER,77,120,109,-178,0,-2,67,0,0,40,0,0.05,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,-2,-3
+26.564,FLIP_RECOVER,77,120,110,-178,1,-1,67,0,0,40,0,0.01,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",1,0,-3
+26.614,FLIP_RECOVER,77,120,110,-178,1,-1,67,0,0,40,0,0.06,0.03,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",1,0,-3
+26.664,FLIP_RECOVER,77,130,108,-178,0,0,67,0,0,40,0,0.00,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,-3
+26.714,FLIP_RECOVER,77,130,108,-178,0,0,67,0,0,40,0,0.05,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,-3
+26.765,FLIP_RECOVER,77,130,109,-178,0,0,67,0,0,40,0,0.00,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,-3
+26.815,FLIP_RECOVER,77,130,109,-178,0,0,67,0,0,40,0,0.05,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,-3
+26.865,FLIP_RECOVER,77,130,109,-178,0,-2,67,0,0,40,0,0.00,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,-3
+26.915,FLIP_RECOVER,77,130,109,-178,0,-2,67,0,0,40,0,0.05,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,-3
+26.965,FLIP_RECOVER,77,140,109,-178,0,0,68,0,0,40,0,0.00,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,-3
+27.015,FLIP_RECOVER,77,140,109,-178,0,0,68,0,0,40,0,0.05,0.03,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,-3
+27.065,FLIP_RECOVER,77,140,109,-178,0,0,68,0,0,40,0,0.10,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,-3
+27.115,FLIP_RECOVER,77,140,109,-179,0,0,68,0,0,40,0,0.02,0.03,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,-3
+27.166,FLIP_RECOVER,77,140,109,-179,0,0,68,0,0,0,0,0.08,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,-3
+27.216,FLIP_RECOVER,77,140,110,-179,0,0,68,0,0,0,0,0.04,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,-4
+27.266,FLIP_RECOVER,77,140,110,-179,0,0,68,0,0,0,0,0.09,0.03,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,-4
+27.316,FLIP_RECOVER,77,150,109,-179,1,0,68,0,0,0,0,0.04,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,-3
+27.366,FLIP_RECOVER,77,150,109,-179,1,0,68,0,0,0,0,0.09,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,-3
+27.416,FLIP_RECOVER,77,150,109,-179,0,0,68,0,0,0,0,0.02,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,-3
+27.468,FLIP_RECOVER,77,150,109,-179,0,0,68,0,0,0,0,0.07,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,-3
+27.518,FLIP_RECOVER,77,150,109,-179,0,0,68,0,0,0,0,0.03,0.03,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,-2
+27.570,FLIP_RECOVER,77,150,109,-179,0,0,68,0,0,0,0,0.08,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,-2
+27.620,FLIP_RECOVER,77,160,107,-179,0,0,68,0,0,0,0,0.02,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,-2
+27.671,FLIP_RECOVER,77,160,107,-179,0,0,68,0,0,0,0,0.07,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,-2
+27.721,FLIP_RECOVER,77,160,106,-179,1,0,68,0,0,0,0,0.03,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,-2
+27.771,FLIP_RECOVER,77,160,106,-179,1,0,68,0,0,0,0,0.08,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,-2
+27.822,FLIP_RECOVER,77,160,104,-178,0,0,68,0,0,0,0,0.02,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,-2
+27.873,FLIP_RECOVER,77,160,104,-178,0,0,68,0,0,0,0,0.07,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,-2
+27.923,FLIP_RECOVER,77,160,103,-179,0,0,68,0,0,0,0,0.01,0.03,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,-1
+27.974,FLIP_RECOVER,77,160,103,-179,0,0,68,0,0,40,0,0.06,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,-1
+28.025,FLIP_RECOVER,76,160,102,-179,0,0,68,0,0,40,0,0.02,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,-1
+28.075,FLIP_RECOVER,76,160,102,-179,0,0,68,0,0,40,0,0.07,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,-1
+28.125,FLIP_RECOVER,76,160,100,-179,0,0,68,0,0,40,0,0.03,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,-1
+28.175,FLIP_RECOVER,76,160,100,-179,0,0,68,0,0,40,0,0.08,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,-1
+28.225,FLIP_RECOVER,76,160,98,-179,0,0,68,0,0,40,0,0.02,0.03,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",-1,0,0
+28.276,FLIP_RECOVER,76,160,98,-179,0,0,68,0,0,40,0,0.07,0.03,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",-1,0,0
+28.326,FLIP_RECOVER,76,160,96,-179,1,0,68,0,0,40,0,0.02,0.03,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+28.376,FLIP_RECOVER,76,160,96,-179,1,0,68,0,0,40,0,0.07,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+28.426,FLIP_RECOVER,76,150,94,-179,0,0,68,0,0,40,0,0.03,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+28.476,FLIP_RECOVER,76,150,94,-179,0,0,68,0,0,40,0,0.08,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+28.527,FLIP_RECOVER,76,150,91,-179,0,0,68,0,0,40,0,0.03,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+28.577,FLIP_RECOVER,76,150,91,-179,0,0,68,0,0,40,0,0.08,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+28.627,FLIP_RECOVER,76,150,93,-179,0,0,68,0,0,40,0,0.02,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+28.677,FLIP_RECOVER,76,150,93,-179,0,0,68,0,0,40,0,0.07,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+28.727,FLIP_RECOVER,76,160,94,-179,0,0,68,0,0,40,0,0.02,0.03,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,-1
+28.777,FLIP_RECOVER,76,160,94,-179,0,0,68,0,0,40,0,0.07,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,-1
+28.827,FLIP_RECOVER,76,160,94,-179,1,0,68,0,0,40,0,0.00,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",-1,0,-1
+28.877,FLIP_RECOVER,76,160,96,-179,1,0,68,0,0,-15,0,0.02,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,-2
+28.928,FLIP_RECOVER,76,160,96,-179,1,0,68,0,0,-15,0,0.07,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,-2
+28.978,FLIP_RECOVER,76,160,96,-179,1,0,68,0,0,-15,0,0.12,0.03,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,-2
+29.028,FLIP_RECOVER,76,160,99,-179,0,0,68,0,0,-15,0,0.00,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,-2
+29.078,FLIP_RECOVER,76,160,100,-179,0,-1,68,0,0,-15,0,0.02,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,-2
+29.128,FLIP_RECOVER,76,160,100,-179,0,-1,68,0,0,-15,0,0.07,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,-2
+29.178,FLIP_RECOVER,76,160,101,-179,0,-1,68,0,0,-15,0,0.01,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,-1
+29.228,FLIP_RECOVER,76,160,101,-179,0,-1,68,0,0,-15,0,0.06,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,-1
+29.278,FLIP_RECOVER,76,170,100,-179,0,0,68,0,0,-15,0,0.00,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+29.329,FLIP_RECOVER,76,170,100,-179,0,0,68,0,0,-15,0,0.05,0.03,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+29.379,FLIP_RECOVER,76,170,100,-179,0,0,68,0,0,-15,0,0.01,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+29.433,FLIP_RECOVER,76,170,100,-179,0,0,68,0,0,-15,0,0.06,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+29.483,FLIP_RECOVER,76,170,99,-179,0,0,68,0,0,-15,0,0.00,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+29.533,FLIP_RECOVER,76,170,99,-179,0,0,68,0,0,-15,0,0.05,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+29.584,FLIP_RECOVER,76,160,99,-179,0,0,68,0,0,-15,0,0.00,0.03,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+29.634,FLIP_RECOVER,76,160,99,-179,0,0,68,0,0,-15,0,0.05,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+29.684,FLIP_RECOVER,76,160,97,-179,0,0,68,0,0,-15,0,0.00,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+29.736,FLIP_RECOVER,76,160,97,-179,0,0,68,0,0,-15,0,0.05,0.03,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+29.786,FLIP_RECOVER,76,160,97,-179,0,0,68,0,0,-15,0,0.00,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+29.837,FLIP_RECOVER,76,160,97,-179,0,0,68,0,0,-15,0,0.05,0.03,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+29.888,FLIP_RECOVER,76,160,95,-179,0,0,68,0,0,-15,0,0.00,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+29.938,FLIP_RECOVER,76,160,95,-179,0,0,68,0,0,-15,0,0.05,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+29.988,FLIP_RECOVER,75,160,96,-179,0,0,68,0,0,-15,0,0.01,0.03,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+30.038,FLIP_RECOVER,75,160,96,-179,0,0,68,0,0,-15,0,0.06,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+30.088,FLIP_RECOVER,75,160,96,-179,0,0,68,0,0,-15,0,0.00,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+30.138,FLIP_RECOVER,75,160,96,-179,0,0,68,0,0,-15,0,0.05,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+30.188,FLIP_RECOVER,75,160,95,-179,0,0,68,0,0,-15,0,0.00,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+30.238,FLIP_RECOVER,75,160,95,-179,0,0,68,0,0,-15,0,0.05,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+30.288,FLIP_RECOVER,75,160,96,-179,0,-1,68,0,0,-15,0,0.00,0.03,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+30.339,FLIP_RECOVER,75,160,96,-179,0,-1,68,0,0,-15,0,0.05,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+30.389,FLIP_RECOVER,75,160,94,-179,0,-1,68,0,0,-15,0,0.00,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+30.439,FLIP_RECOVER,75,160,94,-179,0,-1,68,0,0,-15,0,0.05,0.03,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+30.489,FLIP_RECOVER,75,160,95,-179,0,0,68,0,0,-15,0,0.00,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+30.539,FLIP_RECOVER,75,160,95,-179,0,0,68,0,0,-15,0,0.05,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+30.589,FLIP_RECOVER,75,160,94,-179,0,0,68,0,0,-15,0,0.00,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+30.641,FLIP_RECOVER,75,160,94,-179,0,0,68,0,0,-15,0,0.05,0.03,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+30.691,FLIP_RECOVER,75,160,94,-179,0,0,68,0,0,-15,0,0.00,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+30.741,FLIP_RECOVER,75,160,94,-179,0,0,68,0,0,-15,0,0.05,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+30.791,FLIP_RECOVER,75,160,91,-179,0,0,68,0,0,-15,0,0.00,0.03,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+30.841,FLIP_RECOVER,75,160,91,-179,0,0,68,0,0,-15,0,0.05,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+30.891,FLIP_RECOVER,75,160,91,-179,0,0,68,0,0,-15,0,0.10,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+30.942,FLIP_RECOVER,75,160,92,-179,0,0,68,0,0,-15,0,0.05,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+30.992,FLIP_RECOVER,75,160,92,-179,0,0,68,0,0,-15,0,0.10,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+31.042,FLIP_RECOVER,75,160,93,-179,0,0,69,0,0,-15,0,0.04,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+31.092,FLIP_RECOVER,75,160,93,-179,0,0,69,0,0,-15,0,0.09,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+31.142,FLIP_RECOVER,75,160,93,-179,0,0,69,0,0,-15,0,0.02,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+31.192,FLIP_RECOVER,75,160,93,-179,0,0,69,0,0,-15,0,0.07,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+31.243,FLIP_RECOVER,75,160,94,-179,0,0,69,0,0,-15,0,0.02,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+31.294,FLIP_RECOVER,75,160,94,-179,0,0,69,0,0,-15,0,0.07,0.05,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+31.345,FLIP_RECOVER,75,160,95,-179,0,0,69,0,0,-15,0,0.02,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+31.395,FLIP_RECOVER,75,160,95,-179,0,0,69,0,0,-15,0,0.07,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+31.445,FLIP_RECOVER,75,160,96,-179,0,0,69,0,0,-15,0,0.04,0.03,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+31.495,FLIP_RECOVER,75,160,96,-179,0,0,69,0,0,-15,0,0.09,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+31.545,FLIP_RECOVER,75,160,96,-179,1,0,69,0,0,-15,0,0.04,0.03,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+31.595,FLIP_RECOVER,75,160,96,-179,1,0,69,0,0,-15,0,0.09,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+31.645,FLIP_RECOVER,75,160,96,-179,0,0,69,0,0,-15,0,0.03,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+31.696,FLIP_RECOVER,75,160,96,-179,0,0,69,0,0,-15,0,0.08,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+31.746,FLIP_RECOVER,75,160,97,-179,1,0,69,0,0,-15,0,0.02,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+31.800,FLIP_RECOVER,75,160,97,-179,1,0,69,0,0,-15,0,0.07,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+31.850,FLIP_RECOVER,75,160,96,-179,0,-1,69,0,0,-15,0,0.01,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+31.902,FLIP_RECOVER,75,160,96,-179,0,-1,69,0,0,-15,0,0.07,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+31.952,FLIP_RECOVER,75,160,97,-179,0,-1,69,0,0,-15,0,0.03,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+32.002,FLIP_RECOVER,75,160,97,-179,0,-1,69,0,0,-15,0,0.08,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+32.053,FLIP_RECOVER,74,160,98,-179,0,-1,68,0,0,-15,0,0.03,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+32.103,FLIP_RECOVER,74,160,98,-179,0,-1,68,0,0,-15,0,0.08,0.05,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+32.153,FLIP_RECOVER,74,160,97,-179,0,-1,68,0,0,-15,0,0.01,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+32.203,FLIP_RECOVER,74,160,97,-179,0,-1,68,0,0,-15,0,0.06,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+32.253,FLIP_RECOVER,74,160,97,-179,0,-1,68,0,0,-15,0,0.03,0.03,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+32.303,FLIP_RECOVER,74,160,97,-179,0,-1,68,0,0,-15,0,0.08,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+32.353,FLIP_RECOVER,74,160,100,-179,0,0,68,0,0,-15,0,0.02,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+32.404,FLIP_RECOVER,74,160,98,-179,0,-1,68,0,0,-15,0,0.01,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+32.454,FLIP_RECOVER,74,160,98,-179,0,-1,68,0,0,-15,0,0.06,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+32.504,FLIP_RECOVER,74,160,99,-179,0,-1,68,0,0,-15,0,0.03,0.03,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+32.554,FLIP_RECOVER,74,160,99,-179,0,-1,68,0,0,-15,0,0.08,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+32.604,FLIP_RECOVER,74,160,98,-179,0,-1,68,0,0,-15,0,0.00,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+32.654,FLIP_RECOVER,74,160,98,-179,0,-1,68,0,0,-15,0,0.05,0.02,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+32.704,FLIP_RECOVER,74,160,99,-179,0,-1,68,0,0,-15,0,0.00,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+32.754,FLIP_RECOVER,74,160,99,-179,0,-1,68,0,0,-15,0,0.05,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+32.805,FLIP_RECOVER,74,160,98,-179,0,-1,68,0,0,-15,0,0.02,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+32.855,FLIP_RECOVER,74,160,98,-179,0,-1,68,0,0,-15,0,0.07,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+32.905,FLIP_RECOVER,74,160,99,-179,0,-1,68,0,0,-15,0,0.00,0.02,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+32.955,FLIP_RECOVER,74,160,99,-179,0,-1,68,0,0,-15,0,0.05,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+33.005,FLIP_RECOVER,74,160,99,-179,0,-1,68,0,0,-15,0,0.10,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+33.055,FLIP_RECOVER,74,160,100,-179,0,0,69,0,0,-15,0,0.00,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+33.107,FLIP_RECOVER,74,160,99,-179,1,0,69,0,0,-15,0,0.00,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+33.158,FLIP_RECOVER,74,160,99,-179,1,0,69,0,0,-15,0,0.05,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+33.208,FLIP_RECOVER,74,160,99,-179,0,0,69,0,0,-15,0,0.01,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+33.258,FLIP_RECOVER,74,160,99,-179,0,0,69,0,0,-15,0,0.06,0.03,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+33.308,FLIP_RECOVER,74,160,101,-179,0,0,69,0,0,-15,0,0.00,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+33.358,FLIP_RECOVER,74,160,101,-179,0,0,69,0,0,-15,0,0.05,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+33.409,FLIP_RECOVER,74,160,101,-179,0,0,69,0,0,-15,0,0.00,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+33.459,FLIP_RECOVER,74,160,101,-179,0,0,69,0,0,-15,0,0.05,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+33.509,FLIP_RECOVER,74,160,100,-179,0,0,69,0,0,-15,0,0.00,0.03,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+33.559,FLIP_RECOVER,74,160,100,-179,0,0,69,0,0,-15,0,0.05,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+33.609,FLIP_RECOVER,74,160,100,-179,0,0,69,0,0,-15,0,0.00,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+33.659,FLIP_RECOVER,74,160,100,-179,0,0,69,0,0,-15,0,0.05,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+33.709,FLIP_RECOVER,74,160,100,-179,0,-1,69,0,0,-15,0,0.01,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+33.760,FLIP_RECOVER,74,160,100,-179,0,-1,69,0,0,-15,0,0.06,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+33.810,FLIP_RECOVER,74,160,100,-179,0,0,69,0,0,-15,0,0.00,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+33.860,FLIP_RECOVER,74,160,100,-179,0,0,69,0,0,-15,0,0.05,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+33.910,FLIP_RECOVER,74,160,100,-179,0,0,69,0,0,-15,0,0.00,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+33.960,FLIP_RECOVER,74,160,100,-179,0,0,69,0,0,-15,0,0.05,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+34.011,FLIP_RECOVER,73,160,100,-179,0,0,69,0,0,-15,0,0.00,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+34.061,FLIP_RECOVER,73,160,100,-179,0,0,69,0,0,-15,0,0.05,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+34.111,FLIP_RECOVER,73,160,99,-179,0,0,69,0,0,-15,0,0.00,0.03,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+34.162,FLIP_RECOVER,73,160,99,-179,0,0,69,0,0,-15,0,0.05,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+34.212,FLIP_RECOVER,73,160,99,-179,0,0,69,0,0,-15,0,0.10,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+34.262,FLIP_RECOVER,73,150,98,-179,0,0,69,0,0,-15,0,0.02,0.03,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+34.313,FLIP_RECOVER,73,150,98,-179,0,0,69,0,0,-15,0,0.00,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+34.363,FLIP_RECOVER,73,150,98,-179,0,0,69,0,0,-15,0,0.05,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+34.413,FLIP_RECOVER,73,150,98,-179,0,0,69,0,0,-15,0,0.10,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+34.463,FLIP_RECOVER,73,150,98,-179,0,-1,69,0,0,-15,0,0.03,0.03,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+34.513,FLIP_RECOVER,73,150,98,-179,0,-1,69,0,0,-15,0,0.08,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+34.563,FLIP_RECOVER,73,150,97,-179,0,0,69,0,0,-15,0,0.03,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+34.614,FLIP_RECOVER,73,150,97,-179,0,0,69,0,0,-15,0,0.08,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+34.665,FLIP_RECOVER,73,150,98,-179,0,0,69,0,0,-15,0,0.03,0.03,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+34.715,FLIP_RECOVER,73,150,98,-179,0,0,69,0,0,-15,0,0.08,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+34.768,FLIP_RECOVER,73,150,98,-179,0,0,69,0,0,-15,0,0.04,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+34.818,FLIP_RECOVER,73,150,98,-179,0,0,69,0,0,-15,0,0.09,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+34.868,FLIP_RECOVER,73,150,100,-179,0,-1,69,0,0,-15,0,0.04,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+34.918,FLIP_RECOVER,73,150,100,-179,0,-1,69,0,0,-15,0,0.09,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+34.970,FLIP_RECOVER,73,150,100,-179,0,-1,69,0,0,-15,0,0.01,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+35.020,FLIP_RECOVER,73,150,100,-179,0,-1,69,0,0,-15,0,0.06,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+35.070,FLIP_RECOVER,73,150,101,-179,0,-1,69,0,0,-15,0,0.00,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+35.120,FLIP_RECOVER,73,150,101,-179,0,-1,69,0,0,-15,0,0.05,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+35.171,FLIP_RECOVER,73,150,100,-179,0,0,69,0,0,-15,0,0.02,0.03,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+35.221,FLIP_RECOVER,73,150,100,-179,0,0,69,0,0,-15,0,0.07,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+35.271,FLIP_RECOVER,73,150,101,-179,0,0,69,0,0,-15,0,0.02,0.05,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+35.321,FLIP_RECOVER,73,150,101,-179,0,0,69,0,0,-15,0,0.07,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+35.372,FLIP_RECOVER,73,150,100,-179,0,0,69,0,0,-15,0,0.02,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+35.422,FLIP_RECOVER,73,150,100,-179,0,0,69,0,0,-15,0,0.07,0.03,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+35.472,FLIP_RECOVER,73,150,100,-179,1,0,69,0,0,-15,0,0.01,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+35.522,FLIP_RECOVER,73,150,100,-179,1,0,69,0,0,-15,0,0.06,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+35.572,FLIP_RECOVER,73,150,100,-179,1,0,69,0,0,-15,0,0.02,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+35.622,FLIP_RECOVER,73,150,100,-179,1,0,69,0,0,-15,0,0.07,0.03,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+35.672,FLIP_RECOVER,73,150,100,-179,1,0,69,0,0,-15,0,0.02,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+35.723,FLIP_RECOVER,73,150,100,-179,1,0,69,0,0,-15,0,0.07,0.03,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+35.773,FLIP_RECOVER,73,150,99,-179,0,0,69,0,0,-15,0,0.01,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+35.823,FLIP_RECOVER,73,150,99,-179,0,0,69,0,0,-15,0,0.06,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+35.873,FLIP_RECOVER,73,150,100,-179,0,0,69,0,0,-15,0,0.02,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+35.923,FLIP_RECOVER,73,150,100,-179,0,0,69,0,0,-15,0,0.07,0.03,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+35.973,FLIP_RECOVER,73,150,99,-179,0,0,69,0,0,-15,0,0.01,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+36.023,FLIP_RECOVER,73,150,99,-179,0,0,69,0,0,-15,0,0.06,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+36.073,FLIP_RECOVER,72,150,97,-179,0,-1,70,0,0,-15,0,0.03,0.03,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+36.124,FLIP_RECOVER,72,150,97,-179,0,-1,70,0,0,-15,0,0.08,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+36.174,FLIP_RECOVER,72,150,97,-179,0,-1,70,0,0,-15,0,0.01,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+36.224,FLIP_RECOVER,72,150,97,-179,0,-1,70,0,0,-15,0,0.06,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+36.274,FLIP_RECOVER,72,150,97,-179,0,-1,70,0,0,-15,0,0.01,0.03,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+36.324,FLIP_RECOVER,72,150,97,-179,0,-1,70,0,0,-15,0,0.06,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+36.374,FLIP_RECOVER,72,150,95,-179,0,-1,70,0,0,-15,0,0.02,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+36.424,FLIP_RECOVER,72,150,95,-179,0,-1,70,0,0,-15,0,0.07,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+36.474,FLIP_RECOVER,72,150,95,-179,0,-1,70,0,0,-15,0,0.01,0.03,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+36.524,FLIP_RECOVER,72,150,95,-179,0,0,70,0,0,-15,0,0.00,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+36.574,FLIP_RECOVER,72,150,95,-179,0,0,70,0,0,-15,0,0.05,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+36.625,FLIP_RECOVER,72,150,94,-179,0,0,70,0,0,-15,0,0.01,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+36.675,FLIP_RECOVER,72,150,94,-179,0,0,70,0,0,-15,0,0.06,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+36.725,FLIP_RECOVER,72,150,94,-179,0,-1,70,0,0,-15,0,0.00,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+36.775,FLIP_RECOVER,72,150,94,-179,0,-1,70,0,0,-15,0,0.05,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+36.826,FLIP_RECOVER,72,150,93,-179,0,-1,70,0,0,-15,0,0.00,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+36.876,FLIP_RECOVER,72,150,93,-179,0,-1,70,0,0,-15,0,0.05,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+36.926,FLIP_RECOVER,72,150,94,-179,0,-1,70,0,0,-15,0,0.01,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+36.976,FLIP_RECOVER,72,150,94,-179,0,-1,70,0,0,-15,0,0.06,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+37.026,FLIP_RECOVER,72,150,92,-179,0,-1,70,0,0,-15,0,0.00,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+37.076,FLIP_RECOVER,72,150,92,-179,0,-1,70,0,0,-15,0,0.05,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+37.127,FLIP_RECOVER,72,150,91,-179,0,0,70,0,0,-15,0,0.00,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+37.177,FLIP_RECOVER,72,150,91,-179,0,0,70,0,0,-15,0,0.05,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+37.227,FLIP_RECOVER,72,150,89,-179,0,0,70,0,0,-15,0,0.00,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+37.277,FLIP_RECOVER,72,150,89,-179,0,0,70,0,0,-15,0,0.05,0.03,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+37.327,FLIP_RECOVER,72,140,90,-179,0,0,70,0,0,-15,0,0.00,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+37.377,FLIP_RECOVER,72,140,90,-179,0,0,70,0,0,-15,0,0.05,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+37.427,FLIP_RECOVER,72,140,88,-179,0,0,70,0,0,-15,0,0.00,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+37.477,FLIP_RECOVER,72,140,88,-179,0,0,70,0,0,-15,0,0.05,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+37.529,FLIP_RECOVER,72,140,88,-179,0,0,70,0,0,-15,0,0.10,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+37.579,FLIP_RECOVER,72,140,88,-179,0,0,70,0,0,-15,0,0.05,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+37.630,FLIP_RECOVER,72,140,88,-179,0,0,70,0,0,-15,0,0.10,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+37.680,FLIP_RECOVER,72,140,87,-179,0,0,70,0,0,-15,0,0.04,0.03,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+37.732,FLIP_RECOVER,72,140,87,-179,0,0,70,0,0,-15,0,0.09,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+37.782,FLIP_RECOVER,72,140,86,-179,0,0,70,0,0,-15,0,0.03,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+37.834,FLIP_RECOVER,72,140,86,-179,0,0,70,0,0,-15,0,0.08,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+37.884,FLIP_RECOVER,72,140,85,-179,0,0,70,0,0,-15,0,0.02,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+37.935,FLIP_RECOVER,72,140,85,-179,0,0,70,0,0,-15,0,0.07,0.03,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+37.985,FLIP_RECOVER,72,140,83,-179,0,0,70,0,0,-15,0,0.05,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+38.037,FLIP_RECOVER,71,140,82,-179,0,0,70,0,0,0,0,0.00,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+38.087,FLIP_RECOVER,71,140,82,-179,0,0,70,0,0,0,0,0.05,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+38.138,FLIP_RECOVER,71,140,82,-179,0,0,70,0,0,0,0,0.10,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+38.188,FLIP_RECOVER,71,140,82,-179,0,0,70,0,0,0,0,0.03,0.01,"flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna",0,0,0
+38.238,HOVER,71,140,82,-179,0,0,70,0,0,0,0,0.08,0.01,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+38.288,HOVER,71,140,81,-179,0,0,70,0,0,0,0,0.04,0.03,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+38.338,HOVER,71,140,81,-179,0,0,70,0,0,0,0,0.09,0.01,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+38.388,HOVER,71,140,82,-179,0,-1,70,0,0,0,0,0.03,0.01,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+38.439,HOVER,71,140,82,-179,0,-1,70,0,0,0,0,0.08,0.01,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+38.489,HOVER,71,140,82,-179,0,-1,70,0,0,0,0,0.05,0.03,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+38.539,HOVER,71,140,82,-179,0,-1,70,0,0,0,0,0.10,0.01,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+38.589,HOVER,71,140,82,-179,0,-1,70,0,0,0,0,0.04,0.03,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+38.639,HOVER,71,140,82,-179,0,-1,70,0,0,0,0,0.09,0.01,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+38.689,HOVER,71,140,83,-179,0,-1,70,0,0,0,0,0.03,0.01,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+38.739,HOVER,71,140,83,-179,0,-1,70,0,0,0,0,0.08,0.01,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+38.790,HOVER,71,140,83,-179,0,0,70,0,0,0,0,0.03,0.01,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+38.840,HOVER,71,140,83,-179,0,0,70,0,0,0,0,0.08,0.01,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+38.890,HOVER,71,140,83,-179,0,-1,70,0,0,0,0,0.03,0.01,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+38.940,HOVER,71,140,83,-179,0,-1,70,0,0,0,0,0.08,0.01,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+38.990,HOVER,71,140,85,-179,0,-1,70,0,0,0,0,0.04,0.01,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+39.041,HOVER,71,140,85,-179,0,-1,70,0,0,0,0,0.09,0.01,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+39.091,HOVER,71,140,85,-179,0,-1,70,0,0,0,0,0.01,0.01,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+39.142,HOVER,71,140,85,-179,0,-1,70,0,0,0,0,0.06,0.03,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+39.192,HOVER,71,140,84,-179,0,-1,70,0,0,0,0,0.01,0.01,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+39.242,HOVER,71,140,84,-179,0,-1,70,0,0,0,0,0.06,0.01,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+39.292,HOVER,71,140,84,-179,0,-1,70,0,0,0,0,0.00,0.03,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+39.343,HOVER,71,140,84,-179,0,-1,70,0,0,0,0,0.05,0.01,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+39.396,HOVER,71,140,83,-179,0,-1,70,0,0,0,0,0.02,0.01,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+39.446,HOVER,71,140,83,-179,0,-1,70,0,0,0,0,0.07,0.03,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+39.497,HOVER,71,140,83,-179,0,-1,70,0,0,0,0,0.01,0.01,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+39.547,HOVER,71,140,83,-179,0,-1,70,0,0,0,0,0.06,0.03,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+39.597,HOVER,71,140,83,-179,0,0,70,0,0,0,0,0.03,0.01,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+39.647,HOVER,71,140,83,-179,0,0,70,0,0,0,0,0.08,0.01,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+39.697,HOVER,71,140,82,-179,1,0,70,0,0,0,0,0.00,0.01,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+39.747,HOVER,71,140,82,-179,1,0,70,0,0,0,0,0.05,0.01,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+39.798,HOVER,71,140,83,-179,0,0,70,0,0,0,0,0.00,0.03,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+39.848,HOVER,71,140,83,-179,0,0,70,0,0,0,0,0.05,0.01,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+39.902,HOVER,71,140,83,-179,0,-1,70,0,0,0,0,0.01,0.01,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+39.952,HOVER,71,140,83,-179,0,-1,70,0,0,0,0,0.06,0.01,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+40.002,HOVER,70,140,84,-179,0,-1,70,0,0,0,0,0.02,0.03,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+40.052,HOVER,70,140,84,-179,0,-1,70,0,0,0,0,0.07,0.01,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+40.103,HOVER,70,140,85,-179,0,-1,70,0,0,0,0,0.00,0.01,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+40.153,HOVER,70,140,85,-179,0,-1,70,0,0,0,0,0.05,0.01,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+40.203,HOVER,70,140,86,-179,0,-1,70,0,0,0,0,0.02,0.01,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+40.253,HOVER,70,140,87,-179,0,-1,70,0,0,0,0,0.01,0.01,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+40.303,HOVER,70,140,87,-179,0,-1,70,0,0,0,0,0.06,0.01,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+40.354,HOVER,70,140,88,-179,0,-1,70,0,0,0,0,0.00,0.01,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+40.404,HOVER,70,140,88,-179,0,-1,70,0,0,0,0,0.05,0.03,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+40.454,HOVER,70,140,88,-179,1,-1,70,0,0,0,0,0.02,0.01,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+40.504,HOVER,70,140,88,-179,1,-1,70,0,0,0,0,0.07,0.01,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+40.554,HOVER,70,140,89,-179,0,-1,70,0,0,0,0,0.00,0.01,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+40.604,HOVER,70,140,89,-179,0,-1,70,0,0,0,0,0.05,0.01,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+40.655,HOVER,70,140,90,-179,0,-1,70,0,0,0,0,0.00,0.03,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+40.705,HOVER,70,140,90,-179,0,-1,70,0,0,0,0,0.05,0.03,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+40.755,HOVER,70,140,90,-179,1,0,70,0,0,0,0,0.00,0.01,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+40.805,HOVER,70,140,90,-179,1,0,70,0,0,0,0,0.05,0.01,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+40.855,HOVER,70,140,93,-179,1,0,70,0,0,0,0,0.00,0.01,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+40.905,HOVER,70,140,93,-179,1,0,70,0,0,0,0,0.05,0.01,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+40.955,HOVER,70,140,93,-179,0,-2,70,0,0,0,0,0.00,0.01,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+41.005,HOVER,70,140,93,-179,0,-2,70,0,0,0,0,0.05,0.01,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+41.059,HOVER,70,140,94,-179,0,-1,70,0,0,0,0,0.00,0.03,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+41.109,HOVER,70,140,94,-179,0,-1,70,0,0,0,0,0.05,0.01,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+41.159,HOVER,70,140,95,-179,0,-1,70,0,0,0,0,0.01,0.01,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+41.212,HOVER,70,140,95,-179,0,-1,70,0,0,0,0,0.06,0.03,"altura recuperada: 72 cm, minima 72 cm (flip HECHO: inclinacion max 177 grados, altura min 107 cm, respuesta ninguna)",0,0,0
+41.262,LANDING,70,140,94,-179,0,-1,70,0,0,0,0,0.00,0.03,fin de la prueba,0,0,0
+41.312,LANDING,70,140,94,-179,0,-1,70,0,0,0,0,0.05,0.01,fin de la prueba,0,0,0
+41.362,LANDING,70,140,95,-179,0,-1,70,0,0,0,0,0.00,0.01,fin de la prueba,0,0,0
+41.412,LANDING,70,140,95,-179,0,-1,70,0,0,0,0,0.05,0.03,fin de la prueba,0,0,0
+41.463,LANDING,70,140,95,-179,0,-1,70,0,0,0,0,0.00,0.01,fin de la prueba,0,0,0
+41.513,LANDING,70,140,95,-179,0,-1,70,0,0,0,0,0.05,0.01,fin de la prueba,0,0,0
+41.563,LANDING,70,140,95,-179,0,-1,70,0,0,0,0,0.10,0.01,fin de la prueba,0,0,0
+41.613,LANDING,70,150,95,-179,0,-1,70,0,0,0,0,0.02,0.01,fin de la prueba,0,0,0
+41.663,LANDING,70,150,94,-179,0,-1,70,0,0,0,0,0.00,0.01,fin de la prueba,0,0,0
+41.714,LANDING,70,150,94,-179,0,-1,70,0,0,0,0,0.05,0.03,fin de la prueba,0,0,0
+41.764,LANDING,70,150,94,-179,0,-1,70,0,0,0,0,0.00,0.01,fin de la prueba,0,0,0
+41.814,LANDING,70,150,94,-179,0,-1,70,0,0,0,0,0.05,0.01,fin de la prueba,0,0,0
+41.864,LANDING,70,150,94,-179,0,-1,70,0,0,0,0,0.10,0.03,fin de la prueba,0,0,0
+41.914,LANDING,70,150,95,-179,0,0,70,0,0,0,0,0.04,0.01,fin de la prueba,0,0,0
+41.965,LANDING,69,150,94,-179,1,0,70,0,0,0,0,0.00,0.01,fin de la prueba,0,0,1
+42.016,LANDING,69,150,94,-179,1,0,70,0,0,0,0,0.05,0.01,fin de la prueba,0,0,1
+42.066,LANDING,69,150,94,-179,1,0,70,0,0,0,0,0.10,0.01,fin de la prueba,0,0,1
+42.116,LANDING,69,150,93,-179,1,0,71,0,0,0,0,0.03,0.03,fin de la prueba,0,0,1
+42.166,LANDING,69,150,93,-179,1,0,71,0,0,0,0,0.08,0.01,fin de la prueba,0,0,1
+42.216,LANDING,69,140,89,-179,1,0,71,0,0,0,0,0.04,0.01,fin de la prueba,0,0,2
+42.266,LANDING,69,140,89,-179,1,0,71,0,0,0,0,0.10,0.03,fin de la prueba,0,0,2
+42.317,LANDING,69,140,86,-179,1,0,71,0,0,0,0,0.04,0.01,fin de la prueba,0,0,3
+42.367,LANDING,69,140,86,-179,1,0,71,0,0,0,0,0.09,0.01,fin de la prueba,0,0,3
+42.418,LANDING,69,140,82,-179,1,0,71,0,0,0,0,0.02,0.01,fin de la prueba,0,0,4
+42.468,LANDING,69,140,82,-179,1,0,71,0,0,0,0,0.07,0.01,fin de la prueba,0,0,4
+42.518,LANDING,69,130,78,-179,0,-1,71,0,0,0,0,0.04,0.03,fin de la prueba,0,0,5
+42.568,LANDING,69,130,78,-179,0,-1,71,0,0,0,0,0.09,0.01,fin de la prueba,0,0,5
+42.619,LANDING,69,130,74,-179,0,0,71,0,0,0,0,0.03,0.01,fin de la prueba,0,0,5
+42.669,LANDING,69,130,74,-179,0,0,71,0,0,0,0,0.08,0.01,fin de la prueba,0,0,5
+42.719,LANDING,69,120,70,-179,0,0,71,0,0,0,0,0.03,0.03,fin de la prueba,0,0,5
+42.769,LANDING,69,120,70,-179,0,0,71,0,0,0,0,0.08,0.01,fin de la prueba,0,0,5
+42.819,LANDING,69,120,66,-179,1,0,71,0,0,0,0,0.02,0.01,fin de la prueba,0,0,5
+42.870,LANDING,69,120,66,-179,1,0,71,0,0,0,0,0.07,0.01,fin de la prueba,0,0,5
+42.920,LANDING,69,110,61,-179,1,0,71,0,0,0,0,0.01,0.03,fin de la prueba,0,0,5
+42.970,LANDING,69,110,61,-179,1,0,71,0,0,0,0,0.06,0.01,fin de la prueba,0,0,5
+43.020,LANDING,69,110,57,-179,0,-1,71,0,0,0,0,0.03,0.01,fin de la prueba,0,0,5
+43.070,LANDING,69,110,57,-179,0,-1,71,0,0,0,0,0.08,0.03,fin de la prueba,0,0,5
+43.121,LANDING,69,100,52,-179,1,0,70,0,0,0,0,0.02,0.01,fin de la prueba,0,0,5
+43.171,LANDING,69,100,52,-179,1,0,70,0,0,0,0,0.07,0.01,fin de la prueba,0,0,5
+43.222,LANDING,69,100,47,-179,1,0,70,0,0,0,0,0.02,0.01,fin de la prueba,0,0,4
+43.272,LANDING,69,100,47,-179,1,0,70,0,0,0,0,0.07,0.01,fin de la prueba,0,0,4
+43.322,LANDING,69,90,43,-179,1,0,70,0,0,0,0,0.02,0.03,fin de la prueba,0,0,4
+43.372,LANDING,69,90,43,-179,1,0,70,0,0,0,0,0.07,0.01,fin de la prueba,0,0,4
+43.423,LANDING,69,90,39,-179,1,0,70,0,0,0,0,0.02,0.03,fin de la prueba,0,0,4
+43.473,LANDING,69,90,39,-179,1,0,70,0,0,0,0,0.07,0.03,fin de la prueba,0,0,4
+43.523,LANDING,69,90,34,-179,2,0,70,0,0,0,0,0.01,0.01,fin de la prueba,0,0,4
+43.573,LANDING,69,90,34,-179,2,0,70,0,0,0,0,0.06,0.01,fin de la prueba,0,0,4
+43.623,LANDING,69,80,29,179,0,0,70,0,0,0,0,0.02,0.01,fin de la prueba,0,0,4
+43.673,LANDING,69,80,29,179,0,0,70,0,0,0,0,0.07,0.01,fin de la prueba,0,0,4
+43.723,LANDING,69,80,29,179,2,0,70,0,0,0,0,0.01,0.01,fin de la prueba,-1,0,4
+43.774,LANDING,69,80,23,178,1,0,70,0,0,0,0,0.01,0.01,fin de la prueba,-1,0,3
+43.824,LANDING,69,80,23,178,1,0,70,0,0,0,0,0.06,0.01,fin de la prueba,-1,0,3
+43.874,LANDING,69,70,18,178,2,0,70,0,0,0,0,0.00,0.01,fin de la prueba,-1,1,3
+43.924,LANDING,69,70,18,178,2,0,70,0,0,0,0,0.05,0.01,fin de la prueba,-1,1,3
+43.975,LANDING,68,70,14,178,2,1,70,0,0,0,0,0.01,0.01,fin de la prueba,-1,1,3
+44.025,LANDING,68,70,14,178,2,1,70,0,0,0,0,0.06,0.01,fin de la prueba,-1,1,3
+44.076,LANDING,68,60,10,178,2,1,70,0,0,0,0,0.00,0.01,fin de la prueba,-1,1,3
+44.126,LANDING,68,60,10,178,2,1,70,0,0,0,0,0.05,0.01,fin de la prueba,-1,1,3
+44.177,LANDING,68,60,10,179,2,1,70,0,0,0,0,0.00,0.01,fin de la prueba,-1,0,3
+44.227,LANDING,68,60,10,179,2,1,70,0,0,0,0,0.05,0.01,fin de la prueba,-1,0,3
+44.277,LANDING,68,60,10,177,4,2,70,0,0,0,0,0.00,0.03,fin de la prueba,-1,2,-2
+44.327,LANDING,68,60,10,177,4,2,70,0,0,0,0,0.05,0.03,fin de la prueba,-1,2,-2
+44.377,LANDING,68,0,10,177,6,3,70,0,0,0,0,0.01,0.01,fin de la prueba,0,1,0
+44.427,LANDING,68,0,10,177,6,3,70,0,0,0,0,0.06,0.01,fin de la prueba,0,1,0
+44.477,LANDING,68,0,10,178,0,0,70,0,0,0,0,0.00,0.01,fin de la prueba,-1,1,0
+44.528,LANDING,68,0,10,178,0,0,70,0,0,0,0,0.05,0.01,fin de la prueba,-1,1,0
+44.578,LANDING,68,0,10,178,0,0,70,0,0,0,0,0.01,0.01,fin de la prueba,0,2,0
+44.628,LANDING,68,0,10,178,0,0,70,0,0,0,0,0.06,0.01,fin de la prueba,0,2,0
+44.678,LANDING,68,0,10,178,0,0,70,0,0,0,0,0.00,0.03,fin de la prueba,0,2,0
+44.728,LANDING,68,0,10,178,0,0,70,0,0,0,0,0.06,0.01,fin de la prueba,0,2,0
+44.778,LANDING,68,0,10,178,0,0,70,0,0,0,0,0.00,0.01,fin de la prueba,0,2,0
+44.828,LANDING,68,0,10,178,0,0,70,0,0,0,0,0.05,0.01,fin de la prueba,0,2,0
+44.879,LANDING,68,0,10,178,0,0,70,0,0,0,0,0.10,0.01,fin de la prueba,0,2,0
+44.932,LANDING,68,0,10,178,0,0,70,0,0,0,0,0.04,0.01,fin de la prueba,0,2,0
+44.983,LANDING,68,0,10,178,0,0,70,0,0,0,0,0.00,0.01,fin de la prueba,0,2,0
+45.034,LANDING,68,0,10,178,0,0,70,0,0,0,0,0.06,0.01,fin de la prueba,0,2,0
+45.084,LANDING,68,0,10,178,0,0,71,0,0,0,0,0.00,0.01,fin de la prueba,0,2,0
+45.135,LANDING,68,0,10,178,0,0,71,0,0,0,0,0.05,0.01,fin de la prueba,0,2,0
+45.185,LANDING,68,0,10,178,0,0,71,0,0,0,0,0.00,0.02,fin de la prueba,0,2,1
+45.235,LANDING,68,0,10,178,0,0,71,0,0,0,0,0.05,0.01,fin de la prueba,0,2,1
+45.285,LANDING,68,0,10,178,0,0,71,0,0,0,0,0.00,0.03,fin de la prueba,0,2,1
+45.335,LANDING,68,0,10,178,0,0,71,0,0,0,0,0.05,0.01,fin de la prueba,0,2,1
+45.385,LANDING,68,0,10,178,0,0,71,0,0,0,0,0.00,0.01,fin de la prueba,0,2,1
+45.435,DONE,68,0,10,178,0,0,71,0,0,0,0,0.05,0.03,aterrizado (fin de la prueba),0,2,1
+45.486,DONE,68,0,10,178,0,0,71,0,0,0,0,0.10,0.01,aterrizado (fin de la prueba),0,2,1
+45.536,DONE,68,0,10,178,0,0,71,0,0,0,0,0.04,0.01,aterrizado (fin de la prueba),0,2,0
+45.586,DONE,68,0,10,178,0,0,71,0,0,0,0,0.09,0.01,aterrizado (fin de la prueba),0,2,0
+45.636,DONE,68,0,10,178,0,0,71,0,0,0,0,0.04,0.01,aterrizado (fin de la prueba),0,2,0
+45.686,DONE,68,0,10,178,0,0,71,0,0,0,0,0.09,0.01,aterrizado (fin de la prueba),0,2,0
+45.736,DONE,68,0,10,178,0,0,71,0,0,0,0,0.02,0.01,aterrizado (fin de la prueba),0,3,0
+45.786,DONE,68,0,10,178,0,0,71,0,0,0,0,0.07,0.01,aterrizado (fin de la prueba),0,3,0
+45.836,DONE,68,0,10,178,0,0,71,0,0,0,0,0.03,0.03,aterrizado (fin de la prueba),0,3,0
+45.887,DONE,68,0,10,178,0,0,71,0,0,0,0,0.08,0.03,aterrizado (fin de la prueba),0,3,0
+45.937,DONE,68,0,10,178,0,0,71,0,0,0,0,0.02,0.01,aterrizado (fin de la prueba),0,3,0
+45.987,DONE,68,0,10,178,0,0,71,0,0,0,0,0.07,0.01,aterrizado (fin de la prueba),0,3,0
+46.037,DONE,67,0,10,178,0,0,71,0,0,0,0,0.02,0.01,aterrizado (fin de la prueba),0,3,0
+46.087,DONE,67,0,10,178,0,0,71,0,0,0,0,0.07,0.01,aterrizado (fin de la prueba),0,3,0

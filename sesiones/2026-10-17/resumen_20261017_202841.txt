@@ -1,0 +1,3 @@
+fuente: tello   frames: 1152   detección media: 5.2 ms
+  ID  1 (Giro derecha 90): 271 frames (24 %)
+  ID  2 (Giro izquierda 90): 640 frames (56 %)

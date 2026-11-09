@@ -1,0 +1,916 @@
+t,state,bat,h,tof,yaw,pitch,roll,temph,rc_lr,rc_fb,rc_ud,rc_yaw,state_age,video_age,reason,vgx,vgy,vgz,n_tags,objetivo,piso_adelante,piso_lado,piso_giro,fase,a_ciegas_cm
+0.001,IDLE,79,0,10,-1,0,0,68,0,0,0,0,0.00,inf,esperando despegue (t),0,0,0,,,,,,,
+0.051,IDLE,79,0,10,-1,0,0,68,0,0,0,0,0.05,inf,esperando despegue (t),0,0,0,,,,,,,
+0.101,IDLE,79,0,10,-1,0,0,68,0,0,0,0,0.00,inf,esperando despegue (t),0,0,0,,,,,,,
+0.152,IDLE,79,0,10,-1,0,0,68,0,0,0,0,0.05,inf,esperando despegue (t),0,0,0,,,,,,,
+0.202,IDLE,79,0,10,-1,0,0,68,0,0,0,0,0.00,inf,esperando despegue (t),0,0,0,,,,,,,
+0.252,IDLE,79,0,10,-1,0,0,68,0,0,0,0,0.05,0.03,esperando despegue (t),0,0,0,0,,,,,,
+0.303,IDLE,79,0,10,-1,0,0,68,0,0,0,0,0.10,0.01,esperando despegue (t),0,0,0,0,,,,,,
+0.355,IDLE,79,0,10,-1,0,0,68,0,0,0,0,0.02,0.02,esperando despegue (t),0,0,0,0,,,,,,
+0.406,IDLE,79,0,10,-1,0,0,68,0,0,0,0,0.00,0.02,esperando despegue (t),0,0,0,0,,,,,,
+0.457,IDLE,79,0,10,-1,0,0,68,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0,0,,,,,,
+0.507,IDLE,79,0,10,-1,0,0,68,0,0,0,0,0.10,0.02,esperando despegue (t),0,0,0,0,,,,,,
+0.557,IDLE,79,0,10,-1,0,0,68,0,0,0,0,0.03,0.02,esperando despegue (t),0,0,0,0,,,,,,
+0.607,IDLE,79,0,10,-1,0,0,68,0,0,0,0,0.00,0.02,esperando despegue (t),0,0,0,0,,,,,,
+0.657,IDLE,79,0,10,-1,0,0,68,0,0,0,0,0.05,0.02,esperando despegue (t),0,0,0,0,,,,,,
+0.708,IDLE,79,0,10,-1,0,0,68,0,0,0,0,0.10,0.01,esperando despegue (t),0,0,0,0,,,,,,
+0.758,IDLE,79,0,10,-1,0,0,68,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0,0,,,,,,
+0.811,IDLE,79,0,10,-1,0,0,68,0,0,0,0,0.07,0.01,esperando despegue (t),0,0,0,0,,,,,,
+0.862,IDLE,79,0,10,-1,0,0,68,0,0,0,0,0.02,0.02,esperando despegue (t),0,0,0,0,,,,,,
+0.912,IDLE,79,0,10,-1,0,0,68,0,0,0,0,0.07,0.02,esperando despegue (t),0,0,0,0,,,,,,
+0.962,IDLE,79,0,10,-1,0,0,68,0,0,0,0,0.04,0.01,esperando despegue (t),0,0,0,0,,,,,,
+1.012,IDLE,79,0,10,-1,0,0,68,0,0,0,0,0.09,0.01,esperando despegue (t),0,0,0,0,,,,,,
+1.063,IDLE,79,0,10,-1,0,0,67,0,0,0,0,0.04,0.01,esperando despegue (t),0,0,0,0,,,,,,
+1.114,IDLE,79,0,10,-1,0,0,67,0,0,0,0,0.09,0.03,esperando despegue (t),0,0,0,0,,,,,,
+1.164,IDLE,79,0,10,-1,0,0,67,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0,0,,,,,,
+1.214,IDLE,79,0,10,-1,0,0,67,0,0,0,0,0.07,0.03,esperando despegue (t),0,0,0,0,,,,,,
+1.265,IDLE,79,0,10,-1,0,0,67,0,0,0,0,0.03,0.01,esperando despegue (t),0,0,0,0,,,,,,
+1.315,TAKEOFF,79,0,10,-1,0,0,67,0,0,0,0,0.02,0.01,despegando,0,0,0,0,,,,,,
+1.365,TAKEOFF,79,0,10,-1,0,0,67,0,0,0,0,0.07,0.01,despegando,0,0,0,0,,,,,,
+1.415,TAKEOFF,79,0,10,-1,0,0,67,0,0,0,0,0.02,0.02,despegando,0,0,0,0,,,,,,
+1.465,TAKEOFF,79,0,10,-1,0,0,67,0,0,0,0,0.07,0.01,despegando,0,0,0,0,,,,,,
+1.515,TAKEOFF,79,0,10,-1,0,0,67,0,0,0,0,0.02,0.01,despegando,0,0,0,0,,,,,,
+1.566,TAKEOFF,79,0,10,-1,0,0,67,0,0,0,0,0.07,0.01,despegando,0,0,0,0,,,,,,
+1.616,TAKEOFF,79,0,10,-1,0,0,67,0,0,0,0,0.00,0.02,despegando,0,0,0,0,,,,,,
+1.666,TAKEOFF,79,0,10,-1,0,0,67,0,0,0,0,0.05,0.01,despegando,0,0,0,0,,,,,,
+1.718,TAKEOFF,79,0,10,-1,0,0,67,0,0,0,0,0.01,0.01,despegando,0,0,0,0,,,,,,
+1.768,TAKEOFF,79,0,10,-1,0,0,67,0,0,0,0,0.06,0.01,despegando,0,0,0,0,,,,,,
+1.820,TAKEOFF,79,0,10,-3,0,0,67,0,0,0,0,0.00,0.01,despegando,0,0,0,0,,,,,,
+1.870,TAKEOFF,79,0,10,-3,0,0,67,0,0,0,0,0.05,0.01,despegando,0,0,0,0,,,,,,
+1.920,TAKEOFF,79,0,10,-4,0,0,67,0,0,0,0,0.00,0.02,despegando,0,0,0,0,,,,,,
+1.970,TAKEOFF,79,0,10,-4,0,0,67,0,0,0,0,0.05,0.01,despegando,0,0,0,0,,,,,,
+2.021,TAKEOFF,79,0,10,-5,0,0,68,0,0,0,0,0.00,0.04,despegando,0,0,0,0,,,,,,
+2.071,TAKEOFF,79,0,10,-5,0,0,68,0,0,0,0,0.05,0.03,despegando,0,0,0,0,,,,,,
+2.121,TAKEOFF,79,0,10,-5,0,1,68,0,0,0,0,0.00,0.02,despegando,0,0,-1,0,,,,,,
+2.171,TAKEOFF,79,0,10,-5,0,1,68,0,0,0,0,0.05,0.01,despegando,0,0,-1,0,,,,,,
+2.221,TAKEOFF,79,0,15,-5,0,1,68,0,0,0,0,0.00,0.01,despegando,0,0,-4,0,,,,,,
+2.272,TAKEOFF,79,0,15,-5,0,1,68,0,0,0,0,0.05,0.02,despegando,0,0,-4,0,,,,,,
+2.322,TAKEOFF,79,0,22,-5,0,0,68,0,0,0,0,0.00,0.02,despegando,0,0,-6,0,,,,,,
+2.372,TAKEOFF,79,0,22,-5,0,0,68,0,0,0,0,0.05,0.01,despegando,0,0,-6,0,,,,,,
+2.422,TAKEOFF,79,0,22,-5,0,0,68,0,0,0,0,0.10,0.03,despegando,0,0,-6,0,,,,,,
+2.473,TAKEOFF,79,10,27,-5,0,0,68,0,0,0,0,0.00,0.05,despegando,0,0,-7,0,,,,,,
+2.523,TAKEOFF,79,20,36,-5,0,0,68,0,0,0,0,0.00,0.01,despegando,0,0,-8,0,,,,,,
+2.573,TAKEOFF,79,20,36,-5,0,0,68,0,0,0,0,0.05,0.01,despegando,0,0,-8,0,,,,,,
+2.623,TAKEOFF,79,20,46,-5,1,0,68,0,0,0,0,0.00,0.02,despegando,0,0,-8,0,,,,,,
+2.674,TAKEOFF,79,20,46,-5,1,0,68,0,0,0,0,0.05,0.02,despegando,0,0,-8,0,,,,,,
+2.724,TAKEOFF,79,30,55,-5,2,0,68,0,0,0,0,0.00,0.02,despegando,0,0,-7,0,,,,,,
+2.774,TAKEOFF,79,30,55,-5,2,0,68,0,0,0,0,0.05,0.02,despegando,0,0,-7,0,,,,,,
+2.824,TAKEOFF,79,40,62,-5,0,0,68,0,0,0,0,0.00,0.02,despegando,0,0,-6,0,,,,,,
+2.875,TAKEOFF,79,40,62,-5,0,0,68,0,0,0,0,0.05,0.01,despegando,0,0,-6,0,,,,,,
+2.929,TAKEOFF,79,40,62,-5,0,0,68,0,0,0,0,0.10,0.03,despegando,0,0,-6,0,,,,,,
+2.979,TAKEOFF,79,40,68,-5,1,0,68,0,0,0,0,0.05,0.02,despegando,0,0,-5,0,,,,,,
+3.029,TAKEOFF,79,50,75,-5,1,0,69,0,0,0,0,0.00,0.02,despegando,0,0,-4,0,,,,,,
+3.080,TAKEOFF,79,50,75,-5,1,0,69,0,0,0,0,0.05,0.02,despegando,0,0,-4,0,,,,,,
+3.132,TAKEOFF,79,50,78,-5,1,0,69,0,0,0,0,0.01,0.02,despegando,0,0,-3,0,,,,,,
+3.182,TAKEOFF,79,60,81,-5,1,0,69,0,0,0,0,0.00,0.02,despegando,0,0,-2,0,,,,,,
+3.232,TAKEOFF,79,60,81,-5,1,0,69,0,0,0,0,0.05,0.03,despegando,0,0,-2,1,,,,,,
+3.282,TAKEOFF,79,60,85,-5,0,0,69,0,0,0,0,0.00,0.02,despegando,0,0,-1,0,,,,,,
+3.333,TAKEOFF,79,60,85,-5,0,0,69,0,0,0,0,0.05,0.02,despegando,0,0,-1,0,,,,,,
+3.383,TAKEOFF,79,60,86,-5,0,0,69,0,0,0,0,0.00,0.02,despegando,0,0,0,0,,,,,,
+3.433,TAKEOFF,79,60,86,-5,0,0,69,0,0,0,0,0.05,0.02,despegando,0,0,0,0,,,,,,
+3.483,TAKEOFF,79,60,86,-5,0,0,69,0,0,0,0,0.00,0.04,despegando,0,0,0,0,,,,,,
+3.533,TAKEOFF,79,60,86,-5,0,0,69,0,0,0,0,0.05,0.02,despegando,0,0,0,0,,,,,,
+3.583,TAKEOFF,79,60,88,-5,0,0,69,0,0,0,0,0.00,0.02,despegando,0,0,0,0,,,,,,
+3.633,TAKEOFF,79,60,88,-5,0,0,69,0,0,0,0,0.05,0.01,despegando,0,0,0,0,,,,,,
+3.683,TAKEOFF,79,60,88,-5,0,0,69,0,0,0,0,0.10,0.02,despegando,0,0,0,0,,,,,,
+3.734,TAKEOFF,79,60,86,-5,-1,0,69,0,0,0,0,0.04,0.02,despegando,0,0,0,0,,,,,,
+3.784,TAKEOFF,79,60,86,-5,-1,-1,69,0,0,0,0,0.00,0.02,despegando,0,0,0,0,,,,,,
+3.834,TAKEOFF,79,60,86,-5,-1,-1,69,0,0,0,0,0.05,0.02,despegando,0,0,0,0,,,,,,
+3.884,TAKEOFF,79,60,86,-5,-1,-1,69,0,0,0,0,0.10,0.02,despegando,0,0,0,0,,,,,,
+3.934,TAKEOFF,79,60,87,-5,-1,-1,69,0,0,0,0,0.03,0.02,despegando,0,0,0,0,,,,,,
+3.984,TAKEOFF,79,60,87,-5,-1,-1,69,0,0,0,0,0.08,0.02,despegando,0,0,0,0,,,,,,
+4.034,TAKEOFF,79,60,88,-5,0,-1,69,0,0,0,0,0.01,0.02,despegando,0,0,0,0,,,,,,
+4.084,TAKEOFF,79,60,88,-5,0,-1,69,0,0,0,0,0.06,0.02,despegando,0,0,0,0,,,,,,
+4.137,TAKEOFF,79,60,87,-5,0,-1,69,0,0,0,0,0.03,0.02,despegando,0,0,0,0,,,,,,
+4.187,TAKEOFF,79,60,87,-5,0,-1,69,0,0,0,0,0.08,0.02,despegando,0,0,0,0,,,,,,
+4.237,TAKEOFF,79,60,88,-5,0,0,69,0,0,0,0,0.01,0.02,despegando,0,0,0,0,,,,,,
+4.287,TAKEOFF,79,60,88,-5,0,0,69,0,0,0,0,0.06,0.03,despegando,0,0,0,0,,,,,,
+4.338,TAKEOFF,79,60,87,-5,0,-1,69,0,0,0,0,0.02,0.03,despegando,0,0,0,0,,,,,,
+4.388,TAKEOFF,79,60,87,-5,0,-1,69,0,0,0,0,0.07,0.02,despegando,0,0,0,0,,,,,,
+4.438,TAKEOFF,79,70,89,-5,-1,-2,69,0,0,0,0,0.04,0.02,despegando,0,0,0,0,,,,,,
+4.488,TAKEOFF,79,70,89,-5,-1,-2,69,0,0,0,0,0.09,0.02,despegando,0,0,0,0,,,,,,
+4.539,TAKEOFF,79,70,88,-5,-2,-2,69,0,0,0,0,0.02,0.02,despegando,0,0,0,0,,,,,,
+4.589,TAKEOFF,79,70,88,-5,-2,-2,69,0,0,0,0,0.07,0.02,despegando,0,0,0,0,,,,,,
+4.639,TAKEOFF,79,70,89,-5,-1,-2,69,0,0,0,0,0.00,0.02,despegando,0,0,0,0,,,,,,
+4.689,TAKEOFF,79,70,89,-5,-1,-2,69,0,0,0,0,0.05,0.02,despegando,0,0,0,0,,,,,,
+4.739,TAKEOFF,79,70,89,-5,0,0,69,0,0,0,0,0.02,0.02,despegando,0,0,0,0,,,,,,
+4.789,TAKEOFF,79,70,89,-5,0,0,69,0,0,0,0,0.07,0.02,despegando,0,0,0,0,,,,,,
+4.840,TAKEOFF,79,70,89,-5,0,0,69,0,0,0,0,0.00,0.02,despegando,0,0,0,0,,,,,,
+4.890,TAKEOFF,79,70,89,-5,0,0,69,0,0,0,0,0.05,0.02,despegando,0,0,0,0,,,,,,
+4.940,TAKEOFF,79,70,89,-5,0,-1,69,0,0,0,0,0.01,0.02,despegando,0,1,0,0,,,,,,
+4.990,TAKEOFF,79,70,89,-5,0,-1,69,0,0,0,0,0.06,0.02,despegando,0,1,0,0,,,,,,
+5.041,TAKEOFF,79,70,88,-5,1,-5,69,0,0,0,0,0.00,0.03,despegando,1,1,0,1,,,,,,
+5.091,TAKEOFF,79,70,88,-5,1,-5,69,0,0,0,0,0.05,0.02,despegando,1,1,0,0,,,,,,
+5.142,TAKEOFF,79,70,87,-5,1,-3,69,0,0,0,0,0.01,0.02,despegando,0,0,0,1,,,,,,
+5.193,HOVER,79,70,87,-5,1,-3,69,0,0,0,0,0.06,0.02,"en el aire a 77 cm (estable, despegue 3.9 s)",0,0,0,1,,,,,,
+5.243,HOVER,79,70,85,-5,1,-1,69,0,0,0,0,0.02,0.02,"en el aire a 77 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+5.293,HOVER,79,70,85,-5,1,-1,69,0,0,0,0,0.07,0.02,"en el aire a 77 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+5.343,HOVER,79,70,84,-5,0,0,69,0,0,0,0,0.00,0.02,"en el aire a 77 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+5.395,HOVER,79,70,84,-5,0,0,69,0,0,0,0,0.05,0.02,"en el aire a 77 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+5.446,HOVER,79,70,84,-5,0,0,69,0,0,0,0,0.10,0.02,"en el aire a 77 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+5.496,HOVER,79,70,83,-5,0,0,69,0,0,0,0,0.00,0.08,"en el aire a 77 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+5.546,HOVER,79,60,81,-5,0,0,69,0,0,0,0,0.03,0.10,"en el aire a 77 cm (estable, despegue 3.9 s)",0,0,1,0,,,,,,
+5.596,HOVER,79,60,81,-5,0,0,69,0,0,0,0,0.08,0.03,"en el aire a 77 cm (estable, despegue 3.9 s)",0,0,1,0,,,,,,
+5.646,HOVER,79,60,80,-5,0,-1,69,0,0,0,0,0.02,0.04,"en el aire a 77 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+5.696,HOVER,79,60,78,-5,0,-3,69,0,0,0,0,0.00,0.02,"en el aire a 77 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+5.746,HOVER,79,60,78,-5,0,-3,69,0,0,0,0,0.05,0.02,"en el aire a 77 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+5.797,HOVER,79,60,77,-5,0,-2,69,0,0,0,0,0.00,0.02,"en el aire a 77 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+5.847,HOVER,79,60,77,-5,0,-2,69,0,0,0,0,0.05,0.02,"en el aire a 77 cm (estable, despegue 3.9 s)",0,0,0,1,,,,,,
+5.897,HOVER,79,60,75,-5,0,-1,69,0,0,0,0,0.00,0.02,"en el aire a 77 cm (estable, despegue 3.9 s)",0,-1,0,0,,,,,,
+5.947,HOVER,79,60,75,-5,0,-1,69,0,0,0,0,0.05,0.02,"en el aire a 77 cm (estable, despegue 3.9 s)",0,-1,0,0,,,,,,
+5.997,HOVER,79,60,74,-5,1,1,69,0,0,0,0,0.00,0.02,"en el aire a 77 cm (estable, despegue 3.9 s)",0,-1,0,0,,,,,,
+6.047,HOVER,79,60,74,-5,1,1,69,0,0,0,0,0.05,0.04,"en el aire a 77 cm (estable, despegue 3.9 s)",0,-1,0,0,,,,,,
+6.097,HOVER,79,60,74,-5,1,1,69,0,0,0,0,0.10,0.03,"en el aire a 77 cm (estable, despegue 3.9 s)",0,-1,0,0,,,,,,
+6.148,HOVER,79,60,73,-4,1,2,69,0,0,0,0,0.03,0.04,"en el aire a 77 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+6.198,HOVER,79,60,73,-4,1,2,69,0,0,0,0,0.08,0.02,"en el aire a 77 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+6.248,HOVER,79,60,74,-4,2,1,69,0,0,0,0,0.00,0.02,"en el aire a 77 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+6.298,HOVER,79,60,72,-4,2,0,69,0,0,0,0,0.00,0.02,"en el aire a 77 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+6.348,HOVER,79,60,72,-4,2,0,69,0,0,0,0,0.05,0.02,"en el aire a 77 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+6.398,HOVER,79,60,72,-4,2,0,69,0,0,0,0,0.10,0.02,"en el aire a 77 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+6.448,HOVER,79,60,71,-4,2,0,69,0,0,0,0,0.03,0.02,"en el aire a 77 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+6.498,HOVER,79,60,71,-4,2,0,69,0,0,0,0,0.08,0.06,"en el aire a 77 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+6.549,HOVER,79,60,71,-4,2,0,69,0,0,0,0,0.01,0.02,"en el aire a 77 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+6.599,HOVER,79,60,71,-4,2,0,69,0,0,0,0,0.06,0.02,"en el aire a 77 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+6.649,HOVER,79,50,71,-4,2,-1,69,0,0,0,0,0.03,0.02,"en el aire a 77 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+6.699,HOVER,79,50,71,-4,2,-1,69,0,0,0,0,0.08,0.02,"en el aire a 77 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+6.749,HOVER,79,50,70,-4,1,-1,69,0,0,0,0,0.01,0.02,"en el aire a 77 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+6.799,HOVER,79,50,70,-4,1,-1,69,0,0,0,0,0.06,0.02,"en el aire a 77 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+6.849,HOVER,79,50,72,-4,0,0,69,0,0,0,0,0.03,0.02,"en el aire a 77 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+6.899,HOVER,79,50,72,-4,0,0,69,0,0,0,0,0.08,0.02,"en el aire a 77 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+6.950,HOVER,79,50,72,-4,0,0,69,0,0,0,0,0.02,0.02,"en el aire a 77 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+7.000,HOVER,79,50,72,-4,0,0,69,0,0,0,0,0.07,0.02,"en el aire a 77 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+7.050,HOVER,79,50,72,-4,0,0,69,0,0,0,0,0.03,0.02,"en el aire a 77 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+7.100,HOVER,79,50,72,-4,0,0,69,0,0,0,0,0.08,0.02,"en el aire a 77 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+7.150,HOVER,79,50,74,-4,0,-1,69,0,0,0,0,0.01,0.02,"en el aire a 77 cm (estable, despegue 3.9 s)",0,0,0,0,,,,,,
+7.200,CRUISE,79,50,74,-4,0,-1,69,0,0,0,0,0.07,0.02,a altura de crucero (60 cm),0,0,0,0,,,,,,
+7.250,CRUISE,79,60,75,-4,0,-1,69,0,0,0,0,0.03,0.02,a altura de crucero (60 cm),0,0,0,0,,,,,,
+7.301,CRUISE,79,60,75,-4,0,-1,69,0,0,0,0,0.08,0.02,a altura de crucero (60 cm),0,0,0,0,,,,,,
+7.351,CRUISE,79,60,75,-4,0,-1,69,0,0,0,0,0.13,0.04,a altura de crucero (60 cm),0,0,0,0,,,,,,
+7.401,CRUISE,79,60,75,-5,0,0,69,0,0,0,0,0.00,0.06,a altura de crucero (60 cm),0,0,0,0,,,,,,
+7.451,CRUISE,79,60,75,-5,0,0,69,0,0,0,0,0.05,0.02,a altura de crucero (60 cm),0,0,0,0,,,,,,
+7.501,CRUISE,79,60,75,-5,0,0,69,0,0,0,0,0.10,0.04,a altura de crucero (60 cm),0,0,0,0,,,,,,
+7.551,CRUISE,79,60,77,-5,1,0,69,0,0,0,0,0.01,0.04,a altura de crucero (60 cm),0,0,0,0,,,,,,
+7.601,CRUISE,79,60,78,-5,1,0,69,0,0,-15,0,0.02,0.02,a altura de crucero (60 cm),0,0,0,0,,,,,,
+7.652,CRUISE,79,60,78,-5,1,0,69,0,0,-15,0,0.07,0.02,a altura de crucero (60 cm),0,0,0,0,,,,,,
+7.702,CRUISE,79,60,78,-5,1,0,69,0,0,-15,0,0.12,0.04,a altura de crucero (60 cm),0,0,0,0,,,,,,
+7.752,CRUISE,79,60,78,-5,1,0,69,0,0,-15,0,0.03,0.02,a altura de crucero (60 cm),0,0,0,1,,,,,,
+7.802,CRUISE,79,60,78,-5,1,0,69,0,0,-15,0,0.08,0.04,a altura de crucero (60 cm),0,0,0,0,,,,,,
+7.852,CRUISE,79,60,78,-5,1,0,69,0,0,-15,0,0.03,0.02,a altura de crucero (60 cm),0,0,0,0,,,,,,
+7.902,CRUISE,79,60,76,-5,0,0,69,0,0,-15,0,0.00,0.02,a altura de crucero (60 cm),0,0,0,0,,,,,,
+7.953,CRUISE,79,60,76,-5,0,0,69,0,0,-15,0,0.05,0.04,a altura de crucero (60 cm),0,0,0,0,,,,,,
+8.003,CRUISE,79,60,76,-5,0,-1,70,0,0,-15,0,0.00,0.02,a altura de crucero (60 cm),0,0,0,0,,,,,,
+8.053,CRUISE,79,60,76,-5,0,-1,70,0,0,-15,0,0.05,0.02,a altura de crucero (60 cm),0,0,0,0,,,,,,
+8.103,CRUISE,79,60,74,-5,1,0,70,0,0,-15,0,0.01,0.02,a altura de crucero (60 cm),0,0,0,0,,,,,,
+8.154,CRUISE,79,60,74,-5,1,0,70,0,0,0,0,0.06,0.02,a altura de crucero (60 cm),0,0,0,0,,,,,,
+8.204,CRUISE,79,60,71,-5,1,0,70,0,0,0,0,0.00,0.02,a altura de crucero (60 cm),0,0,0,0,,,,,,
+8.254,CRUISE,79,60,71,-5,1,0,70,0,0,0,0,0.05,0.02,a altura de crucero (60 cm),0,0,0,1,,,,,,
+8.304,CRUISE,79,60,70,-5,1,0,70,0,0,0,0,0.01,0.02,a altura de crucero (60 cm),0,0,0,0,,,,,,
+8.354,CRUISE,79,60,70,-5,1,0,70,0,0,0,0,0.06,0.02,a altura de crucero (60 cm),0,0,0,0,,,,,,
+8.405,CRUISE,79,60,68,-5,1,0,70,0,0,0,0,0.00,0.02,a altura de crucero (60 cm),0,0,0,0,,,,,,
+8.455,CRUISE,79,60,68,-5,1,0,70,0,0,0,0,0.05,0.02,a altura de crucero (60 cm),0,0,0,0,,,,,,
+8.508,CRUISE,79,50,66,-5,1,0,70,0,0,0,0,0.01,0.02,a altura de crucero (60 cm),0,0,0,0,,,,,,
+8.558,CRUISE,79,50,66,-5,1,0,70,0,0,0,0,0.06,0.02,a altura de crucero (60 cm),0,0,0,0,,,,,,
+8.608,CRUISE,79,50,66,-5,1,0,70,0,0,0,0,0.11,0.02,a altura de crucero (60 cm),0,0,0,0,,,,,,
+8.659,ADVANCE,79,50,64,-5,1,0,70,0,0,0,0,0.00,0.02,"avanzando a 56 cm, buscando tag",0,0,1,0,,,,,,
+8.712,ADVANCE,79,50,62,-4,1,0,70,0,15,0,0,0.00,0.02,"avanzando a 56 cm, buscando tag",0,0,0,0,,,,,,
+8.763,ADVANCE,79,50,62,-4,1,0,70,0,15,0,0,0.05,0.02,"avanzando a 56 cm, buscando tag",0,0,0,0,,,,,,
+8.814,ADVANCE,79,50,62,-4,1,0,70,0,15,0,0,0.10,0.06,"avanzando a 56 cm, buscando tag",0,0,0,0,,,,,,
+8.864,ADVANCE,79,50,61,-4,3,0,70,0,15,0,0,0.02,0.02,"avanzando a 56 cm, buscando tag",0,0,0,0,,,,,,
+8.915,ADVANCE,79,50,60,-4,2,0,70,0,15,0,0,0.00,0.02,"avanzando a 56 cm, buscando tag",0,0,0,0,,,,,,
+8.965,ADVANCE,79,50,60,-4,2,0,70,0,15,0,0,0.05,0.02,"avanzando a 56 cm, buscando tag",0,0,0,0,,,,,,
+9.015,ADVANCE,79,40,59,-4,1,-1,70,0,15,0,0,0.00,0.02,"avanzando a 56 cm, buscando tag",0,0,0,0,,,,,,
+9.065,ADVANCE,79,40,59,-4,1,-1,70,0,15,0,0,0.05,0.02,"avanzando a 56 cm, buscando tag",0,0,0,0,,,,,,
+9.115,ADVANCE,79,40,60,-4,1,-1,70,0,15,0,0,0.00,0.02,"avanzando a 56 cm, buscando tag",0,0,0,0,,,,,,
+9.165,ADVANCE,79,40,60,-4,1,-1,70,0,15,0,0,0.05,0.02,"avanzando a 56 cm, buscando tag",0,0,0,0,,,,,,
+9.216,ADVANCE,79,40,60,-4,1,-1,70,0,15,0,0,0.10,0.02,"avanzando a 56 cm, buscando tag",0,0,0,0,,,,,,
+9.266,ADVANCE,79,40,59,-4,1,-1,70,0,15,0,0,0.04,0.04,"avanzando a 56 cm, buscando tag",0,0,0,0,,,,,,
+9.316,ADVANCE,79,40,59,-4,1,-1,70,0,15,0,0,0.09,0.02,"avanzando a 56 cm, buscando tag",0,0,0,0,,,,,,
+9.367,ADVANCE,79,40,60,-4,0,-1,70,0,15,0,0,0.02,0.02,"avanzando a 56 cm, buscando tag",0,0,0,0,,,,,,
+9.417,ADVANCE,79,40,60,-4,0,-1,70,0,15,0,0,0.07,0.02,"avanzando a 56 cm, buscando tag",0,0,0,0,,,,,,
+9.467,ADVANCE,79,40,60,-4,1,0,70,0,15,0,0,0.01,0.02,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+9.518,ADVANCE,79,40,60,-4,1,0,70,0,15,0,0,0.06,0.06,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+9.568,ADVANCE,79,40,62,-4,1,0,70,0,15,0,0,0.03,0.02,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+9.618,ADVANCE,79,40,62,-4,1,0,70,0,15,0,0,0.08,0.02,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+9.668,ADVANCE,79,50,62,-4,1,0,70,0,15,0,0,0.01,0.02,"avanzando a 56 cm, buscando tag",0,0,0,0,,,,,,
+9.718,ADVANCE,79,50,62,-4,1,0,70,0,15,0,0,0.06,0.02,"avanzando a 56 cm, buscando tag",0,0,0,0,,,,,,
+9.768,ADVANCE,79,50,63,-4,0,-1,70,0,15,0,0,0.01,0.01,"avanzando a 56 cm, buscando tag",0,0,-1,0,,,,,,
+9.818,ADVANCE,79,50,63,-4,0,-1,70,0,15,0,0,0.06,0.01,"avanzando a 56 cm, buscando tag",0,0,-1,0,,,,,,
+9.868,ADVANCE,79,50,65,-4,0,-1,70,0,15,0,0,0.03,0.03,"avanzando a 56 cm, buscando tag",0,0,-1,0,,,,,,
+9.919,ADVANCE,79,50,65,-4,0,-1,70,0,15,0,0,0.08,0.02,"avanzando a 56 cm, buscando tag",0,0,-1,0,,,,,,
+9.969,ADVANCE,79,50,66,-4,0,-1,70,0,15,0,0,0.02,0.02,"avanzando a 56 cm, buscando tag",0,0,-1,0,,,,,,
+10.019,ADVANCE,79,50,66,-4,0,-1,70,0,15,0,0,0.07,0.02,"avanzando a 56 cm, buscando tag",0,0,-1,0,,,,,,
+10.069,ADVANCE,79,50,67,-4,0,-1,70,0,15,0,0,0.00,0.02,"avanzando a 56 cm, buscando tag",1,0,-1,0,,,,,,
+10.119,ADVANCE,79,50,68,-4,1,0,70,0,15,0,0,0.02,0.02,"avanzando a 56 cm, buscando tag",1,0,-1,0,,,,,,
+10.169,ADVANCE,79,50,68,-4,1,0,70,0,15,0,0,0.07,0.02,"avanzando a 56 cm, buscando tag",1,0,-1,0,,,,,,
+10.219,ADVANCE,79,50,71,-4,1,0,70,0,15,0,0,0.00,0.02,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+10.270,ADVANCE,79,50,71,-4,1,0,70,0,15,0,0,0.06,0.02,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+10.320,ADVANCE,79,50,72,-4,1,0,70,0,15,0,0,0.00,0.02,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+10.370,ADVANCE,79,50,72,-4,1,0,70,0,15,0,0,0.05,0.02,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+10.420,ADVANCE,79,50,73,-4,1,0,70,0,15,0,0,0.02,0.02,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+10.470,ADVANCE,79,50,73,-4,1,0,70,0,15,0,0,0.07,0.02,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+10.521,ADVANCE,79,50,75,-4,1,0,70,0,15,0,0,0.00,0.04,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+10.571,ADVANCE,79,50,75,-4,1,0,70,0,15,0,0,0.05,0.02,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+10.621,ADVANCE,79,50,77,-5,1,0,70,0,15,0,0,0.00,0.02,"avanzando a 56 cm, buscando tag",0,0,0,0,,,,,,
+10.672,ADVANCE,79,50,77,-5,1,0,70,0,15,0,0,0.05,0.02,"avanzando a 56 cm, buscando tag",0,0,0,0,,,,,,
+10.722,ADVANCE,79,60,78,-5,0,-1,70,0,15,0,0,0.00,0.02,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+10.774,ADVANCE,79,60,78,-5,0,-1,70,0,15,0,0,0.05,0.02,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+10.824,ADVANCE,79,60,79,-5,0,0,70,0,15,0,0,0.00,0.02,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+10.874,ADVANCE,79,60,79,-5,0,0,70,0,15,0,0,0.05,0.04,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+10.924,ADVANCE,79,60,80,-4,0,-1,70,0,15,0,0,0.00,0.02,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+10.977,ADVANCE,79,60,80,-4,0,-1,70,0,15,0,0,0.05,0.02,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+11.027,ADVANCE,79,60,81,-4,1,0,71,0,15,0,0,0.01,0.02,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+11.078,ADVANCE,79,60,81,-4,1,0,71,0,15,0,0,0.06,0.02,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+11.128,ADVANCE,79,60,82,-4,1,0,71,0,15,0,0,0.00,0.02,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+11.178,ADVANCE,79,60,82,-4,1,0,71,0,15,0,0,0.05,0.02,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+11.228,ADVANCE,78,60,82,-4,1,0,71,0,15,0,0,0.02,0.02,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+11.279,ADVANCE,78,60,82,-4,1,0,71,0,15,0,0,0.07,0.02,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+11.329,ADVANCE,78,60,83,-4,1,0,71,0,15,0,0,0.00,0.02,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+11.379,ADVANCE,78,60,83,-4,1,0,71,0,15,0,0,0.05,0.02,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+11.429,ADVANCE,78,60,83,-4,1,0,71,0,15,0,0,0.00,0.02,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+11.479,ADVANCE,78,60,83,-4,1,0,71,0,15,0,0,0.05,0.04,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+11.529,ADVANCE,78,60,84,-4,0,-1,71,0,15,0,0,0.01,0.02,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+11.579,ADVANCE,78,60,84,-4,0,-1,71,0,15,0,0,0.06,0.02,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+11.629,ADVANCE,78,60,84,-4,1,-1,71,0,15,0,0,0.00,0.02,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+11.680,ADVANCE,78,60,84,-4,1,-1,71,0,15,0,0,0.05,0.02,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+11.730,ADVANCE,78,60,84,-4,1,-2,71,0,15,0,0,0.00,0.02,"avanzando a 56 cm, buscando tag",1,2,0,0,,,,,,
+11.780,ADVANCE,78,60,84,-4,1,-2,71,0,15,0,0,0.05,0.02,"avanzando a 56 cm, buscando tag",1,2,0,0,,,,,,
+11.830,ADVANCE,78,60,82,-4,0,-6,71,0,15,0,0,0.00,0.03,"avanzando a 56 cm, buscando tag",0,2,0,0,,,,,,
+11.880,ADVANCE,78,60,82,-4,0,-6,71,0,15,0,0,0.05,0.02,"avanzando a 56 cm, buscando tag",0,2,0,0,,,,,,
+11.930,ADVANCE,78,60,82,-3,0,-5,71,0,15,0,0,0.00,0.02,"avanzando a 56 cm, buscando tag",0,1,0,0,,,,,,
+11.980,ADVANCE,78,60,82,-3,0,-5,71,0,15,0,0,0.05,0.02,"avanzando a 56 cm, buscando tag",0,1,0,0,,,,,,
+12.030,ADVANCE,78,60,80,-3,0,-3,71,0,15,0,0,0.00,0.02,"avanzando a 56 cm, buscando tag",1,1,0,0,,,,,,
+12.081,ADVANCE,78,60,80,-3,0,-3,71,0,15,0,0,0.05,0.02,"avanzando a 56 cm, buscando tag",1,1,0,0,,,,,,
+12.131,ADVANCE,78,60,78,-4,0,-4,71,0,15,0,0,0.00,0.02,"avanzando a 56 cm, buscando tag",0,2,0,0,,,,,,
+12.181,ADVANCE,78,60,78,-4,0,-4,71,0,15,0,0,0.05,0.02,"avanzando a 56 cm, buscando tag",0,2,0,0,,,,,,
+12.233,ADVANCE,78,60,78,-4,0,-4,71,0,15,0,0,0.10,0.04,"avanzando a 56 cm, buscando tag",0,2,0,0,,,,,,
+12.283,ADVANCE,78,60,75,-5,0,-4,71,0,15,0,0,0.03,0.02,"avanzando a 56 cm, buscando tag",1,1,0,0,,,,,,
+12.333,ADVANCE,78,60,75,-5,0,-4,71,0,15,0,0,0.08,0.02,"avanzando a 56 cm, buscando tag",1,1,0,0,,,,,,
+12.383,ADVANCE,78,60,72,-5,1,-4,71,0,15,0,0,0.01,0.02,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+12.434,ADVANCE,78,60,72,-5,1,-4,71,0,15,0,0,0.06,0.02,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+12.485,ADVANCE,78,60,67,-5,1,-4,71,0,15,0,0,0.03,0.02,"avanzando a 56 cm, buscando tag",2,0,1,0,,,,,,
+12.535,ADVANCE,78,60,67,-5,1,-4,71,0,15,0,0,0.08,0.02,"avanzando a 56 cm, buscando tag",2,0,1,0,,,,,,
+12.586,ADVANCE,78,50,64,-5,3,0,71,0,15,0,0,0.00,0.04,"avanzando a 56 cm, buscando tag",2,-1,1,0,,,,,,
+12.637,ADVANCE,78,50,64,-5,3,0,71,0,15,0,0,0.05,0.06,"avanzando a 56 cm, buscando tag",2,-1,1,0,,,,,,
+12.687,ADVANCE,78,50,62,-5,3,0,71,0,15,0,0,0.00,0.02,"avanzando a 56 cm, buscando tag",2,-1,1,0,,,,,,
+12.737,ADVANCE,78,50,62,-5,3,0,71,0,15,0,0,0.05,0.02,"avanzando a 56 cm, buscando tag",2,-1,1,0,,,,,,
+12.787,ADVANCE,78,50,59,-5,3,0,71,0,15,0,0,0.03,0.02,"avanzando a 56 cm, buscando tag",2,-1,1,0,,,,,,
+12.838,ADVANCE,78,50,59,-5,3,0,71,0,15,0,0,0.08,0.02,"avanzando a 56 cm, buscando tag",2,-1,1,0,,,,,,
+12.888,ADVANCE,78,50,57,-6,2,0,71,0,15,0,0,0.00,0.04,"avanzando a 56 cm, buscando tag",1,-1,0,0,,,,,,
+12.938,ADVANCE,78,50,57,-6,2,0,71,0,15,0,0,0.05,0.02,"avanzando a 56 cm, buscando tag",1,-1,0,0,,,,,,
+12.988,ADVANCE,78,50,57,-6,1,0,71,0,15,0,0,0.02,0.02,"avanzando a 56 cm, buscando tag",1,-1,0,0,,,,,,
+13.039,ADVANCE,78,50,57,-6,1,0,71,0,15,0,0,0.07,0.02,"avanzando a 56 cm, buscando tag",1,-1,0,0,,,,,,
+13.089,ADVANCE,78,50,57,-6,0,0,71,0,15,0,0,0.00,0.02,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+13.140,ADVANCE,78,50,57,-6,0,0,71,0,15,0,0,0.05,0.02,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+13.190,ADVANCE,78,50,56,-6,0,0,71,0,15,0,0,0.03,0.02,"avanzando a 56 cm, buscando tag",1,0,-1,0,,,,,,
+13.241,ADVANCE,78,50,56,-6,0,0,71,0,15,0,0,0.08,0.02,"avanzando a 56 cm, buscando tag",1,0,-1,0,,,,,,
+13.291,ADVANCE,77,50,56,-6,1,-1,71,0,15,0,0,0.02,0.02,"avanzando a 56 cm, buscando tag",1,0,-1,0,,,,,,
+13.342,ADVANCE,77,50,56,-6,1,-1,71,0,15,0,0,0.07,0.02,"avanzando a 56 cm, buscando tag",1,0,-1,0,,,,,,
+13.392,ADVANCE,77,50,57,-6,1,-2,71,0,15,0,0,0.00,0.02,"avanzando a 56 cm, buscando tag",1,0,-1,0,,,,,,
+13.447,ADVANCE,77,50,57,-6,1,-2,71,0,15,0,0,0.05,0.02,"avanzando a 56 cm, buscando tag",1,0,-1,0,,,,,,
+13.497,ADVANCE,77,50,58,-6,1,-4,71,0,15,0,0,0.00,0.02,"avanzando a 56 cm, buscando tag",1,1,-1,0,,,,,,
+13.547,ADVANCE,77,50,60,-6,1,-4,71,0,15,0,0,0.00,0.02,"avanzando a 56 cm, buscando tag",1,0,-1,1,,,,,,
+13.597,ADVANCE,77,50,60,-6,1,-4,71,0,15,0,0,0.05,0.02,"avanzando a 56 cm, buscando tag",1,0,-1,1,,,,,,
+13.647,ADVANCE,77,50,61,-6,0,-3,71,0,15,0,0,0.02,0.02,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+13.697,ADVANCE,77,50,61,-6,0,-3,71,0,15,0,0,0.07,0.02,"avanzando a 56 cm, buscando tag",1,0,0,1,,,,,,
+13.747,ADVANCE,77,50,61,-6,1,-1,71,0,15,0,0,0.01,0.02,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+13.798,ADVANCE,77,50,61,-6,1,-1,71,0,15,0,0,0.06,0.02,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+13.848,ADVANCE,77,50,62,-6,1,-1,71,0,15,0,0,0.02,0.02,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+13.898,ADVANCE,77,50,62,-6,1,-1,71,0,15,0,0,0.07,0.02,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+13.949,ADVANCE,77,50,62,-5,1,-1,71,0,15,0,0,0.01,0.02,"avanzando a 56 cm, buscando tag",1,0,0,1,,,,,,
+13.999,ADVANCE,77,50,62,-5,1,-1,71,0,15,0,0,0.06,0.02,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+14.049,ADVANCE,77,50,63,-5,1,0,71,0,15,0,0,0.00,0.02,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+14.100,ADVANCE,77,50,63,-5,1,0,71,0,15,0,0,0.05,0.02,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+14.150,ADVANCE,77,50,64,-5,1,0,71,0,15,0,0,0.01,0.02,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+14.200,ADVANCE,77,50,64,-5,1,0,71,0,15,0,0,0.06,0.02,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+14.250,ADVANCE,77,50,65,-5,1,0,71,0,15,0,0,0.00,0.02,"avanzando a 56 cm, buscando tag",0,0,0,0,,,,,,
+14.300,ADVANCE,77,50,65,-5,1,0,71,0,15,0,0,0.05,0.04,"avanzando a 56 cm, buscando tag",0,0,0,1,,,,,,
+14.350,ADVANCE,77,50,65,-5,0,0,71,0,15,0,0,0.00,0.02,"avanzando a 56 cm, buscando tag",1,0,0,0,,,,,,
+14.400,ADVANCE,77,50,65,-5,0,0,71,0,15,0,0,0.05,0.02,"avanzando a 56 cm, buscando tag",1,0,0,1,,,,,,
+14.450,ADVANCE,77,50,67,-5,1,-1,71,0,15,0,0,0.01,0.02,"avanzando a 56 cm, buscando tag",1,0,0,1,,,,,,
+14.501,ADVANCE,77,50,67,-5,1,-1,71,0,15,0,0,0.06,0.04,"avanzando a 56 cm, buscando tag",1,0,0,1,,,,,,
+14.551,ADVANCE,77,60,67,-5,1,-2,71,0,15,0,0,0.00,0.02,"avanzando a 56 cm, buscando tag",1,0,0,1,,,,,,
+14.601,APPROACH,77,60,67,-5,1,-2,71,0,15,0,0,0.06,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,0,1,,,,visible,
+14.651,APPROACH,77,60,67,-5,0,-2,71,0,15,0,0,0.00,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,0,1,,,,visible,
+14.701,APPROACH,77,60,67,-5,0,-2,71,0,15,0,0,0.05,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,0,1,,,,visible,
+14.751,APPROACH,77,60,68,-5,0,-1,71,0,15,0,0,0.00,0.04,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,0,1,,,,visible,
+14.801,APPROACH,77,60,68,-5,0,-1,71,0,15,0,0,0.05,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,173,+19,+5,visible,
+14.851,APPROACH,77,60,69,-5,0,-2,71,14,15,0,0,0.00,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,173,+19,+5,visible,
+14.901,APPROACH,77,60,69,-5,0,-2,71,14,15,0,0,0.05,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,0,1,,,,visible,
+14.952,APPROACH,77,60,69,-5,0,-2,71,0,15,0,0,0.10,0.04,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,175,+18,+5,visible,
+15.002,APPROACH,77,60,70,-5,1,-3,71,14,15,0,0,0.00,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,175,+18,+5,visible,
+15.052,APPROACH,77,60,70,-5,1,-3,71,14,15,0,0,0.05,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,0,1,,,,visible,
+15.102,APPROACH,77,60,71,-5,1,-2,73,0,15,0,0,0.02,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,172,+17,+5,visible,
+15.152,APPROACH,77,60,71,-5,1,-2,73,13,15,0,0,0.07,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,171,+17,+6,visible,
+15.202,APPROACH,76,60,71,-5,1,-2,73,13,15,0,0,0.00,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,171,+17,+5,visible,
+15.252,APPROACH,76,60,71,-5,1,-2,73,13,15,0,0,0.05,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,170,+16,+5,visible,
+15.303,APPROACH,76,60,71,-5,1,-2,73,13,15,0,0,0.01,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,168,+16,+5,visible,
+15.353,APPROACH,76,60,71,-5,1,-2,73,12,15,0,15,0.02,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,168,+16,+5,visible,
+15.403,APPROACH,76,60,71,-5,1,-2,73,12,15,0,15,0.07,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,167,+16,+5,visible,
+15.453,APPROACH,76,60,71,-5,1,-2,73,12,15,0,15,0.00,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,167,+16,+5,visible,
+15.503,APPROACH,76,60,71,-5,1,-2,73,12,15,0,15,0.05,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,167,+16,+5,visible,
+15.554,APPROACH,76,60,72,-5,1,-1,73,12,15,0,15,0.01,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,165,+16,+5,visible,
+15.604,APPROACH,76,60,72,-5,1,-1,73,12,15,0,15,0.06,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,165,+16,+5,visible,
+15.654,APPROACH,76,60,71,-5,1,-1,73,12,15,0,15,0.00,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,0,0,0,0,1,,,,visible,
+15.704,APPROACH,76,60,71,-5,1,-1,73,0,15,0,0,0.05,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,0,0,0,1,1,165,+16,+5,visible,
+15.754,APPROACH,76,60,72,-4,0,0,73,12,15,0,15,0.01,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,0,0,0,1,1,165,+16,+5,visible,
+15.805,APPROACH,76,60,72,-4,0,0,73,12,15,0,15,0.06,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,0,0,0,1,1,165,+16,+5,visible,
+15.855,APPROACH,76,60,72,-4,0,0,73,12,15,0,15,0.00,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,0,0,0,1,1,165,+15,+5,visible,
+15.905,APPROACH,76,60,72,-4,0,0,73,12,15,0,15,0.05,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,0,0,0,1,1,165,+15,+5,visible,
+15.955,APPROACH,76,60,72,-4,0,-1,73,12,15,0,15,0.00,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,0,0,0,1,1,163,+14,+4,visible,
+16.008,APPROACH,76,60,72,-4,0,-1,73,11,15,0,0,0.05,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,0,0,0,1,1,164,+14,+4,visible,
+16.059,APPROACH,76,60,72,-3,0,-1,72,11,15,0,0,0.00,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,0,0,0,1,1,163,+14,+4,visible,
+16.109,APPROACH,76,60,72,-3,0,-1,72,11,15,0,15,0.05,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,0,0,0,1,1,163,+14,+5,visible,
+16.159,APPROACH,76,60,72,-3,0,-1,72,11,15,0,15,0.10,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,0,0,0,1,1,163,+14,+4,visible,
+16.209,APPROACH,76,60,71,-4,0,-1,72,10,15,0,15,0.01,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,161,+11,+5,visible,
+16.259,APPROACH,76,60,71,-3,0,-1,72,10,15,0,15,0.00,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,161,+10,+5,visible,
+16.309,APPROACH,76,60,71,-3,0,-1,72,10,15,0,15,0.05,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,0,1,,,,visible,
+16.360,APPROACH,76,60,71,-3,0,-1,72,0,15,0,0,0.00,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,160,+9,+4,visible,
+16.410,APPROACH,76,60,71,-3,0,-1,72,10,15,0,15,0.05,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,159,+9,+4,visible,
+16.460,APPROACH,76,60,69,-3,1,-1,72,10,15,0,15,0.01,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,158,+9,+4,visible,
+16.510,APPROACH,76,60,69,-3,1,-1,72,10,15,0,15,0.06,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,158,+9,+4,visible,
+16.561,APPROACH,76,60,70,-4,1,0,72,10,15,0,15,0.00,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,157,+8,+4,visible,
+16.611,APPROACH,76,60,70,-4,1,0,72,10,15,0,15,0.05,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,157,+7,+4,visible,
+16.661,APPROACH,76,60,70,-4,1,0,72,10,15,0,15,0.10,0.04,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,157,+7,+4,visible,
+16.711,APPROACH,76,60,69,-4,1,0,72,10,15,0,15,0.03,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,157,+6,+4,visible,
+16.761,APPROACH,76,60,71,-4,1,0,72,10,15,0,15,0.00,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,156,+5,+4,visible,
+16.812,APPROACH,76,60,71,-4,1,0,72,10,15,0,15,0.05,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,155,+5,+4,visible,
+16.862,APPROACH,76,60,70,-4,0,0,72,10,15,0,15,0.00,0.03,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,155,+5,+4,visible,
+16.913,APPROACH,76,60,70,-4,0,0,72,10,15,0,15,0.05,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,154,+4,+5,visible,
+16.963,APPROACH,76,60,70,-5,1,0,72,10,15,0,15,0.00,0.03,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,154,+3,+5,visible,
+17.013,APPROACH,76,60,70,-5,1,0,72,0,15,0,15,0.05,0.03,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,153,+3,+5,visible,
+17.064,APPROACH,76,60,70,-5,1,0,72,0,15,0,15,0.10,0.03,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,153,+2,+5,visible,
+17.114,APPROACH,76,60,69,-5,0,0,72,0,15,0,15,0.02,0.03,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,153,+1,+5,visible,
+17.164,APPROACH,75,60,68,-5,0,-1,72,0,15,0,15,0.00,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,153,+1,+5,visible,
+17.214,APPROACH,75,60,68,-5,0,-1,72,0,15,0,15,0.05,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,153,+0,+5,visible,
+17.264,APPROACH,75,60,68,-5,0,-1,72,0,15,0,15,0.10,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,152,-1,+5,visible,
+17.314,APPROACH,75,60,68,-5,0,-1,72,0,15,0,15,0.00,0.03,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,152,-2,+5,visible,
+17.365,APPROACH,75,60,68,-5,0,-1,72,0,15,0,15,0.05,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,152,-3,+5,visible,
+17.415,APPROACH,75,60,68,-5,0,-2,72,0,15,0,15,0.01,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,150,-4,+5,visible,
+17.466,APPROACH,75,60,68,-5,0,-2,72,0,15,0,15,0.06,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,150,-5,+5,visible,
+17.517,APPROACH,75,60,67,-4,0,-1,72,-10,15,0,15,0.00,0.04,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,150,-6,+5,visible,
+17.567,APPROACH,75,60,67,-4,0,-1,72,-10,15,0,15,0.05,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,150,-7,+5,visible,
+17.617,APPROACH,75,60,66,-4,0,-1,72,-10,15,0,15,0.03,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,150,-7,+5,visible,
+17.667,APPROACH,75,60,66,-4,0,-1,72,-10,15,0,15,0.08,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,149,-9,+5,visible,
+17.717,APPROACH,75,60,67,-3,1,-1,72,-10,15,0,15,0.01,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,149,-10,+5,visible,
+17.767,APPROACH,75,60,67,-3,1,-1,72,-10,15,0,15,0.06,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,149,-10,+5,visible,
+17.817,APPROACH,75,60,67,-2,1,-1,72,-10,15,0,15,0.00,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,1,0,1,1,149,-11,+5,visible,
+17.868,APPROACH,75,60,67,-2,1,-1,72,-10,15,0,15,0.05,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,1,0,1,1,149,-14,+5,visible,
+17.918,APPROACH,75,60,67,-1,1,-3,72,-10,15,0,15,0.02,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,1,0,1,1,147,-15,+4,visible,
+17.968,APPROACH,75,60,67,-1,1,-3,72,-11,15,0,15,0.07,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,1,0,1,1,146,-16,+4,visible,
+18.019,APPROACH,75,60,66,0,0,-3,72,-12,15,0,0,0.00,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,0,0,0,1,1,147,-19,+3,visible,
+18.069,APPROACH,75,60,66,0,0,-3,72,-15,15,0,0,0.05,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,0,0,0,1,1,146,-23,+3,visible,
+18.119,APPROACH,75,60,66,1,0,-3,72,-15,15,0,0,0.00,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,0,0,0,1,1,146,-24,+2,visible,
+18.169,APPROACH,75,60,66,1,0,-3,72,-15,15,0,0,0.05,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,0,0,0,1,1,144,-27,+1,visible,
+18.219,APPROACH,75,60,66,2,0,-2,72,-15,15,0,0,0.01,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,0,0,0,1,1,142,-29,-1,visible,
+18.270,APPROACH,75,60,66,2,0,-2,72,-15,15,0,0,0.06,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,0,0,0,0,1,,,,visible,
+18.320,APPROACH,75,60,66,3,0,-2,72,0,15,0,0,0.00,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,0,0,0,1,1,140,-32,-2,visible,
+18.372,APPROACH,75,60,66,3,0,-2,72,-15,15,0,0,0.05,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,0,0,0,0,1,,,,visible,
+18.422,APPROACH,75,60,66,3,0,-1,72,0,15,0,0,0.01,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,137,-35,-3,visible,
+18.472,APPROACH,75,60,66,3,0,-1,72,-15,15,0,0,0.06,0.04,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,136,-35,-3,visible,
+18.522,APPROACH,75,60,66,3,0,-1,72,-15,15,0,0,0.11,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,136,-36,-3,visible,
+18.573,APPROACH,75,60,65,4,0,-1,72,-15,15,0,0,0.05,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,136,-36,-3,visible,
+18.623,APPROACH,75,60,66,4,0,-1,72,-15,15,0,0,0.02,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,136,-36,-3,visible,
+18.673,APPROACH,75,60,67,4,0,-1,72,-15,15,0,0,0.02,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,134,-36,-3,visible,
+18.723,APPROACH,75,60,67,4,0,-1,72,-15,15,0,0,0.07,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,134,-37,-4,visible,
+18.774,APPROACH,75,60,67,4,1,-1,72,-15,15,0,0,0.02,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,134,-37,-4,visible,
+18.824,APPROACH,75,60,67,4,1,-1,72,-15,15,0,0,0.07,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,133,-37,-4,visible,
+18.874,APPROACH,75,60,68,4,0,-2,72,-15,15,0,0,0.00,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,0,0,0,1,1,133,-37,-4,visible,
+18.924,APPROACH,75,60,68,4,0,-2,72,-15,15,0,0,0.05,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,0,0,0,1,1,132,-38,-4,visible,
+18.974,APPROACH,75,60,68,4,0,-2,72,-15,15,0,0,0.10,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,0,0,0,1,1,131,-38,-4,visible,
+19.025,APPROACH,75,60,68,4,0,-2,72,-15,15,0,0,0.04,0.04,tag 1 (Giro derecha 90) en el piso a 177 cm,0,0,0,1,1,131,-38,-4,visible,
+19.075,APPROACH,75,60,68,4,0,-3,73,-15,15,0,0,0.00,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,130,-38,-4,visible,
+19.125,APPROACH,75,60,68,4,0,-3,73,-15,15,0,0,0.05,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,1,1,130,-38,-4,visible,
+19.175,APPROACH,74,60,68,4,1,-3,73,-15,15,0,0,0.00,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,0,0,0,1,1,129,-38,-4,visible,
+19.225,APPROACH,74,60,68,4,1,-3,73,-15,15,0,0,0.05,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,0,0,0,1,1,129,-39,-4,visible,
+19.276,APPROACH,74,60,69,4,0,-3,73,-15,15,0,0,0.00,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,0,0,0,1,1,129,-39,-4,visible,
+19.326,APPROACH,74,60,69,4,0,-3,73,-15,15,0,0,0.05,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,0,0,0,1,1,128,-39,-4,visible,
+19.377,APPROACH,74,60,69,4,0,-2,73,-15,15,0,0,0.00,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,0,0,0,1,1,128,-39,-4,visible,
+19.427,APPROACH,74,60,69,4,0,-2,73,-15,15,0,0,0.05,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,0,0,0,1,1,128,-39,-4,visible,
+19.477,APPROACH,74,60,68,4,0,-2,73,-15,15,0,0,0.00,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,0,0,0,1,1,127,-39,-4,visible,
+19.528,APPROACH,74,60,68,4,0,-2,73,-15,15,0,0,0.05,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,0,0,0,1,1,127,-39,-4,visible,
+19.578,APPROACH,74,60,68,4,0,-2,73,-15,15,0,0,0.10,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,0,0,0,1,1,127,-39,-4,visible,
+19.628,APPROACH,74,60,69,4,0,-2,73,-15,15,0,0,0.04,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,1,0,0,0,1,,,,visible,
+19.678,APPROACH,74,60,69,4,0,-2,73,0,15,0,0,0.00,0.04,tag 1 (Giro derecha 90) en el piso a 177 cm,0,0,0,0,1,,,,visible,
+19.728,APPROACH,74,60,69,4,0,-2,73,0,15,0,0,0.05,0.01,tag 1 (Giro derecha 90) en el piso a 177 cm,0,0,0,0,1,,,,visible,
+19.778,APPROACH,74,60,69,4,0,-2,73,0,15,0,0,0.10,0.01,tag 1 (Giro derecha 90) en el piso a 177 cm,0,0,0,0,1,,,,visible,
+19.828,APPROACH,74,60,69,4,0,-2,73,0,15,0,0,0.00,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,0,0,0,0,1,,,,visible,
+19.879,APPROACH,74,60,69,4,0,-2,73,0,15,0,0,0.00,0.02,tag 1 (Giro derecha 90) en el piso a 177 cm,0,0,0,0,1,,,,visible,
+19.929,APPROACH,74,60,69,4,0,-2,73,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+19.979,APPROACH,74,60,69,4,0,-2,73,0,15,0,0,0.10,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+20.029,APPROACH,74,60,70,4,0,-1,73,0,15,0,0,0.02,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+20.079,APPROACH,74,60,70,4,0,-1,73,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+20.129,APPROACH,74,60,70,4,0,-1,73,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+20.179,APPROACH,74,60,70,4,0,-1,73,0,15,0,0,0.10,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+20.230,APPROACH,74,60,70,4,0,-1,73,0,15,0,0,0.01,0.04,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+20.280,APPROACH,74,60,70,4,0,-1,73,0,15,0,0,0.06,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+20.330,APPROACH,74,60,70,4,0,-1,73,0,15,0,0,0.04,0.01,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+20.380,APPROACH,74,60,70,4,0,-1,73,0,15,0,0,0.09,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+20.432,APPROACH,74,60,70,4,1,-1,73,0,15,0,0,0.04,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+20.482,APPROACH,74,60,70,4,1,-1,73,0,15,0,0,0.09,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+20.532,APPROACH,74,60,70,4,1,-1,73,0,15,0,0,0.02,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+20.583,APPROACH,74,60,70,4,1,-1,73,0,15,0,0,0.07,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+20.633,APPROACH,74,60,71,4,0,-1,73,0,15,0,0,0.01,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+20.683,APPROACH,74,60,71,4,0,-1,73,0,15,0,0,0.06,0.04,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+20.733,APPROACH,74,60,71,4,1,-1,73,0,15,0,0,0.02,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+20.783,APPROACH,74,60,71,4,1,-1,73,0,15,0,0,0.07,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+20.834,APPROACH,74,60,71,4,0,-2,73,0,15,0,0,0.01,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+20.884,APPROACH,74,60,71,4,0,-2,73,0,15,0,0,0.06,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+20.934,APPROACH,74,60,71,4,0,-3,73,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+20.984,APPROACH,74,60,71,4,0,-3,73,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+21.034,APPROACH,74,60,72,4,0,-4,73,0,15,0,0,0.03,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+21.084,APPROACH,74,60,72,4,0,-4,73,0,15,0,0,0.08,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+21.134,APPROACH,74,60,72,4,0,-3,72,0,15,0,0,0.02,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+21.185,APPROACH,74,60,72,4,0,-3,72,0,15,0,0,0.07,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+21.235,APPROACH,73,60,72,4,0,-1,72,0,15,0,0,0.01,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+21.285,APPROACH,73,60,72,4,0,-1,72,0,15,0,0,0.06,0.03,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+21.335,APPROACH,73,60,72,4,1,-1,72,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+21.386,APPROACH,73,60,72,4,1,-1,72,0,15,0,0,0.05,0.04,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+21.436,APPROACH,73,60,73,4,1,-1,72,0,15,0,0,0.01,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+21.487,APPROACH,73,60,73,4,1,-1,72,0,15,0,0,0.06,0.04,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+21.537,APPROACH,73,60,73,3,1,0,72,0,15,0,0,0.02,0.08,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+21.587,APPROACH,73,60,73,3,1,0,72,0,15,0,0,0.07,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+21.637,APPROACH,73,60,74,3,1,0,72,0,15,0,0,0.01,0.01,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+21.687,APPROACH,73,60,74,3,1,0,72,0,15,0,0,0.06,0.03,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+21.739,APPROACH,73,60,74,3,0,-1,72,0,15,0,0,0.02,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+21.789,APPROACH,73,60,74,3,0,-1,72,0,15,0,0,0.07,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+21.839,APPROACH,73,60,75,3,1,-1,72,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+21.889,APPROACH,73,60,75,3,1,-1,72,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+21.940,APPROACH,73,60,74,4,2,-1,72,0,15,0,0,0.01,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+21.990,APPROACH,73,60,75,4,1,-1,72,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+22.043,APPROACH,73,60,75,4,1,-1,72,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+22.093,APPROACH,73,60,75,4,1,-1,72,0,15,0,0,0.10,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+22.143,APPROACH,73,60,75,4,1,-2,73,0,15,0,0,0.01,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+22.193,APPROACH,73,60,74,4,1,-2,73,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+22.244,APPROACH,73,60,74,4,1,-2,73,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+22.294,APPROACH,73,60,73,4,1,-2,73,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+22.344,APPROACH,73,60,73,4,1,-2,73,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+22.394,APPROACH,73,60,74,4,1,-1,73,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+22.444,APPROACH,73,60,74,4,1,-1,73,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+22.494,APPROACH,73,60,72,4,1,-1,73,0,15,0,0,0.00,0.04,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+22.544,APPROACH,73,60,72,4,1,-1,73,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+22.595,APPROACH,73,60,72,4,0,-1,73,0,15,0,0,0.01,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+22.645,APPROACH,73,60,72,4,0,-1,73,0,15,0,0,0.06,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+22.695,APPROACH,73,60,72,4,0,-1,73,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+22.745,APPROACH,73,60,72,4,0,-1,73,0,15,0,0,0.05,0.01,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+22.795,APPROACH,73,60,72,4,0,-1,73,0,15,0,0,0.01,0.01,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+22.845,APPROACH,73,60,72,4,0,-1,73,0,15,0,0,0.06,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+22.896,APPROACH,73,60,72,4,0,-1,73,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+22.946,APPROACH,73,60,72,4,0,-1,73,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+22.996,APPROACH,73,60,71,4,1,-1,73,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+23.046,APPROACH,73,60,71,4,1,-1,73,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+23.096,APPROACH,73,60,70,4,1,-1,74,0,15,0,0,0.01,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+23.146,APPROACH,73,60,70,4,1,-1,74,0,15,0,0,0.06,0.01,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+23.197,APPROACH,73,60,70,4,1,-1,74,0,15,0,0,0.11,0.04,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+23.247,APPROACH,72,60,70,4,0,-1,74,0,15,0,0,0.03,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+23.297,APPROACH,72,60,69,4,1,-1,74,0,15,0,0,0.00,0.01,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+23.347,APPROACH,72,60,69,4,1,-1,74,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+23.397,APPROACH,72,60,69,4,1,-1,74,0,15,0,0,0.10,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+23.448,APPROACH,72,60,69,4,0,-1,74,0,15,0,0,0.02,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+23.498,APPROACH,72,60,69,4,0,-1,74,0,15,0,0,0.07,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+23.548,APPROACH,72,60,69,4,0,-1,74,0,15,0,0,0.04,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+23.598,APPROACH,72,60,69,4,0,-1,74,0,15,0,0,0.09,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+23.648,APPROACH,72,60,69,4,0,-1,74,0,15,0,0,0.02,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+23.699,APPROACH,72,60,69,4,0,-1,74,0,15,0,0,0.07,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+23.749,APPROACH,72,60,69,4,0,-1,74,0,15,0,0,0.01,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+23.799,APPROACH,72,60,69,4,0,-1,74,0,15,0,0,0.06,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+23.849,APPROACH,72,60,69,4,0,-1,74,0,15,0,0,0.11,0.04,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+23.899,APPROACH,72,60,69,4,0,-1,74,0,15,0,0,0.02,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+23.949,APPROACH,72,60,69,4,0,-1,74,0,15,0,0,0.03,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+24.000,APPROACH,72,60,69,4,0,-1,74,0,15,0,0,0.08,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+24.050,APPROACH,72,60,69,4,0,-1,74,0,15,0,0,0.00,0.06,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+24.100,APPROACH,72,60,69,4,0,-1,74,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+24.150,APPROACH,72,60,69,4,0,-1,73,0,15,0,0,0.02,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+24.200,APPROACH,72,60,69,4,0,-1,73,0,15,0,0,0.07,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+24.250,APPROACH,72,60,69,4,0,0,73,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+24.300,APPROACH,72,60,69,4,0,0,73,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+24.350,APPROACH,72,60,69,4,0,0,73,0,15,0,0,0.02,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+24.400,APPROACH,72,60,69,4,0,0,73,0,15,0,0,0.07,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+24.451,APPROACH,72,60,69,4,0,0,73,0,15,0,0,0.12,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+24.501,APPROACH,72,60,70,4,0,0,73,0,15,0,0,0.01,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+24.551,APPROACH,72,60,71,4,0,0,73,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+24.601,APPROACH,72,60,71,4,0,0,73,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+24.651,APPROACH,72,60,70,4,0,-1,73,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+24.705,APPROACH,72,60,70,4,0,-1,73,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+24.755,APPROACH,72,60,70,4,0,-1,73,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+24.806,APPROACH,72,60,70,4,0,-1,73,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+24.856,APPROACH,72,60,70,4,0,-1,73,0,15,0,0,0.10,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+24.906,APPROACH,72,60,70,4,0,0,73,0,15,0,0,0.01,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+24.957,APPROACH,72,60,71,4,0,0,73,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+25.007,APPROACH,72,60,71,4,0,-1,73,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+25.057,APPROACH,72,60,71,4,0,-1,73,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+25.107,APPROACH,72,60,71,4,0,-1,73,0,15,0,0,0.10,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+25.158,APPROACH,72,60,72,4,1,-1,73,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+25.208,APPROACH,72,60,72,4,1,-1,73,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+25.258,APPROACH,72,60,72,4,1,-1,73,0,15,0,0,0.10,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+25.309,APPROACH,71,60,72,4,1,-1,73,0,15,0,0,0.01,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+25.359,APPROACH,71,60,71,4,0,-1,73,0,15,0,0,0.01,0.03,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+25.409,APPROACH,71,60,71,4,0,-1,73,0,15,0,0,0.02,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+25.459,APPROACH,71,60,71,4,0,-1,73,0,15,0,0,0.07,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+25.509,APPROACH,71,60,71,4,1,0,73,0,15,0,0,0.00,0.03,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+25.559,APPROACH,71,60,71,4,1,0,73,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+25.610,APPROACH,71,60,70,3,0,-1,73,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+25.660,APPROACH,71,60,70,3,0,-1,73,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+25.710,APPROACH,71,60,70,3,0,-1,73,0,15,0,0,0.10,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+25.760,APPROACH,71,60,70,3,0,-1,73,0,15,0,0,0.01,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+25.810,APPROACH,71,60,70,4,0,0,73,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+25.860,APPROACH,71,60,70,4,0,0,73,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+25.911,APPROACH,71,60,70,4,0,0,73,0,15,0,0,0.10,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+25.961,APPROACH,71,60,69,4,0,0,73,0,15,0,0,0.01,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+26.011,APPROACH,71,60,69,3,0,0,73,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+26.061,APPROACH,71,60,69,3,0,0,73,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+26.111,APPROACH,71,60,67,3,0,0,74,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+26.161,APPROACH,71,60,67,3,0,0,74,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+26.211,APPROACH,71,60,67,4,0,0,74,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+26.262,APPROACH,71,60,67,4,0,0,74,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+26.312,APPROACH,71,60,67,4,0,0,74,0,15,0,0,0.10,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+26.362,APPROACH,71,60,66,4,0,0,74,0,15,0,0,0.03,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+26.412,APPROACH,71,60,66,4,0,-1,74,0,15,0,0,0.00,0.04,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+26.462,APPROACH,71,60,66,4,0,-1,74,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+26.513,APPROACH,71,60,66,4,0,-1,74,0,15,0,0,0.10,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+26.563,APPROACH,71,60,66,4,0,-1,74,0,15,0,0,0.02,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+26.613,APPROACH,71,60,66,4,0,-1,74,0,15,0,0,0.07,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+26.663,APPROACH,71,60,65,4,0,-1,74,0,15,0,0,0.05,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+26.713,APPROACH,71,60,65,4,0,-1,74,0,15,0,0,0.10,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,1,0,0,0,1,,,,ciegas,122
+26.764,APPROACH,71,60,66,4,0,-1,74,0,15,0,0,0.04,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+26.814,APPROACH,71,60,66,4,0,-1,74,0,15,0,0,0.09,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+26.864,APPROACH,71,50,66,4,0,-1,74,0,15,0,0,0.04,0.04,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+26.914,APPROACH,71,50,66,4,0,-1,74,0,15,0,0,0.09,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+26.964,APPROACH,71,60,66,4,0,-1,74,0,15,0,0,0.02,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+27.014,APPROACH,71,60,66,4,0,-1,74,0,15,0,0,0.07,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+27.064,APPROACH,71,60,67,4,0,-1,74,0,15,0,0,0.00,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,ciegas,122
+27.115,APPROACH,71,60,67,4,0,-1,74,0,0,0,0,0.05,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,quieto,122
+27.165,APPROACH,71,60,67,4,0,-1,73,0,0,0,0,0.02,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,quieto,122
+27.215,APPROACH,71,60,67,4,0,-1,73,0,0,0,0,0.07,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,quieto,122
+27.265,APPROACH,70,60,67,4,0,-1,73,0,0,0,0,0.00,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,quieto,122
+27.315,APPROACH,70,60,67,4,0,-1,73,0,0,0,0,0.05,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,quieto,122
+27.365,APPROACH,70,60,67,4,1,-1,73,0,0,0,0,0.03,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,quieto,122
+27.420,APPROACH,70,60,67,4,1,-1,73,0,0,0,0,0.08,0.03,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,quieto,122
+27.470,APPROACH,70,60,66,4,1,0,73,0,0,0,0,0.00,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,quieto,122
+27.520,APPROACH,70,60,66,4,1,0,73,0,0,0,0,0.06,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,quieto,122
+27.570,APPROACH,70,60,66,4,1,0,73,0,0,0,0,0.03,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,quieto,122
+27.620,APPROACH,70,60,66,4,1,0,73,0,0,0,0,0.08,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,quieto,122
+27.671,APPROACH,70,60,65,4,1,-1,73,0,0,0,0,0.00,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,quieto,122
+27.721,APPROACH,70,60,65,4,1,-1,73,0,0,0,0,0.05,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,quieto,122
+27.771,APPROACH,70,60,64,4,1,-2,73,0,0,0,0,0.00,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,quieto,122
+27.821,APPROACH,70,60,64,4,1,-2,73,0,0,0,0,0.05,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,quieto,122
+27.872,APPROACH,70,50,64,4,2,-2,73,0,0,0,0,0.02,0.02,tag 1 debajo de la imagen: 122 cm a ciegas,0,0,0,0,1,,,,quieto,122
+27.922,EXECUTE,70,50,64,4,2,-2,73,0,0,0,0,0.07,0.02,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,0,1,,,,,122
+27.972,EXECUTE,70,50,62,4,1,-3,73,0,0,0,60,0.02,0.01,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,0,1,,,,,122
+28.022,EXECUTE,70,50,62,4,1,-3,73,0,0,0,60,0.07,0.02,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,0,1,,,,,122
+28.072,EXECUTE,70,50,61,4,0,-3,73,0,0,0,60,0.02,0.02,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,0,1,,,,,122
+28.122,EXECUTE,70,50,61,4,0,-3,73,0,0,0,60,0.07,0.02,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,0,1,,,,,122
+28.172,EXECUTE,70,50,61,8,0,-1,75,0,0,0,60,0.01,0.01,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,0,1,,,,,122
+28.223,EXECUTE,70,50,61,8,0,-1,75,0,0,0,60,0.06,0.04,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,0,1,,,,,122
+28.273,EXECUTE,70,50,61,12,1,0,75,0,0,0,60,0.00,0.01,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,0,1,,,,,122
+28.323,EXECUTE,70,50,61,12,1,0,75,0,0,0,60,0.05,0.02,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,0,1,,,,,122
+28.373,EXECUTE,70,50,62,17,1,0,75,0,0,0,60,0.02,0.01,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,0,1,,,,,122
+28.424,EXECUTE,70,50,62,17,1,0,75,0,0,0,60,0.07,0.01,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,0,1,,,,,122
+28.474,EXECUTE,70,50,62,21,1,0,75,0,0,0,60,0.01,0.02,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,0,1,,,,,122
+28.524,EXECUTE,70,50,62,21,1,0,75,0,0,0,60,0.06,0.02,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,0,1,,,,,122
+28.574,EXECUTE,70,50,63,25,1,0,75,0,0,0,60,0.00,0.01,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,0,1,,,,,122
+28.624,EXECUTE,70,50,63,25,1,0,75,0,0,0,60,0.05,0.02,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,0,1,,,,,122
+28.674,EXECUTE,70,50,64,29,1,0,75,0,0,0,60,0.00,0.01,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,0,1,,,,,122
+28.724,EXECUTE,70,50,64,29,1,0,75,0,0,0,60,0.05,0.01,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,0,1,,,,,122
+28.775,EXECUTE,70,50,65,33,1,0,75,0,0,0,60,0.01,0.02,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,0,1,,,,,122
+28.825,EXECUTE,70,50,66,37,1,-1,75,0,0,0,60,0.00,0.01,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,0,1,,,,,122
+28.875,EXECUTE,70,50,66,37,1,-1,75,0,0,0,60,0.05,0.02,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,0,1,,,,,122
+28.926,EXECUTE,70,50,67,41,0,-1,75,0,0,0,60,0.00,0.02,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,0,1,,,,,122
+28.976,EXECUTE,70,50,67,41,0,-1,75,0,0,0,60,0.05,0.02,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,1,1,,,,,122
+29.026,EXECUTE,70,60,68,45,0,0,75,0,0,0,60,0.00,0.02,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,0,1,,,,,122
+29.076,EXECUTE,70,60,68,45,0,0,75,0,0,0,60,0.05,0.02,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,1,1,,,,,122
+29.126,EXECUTE,70,60,68,45,0,0,75,0,0,0,60,0.10,0.02,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,0,1,,,,,122
+29.176,EXECUTE,70,60,68,45,0,0,75,0,0,0,60,0.15,0.01,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,1,1,,,,,122
+29.226,EXECUTE,69,60,69,54,0,0,75,0,0,0,60,0.00,0.02,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,0,1,,,,,122
+29.278,EXECUTE,69,60,69,54,0,0,75,0,0,0,60,0.06,0.02,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,1,1,,,,,122
+29.328,EXECUTE,69,60,68,58,0,0,75,0,0,0,60,0.00,0.02,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,1,1,,,,,122
+29.379,EXECUTE,69,60,68,58,0,0,75,0,0,0,60,0.05,0.02,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,1,1,,,,,122
+29.429,EXECUTE,69,60,68,62,0,0,75,0,0,0,60,0.00,0.02,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,1,1,,,,,122
+29.479,EXECUTE,69,60,68,62,0,0,75,0,0,0,60,0.05,0.04,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,1,1,,,,,122
+29.529,EXECUTE,69,60,67,66,0,0,75,0,0,0,60,0.00,0.01,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,0,1,,,,,122
+29.579,EXECUTE,69,60,67,66,0,0,75,0,0,0,56,0.05,0.02,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,1,1,,,,,122
+29.630,EXECUTE,69,60,66,71,0,0,75,0,0,0,56,0.00,0.02,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,1,1,,,,,122
+29.681,EXECUTE,69,60,66,71,0,0,75,0,0,0,46,0.05,0.01,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,1,1,,,,,122
+29.731,EXECUTE,69,60,66,75,0,0,75,0,0,0,46,0.00,0.02,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,0,1,,,,,122
+29.783,EXECUTE,69,60,66,75,0,0,75,0,0,0,38,0.05,0.01,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,1,1,,,,,122
+29.833,EXECUTE,69,60,66,75,0,0,75,0,0,0,38,0.10,0.01,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,1,1,,,,,122
+29.883,EXECUTE,69,60,65,78,0,0,75,0,0,0,38,0.02,0.01,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,1,1,,,,,122
+29.933,EXECUTE,69,60,65,78,0,0,75,0,0,0,32,0.07,0.01,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,1,1,,,,,122
+29.984,EXECUTE,69,50,64,80,0,0,75,0,0,0,32,0.00,0.03,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,1,1,,,,,122
+30.034,EXECUTE,69,50,64,80,0,0,75,0,0,0,28,0.05,0.01,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,1,1,,,,,122
+30.084,EXECUTE,69,50,63,82,0,0,75,0,0,0,28,0.03,0.01,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,1,1,,,,,122
+30.134,EXECUTE,69,50,63,82,0,0,75,0,0,0,24,0.08,0.02,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,1,1,,,,,122
+30.185,EXECUTE,69,50,62,84,0,0,75,0,0,0,24,0.02,0.02,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,1,1,,,,,122
+30.235,EXECUTE,69,50,62,84,0,0,75,0,0,0,20,0.07,0.02,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,1,1,,,,,122
+30.285,EXECUTE,69,50,62,85,0,0,75,0,0,0,20,0.01,0.02,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,1,1,,,,,122
+30.335,EXECUTE,69,50,62,85,0,0,75,0,0,0,20,0.06,0.02,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,1,1,,,,,122
+30.385,EXECUTE,69,50,62,86,0,0,75,0,0,0,20,0.00,0.02,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,1,1,,,,,122
+30.435,EXECUTE,69,50,62,86,0,0,75,0,0,0,20,0.05,0.02,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,1,1,,,,,122
+30.486,EXECUTE,69,50,61,86,0,0,75,0,0,0,20,0.01,0.02,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,1,1,,,,,122
+30.536,EXECUTE,69,50,61,86,0,0,75,0,0,0,20,0.06,0.02,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,1,1,,,,,122
+30.586,EXECUTE,69,50,62,87,1,0,75,0,0,0,20,0.03,0.02,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,0,1,,,,,122
+30.636,EXECUTE,69,50,62,87,1,0,75,0,0,0,20,0.08,0.02,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,1,1,,,,,122
+30.686,EXECUTE,69,50,62,88,1,0,75,0,0,0,20,0.02,0.02,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,1,1,,,,,122
+30.736,EXECUTE,69,50,62,88,1,0,75,0,0,0,20,0.07,0.02,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,1,1,,,,,122
+30.786,EXECUTE,69,50,62,88,1,0,75,0,0,0,20,0.12,0.02,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,1,1,,,,,122
+30.837,EXECUTE,69,50,62,88,1,0,75,0,0,0,20,0.04,0.02,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,1,1,,,,,122
+30.887,EXECUTE,69,50,63,89,0,0,75,0,0,0,20,0.01,0.02,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,1,1,,,,,122
+30.937,EXECUTE,69,50,63,89,0,0,75,0,0,0,20,0.06,0.02,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,1,1,,,,,122
+30.988,EXECUTE,69,50,63,89,1,0,75,0,0,0,20,0.02,0.02,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,1,1,,,,,122
+31.038,EXECUTE,69,50,63,89,1,0,75,0,0,0,20,0.07,0.02,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,1,1,,,,,122
+31.088,EXECUTE,69,50,64,90,0,0,75,0,0,0,20,0.00,0.02,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,0,1,,,,,122
+31.139,EXECUTE,69,50,64,90,0,0,75,0,0,0,20,0.05,0.03,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,0,1,,,,,122
+31.189,EXECUTE,68,50,65,91,0,0,75,0,0,0,20,0.00,0.03,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,0,1,,,,,122
+31.239,EXECUTE,68,50,65,91,0,0,75,0,0,0,0,0.05,0.02,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,0,1,,,,,122
+31.289,EXECUTE,68,60,65,91,0,0,75,0,0,0,0,0.02,0.02,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,0,1,,,,,122
+31.340,EXECUTE,68,60,65,91,0,0,75,0,0,0,0,0.07,0.02,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,0,1,,,,,122
+31.390,EXECUTE,68,60,67,92,0,0,75,0,0,0,0,0.03,0.03,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,0,1,,,,,122
+31.441,EXECUTE,68,60,67,92,0,0,75,0,0,0,0,0.08,0.03,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,0,1,,,,,122
+31.492,EXECUTE,68,60,67,92,0,0,75,0,0,0,0,0.00,0.03,"tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)",0,0,0,0,1,,,,,122
+31.542,ADVANCE,68,60,67,92,0,0,75,0,0,0,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+31.592,ADVANCE,68,60,67,92,0,0,75,0,15,0,0,0.00,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+31.642,ADVANCE,68,60,67,92,0,0,75,0,15,0,0,0.05,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+31.692,ADVANCE,68,60,67,92,0,0,75,0,15,0,0,0.00,0.04,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+31.742,ADVANCE,68,60,67,92,0,0,75,0,15,0,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+31.792,ADVANCE,68,60,67,92,0,0,75,0,15,0,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+31.843,ADVANCE,68,60,67,92,0,0,75,0,15,0,0,0.10,0.05,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+31.893,ADVANCE,68,60,67,92,0,0,75,0,15,0,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+31.943,ADVANCE,68,60,67,92,0,0,75,0,15,0,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+31.993,ADVANCE,68,60,67,92,0,0,75,0,15,0,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+32.043,ADVANCE,68,60,67,92,0,0,75,0,15,0,0,0.10,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+32.093,ADVANCE,68,60,67,92,0,0,75,0,15,0,0,0.15,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+32.143,ADVANCE,68,60,66,92,0,0,75,0,15,0,0,0.01,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+32.193,ADVANCE,68,60,67,92,0,0,75,0,15,0,0,0.01,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+32.243,ADVANCE,68,60,67,92,0,0,75,0,15,0,0,0.06,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+32.294,ADVANCE,68,60,66,92,0,0,75,0,15,0,0,0.01,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+32.344,ADVANCE,68,60,66,92,0,0,75,0,15,0,0,0.06,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+32.394,ADVANCE,68,60,66,92,0,0,75,0,15,0,0,0.01,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+32.444,ADVANCE,68,60,66,92,0,0,75,0,15,0,0,0.06,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+32.494,ADVANCE,68,60,66,92,0,0,75,0,15,0,0,0.11,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+32.544,ADVANCE,68,60,66,92,0,-1,75,0,15,0,0,0.02,0.07,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+32.594,ADVANCE,68,60,66,92,0,0,75,0,15,0,0,0.00,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+32.644,ADVANCE,68,60,66,92,0,0,75,0,15,0,0,0.05,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+32.694,ADVANCE,68,60,66,92,0,0,75,0,15,0,0,0.10,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+32.747,ADVANCE,68,60,67,92,0,0,75,0,15,0,0,0.02,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+32.797,ADVANCE,68,60,67,92,0,0,75,0,15,0,0,0.02,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+32.847,ADVANCE,68,60,67,92,0,0,75,0,15,0,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+32.897,ADVANCE,68,60,67,92,0,0,75,0,15,0,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+32.947,ADVANCE,68,60,67,92,0,0,75,0,15,0,0,0.10,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+32.998,ADVANCE,68,60,68,92,0,0,75,0,15,0,0,0.02,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+33.048,ADVANCE,68,60,68,92,0,0,75,0,15,0,0,0.07,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+33.098,ADVANCE,68,60,68,92,0,0,75,0,15,0,0,0.02,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+33.149,ADVANCE,68,60,68,92,0,0,75,0,15,0,0,0.07,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+33.199,ADVANCE,67,60,68,92,0,1,76,0,15,0,0,0.02,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+33.249,ADVANCE,67,60,68,92,0,1,76,0,15,0,0,0.07,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+33.300,ADVANCE,67,60,69,92,0,0,76,0,15,0,0,0.03,0.03,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+33.350,ADVANCE,67,60,69,92,0,0,76,0,15,0,0,0.08,0.04,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+33.400,ADVANCE,67,60,69,92,0,0,76,0,15,0,0,0.02,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+33.451,ADVANCE,67,60,69,92,0,0,76,0,15,0,0,0.07,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+33.501,ADVANCE,67,60,70,92,0,0,76,0,15,0,0,0.02,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+33.551,ADVANCE,67,60,70,92,0,0,76,0,15,0,0,0.07,0.04,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+33.601,ADVANCE,67,60,70,92,0,0,76,0,15,0,0,0.12,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+33.651,ADVANCE,67,60,71,92,0,0,76,0,15,0,0,0.05,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+33.702,ADVANCE,67,60,71,92,0,0,76,0,15,0,0,0.01,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+33.752,ADVANCE,67,60,71,92,0,0,76,0,15,0,0,0.06,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+33.802,ADVANCE,67,60,72,92,0,0,76,0,15,0,0,0.01,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+33.852,ADVANCE,67,60,72,92,0,0,76,0,15,0,0,0.06,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+33.902,ADVANCE,67,60,71,92,0,0,76,0,15,0,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+33.952,ADVANCE,67,60,71,92,0,0,76,0,15,0,0,0.05,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+34.006,ADVANCE,67,60,71,92,0,0,76,0,15,0,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+34.057,ADVANCE,67,60,71,92,0,0,76,0,15,0,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+34.109,ADVANCE,67,60,71,92,0,0,76,0,15,0,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+34.160,ADVANCE,67,60,71,92,0,0,76,0,15,0,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+34.210,ADVANCE,67,60,71,92,0,0,76,0,15,0,0,0.10,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+34.260,ADVANCE,67,60,71,92,0,0,76,0,15,0,0,0.02,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+34.310,ADVANCE,67,60,70,92,0,-1,76,0,15,0,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+34.360,ADVANCE,67,60,70,92,0,-1,76,0,15,0,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+34.410,ADVANCE,67,60,70,92,0,-1,76,0,15,0,0,0.10,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+34.460,ADVANCE,67,60,70,92,0,0,76,0,15,0,0,0.02,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+34.511,ADVANCE,67,60,69,92,0,0,76,0,15,0,0,0.00,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+34.561,ADVANCE,67,60,69,92,0,0,76,0,15,0,0,0.00,0.02,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+34.611,ADVANCE,67,60,69,92,0,0,76,0,15,0,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+34.661,ADVANCE,67,60,69,92,0,0,76,0,15,0,0,0.10,0.03,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+34.711,ADVANCE,67,60,68,92,0,0,76,0,15,0,0,0.03,0.04,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+34.761,ADVANCE,67,60,68,92,0,0,76,0,15,0,0,0.08,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+34.811,ADVANCE,67,60,68,92,0,0,76,0,15,0,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+34.861,ADVANCE,67,60,68,92,0,0,76,0,15,0,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+34.911,ADVANCE,67,60,67,92,0,0,76,0,15,0,0,0.00,0.04,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+34.962,ADVANCE,67,60,66,92,0,0,76,0,15,0,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+35.012,ADVANCE,67,60,66,92,0,0,76,0,15,0,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+35.062,ADVANCE,67,60,66,92,0,0,76,0,15,0,0,0.10,0.03,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+35.112,ADVANCE,67,50,66,92,0,0,76,0,15,0,0,0.02,0.03,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+35.162,ADVANCE,67,50,66,92,0,0,76,0,15,0,0,0.07,0.03,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+35.212,ADVANCE,67,50,66,92,0,0,76,0,15,0,0,0.12,0.03,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+35.262,ADVANCE,66,50,66,92,0,0,76,0,15,0,0,0.02,0.03,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+35.312,ADVANCE,66,50,65,92,0,0,76,0,15,0,0,0.02,0.03,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+35.362,ADVANCE,66,50,65,92,0,0,76,0,15,0,0,0.07,0.03,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+35.413,ADVANCE,66,50,65,92,0,0,76,0,15,0,0,0.02,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+35.463,ADVANCE,66,50,65,92,0,0,76,0,15,0,0,0.07,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+35.513,ADVANCE,66,50,66,92,0,0,76,0,15,0,0,0.01,0.05,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+35.563,ADVANCE,66,50,66,92,0,0,76,0,15,0,0,0.06,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+35.613,ADVANCE,66,50,66,92,0,0,76,0,15,0,0,0.00,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+35.663,ADVANCE,66,50,66,92,0,0,76,0,15,0,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+35.713,ADVANCE,66,50,66,92,0,0,76,0,15,0,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+35.763,ADVANCE,66,50,66,92,0,0,76,0,15,0,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+35.814,ADVANCE,66,50,65,92,0,0,76,0,15,0,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+35.864,ADVANCE,66,50,65,92,0,0,76,0,15,0,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+35.914,ADVANCE,66,50,65,92,0,0,76,0,15,0,0,0.00,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+35.964,ADVANCE,66,50,65,92,0,0,76,0,15,0,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+36.014,ADVANCE,66,50,66,92,0,0,76,0,15,0,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+36.065,ADVANCE,66,50,66,92,0,0,76,0,15,0,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+36.116,ADVANCE,66,50,66,92,0,0,76,0,15,0,0,0.10,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+36.166,ADVANCE,66,50,66,92,0,0,76,0,15,0,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+36.216,ADVANCE,66,50,66,92,0,0,75,0,15,0,0,0.01,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+36.266,ADVANCE,66,50,66,92,0,0,75,0,15,0,0,0.06,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+36.316,ADVANCE,66,50,66,92,0,0,75,0,15,0,0,0.11,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+36.366,ADVANCE,66,50,66,92,0,0,75,0,15,0,0,0.01,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+36.417,ADVANCE,66,50,66,92,0,0,75,0,15,0,0,0.01,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+36.467,ADVANCE,66,50,66,92,0,0,75,0,15,0,0,0.06,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+36.518,ADVANCE,66,60,66,92,0,0,75,0,15,0,0,0.01,0.08,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+36.568,ADVANCE,66,60,66,92,0,0,75,0,15,0,0,0.06,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+36.618,ADVANCE,66,60,66,92,0,0,75,0,15,0,0,0.02,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+36.669,ADVANCE,66,60,66,92,0,0,75,0,15,0,0,0.07,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+36.719,ADVANCE,66,60,66,92,0,0,75,0,15,0,0,0.12,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+36.769,ADVANCE,66,60,66,92,0,0,75,0,15,0,0,0.02,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+36.819,ADVANCE,66,60,66,92,0,-1,75,0,15,0,0,0.02,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+36.873,ADVANCE,66,60,66,92,0,-1,75,0,15,0,0,0.08,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+36.923,ADVANCE,66,60,66,92,0,0,75,0,15,0,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+36.973,ADVANCE,66,60,66,92,0,0,75,0,15,0,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+37.023,ADVANCE,66,60,65,92,0,0,75,0,15,0,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+37.075,ADVANCE,66,60,65,92,0,0,75,0,15,0,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+37.125,ADVANCE,66,60,65,92,0,0,75,0,15,0,0,0.10,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+37.175,ADVANCE,66,60,65,92,0,0,75,0,15,0,0,0.00,0.04,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+37.225,ADVANCE,65,50,65,92,0,0,76,0,15,0,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+37.276,ADVANCE,65,50,65,92,0,0,76,0,15,0,0,0.05,0.02,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+37.326,ADVANCE,65,50,66,92,0,0,76,0,15,0,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+37.376,ADVANCE,65,50,66,92,0,0,76,0,15,0,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+37.426,ADVANCE,65,50,66,92,0,-1,76,0,15,0,0,0.00,0.05,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+37.476,ADVANCE,65,50,66,92,0,-1,76,0,15,0,0,0.05,0.02,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+37.527,ADVANCE,65,60,66,92,0,0,76,0,15,0,0,0.00,0.02,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+37.577,ADVANCE,65,60,66,92,0,0,76,0,15,0,0,0.05,0.02,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+37.627,ADVANCE,65,60,66,92,0,0,76,0,15,0,0,0.00,0.02,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+37.677,ADVANCE,65,60,66,92,0,0,76,0,15,0,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+37.727,ADVANCE,65,60,66,92,0,0,76,0,15,0,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+37.778,ADVANCE,65,60,66,92,0,0,76,0,15,0,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+37.828,ADVANCE,65,60,66,92,0,0,76,0,15,0,0,0.00,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+37.878,ADVANCE,65,60,66,92,0,0,76,0,15,0,0,0.05,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+37.928,ADVANCE,65,60,66,92,0,0,76,0,15,0,0,0.01,0.03,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+37.978,ADVANCE,65,60,66,92,0,0,76,0,15,0,0,0.06,0.02,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+38.028,ADVANCE,65,60,66,92,0,0,76,0,15,0,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+38.078,ADVANCE,65,60,66,92,0,0,76,0,15,0,0,0.05,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+38.129,ADVANCE,65,60,66,92,0,0,76,0,15,0,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+38.179,ADVANCE,65,60,66,92,0,0,76,0,15,0,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+38.229,ADVANCE,65,60,66,92,0,0,77,0,15,0,0,0.00,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+38.279,ADVANCE,65,60,66,92,0,0,77,0,15,0,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+38.329,ADVANCE,65,60,68,92,0,0,77,0,15,0,0,0.00,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+38.379,ADVANCE,65,60,68,92,0,0,77,0,15,0,0,0.05,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+38.430,ADVANCE,65,60,68,92,0,0,77,0,15,0,0,0.10,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+38.480,ADVANCE,65,60,68,92,0,0,77,0,15,0,0,0.02,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+38.530,ADVANCE,65,60,69,92,0,0,77,0,15,0,0,0.00,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+38.580,ADVANCE,65,60,69,92,0,0,77,0,15,0,0,0.05,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+38.630,ADVANCE,65,60,69,92,0,0,77,0,15,0,0,0.10,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+38.680,ADVANCE,65,60,71,92,-1,0,77,0,15,0,0,0.01,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+38.730,ADVANCE,65,60,71,92,-1,0,77,0,15,0,0,0.00,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+38.781,ADVANCE,65,60,71,92,-1,0,77,0,15,0,0,0.05,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+38.831,ADVANCE,65,60,71,92,-1,0,77,0,15,0,0,0.10,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+38.881,ADVANCE,65,60,72,92,0,0,77,0,15,0,0,0.04,0.02,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+38.931,ADVANCE,65,60,73,92,0,0,77,0,15,0,0,0.00,0.02,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+38.982,ADVANCE,65,60,73,92,0,0,77,0,15,0,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+39.032,ADVANCE,65,60,73,92,0,0,77,0,15,0,0,0.10,0.03,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+39.082,ADVANCE,65,60,75,92,0,0,77,0,15,0,0,0.01,0.03,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+39.132,ADVANCE,65,60,75,92,0,0,77,0,15,0,0,0.06,0.04,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+39.182,ADVANCE,65,60,76,92,0,0,77,0,15,0,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+39.232,ADVANCE,65,60,76,92,0,0,77,0,15,0,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+39.282,ADVANCE,64,60,76,92,0,0,77,0,15,0,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+39.333,ADVANCE,64,60,76,92,0,0,77,0,15,0,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+39.383,ADVANCE,64,60,77,92,0,0,77,0,15,0,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+39.433,ADVANCE,64,60,77,92,0,0,77,0,15,0,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+39.483,ADVANCE,64,60,77,92,0,0,77,0,15,0,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+39.535,ADVANCE,64,60,77,92,0,0,77,0,15,0,0,0.05,0.02,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+39.585,ADVANCE,64,60,76,92,0,0,77,0,15,0,0,0.01,0.02,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+39.635,ADVANCE,64,60,76,92,0,0,77,0,15,0,0,0.06,0.02,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+39.685,ADVANCE,64,60,76,92,0,0,77,0,15,0,0,0.00,0.02,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+39.735,ADVANCE,64,60,76,92,0,0,77,0,15,0,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+39.785,ADVANCE,64,60,76,92,0,0,77,0,15,0,0,0.03,0.03,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+39.836,ADVANCE,64,60,76,92,0,0,77,0,15,0,0,0.08,0.02,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+39.886,ADVANCE,64,60,76,92,0,0,77,0,15,0,0,0.00,0.02,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+39.936,ADVANCE,64,60,76,92,0,0,77,0,15,0,0,0.05,0.02,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+39.986,ADVANCE,64,60,75,92,0,0,77,0,15,0,0,0.01,0.02,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+40.036,ADVANCE,64,60,75,92,0,0,77,0,15,0,0,0.06,0.02,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+40.086,ADVANCE,64,60,75,92,0,0,77,0,15,0,0,0.02,0.02,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+40.138,ADVANCE,64,60,75,92,0,0,77,0,15,0,0,0.02,0.03,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+40.188,ADVANCE,64,60,75,92,0,0,77,0,15,0,0,0.07,0.03,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+40.242,ADVANCE,64,60,75,92,0,0,77,0,15,0,0,0.13,0.03,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+40.292,ADVANCE,64,60,74,92,0,0,75,0,15,0,0,0.03,0.03,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+40.342,ADVANCE,64,60,75,92,0,0,75,0,15,0,0,0.00,0.05,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+40.393,ADVANCE,64,60,75,92,0,0,75,0,15,0,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+40.443,ADVANCE,64,60,75,92,0,0,75,0,15,0,0,0.02,0.03,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+40.493,ADVANCE,64,60,75,92,0,0,75,0,15,0,0,0.07,0.03,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+40.543,ADVANCE,64,60,76,92,0,0,75,0,15,0,0,0.00,0.02,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+40.593,ADVANCE,64,60,76,92,0,0,75,0,15,0,0,0.05,0.02,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+40.643,ADVANCE,64,60,76,92,0,0,75,0,15,0,0,0.00,0.02,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+40.693,ADVANCE,64,60,76,92,0,0,75,0,15,0,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+40.743,ADVANCE,64,60,76,92,0,-1,75,0,15,0,0,0.00,0.02,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+40.795,ADVANCE,64,60,76,92,0,-1,75,0,15,0,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+40.845,ADVANCE,64,60,76,92,1,0,75,0,15,0,0,0.02,0.03,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+40.895,ADVANCE,64,60,76,92,1,0,75,0,15,0,0,0.07,0.02,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+40.945,ADVANCE,64,60,76,92,1,0,75,0,15,0,0,0.00,0.02,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+40.996,ADVANCE,64,60,76,92,1,0,75,0,15,0,0,0.05,0.02,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+41.046,ADVANCE,64,60,75,92,0,0,75,0,15,0,0,0.01,0.02,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+41.096,ADVANCE,64,60,75,92,0,0,75,0,15,0,0,0.06,0.02,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+41.146,ADVANCE,64,60,74,92,0,0,75,0,15,0,0,0.02,0.02,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+41.196,ADVANCE,64,60,74,92,0,0,75,0,15,0,0,0.07,0.02,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+41.247,ADVANCE,64,60,74,92,0,0,77,0,15,0,0,0.00,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+41.297,ADVANCE,64,60,74,92,0,0,77,0,15,0,0,0.05,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,,122
+41.347,ADVANCE,64,60,74,92,0,-2,77,0,15,0,0,0.02,0.02,"tag 1 ejecutado, avanzando",-1,0,1,0,,,,,,122
+41.397,ADVANCE,64,60,74,92,0,-2,77,0,15,0,0,0.07,0.04,"tag 1 ejecutado, avanzando",-1,0,1,0,,,,,,122
+41.449,ADVANCE,64,60,71,92,0,-2,77,0,15,0,0,0.00,0.02,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+41.499,ADVANCE,64,60,71,92,0,-2,77,0,15,0,0,0.05,0.02,"tag 1 ejecutado, avanzando",0,1,0,0,,,,,,122
+41.549,LANDING,64,60,71,92,0,-1,77,0,0,0,0,0.00,0.02,sin tags en el piso por 10 s: fin,0,0,0,0,,,,,,122
+41.599,LANDING,64,60,71,92,0,-1,77,0,0,0,0,0.05,0.02,sin tags en el piso por 10 s: fin,0,0,0,0,,,,,,122
+41.649,LANDING,64,60,71,92,0,-1,77,0,0,0,0,0.10,0.02,sin tags en el piso por 10 s: fin,0,0,0,0,,,,,,122
+41.699,LANDING,64,60,70,92,0,-1,77,0,0,0,0,0.01,0.02,sin tags en el piso por 10 s: fin,0,0,0,0,,,,,,122
+41.749,LANDING,64,60,70,92,0,-1,77,0,0,0,0,0.06,0.02,sin tags en el piso por 10 s: fin,0,0,0,0,,,,,,122
+41.799,LANDING,64,60,69,92,0,-3,77,0,0,0,0,0.03,0.03,sin tags en el piso por 10 s: fin,-1,0,0,0,,,,,,122
+41.850,LANDING,64,60,69,92,0,-3,77,0,0,0,0,0.08,0.04,sin tags en el piso por 10 s: fin,-1,0,0,0,,,,,,122
+41.900,LANDING,64,60,69,92,0,-4,77,0,0,0,0,0.03,0.02,sin tags en el piso por 10 s: fin,-1,0,0,0,,,,,,122
+41.950,LANDING,64,60,69,92,0,-4,77,0,0,0,0,0.08,0.02,sin tags en el piso por 10 s: fin,-1,0,0,0,,,,,,122
+42.000,LANDING,64,60,69,92,0,-4,77,0,0,0,0,0.01,0.02,sin tags en el piso por 10 s: fin,-1,0,0,0,,,,,,122
+42.051,LANDING,64,60,69,92,0,-4,77,0,0,0,0,0.06,0.02,sin tags en el piso por 10 s: fin,-1,0,0,0,,,,,,122
+42.101,LANDING,64,60,68,92,0,-3,77,0,0,0,0,0.03,0.02,sin tags en el piso por 10 s: fin,0,0,0,0,,,,,,122
+42.151,LANDING,64,60,68,92,0,-3,77,0,0,0,0,0.08,0.02,sin tags en el piso por 10 s: fin,0,0,0,0,,,,,,122
+42.201,LANDING,64,60,67,92,0,-1,77,0,0,0,0,0.01,0.02,sin tags en el piso por 10 s: fin,0,1,1,0,,,,,,122
+42.252,LANDING,64,60,67,92,0,-1,77,0,0,0,0,0.06,0.04,sin tags en el piso por 10 s: fin,0,1,1,0,,,,,,122
+42.303,LANDING,63,50,64,92,2,0,78,0,0,0,0,0.01,0.02,sin tags en el piso por 10 s: fin,0,1,1,0,,,,,,122
+42.353,LANDING,63,50,64,92,2,0,78,0,0,0,0,0.06,0.02,sin tags en el piso por 10 s: fin,0,1,1,0,,,,,,122
+42.403,LANDING,63,50,61,92,2,0,78,0,0,0,0,0.04,0.04,sin tags en el piso por 10 s: fin,0,0,2,0,,,,,,122
+42.453,LANDING,63,50,61,92,2,0,78,0,0,0,0,0.09,0.02,sin tags en el piso por 10 s: fin,0,0,2,0,,,,,,122
+42.503,LANDING,63,50,57,92,1,0,78,0,0,0,0,0.01,0.01,sin tags en el piso por 10 s: fin,0,0,3,0,,,,,,122
+42.553,LANDING,63,40,53,92,1,0,78,0,0,0,0,0.03,0.01,sin tags en el piso por 10 s: fin,0,0,4,0,,,,,,122
+42.604,LANDING,63,40,53,92,1,0,78,0,0,0,0,0.08,0.01,sin tags en el piso por 10 s: fin,0,0,4,0,,,,,,122
+42.654,LANDING,63,40,49,92,1,0,78,0,0,0,0,0.02,0.03,sin tags en el piso por 10 s: fin,0,0,4,0,,,,,,122
+42.704,LANDING,63,40,49,92,1,0,78,0,0,0,0,0.07,0.02,sin tags en el piso por 10 s: fin,0,0,4,0,,,,,,122
+42.754,LANDING,63,30,43,92,0,-1,78,0,0,0,0,0.00,0.02,sin tags en el piso por 10 s: fin,0,0,4,0,,,,,,122
+42.804,LANDING,63,30,43,92,0,-1,78,0,0,0,0,0.05,0.03,sin tags en el piso por 10 s: fin,0,0,4,0,,,,,,122
+42.855,LANDING,63,30,37,92,1,-1,78,0,0,0,0,0.00,0.02,sin tags en el piso por 10 s: fin,0,0,4,0,,,,,,122
+42.905,LANDING,63,30,37,92,1,-1,78,0,0,0,0,0.05,0.04,sin tags en el piso por 10 s: fin,0,0,4,0,,,,,,122
+42.955,LANDING,63,20,32,92,1,-1,78,0,0,0,0,0.01,0.02,sin tags en el piso por 10 s: fin,0,0,4,0,,,,,,122
+43.005,LANDING,63,20,32,92,1,-1,78,0,0,0,0,0.06,0.02,sin tags en el piso por 10 s: fin,0,0,4,0,,,,,,122
+43.055,LANDING,63,20,32,92,1,-1,78,0,0,0,0,0.11,0.02,sin tags en el piso por 10 s: fin,0,0,4,0,,,,,,122
+43.105,LANDING,63,20,26,92,1,-1,78,0,0,0,0,0.01,0.02,sin tags en el piso por 10 s: fin,0,0,4,0,,,,,,122
+43.156,LANDING,63,10,21,92,1,0,78,0,0,0,0,0.00,0.02,sin tags en el piso por 10 s: fin,0,0,4,0,,,,,,122
+43.206,LANDING,63,10,21,92,1,0,78,0,0,0,0,0.05,0.01,sin tags en el piso por 10 s: fin,0,0,4,0,,,,,,122
+43.256,LANDING,63,10,15,92,1,-1,77,0,0,0,0,0.00,0.01,sin tags en el piso por 10 s: fin,0,0,4,0,,,,,,122
+43.310,LANDING,63,10,15,92,1,-1,77,0,0,0,0,0.05,0.01,sin tags en el piso por 10 s: fin,0,0,4,0,,,,,,122
+43.360,LANDING,63,10,17,92,1,-2,77,0,0,0,0,0.00,0.01,sin tags en el piso por 10 s: fin,0,0,4,0,,,,,,122
+43.411,LANDING,63,10,17,92,1,-2,77,0,0,0,0,0.05,0.01,sin tags en el piso por 10 s: fin,0,0,4,0,,,,,,122
+43.461,LANDING,63,0,10,92,1,-2,77,0,0,0,0,0.00,0.01,sin tags en el piso por 10 s: fin,0,0,4,0,,,,,,122
+43.511,LANDING,63,0,10,92,1,-2,77,0,0,0,0,0.05,0.03,sin tags en el piso por 10 s: fin,0,0,4,0,,,,,,122
+43.562,LANDING,63,0,10,92,1,-2,77,0,0,0,0,0.01,0.01,sin tags en el piso por 10 s: fin,0,0,3,0,,,,,,122
+43.612,LANDING,63,0,10,92,1,-2,77,0,0,0,0,0.06,0.02,sin tags en el piso por 10 s: fin,0,0,3,0,,,,,,122
+43.662,LANDING,63,0,10,92,1,-2,77,0,0,0,0,0.11,0.01,sin tags en el piso por 10 s: fin,0,0,3,0,,,,,,122
+43.712,LANDING,63,0,10,92,1,-2,77,0,0,0,0,0.16,0.02,sin tags en el piso por 10 s: fin,0,0,3,0,,,,,,122
+43.762,LANDING,63,0,10,91,0,-2,77,0,0,0,0,0.01,0.06,sin tags en el piso por 10 s: fin,0,0,1,0,,,,,,122
+43.813,LANDING,63,0,10,91,2,0,77,0,0,0,0,0.03,0.01,sin tags en el piso por 10 s: fin,0,1,0,0,,,,,,122
+43.864,LANDING,63,0,10,91,2,0,77,0,0,0,0,0.08,0.01,sin tags en el piso por 10 s: fin,0,1,0,0,,,,,,122
+43.914,LANDING,63,0,10,91,2,0,77,0,0,0,0,0.13,0.03,sin tags en el piso por 10 s: fin,0,1,0,0,,,,,,122
+43.964,LANDING,63,0,10,91,0,-1,77,0,0,0,0,0.00,0.09,sin tags en el piso por 10 s: fin,1,1,0,0,,,,,,122
+44.014,LANDING,63,0,10,90,0,-2,77,0,0,0,0,0.02,0.01,sin tags en el piso por 10 s: fin,1,1,0,0,,,,,,122
+44.065,LANDING,63,0,10,90,0,-2,77,0,0,0,0,0.07,0.01,sin tags en el piso por 10 s: fin,1,1,0,0,,,,,,122
+44.115,LANDING,63,0,10,89,0,-1,77,0,0,0,0,0.02,0.02,sin tags en el piso por 10 s: fin,1,1,0,0,,,,,,122
+44.165,LANDING,63,0,10,89,0,-1,77,0,0,0,0,0.07,0.01,sin tags en el piso por 10 s: fin,1,1,0,0,,,,,,122
+44.215,LANDING,62,0,10,88,0,-2,77,0,0,0,0,0.01,0.06,sin tags en el piso por 10 s: fin,1,1,0,0,,,,,,122
+44.265,LANDING,62,0,10,88,0,-2,77,0,0,0,0,0.06,0.02,sin tags en el piso por 10 s: fin,1,1,0,0,,,,,,122
+44.315,LANDING,62,0,10,88,0,-1,78,0,0,0,0,0.00,0.02,sin tags en el piso por 10 s: fin,1,1,0,0,,,,,,122
+44.365,LANDING,62,0,10,88,0,-1,78,0,0,0,0,0.05,0.03,sin tags en el piso por 10 s: fin,1,1,0,0,,,,,,122
+44.417,LANDING,62,0,10,88,0,-1,78,0,0,0,0,0.01,0.02,sin tags en el piso por 10 s: fin,2,1,0,0,,,,,,122
+44.467,LANDING,62,0,10,88,0,-1,78,0,0,0,0,0.00,0.01,sin tags en el piso por 10 s: fin,2,1,0,0,,,,,,122
+44.517,LANDING,62,0,10,88,0,-1,78,0,0,0,0,0.05,0.02,sin tags en el piso por 10 s: fin,2,1,0,0,,,,,,122
+44.567,LANDING,62,0,10,88,0,-1,78,0,0,0,0,0.10,0.02,sin tags en el piso por 10 s: fin,2,1,0,0,,,,,,122
+44.617,LANDING,62,0,10,88,0,-1,78,0,0,0,0,0.03,0.01,sin tags en el piso por 10 s: fin,2,1,0,0,,,,,,122
+44.667,LANDING,62,0,10,88,0,-1,78,0,0,0,0,0.01,0.01,sin tags en el piso por 10 s: fin,2,1,0,0,,,,,,122
+44.718,LANDING,62,0,10,88,0,-1,78,0,0,0,0,0.06,0.03,sin tags en el piso por 10 s: fin,2,1,0,0,,,,,,122
+44.768,LANDING,62,0,10,88,0,-1,78,0,0,0,0,0.11,0.01,sin tags en el piso por 10 s: fin,2,1,0,0,,,,,,122
+44.818,DONE,62,0,10,88,0,-1,78,0,0,0,0,0.16,0.05,aterrizado (sin tags en el piso por 10 s: fin),2,1,0,0,,,,,,122
+44.868,DONE,62,0,10,88,0,-1,78,0,0,0,0,0.03,0.01,aterrizado (sin tags en el piso por 10 s: fin),2,1,0,0,,,,,,122
+44.919,DONE,62,0,10,88,0,-1,78,0,0,0,0,0.08,0.01,aterrizado (sin tags en el piso por 10 s: fin),2,1,0,0,,,,,,122
+44.969,DONE,62,0,10,88,0,-1,78,0,0,0,0,0.03,0.01,aterrizado (sin tags en el piso por 10 s: fin),2,1,0,0,,,,,,122
+45.020,DONE,62,0,10,88,0,-1,78,0,0,0,0,0.08,0.06,aterrizado (sin tags en el piso por 10 s: fin),2,1,0,0,,,,,,122
+45.070,DONE,62,0,10,88,0,-1,78,0,0,0,0,0.13,0.03,aterrizado (sin tags en el piso por 10 s: fin),2,1,0,0,,,,,,122
+45.122,DONE,62,0,10,88,0,-1,78,0,0,0,0,0.01,0.10,aterrizado (sin tags en el piso por 10 s: fin),3,1,0,0,,,,,,122
+45.174,DONE,62,0,10,88,0,-1,78,0,0,0,0,0.00,0.03,aterrizado (sin tags en el piso por 10 s: fin),3,2,1,0,,,,,,122
+45.224,DONE,62,0,10,88,0,-1,78,0,0,0,0,0.00,0.07,aterrizado (sin tags en el piso por 10 s: fin),3,2,1,0,,,,,,122
+45.274,DONE,62,0,10,88,0,-1,78,0,0,0,0,0.05,0.01,aterrizado (sin tags en el piso por 10 s: fin),3,2,1,0,,,,,,122
+45.324,DONE,62,0,10,88,0,-1,77,0,0,0,0,0.02,0.02,aterrizado (sin tags en el piso por 10 s: fin),3,2,1,0,,,,,,122
+45.374,DONE,62,0,10,88,0,-1,77,0,0,0,0,0.07,0.02,aterrizado (sin tags en el piso por 10 s: fin),3,2,1,0,,,,,,122
+45.425,DONE,62,0,10,88,0,-1,77,0,0,0,0,0.00,0.05,aterrizado (sin tags en el piso por 10 s: fin),3,2,1,0,,,,,,122
+45.475,DONE,62,0,10,88,0,-1,77,0,0,0,0,0.00,0.01,aterrizado (sin tags en el piso por 10 s: fin),3,2,0,0,,,,,,122
+45.525,DONE,62,0,10,88,0,-1,77,0,0,0,0,0.05,0.01,aterrizado (sin tags en el piso por 10 s: fin),3,2,0,0,,,,,,122
+45.575,DONE,62,0,10,88,0,-1,77,0,0,0,0,0.01,0.01,aterrizado (sin tags en el piso por 10 s: fin),0,0,0,0,,,,,,122
+45.625,DONE,62,0,10,88,0,-1,77,0,0,0,0,0.06,0.03,aterrizado (sin tags en el piso por 10 s: fin),0,0,0,0,,,,,,122
+45.675,DONE,62,0,10,88,0,-1,77,0,0,0,0,0.00,0.02,aterrizado (sin tags en el piso por 10 s: fin),0,0,0,0,,,,,,122
+45.725,DONE,62,0,10,88,0,-1,77,0,0,0,0,0.05,0.01,aterrizado (sin tags en el piso por 10 s: fin),0,0,0,0,,,,,,122
+45.775,DONE,62,0,10,88,0,-1,77,0,0,0,0,0.10,0.03,aterrizado (sin tags en el piso por 10 s: fin),0,0,0,0,,,,,,122
+45.826,DONE,62,0,10,88,0,-1,77,0,0,0,0,0.03,0.02,aterrizado (sin tags en el piso por 10 s: fin),0,0,0,0,,,,,,122
+45.876,DONE,62,0,10,88,0,-1,77,0,0,0,0,0.00,0.04,aterrizado (sin tags en el piso por 10 s: fin),0,0,0,0,,,,,,122
+45.926,DONE,62,0,10,88,0,-1,77,0,0,0,0,0.05,0.01,aterrizado (sin tags en el piso por 10 s: fin),0,0,0,0,,,,,,122
+45.976,DONE,62,0,10,88,0,-1,77,0,0,0,0,0.10,0.02,aterrizado (sin tags en el piso por 10 s: fin),0,0,0,0,,,,,,122

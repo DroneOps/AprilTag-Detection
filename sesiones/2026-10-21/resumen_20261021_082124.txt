@@ -1,0 +1,2 @@
+fuente: tello   frames: 3174   detección media: 8.2 ms
+  ID  9 (Pausa 5 s): 1146 frames (36 %)

@@ -1,0 +1,879 @@
+t,state,bat,h,tof,yaw,pitch,roll,temph,rc_lr,rc_fb,rc_ud,rc_yaw,state_age,video_age,reason
+0.001,IDLE,75,0,10,-3,0,0,71,0,0,0,0,0.00,inf,esperando despegue (t)
+0.051,IDLE,75,0,10,-3,0,0,71,0,0,0,0,0.00,inf,esperando despegue (t)
+0.101,IDLE,75,0,10,-3,0,0,71,0,0,0,0,0.05,inf,esperando despegue (t)
+0.152,IDLE,75,0,10,-3,0,0,71,0,0,0,0,0.00,inf,esperando despegue (t)
+0.202,IDLE,75,0,10,-3,0,0,71,0,0,0,0,0.05,0.02,esperando despegue (t)
+0.252,IDLE,75,0,10,-3,0,0,71,0,0,0,0,0.00,0.02,esperando despegue (t)
+0.303,IDLE,75,0,10,-3,0,0,71,0,0,0,0,0.05,0.01,esperando despegue (t)
+0.353,IDLE,75,0,10,-3,0,0,71,0,0,0,0,0.01,0.01,esperando despegue (t)
+0.404,IDLE,75,0,10,-3,0,0,71,0,0,0,0,0.06,0.01,esperando despegue (t)
+0.454,IDLE,75,0,10,-3,0,0,71,0,0,0,0,0.00,0.01,esperando despegue (t)
+0.505,IDLE,75,0,10,-3,0,0,71,0,0,0,0,0.05,0.01,esperando despegue (t)
+0.555,IDLE,75,0,10,-3,0,0,71,0,0,0,0,0.00,0.01,esperando despegue (t)
+0.605,IDLE,75,0,10,-3,0,0,71,0,0,0,0,0.05,0.01,esperando despegue (t)
+0.655,IDLE,75,0,10,-3,0,0,71,0,0,0,0,0.00,0.01,esperando despegue (t)
+0.705,IDLE,75,0,10,-3,0,0,71,0,0,0,0,0.05,0.01,esperando despegue (t)
+0.755,IDLE,75,0,10,-3,0,0,71,0,0,0,0,0.00,0.01,esperando despegue (t)
+0.805,IDLE,75,0,10,-3,0,0,71,0,0,0,0,0.00,0.01,esperando despegue (t)
+0.855,IDLE,75,0,10,-3,0,0,71,0,0,0,0,0.05,0.01,esperando despegue (t)
+0.906,IDLE,75,0,10,-3,0,0,71,0,0,0,0,0.00,0.01,esperando despegue (t)
+0.956,IDLE,75,0,10,-3,0,0,71,0,0,0,0,0.05,0.01,esperando despegue (t)
+1.011,IDLE,75,0,10,-3,0,0,71,0,0,0,0,0.10,0.01,esperando despegue (t)
+1.061,IDLE,75,0,10,-3,0,0,71,0,0,0,0,0.05,0.02,esperando despegue (t)
+1.111,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.00,0.01,esperando despegue (t)
+1.161,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.05,0.01,esperando despegue (t)
+1.211,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.00,0.01,esperando despegue (t)
+1.262,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.05,0.01,esperando despegue (t)
+1.312,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.00,0.01,esperando despegue (t)
+1.362,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.05,0.03,esperando despegue (t)
+1.412,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.10,0.01,esperando despegue (t)
+1.462,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.03,0.02,esperando despegue (t)
+1.513,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.08,0.01,esperando despegue (t)
+1.563,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.03,0.01,esperando despegue (t)
+1.614,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.08,0.01,esperando despegue (t)
+1.664,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.03,0.01,esperando despegue (t)
+1.714,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.08,0.01,esperando despegue (t)
+1.764,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.02,0.01,esperando despegue (t)
+1.814,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.07,0.03,esperando despegue (t)
+1.864,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.02,0.02,esperando despegue (t)
+1.914,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.07,0.01,esperando despegue (t)
+1.965,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.02,0.01,esperando despegue (t)
+2.015,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.07,0.02,esperando despegue (t)
+2.065,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.02,0.02,esperando despegue (t)
+2.115,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.07,0.01,esperando despegue (t)
+2.165,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.02,0.01,esperando despegue (t)
+2.215,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.07,0.03,esperando despegue (t)
+2.265,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.03,0.02,esperando despegue (t)
+2.315,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.08,0.01,esperando despegue (t)
+2.365,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.03,0.01,esperando despegue (t)
+2.416,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.08,0.01,esperando despegue (t)
+2.466,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.03,0.01,esperando despegue (t)
+2.516,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.08,0.01,esperando despegue (t)
+2.567,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.03,0.01,esperando despegue (t)
+2.617,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.08,0.01,esperando despegue (t)
+2.667,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.03,0.01,esperando despegue (t)
+2.717,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.08,0.01,esperando despegue (t)
+2.767,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.02,0.01,esperando despegue (t)
+2.817,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.07,0.01,esperando despegue (t)
+2.868,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.02,0.01,esperando despegue (t)
+2.918,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.07,0.01,esperando despegue (t)
+2.969,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.00,0.01,esperando despegue (t)
+3.019,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.05,0.02,esperando despegue (t)
+3.069,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.02,0.01,esperando despegue (t)
+3.121,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.07,0.01,esperando despegue (t)
+3.171,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.00,0.01,esperando despegue (t)
+3.225,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.05,0.01,esperando despegue (t)
+3.275,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.01,0.02,esperando despegue (t)
+3.326,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.06,0.01,esperando despegue (t)
+3.376,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.01,0.01,esperando despegue (t)
+3.426,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.06,0.01,esperando despegue (t)
+3.476,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.00,0.01,esperando despegue (t)
+3.528,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.05,0.03,esperando despegue (t)
+3.578,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.01,0.01,esperando despegue (t)
+3.628,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.06,0.02,esperando despegue (t)
+3.678,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.00,0.01,esperando despegue (t)
+3.729,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.05,0.01,esperando despegue (t)
+3.779,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.00,0.01,esperando despegue (t)
+3.829,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.00,0.01,esperando despegue (t)
+3.879,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.05,0.01,esperando despegue (t)
+3.929,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.00,0.01,esperando despegue (t)
+3.980,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.05,0.02,esperando despegue (t)
+4.030,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.00,0.01,esperando despegue (t)
+4.080,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.05,0.04,esperando despegue (t)
+4.130,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.10,0.01,esperando despegue (t)
+4.180,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.00,0.01,esperando despegue (t)
+4.230,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.05,0.01,esperando despegue (t)
+4.280,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.00,0.02,esperando despegue (t)
+4.331,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.00,0.01,esperando despegue (t)
+4.381,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.05,0.01,esperando despegue (t)
+4.431,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.00,0.01,esperando despegue (t)
+4.481,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.05,0.01,esperando despegue (t)
+4.531,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.00,0.01,esperando despegue (t)
+4.581,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.05,0.01,esperando despegue (t)
+4.632,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.00,0.01,esperando despegue (t)
+4.682,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.05,0.01,esperando despegue (t)
+4.732,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.00,0.01,esperando despegue (t)
+4.782,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.05,0.01,esperando despegue (t)
+4.832,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.00,0.01,esperando despegue (t)
+4.883,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.05,0.02,esperando despegue (t)
+4.933,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.10,0.01,esperando despegue (t)
+4.983,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.04,0.01,esperando despegue (t)
+5.034,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.09,0.01,esperando despegue (t)
+5.084,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.05,0.03,esperando despegue (t)
+5.134,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.10,0.01,esperando despegue (t)
+5.187,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.02,0.01,esperando despegue (t)
+5.237,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.07,0.01,esperando despegue (t)
+5.287,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.02,0.01,esperando despegue (t)
+5.337,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.07,0.01,esperando despegue (t)
+5.387,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.02,0.01,esperando despegue (t)
+5.437,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.07,0.01,esperando despegue (t)
+5.487,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.02,0.01,esperando despegue (t)
+5.537,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.07,0.01,esperando despegue (t)
+5.589,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.02,0.01,esperando despegue (t)
+5.639,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.07,0.02,esperando despegue (t)
+5.689,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.02,0.01,esperando despegue (t)
+5.739,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.07,0.01,esperando despegue (t)
+5.791,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.01,0.02,esperando despegue (t)
+5.841,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.06,0.01,esperando despegue (t)
+5.896,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.03,0.03,esperando despegue (t)
+5.946,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.08,0.02,esperando despegue (t)
+5.996,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.03,0.01,esperando despegue (t)
+6.046,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.08,0.01,esperando despegue (t)
+6.097,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.03,0.03,esperando despegue (t)
+6.147,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.08,0.01,esperando despegue (t)
+6.197,IDLE,75,0,10,-3,0,0,73,0,0,0,0,0.03,0.02,esperando despegue (t)
+6.248,IDLE,75,0,10,-3,0,0,73,0,0,0,0,0.08,0.01,esperando despegue (t)
+6.298,IDLE,75,0,10,-3,0,0,73,0,0,0,0,0.03,0.01,esperando despegue (t)
+6.348,IDLE,75,0,10,-3,0,0,73,0,0,0,0,0.08,0.01,esperando despegue (t)
+6.399,IDLE,75,0,10,-3,0,0,73,0,0,0,0,0.03,0.01,esperando despegue (t)
+6.449,IDLE,75,0,10,-3,0,0,73,0,0,0,0,0.08,0.01,esperando despegue (t)
+6.500,IDLE,75,0,10,-3,0,0,73,0,0,0,0,0.03,0.01,esperando despegue (t)
+6.550,IDLE,75,0,10,-3,0,0,73,0,0,0,0,0.08,0.01,esperando despegue (t)
+6.600,IDLE,75,0,10,-3,0,0,73,0,0,0,0,0.03,0.02,esperando despegue (t)
+6.650,IDLE,75,0,10,-3,0,0,73,0,0,0,0,0.08,0.01,esperando despegue (t)
+6.700,IDLE,75,0,10,-3,0,0,73,0,0,0,0,0.02,0.01,esperando despegue (t)
+6.751,IDLE,75,0,10,-3,0,0,73,0,0,0,0,0.08,0.01,esperando despegue (t)
+6.801,IDLE,75,0,10,-3,0,0,73,0,0,0,0,0.02,0.01,esperando despegue (t)
+6.851,IDLE,75,0,10,-3,0,0,73,0,0,0,0,0.07,0.01,esperando despegue (t)
+6.901,IDLE,75,0,10,-3,0,0,73,0,0,0,0,0.02,0.01,esperando despegue (t)
+6.951,IDLE,75,0,10,-3,0,0,73,0,0,0,0,0.07,0.01,esperando despegue (t)
+7.001,IDLE,75,0,10,-3,0,0,73,0,0,0,0,0.02,0.01,esperando despegue (t)
+7.051,IDLE,75,0,10,-3,0,0,73,0,0,0,0,0.07,0.01,esperando despegue (t)
+7.102,IDLE,75,0,10,-3,0,0,73,0,0,0,0,0.00,0.02,esperando despegue (t)
+7.153,IDLE,75,0,10,-3,0,0,73,0,0,0,0,0.05,0.01,esperando despegue (t)
+7.203,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.00,0.01,esperando despegue (t)
+7.253,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.05,0.01,esperando despegue (t)
+7.303,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.00,0.01,esperando despegue (t)
+7.353,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.02,0.01,esperando despegue (t)
+7.403,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.07,0.01,esperando despegue (t)
+7.454,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.02,0.01,esperando despegue (t)
+7.504,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.07,0.02,esperando despegue (t)
+7.554,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.00,0.02,esperando despegue (t)
+7.604,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.05,0.01,esperando despegue (t)
+7.654,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.01,0.01,esperando despegue (t)
+7.705,IDLE,75,0,10,-3,0,0,72,0,0,0,0,0.06,0.01,esperando despegue (t)
+7.755,TAKEOFF,75,0,10,-3,0,0,72,0,0,0,0,0.01,0.02,despegando
+7.805,TAKEOFF,75,0,10,-3,0,0,72,0,0,0,0,0.06,0.01,despegando
+7.855,TAKEOFF,75,0,10,-3,0,0,72,0,0,0,0,0.01,0.01,despegando
+7.905,TAKEOFF,75,0,10,-3,0,0,72,0,0,0,0,0.06,0.02,despegando
+7.955,TAKEOFF,75,0,10,-3,0,0,72,0,0,0,0,0.01,0.01,despegando
+8.005,TAKEOFF,75,0,10,-3,0,0,72,0,0,0,0,0.06,0.03,despegando
+8.056,TAKEOFF,75,0,10,-3,0,0,72,0,0,0,0,0.00,0.01,despegando
+8.106,TAKEOFF,75,0,10,-3,0,0,72,0,0,0,0,0.05,0.01,despegando
+8.156,TAKEOFF,75,0,10,-3,0,0,72,0,0,0,0,0.00,0.02,despegando
+8.206,TAKEOFF,75,0,10,-3,0,0,72,0,0,0,0,0.05,0.01,despegando
+8.256,TAKEOFF,75,0,10,-5,0,0,72,0,0,0,0,0.00,0.02,despegando
+8.307,TAKEOFF,75,0,10,-5,0,0,72,0,0,0,0,0.05,0.01,despegando
+8.358,TAKEOFF,75,0,10,-6,0,0,72,0,0,0,0,0.00,0.01,despegando
+8.408,TAKEOFF,75,0,10,-6,0,0,72,0,0,0,0,0.05,0.01,despegando
+8.458,TAKEOFF,75,0,10,-6,0,0,72,0,0,0,0,0.00,0.01,despegando
+8.508,TAKEOFF,75,0,10,-6,0,0,72,0,0,0,0,0.05,0.01,despegando
+8.558,TAKEOFF,75,0,10,-6,0,0,72,0,0,0,0,0.00,0.01,despegando
+8.608,TAKEOFF,75,0,10,-6,0,0,72,0,0,0,0,0.05,0.01,despegando
+8.659,TAKEOFF,75,0,15,-6,-1,-2,72,0,0,0,0,0.00,0.01,despegando
+8.709,TAKEOFF,75,0,15,-6,-1,-2,72,0,0,0,0,0.05,0.01,despegando
+8.759,TAKEOFF,75,0,15,-6,-1,-2,72,0,0,0,0,0.10,0.01,despegando
+8.809,TAKEOFF,75,0,22,-6,0,-2,72,0,0,0,0,0.03,0.01,despegando
+8.859,TAKEOFF,75,0,22,-6,0,-2,72,0,0,0,0,0.08,0.01,despegando
+8.910,TAKEOFF,75,0,29,-6,0,-1,72,0,0,0,0,0.03,0.01,despegando
+8.960,TAKEOFF,75,0,29,-6,0,-1,72,0,0,0,0,0.08,0.01,despegando
+9.010,TAKEOFF,75,10,38,-6,0,-1,72,0,0,0,0,0.02,0.02,despegando
+9.060,TAKEOFF,75,10,38,-6,0,-1,72,0,0,0,0,0.07,0.02,despegando
+9.110,TAKEOFF,75,10,46,-6,0,-1,72,0,0,0,0,0.01,0.02,despegando
+9.161,TAKEOFF,75,10,46,-6,0,-1,72,0,0,0,0,0.06,0.02,despegando
+9.211,TAKEOFF,75,20,50,-6,0,-1,73,0,0,0,0,0.03,0.02,despegando
+9.261,TAKEOFF,75,20,50,-6,0,-1,73,0,0,0,0,0.08,0.02,despegando
+9.311,TAKEOFF,75,20,57,-6,0,-1,73,0,0,0,0,0.02,0.02,despegando
+9.361,TAKEOFF,75,20,57,-6,0,-1,73,0,0,0,0,0.07,0.02,despegando
+9.411,TAKEOFF,75,20,64,-6,0,-1,73,0,0,0,0,0.01,0.02,despegando
+9.462,TAKEOFF,75,20,64,-6,0,-1,73,0,0,0,0,0.06,0.02,despegando
+9.512,TAKEOFF,75,30,73,-6,2,0,73,0,0,0,0,0.04,0.02,despegando
+9.565,TAKEOFF,75,30,73,-6,2,0,73,0,0,0,0,0.09,0.02,despegando
+9.616,TAKEOFF,75,30,77,-6,1,0,73,0,0,0,0,0.03,0.02,despegando
+9.667,TAKEOFF,75,30,77,-6,1,0,73,0,0,0,0,0.08,0.02,despegando
+9.718,TAKEOFF,75,30,81,-6,0,0,73,0,0,0,0,0.02,0.02,despegando
+9.768,TAKEOFF,75,30,81,-6,0,0,73,0,0,0,0,0.07,0.02,despegando
+9.818,TAKEOFF,75,30,84,-6,0,-1,73,0,0,0,0,0.00,0.02,despegando
+9.868,TAKEOFF,75,30,84,-6,0,-1,73,0,0,0,0,0.05,0.02,despegando
+9.918,TAKEOFF,75,40,86,-6,0,-4,73,0,0,0,0,0.03,0.02,despegando
+9.968,TAKEOFF,75,40,86,-6,0,-4,73,0,0,0,0,0.08,0.02,despegando
+10.018,TAKEOFF,75,40,88,-6,0,-3,73,0,0,0,0,0.01,0.02,despegando
+10.069,TAKEOFF,75,40,88,-6,0,-3,73,0,0,0,0,0.06,0.04,despegando
+10.119,TAKEOFF,75,40,89,-6,0,-2,73,0,0,0,0,0.01,0.02,despegando
+10.169,TAKEOFF,75,40,89,-6,0,-2,73,0,0,0,0,0.06,0.02,despegando
+10.220,TAKEOFF,75,40,90,-6,0,-1,73,0,0,0,0,0.00,0.02,despegando
+10.270,TAKEOFF,75,40,90,-6,0,-1,73,0,0,0,0,0.05,0.02,despegando
+10.320,TAKEOFF,75,40,91,-6,0,0,73,0,0,0,0,0.02,0.02,despegando
+10.370,TAKEOFF,75,40,91,-6,0,0,73,0,0,0,0,0.07,0.02,despegando
+10.420,TAKEOFF,75,40,91,-6,0,0,73,0,0,0,0,0.00,0.02,despegando
+10.470,TAKEOFF,75,40,91,-6,0,0,73,0,0,0,0,0.05,0.02,despegando
+10.520,TAKEOFF,75,40,91,-6,0,0,73,0,0,0,0,0.01,0.02,despegando
+10.571,TAKEOFF,75,40,91,-6,0,0,73,0,0,0,0,0.06,0.02,despegando
+10.621,TAKEOFF,75,40,91,-6,0,1,73,0,0,0,0,0.00,0.02,despegando
+10.671,TAKEOFF,75,40,91,-6,0,1,73,0,0,0,0,0.05,0.02,despegando
+10.721,TAKEOFF,75,40,90,-6,0,1,73,0,0,0,0,0.01,0.02,despegando
+10.772,TAKEOFF,75,40,90,-6,0,1,73,0,0,0,0,0.06,0.02,despegando
+10.822,TAKEOFF,75,40,90,-6,0,1,73,0,0,0,0,0.00,0.02,despegando
+10.872,TAKEOFF,75,40,90,-6,0,1,73,0,0,0,0,0.05,0.02,despegando
+10.922,TAKEOFF,75,40,90,-6,0,1,73,0,0,0,0,0.01,0.02,despegando
+10.973,TAKEOFF,75,40,90,-6,0,1,73,0,0,0,0,0.06,0.02,despegando
+11.023,TAKEOFF,75,40,89,-6,0,0,73,0,0,0,0,0.00,0.03,despegando
+11.073,TAKEOFF,75,40,89,-6,0,0,73,0,0,0,0,0.05,0.04,despegando
+11.123,TAKEOFF,75,40,89,-6,0,0,73,0,0,0,0,0.00,0.02,despegando
+11.173,TAKEOFF,75,40,89,-6,0,0,73,0,0,0,0,0.05,0.02,despegando
+11.223,TAKEOFF,75,40,88,-6,0,0,72,0,0,0,0,0.01,0.02,despegando
+11.274,TAKEOFF,75,40,88,-6,0,0,72,0,0,0,0,0.06,0.01,despegando
+11.324,TAKEOFF,75,40,88,-6,0,0,72,0,0,0,0,0.00,0.02,despegando
+11.374,TAKEOFF,75,40,88,-6,0,0,72,0,0,0,0,0.05,0.02,despegando
+11.424,TAKEOFF,75,40,87,-6,0,0,72,0,0,0,0,0.00,0.02,despegando
+11.474,TAKEOFF,75,40,87,-6,0,0,72,0,0,0,0,0.05,0.02,despegando
+11.524,TAKEOFF,75,40,86,-6,0,-1,72,0,0,0,0,0.00,0.02,despegando
+11.574,TAKEOFF,75,40,86,-6,0,-1,72,0,0,0,0,0.00,0.02,despegando
+11.624,TAKEOFF,75,40,86,-6,0,-1,72,0,0,0,0,0.05,0.02,despegando
+11.675,TAKEOFF,75,40,85,-6,0,0,72,0,0,0,0,0.00,0.02,despegando
+11.725,TAKEOFF,75,40,85,-6,0,0,72,0,0,0,0,0.05,0.02,despegando
+11.775,TAKEOFF,75,40,85,-6,0,0,72,0,0,0,0,0.00,0.02,despegando
+11.825,TAKEOFF,75,40,85,-6,0,0,72,0,0,0,0,0.05,0.03,despegando
+11.877,TAKEOFF,75,40,84,-6,0,0,72,0,0,0,0,0.00,0.02,despegando
+11.927,HOVER,75,40,84,-6,0,0,72,0,0,0,0,0.05,0.02,"en el aire a 40 cm (estable, despegue 4.2 s)"
+11.977,HOVER,75,40,84,-6,0,-1,72,0,0,0,0,0.00,0.02,"en el aire a 40 cm (estable, despegue 4.2 s)"
+12.027,HOVER,75,40,84,-6,0,-1,72,0,0,0,0,0.05,0.02,"en el aire a 40 cm (estable, despegue 4.2 s)"
+12.078,HOVER,75,40,84,-6,0,-1,72,0,0,0,0,0.10,0.02,"en el aire a 40 cm (estable, despegue 4.2 s)"
+12.128,HOVER,75,40,84,-6,0,-6,72,0,0,0,0,0.02,0.02,"en el aire a 40 cm (estable, despegue 4.2 s)"
+12.178,HOVER,75,40,84,-6,0,-6,72,0,0,0,0,0.07,0.02,"en el aire a 40 cm (estable, despegue 4.2 s)"
+12.228,HOVER,75,40,83,-6,1,-8,73,0,0,0,0,0.05,0.02,"en el aire a 40 cm (estable, despegue 4.2 s)"
+12.278,HOVER,75,40,83,-6,1,-8,73,0,0,0,0,0.10,0.02,"en el aire a 40 cm (estable, despegue 4.2 s)"
+12.328,HOVER,75,40,81,-6,1,-4,73,0,0,0,0,0.04,0.02,"en el aire a 40 cm (estable, despegue 4.2 s)"
+12.378,HOVER,75,40,81,-6,1,-4,73,0,0,0,0,0.09,0.02,"en el aire a 40 cm (estable, despegue 4.2 s)"
+12.429,HOVER,75,40,80,-6,0,-2,73,0,0,0,0,0.02,0.02,"en el aire a 40 cm (estable, despegue 4.2 s)"
+12.479,HOVER,75,40,80,-6,0,-2,73,0,0,0,0,0.07,0.02,"en el aire a 40 cm (estable, despegue 4.2 s)"
+12.533,HOVER,75,40,80,-6,0,0,73,0,0,0,0,0.01,0.02,"en el aire a 40 cm (estable, despegue 4.2 s)"
+12.583,HOVER,75,40,80,-6,0,0,73,0,0,0,0,0.06,0.02,"en el aire a 40 cm (estable, despegue 4.2 s)"
+12.633,HOVER,75,40,80,-6,0,3,73,0,0,0,0,0.04,0.02,"en el aire a 40 cm (estable, despegue 4.2 s)"
+12.683,HOVER,75,40,80,-6,0,3,73,0,0,0,0,0.09,0.02,"en el aire a 40 cm (estable, despegue 4.2 s)"
+12.735,HOVER,75,40,79,-6,0,4,73,0,0,0,0,0.02,0.02,"en el aire a 40 cm (estable, despegue 4.2 s)"
+12.785,HOVER,75,40,79,-6,0,4,73,0,0,0,0,0.07,0.02,"en el aire a 40 cm (estable, despegue 4.2 s)"
+12.837,HOVER,75,40,79,-6,0,3,73,0,0,0,0,0.00,0.02,"en el aire a 40 cm (estable, despegue 4.2 s)"
+12.887,HOVER,75,40,79,-6,0,3,73,0,0,0,0,0.05,0.02,"en el aire a 40 cm (estable, despegue 4.2 s)"
+12.938,HOVER,75,40,78,-6,0,1,73,0,0,0,0,0.02,0.02,"en el aire a 40 cm (estable, despegue 4.2 s)"
+12.988,HOVER,75,40,78,-6,0,1,73,0,0,0,0,0.07,0.02,"en el aire a 40 cm (estable, despegue 4.2 s)"
+13.038,HOVER,75,40,77,-6,0,0,73,0,0,0,0,0.01,0.02,"en el aire a 40 cm (estable, despegue 4.2 s)"
+13.089,HOVER,75,40,77,-6,0,0,73,0,0,0,0,0.06,0.02,"en el aire a 40 cm (estable, despegue 4.2 s)"
+13.140,HOVER,75,40,77,-5,1,0,73,0,0,0,0,0.03,0.02,"en el aire a 40 cm (estable, despegue 4.2 s)"
+13.190,HOVER,75,40,77,-5,1,0,73,0,0,0,0,0.08,0.02,"en el aire a 40 cm (estable, despegue 4.2 s)"
+13.240,HOVER,75,40,77,-5,1,0,73,0,0,0,0,0.02,0.02,"en el aire a 40 cm (estable, despegue 4.2 s)"
+13.290,HOVER,75,40,77,-5,1,0,73,0,0,0,0,0.07,0.02,"en el aire a 40 cm (estable, despegue 4.2 s)"
+13.340,HOVER,75,40,76,-5,1,0,73,0,0,0,0,0.01,0.02,"en el aire a 40 cm (estable, despegue 4.2 s)"
+13.391,HOVER,75,40,76,-5,1,0,73,0,0,0,0,0.06,0.02,"en el aire a 40 cm (estable, despegue 4.2 s)"
+13.441,HOVER,75,30,76,-5,0,-1,73,0,0,0,0,0.03,0.02,"en el aire a 40 cm (estable, despegue 4.2 s)"
+13.491,HOVER,75,30,76,-5,0,-1,73,0,0,0,0,0.08,0.02,"en el aire a 40 cm (estable, despegue 4.2 s)"
+13.541,HOVER,75,30,75,-5,0,-1,73,0,0,0,0,0.02,0.02,"en el aire a 40 cm (estable, despegue 4.2 s)"
+13.591,HOVER,75,30,75,-5,0,-1,73,0,0,0,0,0.07,0.02,"en el aire a 40 cm (estable, despegue 4.2 s)"
+13.641,HOVER,75,30,74,-5,0,0,73,0,0,0,0,0.03,0.02,"en el aire a 40 cm (estable, despegue 4.2 s)"
+13.691,HOVER,75,30,74,-5,0,0,73,0,0,0,0,0.08,0.02,"en el aire a 40 cm (estable, despegue 4.2 s)"
+13.741,HOVER,75,30,73,-5,0,0,73,0,0,0,0,0.03,0.02,"en el aire a 40 cm (estable, despegue 4.2 s)"
+13.792,HOVER,75,30,73,-5,0,0,73,0,0,0,0,0.08,0.02,"en el aire a 40 cm (estable, despegue 4.2 s)"
+13.842,HOVER,75,30,72,-5,1,0,73,0,0,0,0,0.02,0.02,"en el aire a 40 cm (estable, despegue 4.2 s)"
+13.892,HOVER,75,30,72,-5,1,0,73,0,0,0,0,0.07,0.02,"en el aire a 40 cm (estable, despegue 4.2 s)"
+13.942,ADVANCE,75,30,72,-5,1,0,73,0,0,0,0,0.00,0.02,"avanzando, buscando tag"
+13.992,APPROACH,75,30,72,-5,1,0,73,0,0,0,0,0.05,0.02,tag 2 (Giro izquierda 90) a 205 cm
+14.042,APPROACH,75,30,71,-5,1,0,73,0,20,0,20,0.00,0.01,tag 2 (Giro izquierda 90) a 205 cm
+14.097,APPROACH,75,30,71,-5,1,0,73,0,20,0,20,0.05,0.02,tag 2 (Giro izquierda 90) a 205 cm
+14.147,APPROACH,75,30,70,-4,1,0,73,0,20,0,20,0.02,0.02,tag 2 (Giro izquierda 90) a 205 cm
+14.197,APPROACH,75,30,70,-4,1,0,73,0,20,0,20,0.07,0.02,tag 2 (Giro izquierda 90) a 205 cm
+14.247,APPROACH,75,30,70,-3,0,0,74,0,20,0,20,0.01,0.02,tag 2 (Giro izquierda 90) a 205 cm
+14.297,APPROACH,75,30,70,-3,0,0,74,0,20,0,20,0.06,0.02,tag 2 (Giro izquierda 90) a 205 cm
+14.347,APPROACH,75,30,70,-1,0,0,74,0,20,0,20,0.00,0.02,tag 2 (Giro izquierda 90) a 205 cm
+14.400,APPROACH,75,30,70,-1,0,0,74,0,20,0,20,0.05,0.02,tag 2 (Giro izquierda 90) a 205 cm
+14.450,APPROACH,75,30,70,0,-1,-1,74,0,20,0,20,0.00,0.01,tag 2 (Giro izquierda 90) a 205 cm
+14.500,APPROACH,75,30,70,0,-1,-1,74,0,20,0,20,0.05,0.02,tag 2 (Giro izquierda 90) a 205 cm
+14.550,APPROACH,75,30,71,2,-1,-2,74,0,20,0,0,0.00,0.01,tag 2 (Giro izquierda 90) a 205 cm
+14.601,APPROACH,75,30,71,2,-1,-2,74,0,20,0,0,0.05,0.02,tag 2 (Giro izquierda 90) a 205 cm
+14.651,APPROACH,75,30,70,4,0,-2,74,0,20,0,0,0.01,0.02,tag 2 (Giro izquierda 90) a 205 cm
+14.701,APPROACH,75,30,70,4,0,-2,74,0,20,0,0,0.06,0.02,tag 2 (Giro izquierda 90) a 205 cm
+14.751,APPROACH,75,30,70,6,0,0,74,0,20,0,0,0.00,0.02,tag 2 (Giro izquierda 90) a 205 cm
+14.801,APPROACH,75,30,70,6,0,0,74,0,20,0,0,0.05,0.01,tag 2 (Giro izquierda 90) a 205 cm
+14.851,APPROACH,75,30,71,7,0,0,74,0,20,0,0,0.00,0.01,tag 2 (Giro izquierda 90) a 205 cm
+14.901,APPROACH,75,30,71,7,0,0,74,0,20,0,0,0.05,0.01,tag 2 (Giro izquierda 90) a 205 cm
+14.952,APPROACH,75,30,71,9,0,0,74,0,20,0,-20,0.00,0.02,tag 2 (Giro izquierda 90) a 205 cm
+15.002,APPROACH,75,30,71,9,0,0,74,0,20,0,-20,0.05,0.02,tag 2 (Giro izquierda 90) a 205 cm
+15.052,APPROACH,75,30,71,10,0,0,74,0,20,0,-20,0.01,0.02,tag 2 (Giro izquierda 90) a 205 cm
+15.102,APPROACH,75,30,71,10,0,0,74,0,20,0,-20,0.06,0.02,tag 2 (Giro izquierda 90) a 205 cm
+15.152,APPROACH,75,30,72,10,0,0,74,0,20,0,-20,0.01,0.02,tag 2 (Giro izquierda 90) a 205 cm
+15.202,APPROACH,75,30,72,10,0,0,74,0,20,0,-20,0.06,0.02,tag 2 (Giro izquierda 90) a 205 cm
+15.252,APPROACH,75,30,72,10,0,0,73,0,20,0,-20,0.01,0.01,tag 2 (Giro izquierda 90) a 205 cm
+15.303,APPROACH,75,30,72,10,0,0,73,0,20,0,-20,0.06,0.02,tag 2 (Giro izquierda 90) a 205 cm
+15.353,APPROACH,75,30,73,9,-1,-1,73,0,20,0,-20,0.00,0.02,tag 2 (Giro izquierda 90) a 205 cm
+15.403,APPROACH,75,30,74,9,0,-1,73,0,20,0,-20,0.00,0.01,tag 2 (Giro izquierda 90) a 205 cm
+15.453,APPROACH,75,30,74,9,0,-1,73,0,20,0,-20,0.05,0.02,tag 2 (Giro izquierda 90) a 205 cm
+15.503,APPROACH,75,30,74,8,0,-1,73,0,20,0,-20,0.00,0.02,tag 2 (Giro izquierda 90) a 205 cm
+15.553,APPROACH,75,30,74,8,0,-1,73,0,20,0,-20,0.05,0.02,tag 2 (Giro izquierda 90) a 205 cm
+15.603,APPROACH,75,30,74,7,0,-2,73,0,20,0,-20,0.00,0.02,tag 2 (Giro izquierda 90) a 205 cm
+15.653,APPROACH,75,30,74,7,0,-2,73,0,20,0,-20,0.05,0.01,tag 2 (Giro izquierda 90) a 205 cm
+15.704,APPROACH,75,30,76,6,0,-2,73,0,20,0,-20,0.00,0.01,tag 2 (Giro izquierda 90) a 205 cm
+15.754,APPROACH,75,30,76,6,0,-2,73,0,20,0,-20,0.05,0.01,tag 2 (Giro izquierda 90) a 205 cm
+15.804,APPROACH,75,40,77,5,0,-1,73,0,20,0,-20,0.00,0.02,tag 2 (Giro izquierda 90) a 205 cm
+15.854,APPROACH,75,40,77,5,0,-1,73,0,20,0,-20,0.05,0.02,tag 2 (Giro izquierda 90) a 205 cm
+15.904,APPROACH,75,40,77,4,0,0,73,0,20,0,-20,0.00,0.02,tag 2 (Giro izquierda 90) a 205 cm
+15.954,APPROACH,75,40,77,4,0,0,73,0,20,0,-20,0.05,0.02,tag 2 (Giro izquierda 90) a 205 cm
+16.004,APPROACH,75,40,78,3,0,-1,73,0,20,0,-20,0.00,0.02,tag 2 (Giro izquierda 90) a 205 cm
+16.055,APPROACH,75,40,78,3,0,-1,73,0,20,0,-20,0.05,0.02,tag 2 (Giro izquierda 90) a 205 cm
+16.105,APPROACH,75,40,78,3,0,-1,73,0,20,0,-20,0.10,0.04,tag 2 (Giro izquierda 90) a 205 cm
+16.155,APPROACH,75,40,79,2,0,-1,73,0,20,0,-20,0.04,0.01,tag 2 (Giro izquierda 90) a 205 cm
+16.205,APPROACH,75,40,79,2,0,-1,73,0,20,0,-20,0.09,0.01,tag 2 (Giro izquierda 90) a 205 cm
+16.255,APPROACH,75,40,82,0,0,-1,73,0,20,0,-20,0.04,0.02,tag 2 (Giro izquierda 90) a 205 cm
+16.306,APPROACH,75,40,82,0,0,-1,73,0,20,0,0,0.09,0.01,tag 2 (Giro izquierda 90) a 205 cm
+16.356,APPROACH,75,40,83,0,0,-1,73,0,20,0,0,0.04,0.02,tag 2 (Giro izquierda 90) a 205 cm
+16.406,APPROACH,75,40,83,0,0,-1,73,0,20,0,0,0.09,0.02,tag 2 (Giro izquierda 90) a 205 cm
+16.456,APPROACH,75,40,86,-1,0,-1,73,0,20,0,0,0.02,0.02,tag 2 (Giro izquierda 90) a 205 cm
+16.506,APPROACH,75,40,86,-1,0,-1,73,0,20,0,0,0.07,0.02,tag 2 (Giro izquierda 90) a 205 cm
+16.556,APPROACH,75,40,88,-1,0,-1,73,0,20,0,0,0.01,0.02,tag 2 (Giro izquierda 90) a 205 cm
+16.606,APPROACH,75,40,88,-1,0,-1,73,0,20,0,0,0.06,0.02,tag 2 (Giro izquierda 90) a 205 cm
+16.657,APPROACH,75,40,89,-2,0,-1,73,0,20,0,0,0.03,0.02,tag 2 (Giro izquierda 90) a 205 cm
+16.707,APPROACH,75,40,89,-2,0,-1,73,0,20,0,0,0.08,0.02,tag 2 (Giro izquierda 90) a 205 cm
+16.757,APPROACH,75,40,90,-2,0,-1,73,0,20,0,0,0.00,0.02,tag 2 (Giro izquierda 90) a 205 cm
+16.807,APPROACH,75,40,90,-2,0,-1,73,0,20,0,0,0.06,0.02,tag 2 (Giro izquierda 90) a 205 cm
+16.857,APPROACH,75,40,93,-3,0,-1,73,0,20,0,0,0.03,0.02,tag 2 (Giro izquierda 90) a 205 cm
+16.907,APPROACH,75,40,93,-3,0,-1,73,0,20,0,0,0.08,0.02,tag 2 (Giro izquierda 90) a 205 cm
+16.957,APPROACH,75,50,94,-3,0,-1,73,0,20,0,0,0.01,0.02,tag 2 (Giro izquierda 90) a 205 cm
+17.008,APPROACH,75,50,94,-3,0,-1,73,0,20,0,0,0.06,0.02,tag 2 (Giro izquierda 90) a 205 cm
+17.058,APPROACH,75,50,94,-3,0,0,73,0,20,0,0,0.00,0.02,tag 2 (Giro izquierda 90) a 205 cm
+17.108,APPROACH,75,50,94,-3,0,0,73,0,20,0,0,0.05,0.02,tag 2 (Giro izquierda 90) a 205 cm
+17.158,APPROACH,75,50,93,-4,0,0,73,0,20,0,0,0.02,0.02,tag 2 (Giro izquierda 90) a 205 cm
+17.209,APPROACH,75,50,93,-4,0,0,73,0,20,0,0,0.07,0.02,tag 2 (Giro izquierda 90) a 205 cm
+17.259,APPROACH,75,50,94,-4,0,-1,73,0,20,0,0,0.01,0.02,tag 2 (Giro izquierda 90) a 205 cm
+17.309,APPROACH,75,50,94,-4,0,-1,73,0,20,0,0,0.06,0.02,tag 2 (Giro izquierda 90) a 205 cm
+17.359,APPROACH,75,50,94,-4,0,-1,73,0,20,0,0,0.01,0.02,tag 2 (Giro izquierda 90) a 205 cm
+17.409,APPROACH,75,50,94,-4,0,-1,73,0,20,0,0,0.06,0.02,tag 2 (Giro izquierda 90) a 205 cm
+17.459,APPROACH,75,50,94,-4,0,-1,73,0,20,0,0,0.00,0.02,tag 2 (Giro izquierda 90) a 205 cm
+17.510,APPROACH,75,50,94,-4,0,-1,73,0,20,0,0,0.05,0.02,tag 2 (Giro izquierda 90) a 205 cm
+17.560,APPROACH,75,50,92,-4,0,-1,73,0,20,0,0,0.02,0.02,tag 2 (Giro izquierda 90) a 205 cm
+17.610,APPROACH,75,50,92,-4,0,-1,73,0,20,0,0,0.07,0.02,tag 2 (Giro izquierda 90) a 205 cm
+17.662,APPROACH,75,50,92,-4,0,-1,73,0,20,0,0,0.01,0.02,tag 2 (Giro izquierda 90) a 205 cm
+17.712,APPROACH,75,50,92,-4,0,-1,73,0,20,0,0,0.06,0.02,tag 2 (Giro izquierda 90) a 205 cm
+17.764,APPROACH,75,50,92,-4,0,-1,73,0,20,0,0,0.00,0.02,tag 2 (Giro izquierda 90) a 205 cm
+17.814,APPROACH,75,50,92,-4,0,-1,73,0,20,0,0,0.05,0.02,tag 2 (Giro izquierda 90) a 205 cm
+17.864,APPROACH,75,50,90,-4,0,-1,73,0,20,0,0,0.01,0.02,tag 2 (Giro izquierda 90) a 205 cm
+17.915,APPROACH,75,50,90,-4,0,-1,73,0,20,0,0,0.06,0.02,tag 2 (Giro izquierda 90) a 205 cm
+17.965,APPROACH,75,50,89,-4,0,-1,73,0,20,0,0,0.00,0.02,tag 2 (Giro izquierda 90) a 205 cm
+18.016,APPROACH,75,50,89,-4,0,-1,73,0,20,0,0,0.05,0.02,tag 2 (Giro izquierda 90) a 205 cm
+18.066,APPROACH,75,40,87,-4,0,-1,73,0,20,0,0,0.01,0.02,tag 2 (Giro izquierda 90) a 205 cm
+18.117,APPROACH,75,40,87,-4,0,-1,73,0,20,0,0,0.06,0.02,tag 2 (Giro izquierda 90) a 205 cm
+18.167,APPROACH,75,40,86,-4,0,-1,73,0,20,0,0,0.00,0.02,tag 2 (Giro izquierda 90) a 205 cm
+18.217,APPROACH,75,40,86,-4,0,-1,73,0,20,0,0,0.05,0.02,tag 2 (Giro izquierda 90) a 205 cm
+18.268,APPROACH,75,40,86,-4,0,-1,74,0,20,0,0,0.00,0.02,tag 2 (Giro izquierda 90) a 205 cm
+18.318,APPROACH,75,40,86,-4,0,-1,74,0,20,0,0,0.05,0.02,tag 2 (Giro izquierda 90) a 205 cm
+18.368,APPROACH,75,40,85,-4,0,-2,74,0,20,0,0,0.00,0.02,tag 2 (Giro izquierda 90) a 205 cm
+18.418,APPROACH,75,40,85,-4,0,-2,74,0,20,0,0,0.05,0.02,tag 2 (Giro izquierda 90) a 205 cm
+18.468,APPROACH,75,40,84,-4,0,-1,74,0,20,0,0,0.00,0.02,tag 2 (Giro izquierda 90) a 205 cm
+18.518,APPROACH,75,40,84,-4,0,-1,74,0,20,0,0,0.05,0.02,tag 2 (Giro izquierda 90) a 205 cm
+18.568,APPROACH,75,40,83,-4,0,-1,74,0,20,0,0,0.00,0.04,tag 2 (Giro izquierda 90) a 205 cm
+18.619,APPROACH,75,40,83,-4,0,-1,74,0,20,0,0,0.05,0.02,tag 2 (Giro izquierda 90) a 205 cm
+18.670,APPROACH,75,40,84,-4,0,-1,74,0,20,0,0,0.00,0.02,tag 2 (Giro izquierda 90) a 205 cm
+18.720,APPROACH,75,40,84,-4,0,-1,74,0,20,0,0,0.05,0.02,tag 2 (Giro izquierda 90) a 205 cm
+18.770,APPROACH,75,40,83,-4,0,-1,74,0,20,0,0,0.00,0.02,tag 2 (Giro izquierda 90) a 205 cm
+18.820,APPROACH,75,40,83,-4,0,-1,74,0,20,0,0,0.00,0.02,tag 2 (Giro izquierda 90) a 205 cm
+18.870,APPROACH,75,40,83,-4,0,-1,74,0,20,0,0,0.05,0.02,tag 2 (Giro izquierda 90) a 205 cm
+18.920,APPROACH,75,40,83,-4,0,-1,74,0,20,0,0,0.00,0.01,tag 2 (Giro izquierda 90) a 205 cm
+18.970,APPROACH,75,40,83,-4,0,-1,74,0,20,0,0,0.05,0.01,tag 2 (Giro izquierda 90) a 205 cm
+19.020,APPROACH,75,40,82,-4,0,-1,74,0,20,0,0,0.00,0.01,tag 2 (Giro izquierda 90) a 205 cm
+19.071,APPROACH,75,40,82,-4,0,-1,74,0,20,0,0,0.05,0.02,tag 2 (Giro izquierda 90) a 205 cm
+19.121,APPROACH,75,40,83,-4,0,-1,74,0,20,0,0,0.00,0.02,tag 2 (Giro izquierda 90) a 205 cm
+19.171,APPROACH,75,40,83,-4,0,-1,74,0,20,0,0,0.05,0.02,tag 2 (Giro izquierda 90) a 205 cm
+19.221,APPROACH,75,40,83,-4,0,-1,74,0,20,0,0,0.10,0.02,tag 2 (Giro izquierda 90) a 205 cm
+19.271,APPROACH,75,40,83,-4,0,-1,74,0,19,0,0,0.15,0.02,tag 2 (Giro izquierda 90) a 205 cm
+19.321,APPROACH,75,40,81,-4,0,-1,74,0,19,0,0,0.04,0.02,tag 2 (Giro izquierda 90) a 205 cm
+19.371,APPROACH,75,40,81,-4,0,-1,74,0,19,0,0,0.09,0.02,tag 2 (Giro izquierda 90) a 205 cm
+19.422,APPROACH,75,40,82,-4,0,-2,74,0,18,0,0,0.03,0.02,tag 2 (Giro izquierda 90) a 205 cm
+19.472,APPROACH,75,40,82,-4,0,-2,74,0,18,0,0,0.08,0.02,tag 2 (Giro izquierda 90) a 205 cm
+19.522,APPROACH,75,40,83,-4,0,-2,74,0,18,0,0,0.00,0.02,tag 2 (Giro izquierda 90) a 205 cm
+19.574,APPROACH,75,40,83,-4,0,-2,74,0,18,0,0,0.06,0.02,tag 2 (Giro izquierda 90) a 205 cm
+19.624,APPROACH,75,40,81,-4,0,-2,74,0,17,0,0,0.02,0.02,tag 2 (Giro izquierda 90) a 205 cm
+19.674,APPROACH,75,40,81,-4,0,-2,74,0,17,0,0,0.07,0.02,tag 2 (Giro izquierda 90) a 205 cm
+19.724,APPROACH,75,40,79,-4,0,-1,74,0,17,0,0,0.04,0.02,tag 2 (Giro izquierda 90) a 205 cm
+19.774,APPROACH,75,40,80,-4,0,-1,74,0,16,0,0,0.02,0.01,tag 2 (Giro izquierda 90) a 205 cm
+19.824,APPROACH,75,40,80,-4,0,-1,74,0,16,0,0,0.07,0.02,tag 2 (Giro izquierda 90) a 205 cm
+19.874,APPROACH,75,40,79,-4,1,0,74,0,16,0,0,0.02,0.02,tag 2 (Giro izquierda 90) a 205 cm
+19.925,APPROACH,75,40,79,-4,1,0,74,0,15,0,0,0.07,0.02,tag 2 (Giro izquierda 90) a 205 cm
+19.975,APPROACH,75,40,79,-4,1,0,74,0,15,0,0,0.01,0.02,tag 2 (Giro izquierda 90) a 205 cm
+20.025,APPROACH,75,40,79,-4,1,0,74,0,15,0,0,0.06,0.02,tag 2 (Giro izquierda 90) a 205 cm
+20.075,APPROACH,75,40,78,-4,0,-1,74,0,15,0,0,0.03,0.04,tag 2 (Giro izquierda 90) a 205 cm
+20.127,APPROACH,75,40,78,-4,0,-1,74,0,14,0,0,0.09,0.02,tag 2 (Giro izquierda 90) a 205 cm
+20.177,APPROACH,75,40,76,-4,0,0,74,0,14,0,0,0.03,0.02,tag 2 (Giro izquierda 90) a 205 cm
+20.230,APPROACH,75,40,76,-4,0,0,74,0,14,0,0,0.09,0.02,tag 2 (Giro izquierda 90) a 205 cm
+20.280,APPROACH,75,40,76,-4,0,-1,74,0,14,0,0,0.03,0.02,tag 2 (Giro izquierda 90) a 205 cm
+20.330,APPROACH,75,40,76,-4,0,-1,74,0,13,0,0,0.08,0.02,tag 2 (Giro izquierda 90) a 205 cm
+20.380,APPROACH,75,40,75,-4,0,-2,74,0,13,0,0,0.01,0.02,tag 2 (Giro izquierda 90) a 205 cm
+20.430,APPROACH,75,40,75,-4,0,-2,74,0,13,0,0,0.06,0.02,tag 2 (Giro izquierda 90) a 205 cm
+20.480,APPROACH,75,40,73,-4,0,-2,74,0,13,0,0,0.03,0.02,tag 2 (Giro izquierda 90) a 205 cm
+20.531,APPROACH,75,40,73,-4,0,-2,74,0,13,0,0,0.08,0.02,tag 2 (Giro izquierda 90) a 205 cm
+20.581,APPROACH,75,30,73,-4,0,-2,74,0,12,0,0,0.03,0.02,tag 2 (Giro izquierda 90) a 205 cm
+20.632,APPROACH,75,30,73,-4,0,-2,74,0,12,0,0,0.08,0.02,tag 2 (Giro izquierda 90) a 205 cm
+20.682,APPROACH,75,30,72,-4,0,-2,74,0,12,0,0,0.02,0.02,tag 2 (Giro izquierda 90) a 205 cm
+20.732,APPROACH,75,30,72,-4,0,-2,74,0,12,0,0,0.07,0.02,tag 2 (Giro izquierda 90) a 205 cm
+20.783,APPROACH,75,30,71,-4,0,-1,74,0,12,0,0,0.00,0.02,tag 2 (Giro izquierda 90) a 205 cm
+20.833,APPROACH,75,30,71,-4,0,-1,74,0,12,0,0,0.05,0.01,tag 2 (Giro izquierda 90) a 205 cm
+20.883,APPROACH,75,30,70,-4,0,-1,74,0,12,0,0,0.00,0.02,tag 2 (Giro izquierda 90) a 205 cm
+20.933,APPROACH,75,30,70,-4,0,-1,74,0,12,0,0,0.05,0.01,tag 2 (Giro izquierda 90) a 205 cm
+20.983,APPROACH,75,30,69,-4,1,-1,74,0,12,0,0,0.01,0.02,tag 2 (Giro izquierda 90) a 205 cm
+21.033,APPROACH,75,30,69,-4,1,-1,74,0,12,0,0,0.06,0.02,tag 2 (Giro izquierda 90) a 205 cm
+21.083,APPROACH,75,30,69,-4,1,-1,74,0,12,0,0,0.00,0.02,tag 2 (Giro izquierda 90) a 205 cm
+21.134,APPROACH,75,30,69,-4,1,-1,74,0,12,0,0,0.05,0.02,tag 2 (Giro izquierda 90) a 205 cm
+21.184,APPROACH,75,30,69,-4,0,-1,74,0,12,0,0,0.01,0.02,tag 2 (Giro izquierda 90) a 205 cm
+21.234,APPROACH,75,30,69,-4,0,-1,74,0,12,0,0,0.07,0.02,tag 2 (Giro izquierda 90) a 205 cm
+21.284,APPROACH,75,30,69,-4,1,-1,73,0,12,0,0,0.00,0.02,tag 2 (Giro izquierda 90) a 205 cm
+21.334,APPROACH,75,30,69,-4,1,-1,73,0,12,0,0,0.05,0.02,tag 2 (Giro izquierda 90) a 205 cm
+21.384,APPROACH,75,30,69,-4,1,-2,73,0,12,0,0,0.00,0.01,tag 2 (Giro izquierda 90) a 205 cm
+21.434,APPROACH,75,30,69,-4,1,-2,73,0,12,0,0,0.05,0.02,tag 2 (Giro izquierda 90) a 205 cm
+21.485,APPROACH,75,30,69,-4,1,-1,73,0,12,0,0,0.00,0.02,tag 2 (Giro izquierda 90) a 205 cm
+21.535,APPROACH,75,30,69,-4,1,-1,73,0,12,0,-20,0.05,0.02,tag 2 (Giro izquierda 90) a 205 cm
+21.585,APPROACH,75,30,69,-4,1,-1,73,0,12,0,-20,0.01,0.02,tag 2 (Giro izquierda 90) a 205 cm
+21.635,APPROACH,75,30,69,-4,1,-1,73,0,12,0,-20,0.06,0.02,tag 2 (Giro izquierda 90) a 205 cm
+21.685,APPROACH,75,30,71,-5,1,-1,73,0,12,0,-20,0.00,0.02,tag 2 (Giro izquierda 90) a 205 cm
+21.736,APPROACH,75,30,71,-5,1,-1,73,0,12,0,-20,0.05,0.02,tag 2 (Giro izquierda 90) a 205 cm
+21.786,APPROACH,75,30,71,-7,0,-2,73,0,12,0,-20,0.00,0.02,tag 2 (Giro izquierda 90) a 205 cm
+21.836,APPROACH,75,30,71,-7,0,-2,73,0,12,0,-20,0.05,0.02,tag 2 (Giro izquierda 90) a 205 cm
+21.886,APPROACH,75,30,73,-9,0,-2,73,0,12,0,0,0.01,0.02,tag 2 (Giro izquierda 90) a 205 cm
+21.937,APPROACH,75,30,73,-9,0,-2,73,0,12,0,0,0.06,0.02,tag 2 (Giro izquierda 90) a 205 cm
+21.987,APPROACH,75,30,74,-10,0,-2,73,0,12,0,0,0.00,0.02,tag 2 (Giro izquierda 90) a 205 cm
+22.037,APPROACH,75,30,74,-10,0,-2,73,0,12,0,0,0.05,0.02,tag 2 (Giro izquierda 90) a 205 cm
+22.087,APPROACH,75,30,76,-12,0,-1,73,0,12,0,0,0.00,0.02,tag 2 (Giro izquierda 90) a 205 cm
+22.137,APPROACH,75,30,76,-12,0,-1,73,0,12,0,0,0.05,0.02,tag 2 (Giro izquierda 90) a 205 cm
+22.187,APPROACH,75,40,77,-13,0,-1,73,0,12,0,0,0.00,0.02,tag 2 (Giro izquierda 90) a 205 cm
+22.238,APPROACH,75,40,77,-13,0,-1,73,0,12,0,0,0.05,0.02,tag 2 (Giro izquierda 90) a 205 cm
+22.288,APPROACH,75,40,79,-14,0,-1,73,0,12,0,0,0.00,0.02,tag 2 (Giro izquierda 90) a 205 cm
+22.338,APPROACH,75,40,79,-14,0,-1,73,0,12,0,0,0.05,0.03,tag 2 (Giro izquierda 90) a 205 cm
+22.388,APPROACH,75,40,80,-15,0,-1,73,0,12,0,0,0.00,0.02,tag 2 (Giro izquierda 90) a 205 cm
+22.439,APPROACH,75,40,80,-15,0,-1,73,0,12,0,0,0.05,0.02,tag 2 (Giro izquierda 90) a 205 cm
+22.489,APPROACH,75,40,80,-16,0,-1,73,0,12,0,0,0.00,0.02,tag 2 (Giro izquierda 90) a 205 cm
+22.539,APPROACH,75,40,80,-16,0,-1,73,0,12,0,0,0.05,0.02,tag 2 (Giro izquierda 90) a 205 cm
+22.589,APPROACH,75,40,82,-17,0,-1,73,0,12,0,0,0.00,0.02,tag 2 (Giro izquierda 90) a 205 cm
+22.640,APPROACH,75,40,82,-17,0,-1,73,0,12,0,0,0.05,0.02,tag 2 (Giro izquierda 90) a 205 cm
+22.690,APPROACH,75,40,82,-17,0,-1,73,0,12,0,0,0.10,0.02,tag 2 (Giro izquierda 90) a 205 cm
+22.740,APPROACH,75,40,81,-18,0,-1,73,0,12,0,0,0.03,0.02,tag 2 (Giro izquierda 90) a 205 cm
+22.790,APPROACH,75,40,81,-18,0,-1,73,0,12,0,0,0.08,0.01,tag 2 (Giro izquierda 90) a 205 cm
+22.840,APPROACH,75,40,82,-19,0,-1,73,0,12,0,0,0.02,0.02,tag 2 (Giro izquierda 90) a 205 cm
+22.890,APPROACH,75,40,82,-19,0,-1,73,0,12,0,20,0.07,0.02,tag 2 (Giro izquierda 90) a 205 cm
+22.941,APPROACH,75,40,82,-19,0,-1,73,0,12,0,20,0.04,0.02,tag 2 (Giro izquierda 90) a 205 cm
+22.991,APPROACH,75,40,82,-19,0,-1,73,0,12,0,20,0.09,0.02,tag 2 (Giro izquierda 90) a 205 cm
+23.041,APPROACH,75,40,83,-20,0,-2,73,0,12,0,20,0.02,0.02,tag 2 (Giro izquierda 90) a 205 cm
+23.091,APPROACH,75,40,83,-20,0,-2,73,0,12,0,20,0.07,0.02,tag 2 (Giro izquierda 90) a 205 cm
+23.141,APPROACH,75,40,83,-20,0,-2,73,0,12,0,20,0.01,0.02,tag 2 (Giro izquierda 90) a 205 cm
+23.191,APPROACH,75,40,83,-20,0,-2,73,0,12,0,20,0.06,0.02,tag 2 (Giro izquierda 90) a 205 cm
+23.242,APPROACH,75,40,83,-20,0,-2,73,0,12,0,20,0.03,0.02,tag 2 (Giro izquierda 90) a 205 cm
+23.292,APPROACH,75,40,83,-20,0,-2,73,0,12,0,20,0.08,0.02,tag 2 (Giro izquierda 90) a 205 cm
+23.342,APPROACH,75,40,83,-20,0,-5,73,0,12,0,20,0.02,0.02,tag 2 (Giro izquierda 90) a 205 cm
+23.392,APPROACH,75,40,83,-20,0,-5,73,0,12,0,20,0.07,0.02,tag 2 (Giro izquierda 90) a 205 cm
+23.442,APPROACH,75,40,82,-20,0,-5,73,0,12,0,20,0.01,0.02,tag 2 (Giro izquierda 90) a 205 cm
+23.492,APPROACH,75,40,82,-20,0,-5,73,0,12,0,20,0.06,0.02,tag 2 (Giro izquierda 90) a 205 cm
+23.542,APPROACH,75,40,82,-19,0,-5,73,0,12,0,20,0.02,0.02,tag 2 (Giro izquierda 90) a 205 cm
+23.592,APPROACH,75,40,82,-19,0,-5,73,0,12,0,20,0.07,0.02,tag 2 (Giro izquierda 90) a 205 cm
+23.642,APPROACH,75,40,82,-18,0,-2,73,0,0,0,20,0.01,0.02,tag 2 (Giro izquierda 90) a 205 cm
+23.692,APPROACH,75,40,82,-18,0,-2,73,0,0,0,20,0.06,0.02,tag 2 (Giro izquierda 90) a 205 cm
+23.743,APPROACH,75,40,83,-17,0,0,73,0,0,0,20,0.03,0.02,tag 2 (Giro izquierda 90) a 205 cm
+23.793,APPROACH,75,40,82,-17,0,1,73,0,0,0,20,0.01,0.02,tag 2 (Giro izquierda 90) a 205 cm
+23.843,APPROACH,75,40,82,-17,0,1,73,0,0,0,20,0.06,0.02,tag 2 (Giro izquierda 90) a 205 cm
+23.893,APPROACH,75,40,81,-16,0,1,73,0,0,0,20,0.00,0.02,tag 2 (Giro izquierda 90) a 205 cm
+23.943,APPROACH,75,40,81,-16,0,1,73,0,0,0,20,0.05,0.02,tag 2 (Giro izquierda 90) a 205 cm
+23.993,APPROACH,75,40,81,-15,0,1,73,0,0,0,20,0.02,0.02,tag 2 (Giro izquierda 90) a 205 cm
+24.043,APPROACH,75,40,81,-15,0,1,73,0,0,0,20,0.07,0.02,tag 2 (Giro izquierda 90) a 205 cm
+24.098,APPROACH,75,40,82,-14,1,0,73,0,0,0,20,0.01,0.01,tag 2 (Giro izquierda 90) a 205 cm
+24.148,APPROACH,75,40,82,-14,1,0,73,0,0,0,20,0.06,0.01,tag 2 (Giro izquierda 90) a 205 cm
+24.198,APPROACH,75,40,83,-13,0,0,73,0,0,0,20,0.00,0.02,tag 2 (Giro izquierda 90) a 205 cm
+24.248,APPROACH,75,40,83,-13,0,0,73,0,0,0,20,0.05,0.02,tag 2 (Giro izquierda 90) a 205 cm
+24.301,APPROACH,75,40,81,-12,0,-1,74,0,0,0,20,0.03,0.02,tag 2 (Giro izquierda 90) a 205 cm
+24.352,APPROACH,75,40,81,-12,0,-1,74,0,0,0,20,0.08,0.02,tag 2 (Giro izquierda 90) a 205 cm
+24.402,APPROACH,75,40,82,-11,1,-1,74,0,0,0,20,0.02,0.01,tag 2 (Giro izquierda 90) a 205 cm
+24.452,APPROACH,75,40,82,-11,1,-1,74,0,0,0,20,0.07,0.03,tag 2 (Giro izquierda 90) a 205 cm
+24.502,APPROACH,75,40,82,-9,1,-1,74,0,0,0,20,0.03,0.02,tag 2 (Giro izquierda 90) a 205 cm
+24.552,APPROACH,75,40,82,-9,1,-1,74,0,0,0,20,0.08,0.01,tag 2 (Giro izquierda 90) a 205 cm
+24.602,APPROACH,75,40,83,-8,1,0,74,0,0,0,20,0.02,0.02,tag 2 (Giro izquierda 90) a 205 cm
+24.652,APPROACH,75,40,83,-8,1,0,74,0,0,0,20,0.07,0.01,tag 2 (Giro izquierda 90) a 205 cm
+24.702,APPROACH,75,40,83,-7,0,-1,74,0,0,0,20,0.02,0.01,tag 2 (Giro izquierda 90) a 205 cm
+24.753,APPROACH,75,40,83,-7,0,-1,74,0,0,0,20,0.07,0.01,tag 2 (Giro izquierda 90) a 205 cm
+24.803,APPROACH,75,40,84,-5,0,-1,74,0,0,0,20,0.02,0.01,tag 2 (Giro izquierda 90) a 205 cm
+24.853,APPROACH,75,40,84,-5,0,-1,74,0,0,0,20,0.07,0.03,tag 2 (Giro izquierda 90) a 205 cm
+24.903,APPROACH,75,40,85,-4,0,-1,74,0,0,0,20,0.00,0.02,tag 2 (Giro izquierda 90) a 205 cm
+24.953,APPROACH,75,40,85,-4,0,-1,74,0,0,0,20,0.05,0.01,tag 2 (Giro izquierda 90) a 205 cm
+25.003,APPROACH,75,40,85,-3,0,-1,74,0,0,0,20,0.00,0.02,tag 2 (Giro izquierda 90) a 205 cm
+25.053,APPROACH,75,40,85,-3,0,-1,74,0,0,0,20,0.05,0.02,tag 2 (Giro izquierda 90) a 205 cm
+25.104,APPROACH,75,40,85,-3,0,-1,74,0,0,0,20,0.10,0.02,tag 2 (Giro izquierda 90) a 205 cm
+25.154,APPROACH,75,40,85,-1,0,-1,74,0,0,0,0,0.02,0.02,tag 2 (Giro izquierda 90) a 205 cm
+25.204,APPROACH,75,40,87,0,0,-1,74,0,0,0,0,0.00,0.02,tag 2 (Giro izquierda 90) a 205 cm
+25.254,APPROACH,75,40,87,0,0,-1,74,0,0,0,0,0.05,0.02,tag 2 (Giro izquierda 90) a 205 cm
+25.305,APPROACH,75,40,88,0,0,-1,75,0,0,0,0,0.00,0.02,tag 2 (Giro izquierda 90) a 205 cm
+25.355,APPROACH,75,40,88,0,0,-1,75,0,0,0,0,0.05,0.01,tag 2 (Giro izquierda 90) a 205 cm
+25.405,APPROACH,75,40,87,1,0,-1,75,0,0,0,0,0.00,0.01,tag 2 (Giro izquierda 90) a 205 cm
+25.455,APPROACH,75,40,87,1,0,-1,75,0,0,0,0,0.05,0.02,tag 2 (Giro izquierda 90) a 205 cm
+25.506,APPROACH,75,40,88,1,1,0,75,0,0,0,0,0.00,0.01,tag 2 (Giro izquierda 90) a 205 cm
+25.556,APPROACH,75,40,88,1,1,0,75,0,0,0,0,0.05,0.02,tag 2 (Giro izquierda 90) a 205 cm
+25.606,APPROACH,75,40,87,2,2,0,75,0,0,0,0,0.00,0.02,tag 2 (Giro izquierda 90) a 205 cm
+25.656,EXECUTE,75,40,87,2,2,0,75,0,0,0,0,0.05,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+25.706,EXECUTE,75,40,86,2,2,0,75,0,0,0,-60,0.00,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+25.756,EXECUTE,75,40,86,2,2,0,75,0,0,0,-60,0.05,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+25.806,EXECUTE,75,40,85,3,1,0,75,0,0,0,-60,0.00,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+25.857,EXECUTE,75,40,85,3,1,0,75,0,0,0,-60,0.05,0.01,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+25.907,EXECUTE,75,40,85,1,1,0,75,0,0,0,-60,0.00,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+25.957,EXECUTE,75,40,85,1,1,0,75,0,0,0,-60,0.05,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+26.007,EXECUTE,75,40,85,-2,0,-2,75,0,0,0,-60,0.00,0.01,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+26.057,EXECUTE,75,40,85,-2,0,-2,75,0,0,0,-60,0.05,0.01,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+26.108,EXECUTE,75,40,85,-6,0,-1,75,0,0,0,-60,0.00,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+26.158,EXECUTE,75,40,85,-6,0,-1,75,0,0,0,-60,0.05,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+26.208,EXECUTE,75,40,85,-6,0,-1,75,0,0,0,-60,0.10,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+26.259,EXECUTE,75,40,84,-10,0,-1,75,0,0,0,-60,0.04,0.01,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+26.309,EXECUTE,75,40,84,-10,0,-1,75,0,0,0,-60,0.09,0.01,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+26.359,EXECUTE,75,40,86,-19,0,-2,74,0,0,0,-60,0.04,0.01,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+26.409,EXECUTE,75,40,86,-19,0,-2,74,0,0,0,-60,0.09,0.01,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+26.459,EXECUTE,75,40,86,-24,0,-1,74,0,0,0,-60,0.04,0.01,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+26.510,EXECUTE,75,40,86,-24,0,-1,74,0,0,0,-60,0.09,0.03,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+26.560,EXECUTE,75,40,86,-29,0,-1,74,0,0,0,-60,0.01,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+26.610,EXECUTE,75,40,86,-29,0,-1,74,0,0,0,-60,0.06,0.01,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+26.660,EXECUTE,75,40,88,-34,0,-1,74,0,0,0,-60,0.01,0.01,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+26.710,EXECUTE,75,40,88,-34,0,-1,74,0,0,0,-60,0.06,0.01,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+26.760,EXECUTE,75,40,87,-38,0,-1,74,0,0,0,-60,0.01,0.01,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+26.810,EXECUTE,75,40,87,-38,0,-1,74,0,0,0,-60,0.06,0.01,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+26.860,EXECUTE,75,40,88,-43,0,-1,74,0,0,0,-60,0.01,0.01,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+26.911,EXECUTE,75,40,88,-43,0,-1,74,0,0,0,-60,0.06,0.01,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+26.961,EXECUTE,75,40,89,-48,0,-1,74,0,0,0,-60,0.00,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+27.012,EXECUTE,75,40,89,-48,0,-1,74,0,0,0,-60,0.05,0.01,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+27.062,EXECUTE,75,40,89,-52,0,-1,74,0,0,0,-60,0.03,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+27.112,EXECUTE,75,40,89,-52,0,-1,74,0,0,0,-60,0.08,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+27.162,EXECUTE,75,40,89,-57,0,-1,74,0,0,0,-60,0.02,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+27.212,EXECUTE,75,40,89,-57,0,-1,74,0,0,0,-60,0.07,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+27.265,EXECUTE,75,40,89,-62,0,-1,74,0,0,0,-60,0.01,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+27.315,EXECUTE,75,40,89,-62,0,-1,74,0,0,0,-52,0.06,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+27.365,EXECUTE,75,40,87,-66,0,-1,75,0,0,0,-52,0.01,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+27.415,EXECUTE,75,40,87,-66,0,-1,75,0,0,0,-44,0.06,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+27.466,EXECUTE,75,40,87,-70,0,-1,75,0,0,0,-44,0.00,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+27.516,EXECUTE,75,40,87,-70,0,-1,75,0,0,0,-36,0.05,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+27.566,EXECUTE,75,40,88,-74,0,0,75,0,0,0,-36,0.02,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+27.616,EXECUTE,75,40,88,-77,0,0,75,0,0,0,-28,0.00,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+27.666,EXECUTE,75,40,88,-77,0,0,75,0,0,0,-22,0.05,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+27.716,EXECUTE,75,40,87,-78,0,0,75,0,0,0,-22,0.00,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+27.767,EXECUTE,75,40,87,-78,0,0,75,0,0,0,-20,0.05,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+27.817,EXECUTE,75,40,86,-80,0,0,75,0,0,0,-20,0.00,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+27.867,EXECUTE,75,40,86,-80,0,0,75,0,0,0,-20,0.05,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+27.917,EXECUTE,75,40,84,-81,0,0,75,0,0,0,-20,0.01,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+27.967,EXECUTE,75,40,84,-81,0,0,75,0,0,0,-20,0.06,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+28.017,EXECUTE,75,40,84,-81,0,0,75,0,0,0,-20,0.00,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+28.068,EXECUTE,75,40,84,-81,0,0,75,0,0,0,-20,0.05,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+28.118,EXECUTE,75,40,83,-82,0,0,75,0,0,0,-20,0.00,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+28.168,EXECUTE,75,40,83,-82,0,0,75,0,0,0,-20,0.05,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+28.219,EXECUTE,75,40,82,-83,0,0,75,0,0,0,-20,0.00,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+28.269,EXECUTE,75,40,82,-83,0,0,75,0,0,0,-20,0.05,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+28.319,EXECUTE,75,40,82,-84,0,0,75,0,0,0,-20,0.02,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+28.369,EXECUTE,75,40,82,-84,0,0,75,0,0,0,-20,0.07,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+28.420,EXECUTE,75,40,81,-84,0,0,75,0,0,0,-20,0.00,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+28.470,EXECUTE,75,40,81,-84,0,0,75,0,0,0,-20,0.05,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+28.520,EXECUTE,75,40,80,-85,0,0,75,0,0,0,-20,0.01,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+28.570,EXECUTE,75,40,80,-85,0,0,75,0,0,0,0,0.06,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+28.621,EXECUTE,75,40,80,-85,0,0,75,0,0,0,0,0.00,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+28.671,EXECUTE,75,40,80,-85,0,0,75,0,0,0,0,0.05,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+28.722,EXECUTE,75,40,80,-85,0,-1,75,0,0,0,0,0.00,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+28.772,EXECUTE,75,40,80,-85,0,-1,75,0,0,0,0,0.05,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+28.822,EXECUTE,75,40,79,-85,0,-1,75,0,0,0,0,0.00,0.02,"tag 2 (Giro izquierda 90) a 64 cm, az -1"
+28.872,ADVANCE,75,40,79,-85,0,-1,75,0,0,0,0,0.05,0.02,"tag 2 ejecutado, avanzando"
+28.922,ADVANCE,75,40,78,-85,0,0,75,0,15,0,0,0.00,0.02,"tag 2 ejecutado, avanzando"
+28.973,ADVANCE,75,40,78,-85,0,0,75,0,15,0,0,0.05,0.02,"tag 2 ejecutado, avanzando"
+29.023,ADVANCE,75,40,77,-85,0,0,75,0,15,0,0,0.00,0.02,"tag 2 ejecutado, avanzando"
+29.073,ADVANCE,75,40,77,-85,0,0,75,0,15,0,0,0.05,0.04,"tag 2 ejecutado, avanzando"
+29.123,ADVANCE,75,40,79,-85,0,0,75,0,15,0,0,0.00,0.02,"tag 2 ejecutado, avanzando"
+29.173,ADVANCE,75,40,79,-85,0,0,75,0,15,0,0,0.05,0.02,"tag 2 ejecutado, avanzando"
+29.224,ADVANCE,75,40,79,-85,0,0,75,0,15,0,0,0.10,0.02,"tag 2 ejecutado, avanzando"
+29.274,ADVANCE,75,40,77,-85,0,0,75,0,15,0,0,0.02,0.02,"tag 2 ejecutado, avanzando"
+29.325,ADVANCE,75,40,80,-85,-1,-1,74,0,15,0,0,0.00,0.02,"tag 2 ejecutado, avanzando"
+29.375,ADVANCE,75,40,80,-85,-1,-1,74,0,15,0,0,0.05,0.02,"tag 2 ejecutado, avanzando"
+29.426,ADVANCE,75,40,80,-85,-1,-1,74,0,15,0,0,0.10,0.02,"tag 2 ejecutado, avanzando"
+29.477,ADVANCE,75,40,78,-85,0,0,74,0,15,0,0,0.03,0.02,"tag 2 ejecutado, avanzando"
+29.530,ADVANCE,75,40,78,-85,0,0,74,0,15,0,0,0.09,0.02,"tag 2 ejecutado, avanzando"
+29.580,ADVANCE,75,40,79,-85,0,0,74,0,15,0,0,0.03,0.02,"tag 2 ejecutado, avanzando"
+29.632,ADVANCE,75,40,79,-85,0,0,74,0,15,0,0,0.08,0.02,"tag 2 ejecutado, avanzando"
+29.682,ADVANCE,75,40,80,-85,0,-1,74,0,15,0,0,0.03,0.02,"tag 2 ejecutado, avanzando"
+29.732,ADVANCE,75,40,80,-85,-1,-1,74,0,15,0,0,0.00,0.02,"tag 2 ejecutado, avanzando"
+29.782,ADVANCE,75,40,80,-85,-1,-1,74,0,15,0,0,0.05,0.02,"tag 2 ejecutado, avanzando"
+29.832,ADVANCE,75,40,80,-85,-1,-1,74,0,15,0,0,0.10,0.02,"tag 2 ejecutado, avanzando"
+29.882,ADVANCE,74,40,80,-85,-1,-1,74,0,15,0,0,0.04,0.02,"tag 2 ejecutado, avanzando"
+29.933,ADVANCE,74,40,80,-85,-1,-1,74,0,15,0,0,0.09,0.02,"tag 2 ejecutado, avanzando"
+29.984,ADVANCE,74,40,79,-85,-1,-1,74,0,15,0,0,0.03,0.02,"tag 2 ejecutado, avanzando"
+30.034,ADVANCE,74,40,79,-85,-1,-1,74,0,15,0,0,0.08,0.02,"tag 2 ejecutado, avanzando"
+30.084,ADVANCE,74,40,79,-86,0,-1,74,0,15,0,0,0.02,0.02,"tag 2 ejecutado, avanzando"
+30.134,ADVANCE,74,40,79,-86,0,-1,74,0,15,0,0,0.07,0.02,"tag 2 ejecutado, avanzando"
+30.184,ADVANCE,74,40,80,-86,0,-1,74,0,15,0,0,0.04,0.02,"tag 2 ejecutado, avanzando"
+30.234,ADVANCE,74,40,80,-86,0,-1,74,0,15,0,0,0.09,0.02,"tag 2 ejecutado, avanzando"
+30.284,ADVANCE,74,40,79,-86,0,0,74,0,15,0,0,0.03,0.02,"tag 2 ejecutado, avanzando"
+30.335,ADVANCE,74,40,79,-86,0,0,74,0,15,0,0,0.08,0.02,"tag 2 ejecutado, avanzando"
+30.385,ADVANCE,74,40,79,-86,0,0,75,0,15,0,0,0.01,0.02,"tag 2 ejecutado, avanzando"
+30.435,ADVANCE,74,40,79,-86,0,0,75,0,15,0,0,0.06,0.02,"tag 2 ejecutado, avanzando"
+30.485,ADVANCE,74,40,78,-86,0,0,75,0,15,0,0,0.04,0.02,"tag 2 ejecutado, avanzando"
+30.535,ADVANCE,74,40,78,-86,0,0,75,0,15,0,0,0.09,0.02,"tag 2 ejecutado, avanzando"
+30.585,ADVANCE,74,40,78,-86,0,-1,75,0,15,0,0,0.02,0.02,"tag 2 ejecutado, avanzando"
+30.635,ADVANCE,74,40,78,-86,0,-1,75,0,15,0,0,0.07,0.02,"tag 2 ejecutado, avanzando"
+30.685,ADVANCE,74,40,79,-86,0,-1,75,0,15,0,0,0.01,0.02,"tag 2 ejecutado, avanzando"
+30.735,ADVANCE,74,40,79,-86,0,-1,75,0,15,0,0,0.06,0.02,"tag 2 ejecutado, avanzando"
+30.786,ADVANCE,74,40,78,-86,0,-1,75,0,15,0,0,0.00,0.02,"tag 2 ejecutado, avanzando"
+30.836,ADVANCE,74,40,78,-86,0,-1,75,0,15,0,0,0.05,0.02,"tag 2 ejecutado, avanzando"
+30.886,ADVANCE,74,40,78,-86,0,-1,75,0,15,0,0,0.02,0.02,"tag 2 ejecutado, avanzando"
+30.936,ADVANCE,74,40,78,-86,0,-1,75,0,15,0,0,0.07,0.02,"tag 2 ejecutado, avanzando"
+30.986,ADVANCE,74,40,78,-86,0,-2,75,0,15,0,0,0.00,0.02,"tag 2 ejecutado, avanzando"
+31.036,ADVANCE,74,40,78,-86,0,-2,75,0,15,0,0,0.05,0.02,"tag 2 ejecutado, avanzando"
+31.087,ADVANCE,74,40,78,-86,0,-1,75,0,15,0,0,0.03,0.02,"tag 2 ejecutado, avanzando"
+31.137,ADVANCE,74,40,77,-86,0,-1,75,0,15,0,0,0.00,0.02,"tag 2 ejecutado, avanzando"
+31.187,ADVANCE,74,40,77,-86,0,-1,75,0,15,0,0,0.05,0.02,"tag 2 ejecutado, avanzando"
+31.237,ADVANCE,74,40,79,-86,0,-1,75,0,15,0,0,0.00,0.02,"tag 2 ejecutado, avanzando"
+31.287,ADVANCE,74,40,79,-86,0,-1,75,0,15,0,0,0.05,0.02,"tag 2 ejecutado, avanzando"
+31.337,ADVANCE,74,40,79,-86,0,-1,75,0,15,0,0,0.10,0.02,"tag 2 ejecutado, avanzando"
+31.387,ADVANCE,74,40,78,-85,0,0,76,0,15,0,0,0.00,0.02,"tag 2 ejecutado, avanzando"
+31.437,ADVANCE,74,40,78,-85,0,0,76,0,15,0,0,0.00,0.02,"tag 2 ejecutado, avanzando"
+31.488,ADVANCE,74,40,78,-85,0,0,76,0,15,0,0,0.05,0.02,"tag 2 ejecutado, avanzando"
+31.538,ADVANCE,74,40,78,-85,0,0,76,0,15,0,0,0.02,0.02,"tag 2 ejecutado, avanzando"
+31.588,ADVANCE,74,40,78,-85,0,0,76,0,15,0,0,0.07,0.02,"tag 2 ejecutado, avanzando"
+31.638,ADVANCE,74,40,77,-85,0,0,76,0,15,0,0,0.00,0.02,"tag 2 ejecutado, avanzando"
+31.688,ADVANCE,74,40,77,-85,0,0,76,0,15,0,0,0.05,0.02,"tag 2 ejecutado, avanzando"
+31.738,ADVANCE,74,40,77,-85,0,-1,76,0,15,0,0,0.00,0.04,"tag 2 ejecutado, avanzando"
+31.788,ADVANCE,74,40,77,-85,0,-1,76,0,15,0,0,0.05,0.02,"tag 2 ejecutado, avanzando"
+31.839,ADVANCE,74,40,77,-85,0,0,76,0,15,0,0,0.00,0.02,"tag 2 ejecutado, avanzando"
+31.889,ADVANCE,74,40,77,-85,0,0,76,0,15,0,0,0.05,0.02,"tag 2 ejecutado, avanzando"
+31.939,ADVANCE,74,40,78,-85,0,0,76,0,15,0,0,0.00,0.02,"tag 2 ejecutado, avanzando"
+31.989,ADVANCE,74,40,78,-85,0,0,76,0,15,0,0,0.05,0.02,"tag 2 ejecutado, avanzando"
+32.039,ADVANCE,74,40,78,-86,0,0,76,0,15,0,0,0.00,0.02,"tag 2 ejecutado, avanzando"
+32.094,ADVANCE,74,40,78,-86,0,0,76,0,15,0,0,0.05,0.04,"tag 2 ejecutado, avanzando"
+32.144,ADVANCE,74,40,79,-86,0,-1,76,0,15,0,0,0.00,0.02,"tag 2 ejecutado, avanzando"
+32.194,ADVANCE,74,40,79,-86,0,-1,76,0,15,0,0,0.05,0.02,"tag 2 ejecutado, avanzando"
+32.244,ADVANCE,74,40,78,-86,0,-1,76,0,15,0,0,0.00,0.02,"tag 2 ejecutado, avanzando"
+32.297,ADVANCE,74,40,78,-86,0,-1,76,0,15,0,0,0.05,0.02,"tag 2 ejecutado, avanzando"
+32.347,ADVANCE,74,40,79,-86,0,-1,74,0,15,0,0,0.01,0.02,"tag 2 ejecutado, avanzando"
+32.397,ADVANCE,74,40,79,-86,0,-1,74,0,15,0,0,0.06,0.02,"tag 2 ejecutado, avanzando"
+32.447,ADVANCE,74,40,80,-86,0,-1,74,0,15,0,0,0.00,0.02,"tag 2 ejecutado, avanzando"
+32.498,ADVANCE,74,40,80,-86,0,-1,74,0,15,0,0,0.05,0.02,"tag 2 ejecutado, avanzando"
+32.548,ADVANCE,74,40,81,-86,0,0,74,0,15,0,0,0.00,0.02,"tag 2 ejecutado, avanzando"
+32.598,ADVANCE,74,40,81,-86,0,0,74,0,15,0,0,0.05,0.02,"tag 2 ejecutado, avanzando"
+32.648,ADVANCE,74,40,81,-85,0,-1,74,0,15,0,0,0.01,0.02,"tag 2 ejecutado, avanzando"
+32.698,ADVANCE,74,40,81,-85,0,-1,74,0,15,0,0,0.06,0.02,"tag 2 ejecutado, avanzando"
+32.748,ADVANCE,74,40,81,-85,0,-1,74,0,15,0,0,0.00,0.02,"tag 2 ejecutado, avanzando"
+32.799,ADVANCE,74,40,81,-85,0,-1,74,0,15,0,0,0.05,0.02,"tag 2 ejecutado, avanzando"
+32.849,ADVANCE,74,40,81,-85,0,0,74,0,15,0,0,0.00,0.02,"tag 2 ejecutado, avanzando"
+32.899,ADVANCE,74,40,81,-85,0,0,74,0,15,0,0,0.05,0.02,"tag 2 ejecutado, avanzando"
+32.949,ADVANCE,74,40,81,-85,0,0,74,0,15,0,0,0.00,0.02,"tag 2 ejecutado, avanzando"
+32.999,ADVANCE,74,40,81,-85,0,0,74,0,15,0,0,0.05,0.02,"tag 2 ejecutado, avanzando"
+33.049,ADVANCE,74,40,81,-85,0,0,74,0,15,0,0,0.00,0.02,"tag 2 ejecutado, avanzando"
+33.099,ADVANCE,74,40,81,-85,0,0,74,0,15,0,0,0.05,0.02,"tag 2 ejecutado, avanzando"
+33.150,ADVANCE,74,40,81,-85,0,0,74,0,15,0,0,0.10,0.02,"tag 2 ejecutado, avanzando"
+33.200,ADVANCE,74,40,81,-86,0,-1,74,0,15,0,0,0.02,0.02,"tag 2 ejecutado, avanzando"
+33.250,ADVANCE,74,40,81,-86,0,-1,74,0,15,0,0,0.07,0.02,"tag 2 ejecutado, avanzando"
+33.300,ADVANCE,74,40,81,-86,0,-1,74,0,15,0,0,0.01,0.02,"tag 2 ejecutado, avanzando"
+33.350,ADVANCE,74,40,81,-86,0,-1,74,0,15,0,0,0.06,0.02,"tag 2 ejecutado, avanzando"
+33.401,ADVANCE,74,40,81,-86,0,-1,75,0,15,0,0,0.03,0.02,"tag 2 ejecutado, avanzando"
+33.451,ADVANCE,74,40,81,-86,0,-1,75,0,15,0,0,0.08,0.02,"tag 2 ejecutado, avanzando"
+33.501,ADVANCE,74,40,80,-86,0,-1,75,0,15,0,0,0.01,0.02,"tag 2 ejecutado, avanzando"
+33.551,ADVANCE,74,40,80,-86,0,-1,75,0,15,0,0,0.06,0.02,"tag 2 ejecutado, avanzando"
+33.602,ADVANCE,74,40,81,-86,0,-1,75,0,15,0,0,0.04,0.02,"tag 2 ejecutado, avanzando"
+33.652,ADVANCE,74,40,81,-86,0,-1,75,0,15,0,0,0.09,0.02,"tag 2 ejecutado, avanzando"
+33.702,ADVANCE,74,40,80,-86,0,-1,75,0,15,0,0,0.01,0.02,"tag 2 ejecutado, avanzando"
+33.752,ADVANCE,74,40,80,-86,0,-1,75,0,15,0,0,0.06,0.02,"tag 2 ejecutado, avanzando"
+33.802,ADVANCE,73,40,80,-86,0,-1,75,0,15,0,0,0.03,0.02,"tag 2 ejecutado, avanzando"
+33.852,ADVANCE,73,40,80,-86,0,-1,75,0,15,0,0,0.08,0.02,"tag 2 ejecutado, avanzando"
+33.903,ADVANCE,73,40,79,-86,0,-1,75,0,15,0,0,0.01,0.02,"tag 2 ejecutado, avanzando"
+33.953,ADVANCE,73,40,79,-86,0,-1,75,0,15,0,0,0.06,0.02,"tag 2 ejecutado, avanzando"
+34.003,ADVANCE,73,40,80,-86,0,-2,75,0,15,0,0,0.03,0.02,"tag 2 ejecutado, avanzando"
+34.053,ADVANCE,73,40,80,-86,0,-2,75,0,15,0,0,0.08,0.02,"tag 2 ejecutado, avanzando"
+34.103,ADVANCE,73,40,79,-86,0,-1,75,0,15,0,0,0.02,0.02,"tag 2 ejecutado, avanzando"
+34.153,ADVANCE,73,40,79,-86,0,-1,75,0,15,0,0,0.07,0.02,"tag 2 ejecutado, avanzando"
+34.203,ADVANCE,73,40,78,-86,-1,-1,75,0,15,0,0,0.00,0.02,"tag 2 ejecutado, avanzando"
+34.254,ADVANCE,73,40,78,-86,-1,-1,75,0,15,0,0,0.05,0.02,"tag 2 ejecutado, avanzando"
+34.304,ADVANCE,73,40,77,-86,0,-1,75,0,15,0,0,0.02,0.02,"tag 2 ejecutado, avanzando"
+34.354,ADVANCE,73,40,77,-86,0,-1,75,0,15,0,0,0.07,0.02,"tag 2 ejecutado, avanzando"
+34.404,ADVANCE,73,40,76,-86,0,-1,75,0,15,0,0,0.00,0.02,"tag 2 ejecutado, avanzando"
+34.454,ADVANCE,73,40,76,-86,0,-1,75,0,15,0,0,0.05,0.02,"tag 2 ejecutado, avanzando"
+34.504,ADVANCE,73,40,77,-86,0,-1,75,0,15,0,0,0.00,0.02,"tag 2 ejecutado, avanzando"
+34.554,ADVANCE,73,40,77,-86,0,-1,75,0,15,0,0,0.05,0.02,"tag 2 ejecutado, avanzando"
+34.605,ADVANCE,73,40,75,-86,0,-4,75,0,15,0,0,0.01,0.02,"tag 2 ejecutado, avanzando"
+34.655,ADVANCE,73,40,75,-86,0,-4,75,0,15,0,0,0.06,0.02,"tag 2 ejecutado, avanzando"
+34.705,ADVANCE,73,40,76,-86,0,-2,75,0,15,0,0,0.00,0.02,"tag 2 ejecutado, avanzando"
+34.755,ADVANCE,73,40,76,-86,0,-2,75,0,15,0,0,0.05,0.02,"tag 2 ejecutado, avanzando"
+34.805,ADVANCE,73,40,75,-86,0,0,75,0,15,0,0,0.02,0.02,"tag 2 ejecutado, avanzando"
+34.855,ADVANCE,73,40,75,-86,0,0,75,0,15,0,0,0.07,0.02,"tag 2 ejecutado, avanzando"
+34.905,ADVANCE,73,30,75,-86,0,0,75,0,15,0,0,0.00,0.02,"tag 2 ejecutado, avanzando"
+34.955,ADVANCE,73,30,75,-86,0,0,75,0,15,0,0,0.05,0.02,"tag 2 ejecutado, avanzando"
+35.006,ADVANCE,73,30,73,-86,0,1,75,0,15,0,0,0.00,0.02,"tag 2 ejecutado, avanzando"
+35.056,ADVANCE,73,30,73,-86,0,1,75,0,15,0,0,0.05,0.01,"tag 2 ejecutado, avanzando"
+35.106,ADVANCE,73,30,72,-86,0,1,75,0,15,0,0,0.02,0.02,"tag 2 ejecutado, avanzando"
+35.156,ADVANCE,73,30,73,-86,0,0,75,0,15,0,0,0.00,0.02,"tag 2 ejecutado, avanzando"
+35.206,ADVANCE,73,30,73,-86,0,0,75,0,15,0,0,0.05,0.02,"tag 2 ejecutado, avanzando"
+35.256,ADVANCE,73,30,72,-86,0,0,75,0,15,0,0,0.01,0.02,"tag 2 ejecutado, avanzando"
+35.306,ADVANCE,73,30,72,-86,0,0,75,0,15,0,0,0.06,0.02,"tag 2 ejecutado, avanzando"
+35.356,ADVANCE,73,30,72,-86,0,0,75,0,15,0,0,0.11,0.02,"tag 2 ejecutado, avanzando"
+35.406,ADVANCE,73,30,72,-86,0,-1,76,0,15,0,0,0.00,0.02,"tag 2 ejecutado, avanzando"
+35.457,ADVANCE,73,30,72,-86,0,0,76,0,15,0,0,0.00,0.02,"tag 2 ejecutado, avanzando"
+35.507,ADVANCE,73,30,72,-86,0,0,76,0,15,0,0,0.05,0.02,"tag 2 ejecutado, avanzando"
+35.557,ADVANCE,73,30,72,-86,-1,0,76,0,15,0,0,0.00,0.02,"tag 2 ejecutado, avanzando"
+35.607,ADVANCE,73,30,72,-86,-1,0,76,0,15,0,0,0.05,0.02,"tag 2 ejecutado, avanzando"
+35.657,ADVANCE,73,30,72,-86,-1,0,76,0,15,0,0,0.00,0.02,"tag 2 ejecutado, avanzando"
+35.707,ADVANCE,73,30,72,-86,-1,0,76,0,15,0,0,0.05,0.02,"tag 2 ejecutado, avanzando"
+35.758,ADVANCE,73,30,72,-86,0,1,76,0,15,0,0,0.00,0.02,"tag 2 ejecutado, avanzando"
+35.808,ADVANCE,73,30,72,-86,0,1,76,0,15,0,0,0.05,0.02,"tag 2 ejecutado, avanzando"
+35.858,ADVANCE,73,30,71,-86,0,2,76,0,15,0,0,0.00,0.02,"tag 2 ejecutado, avanzando"
+35.908,ADVANCE,73,30,71,-86,0,2,76,0,15,0,0,0.05,0.02,"tag 2 ejecutado, avanzando"
+35.958,ADVANCE,73,30,70,-86,0,1,76,0,15,0,0,0.00,0.02,"tag 2 ejecutado, avanzando"
+36.008,ADVANCE,73,30,70,-86,0,1,76,0,15,0,0,0.05,0.02,"tag 2 ejecutado, avanzando"
+36.058,ADVANCE,73,30,70,-86,0,1,76,0,15,0,0,0.10,0.02,"tag 2 ejecutado, avanzando"
+36.108,ADVANCE,73,30,69,-86,0,0,76,0,15,0,0,0.05,0.02,"tag 2 ejecutado, avanzando"
+36.160,ADVANCE,73,30,69,-86,0,0,76,0,15,0,0,0.10,0.02,"tag 2 ejecutado, avanzando"
+36.210,ADVANCE,73,30,68,-86,0,0,76,0,15,0,0,0.03,0.02,"tag 2 ejecutado, avanzando"
+36.264,ADVANCE,73,30,68,-86,0,0,76,0,15,0,0,0.08,0.02,"tag 2 ejecutado, avanzando"
+36.315,ADVANCE,73,30,68,-86,0,0,76,0,15,0,0,0.05,0.02,"tag 2 ejecutado, avanzando"
+36.365,ADVANCE,73,30,68,-86,0,0,76,0,15,0,0,0.10,0.02,"tag 2 ejecutado, avanzando"
+36.415,ADVANCE,73,30,66,-86,0,0,75,0,15,0,0,0.04,0.02,"tag 2 ejecutado, avanzando"
+36.465,ADVANCE,73,30,66,-86,0,0,75,0,15,0,0,0.09,0.02,"tag 2 ejecutado, avanzando"
+36.515,ADVANCE,73,30,67,-86,0,-1,75,0,15,0,0,0.03,0.01,"tag 2 ejecutado, avanzando"
+36.565,ADVANCE,73,30,67,-86,0,-1,75,0,15,0,0,0.08,0.01,"tag 2 ejecutado, avanzando"
+36.615,ADVANCE,73,30,66,-86,0,-2,75,0,15,0,0,0.03,0.02,"tag 2 ejecutado, avanzando"
+36.665,ADVANCE,73,30,66,-86,0,-2,75,0,15,0,0,0.08,0.02,"tag 2 ejecutado, avanzando"
+36.716,ADVANCE,73,30,67,-86,0,-1,75,0,15,0,0,0.01,0.02,"tag 2 ejecutado, avanzando"
+36.766,ADVANCE,73,30,67,-86,0,-1,75,0,15,0,0,0.06,0.02,"tag 2 ejecutado, avanzando"
+36.816,ADVANCE,73,30,67,-86,0,0,75,0,15,0,0,0.03,0.02,"tag 2 ejecutado, avanzando"
+36.866,ADVANCE,73,30,67,-86,0,0,75,0,15,0,0,0.08,0.02,"tag 2 ejecutado, avanzando"
+36.916,ADVANCE,73,30,67,-86,0,0,75,0,15,0,0,0.00,0.02,"tag 2 ejecutado, avanzando"
+36.966,ADVANCE,73,30,67,-86,0,0,75,0,15,0,0,0.05,0.02,"tag 2 ejecutado, avanzando"
+37.016,ADVANCE,73,30,67,-86,0,0,75,0,15,0,0,0.03,0.02,"tag 2 ejecutado, avanzando"
+37.066,ADVANCE,73,30,67,-86,0,0,75,0,15,0,0,0.08,0.02,"tag 2 ejecutado, avanzando"
+37.116,ADVANCE,73,30,67,-86,0,0,75,0,15,0,0,0.01,0.02,"tag 2 ejecutado, avanzando"
+37.167,ADVANCE,73,30,67,-86,0,0,75,0,15,0,0,0.06,0.02,"tag 2 ejecutado, avanzando"
+37.217,ADVANCE,73,30,66,-86,-1,0,75,0,15,0,0,0.03,0.02,"tag 2 ejecutado, avanzando"
+37.267,ADVANCE,73,30,66,-86,-1,0,75,0,15,0,0,0.08,0.02,"tag 2 ejecutado, avanzando"
+37.317,ADVANCE,73,30,67,-86,-1,0,75,0,15,0,0,0.01,0.02,"tag 2 ejecutado, avanzando"
+37.368,ADVANCE,73,30,67,-86,-1,0,75,0,15,0,0,0.06,0.02,"tag 2 ejecutado, avanzando"
+37.418,ADVANCE,73,30,67,-85,0,0,75,0,15,0,0,0.03,0.02,"tag 2 ejecutado, avanzando"
+37.468,ADVANCE,73,30,67,-85,0,0,75,0,15,0,0,0.08,0.02,"tag 2 ejecutado, avanzando"
+37.518,ADVANCE,73,30,67,-86,0,0,75,0,15,0,0,0.01,0.02,"tag 2 ejecutado, avanzando"
+37.569,ADVANCE,73,30,67,-86,0,0,75,0,15,0,0,0.06,0.02,"tag 2 ejecutado, avanzando"
+37.619,ADVANCE,73,30,68,-85,0,-1,75,0,15,0,0,0.00,0.02,"tag 2 ejecutado, avanzando"
+37.669,ADVANCE,73,30,68,-85,0,-1,75,0,15,0,0,0.05,0.02,"tag 2 ejecutado, avanzando"
+37.720,ADVANCE,73,30,69,-85,0,0,75,0,15,0,0,0.02,0.02,"tag 2 ejecutado, avanzando"
+37.770,EMERGENCY_LAND,73,30,69,-85,0,0,75,0,0,0,0,0.07,0.02,PARO: teclado
+37.820,EMERGENCY_LAND,73,30,68,-86,0,0,75,0,0,0,0,0.01,0.02,PARO: teclado
+37.872,EMERGENCY_LAND,73,30,68,-86,0,0,75,0,0,0,0,0.06,0.02,PARO: teclado
+37.922,EMERGENCY_LAND,73,30,70,-86,0,0,75,0,0,0,0,0.00,0.02,PARO: teclado
+37.972,EMERGENCY_LAND,73,30,70,-86,0,0,75,0,0,0,0,0.05,0.01,PARO: teclado
+38.022,EMERGENCY_LAND,73,30,69,-86,0,0,75,0,0,0,0,0.00,0.02,PARO: teclado
+38.073,EMERGENCY_LAND,73,30,69,-86,0,0,75,0,0,0,0,0.05,0.01,PARO: teclado
+38.123,EMERGENCY_LAND,73,30,69,-86,0,0,75,0,0,0,0,0.00,0.02,PARO: teclado
+38.173,EMERGENCY_LAND,73,30,69,-86,0,0,75,0,0,0,0,0.05,0.02,PARO: teclado
+38.223,EMERGENCY_LAND,73,30,69,-86,0,-1,75,0,0,0,0,0.01,0.02,PARO: teclado
+38.274,EMERGENCY_LAND,73,30,69,-86,0,-1,75,0,0,0,0,0.06,0.02,PARO: teclado
+38.324,EMERGENCY_LAND,73,30,70,-86,0,0,75,0,0,0,0,0.00,0.02,PARO: teclado
+38.374,EMERGENCY_LAND,73,30,70,-86,0,0,75,0,0,0,0,0.05,0.02,PARO: teclado
+38.425,EMERGENCY_LAND,73,30,67,-86,0,0,76,0,0,0,0,0.01,0.02,PARO: teclado
+38.475,EMERGENCY_LAND,73,30,67,-86,0,0,76,0,0,0,0,0.06,0.02,PARO: teclado
+38.525,EMERGENCY_LAND,73,30,65,-86,0,0,76,0,0,0,0,0.00,0.02,PARO: teclado
+38.575,EMERGENCY_LAND,73,30,65,-86,0,0,76,0,0,0,0,0.05,0.02,PARO: teclado
+38.625,EMERGENCY_LAND,73,30,64,-86,0,0,76,0,0,0,0,0.01,0.02,PARO: teclado
+38.675,EMERGENCY_LAND,73,30,64,-86,0,0,76,0,0,0,0,0.06,0.02,PARO: teclado
+38.725,EMERGENCY_LAND,73,30,61,-86,0,0,76,0,0,0,0,0.00,0.02,PARO: teclado
+38.775,EMERGENCY_LAND,73,30,61,-86,0,0,76,0,0,0,0,0.05,0.02,PARO: teclado
+38.826,EMERGENCY_LAND,72,20,56,-86,0,0,76,0,0,0,0,0.00,0.02,PARO: teclado
+38.876,EMERGENCY_LAND,72,20,56,-86,0,0,76,0,0,0,0,0.05,0.02,PARO: teclado
+38.926,EMERGENCY_LAND,72,20,52,-86,0,0,76,0,0,0,0,0.00,0.02,PARO: teclado
+38.976,EMERGENCY_LAND,72,20,52,-86,0,0,76,0,0,0,0,0.05,0.02,PARO: teclado
+39.026,EMERGENCY_LAND,72,20,47,-86,0,0,76,0,0,0,0,0.01,0.01,PARO: teclado
+39.076,EMERGENCY_LAND,72,20,47,-86,0,0,76,0,0,0,0,0.06,0.06,PARO: teclado
+39.127,EMERGENCY_LAND,72,10,44,-86,0,0,76,0,0,0,0,0.00,0.02,PARO: teclado
+39.177,EMERGENCY_LAND,72,10,40,-85,0,0,76,0,0,0,0,0.00,0.02,PARO: teclado
+39.228,EMERGENCY_LAND,72,10,40,-85,0,0,76,0,0,0,0,0.06,0.02,PARO: teclado
+39.278,EMERGENCY_LAND,72,0,36,-85,0,0,76,0,0,0,0,0.00,0.01,PARO: teclado
+39.328,EMERGENCY_LAND,72,0,36,-85,0,0,76,0,0,0,0,0.05,0.01,PARO: teclado
+39.378,EMERGENCY_LAND,72,0,36,-85,0,0,76,0,0,0,0,0.10,0.03,PARO: teclado
+39.429,EMERGENCY_LAND,72,0,32,-85,0,-1,76,0,0,0,0,0.00,0.02,PARO: teclado
+39.479,EMERGENCY_LAND,72,0,32,-85,0,-1,76,0,0,0,0,0.05,0.01,PARO: teclado
+39.531,EMERGENCY_LAND,72,0,28,-85,0,0,76,0,0,0,0,0.00,0.01,PARO: teclado
+39.581,EMERGENCY_LAND,72,0,28,-85,0,0,76,0,0,0,0,0.05,0.01,PARO: teclado
+39.632,EMERGENCY_LAND,72,0,24,-85,0,0,76,0,0,0,0,0.00,0.02,PARO: teclado
+39.682,EMERGENCY_LAND,72,-10,21,-85,0,0,76,0,0,0,0,0.00,0.01,PARO: teclado
+39.733,EMERGENCY_LAND,72,-10,21,-85,0,0,76,0,0,0,0,0.05,0.01,PARO: teclado
+39.783,EMERGENCY_LAND,72,-10,17,-85,0,0,76,0,0,0,0,0.00,0.02,PARO: teclado
+39.834,EMERGENCY_LAND,72,-10,17,-85,0,0,76,0,0,0,0,0.05,0.02,PARO: teclado
+39.884,EMERGENCY_LAND,72,-10,17,-85,0,0,76,0,0,0,0,0.10,0.01,PARO: teclado
+39.934,EMERGENCY_LAND,72,-20,13,-85,0,0,76,0,0,0,0,0.03,0.01,PARO: teclado
+39.984,EMERGENCY_LAND,72,-20,13,-85,0,0,76,0,0,0,0,0.08,0.01,PARO: teclado
+40.034,EMERGENCY_LAND,72,-20,16,-85,0,0,76,0,0,0,0,0.03,0.01,PARO: teclado
+40.084,EMERGENCY_LAND,72,-20,16,-85,0,0,76,0,0,0,0,0.08,0.03,PARO: teclado
+40.134,EMERGENCY_LAND,72,-20,11,-85,0,-2,76,0,0,0,0,0.04,0.01,PARO: teclado
+40.184,EMERGENCY_LAND,72,-20,11,-85,0,-2,76,0,0,0,0,0.09,0.01,PARO: teclado
+40.236,EMERGENCY_LAND,72,-30,10,-85,0,-2,76,0,0,0,0,0.03,0.03,PARO: teclado
+40.286,EMERGENCY_LAND,72,-30,10,-85,0,-2,76,0,0,0,0,0.08,0.01,PARO: teclado
+40.336,EMERGENCY_LAND,72,-30,10,-85,0,-2,76,0,0,0,0,0.03,0.01,PARO: teclado
+40.386,EMERGENCY_LAND,72,-30,10,-85,0,-2,76,0,0,0,0,0.08,0.01,PARO: teclado
+40.436,EMERGENCY_LAND,72,-30,10,-85,2,0,77,0,0,0,0,0.03,0.01,PARO: teclado
+40.487,EMERGENCY_LAND,72,-30,10,-85,2,0,77,0,0,0,0,0.08,0.01,PARO: teclado
+40.537,EMERGENCY_LAND,72,-30,10,-85,0,-2,77,0,0,0,0,0.02,0.01,PARO: teclado
+40.587,EMERGENCY_LAND,72,-30,10,-85,0,-2,77,0,0,0,0,0.08,0.01,PARO: teclado
+40.637,EMERGENCY_LAND,72,-30,10,-85,0,0,77,0,0,0,0,0.03,0.01,PARO: teclado
+40.687,DONE,72,-30,10,-85,0,0,77,0,0,0,0,0.08,0.01,aterrizado (PARO: teclado)
+40.738,DONE,72,-30,10,-85,0,0,77,0,0,0,0,0.03,0.01,aterrizado (PARO: teclado)
+40.788,DONE,72,-30,10,-85,0,0,77,0,0,0,0,0.08,0.01,aterrizado (PARO: teclado)
+40.838,DONE,72,-30,10,-86,0,0,77,0,0,0,0,0.03,0.02,aterrizado (PARO: teclado)
+40.888,DONE,72,-30,10,-86,0,0,77,0,0,0,0,0.08,0.01,aterrizado (PARO: teclado)
+40.938,DONE,72,-20,10,-87,0,0,77,0,0,0,0,0.03,0.01,aterrizado (PARO: teclado)
+40.988,DONE,72,-20,10,-87,0,0,77,0,0,0,0,0.08,0.01,aterrizado (PARO: teclado)
+41.039,DONE,72,-20,10,-89,0,0,77,0,0,0,0,0.03,0.02,aterrizado (PARO: teclado)
+41.089,DONE,72,-20,10,-89,0,0,77,0,0,0,0,0.08,0.03,aterrizado (PARO: teclado)
+41.139,DONE,72,-20,10,-89,0,0,77,0,0,0,0,0.00,0.01,aterrizado (PARO: teclado)
+41.189,DONE,72,-20,10,-89,0,0,77,0,0,0,0,0.05,0.01,aterrizado (PARO: teclado)
+41.239,DONE,72,-20,10,-89,0,0,77,0,0,0,0,0.00,0.01,aterrizado (PARO: teclado)
+41.290,DONE,72,-20,10,-89,0,0,77,0,0,0,0,0.05,0.01,aterrizado (PARO: teclado)
+41.340,DONE,72,-20,10,-89,0,0,77,0,0,0,0,0.01,0.01,aterrizado (PARO: teclado)
+41.391,DONE,72,-20,10,-89,0,0,77,0,0,0,0,0.06,0.01,aterrizado (PARO: teclado)
+41.441,DONE,72,-20,10,-89,0,0,75,0,0,0,0,0.01,0.01,aterrizado (PARO: teclado)
+41.491,DONE,72,-20,10,-89,0,0,75,0,0,0,0,0.06,0.01,aterrizado (PARO: teclado)
+41.541,DONE,72,-20,10,-89,0,0,75,0,0,0,0,0.01,0.01,aterrizado (PARO: teclado)
+41.591,DONE,72,-20,10,-89,0,0,75,0,0,0,0,0.06,0.01,aterrizado (PARO: teclado)
+41.641,DONE,72,-20,10,-89,0,0,75,0,0,0,0,0.00,0.01,aterrizado (PARO: teclado)
+41.692,DONE,72,-20,10,-89,0,0,75,0,0,0,0,0.05,0.02,aterrizado (PARO: teclado)
+41.742,DONE,72,0,10,-89,0,0,75,0,0,0,0,0.00,0.01,aterrizado (PARO: teclado)
+41.792,DONE,72,0,10,-89,0,0,75,0,0,0,0,0.05,0.01,aterrizado (PARO: teclado)
+41.842,DONE,72,0,10,-89,0,0,75,0,0,0,0,0.01,0.01,aterrizado (PARO: teclado)
+41.893,DONE,72,0,10,-89,0,0,75,0,0,0,0,0.06,0.02,aterrizado (PARO: teclado)
+41.944,DONE,72,0,10,-89,0,0,75,0,0,0,0,0.01,0.01,aterrizado (PARO: teclado)
+41.994,DONE,72,0,10,-89,0,0,75,0,0,0,0,0.06,0.01,aterrizado (PARO: teclado)
+42.044,DONE,72,0,10,-89,0,0,75,0,0,0,0,0.01,0.01,aterrizado (PARO: teclado)
+42.095,DONE,72,0,10,-89,0,0,75,0,0,0,0,0.06,0.01,aterrizado (PARO: teclado)
+42.146,DONE,72,0,10,-89,0,0,75,0,0,0,0,0.00,0.01,aterrizado (PARO: teclado)
+42.196,DONE,72,0,10,-89,0,0,75,0,0,0,0,0.05,0.01,aterrizado (PARO: teclado)
+42.246,DONE,72,0,10,-89,0,0,75,0,0,0,0,0.00,0.01,aterrizado (PARO: teclado)
+42.297,DONE,72,0,10,-89,0,0,75,0,0,0,0,0.05,0.03,aterrizado (PARO: teclado)
+42.347,DONE,72,0,10,-89,0,0,75,0,0,0,0,0.00,0.01,aterrizado (PARO: teclado)
+42.397,DONE,72,0,10,-89,0,0,75,0,0,0,0,0.05,0.01,aterrizado (PARO: teclado)
+42.448,DONE,72,0,10,-89,0,0,76,0,0,0,0,0.00,0.02,aterrizado (PARO: teclado)
+42.498,DONE,72,0,10,-89,0,0,76,0,0,0,0,0.05,0.01,aterrizado (PARO: teclado)
+42.548,DONE,72,0,10,-89,0,0,76,0,0,0,0,0.01,0.02,aterrizado (PARO: teclado)
+42.598,DONE,72,0,10,-89,0,0,76,0,0,0,0,0.06,0.01,aterrizado (PARO: teclado)
+42.648,DONE,72,0,10,-89,0,0,76,0,0,0,0,0.00,0.01,aterrizado (PARO: teclado)
+42.699,DONE,72,0,10,-89,0,0,76,0,0,0,0,0.05,0.01,aterrizado (PARO: teclado)
+42.749,DONE,72,0,10,-89,0,0,76,0,0,0,0,0.00,0.01,aterrizado (PARO: teclado)
+42.799,DONE,72,0,10,-89,0,0,76,0,0,0,0,0.05,0.01,aterrizado (PARO: teclado)
+42.849,DONE,72,0,10,-89,0,0,76,0,0,0,0,0.00,0.01,aterrizado (PARO: teclado)
+42.899,DONE,72,0,10,-89,0,0,76,0,0,0,0,0.05,0.02,aterrizado (PARO: teclado)
+42.950,DONE,72,0,10,-89,0,0,76,0,0,0,0,0.00,0.01,aterrizado (PARO: teclado)
+43.000,DONE,72,0,10,-89,0,0,76,0,0,0,0,0.05,0.02,aterrizado (PARO: teclado)
+43.050,DONE,72,0,10,-89,0,0,76,0,0,0,0,0.00,0.01,aterrizado (PARO: teclado)
+43.100,DONE,72,0,10,-89,0,0,76,0,0,0,0,0.00,0.02,aterrizado (PARO: teclado)
+43.151,DONE,72,0,10,-89,0,0,76,0,0,0,0,0.05,0.01,aterrizado (PARO: teclado)
+43.201,DONE,72,0,10,-89,0,0,76,0,0,0,0,0.10,0.01,aterrizado (PARO: teclado)
+43.251,DONE,72,0,10,-89,0,0,76,0,0,0,0,0.02,0.01,aterrizado (PARO: teclado)
+43.301,DONE,72,0,10,-89,0,0,76,0,0,0,0,0.07,0.01,aterrizado (PARO: teclado)
+43.353,DONE,72,0,10,-89,0,0,76,0,0,0,0,0.02,0.01,aterrizado (PARO: teclado)
+43.403,DONE,72,0,10,-89,0,0,76,0,0,0,0,0.07,0.01,aterrizado (PARO: teclado)
+43.454,DONE,72,0,10,-89,0,0,76,0,0,0,0,0.02,0.01,aterrizado (PARO: teclado)
+43.504,DONE,72,0,10,-89,0,0,76,0,0,0,0,0.07,0.01,aterrizado (PARO: teclado)
+43.554,DONE,72,0,10,-89,0,0,76,0,0,0,0,0.02,0.01,aterrizado (PARO: teclado)
+43.604,DONE,72,0,10,-89,0,0,76,0,0,0,0,0.07,0.01,aterrizado (PARO: teclado)
+43.654,DONE,72,0,10,-89,0,0,76,0,0,0,0,0.02,0.01,aterrizado (PARO: teclado)
+43.704,DONE,72,0,10,-89,0,0,76,0,0,0,0,0.07,0.01,aterrizado (PARO: teclado)
+43.754,DONE,72,0,10,-89,0,0,76,0,0,0,0,0.02,0.01,aterrizado (PARO: teclado)
+43.804,DONE,72,0,10,-89,0,0,76,0,0,0,0,0.07,0.01,aterrizado (PARO: teclado)
+43.854,DONE,72,0,10,-89,0,0,76,0,0,0,0,0.02,0.01,aterrizado (PARO: teclado)
+43.905,DONE,72,0,10,-89,0,0,76,0,0,0,0,0.07,0.01,aterrizado (PARO: teclado)
+43.955,DONE,72,0,10,-89,0,0,76,0,0,0,0,0.02,0.01,aterrizado (PARO: teclado)
+44.005,DONE,72,0,10,-89,0,0,76,0,0,0,0,0.07,0.01,aterrizado (PARO: teclado)
+44.055,DONE,72,0,10,-89,0,0,76,0,0,0,0,0.02,0.01,aterrizado (PARO: teclado)
+44.105,DONE,72,0,10,-89,0,0,76,0,0,0,0,0.07,0.01,aterrizado (PARO: teclado)

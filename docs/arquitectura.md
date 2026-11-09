@@ -109,7 +109,9 @@ clave no existe en la clase, el programa no arranca (así se detectan errores de
 - `capturas/`: calibraciones, resúmenes de sesión y capturas de pantalla.
 - Video, si se corre con `--record nombre.mp4`.
 
-`logs/`, `capturas/` y `*.mp4` están en `.gitignore`: se quedan en la laptop.
+`logs/`, `capturas/` y `*.mp4` están en `.gitignore`: se quedan en la laptop. Para
+compartir una sesión, `scripts/guardar_sesion.py` copia sus bitácoras y resúmenes a
+`sesiones/`, que sí va a git.
 
 ## Herramientas
 
@@ -120,5 +122,7 @@ clave no existe en la clase, el programa no arranca (así se detectan errores de
 | `make_tags.py` | PDF de los tags 1–10 al tamaño que quieras |
 | `rc_calib.py` | medir cuánto se mueve el dron con `rc` 10/15/20 |
 | `resumen_vuelos.py` | veredicto de cada vuelo de una sesión, leyendo `logs/` |
+| `traza_vuelo.py` | una bitácora condensada, estado por estado, con las columnas de visión |
+| `guardar_sesion.py` | copia las bitácoras, resúmenes y notas del día a `sesiones/AAAA-MM-DD/` |
 | `first_flight.py` | vuelo base: estacionario, prueba de giro y prueba de flip |
 | `sim/sim_world.py` | simulador 3D (ver `simulador.md`) |

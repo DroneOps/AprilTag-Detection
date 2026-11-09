@@ -1,0 +1,367 @@
+t,state,bat,h,tof,yaw,pitch,roll,temph,rc_lr,rc_fb,rc_ud,rc_yaw,state_age,video_age,reason,vgx,vgy,vgz
+0.000,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.00,inf,esperando despegue (t),0,0,0
+0.051,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.05,inf,esperando despegue (t),0,0,0
+0.101,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.00,inf,esperando despegue (t),0,0,0
+0.151,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.05,inf,esperando despegue (t),0,0,0
+0.203,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+0.253,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.06,0.01,esperando despegue (t),0,0,0
+0.303,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.03,0.01,esperando despegue (t),0,0,0
+0.354,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.08,0.01,esperando despegue (t),0,0,0
+0.404,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0
+0.454,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.07,0.01,esperando despegue (t),0,0,0
+0.505,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.03,0.01,esperando despegue (t),0,0,0
+0.555,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.08,0.01,esperando despegue (t),0,0,0
+0.605,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+0.655,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.06,0.01,esperando despegue (t),0,0,0
+0.706,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.03,0.01,esperando despegue (t),0,0,0
+0.756,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.08,0.01,esperando despegue (t),0,0,0
+0.806,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.01,0.03,esperando despegue (t),0,0,0
+0.856,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.06,0.01,esperando despegue (t),0,0,0
+0.907,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.01,0.03,esperando despegue (t),0,0,0
+0.959,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.06,0.03,esperando despegue (t),0,0,0
+1.010,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0
+1.060,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.07,0.01,esperando despegue (t),0,0,0
+1.110,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0
+1.160,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.07,0.01,esperando despegue (t),0,0,0
+1.210,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0
+1.260,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.07,0.01,esperando despegue (t),0,0,0
+1.311,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+1.361,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.06,0.01,esperando despegue (t),0,0,0
+1.411,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0
+1.461,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.07,0.01,esperando despegue (t),0,0,0
+1.511,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+1.561,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.06,0.01,esperando despegue (t),0,0,0
+1.611,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.01,0.03,esperando despegue (t),0,0,0
+1.662,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.06,0.01,esperando despegue (t),0,0,0
+1.712,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+1.764,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+1.814,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.00,0.03,esperando despegue (t),0,0,0
+1.864,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+1.914,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+1.965,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+2.015,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+2.065,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+2.115,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+2.168,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+2.219,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.06,0.01,esperando despegue (t),0,0,0
+2.269,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.01,0.05,esperando despegue (t),0,0,0
+2.319,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.06,0.01,esperando despegue (t),0,0,0
+2.369,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.11,0.03,esperando despegue (t),0,0,0
+2.419,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+2.469,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+2.520,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.00,0.03,esperando despegue (t),0,0,0
+2.570,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+2.620,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+2.671,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+2.721,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+2.771,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.00,0.02,esperando despegue (t),0,0,0
+2.821,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+2.871,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+2.922,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.05,0.02,esperando despegue (t),0,0,0
+2.972,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+3.022,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.05,0.03,esperando despegue (t),0,0,0
+3.072,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.10,0.01,esperando despegue (t),0,0,0
+3.122,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.03,0.01,esperando despegue (t),0,0,0
+3.173,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.08,0.01,esperando despegue (t),0,0,0
+3.223,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.03,0.01,esperando despegue (t),0,0,0
+3.274,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.08,0.05,esperando despegue (t),0,0,0
+3.325,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.03,0.01,esperando despegue (t),0,0,0
+3.375,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.08,0.03,esperando despegue (t),0,0,0
+3.425,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.03,0.01,esperando despegue (t),0,0,0
+3.475,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.08,0.01,esperando despegue (t),0,0,0
+3.525,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.03,0.01,esperando despegue (t),0,0,0
+3.576,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.08,0.01,esperando despegue (t),0,0,0
+3.626,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.03,0.03,esperando despegue (t),0,0,0
+3.676,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.08,0.01,esperando despegue (t),0,0,0
+3.726,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0
+3.776,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.07,0.01,esperando despegue (t),0,0,0
+3.826,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0
+3.876,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.07,0.01,esperando despegue (t),0,0,0
+3.927,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+3.977,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.06,0.03,esperando despegue (t),0,0,0
+4.027,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+4.077,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.06,0.03,esperando despegue (t),0,0,0
+4.127,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+4.177,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+4.227,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.03,0.01,esperando despegue (t),0,0,0
+4.279,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.08,0.05,esperando despegue (t),0,0,0
+4.329,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.03,0.01,esperando despegue (t),0,0,0
+4.379,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.08,0.01,esperando despegue (t),0,0,0
+4.432,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.03,0.01,esperando despegue (t),0,0,0
+4.482,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.08,0.01,esperando despegue (t),0,0,0
+4.533,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0
+4.583,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.07,0.01,esperando despegue (t),0,0,0
+4.634,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0
+4.684,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.07,0.03,esperando despegue (t),0,0,0
+4.734,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0
+4.784,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.07,0.03,esperando despegue (t),0,0,0
+4.835,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+4.885,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.06,0.01,esperando despegue (t),0,0,0
+4.935,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+4.986,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+5.036,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.02,0.03,esperando despegue (t),0,0,0
+5.086,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.07,0.01,esperando despegue (t),0,0,0
+5.136,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+5.187,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.06,0.03,esperando despegue (t),0,0,0
+5.237,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+5.287,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.05,0.05,esperando despegue (t),0,0,0
+5.337,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+5.387,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+5.437,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+5.487,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.05,0.03,esperando despegue (t),0,0,0
+5.537,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+5.588,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.00,0.03,esperando despegue (t),0,0,0
+5.638,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+5.688,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+5.738,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+5.788,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.00,0.03,esperando despegue (t),0,0,0
+5.838,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+5.888,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+5.938,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.05,0.03,esperando despegue (t),0,0,0
+5.989,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+6.039,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+6.089,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+6.139,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+6.189,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.00,0.03,esperando despegue (t),0,0,0
+6.239,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+6.289,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.10,0.05,esperando despegue (t),0,0,0
+6.340,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.04,0.01,esperando despegue (t),0,0,0
+6.390,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.09,0.01,esperando despegue (t),0,0,0
+6.440,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0
+6.490,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.07,0.01,esperando despegue (t),0,0,0
+6.541,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.04,0.01,esperando despegue (t),0,0,0
+6.591,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.09,0.01,esperando despegue (t),0,0,0
+6.641,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.04,0.01,esperando despegue (t),0,0,0
+6.692,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.09,0.01,esperando despegue (t),0,0,0
+6.742,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.04,0.01,esperando despegue (t),0,0,0
+6.792,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.09,0.01,esperando despegue (t),0,0,0
+6.842,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0
+6.892,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.07,0.03,esperando despegue (t),0,0,0
+6.942,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0
+6.992,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.07,0.01,esperando despegue (t),0,0,0
+7.042,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+7.092,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.06,0.01,esperando despegue (t),0,0,0
+7.143,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.03,0.02,esperando despegue (t),0,0,0
+7.193,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.08,0.01,esperando despegue (t),0,0,0
+7.243,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+7.293,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.06,0.01,esperando despegue (t),0,0,0
+7.343,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.01,0.03,esperando despegue (t),0,0,0
+7.393,IDLE,72,0,10,-5,0,0,79,0,0,0,0,0.06,0.01,esperando despegue (t),0,0,0
+7.443,IDLE,72,0,10,-5,0,0,80,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0
+7.493,IDLE,72,0,10,-5,0,0,80,0,0,0,0,0.07,0.03,esperando despegue (t),0,0,0
+7.544,IDLE,72,0,10,-5,0,0,80,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+7.594,IDLE,72,0,10,-5,0,0,80,0,0,0,0,0.06,0.01,esperando despegue (t),0,0,0
+7.644,IDLE,72,0,10,-5,0,0,80,0,0,0,0,0.01,0.03,esperando despegue (t),0,0,0
+7.694,IDLE,72,0,10,-5,0,0,80,0,0,0,0,0.06,0.01,esperando despegue (t),0,0,0
+7.744,IDLE,72,0,10,-5,0,0,80,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0
+7.794,IDLE,72,0,10,-5,0,0,80,0,0,0,0,0.07,0.03,esperando despegue (t),0,0,0
+7.845,IDLE,72,0,10,-5,0,0,80,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+7.895,IDLE,72,0,10,-5,0,0,80,0,0,0,0,0.06,0.01,esperando despegue (t),0,0,0
+7.945,IDLE,72,0,10,-5,0,0,80,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+7.995,IDLE,72,0,10,-5,0,0,80,0,0,0,0,0.06,0.01,esperando despegue (t),0,0,0
+8.045,IDLE,72,0,10,-5,0,0,80,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+8.096,IDLE,72,0,10,-5,0,0,80,0,0,0,0,0.05,0.03,esperando despegue (t),0,0,0
+8.146,IDLE,72,0,10,-5,0,0,80,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+8.196,IDLE,72,0,10,-5,0,0,80,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+8.246,IDLE,72,0,10,-5,0,0,80,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+8.296,IDLE,72,0,10,-5,0,0,80,0,0,0,0,0.05,0.05,esperando despegue (t),0,0,0
+8.346,IDLE,72,0,10,-5,0,0,80,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+8.396,IDLE,72,0,10,-5,0,0,80,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+8.447,IDLE,72,0,10,-5,0,0,80,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+8.497,IDLE,72,0,10,-5,0,0,80,0,0,0,0,0.06,0.01,esperando despegue (t),0,0,0
+8.547,IDLE,72,0,10,-5,0,0,80,0,0,0,0,0.01,0.03,esperando despegue (t),0,0,0
+8.598,IDLE,72,0,10,-5,0,0,80,0,0,0,0,0.06,0.01,esperando despegue (t),0,0,0
+8.648,IDLE,72,0,10,-5,0,0,80,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+8.698,IDLE,72,0,10,-5,0,0,80,0,0,0,0,0.05,0.03,esperando despegue (t),0,0,0
+8.748,IDLE,72,0,10,-5,0,0,80,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+8.798,IDLE,72,0,10,-5,0,0,80,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+8.848,IDLE,72,0,10,-5,0,0,80,0,0,0,0,0.00,0.03,esperando despegue (t),0,0,0
+8.900,IDLE,72,0,10,-5,0,0,80,0,0,0,0,0.05,0.03,esperando despegue (t),0,0,0
+8.951,IDLE,72,0,10,-5,0,0,80,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+9.001,IDLE,72,0,10,-5,0,0,80,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+9.051,IDLE,72,0,10,-5,0,0,80,0,0,0,0,0.05,0.03,esperando despegue (t),0,0,0
+9.101,IDLE,72,0,10,-5,0,0,80,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+9.151,IDLE,72,0,10,-5,0,0,80,0,0,0,0,0.05,0.03,esperando despegue (t),0,0,0
+9.201,IDLE,72,0,10,-5,0,0,80,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+9.252,IDLE,72,0,10,-5,0,0,80,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+9.302,IDLE,72,0,10,-5,0,0,80,0,0,0,0,0.00,0.05,esperando despegue (t),0,0,0
+9.352,IDLE,72,0,10,-5,0,0,80,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+9.402,IDLE,72,0,10,-5,0,0,80,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+9.452,IDLE,72,0,10,-5,0,0,80,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+9.503,IDLE,72,0,10,-5,0,0,80,0,0,0,0,0.10,0.03,esperando despegue (t),0,0,0
+9.553,IDLE,72,0,10,-5,0,0,80,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0
+9.603,IDLE,72,0,10,-5,0,0,80,0,0,0,0,0.08,0.01,esperando despegue (t),0,0,0
+9.654,IDLE,72,0,10,-7,0,0,80,0,0,0,0,0.04,0.03,esperando despegue (t),0,0,0
+9.705,IDLE,72,0,10,-7,0,0,80,0,0,0,0,0.09,0.01,esperando despegue (t),0,0,0
+9.755,IDLE,72,0,10,-9,6,2,80,0,0,0,0,0.03,0.01,esperando despegue (t),-5,4,-2
+9.805,IDLE,72,0,10,-9,6,2,80,0,0,0,0,0.08,0.03,esperando despegue (t),-5,4,-2
+9.855,IDLE,72,0,10,-11,6,-1,80,0,0,0,0,0.02,0.01,esperando despegue (t),-15,10,0
+9.905,IDLE,72,0,10,-11,6,-1,80,0,0,0,0,0.07,0.01,esperando despegue (t),-15,10,0
+9.956,IDLE,72,0,10,-11,3,-6,80,0,0,0,0,0.02,0.01,esperando despegue (t),-20,9,0
+10.007,IDLE,72,0,10,-11,3,-6,80,0,0,0,0,0.07,0.01,esperando despegue (t),-20,9,0
+10.057,IDLE,72,0,10,-13,-4,-4,80,0,0,0,0,0.03,0.01,esperando despegue (t),-17,1,0
+10.108,IDLE,72,0,10,-13,-4,-4,80,0,0,0,0,0.08,0.03,esperando despegue (t),-17,1,0
+10.158,IDLE,72,0,10,-9,-4,-2,80,0,0,0,0,0.02,0.01,esperando despegue (t),-12,-3,0
+10.208,IDLE,72,0,10,-9,-4,-2,80,0,0,0,0,0.07,0.01,esperando despegue (t),-12,-3,0
+10.259,IDLE,72,0,10,-6,-5,-3,80,0,0,0,0,0.02,0.03,esperando despegue (t),-7,-5,1
+10.309,IDLE,72,0,10,-6,-5,-3,80,0,0,0,0,0.07,0.01,esperando despegue (t),-7,-5,1
+10.360,IDLE,72,0,10,2,-9,0,80,0,0,0,0,0.02,0.01,esperando despegue (t),-4,-2,1
+10.410,IDLE,72,0,10,2,-9,0,80,0,0,0,0,0.07,0.01,esperando despegue (t),-4,-2,1
+10.460,IDLE,72,0,10,6,0,0,81,0,0,0,0,0.03,0.01,esperando despegue (t),0,0,0
+10.510,IDLE,72,0,10,6,0,0,81,0,0,0,0,0.08,0.03,esperando despegue (t),0,0,0
+10.560,IDLE,72,0,10,6,0,0,81,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0
+10.611,IDLE,72,0,10,6,0,0,81,0,0,0,0,0.07,0.01,esperando despegue (t),0,0,0
+10.661,IDLE,72,0,10,6,0,0,81,0,0,0,0,0.03,0.01,esperando despegue (t),0,0,0
+10.711,IDLE,72,0,10,6,0,0,81,0,0,0,0,0.08,0.01,esperando despegue (t),0,0,0
+10.761,IDLE,72,0,10,6,0,0,81,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+10.811,IDLE,72,0,10,6,0,0,81,0,0,0,0,0.06,0.03,esperando despegue (t),0,0,0
+10.861,IDLE,72,0,10,6,0,0,81,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+10.911,IDLE,72,0,10,6,0,0,81,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+10.961,IDLE,72,0,10,6,0,0,81,0,0,0,0,0.03,0.03,esperando despegue (t),0,0,0
+11.011,IDLE,72,0,10,6,0,0,81,0,0,0,0,0.08,0.01,esperando despegue (t),0,0,0
+11.062,IDLE,72,0,10,6,0,0,81,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+11.112,IDLE,72,0,10,6,0,0,81,0,0,0,0,0.06,0.03,esperando despegue (t),0,0,0
+11.162,IDLE,72,0,10,6,0,0,81,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+11.212,IDLE,72,0,10,6,0,0,81,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+11.263,IDLE,72,0,10,6,0,0,81,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0
+11.313,IDLE,72,0,10,6,0,0,81,0,0,0,0,0.07,0.01,esperando despegue (t),0,0,0
+11.363,IDLE,72,0,10,6,0,0,81,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+11.413,IDLE,72,0,10,6,0,0,81,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+11.464,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.02,0.03,esperando despegue (t),0,0,0
+11.514,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.07,0.01,esperando despegue (t),0,0,0
+11.564,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+11.614,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.06,0.01,esperando despegue (t),0,0,0
+11.666,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+11.716,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+11.766,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.00,0.03,esperando despegue (t),0,0,0
+11.816,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+11.867,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+11.917,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.06,0.03,esperando despegue (t),0,0,0
+11.968,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+12.018,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.06,0.01,esperando despegue (t),0,0,0
+12.068,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+12.118,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.06,0.01,esperando despegue (t),0,0,0
+12.168,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+12.219,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.06,0.01,esperando despegue (t),0,0,0
+12.270,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.00,0.03,esperando despegue (t),0,0,0
+12.321,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+12.371,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+12.421,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.10,0.01,esperando despegue (t),0,0,0
+12.471,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+12.521,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+12.571,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.06,0.02,NO despega: temperatura 80 C < 80 C,0,0,0
+12.621,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.00,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+12.672,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.05,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+12.722,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.00,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+12.772,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.05,0.03,NO despega: temperatura 80 C < 80 C,0,0,0
+12.822,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.00,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+12.873,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.05,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+12.923,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.00,0.03,NO despega: temperatura 80 C < 80 C,0,0,0
+12.973,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.05,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+13.023,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.00,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+13.073,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.05,0.03,NO despega: temperatura 80 C < 80 C,0,0,0
+13.123,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.10,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+13.174,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.02,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+13.224,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.07,0.03,NO despega: temperatura 80 C < 80 C,0,0,0
+13.274,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.03,0.05,NO despega: temperatura 80 C < 80 C,0,0,0
+13.324,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.08,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+13.374,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.02,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+13.425,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.07,0.03,NO despega: temperatura 80 C < 80 C,0,0,0
+13.475,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.02,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+13.525,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.07,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+13.575,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.02,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+13.625,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.07,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+13.675,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.03,0.03,NO despega: temperatura 80 C < 80 C,0,0,0
+13.725,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.08,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+13.775,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.03,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+13.825,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.08,0.03,NO despega: temperatura 80 C < 80 C,0,0,0
+13.876,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.01,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+13.926,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.06,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+13.976,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.01,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+14.026,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.06,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+14.076,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.02,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+14.126,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.07,0.03,NO despega: temperatura 80 C < 80 C,0,0,0
+14.177,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.02,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+14.227,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.07,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+14.277,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.02,0.03,NO despega: temperatura 80 C < 80 C,0,0,0
+14.328,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.07,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+14.378,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.02,0.03,NO despega: temperatura 80 C < 80 C,0,0,0
+14.428,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.07,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+14.478,IDLE,72,0,10,6,0,0,81,0,0,0,0,0.02,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+14.528,IDLE,72,0,10,6,0,0,81,0,0,0,0,0.07,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+14.578,IDLE,72,0,10,6,0,0,81,0,0,0,0,0.01,0.03,NO despega: temperatura 80 C < 80 C,0,0,0
+14.629,IDLE,72,0,10,6,0,0,81,0,0,0,0,0.06,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+14.679,IDLE,72,0,10,6,0,0,81,0,0,0,0,0.00,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+14.732,IDLE,72,0,10,6,0,0,81,0,0,0,0,0.06,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+14.783,IDLE,72,0,10,6,0,0,81,0,0,0,0,0.01,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+14.834,IDLE,72,0,10,6,0,0,81,0,0,0,0,0.06,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+14.884,IDLE,72,0,10,6,0,0,81,0,0,0,0,0.01,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+14.934,IDLE,72,0,10,6,0,0,81,0,0,0,0,0.06,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+14.984,IDLE,72,0,10,6,0,0,81,0,0,0,0,0.00,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+15.034,IDLE,72,0,10,6,0,0,81,0,0,0,0,0.05,0.03,NO despega: temperatura 80 C < 80 C,0,0,0
+15.085,IDLE,72,0,10,6,0,0,81,0,0,0,0,0.00,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+15.135,IDLE,72,0,10,6,0,0,81,0,0,0,0,0.05,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+15.185,IDLE,72,0,10,6,0,0,81,0,0,0,0,0.00,0.03,NO despega: temperatura 80 C < 80 C,0,0,0
+15.235,IDLE,72,0,10,6,0,0,81,0,0,0,0,0.05,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+15.285,IDLE,72,0,10,6,0,0,81,0,0,0,0,0.00,0.03,NO despega: temperatura 80 C < 80 C,0,0,0
+15.335,IDLE,72,0,10,6,0,0,81,0,0,0,0,0.05,0.03,NO despega: temperatura 80 C < 80 C,0,0,0
+15.385,IDLE,72,0,10,6,0,0,81,0,0,0,0,0.00,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+15.435,IDLE,72,0,10,6,0,0,81,0,0,0,0,0.05,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+15.486,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.01,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+15.536,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.06,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+15.586,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.00,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+15.636,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.05,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+15.686,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.00,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+15.737,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.00,0.03,NO despega: temperatura 80 C < 80 C,0,0,0
+15.787,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.05,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+15.838,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.00,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+15.888,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.05,0.03,NO despega: temperatura 80 C < 80 C,0,0,0
+15.938,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.00,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+15.989,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.05,0.03,NO despega: temperatura 80 C < 80 C,0,0,0
+16.039,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.00,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+16.089,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.05,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+16.139,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.00,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+16.189,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.05,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+16.239,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.10,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+16.290,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.03,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+16.340,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.08,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+16.390,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.03,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+16.440,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.08,0.03,NO despega: temperatura 80 C < 80 C,0,0,0
+16.490,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.03,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+16.540,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.08,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+16.590,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.04,0.03,NO despega: temperatura 80 C < 80 C,0,0,0
+16.640,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.09,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+16.691,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.04,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+16.741,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.09,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+16.791,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.03,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+16.841,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.08,0.03,NO despega: temperatura 80 C < 80 C,0,0,0
+16.891,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.03,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+16.942,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.08,0.03,NO despega: temperatura 80 C < 80 C,0,0,0
+16.992,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.03,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+17.042,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.08,0.03,NO despega: temperatura 80 C < 80 C,0,0,0
+17.092,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.03,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+17.142,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.08,0.03,NO despega: temperatura 80 C < 80 C,0,0,0
+17.192,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.00,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+17.243,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.05,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+17.295,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.03,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+17.345,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.08,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+17.398,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.02,0.03,NO despega: temperatura 80 C < 80 C,0,0,0
+17.448,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.08,0.03,NO despega: temperatura 80 C < 80 C,0,0,0
+17.499,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.02,0.07,NO despega: temperatura 80 C < 80 C,0,0,0
+17.549,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.07,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+17.600,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.03,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+17.650,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.08,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+17.700,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.03,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+17.750,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.08,0.03,NO despega: temperatura 80 C < 80 C,0,0,0
+17.800,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.01,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+17.850,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.06,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+17.900,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.00,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+17.950,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.05,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+18.001,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.02,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+18.052,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.07,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+18.102,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.01,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+18.152,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.06,0.03,NO despega: temperatura 80 C < 80 C,0,0,0
+18.202,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.01,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+18.252,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.06,0.03,NO despega: temperatura 80 C < 80 C,0,0,0
+18.302,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.01,0.01,NO despega: temperatura 80 C < 80 C,0,0,0
+18.353,IDLE,72,0,10,6,0,0,80,0,0,0,0,0.06,0.01,NO despega: temperatura 80 C < 80 C,0,0,0

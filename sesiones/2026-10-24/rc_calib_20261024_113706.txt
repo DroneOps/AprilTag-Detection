@@ -1,0 +1,29 @@
+Calibracion rc  (velocidad efectiva: desplazamiento total / 1.5 s de mando)
+
+fb  adelante(+)/atras(-)
+   rc +10:   +7.9 cm/s
+   rc -10:   -5.5 cm/s
+   rc +15:  +17.9 cm/s
+   rc -15:  -15.6 cm/s
+   rc +20:  +27.3 cm/s
+   rc -20:  -18.2 cm/s
+   menor rc que mueve (>= 3 cm/s): 10
+
+lr  derecha(+)/izquierda(-)
+   rc +10:   +6.5 cm/s
+   rc -10:   -4.9 cm/s
+   rc +15:  +20.0 cm/s
+   rc -15:  -17.4 cm/s
+   rc +20:  +23.7 cm/s
+   rc -20:  -28.1 cm/s
+   menor rc que mueve (>= 3 cm/s): 10
+
+ud  arriba(+)/abajo(-)
+   rc +10:   +4.7 cm/s
+   rc -10:   -1.0 cm/s
+   rc +15:  +10.0 cm/s
+   rc -15:   -4.7 cm/s
+   rc +20:   +5.3 cm/s
+   rc -20:  -10.0 cm/s
+   menor rc que mueve (>= 3 cm/s): 10
+

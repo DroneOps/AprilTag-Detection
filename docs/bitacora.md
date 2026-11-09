@@ -5,14 +5,36 @@ Las bitácoras de vuelo (`logs/*.csv`) y los videos están en la laptop, no en e
 
 ## Pendiente ahora
 
-1. **Revisar el dron** (hélices, IMU, centro de gravedad, prueba de estacionario) antes de
-   seguir: en la última sesión no obedecía. Ver [`laboratorio.md`](laboratorio.md).
-2. Repetir **F1 y F3** (piso sin espejo) con el código del 27-oct, que solo se ha probado en
-   simulación.
-3. Imprimir los **clips de espejo** ([`anexos/prompt_espejo_3d.md`](anexos/prompt_espejo_3d.md)).
-   El de mitad frente y mitad piso necesita un modo nuevo en el código.
-4. Respuestas del comité: tamaño de tags, cómo es la trayectoria visible y la etiqueta de
+1. **Estacionario con y sin clip** (`first_flight.py`, una vez sin el clip y otra con él,
+   con la misma batería). Sirve para ver si el clip interfiere con los sensores de la panza:
+   el 9-nov hubo despegues que subían solos a 151 cm o se regresaban al piso. Si interfiere,
+   ajustar el clip y repetir E1.
+2. Con espejo, en orden: **E3 → E4 → E5 → E6 → E7** ([`laboratorio.md`](laboratorio.md)).
+   Ajustar `advance_timeout_s` y `cruise_alt_cm` según la pista.
+3. Respuestas del comité: tamaño de tags, cómo es la trayectoria visible y la etiqueta de
    inicio ([`competencia.md`](competencia.md)).
+
+## 9-nov — Espejo en vuelo real
+
+Detalle y bitácoras en [`../sesiones/2026-11-09/`](../sesiones/2026-11-09/).
+
+- **Antes de volar** se cambió la misión con espejo (`bb2398f`):
+  - sostiene el rumbo en vez de alinearse con los bordes del tag;
+  - vuela a 100 cm;
+  - avanza hasta 12 s entre tags;
+  - ignora el tag de inicio.
+- **E1** con el clip impreso: la vista queda inclinada 4.1° hacia adelante y 0.8° de lado.
+  **E2** salió bien.
+- **E3** salió bien al segundo intento: quedó encima del tag a +2/+0 cm.
+- **E5 falló:**
+  - **Tag de inicio:** el dron se fue hacia adelante al despegar, vio el tag 1 al empezar a
+    avanzar y lo tomó como el de inicio. Ahora solo se ignora el que ve *durante* el
+    despegue (`8f23e77`).
+  - **Despegue:** subió solo a 151 cm en uno y se regresó al piso en otros. Ahora el
+    despegue pasa con el `ok` del Tello y aterriza con aviso si se viene abajo. Se sospecha
+    que el clip interfiere con los sensores de la panza.
+- Se agregaron `sesiones/` (cada día con sus bitácoras), `scripts/guardar_sesion.py`,
+  `scripts/traza_vuelo.py` y `CLAUDE.md`, para que el equipo trabaje y se revise desde GitHub.
 
 ## 28-oct — Clip de espejo para impresión 3D
 

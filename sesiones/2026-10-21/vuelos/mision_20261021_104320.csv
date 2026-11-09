@@ -1,0 +1,548 @@
+t,state,bat,h,tof,yaw,pitch,roll,temph,rc_lr,rc_fb,rc_ud,rc_yaw,state_age,video_age,reason
+0.001,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.00,inf,esperando despegue (t)
+0.051,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.00,inf,esperando despegue (t)
+0.103,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.05,inf,esperando despegue (t)
+0.154,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.00,inf,esperando despegue (t)
+0.204,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.05,0.02,esperando despegue (t)
+0.254,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.00,0.02,esperando despegue (t)
+0.304,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.05,0.01,esperando despegue (t)
+0.354,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.02,0.01,esperando despegue (t)
+0.404,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.08,0.01,esperando despegue (t)
+0.454,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.03,0.01,esperando despegue (t)
+0.504,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.08,0.01,esperando despegue (t)
+0.554,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.03,0.01,esperando despegue (t)
+0.605,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.01,0.01,esperando despegue (t)
+0.655,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.06,0.02,esperando despegue (t)
+0.705,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.00,0.01,esperando despegue (t)
+0.755,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.05,0.01,esperando despegue (t)
+0.805,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.00,0.01,esperando despegue (t)
+0.856,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.05,0.01,esperando despegue (t)
+0.906,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.00,0.01,esperando despegue (t)
+0.956,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.05,0.01,esperando despegue (t)
+1.006,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.00,0.01,esperando despegue (t)
+1.056,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.05,0.02,esperando despegue (t)
+1.107,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.00,0.01,esperando despegue (t)
+1.157,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.05,0.02,esperando despegue (t)
+1.207,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.00,0.01,esperando despegue (t)
+1.257,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.05,0.02,esperando despegue (t)
+1.307,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.00,0.02,esperando despegue (t)
+1.360,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.05,0.01,esperando despegue (t)
+1.411,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.00,0.02,esperando despegue (t)
+1.461,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.05,0.02,esperando despegue (t)
+1.511,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.00,0.02,esperando despegue (t)
+1.561,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.05,0.01,esperando despegue (t)
+1.611,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.00,0.01,esperando despegue (t)
+1.662,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.05,0.01,esperando despegue (t)
+1.712,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.00,0.01,esperando despegue (t)
+1.762,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.05,0.01,esperando despegue (t)
+1.812,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.00,0.01,esperando despegue (t)
+1.862,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.05,0.01,esperando despegue (t)
+1.913,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.00,0.01,esperando despegue (t)
+1.963,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.05,0.01,esperando despegue (t)
+2.013,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.00,0.01,esperando despegue (t)
+2.067,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.05,0.01,esperando despegue (t)
+2.117,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.00,0.02,esperando despegue (t)
+2.168,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.05,0.02,esperando despegue (t)
+2.218,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.00,0.01,esperando despegue (t)
+2.269,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.05,0.01,esperando despegue (t)
+2.319,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.00,0.02,esperando despegue (t)
+2.369,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.05,0.01,esperando despegue (t)
+2.419,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.00,0.01,esperando despegue (t)
+2.469,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.05,0.01,esperando despegue (t)
+2.520,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.00,0.01,esperando despegue (t)
+2.570,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.05,0.01,esperando despegue (t)
+2.620,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.00,0.01,esperando despegue (t)
+2.670,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.05,0.01,esperando despegue (t)
+2.721,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.10,0.01,esperando despegue (t)
+2.771,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.02,0.01,esperando despegue (t)
+2.821,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.07,0.01,esperando despegue (t)
+2.871,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.02,0.02,esperando despegue (t)
+2.921,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.07,0.01,esperando despegue (t)
+2.971,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.04,0.02,esperando despegue (t)
+3.021,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.09,0.02,esperando despegue (t)
+3.072,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.02,0.04,esperando despegue (t)
+3.124,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.08,0.02,esperando despegue (t)
+3.174,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.03,0.01,esperando despegue (t)
+3.227,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.08,0.01,esperando despegue (t)
+3.277,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.03,0.01,esperando despegue (t)
+3.327,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.08,0.01,esperando despegue (t)
+3.377,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.03,0.01,esperando despegue (t)
+3.429,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.09,0.03,esperando despegue (t)
+3.479,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.04,0.01,esperando despegue (t)
+3.530,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.09,0.01,esperando despegue (t)
+3.580,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.04,0.01,esperando despegue (t)
+3.630,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.09,0.01,esperando despegue (t)
+3.680,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.03,0.02,esperando despegue (t)
+3.730,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.02,0.01,esperando despegue (t)
+3.780,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.07,0.02,esperando despegue (t)
+3.830,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.01,0.01,esperando despegue (t)
+3.880,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.06,0.01,esperando despegue (t)
+3.931,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.01,0.02,esperando despegue (t)
+3.981,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.06,0.02,esperando despegue (t)
+4.031,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.03,0.02,esperando despegue (t)
+4.081,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.08,0.04,esperando despegue (t)
+4.131,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.03,0.02,esperando despegue (t)
+4.182,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.08,0.02,esperando despegue (t)
+4.233,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.03,0.02,esperando despegue (t)
+4.283,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.08,0.01,esperando despegue (t)
+4.333,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.02,0.04,esperando despegue (t)
+4.383,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.07,0.02,esperando despegue (t)
+4.433,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.03,0.01,esperando despegue (t)
+4.483,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.08,0.01,esperando despegue (t)
+4.533,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.02,0.02,esperando despegue (t)
+4.583,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.07,0.02,esperando despegue (t)
+4.634,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.00,0.02,esperando despegue (t)
+4.684,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.05,0.02,esperando despegue (t)
+4.734,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.00,0.02,esperando despegue (t)
+4.784,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.05,0.01,esperando despegue (t)
+4.835,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.02,0.01,esperando despegue (t)
+4.885,IDLE,75,0,10,-5,0,0,66,0,0,0,0,0.07,0.01,esperando despegue (t)
+4.935,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.00,0.03,esperando despegue (t)
+4.985,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.05,0.02,esperando despegue (t)
+5.035,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.00,0.02,esperando despegue (t)
+5.085,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.05,0.04,esperando despegue (t)
+5.136,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.01,0.01,esperando despegue (t)
+5.186,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.06,0.01,esperando despegue (t)
+5.236,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.00,0.02,esperando despegue (t)
+5.286,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.05,0.01,esperando despegue (t)
+5.336,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.00,0.01,esperando despegue (t)
+5.386,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.05,0.01,esperando despegue (t)
+5.436,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.00,0.01,esperando despegue (t)
+5.487,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.05,0.01,esperando despegue (t)
+5.537,IDLE,75,0,10,-5,0,0,67,0,0,0,0,0.00,0.01,esperando despegue (t)
+5.587,TAKEOFF,75,0,10,-5,0,0,67,0,0,0,0,0.05,0.02,despegando
+5.637,TAKEOFF,75,0,10,-5,0,0,67,0,0,0,0,0.00,0.02,despegando
+5.687,TAKEOFF,75,0,10,-5,0,0,67,0,0,0,0,0.05,0.02,despegando
+5.737,TAKEOFF,75,0,10,-5,0,0,67,0,0,0,0,0.00,0.02,despegando
+5.787,TAKEOFF,75,0,10,-5,0,0,67,0,0,0,0,0.05,0.01,despegando
+5.837,TAKEOFF,75,0,10,-5,0,0,67,0,0,0,0,0.00,0.01,despegando
+5.888,TAKEOFF,75,0,10,-5,0,0,67,0,0,0,0,0.05,0.01,despegando
+5.938,TAKEOFF,75,0,10,-5,0,0,67,0,0,0,0,0.00,0.02,despegando
+5.988,TAKEOFF,75,0,10,-5,0,0,67,0,0,0,0,0.05,0.01,despegando
+6.038,TAKEOFF,75,0,10,-6,0,0,67,0,0,0,0,0.00,0.01,despegando
+6.088,TAKEOFF,75,0,10,-6,0,0,67,0,0,0,0,0.05,0.03,despegando
+6.139,TAKEOFF,75,0,10,-7,0,0,67,0,0,0,0,0.00,0.01,despegando
+6.189,TAKEOFF,75,0,10,-7,0,0,67,0,0,0,0,0.05,0.02,despegando
+6.239,TAKEOFF,75,0,10,-7,0,0,67,0,0,0,0,0.10,0.02,despegando
+6.289,TAKEOFF,75,0,10,-7,0,0,67,0,0,0,0,0.05,0.02,despegando
+6.339,TAKEOFF,75,0,10,-7,0,0,67,0,0,0,0,0.10,0.01,despegando
+6.390,TAKEOFF,75,-10,10,-7,1,0,67,0,0,0,0,0.05,0.01,despegando
+6.440,TAKEOFF,75,-10,10,-7,1,0,67,0,0,0,0,0.10,0.02,despegando
+6.490,TAKEOFF,75,-10,11,-7,0,0,67,0,0,0,0,0.04,0.01,despegando
+6.540,TAKEOFF,75,-10,11,-7,0,0,67,0,0,0,0,0.09,0.02,despegando
+6.591,TAKEOFF,75,-10,19,-7,0,-1,67,0,0,0,0,0.04,0.01,despegando
+6.641,TAKEOFF,75,-10,19,-7,0,-1,67,0,0,0,0,0.09,0.02,despegando
+6.691,TAKEOFF,75,0,26,-7,0,-2,67,0,0,0,0,0.03,0.01,despegando
+6.742,TAKEOFF,75,0,26,-7,0,-2,67,0,0,0,0,0.09,0.02,despegando
+6.792,TAKEOFF,75,0,32,-7,0,-1,67,0,0,0,0,0.03,0.02,despegando
+6.843,TAKEOFF,75,0,32,-7,0,-1,67,0,0,0,0,0.08,0.02,despegando
+6.893,TAKEOFF,75,0,42,-7,0,0,67,0,0,0,0,0.02,0.02,despegando
+6.943,TAKEOFF,75,0,42,-7,0,0,67,0,0,0,0,0.07,0.02,despegando
+6.993,TAKEOFF,75,0,51,-7,0,-1,68,0,0,0,0,0.04,0.02,despegando
+7.043,TAKEOFF,75,0,51,-7,0,-1,68,0,0,0,0,0.09,0.02,despegando
+7.093,TAKEOFF,75,0,60,-7,0,0,68,0,0,0,0,0.03,0.02,despegando
+7.144,TAKEOFF,75,0,60,-7,0,0,68,0,0,0,0,0.08,0.02,despegando
+7.194,TAKEOFF,75,10,68,-7,0,-1,68,0,0,0,0,0.01,0.02,despegando
+7.244,TAKEOFF,75,10,68,-7,0,-1,68,0,0,0,0,0.06,0.02,despegando
+7.294,TAKEOFF,75,10,76,-7,0,0,68,0,0,0,0,0.01,0.02,despegando
+7.344,TAKEOFF,75,10,81,-7,0,0,68,0,0,0,0,0.02,0.02,despegando
+7.394,TAKEOFF,75,10,81,-7,0,0,68,0,0,0,0,0.07,0.02,despegando
+7.444,TAKEOFF,75,20,89,-7,0,0,68,0,0,0,0,0.01,0.02,despegando
+7.495,TAKEOFF,75,20,89,-7,0,0,68,0,0,0,0,0.06,0.02,despegando
+7.545,TAKEOFF,75,20,92,-7,0,0,68,0,0,0,0,0.00,0.02,despegando
+7.595,TAKEOFF,75,20,92,-7,0,0,68,0,0,0,0,0.05,0.02,despegando
+7.645,TAKEOFF,75,20,96,-7,0,0,68,0,0,0,0,0.02,0.02,despegando
+7.695,TAKEOFF,75,20,96,-7,0,0,68,0,0,0,0,0.07,0.02,despegando
+7.746,TAKEOFF,75,20,99,-7,0,0,68,0,0,0,0,0.01,0.02,despegando
+7.796,TAKEOFF,75,20,99,-7,0,0,68,0,0,0,0,0.06,0.02,despegando
+7.846,TAKEOFF,75,30,102,-7,0,0,68,0,0,0,0,0.00,0.02,despegando
+7.896,TAKEOFF,75,30,102,-7,0,0,68,0,0,0,0,0.05,0.02,despegando
+7.946,TAKEOFF,75,30,102,-7,0,0,68,0,0,0,0,0.10,0.02,despegando
+7.998,TAKEOFF,75,30,105,-7,0,0,68,0,0,0,0,0.00,0.02,despegando
+8.048,TAKEOFF,75,30,104,-7,0,-2,68,0,0,0,0,0.00,0.02,despegando
+8.102,TAKEOFF,75,30,104,-7,0,-2,68,0,0,0,0,0.05,0.04,despegando
+8.152,TAKEOFF,75,30,106,-7,0,-1,68,0,0,0,0,0.00,0.02,despegando
+8.202,TAKEOFF,75,30,106,-7,0,-1,68,0,0,0,0,0.05,0.02,despegando
+8.252,TAKEOFF,75,30,106,-7,0,-4,68,0,0,0,0,0.00,0.02,despegando
+8.302,TAKEOFF,75,30,106,-7,0,-4,68,0,0,0,0,0.05,0.02,despegando
+8.352,TAKEOFF,75,30,106,-7,0,-3,68,0,0,0,0,0.01,0.02,despegando
+8.402,TAKEOFF,75,30,106,-7,0,-3,68,0,0,0,0,0.06,0.02,despegando
+8.453,TAKEOFF,75,30,105,-7,0,-1,68,0,0,0,0,0.00,0.02,despegando
+8.503,TAKEOFF,75,30,105,-7,0,-1,68,0,0,0,0,0.05,0.02,despegando
+8.553,TAKEOFF,75,30,104,-7,0,0,68,0,0,0,0,0.01,0.02,despegando
+8.603,TAKEOFF,75,30,104,-7,0,0,68,0,0,0,0,0.06,0.02,despegando
+8.653,TAKEOFF,75,30,102,-7,0,2,68,0,0,0,0,0.00,0.02,despegando
+8.703,TAKEOFF,75,30,102,-7,0,2,68,0,0,0,0,0.05,0.02,despegando
+8.753,TAKEOFF,75,30,101,-7,0,3,68,0,0,0,0,0.00,0.02,despegando
+8.805,TAKEOFF,75,30,101,-7,0,3,68,0,0,0,0,0.05,0.02,despegando
+8.855,TAKEOFF,75,30,99,-7,0,1,68,0,0,0,0,0.00,0.02,despegando
+8.905,TAKEOFF,75,30,99,-7,0,1,68,0,0,0,0,0.05,0.02,despegando
+8.955,TAKEOFF,75,30,97,-7,0,0,68,0,0,0,0,0.00,0.02,despegando
+9.005,TAKEOFF,75,30,97,-7,0,0,68,0,0,0,0,0.05,0.02,despegando
+9.055,TAKEOFF,75,30,96,-7,0,0,68,0,0,0,0,0.00,0.02,despegando
+9.106,TAKEOFF,75,30,96,-7,0,0,68,0,0,0,0,0.05,0.02,despegando
+9.156,TAKEOFF,75,30,95,-7,1,1,68,0,0,0,0,0.00,0.02,despegando
+9.206,TAKEOFF,75,30,95,-7,1,1,68,0,0,0,0,0.05,0.02,despegando
+9.256,TAKEOFF,75,30,93,-7,1,2,68,0,0,0,0,0.00,0.02,despegando
+9.306,TAKEOFF,75,30,93,-7,1,2,68,0,0,0,0,0.05,0.02,despegando
+9.357,TAKEOFF,75,30,91,-7,1,2,68,0,0,0,0,0.00,0.02,despegando
+9.407,TAKEOFF,75,30,91,-7,1,2,68,0,0,0,0,0.05,0.02,despegando
+9.457,TAKEOFF,75,30,89,-7,1,2,68,0,0,0,0,0.00,0.02,despegando
+9.507,TAKEOFF,75,30,89,-7,1,2,68,0,0,0,0,0.05,0.02,despegando
+9.557,TAKEOFF,75,30,89,-7,1,2,68,0,0,0,0,0.10,0.02,despegando
+9.607,TAKEOFF,75,20,86,-7,0,1,68,0,0,0,0,0.03,0.02,despegando
+9.658,TAKEOFF,75,20,86,-7,0,1,68,0,0,0,0,0.08,0.02,despegando
+9.708,TAKEOFF,75,20,85,-7,0,1,68,0,0,0,0,0.02,0.02,despegando
+9.758,TAKEOFF,75,20,85,-7,0,1,68,0,0,0,0,0.07,0.02,despegando
+9.808,TAKEOFF,75,20,83,-7,0,0,68,0,0,0,0,0.01,0.02,despegando
+9.858,TAKEOFF,75,20,83,-7,0,0,68,0,0,0,0,0.06,0.02,despegando
+9.908,TAKEOFF,75,20,82,-7,0,0,68,0,0,0,0,0.03,0.02,despegando
+9.959,TAKEOFF,75,20,82,-7,0,0,68,0,0,0,0,0.08,0.02,despegando
+10.009,TAKEOFF,75,20,81,-7,0,0,68,0,0,0,0,0.02,0.02,despegando
+10.059,TAKEOFF,75,20,81,-7,0,0,68,0,0,0,0,0.07,0.02,despegando
+10.110,TAKEOFF,75,20,79,-7,0,0,68,0,0,0,0,0.00,0.02,despegando
+10.160,TAKEOFF,75,20,79,-7,0,0,68,0,0,0,0,0.05,0.02,despegando
+10.210,TAKEOFF,75,20,76,-7,0,0,68,0,0,0,0,0.03,0.02,despegando
+10.260,TAKEOFF,75,20,76,-7,0,0,68,0,0,0,0,0.08,0.02,despegando
+10.310,TAKEOFF,75,20,75,-7,0,0,68,0,0,0,0,0.02,0.02,despegando
+10.360,TAKEOFF,75,20,75,-7,0,0,68,0,0,0,0,0.07,0.02,despegando
+10.411,TAKEOFF,75,10,74,-7,0,0,68,0,0,0,0,0.01,0.02,despegando
+10.461,TAKEOFF,75,10,74,-7,0,0,68,0,0,0,0,0.06,0.02,despegando
+10.511,TAKEOFF,75,10,72,-7,0,0,68,0,0,0,0,0.03,0.02,despegando
+10.561,TAKEOFF,75,10,72,-7,0,0,68,0,0,0,0,0.08,0.02,despegando
+10.611,TAKEOFF,75,10,72,-7,0,0,68,0,0,0,0,0.02,0.02,despegando
+10.661,TAKEOFF,75,10,72,-7,0,0,68,0,0,0,0,0.07,0.02,despegando
+10.712,TAKEOFF,75,10,71,-7,0,0,68,0,0,0,0,0.01,0.02,despegando
+10.763,TAKEOFF,75,10,71,-7,0,0,68,0,0,0,0,0.06,0.02,despegando
+10.813,TAKEOFF,75,10,70,-7,0,0,68,0,0,0,0,0.00,0.02,despegando
+10.863,TAKEOFF,75,10,71,-7,0,0,68,0,0,0,0,0.01,0.01,despegando
+10.913,TAKEOFF,75,10,71,-7,0,0,68,0,0,0,0,0.06,0.01,despegando
+10.964,TAKEOFF,75,10,71,-6,0,0,67,0,0,0,0,0.02,0.03,despegando
+11.016,TAKEOFF,75,10,71,-6,0,0,67,0,0,0,0,0.07,0.02,despegando
+11.066,TAKEOFF,75,10,72,-6,0,0,67,0,0,0,0,0.00,0.04,despegando
+11.116,TAKEOFF,75,10,72,-6,0,0,67,0,0,0,0,0.05,0.02,despegando
+11.166,TAKEOFF,75,10,72,-6,0,0,67,0,0,0,0,0.00,0.02,despegando
+11.216,TAKEOFF,75,10,72,-6,0,0,67,0,0,0,0,0.05,0.01,despegando
+11.268,TAKEOFF,75,10,72,-6,0,0,67,0,0,0,0,0.02,0.01,despegando
+11.318,TAKEOFF,75,10,72,-6,0,0,67,0,0,0,0,0.07,0.02,despegando
+11.368,TAKEOFF,75,10,73,-6,0,0,67,0,0,0,0,0.01,0.01,despegando
+11.418,TAKEOFF,75,10,73,-6,0,0,67,0,0,0,0,0.07,0.02,despegando
+11.469,TAKEOFF,75,10,74,-6,0,0,67,0,0,0,0,0.01,0.02,despegando
+11.519,TAKEOFF,75,10,74,-6,0,0,67,0,0,0,0,0.06,0.02,despegando
+11.569,TAKEOFF,75,10,74,-6,0,0,67,0,0,0,0,0.00,0.02,despegando
+11.619,TAKEOFF,75,10,74,-6,0,0,67,0,0,0,0,0.05,0.02,despegando
+11.669,TAKEOFF,75,10,75,-6,0,0,67,0,0,0,0,0.01,0.02,despegando
+11.719,TAKEOFF,75,10,75,-6,0,0,67,0,0,0,0,0.06,0.02,despegando
+11.769,TAKEOFF,75,10,76,-6,0,0,67,0,0,0,0,0.00,0.02,despegando
+11.819,TAKEOFF,75,10,76,-6,0,0,67,0,0,0,0,0.05,0.02,despegando
+11.870,TAKEOFF,75,10,77,-6,0,0,67,0,0,0,0,0.00,0.02,despegando
+11.920,TAKEOFF,75,10,77,-6,0,0,67,0,0,0,0,0.05,0.02,despegando
+11.970,TAKEOFF,75,10,78,-6,0,0,69,0,0,0,0,0.00,0.02,despegando
+12.020,TAKEOFF,75,10,78,-6,0,0,69,0,0,0,0,0.05,0.02,despegando
+12.070,TAKEOFF,75,10,76,-7,0,1,69,0,0,0,0,0.01,0.06,despegando
+12.121,TAKEOFF,75,10,76,-7,0,1,69,0,0,0,0,0.06,0.02,despegando
+12.171,TAKEOFF,75,10,78,-7,0,1,69,0,0,0,0,0.00,0.02,despegando
+12.221,TAKEOFF,75,10,78,-7,0,1,69,0,0,0,0,0.05,0.01,despegando
+12.271,TAKEOFF,75,20,78,-7,0,0,69,0,0,0,0,0.00,0.02,despegando
+12.321,TAKEOFF,75,20,78,-7,0,0,69,0,0,0,0,0.05,0.02,despegando
+12.371,TAKEOFF,75,20,78,-7,0,1,69,0,0,0,0,0.00,0.02,despegando
+12.422,TAKEOFF,75,20,78,-7,0,1,69,0,0,0,0,0.05,0.02,despegando
+12.472,TAKEOFF,75,20,78,-7,0,0,69,0,0,0,0,0.00,0.02,despegando
+12.522,TAKEOFF,75,20,78,-7,0,0,69,0,0,0,0,0.05,0.02,despegando
+12.572,TAKEOFF,75,20,78,-7,0,0,69,0,0,0,0,0.00,0.02,despegando
+12.622,TAKEOFF,75,20,78,-7,0,0,69,0,0,0,0,0.05,0.02,despegando
+12.673,TAKEOFF,75,20,78,-7,0,0,69,0,0,0,0,0.10,0.02,despegando
+12.724,TAKEOFF,75,20,77,-8,0,0,69,0,0,0,0,0.02,0.02,despegando
+12.774,TAKEOFF,75,20,76,-8,0,-1,69,0,0,0,0,0.00,0.02,despegando
+12.824,TAKEOFF,75,20,76,-8,0,-1,69,0,0,0,0,0.05,0.02,despegando
+12.874,TAKEOFF,75,20,76,-8,0,-1,69,0,0,0,0,0.10,0.02,despegando
+12.925,TAKEOFF,75,20,77,-8,0,-1,69,0,0,0,0,0.02,0.02,despegando
+12.975,TAKEOFF,75,20,77,-8,0,-1,69,0,0,0,0,0.07,0.02,despegando
+13.025,TAKEOFF,75,20,76,-7,0,-1,68,0,0,0,0,0.05,0.02,despegando
+13.076,TAKEOFF,75,20,76,-7,0,-1,68,0,0,0,0,0.10,0.02,despegando
+13.127,TAKEOFF,75,20,76,-7,1,0,68,0,0,0,0,0.03,0.02,despegando
+13.178,TAKEOFF,75,20,76,-7,1,0,68,0,0,0,0,0.08,0.02,despegando
+13.228,TAKEOFF,75,20,75,-7,0,-1,68,0,0,0,0,0.02,0.02,despegando
+13.278,TAKEOFF,75,20,75,-7,0,-1,68,0,0,0,0,0.07,0.01,despegando
+13.328,TAKEOFF,75,10,75,-7,0,-1,68,0,0,0,0,0.01,0.02,despegando
+13.378,TAKEOFF,75,10,75,-7,0,-1,68,0,0,0,0,0.06,0.01,despegando
+13.429,TAKEOFF,75,10,74,-7,1,-1,68,0,0,0,0,0.04,0.02,despegando
+13.479,TAKEOFF,75,10,74,-7,1,-1,68,0,0,0,0,0.09,0.02,despegando
+13.533,TAKEOFF,75,10,75,-7,0,0,68,0,0,0,0,0.03,0.02,despegando
+13.583,TAKEOFF,75,10,75,-7,0,0,68,0,0,0,0,0.08,0.02,despegando
+13.633,TAKEOFF,75,10,74,-7,0,0,68,0,0,0,0,0.02,0.02,despegando
+13.683,TAKEOFF,75,10,74,-7,0,0,68,0,0,0,0,0.07,0.02,despegando
+13.734,TAKEOFF,75,10,75,-7,0,1,68,0,0,0,0,0.01,0.02,despegando
+13.784,TAKEOFF,75,10,75,-7,0,1,68,0,0,0,0,0.06,0.02,despegando
+13.837,TAKEOFF,75,10,73,-7,0,1,68,0,0,0,0,0.03,0.02,despegando
+13.887,TAKEOFF,75,10,73,-7,0,1,68,0,0,0,0,0.08,0.02,despegando
+13.938,TAKEOFF,75,10,73,-7,0,0,68,0,0,0,0,0.01,0.02,despegando
+13.988,TAKEOFF,75,10,73,-7,0,0,68,0,0,0,0,0.06,0.02,despegando
+14.038,TAKEOFF,75,10,73,-7,0,0,69,0,0,0,0,0.03,0.02,despegando
+14.088,TAKEOFF,75,10,73,-7,0,0,69,0,0,0,0,0.08,0.04,despegando
+14.138,TAKEOFF,75,10,73,-7,0,0,69,0,0,0,0,0.03,0.02,despegando
+14.188,TAKEOFF,75,10,73,-7,0,0,69,0,0,0,0,0.08,0.02,despegando
+14.239,TAKEOFF,75,10,73,-7,0,0,69,0,0,0,0,0.02,0.02,despegando
+14.289,TAKEOFF,75,10,73,-7,0,0,69,0,0,0,0,0.07,0.02,despegando
+14.339,TAKEOFF,75,10,74,-7,0,0,69,0,0,0,0,0.02,0.02,despegando
+14.389,TAKEOFF,75,10,74,-7,0,0,69,0,0,0,0,0.07,0.02,despegando
+14.439,TAKEOFF,75,10,74,-7,0,1,69,0,0,0,0,0.00,0.02,despegando
+14.489,TAKEOFF,75,10,74,-7,0,0,69,0,0,0,0,0.01,0.02,despegando
+14.539,TAKEOFF,75,10,74,-7,0,0,69,0,0,0,0,0.06,0.02,despegando
+14.589,TAKEOFF,75,10,75,-7,0,0,69,0,0,0,0,0.00,0.02,despegando
+14.640,TAKEOFF,75,10,75,-7,0,0,69,0,0,0,0,0.05,0.02,despegando
+14.690,TAKEOFF,75,10,74,-7,0,0,69,0,0,0,0,0.01,0.02,despegando
+14.741,TAKEOFF,75,10,74,-7,0,0,69,0,0,0,0,0.06,0.02,despegando
+14.792,TAKEOFF,75,10,74,-7,0,0,69,0,0,0,0,0.00,0.01,despegando
+14.842,TAKEOFF,75,10,74,-7,0,0,69,0,0,0,0,0.05,0.01,despegando
+14.892,TAKEOFF,75,10,73,-7,0,0,69,0,0,0,0,0.00,0.02,despegando
+14.942,TAKEOFF,75,10,73,-7,0,0,69,0,0,0,0,0.05,0.02,despegando
+14.992,TAKEOFF,75,10,73,-7,0,0,68,0,0,0,0,0.01,0.02,despegando
+15.042,TAKEOFF,75,10,73,-7,0,0,68,0,0,0,0,0.06,0.02,despegando
+15.092,TAKEOFF,75,10,72,-7,0,0,68,0,0,0,0,0.00,0.02,despegando
+15.142,TAKEOFF,75,10,72,-7,0,0,68,0,0,0,0,0.05,0.02,despegando
+15.193,TAKEOFF,75,10,72,-7,0,0,68,0,0,0,0,0.02,0.02,despegando
+15.243,TAKEOFF,75,10,72,-7,0,0,68,0,0,0,0,0.07,0.02,despegando
+15.295,TAKEOFF,75,10,72,-7,0,0,68,0,0,0,0,0.01,0.02,despegando
+15.345,TAKEOFF,75,10,72,-7,0,0,68,0,0,0,0,0.06,0.02,despegando
+15.395,TAKEOFF,75,10,72,-7,0,0,68,0,0,0,0,0.00,0.02,despegando
+15.446,TAKEOFF,75,10,72,-7,0,0,68,0,0,0,0,0.05,0.02,despegando
+15.496,TAKEOFF,75,10,73,-7,0,0,68,0,0,0,0,0.02,0.02,despegando
+15.546,TAKEOFF,75,10,73,-7,0,0,68,0,0,0,0,0.07,0.02,despegando
+15.596,EMERGENCY_LAND,75,10,76,-7,0,0,68,0,0,0,0,0.01,0.02,no subio (10 cm en 10 s)
+15.647,EMERGENCY_LAND,75,10,76,-7,0,0,68,0,0,0,0,0.06,0.02,no subio (10 cm en 10 s)
+15.697,EMERGENCY_LAND,75,10,75,-7,0,0,68,0,0,0,0,0.00,0.02,no subio (10 cm en 10 s)
+15.747,EMERGENCY_LAND,75,10,75,-7,0,0,68,0,0,0,0,0.05,0.02,no subio (10 cm en 10 s)
+15.798,EMERGENCY_LAND,75,10,76,-7,0,0,68,0,0,0,0,0.01,0.02,no subio (10 cm en 10 s)
+15.848,EMERGENCY_LAND,75,10,76,-7,0,0,68,0,0,0,0,0.06,0.02,no subio (10 cm en 10 s)
+15.899,EMERGENCY_LAND,75,10,77,-7,0,-1,68,0,0,0,0,0.00,0.02,no subio (10 cm en 10 s)
+15.949,EMERGENCY_LAND,75,10,77,-7,0,-1,68,0,0,0,0,0.05,0.02,no subio (10 cm en 10 s)
+16.000,EMERGENCY_LAND,75,20,78,-7,0,-1,69,0,0,0,0,0.00,0.02,no subio (10 cm en 10 s)
+16.050,EMERGENCY_LAND,75,20,78,-7,0,-1,69,0,0,0,0,0.05,0.02,no subio (10 cm en 10 s)
+16.101,EMERGENCY_LAND,75,20,77,-7,0,0,69,0,0,0,0,0.00,0.04,no subio (10 cm en 10 s)
+16.151,EMERGENCY_LAND,75,20,77,-7,0,0,69,0,0,0,0,0.05,0.02,no subio (10 cm en 10 s)
+16.201,EMERGENCY_LAND,75,10,78,-7,0,0,69,0,0,0,0,0.00,0.02,no subio (10 cm en 10 s)
+16.251,EMERGENCY_LAND,75,10,78,-7,0,0,69,0,0,0,0,0.05,0.02,no subio (10 cm en 10 s)
+16.301,EMERGENCY_LAND,75,10,78,-7,0,0,69,0,0,0,0,0.00,0.02,no subio (10 cm en 10 s)
+16.352,EMERGENCY_LAND,75,10,78,-7,0,0,69,0,0,0,0,0.05,0.02,no subio (10 cm en 10 s)
+16.402,EMERGENCY_LAND,75,10,77,-7,0,0,69,0,0,0,0,0.00,0.02,no subio (10 cm en 10 s)
+16.452,EMERGENCY_LAND,75,10,77,-7,0,0,69,0,0,0,0,0.05,0.02,no subio (10 cm en 10 s)
+16.502,EMERGENCY_LAND,75,10,76,-7,0,1,69,0,0,0,0,0.00,0.02,no subio (10 cm en 10 s)
+16.552,EMERGENCY_LAND,75,10,76,-7,0,1,69,0,0,0,0,0.05,0.02,no subio (10 cm en 10 s)
+16.603,EMERGENCY_LAND,75,10,74,-7,1,2,69,0,0,0,0,0.00,0.02,no subio (10 cm en 10 s)
+16.653,EMERGENCY_LAND,75,10,74,-7,1,2,69,0,0,0,0,0.05,0.02,no subio (10 cm en 10 s)
+16.703,EMERGENCY_LAND,75,10,73,-7,1,1,69,0,0,0,0,0.00,0.02,no subio (10 cm en 10 s)
+16.753,EMERGENCY_LAND,75,10,73,-7,1,1,69,0,0,0,0,0.05,0.02,no subio (10 cm en 10 s)
+16.803,EMERGENCY_LAND,75,10,69,-7,1,1,69,0,0,0,0,0.00,0.02,no subio (10 cm en 10 s)
+16.854,EMERGENCY_LAND,75,10,69,-7,1,1,69,0,0,0,0,0.05,0.02,no subio (10 cm en 10 s)
+16.906,EMERGENCY_LAND,75,10,69,-7,1,1,69,0,0,0,0,0.10,0.02,no subio (10 cm en 10 s)
+16.956,EMERGENCY_LAND,75,0,64,-8,0,1,69,0,0,0,0,0.03,0.02,no subio (10 cm en 10 s)
+17.007,EMERGENCY_LAND,75,0,64,-8,0,1,69,0,0,0,0,0.08,0.02,no subio (10 cm en 10 s)
+17.057,EMERGENCY_LAND,75,0,60,-8,0,0,69,0,0,0,0,0.02,0.02,no subio (10 cm en 10 s)
+17.107,EMERGENCY_LAND,75,0,60,-8,0,0,69,0,0,0,0,0.07,0.02,no subio (10 cm en 10 s)
+17.157,EMERGENCY_LAND,75,0,56,-8,1,0,69,0,0,0,0,0.02,0.02,no subio (10 cm en 10 s)
+17.208,EMERGENCY_LAND,75,0,56,-8,1,0,69,0,0,0,0,0.07,0.02,no subio (10 cm en 10 s)
+17.258,EMERGENCY_LAND,75,0,52,-7,1,0,69,0,0,0,0,0.05,0.02,no subio (10 cm en 10 s)
+17.308,EMERGENCY_LAND,75,0,52,-7,1,0,69,0,0,0,0,0.10,0.02,no subio (10 cm en 10 s)
+17.358,EMERGENCY_LAND,75,0,47,-7,0,0,69,0,0,0,0,0.04,0.02,no subio (10 cm en 10 s)
+17.408,EMERGENCY_LAND,75,0,47,-7,0,0,69,0,0,0,0,0.09,0.01,no subio (10 cm en 10 s)
+17.458,EMERGENCY_LAND,75,-10,42,-7,0,0,69,0,0,0,0,0.03,0.02,no subio (10 cm en 10 s)
+17.509,EMERGENCY_LAND,75,-10,42,-7,0,0,69,0,0,0,0,0.08,0.02,no subio (10 cm en 10 s)
+17.559,EMERGENCY_LAND,75,-10,38,-7,0,0,69,0,0,0,0,0.02,0.02,no subio (10 cm en 10 s)
+17.609,EMERGENCY_LAND,75,-10,38,-7,0,0,69,0,0,0,0,0.07,0.02,no subio (10 cm en 10 s)
+17.659,EMERGENCY_LAND,75,-20,33,-7,0,1,69,0,0,0,0,0.01,0.02,no subio (10 cm en 10 s)
+17.709,EMERGENCY_LAND,75,-20,33,-7,0,1,69,0,0,0,0,0.06,0.01,no subio (10 cm en 10 s)
+17.759,DONE,75,-20,28,-7,0,1,69,0,0,0,0,0.01,0.01,aterrizado (no subio (10 cm en 10 s))
+17.810,DONE,75,-20,28,-7,0,1,69,0,0,0,0,0.06,0.03,aterrizado (no subio (10 cm en 10 s))
+17.860,DONE,75,-30,23,-7,0,1,69,0,0,0,0,0.01,0.02,aterrizado (no subio (10 cm en 10 s))
+17.910,DONE,75,-30,23,-7,0,1,69,0,0,0,0,0.06,0.02,aterrizado (no subio (10 cm en 10 s))
+17.960,DONE,75,-30,18,-7,0,0,69,0,0,0,0,0.03,0.04,aterrizado (no subio (10 cm en 10 s))
+18.010,DONE,75,-30,18,-7,0,0,69,0,0,0,0,0.08,0.02,aterrizado (no subio (10 cm en 10 s))
+18.060,DONE,75,-40,13,-7,0,0,70,0,0,0,0,0.00,0.02,aterrizado (no subio (10 cm en 10 s))
+18.111,DONE,75,-40,13,-7,0,0,70,0,0,0,0,0.05,0.01,aterrizado (no subio (10 cm en 10 s))
+18.161,DONE,75,-40,13,-7,0,0,70,0,0,0,0,0.01,0.01,aterrizado (no subio (10 cm en 10 s))
+18.211,DONE,75,-40,13,-7,0,0,70,0,0,0,0,0.06,0.01,aterrizado (no subio (10 cm en 10 s))
+18.261,DONE,75,-50,10,-7,0,0,70,0,0,0,0,0.02,0.01,aterrizado (no subio (10 cm en 10 s))
+18.311,DONE,75,-50,10,-7,0,0,70,0,0,0,0,0.07,0.02,aterrizado (no subio (10 cm en 10 s))
+18.361,DONE,75,-50,10,-8,0,0,70,0,0,0,0,0.02,0.02,aterrizado (no subio (10 cm en 10 s))
+18.412,DONE,75,-50,10,-6,0,1,70,0,0,0,0,0.00,0.01,aterrizado (no subio (10 cm en 10 s))
+18.462,DONE,75,-50,10,-6,0,1,70,0,0,0,0,0.05,0.02,aterrizado (no subio (10 cm en 10 s))
+18.512,DONE,75,-50,10,-7,0,0,70,0,0,0,0,0.00,0.01,aterrizado (no subio (10 cm en 10 s))
+18.562,DONE,75,-50,10,-7,0,0,70,0,0,0,0,0.05,0.01,aterrizado (no subio (10 cm en 10 s))
+18.612,DONE,75,-50,10,-7,0,0,70,0,0,0,0,0.00,0.01,aterrizado (no subio (10 cm en 10 s))
+18.662,DONE,75,-50,10,-7,0,0,70,0,0,0,0,0.05,0.01,aterrizado (no subio (10 cm en 10 s))
+18.713,DONE,75,-50,10,-7,0,-1,70,0,0,0,0,0.00,0.01,aterrizado (no subio (10 cm en 10 s))
+18.764,DONE,75,-50,10,-7,0,-1,70,0,0,0,0,0.05,0.01,aterrizado (no subio (10 cm en 10 s))
+18.814,DONE,75,-50,10,-7,0,-1,70,0,0,0,0,0.00,0.01,aterrizado (no subio (10 cm en 10 s))
+18.865,DONE,75,-50,10,-7,0,-1,70,0,0,0,0,0.05,0.01,aterrizado (no subio (10 cm en 10 s))
+18.915,DONE,75,-50,10,-7,0,-1,70,0,0,0,0,0.01,0.01,aterrizado (no subio (10 cm en 10 s))
+18.965,DONE,75,-50,10,-7,0,-1,70,0,0,0,0,0.06,0.01,aterrizado (no subio (10 cm en 10 s))
+19.015,DONE,75,-50,10,-7,0,-1,70,0,0,0,0,0.01,0.01,aterrizado (no subio (10 cm en 10 s))
+19.069,DONE,75,-50,10,-7,0,-1,70,0,0,0,0,0.06,0.04,aterrizado (no subio (10 cm en 10 s))
+19.119,DONE,75,-50,10,-7,0,-1,70,0,0,0,0,0.00,0.01,aterrizado (no subio (10 cm en 10 s))
+19.169,DONE,75,-50,10,-7,0,-1,70,0,0,0,0,0.05,0.01,aterrizado (no subio (10 cm en 10 s))
+19.220,DONE,75,-50,10,-7,0,-1,70,0,0,0,0,0.00,0.02,aterrizado (no subio (10 cm en 10 s))
+19.270,DONE,75,-50,10,-7,0,-1,70,0,0,0,0,0.05,0.02,aterrizado (no subio (10 cm en 10 s))
+19.320,DONE,75,-50,10,-7,0,-1,70,0,0,0,0,0.02,0.02,aterrizado (no subio (10 cm en 10 s))
+19.370,DONE,75,-50,10,-7,0,-1,70,0,0,0,0,0.07,0.02,aterrizado (no subio (10 cm en 10 s))
+19.420,DONE,75,0,10,-7,0,-1,70,0,0,0,0,0.01,0.02,aterrizado (no subio (10 cm en 10 s))
+19.470,DONE,75,0,10,-7,0,-1,70,0,0,0,0,0.06,0.01,aterrizado (no subio (10 cm en 10 s))
+19.521,DONE,75,0,10,-7,0,-1,70,0,0,0,0,0.01,0.02,aterrizado (no subio (10 cm en 10 s))
+19.571,DONE,75,0,10,-7,0,-1,70,0,0,0,0,0.06,0.01,aterrizado (no subio (10 cm en 10 s))
+19.621,DONE,75,0,10,-7,0,-1,70,0,0,0,0,0.01,0.01,aterrizado (no subio (10 cm en 10 s))
+19.671,DONE,75,0,10,-7,0,-1,70,0,0,0,0,0.06,0.01,aterrizado (no subio (10 cm en 10 s))
+19.721,DONE,75,0,10,-7,0,-1,70,0,0,0,0,0.01,0.01,aterrizado (no subio (10 cm en 10 s))
+19.772,DONE,75,0,10,-7,0,-1,70,0,0,0,0,0.06,0.01,aterrizado (no subio (10 cm en 10 s))
+19.822,DONE,75,0,10,-7,0,-1,70,0,0,0,0,0.01,0.01,aterrizado (no subio (10 cm en 10 s))
+19.872,DONE,75,0,10,-7,0,-1,70,0,0,0,0,0.06,0.01,aterrizado (no subio (10 cm en 10 s))
+19.922,DONE,75,0,10,-7,0,-2,70,0,0,0,0,0.01,0.01,aterrizado (no subio (10 cm en 10 s))
+19.973,DONE,75,0,10,-7,0,-2,70,0,0,0,0,0.06,0.01,aterrizado (no subio (10 cm en 10 s))
+20.023,DONE,75,0,10,-7,0,-2,69,0,0,0,0,0.01,0.02,aterrizado (no subio (10 cm en 10 s))
+20.073,DONE,75,0,10,-7,0,-2,69,0,0,0,0,0.06,0.01,aterrizado (no subio (10 cm en 10 s))
+20.123,DONE,75,0,10,-7,0,-2,69,0,0,0,0,0.00,0.03,aterrizado (no subio (10 cm en 10 s))
+20.173,DONE,75,0,10,-7,0,-2,69,0,0,0,0,0.05,0.01,aterrizado (no subio (10 cm en 10 s))
+20.223,DONE,75,0,10,-7,0,-2,69,0,0,0,0,0.00,0.02,aterrizado (no subio (10 cm en 10 s))
+20.273,DONE,75,0,10,-7,0,-2,69,0,0,0,0,0.05,0.01,aterrizado (no subio (10 cm en 10 s))
+20.324,DONE,75,0,10,-7,0,-2,69,0,0,0,0,0.00,0.01,aterrizado (no subio (10 cm en 10 s))
+20.374,DONE,75,0,10,-7,0,-2,69,0,0,0,0,0.05,0.01,aterrizado (no subio (10 cm en 10 s))
+20.424,DONE,75,0,10,-7,0,-2,69,0,0,0,0,0.00,0.01,aterrizado (no subio (10 cm en 10 s))
+20.474,DONE,75,0,10,-7,0,-2,69,0,0,0,0,0.05,0.01,aterrizado (no subio (10 cm en 10 s))
+20.526,DONE,75,0,10,-7,0,-2,69,0,0,0,0,0.10,0.01,aterrizado (no subio (10 cm en 10 s))
+20.576,DONE,75,0,10,-7,0,-2,69,0,0,0,0,0.04,0.01,aterrizado (no subio (10 cm en 10 s))
+20.627,DONE,75,0,10,-7,0,-2,69,0,0,0,0,0.09,0.01,aterrizado (no subio (10 cm en 10 s))
+20.677,DONE,75,0,10,-7,0,-2,69,0,0,0,0,0.04,0.02,aterrizado (no subio (10 cm en 10 s))
+20.731,DONE,75,0,10,-7,0,-2,69,0,0,0,0,0.09,0.01,aterrizado (no subio (10 cm en 10 s))
+20.781,DONE,75,0,10,-7,0,-2,69,0,0,0,0,0.04,0.01,aterrizado (no subio (10 cm en 10 s))
+20.832,DONE,75,0,10,-7,0,-2,69,0,0,0,0,0.00,0.01,aterrizado (no subio (10 cm en 10 s))
+20.882,DONE,75,0,10,-7,0,-2,69,0,0,0,0,0.05,0.02,aterrizado (no subio (10 cm en 10 s))
+20.932,DONE,75,0,10,-7,0,-2,69,0,0,0,0,0.10,0.01,aterrizado (no subio (10 cm en 10 s))
+20.982,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.04,0.01,aterrizado (no subio (10 cm en 10 s))
+21.032,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.09,0.01,aterrizado (no subio (10 cm en 10 s))
+21.082,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.04,0.03,aterrizado (no subio (10 cm en 10 s))
+21.133,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.09,0.02,aterrizado (no subio (10 cm en 10 s))
+21.183,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.01,0.01,aterrizado (no subio (10 cm en 10 s))
+21.233,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.06,0.01,aterrizado (no subio (10 cm en 10 s))
+21.283,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.01,0.01,aterrizado (no subio (10 cm en 10 s))
+21.333,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.06,0.01,aterrizado (no subio (10 cm en 10 s))
+21.384,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.01,0.01,aterrizado (no subio (10 cm en 10 s))
+21.434,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.06,0.01,aterrizado (no subio (10 cm en 10 s))
+21.484,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.01,0.01,aterrizado (no subio (10 cm en 10 s))
+21.534,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.06,0.01,aterrizado (no subio (10 cm en 10 s))
+21.584,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.01,0.02,aterrizado (no subio (10 cm en 10 s))
+21.635,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.06,0.01,aterrizado (no subio (10 cm en 10 s))
+21.685,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.01,0.01,aterrizado (no subio (10 cm en 10 s))
+21.735,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.06,0.01,aterrizado (no subio (10 cm en 10 s))
+21.785,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.01,0.01,aterrizado (no subio (10 cm en 10 s))
+21.835,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.03,0.01,aterrizado (no subio (10 cm en 10 s))
+21.886,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.08,0.01,aterrizado (no subio (10 cm en 10 s))
+21.936,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.03,0.01,aterrizado (no subio (10 cm en 10 s))
+21.986,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.08,0.02,aterrizado (no subio (10 cm en 10 s))
+22.036,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.02,0.02,aterrizado (no subio (10 cm en 10 s))
+22.086,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.07,0.03,aterrizado (no subio (10 cm en 10 s))
+22.137,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.00,0.01,aterrizado (no subio (10 cm en 10 s))
+22.187,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.05,0.01,aterrizado (no subio (10 cm en 10 s))
+22.237,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.00,0.01,aterrizado (no subio (10 cm en 10 s))
+22.287,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.05,0.01,aterrizado (no subio (10 cm en 10 s))
+22.337,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.00,0.02,aterrizado (no subio (10 cm en 10 s))
+22.387,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.05,0.01,aterrizado (no subio (10 cm en 10 s))
+22.438,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.00,0.01,aterrizado (no subio (10 cm en 10 s))
+22.488,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.05,0.01,aterrizado (no subio (10 cm en 10 s))
+22.538,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.00,0.01,aterrizado (no subio (10 cm en 10 s))
+22.588,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.05,0.02,aterrizado (no subio (10 cm en 10 s))
+22.638,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.00,0.02,aterrizado (no subio (10 cm en 10 s))
+22.693,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.05,0.01,aterrizado (no subio (10 cm en 10 s))
+22.743,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.00,0.02,aterrizado (no subio (10 cm en 10 s))
+22.795,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.05,0.03,aterrizado (no subio (10 cm en 10 s))
+22.845,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.01,0.02,aterrizado (no subio (10 cm en 10 s))
+22.896,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.06,0.02,aterrizado (no subio (10 cm en 10 s))
+22.946,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.00,0.01,aterrizado (no subio (10 cm en 10 s))
+22.996,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.05,0.01,aterrizado (no subio (10 cm en 10 s))
+23.046,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.00,0.02,aterrizado (no subio (10 cm en 10 s))
+23.096,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.05,0.04,aterrizado (no subio (10 cm en 10 s))
+23.147,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.01,0.01,aterrizado (no subio (10 cm en 10 s))
+23.197,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.06,0.01,aterrizado (no subio (10 cm en 10 s))
+23.247,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.01,0.01,aterrizado (no subio (10 cm en 10 s))
+23.297,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.06,0.02,aterrizado (no subio (10 cm en 10 s))
+23.348,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.01,0.01,aterrizado (no subio (10 cm en 10 s))
+23.398,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.06,0.01,aterrizado (no subio (10 cm en 10 s))
+23.448,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.01,0.02,aterrizado (no subio (10 cm en 10 s))
+23.498,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.06,0.01,aterrizado (no subio (10 cm en 10 s))
+23.548,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.01,0.01,aterrizado (no subio (10 cm en 10 s))
+23.599,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.06,0.02,aterrizado (no subio (10 cm en 10 s))
+23.649,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.01,0.01,aterrizado (no subio (10 cm en 10 s))
+23.699,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.06,0.02,aterrizado (no subio (10 cm en 10 s))
+23.749,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.00,0.03,aterrizado (no subio (10 cm en 10 s))
+23.799,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.05,0.02,aterrizado (no subio (10 cm en 10 s))
+23.849,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.00,0.02,aterrizado (no subio (10 cm en 10 s))
+23.900,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.05,0.01,aterrizado (no subio (10 cm en 10 s))
+23.950,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.00,0.01,aterrizado (no subio (10 cm en 10 s))
+24.000,DONE,75,0,10,-7,0,-1,69,0,0,0,0,0.05,0.02,aterrizado (no subio (10 cm en 10 s))
+24.050,DONE,75,0,10,-7,0,-1,70,0,0,0,0,0.00,0.01,aterrizado (no subio (10 cm en 10 s))
+24.100,DONE,75,0,10,-7,0,-1,70,0,0,0,0,0.05,0.01,aterrizado (no subio (10 cm en 10 s))
+24.151,DONE,75,0,10,-7,0,-1,70,0,0,0,0,0.10,0.01,aterrizado (no subio (10 cm en 10 s))
+24.201,DONE,75,0,10,-7,0,-1,70,0,0,0,0,0.03,0.02,aterrizado (no subio (10 cm en 10 s))
+24.251,DONE,75,0,10,-7,0,-1,70,0,0,0,0,0.08,0.01,aterrizado (no subio (10 cm en 10 s))
+24.301,DONE,75,0,10,-7,0,-1,70,0,0,0,0,0.03,0.02,aterrizado (no subio (10 cm en 10 s))
+24.351,DONE,75,0,10,-7,0,-1,70,0,0,0,0,0.08,0.01,aterrizado (no subio (10 cm en 10 s))
+24.401,DONE,75,0,10,-7,0,-1,70,0,0,0,0,0.03,0.01,aterrizado (no subio (10 cm en 10 s))
+24.451,DONE,75,0,10,-7,0,-1,70,0,0,0,0,0.08,0.01,aterrizado (no subio (10 cm en 10 s))
+24.501,DONE,75,0,10,-7,0,-1,70,0,0,0,0,0.03,0.01,aterrizado (no subio (10 cm en 10 s))
+24.552,DONE,75,0,10,-7,0,-1,70,0,0,0,0,0.08,0.02,aterrizado (no subio (10 cm en 10 s))
+24.602,DONE,75,0,10,-7,0,-1,70,0,0,0,0,0.03,0.01,aterrizado (no subio (10 cm en 10 s))
+24.652,DONE,75,0,10,-7,0,-1,70,0,0,0,0,0.08,0.02,aterrizado (no subio (10 cm en 10 s))
+24.702,DONE,75,0,10,-7,0,-1,70,0,0,0,0,0.03,0.01,aterrizado (no subio (10 cm en 10 s))
+24.752,DONE,75,0,10,-7,0,-1,70,0,0,0,0,0.01,0.01,aterrizado (no subio (10 cm en 10 s))
+24.802,DONE,75,0,10,-7,0,-1,70,0,0,0,0,0.06,0.01,aterrizado (no subio (10 cm en 10 s))
+24.852,DONE,75,0,10,-7,0,-1,70,0,0,0,0,0.01,0.01,aterrizado (no subio (10 cm en 10 s))
+24.903,DONE,75,0,10,-7,0,-1,70,0,0,0,0,0.06,0.01,aterrizado (no subio (10 cm en 10 s))
+24.953,DONE,75,0,10,-7,0,-1,70,0,0,0,0,0.04,0.01,aterrizado (no subio (10 cm en 10 s))
+25.003,DONE,75,0,10,-7,0,-1,70,0,0,0,0,0.09,0.02,aterrizado (no subio (10 cm en 10 s))
+25.054,DONE,75,0,10,-7,0,-1,70,0,0,0,0,0.14,0.04,aterrizado (no subio (10 cm en 10 s))
+25.104,DONE,75,0,10,-7,0,-1,70,0,0,0,0,0.01,0.02,aterrizado (no subio (10 cm en 10 s))
+25.156,DONE,75,0,10,-7,0,-1,70,0,0,0,0,0.06,0.02,aterrizado (no subio (10 cm en 10 s))
+25.206,DONE,75,0,10,-7,0,-1,70,0,0,0,0,0.01,0.01,aterrizado (no subio (10 cm en 10 s))
+25.257,DONE,75,0,10,-7,0,-1,70,0,0,0,0,0.06,0.01,aterrizado (no subio (10 cm en 10 s))
+25.307,DONE,75,0,10,-8,0,-1,70,0,0,0,0,0.00,0.02,aterrizado (no subio (10 cm en 10 s))
+25.360,DONE,75,0,10,-8,0,-1,70,0,0,0,0,0.02,0.01,aterrizado (no subio (10 cm en 10 s))
+25.410,DONE,75,0,10,-8,0,-1,70,0,0,0,0,0.07,0.01,aterrizado (no subio (10 cm en 10 s))
+25.462,DONE,75,0,10,-8,0,-1,70,0,0,0,0,0.02,0.01,aterrizado (no subio (10 cm en 10 s))
+25.512,DONE,75,0,10,-8,0,-1,70,0,0,0,0,0.07,0.01,aterrizado (no subio (10 cm en 10 s))
+25.562,DONE,75,0,10,-8,0,-1,70,0,0,0,0,0.01,0.01,aterrizado (no subio (10 cm en 10 s))
+25.612,DONE,75,0,10,-8,0,-1,70,0,0,0,0,0.06,0.01,aterrizado (no subio (10 cm en 10 s))
+25.663,DONE,75,0,10,-8,0,-1,70,0,0,0,0,0.01,0.01,aterrizado (no subio (10 cm en 10 s))
+25.713,DONE,75,0,10,-8,0,-1,70,0,0,0,0,0.06,0.01,aterrizado (no subio (10 cm en 10 s))
+25.765,DONE,75,0,10,-8,0,-1,70,0,0,0,0,0.01,0.01,aterrizado (no subio (10 cm en 10 s))
+25.815,DONE,75,0,10,-8,0,-1,70,0,0,0,0,0.06,0.02,aterrizado (no subio (10 cm en 10 s))
+25.865,DONE,75,0,10,-8,0,-1,70,0,0,0,0,0.00,0.02,aterrizado (no subio (10 cm en 10 s))
+25.915,DONE,75,0,10,-8,0,-1,70,0,0,0,0,0.05,0.02,aterrizado (no subio (10 cm en 10 s))
+25.965,DONE,75,0,10,-8,0,-1,70,0,0,0,0,0.03,0.01,aterrizado (no subio (10 cm en 10 s))
+26.015,DONE,75,0,10,-8,0,-1,70,0,0,0,0,0.08,0.02,aterrizado (no subio (10 cm en 10 s))
+26.066,DONE,75,0,10,-8,0,-1,70,0,0,0,0,0.01,0.04,aterrizado (no subio (10 cm en 10 s))
+26.117,DONE,75,0,10,-8,0,-1,70,0,0,0,0,0.06,0.02,aterrizado (no subio (10 cm en 10 s))
+26.167,DONE,75,0,10,-8,0,-1,70,0,0,0,0,0.00,0.01,aterrizado (no subio (10 cm en 10 s))
+26.217,DONE,75,0,10,-8,0,-1,70,0,0,0,0,0.05,0.01,aterrizado (no subio (10 cm en 10 s))
+26.267,DONE,75,0,10,-8,0,-1,70,0,0,0,0,0.00,0.01,aterrizado (no subio (10 cm en 10 s))
+26.317,DONE,75,0,10,-8,0,-1,70,0,0,0,0,0.05,0.02,aterrizado (no subio (10 cm en 10 s))
+26.367,DONE,75,0,10,-8,0,-1,70,0,0,0,0,0.00,0.01,aterrizado (no subio (10 cm en 10 s))
+26.417,DONE,75,0,10,-8,0,-1,70,0,0,0,0,0.05,0.01,aterrizado (no subio (10 cm en 10 s))
+26.467,DONE,75,0,10,-8,0,-1,70,0,0,0,0,0.00,0.01,aterrizado (no subio (10 cm en 10 s))
+26.517,DONE,75,0,10,-8,0,-1,70,0,0,0,0,0.05,0.01,aterrizado (no subio (10 cm en 10 s))
+26.567,DONE,75,0,10,-8,0,-1,70,0,0,0,0,0.00,0.01,aterrizado (no subio (10 cm en 10 s))
+26.618,DONE,75,0,10,-8,0,-1,70,0,0,0,0,0.05,0.01,aterrizado (no subio (10 cm en 10 s))
+26.668,DONE,75,0,10,-8,0,-1,70,0,0,0,0,0.00,0.02,aterrizado (no subio (10 cm en 10 s))
+26.718,DONE,75,0,10,-8,0,-1,70,0,0,0,0,0.05,0.01,aterrizado (no subio (10 cm en 10 s))
+26.768,DONE,75,0,10,-8,0,-1,70,0,0,0,0,0.00,0.01,aterrizado (no subio (10 cm en 10 s))
+26.818,DONE,75,0,10,-8,0,-1,70,0,0,0,0,0.05,0.02,aterrizado (no subio (10 cm en 10 s))
+26.869,DONE,75,0,10,-8,0,-1,70,0,0,0,0,0.00,0.01,aterrizado (no subio (10 cm en 10 s))
+26.919,DONE,75,0,10,-8,0,-1,70,0,0,0,0,0.05,0.01,aterrizado (no subio (10 cm en 10 s))
+26.969,DONE,75,0,10,-8,0,-1,70,0,0,0,0,0.00,0.01,aterrizado (no subio (10 cm en 10 s))
+27.019,DONE,75,0,10,-8,0,-1,70,0,0,0,0,0.05,0.01,aterrizado (no subio (10 cm en 10 s))
+27.069,DONE,75,0,10,-8,0,-1,70,0,0,0,0,0.00,0.04,aterrizado (no subio (10 cm en 10 s))
+27.119,DONE,75,0,10,-8,0,-1,70,0,0,0,0,0.05,0.01,aterrizado (no subio (10 cm en 10 s))
+27.170,DONE,75,0,10,-8,0,-1,70,0,0,0,0,0.00,0.01,aterrizado (no subio (10 cm en 10 s))
+27.220,DONE,75,0,10,-8,0,-1,70,0,0,0,0,0.05,0.02,aterrizado (no subio (10 cm en 10 s))
+27.270,DONE,75,0,10,-8,0,-1,70,0,0,0,0,0.00,0.01,aterrizado (no subio (10 cm en 10 s))
+27.320,DONE,75,0,10,-8,0,-1,70,0,0,0,0,0.05,0.02,aterrizado (no subio (10 cm en 10 s))
+27.370,DONE,75,0,10,-8,0,-1,70,0,0,0,0,0.00,0.01,aterrizado (no subio (10 cm en 10 s))
+27.420,DONE,75,0,10,-8,0,-1,70,0,0,0,0,0.05,0.01,aterrizado (no subio (10 cm en 10 s))
+27.470,DONE,75,0,10,-8,0,-1,70,0,0,0,0,0.00,0.01,aterrizado (no subio (10 cm en 10 s))

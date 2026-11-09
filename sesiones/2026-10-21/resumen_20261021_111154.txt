@@ -1,0 +1,1 @@
+fuente: tello   frames: 933   detección media: 5.7 ms

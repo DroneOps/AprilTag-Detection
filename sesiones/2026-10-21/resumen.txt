@@ -1,0 +1,219 @@
+Resumen de sesión — 2026-11-09 15:17 — 28 bitácoras
+
+== vuelo_20261021_093004.csv  (vuelo)
+   vuelo 17 s | batería 71% -> 60% | temp max 70 C
+   despegue: en el aire a 30 cm
+   altura en vuelo: min 19 cm, max 90 cm
+   final: DONE — aterrizado (fin de la prueba)
+   VEREDICTO: OK
+
+== vuelo_20261021_093102.csv  (vuelo)
+   vuelo 15 s | batería 60% -> 56% | temp max 75 C
+   despegue: en el aire a 30 cm
+   altura en vuelo: min 18 cm, max 81 cm
+   final: DONE — aterrizado (fin de la prueba)
+   VEREDICTO: OK
+
+== vuelo_20261021_093141.csv  (vuelo)
+   vuelo 9 s | batería 56% -> 56% | temp max 78 C
+   despegue: en el aire a 30 cm
+   altura en vuelo: min 33 cm, max 65 cm
+   final: DONE — aterrizado (PARO: teclado)
+   detenido a mano: PARO: teclado
+   VEREDICTO: OK hasta que se detuvo a mano
+
+== vuelo_20261021_093238.csv  (vuelo)
+   NO DESPEGÓ: NO despega: temperatura 83 C < 80 C
+   batería 55.0%, temperatura 84.0 C
+   VEREDICTO: sin vuelo
+
+== vuelo_20261021_093305.csv  (vuelo)
+   NO DESPEGÓ: NO despega: temperatura 84 C < 80 C
+   batería 55.0%, temperatura 85.0 C
+   VEREDICTO: sin vuelo
+
+== vuelo_20261021_093505.csv  (vuelo)
+   vuelo 27 s | batería 60% -> 45% | temp max 77 C
+   despegue: en el aire a 30 cm
+   altura en vuelo: min 38 cm, max 86 cm
+   final: DONE — aterrizado (fin de la prueba)
+   VEREDICTO: OK
+
+== vuelo_20261021_101716.csv  (vuelo)
+   vuelo 22 s | batería 47% -> 34% | temp max 64 C
+   despegue: en el aire a 60 cm (estable, despegue 4.3 s)
+   altura en vuelo: min 45 cm, max 79 cm
+   final: DONE — aterrizado (fin de la prueba)
+   VEREDICTO: OK
+
+== vuelo_20261021_101808.csv  (vuelo)
+   NO DESPEGÓ: NO despega: bateria 21% >= 30%
+   batería 25.0%, temperatura 69.0 C
+   VEREDICTO: sin vuelo
+
+== vuelo_20261021_101931.csv  (vuelo)
+   vuelo 27 s | batería 92% -> 78% | temp max 74 C
+   despegue: en el aire a 70 cm (estable, despegue 5.0 s)
+   altura en vuelo: min 64 cm, max 77 cm
+   final: DONE — aterrizado (fin de la prueba)
+   VEREDICTO: OK
+
+== mision_20261021_104206.csv  (mision)
+   vuelo 23 s | batería 90% -> 76% | temp max 64 C
+   despegue: en el aire a 60 cm (estable, despegue 5.9 s)
+   altura en vuelo: min 36 cm, max 72 cm
+   vio tag 9 (Pausa 5 s) a 237 cm
+   final: DONE — aterrizado (tag 9 perdido en el acercamiento)
+   problemas: tag perdido
+   VEREDICTO: REVISAR
+
+== mision_20261021_104320.csv  (mision)
+   vuelo 12 s | batería 75% -> 75% | temp max 70 C
+   final: DONE — aterrizado (no subio (10 cm en 10 s))
+   problemas: no despegó bien
+   VEREDICTO: REVISAR
+
+== mision_20261021_104401.csv  (mision)
+   vuelo 33 s | batería 75% -> 72% | temp max 77 C
+   despegue: en el aire a 40 cm (estable, despegue 4.2 s)
+   altura en vuelo: min 56 cm, max 84 cm
+   EJECUTÓ tag 2 (Giro izquierda 90) a 64 cm, az -1
+   vio tag 2 (Giro izquierda 90) a 205 cm
+   final: DONE — aterrizado (PARO: teclado)
+   detenido a mano: PARO: teclado
+   VEREDICTO: OK hasta que se detuvo a mano
+
+== mision_20261021_111219.csv  (mision)
+   vuelo 35 s | batería 74% -> 60% | temp max 75 C
+   despegue: en el aire a 67 cm (estable, despegue 5.3 s)
+   altura en vuelo: min 58 cm, max 78 cm
+   EJECUTÓ tag 9 (Pausa 5 s) acercamiento incompleto (68 cm)
+   vio tag 9 (Pausa 5 s) a 241 cm
+   final: DONE — aterrizado (PARO: teclado)
+   problemas: acercamiento incompleto (por tiempo)
+   detenido a mano: PARO: teclado
+   VEREDICTO: OK hasta que se detuvo a mano
+
+== mision_20261021_114015.csv  (mision)
+   vuelo 29 s | batería 69% -> 50% | temp max 69 C
+   despegue: en el aire a 78 cm (estable, despegue 4.2 s)
+   altura en vuelo: min 40 cm, max 78 cm
+   vio tag 2 (Giro izquierda 90) a 242 cm
+   final: DONE — aterrizado (tag 2 perdido en el acercamiento)
+   problemas: tag perdido
+   VEREDICTO: REVISAR
+
+== mision_20261021_114143.csv  (mision)
+   vuelo 34 s | batería 48% -> 45% | temp max 79 C
+   despegue: en el aire a 74 cm (estable, despegue 4.9 s)
+   altura en vuelo: min 63 cm, max 81 cm
+   EJECUTÓ tag 2 (Giro izquierda 90) a 50 cm, lateral -1 cm
+   vio tag 2 (Giro izquierda 90) a 245 cm
+   final: DONE — aterrizado (PARO: teclado)
+   detenido a mano: PARO: teclado
+   VEREDICTO: OK hasta que se detuvo a mano
+
+== mision_20261021_120610.csv  (mision)
+   vuelo 24 s | batería 58% -> 45% | temp max 61 C
+   despegue: en el aire a 61 cm (estable, despegue 7.0 s)
+   altura en vuelo: min 61 cm, max 71 cm
+   vio tag 2 (Giro izquierda 90) a 238 cm
+   final: DONE — aterrizado (tag 2 perdido en el acercamiento)
+   problemas: tag perdido
+   VEREDICTO: REVISAR
+
+== mision_20261021_120657.csv  (mision)
+   vuelo 46 s | batería 37% -> 22% | temp max 73 C
+   despegue: en el aire a 68 cm (estable, despegue 6.5 s)
+   altura en vuelo: min 60 cm, max 76 cm
+   EJECUTÓ tag 2 (Giro izquierda 90) acercamiento incompleto (90 cm)
+   vio tag 2 (Giro izquierda 90) a 217 cm
+   final: DONE — aterrizado (sin tags al frente por 6 s: fin)
+   problemas: acercamiento incompleto (por tiempo)
+   VEREDICTO: OK
+
+== mision_20261021_122120.csv  (mision)
+   vuelo 24 s | batería 43% -> 31% | temp max 68 C
+   despegue: en el aire a 72 cm (estable, despegue 4.0 s)
+   altura en vuelo: min 63 cm, max 77 cm
+   vio tag 4 (Flip 360) a 162 cm
+   final: DONE — aterrizado (bloqueado por un tag al frente por 6 s: fin)
+   VEREDICTO: OK
+
+== mision_20261021_122206.csv  (mision)
+   NO DESPEGÓ: NO despega: bateria 24% >= 30%
+   batería 25.0%, temperatura 75.0 C
+   VEREDICTO: sin vuelo
+
+== mision_20261021_122417.csv  (mision)
+   vuelo 44 s | batería 98% -> 74% | temp max 77 C
+   despegue: en el aire a 71 cm (estable, despegue 4.7 s)
+   altura en vuelo: min 61 cm, max 78 cm
+   EJECUTÓ tag 2 (Giro izquierda 90) acercamiento incompleto (70 cm, lateral +7, angulo -0)
+   vio tag 2 (Giro izquierda 90) a 223 cm
+   final: DONE — aterrizado (sin tags al frente por 6 s: fin)
+   problemas: acercamiento incompleto (por tiempo)
+   VEREDICTO: OK
+
+== vuelo_20261021_125816.csv  (vuelo)
+   vuelo 21 s | batería 81% -> 72% | temp max 79 C
+   despegue: en el aire a 66 cm (estable, despegue 3.8 s)
+   altura en vuelo: min 0 cm, max 77 cm
+   flip a los 24.5 s: antes 68 cm, minimo despues 0.0 cm, a los 5 s 0.0 cm -> PELIGRO: quedo muy bajo
+   flip HECHO: inclinacion max 178 grados, altura min 0 cm, respuesta ninguna
+   final: DONE — aterrizado (fin de la prueba)
+   VEREDICTO: REVISAR
+
+== vuelo_20261021_125858.csv  (vuelo)
+   NO DESPEGÓ: NO despega: temperatura 82 C < 80 C
+   batería 72.0%, temperatura 83.0 C
+   VEREDICTO: sin vuelo
+
+== mision_20261021_130227.csv  (mision)
+   vuelo 22 s | batería 79% -> 69% | temp max 77 C
+   despegue: en el aire a 70 cm (estable, despegue 3.7 s)
+   altura en vuelo: min 56 cm, max 77 cm
+   vio tag 2 (Giro izquierda 90) a 189 cm
+   final: DONE — aterrizado (tag 2 perdido en el acercamiento)
+   problemas: tag perdido
+   VEREDICTO: REVISAR
+
+== mision_20261021_130344.csv  (mision)
+   NO DESPEGÓ: NO despega: temperatura 85 C < 80 C
+   batería 68.0%, temperatura 84.0 C
+   VEREDICTO: sin vuelo
+
+== mision_20261021_130812.csv  (mision)
+   vuelo 18 s | batería 93% -> 82% | temp max 71 C
+   despegue: en el aire a 70 cm (estable, despegue 6.0 s)
+   altura en vuelo: min 61 cm, max 75 cm
+   final: DONE — aterrizado (sin tags al frente por 6 s: fin)
+   VEREDICTO: OK
+
+== mision_20261021_130847.csv  (mision)
+   vuelo 38 s | batería 80% -> 72% | temp max 79 C
+   despegue: en el aire a 52 cm (estable, despegue 4.1 s)
+   altura en vuelo: min 23 cm, max 60 cm
+   flip a los 38.7 s: antes 53 cm, minimo despues 23.0 cm, a los 5 s 53.0 cm -> PELIGRO: quedo muy bajo
+   EJECUTÓ tag 4 (Flip 360) a 57 cm, lateral +0 cm, angulo -2
+   vio tag 4 (Flip 360) a 234 cm
+   final: DONE — aterrizado (PARO: q en el aire)
+   detenido a mano: PARO: q en el aire
+   VEREDICTO: REVISAR
+
+== vuelo_20261021_130951.csv  (vuelo)
+   NO DESPEGÓ: NO despega: temperatura 80 C < 80 C
+   batería 72.0%, temperatura 80.0 C
+   VEREDICTO: sin vuelo
+
+== mision_20261021_131908.csv  (mision)
+   vuelo 36 s | batería 85% -> 71% | temp max 80 C
+   despegue: en el aire a 73 cm (estable, despegue 4.0 s)
+   altura en vuelo: min 37 cm, max 75 cm
+   flip a los 26.9 s: antes 68 cm, minimo despues 37.0 cm, a los 5 s 60.0 cm -> OK
+   EJECUTÓ tag 4 (Flip 360) a 64 cm, lateral -5 cm, angulo -0
+   vio tag 4 (Flip 360) a 229 cm
+   final: DONE — aterrizado (PARO: q en el aire)
+   detenido a mano: PARO: q en el aire
+   VEREDICTO: OK hasta que se detuvo a mano
+

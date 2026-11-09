@@ -1,0 +1,154 @@
+Resumen de sesión — 2026-11-09 15:17 — 16 bitácoras
+
+== vuelo_20261026_104653.csv  (vuelo)
+   vuelo 28 s | batería 79% -> 66% | temp max 76 C
+   despegue: en el aire a 74 cm (estable, despegue 5.2 s)
+   altura en vuelo: min 66 cm, max 89 cm
+   final: DONE — aterrizado (fin de la prueba)
+   VEREDICTO: OK
+
+== espejo_20261026_104817.csv  (espejo)
+   vuelo 12 s | batería 65% -> 64% | temp max 82 C
+   final: DONE — aterrizado (no subio (7 cm en 10 s))
+   problemas: temperatura alta, no despegó bien
+   VEREDICTO: REVISAR
+
+== espejo_20261026_105010.csv  (espejo)
+   vuelo 31 s | batería 93% -> 78% | temp max 74 C
+   despegue: en el aire a 63 cm (estable, despegue 3.9 s)
+   altura en vuelo: min 62 cm, max 86 cm
+   final: DONE — aterrizado (sin tags debajo por 20 s: fin)
+   VEREDICTO: REVISAR
+
+== espejo_20261026_105051.csv  (espejo)
+   vuelo 44 s | batería 75% -> 62% | temp max 78 C
+   despegue: en el aire a 33 cm (estable, despegue 9.6 s)
+   altura en vuelo: min 32 cm, max 108 cm
+   EJECUTÓ tag 9 (Pausa 5 s) encima: adelante -0, lado +2 cm, giro -4
+   vio tag 9 (Pausa 5 s) debajo: adelante +10, lado +5 cm
+   final: DONE — aterrizado (obstaculo debajo: altura 82 cm (era 108))
+   problemas: obstáculo debajo
+   VEREDICTO: REVISAR
+
+== piso_20261026_120306.csv  (piso)
+   vuelo 25 s | batería 92% -> 78% | temp max 66 C
+   despegue: en el aire a 65 cm (estable, despegue 6.0 s)
+   altura en vuelo: min 35 cm, max 65 cm
+   final: DONE — aterrizado (aterrizaje sin confirmar (40 cm), reenviando land)
+   detenido a mano: PARO: teclado
+   VEREDICTO: OK hasta que se detuvo a mano
+
+== piso_20261026_120425.csv  (piso)
+   vuelo 12 s | batería 77% -> 77% | temp max 72 C
+   despegue: en el aire a 62 cm (estable, despegue 3.8 s)
+   altura en vuelo: min 33 cm, max 66 cm
+   final: DONE — aterrizado (obstaculo debajo: altura 33 cm (era 60))
+   problemas: obstáculo debajo
+   VEREDICTO: REVISAR
+
+== piso_20261026_120452.csv  (piso)
+   vuelo 37 s | batería 77% -> 65% | temp max 78 C
+   despegue: en el aire a 76 cm (estable, despegue 5.6 s)
+   altura en vuelo: min 36 cm, max 75 cm
+   EJECUTÓ tag 2 (Giro izquierda 90) (a ciegas 86 cm; al ultimo verlo: lado +1 cm, giro -2)
+   vio tag 2 (Giro izquierda 90) en el piso a 200 cm
+   vio tag 2 debajo de la imagen: 86 cm a ciegas
+   final: DONE — aterrizado (sin tags en el piso por 10 s: fin)
+   VEREDICTO: REVISAR
+
+== piso_20261026_120557.csv  (piso)
+   vuelo 27 s | batería 65% -> 64% | temp max 83 C
+   despegue: en el aire a 121 cm (estable, despegue 5.1 s)
+   altura en vuelo: min 53 cm, max 122 cm
+   vio tag 2 (Giro izquierda 90) en el piso a 206 cm
+   vio tag 2 debajo de la imagen: 136 cm a ciegas
+   final: DONE — aterrizado (PARO: teclado)
+   problemas: temperatura alta
+   detenido a mano: PARO: teclado
+   VEREDICTO: REVISAR
+
+== piso_20261026_121133.csv  (piso)
+   vuelo 44 s | batería 79% -> 62% | temp max 78 C
+   despegue: en el aire a 77 cm (estable, despegue 3.9 s)
+   altura en vuelo: min 46 cm, max 77 cm
+   EJECUTÓ tag 1 (Giro derecha 90) (a ciegas 122 cm; al ultimo verlo: lado -39 cm, giro -4)
+   vio tag 1 (Giro derecha 90) en el piso a 177 cm
+   vio tag 1 debajo de la imagen: 122 cm a ciegas
+   final: DONE — aterrizado (sin tags en el piso por 10 s: fin)
+   VEREDICTO: REVISAR
+
+== piso_20261026_121226.csv  (piso)
+   vuelo 56 s | batería 62% -> 51% | temp max 82 C
+   despegue: en el aire a 60 cm (estable, despegue 4.5 s)
+   altura en vuelo: min 43 cm, max 89 cm
+   EJECUTÓ tag 1 (Giro derecha 90) (a ciegas 112 cm; al ultimo verlo: lado +6 cm, giro +0)
+   EJECUTÓ tag 2 (Giro izquierda 90) (a ciegas 147 cm; al ultimo verlo: lado -13 cm, giro -12)
+   vio tag 1 (Giro derecha 90) en el piso a 183 cm
+   vio tag 1 debajo de la imagen: 112 cm a ciegas
+   vio tag 2 (Giro izquierda 90) en el piso a 203 cm
+   vio tag 2 debajo de la imagen: 147 cm a ciegas
+   final: DONE — aterrizado (PARO: teclado)
+   detenido a mano: PARO: teclado
+   VEREDICTO: OK hasta que se detuvo a mano
+
+== piso_20261026_121757.csv  (piso)
+   vuelo 23 s | batería 60% -> 46% | temp max 81 C
+   despegue: en el aire a 75 cm (estable, despegue 4.0 s)
+   altura en vuelo: min 34 cm, max 75 cm
+   final: DONE — aterrizado (obstaculo debajo: altura 34 cm (era 60))
+   problemas: obstáculo debajo
+   VEREDICTO: REVISAR
+
+== piso_20261026_122001.csv  (piso)
+   vuelo 20 s | batería 97% -> 85% | temp max 75 C
+   despegue: en el aire a 55 cm (estable, despegue 5.5 s)
+   altura en vuelo: min 27 cm, max 83 cm
+   final: DONE — aterrizado (obstaculo debajo: altura 27 cm (era 56))
+   problemas: obstáculo debajo
+   VEREDICTO: REVISAR
+
+== piso_20261026_122039.csv  (piso)
+   vuelo 58 s | batería 85% -> 78% | temp max 82 C
+   despegue: en el aire a 72 cm (estable, despegue 3.9 s)
+   altura en vuelo: min 0 cm, max 130 cm
+   flip a los 46.5 s: antes 123 cm, minimo despues 0.0 cm, a los 5 s 14.0 cm -> PELIGRO: quedo muy bajo
+   EJECUTÓ tag 1 (Giro derecha 90) (a ciegas 132 cm; al ultimo verlo: lado +10 cm, giro +2)
+   EJECUTÓ tag 4 (Flip 360) (a ciegas 138 cm; al ultimo verlo: lado +1 cm, giro +3)
+   vio tag 1 (Giro derecha 90) en el piso a 199 cm
+   vio tag 1 debajo de la imagen: 132 cm a ciegas
+   vio tag 4 (Flip 360) en el piso a 198 cm
+   vio tag 4 debajo de la imagen: 138 cm a ciegas
+   final: DONE — aterrizado (PARO: teclado)
+   detenido a mano: PARO: teclado
+   VEREDICTO: REVISAR
+
+== piso_20261026_122156.csv  (piso)
+   vuelo 9 s | batería 78% -> 78% | temp max 80 C
+   final: DONE — aterrizado (PARO: teclado)
+   detenido a mano: PARO: teclado
+   VEREDICTO: OK hasta que se detuvo a mano
+
+== piso_20261026_122240.csv  (piso)
+   vuelo 9 s | batería 78% -> 78% | temp max 80 C
+   final: DONE — aterrizado (PARO: teclado)
+   detenido a mano: PARO: teclado
+   VEREDICTO: OK hasta que se detuvo a mano
+
+== piso_20261026_122305.csv  (piso)
+   vuelo 52 s | batería 78% -> 73% | temp max 83 C
+   despegue: en el aire a 90 cm (estable, despegue 4.1 s)
+   altura en vuelo: min 0 cm, max 129 cm
+   flip a los 69.7 s: antes 126 cm, minimo despues 0.0 cm, a los 5 s 0.0 cm -> PELIGRO: quedo muy bajo
+   EJECUTÓ tag 1 (Giro derecha 90) (a ciegas 161 cm; al ultimo verlo: lado -15 cm, giro +5)
+   EJECUTÓ tag 4 (Flip 360) (a ciegas 137 cm; al ultimo verlo: lado -60 cm, giro +0)
+   vio tag 1 (Giro derecha 90) en el piso a 192 cm
+   vio tag 1 debajo de la imagen: 161 cm a ciegas
+   vio tag 4 (Flip 360) en el piso a 190 cm
+   vio tag 4 debajo de la imagen: 137 cm a ciegas
+   final: DONE — aterrizado (dron en el piso sin pedirlo)
+   problemas: temperatura alta, en el piso sin pedirlo
+   VEREDICTO: REVISAR
+
+== enlace (test_tags.py)
+   resumen_20261026_104259.txt: enlace: 1503 frames en 50 s | intervalo mediano 33 ms | > 100 ms: 0 (0.0/min) | > 300 ms: 0 | maximo 88 ms
+

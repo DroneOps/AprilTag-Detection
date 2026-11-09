@@ -1,0 +1,3 @@
+fuente: tello   frames: 5574   detección media: 7.2 ms
+  ID  9 (Pausa 5 s): 1883 frames (34 %)
+  IDs fuera de lista blanca (posibles falsos positivos): {29: 4}

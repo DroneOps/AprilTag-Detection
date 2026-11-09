@@ -248,7 +248,15 @@ Imprime un **VEREDICTO** por cada vuelo de hoy y lo guarda en
 - la tabla de calibración de `rc` y las líneas del enlace.
 
 Anota también lo que las bitácoras no ven: si tocó la red, si se movió raro, si algún paro
-fue a mano y por qué. Luego agrega la sesión a [`bitacora.md`](bitacora.md).
+fue a mano y por qué. **Súbelo al repo** (también en cada pausa, no solo al final):
+
+```bash
+python scripts/guardar_sesion.py --notas "qué se probó, qué salió y qué se vio"
+```
+
+Luego haz commit y push de `sesiones/`. Al cerrar el día, agrega una entrada a
+[`bitacora.md`](bitacora.md). Para ver un vuelo estado por estado:
+`python scripts/traza_vuelo.py logs/<archivo>.csv`.
 
 ## Reglas rápidas
 

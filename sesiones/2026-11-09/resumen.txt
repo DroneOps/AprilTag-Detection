@@ -1,0 +1,67 @@
+Resumen de sesión — 2026-11-09 15:17 — 9 bitácoras
+
+== vuelo_20261109_140758.csv  (vuelo)
+   NO DESPEGÓ: NO despega: bateria 17% >= 30%; temperatura 93 C < 80 C
+   batería 17.0%, temperatura 81.0 C
+   VEREDICTO: sin vuelo
+
+== vuelo_20261109_141057.csv  (vuelo)
+   vuelo 27 s | batería 84% -> 71% | temp max 76 C
+   despegue: en el aire a 65 cm (estable, ok del Tello, despegue 7.0 s)
+   altura en vuelo: min 63 cm, max 79 cm
+   final: DONE — aterrizado (fin de la prueba)
+   VEREDICTO: OK
+
+== espejo_20261109_141556.csv  (espejo)
+   vuelo 15 s | batería 79% -> 74% | temp max 72 C
+   despegue: en el aire a 73 cm (estable, ok del Tello, despegue 4.1 s)
+   altura en vuelo: min 67 cm, max 102 cm
+   final: DONE — aterrizado (PARO: q en el aire)
+   detenido a mano: PARO: q en el aire
+   VEREDICTO: OK hasta que se detuvo a mano
+
+== espejo_20261109_141631.csv  (espejo)
+   vuelo 50 s | batería 74% -> 56% | temp max 78 C
+   despegue: en el aire a 74 cm (estable, sin ok, despegue 7.1 s)
+   altura en vuelo: min 71 cm, max 111 cm
+   EJECUTÓ tag 9 (Pausa 5 s) encima: adelante +2, lado +0 cm, giro -2
+   vio tag 9 (Pausa 5 s) debajo: adelante +7, lado +2 cm
+   final: DONE — aterrizado (sin tags debajo por 20 s: fin)
+   VEREDICTO: REVISAR
+
+== espejo_20261109_142046.csv  (espejo)
+   vuelo 29 s | batería 63% -> 52% | temp max 78 C
+   despegue: en el aire a 74 cm (estable, ok del Tello, despegue 7.8 s)
+   altura en vuelo: min 66 cm, max 113 cm
+   final: DONE — aterrizado (sin tags debajo por 12 s: fin)
+   VEREDICTO: REVISAR
+
+== espejo_20261109_142127.csv  (espejo)
+   vuelo 16 s | batería 51% -> 51% | temp max 82 C
+   despegue: en el aire a 141 cm (sin estabilizar, ok del Tello, despegue 10.0 s)
+   altura en vuelo: min 43 cm, max 141 cm
+   final: DONE — aterrizado (el dron no obedece: pide subir y baja (-16 cm en 0.7 s); revisar IMU y helices)
+   problemas: temperatura alta
+   VEREDICTO: REVISAR
+
+== espejo_20261109_142209.csv  (espejo)
+   vuelo 12 s | batería 51% -> 49% | temp max 81 C
+   final: DONE — aterrizado (PARO: q en el aire)
+   detenido a mano: PARO: q en el aire
+   VEREDICTO: OK hasta que se detuvo a mano
+
+== espejo_20261109_142950.csv  (espejo)
+   vuelo 9 s | batería 58% -> 52% | temp max 63 C
+   final: DONE — aterrizado (PARO: q en el aire)
+   detenido a mano: PARO: q en el aire
+   VEREDICTO: OK hasta que se detuvo a mano
+
+== espejo_20261109_143017.csv  (espejo)
+   vuelo 4 s | batería 48% -> 48% | temp max 70 C
+   final: KILLED — motores apagados por el usuario
+   detenido a mano: PARO: teclado
+   VEREDICTO: REVISAR
+
+== enlace (test_tags.py)
+   resumen_20261109_140404.txt: enlace: 1669 frames en 56 s | intervalo mediano 32 ms | > 100 ms: 2 (2.1/min) | > 300 ms: 0 | maximo 131 ms
+

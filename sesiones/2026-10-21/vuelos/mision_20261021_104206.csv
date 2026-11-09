@@ -1,0 +1,1168 @@
+t,state,bat,h,tof,yaw,pitch,roll,temph,rc_lr,rc_fb,rc_ud,rc_yaw,state_age,video_age,reason
+0.001,IDLE,90,0,10,0,0,0,46,0,0,0,0,0.00,inf,esperando despegue (t)
+0.051,IDLE,90,0,10,0,0,0,46,0,0,0,0,0.00,inf,esperando despegue (t)
+0.101,IDLE,90,0,10,0,0,0,46,0,0,0,0,0.05,inf,esperando despegue (t)
+0.151,IDLE,90,0,10,0,0,0,46,0,0,0,0,0.00,inf,esperando despegue (t)
+0.201,IDLE,90,0,10,0,0,0,46,0,0,0,0,0.05,0.02,esperando despegue (t)
+0.252,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.00,0.02,esperando despegue (t)
+0.302,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.05,0.01,esperando despegue (t)
+0.352,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.01,0.02,esperando despegue (t)
+0.402,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.06,0.01,esperando despegue (t)
+0.452,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.00,0.02,esperando despegue (t)
+0.503,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.05,0.01,esperando despegue (t)
+0.553,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.03,0.01,esperando despegue (t)
+0.603,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.08,0.01,esperando despegue (t)
+0.653,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.04,0.01,esperando despegue (t)
+0.703,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.09,0.01,esperando despegue (t)
+0.753,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.02,0.03,esperando despegue (t)
+0.804,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.07,0.02,esperando despegue (t)
+0.854,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.01,0.01,esperando despegue (t)
+0.904,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.06,0.01,esperando despegue (t)
+0.954,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.01,0.01,esperando despegue (t)
+1.004,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.06,0.01,esperando despegue (t)
+1.055,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.01,0.01,esperando despegue (t)
+1.105,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.06,0.01,esperando despegue (t)
+1.155,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.01,0.01,esperando despegue (t)
+1.206,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.03,0.01,esperando despegue (t)
+1.256,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.08,0.01,esperando despegue (t)
+1.306,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.03,0.01,esperando despegue (t)
+1.356,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.08,0.01,esperando despegue (t)
+1.406,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.03,0.01,esperando despegue (t)
+1.456,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.08,0.01,esperando despegue (t)
+1.506,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.00,0.01,esperando despegue (t)
+1.557,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.05,0.01,esperando despegue (t)
+1.607,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.00,0.01,esperando despegue (t)
+1.657,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.05,0.01,esperando despegue (t)
+1.707,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.00,0.01,esperando despegue (t)
+1.757,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.05,0.03,esperando despegue (t)
+1.807,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.00,0.01,esperando despegue (t)
+1.857,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.05,0.01,esperando despegue (t)
+1.908,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.00,0.02,esperando despegue (t)
+1.958,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.05,0.02,esperando despegue (t)
+2.008,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.00,0.01,esperando despegue (t)
+2.058,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.05,0.01,esperando despegue (t)
+2.108,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.00,0.01,esperando despegue (t)
+2.158,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.05,0.01,esperando despegue (t)
+2.208,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.00,0.02,esperando despegue (t)
+2.259,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.05,0.01,esperando despegue (t)
+2.309,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.00,0.01,esperando despegue (t)
+2.359,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.05,0.01,esperando despegue (t)
+2.409,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.00,0.01,esperando despegue (t)
+2.459,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.05,0.01,esperando despegue (t)
+2.509,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.00,0.01,esperando despegue (t)
+2.560,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.05,0.01,esperando despegue (t)
+2.610,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.00,0.01,esperando despegue (t)
+2.660,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.05,0.01,esperando despegue (t)
+2.710,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.10,0.01,esperando despegue (t)
+2.765,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.04,0.01,esperando despegue (t)
+2.815,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.00,0.01,esperando despegue (t)
+2.867,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.05,0.01,esperando despegue (t)
+2.917,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.00,0.01,esperando despegue (t)
+2.969,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.05,0.01,esperando despegue (t)
+3.020,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.00,0.01,esperando despegue (t)
+3.071,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.05,0.01,esperando despegue (t)
+3.121,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.00,0.01,esperando despegue (t)
+3.171,IDLE,90,0,10,0,0,0,47,0,0,0,0,0.05,0.01,esperando despegue (t)
+3.221,IDLE,90,0,10,0,0,0,48,0,0,0,0,0.00,0.01,esperando despegue (t)
+3.271,IDLE,90,0,10,0,0,0,48,0,0,0,0,0.05,0.01,esperando despegue (t)
+3.321,TAKEOFF,90,0,10,0,0,0,48,0,0,0,0,0.00,0.01,despegando
+3.371,TAKEOFF,90,0,10,0,0,0,48,0,0,0,0,0.05,0.02,despegando
+3.422,TAKEOFF,90,0,10,0,0,0,48,0,0,0,0,0.00,0.01,despegando
+3.475,TAKEOFF,90,0,10,0,0,0,48,0,0,0,0,0.05,0.02,despegando
+3.525,TAKEOFF,90,0,10,0,0,0,48,0,0,0,0,0.00,0.01,despegando
+3.578,TAKEOFF,90,0,10,0,0,0,48,0,0,0,0,0.05,0.01,despegando
+3.628,TAKEOFF,90,0,10,0,0,0,48,0,0,0,0,0.00,0.01,despegando
+3.678,TAKEOFF,90,0,10,1,0,0,48,0,0,0,0,0.00,0.01,despegando
+3.728,TAKEOFF,90,0,10,1,0,0,48,0,0,0,0,0.05,0.01,despegando
+3.779,TAKEOFF,90,0,10,1,0,0,48,0,0,0,0,0.00,0.03,despegando
+3.829,TAKEOFF,90,0,10,1,0,0,48,0,0,0,0,0.05,0.02,despegando
+3.880,TAKEOFF,90,0,10,1,0,0,48,0,0,0,0,0.10,0.01,despegando
+3.930,TAKEOFF,90,0,10,2,0,0,48,0,0,0,0,0.02,0.02,despegando
+3.981,TAKEOFF,90,0,10,2,0,0,48,0,0,0,0,0.07,0.02,despegando
+4.031,TAKEOFF,90,0,10,2,0,1,48,0,0,0,0,0.01,0.01,despegando
+4.082,TAKEOFF,90,0,10,2,0,1,48,0,0,0,0,0.07,0.02,despegando
+4.132,TAKEOFF,90,0,10,2,0,0,48,0,0,0,0,0.04,0.01,despegando
+4.182,TAKEOFF,90,0,10,2,0,0,48,0,0,0,0,0.09,0.02,despegando
+4.232,TAKEOFF,90,0,13,2,1,0,48,0,0,0,0,0.04,0.02,despegando
+4.283,TAKEOFF,90,0,13,2,1,0,48,0,0,0,0,0.09,0.01,despegando
+4.333,TAKEOFF,90,10,21,2,1,0,48,0,0,0,0,0.04,0.02,despegando
+4.383,TAKEOFF,90,10,21,2,1,0,48,0,0,0,0,0.09,0.02,despegando
+4.433,TAKEOFF,90,10,28,2,0,0,48,0,0,0,0,0.01,0.02,despegando
+4.483,TAKEOFF,90,10,28,2,0,0,48,0,0,0,0,0.06,0.01,despegando
+4.533,TAKEOFF,90,20,37,2,0,0,48,0,0,0,0,0.04,0.02,despegando
+4.584,TAKEOFF,90,20,37,2,0,0,48,0,0,0,0,0.09,0.02,despegando
+4.634,TAKEOFF,90,30,46,2,0,0,48,0,0,0,0,0.04,0.02,despegando
+4.684,TAKEOFF,90,30,46,2,0,0,48,0,0,0,0,0.09,0.02,despegando
+4.734,TAKEOFF,90,30,53,2,0,-1,48,0,0,0,0,0.02,0.04,despegando
+4.784,TAKEOFF,90,30,53,2,0,-1,48,0,0,0,0,0.07,0.02,despegando
+4.834,TAKEOFF,90,40,61,2,1,-3,48,0,0,0,0,0.02,0.02,despegando
+4.885,TAKEOFF,90,40,61,2,1,-3,48,0,0,0,0,0.07,0.02,despegando
+4.935,TAKEOFF,90,40,67,2,0,-1,48,0,0,0,0,0.01,0.02,despegando
+4.985,TAKEOFF,90,40,67,2,0,-1,48,0,0,0,0,0.06,0.02,despegando
+5.035,TAKEOFF,90,50,71,2,0,0,48,0,0,0,0,0.00,0.02,despegando
+5.085,TAKEOFF,90,50,71,2,0,0,48,0,0,0,0,0.05,0.02,despegando
+5.136,TAKEOFF,90,50,74,2,0,0,48,0,0,0,0,0.02,0.02,despegando
+5.186,TAKEOFF,90,50,74,2,0,0,48,0,0,0,0,0.07,0.02,despegando
+5.237,TAKEOFF,90,50,77,2,0,0,49,0,0,0,0,0.01,0.02,despegando
+5.287,TAKEOFF,90,50,77,2,0,0,49,0,0,0,0,0.06,0.02,despegando
+5.338,TAKEOFF,90,50,80,2,0,0,49,0,0,0,0,0.00,0.02,despegando
+5.389,TAKEOFF,90,50,80,2,0,0,49,0,0,0,0,0.05,0.02,despegando
+5.439,TAKEOFF,90,50,81,2,0,0,49,0,0,0,0,0.02,0.02,despegando
+5.489,TAKEOFF,90,50,81,2,0,0,49,0,0,0,0,0.07,0.02,despegando
+5.539,TAKEOFF,90,60,83,2,0,-1,49,0,0,0,0,0.01,0.02,despegando
+5.589,TAKEOFF,90,60,83,2,0,-1,49,0,0,0,0,0.06,0.02,despegando
+5.639,TAKEOFF,90,60,84,2,0,0,49,0,0,0,0,0.02,0.02,despegando
+5.690,TAKEOFF,90,60,84,2,0,0,49,0,0,0,0,0.07,0.02,despegando
+5.740,TAKEOFF,90,60,85,2,0,0,49,0,0,0,0,0.01,0.02,despegando
+5.790,TAKEOFF,90,60,85,2,0,0,49,0,0,0,0,0.06,0.02,despegando
+5.841,TAKEOFF,90,60,86,2,0,0,49,0,0,0,0,0.00,0.02,despegando
+5.891,TAKEOFF,90,60,86,2,0,0,49,0,0,0,0,0.05,0.02,despegando
+5.941,TAKEOFF,90,60,88,2,0,0,49,0,0,0,0,0.00,0.02,despegando
+5.991,TAKEOFF,90,60,88,2,0,0,49,0,0,0,0,0.05,0.02,despegando
+6.041,TAKEOFF,90,60,90,2,0,1,49,0,0,0,0,0.02,0.02,despegando
+6.091,TAKEOFF,90,60,90,2,0,1,49,0,0,0,0,0.07,0.02,despegando
+6.141,TAKEOFF,90,60,89,2,0,0,49,0,0,0,0,0.01,0.02,despegando
+6.192,TAKEOFF,90,60,89,2,0,0,49,0,0,0,0,0.00,0.02,despegando
+6.242,TAKEOFF,90,60,89,2,0,0,49,0,0,0,0,0.05,0.02,despegando
+6.292,TAKEOFF,90,60,90,2,0,0,49,0,0,0,0,0.00,0.02,despegando
+6.342,TAKEOFF,90,60,90,2,0,0,49,0,0,0,0,0.05,0.02,despegando
+6.392,TAKEOFF,90,60,90,2,0,0,49,0,0,0,0,0.00,0.02,despegando
+6.442,TAKEOFF,90,60,90,2,0,0,49,0,0,0,0,0.05,0.02,despegando
+6.493,TAKEOFF,90,60,90,2,0,0,49,0,0,0,0,0.01,0.02,despegando
+6.543,TAKEOFF,90,60,90,2,0,0,49,0,0,0,0,0.06,0.02,despegando
+6.593,TAKEOFF,90,60,90,2,0,0,49,0,0,0,0,0.00,0.02,despegando
+6.643,TAKEOFF,90,60,90,2,0,0,49,0,0,0,0,0.05,0.02,despegando
+6.693,TAKEOFF,90,60,92,2,0,0,49,0,0,0,0,0.00,0.02,despegando
+6.743,TAKEOFF,90,60,92,2,0,0,49,0,0,0,0,0.05,0.04,despegando
+6.794,TAKEOFF,90,60,91,2,0,0,49,0,0,0,0,0.00,0.02,despegando
+6.844,TAKEOFF,90,60,91,2,0,0,49,0,0,0,0,0.05,0.02,despegando
+6.894,TAKEOFF,90,60,91,2,0,0,49,0,0,0,0,0.10,0.02,despegando
+6.944,TAKEOFF,90,60,91,2,0,0,49,0,0,0,0,0.02,0.02,despegando
+6.994,TAKEOFF,90,70,91,2,0,0,49,0,0,0,0,0.00,0.02,despegando
+7.044,TAKEOFF,90,70,91,2,0,0,49,0,0,0,0,0.05,0.02,despegando
+7.094,TAKEOFF,90,70,91,2,0,0,49,0,0,0,0,0.10,0.02,despegando
+7.145,TAKEOFF,90,70,91,2,0,0,49,0,0,0,0,0.03,0.02,despegando
+7.195,TAKEOFF,90,70,91,2,0,0,49,0,0,0,0,0.08,0.01,despegando
+7.245,TAKEOFF,90,60,90,2,0,0,51,0,0,0,0,0.02,0.02,despegando
+7.295,TAKEOFF,90,60,90,2,0,0,51,0,0,0,0,0.07,0.02,despegando
+7.345,TAKEOFF,90,60,88,2,0,0,51,0,0,0,0,0.01,0.02,despegando
+7.395,TAKEOFF,90,60,88,2,0,0,51,0,0,0,0,0.06,0.02,despegando
+7.446,TAKEOFF,90,60,89,2,0,0,51,0,0,0,0,0.03,0.02,despegando
+7.496,TAKEOFF,90,60,89,2,0,0,51,0,0,0,0,0.08,0.02,despegando
+7.546,TAKEOFF,90,60,88,2,0,0,51,0,0,0,0,0.02,0.02,despegando
+7.596,TAKEOFF,90,60,88,2,0,0,51,0,0,0,0,0.07,0.02,despegando
+7.646,TAKEOFF,90,60,89,2,0,0,51,0,0,0,0,0.01,0.02,despegando
+7.696,TAKEOFF,90,60,89,2,0,0,51,0,0,0,0,0.06,0.02,despegando
+7.747,TAKEOFF,90,60,88,2,0,0,51,0,0,0,0,0.03,0.04,despegando
+7.797,TAKEOFF,90,60,88,2,0,0,51,0,0,0,0,0.08,0.02,despegando
+7.847,TAKEOFF,90,60,87,2,0,0,51,0,0,0,0,0.03,0.02,despegando
+7.897,TAKEOFF,90,60,87,2,0,0,51,0,0,0,0,0.08,0.02,despegando
+7.947,TAKEOFF,90,60,86,2,0,0,51,0,0,0,0,0.00,0.02,despegando
+7.997,TAKEOFF,90,60,86,2,0,0,51,0,0,0,0,0.05,0.02,despegando
+8.047,TAKEOFF,90,60,85,2,0,0,51,0,0,0,0,0.03,0.02,despegando
+8.097,TAKEOFF,90,60,85,2,0,0,51,0,0,0,0,0.08,0.02,despegando
+8.148,TAKEOFF,90,60,84,2,0,0,51,0,0,0,0,0.02,0.02,despegando
+8.198,TAKEOFF,90,60,84,2,0,0,51,0,0,0,0,0.07,0.02,despegando
+8.248,TAKEOFF,90,60,84,2,0,0,50,0,0,0,0,0.00,0.02,despegando
+8.298,TAKEOFF,90,60,84,2,0,0,50,0,0,0,0,0.05,0.02,despegando
+8.348,TAKEOFF,90,60,82,2,0,0,50,0,0,0,0,0.03,0.02,despegando
+8.399,TAKEOFF,90,60,82,2,0,0,50,0,0,0,0,0.08,0.01,despegando
+8.449,TAKEOFF,90,60,82,2,0,0,50,0,0,0,0,0.03,0.01,despegando
+8.499,TAKEOFF,90,60,82,2,0,0,50,0,0,0,0,0.08,0.02,despegando
+8.549,TAKEOFF,89,60,82,2,0,0,50,0,0,0,0,0.02,0.02,despegando
+8.599,TAKEOFF,89,60,82,2,0,0,50,0,0,0,0,0.07,0.02,despegando
+8.649,TAKEOFF,89,60,81,2,0,0,50,0,0,0,0,0.00,0.02,despegando
+8.700,TAKEOFF,89,60,80,2,0,0,50,0,0,0,0,0.01,0.02,despegando
+8.750,TAKEOFF,89,60,80,2,0,0,50,0,0,0,0,0.06,0.02,despegando
+8.801,TAKEOFF,89,60,80,2,0,0,50,0,0,0,0,0.00,0.02,despegando
+8.851,TAKEOFF,89,60,80,2,0,0,50,0,0,0,0,0.05,0.02,despegando
+8.901,TAKEOFF,89,60,80,2,0,0,50,0,0,0,0,0.02,0.02,despegando
+8.951,TAKEOFF,89,60,80,2,0,0,50,0,0,0,0,0.07,0.02,despegando
+9.001,TAKEOFF,89,60,80,2,0,0,50,0,0,0,0,0.01,0.02,despegando
+9.051,TAKEOFF,89,60,80,2,0,0,50,0,0,0,0,0.06,0.02,despegando
+9.106,TAKEOFF,89,60,79,2,0,0,50,0,0,0,0,0.00,0.02,despegando
+9.156,TAKEOFF,89,60,79,2,0,0,50,0,0,0,0,0.05,0.02,despegando
+9.207,TAKEOFF,89,60,79,2,0,0,52,0,0,0,0,0.02,0.02,despegando
+9.257,HOVER,89,60,79,2,0,0,52,0,0,0,0,0.07,0.02,"en el aire a 60 cm (estable, despegue 5.9 s)"
+9.307,HOVER,89,60,79,2,0,0,52,0,0,0,0,0.01,0.02,"en el aire a 60 cm (estable, despegue 5.9 s)"
+9.357,HOVER,89,60,79,2,0,0,52,0,0,0,0,0.06,0.02,"en el aire a 60 cm (estable, despegue 5.9 s)"
+9.407,HOVER,89,60,79,2,0,0,52,0,0,0,0,0.00,0.02,"en el aire a 60 cm (estable, despegue 5.9 s)"
+9.457,HOVER,89,60,79,2,0,0,52,0,0,0,0,0.05,0.02,"en el aire a 60 cm (estable, despegue 5.9 s)"
+9.508,HOVER,89,60,79,2,0,0,52,0,0,0,0,0.00,0.02,"en el aire a 60 cm (estable, despegue 5.9 s)"
+9.558,HOVER,89,60,79,2,0,0,52,0,0,0,0,0.05,0.02,"en el aire a 60 cm (estable, despegue 5.9 s)"
+9.609,HOVER,89,60,79,2,0,0,52,0,0,0,0,0.01,0.02,"en el aire a 60 cm (estable, despegue 5.9 s)"
+9.659,HOVER,89,60,79,2,0,0,52,0,0,0,0,0.06,0.02,"en el aire a 60 cm (estable, despegue 5.9 s)"
+9.709,HOVER,89,60,79,2,0,1,52,0,0,0,0,0.00,0.02,"en el aire a 60 cm (estable, despegue 5.9 s)"
+9.759,HOVER,89,60,79,2,0,1,52,0,0,0,0,0.05,0.04,"en el aire a 60 cm (estable, despegue 5.9 s)"
+9.810,HOVER,89,60,79,2,0,1,52,0,0,0,0,0.00,0.02,"en el aire a 60 cm (estable, despegue 5.9 s)"
+9.860,HOVER,89,60,79,2,0,1,52,0,0,0,0,0.05,0.02,"en el aire a 60 cm (estable, despegue 5.9 s)"
+9.910,HOVER,89,60,79,2,0,1,52,0,0,0,0,0.00,0.02,"en el aire a 60 cm (estable, despegue 5.9 s)"
+9.960,HOVER,89,60,79,2,0,1,52,0,0,0,0,0.05,0.02,"en el aire a 60 cm (estable, despegue 5.9 s)"
+10.010,HOVER,89,60,79,2,0,0,52,0,0,0,0,0.00,0.02,"en el aire a 60 cm (estable, despegue 5.9 s)"
+10.060,HOVER,89,60,79,2,0,0,52,0,0,0,0,0.05,0.02,"en el aire a 60 cm (estable, despegue 5.9 s)"
+10.111,HOVER,89,60,79,2,-1,0,52,0,0,0,0,0.00,0.02,"en el aire a 60 cm (estable, despegue 5.9 s)"
+10.161,HOVER,89,60,79,2,-1,0,52,0,0,0,0,0.05,0.02,"en el aire a 60 cm (estable, despegue 5.9 s)"
+10.211,HOVER,89,60,78,2,-1,0,51,0,0,0,0,0.00,0.02,"en el aire a 60 cm (estable, despegue 5.9 s)"
+10.261,HOVER,89,60,78,2,-1,0,51,0,0,0,0,0.05,0.02,"en el aire a 60 cm (estable, despegue 5.9 s)"
+10.311,HOVER,89,60,80,2,-1,0,51,0,0,0,0,0.00,0.02,"en el aire a 60 cm (estable, despegue 5.9 s)"
+10.361,HOVER,89,60,80,2,-1,0,51,0,0,0,0,0.05,0.02,"en el aire a 60 cm (estable, despegue 5.9 s)"
+10.411,HOVER,89,60,79,2,0,0,51,0,0,0,0,0.00,0.02,"en el aire a 60 cm (estable, despegue 5.9 s)"
+10.461,HOVER,89,60,79,2,0,0,51,0,0,0,0,0.05,0.02,"en el aire a 60 cm (estable, despegue 5.9 s)"
+10.512,HOVER,88,60,80,2,0,0,51,0,0,0,0,0.00,0.02,"en el aire a 60 cm (estable, despegue 5.9 s)"
+10.562,HOVER,88,60,80,2,0,0,51,0,0,0,0,0.05,0.02,"en el aire a 60 cm (estable, despegue 5.9 s)"
+10.612,HOVER,88,60,80,2,0,0,51,0,0,0,0,0.10,0.02,"en el aire a 60 cm (estable, despegue 5.9 s)"
+10.662,HOVER,88,60,81,2,0,0,51,0,0,0,0,0.03,0.02,"en el aire a 60 cm (estable, despegue 5.9 s)"
+10.712,HOVER,88,60,81,2,0,0,51,0,0,0,0,0.08,0.02,"en el aire a 60 cm (estable, despegue 5.9 s)"
+10.762,HOVER,88,60,80,2,-1,0,51,0,0,0,0,0.03,0.06,"en el aire a 60 cm (estable, despegue 5.9 s)"
+10.813,HOVER,88,60,80,2,-1,0,51,0,0,0,0,0.09,0.02,"en el aire a 60 cm (estable, despegue 5.9 s)"
+10.863,HOVER,88,60,82,2,-1,0,51,0,0,0,0,0.04,0.02,"en el aire a 60 cm (estable, despegue 5.9 s)"
+10.913,HOVER,88,60,82,2,-1,0,51,0,0,0,0,0.09,0.02,"en el aire a 60 cm (estable, despegue 5.9 s)"
+10.963,HOVER,88,60,81,2,0,0,51,0,0,0,0,0.02,0.02,"en el aire a 60 cm (estable, despegue 5.9 s)"
+11.013,HOVER,88,60,81,2,0,0,51,0,0,0,0,0.07,0.02,"en el aire a 60 cm (estable, despegue 5.9 s)"
+11.063,HOVER,88,60,82,2,0,0,51,0,0,0,0,0.01,0.02,"en el aire a 60 cm (estable, despegue 5.9 s)"
+11.114,HOVER,88,60,82,2,0,0,51,0,0,0,0,0.06,0.02,"en el aire a 60 cm (estable, despegue 5.9 s)"
+11.164,HOVER,88,60,82,2,0,0,51,0,0,0,0,0.04,0.02,"en el aire a 60 cm (estable, despegue 5.9 s)"
+11.214,HOVER,88,60,82,2,0,0,51,0,0,0,0,0.09,0.02,"en el aire a 60 cm (estable, despegue 5.9 s)"
+11.264,ADVANCE,88,60,82,2,0,0,51,0,0,0,0,0.01,0.02,"avanzando, buscando tag"
+11.314,APPROACH,88,60,82,2,0,0,51,0,0,0,0,0.06,0.02,tag 9 (Pausa 5 s) a 237 cm
+11.364,APPROACH,88,60,82,2,0,0,51,0,20,0,0,0.01,0.01,tag 9 (Pausa 5 s) a 237 cm
+11.414,APPROACH,88,60,82,2,0,0,51,0,20,0,0,0.06,0.03,tag 9 (Pausa 5 s) a 237 cm
+11.465,APPROACH,88,60,81,2,0,0,51,0,20,0,0,0.02,0.02,tag 9 (Pausa 5 s) a 237 cm
+11.515,APPROACH,88,60,81,2,0,0,51,0,20,0,0,0.07,0.02,tag 9 (Pausa 5 s) a 237 cm
+11.565,APPROACH,88,60,82,2,0,1,51,0,20,0,0,0.01,0.02,tag 9 (Pausa 5 s) a 237 cm
+11.615,APPROACH,88,60,82,2,0,1,51,0,20,0,0,0.06,0.02,tag 9 (Pausa 5 s) a 237 cm
+11.665,APPROACH,88,60,82,2,0,1,51,0,20,0,0,0.00,0.02,tag 9 (Pausa 5 s) a 237 cm
+11.715,APPROACH,88,60,82,2,0,1,51,0,20,0,0,0.05,0.02,tag 9 (Pausa 5 s) a 237 cm
+11.767,APPROACH,88,60,81,2,0,1,51,0,20,0,0,0.03,0.02,tag 9 (Pausa 5 s) a 237 cm
+11.817,APPROACH,88,60,81,2,0,1,51,0,20,0,0,0.08,0.02,tag 9 (Pausa 5 s) a 237 cm
+11.871,APPROACH,88,60,80,2,-1,0,51,0,20,0,0,0.02,0.02,tag 9 (Pausa 5 s) a 237 cm
+11.921,APPROACH,88,60,80,2,-1,0,51,0,20,0,0,0.07,0.02,tag 9 (Pausa 5 s) a 237 cm
+11.971,APPROACH,88,60,80,2,-1,0,51,0,20,0,0,0.00,0.02,tag 9 (Pausa 5 s) a 237 cm
+12.021,APPROACH,88,60,80,2,-1,0,51,0,20,0,0,0.05,0.02,tag 9 (Pausa 5 s) a 237 cm
+12.073,APPROACH,88,60,81,2,-1,0,51,0,20,0,0,0.03,0.02,tag 9 (Pausa 5 s) a 237 cm
+12.123,APPROACH,88,60,81,2,-1,0,51,0,20,0,0,0.08,0.02,tag 9 (Pausa 5 s) a 237 cm
+12.173,APPROACH,88,60,80,2,-1,0,51,0,20,0,0,0.02,0.02,tag 9 (Pausa 5 s) a 237 cm
+12.224,APPROACH,88,60,80,2,-1,0,51,0,20,0,0,0.07,0.02,tag 9 (Pausa 5 s) a 237 cm
+12.274,APPROACH,88,60,79,2,-1,0,52,0,20,0,0,0.00,0.02,tag 9 (Pausa 5 s) a 237 cm
+12.324,APPROACH,88,60,79,2,-1,0,52,0,20,0,0,0.05,0.02,tag 9 (Pausa 5 s) a 237 cm
+12.374,APPROACH,88,60,80,2,-1,0,52,0,20,0,0,0.02,0.02,tag 9 (Pausa 5 s) a 237 cm
+12.424,APPROACH,88,60,80,2,-1,0,52,0,20,0,0,0.07,0.02,tag 9 (Pausa 5 s) a 237 cm
+12.474,APPROACH,87,60,80,2,-1,0,52,0,20,0,0,0.01,0.02,tag 9 (Pausa 5 s) a 237 cm
+12.524,APPROACH,87,60,80,2,-1,0,52,0,20,0,0,0.02,0.02,tag 9 (Pausa 5 s) a 237 cm
+12.575,APPROACH,87,60,80,2,-1,0,52,0,20,0,0,0.07,0.02,tag 9 (Pausa 5 s) a 237 cm
+12.625,APPROACH,87,60,79,2,-1,0,52,0,20,0,0,0.00,0.02,tag 9 (Pausa 5 s) a 237 cm
+12.676,APPROACH,87,60,79,2,-1,0,52,0,20,0,0,0.05,0.02,tag 9 (Pausa 5 s) a 237 cm
+12.727,APPROACH,87,60,79,2,-1,0,52,0,20,0,0,0.00,0.02,tag 9 (Pausa 5 s) a 237 cm
+12.777,APPROACH,87,60,79,2,-1,0,52,0,20,0,0,0.05,0.02,tag 9 (Pausa 5 s) a 237 cm
+12.827,APPROACH,87,60,80,2,-1,0,52,0,20,0,0,0.02,0.02,tag 9 (Pausa 5 s) a 237 cm
+12.877,APPROACH,87,60,80,2,-1,0,52,0,20,0,0,0.07,0.02,tag 9 (Pausa 5 s) a 237 cm
+12.927,APPROACH,87,60,80,2,0,0,52,0,20,0,0,0.01,0.02,tag 9 (Pausa 5 s) a 237 cm
+12.977,APPROACH,87,60,80,2,0,0,52,0,20,0,0,0.06,0.02,tag 9 (Pausa 5 s) a 237 cm
+13.027,APPROACH,87,60,81,2,0,0,52,0,20,0,0,0.00,0.02,tag 9 (Pausa 5 s) a 237 cm
+13.077,APPROACH,87,60,81,2,0,0,52,0,20,0,0,0.05,0.02,tag 9 (Pausa 5 s) a 237 cm
+13.128,APPROACH,87,60,80,2,0,0,52,0,20,0,0,0.00,0.02,tag 9 (Pausa 5 s) a 237 cm
+13.178,APPROACH,87,60,80,2,0,0,52,0,20,0,0,0.05,0.02,tag 9 (Pausa 5 s) a 237 cm
+13.228,APPROACH,87,60,81,2,0,0,52,0,20,0,0,0.01,0.02,tag 9 (Pausa 5 s) a 237 cm
+13.278,APPROACH,87,60,81,2,0,0,52,0,20,0,0,0.06,0.02,tag 9 (Pausa 5 s) a 237 cm
+13.328,APPROACH,87,60,82,2,-1,0,52,0,20,0,0,0.00,0.02,tag 9 (Pausa 5 s) a 237 cm
+13.378,APPROACH,87,60,82,2,-1,0,52,0,20,0,0,0.05,0.02,tag 9 (Pausa 5 s) a 237 cm
+13.428,APPROACH,87,60,80,2,-1,0,52,0,20,0,0,0.00,0.02,tag 9 (Pausa 5 s) a 237 cm
+13.479,APPROACH,87,60,80,2,-1,0,52,0,20,0,0,0.05,0.02,tag 9 (Pausa 5 s) a 237 cm
+13.529,APPROACH,87,60,81,2,-1,0,52,0,20,0,0,0.00,0.02,tag 9 (Pausa 5 s) a 237 cm
+13.579,APPROACH,87,60,81,2,-1,0,52,0,20,0,0,0.05,0.02,tag 9 (Pausa 5 s) a 237 cm
+13.629,APPROACH,87,60,79,2,-1,0,52,0,20,0,0,0.00,0.02,tag 9 (Pausa 5 s) a 237 cm
+13.679,APPROACH,87,60,79,2,-1,0,52,0,20,0,0,0.05,0.02,tag 9 (Pausa 5 s) a 237 cm
+13.729,APPROACH,87,60,80,2,-1,0,52,0,20,0,0,0.00,0.02,tag 9 (Pausa 5 s) a 237 cm
+13.779,APPROACH,87,60,80,2,-1,0,52,0,20,0,0,0.05,0.02,tag 9 (Pausa 5 s) a 237 cm
+13.829,APPROACH,87,60,79,2,-1,0,52,0,20,0,0,0.00,0.02,tag 9 (Pausa 5 s) a 237 cm
+13.880,APPROACH,87,60,79,2,-1,0,52,0,20,0,0,0.05,0.02,tag 9 (Pausa 5 s) a 237 cm
+13.930,APPROACH,87,60,79,2,-1,0,52,0,20,0,0,0.00,0.02,tag 9 (Pausa 5 s) a 237 cm
+13.980,APPROACH,87,60,79,2,-1,0,52,0,20,0,0,0.05,0.02,tag 9 (Pausa 5 s) a 237 cm
+14.030,APPROACH,87,60,79,2,-1,0,52,0,20,0,0,0.10,0.02,tag 9 (Pausa 5 s) a 237 cm
+14.080,APPROACH,87,60,79,2,0,0,52,0,20,0,0,0.02,0.02,tag 9 (Pausa 5 s) a 237 cm
+14.130,APPROACH,87,60,79,2,0,0,52,0,20,0,0,0.07,0.02,tag 9 (Pausa 5 s) a 237 cm
+14.181,APPROACH,87,60,79,2,0,0,52,0,20,0,0,0.04,0.02,tag 9 (Pausa 5 s) a 237 cm
+14.231,APPROACH,87,60,79,2,0,0,52,0,20,0,0,0.09,0.02,tag 9 (Pausa 5 s) a 237 cm
+14.281,APPROACH,87,60,78,2,0,0,54,0,20,0,0,0.02,0.02,tag 9 (Pausa 5 s) a 237 cm
+14.331,APPROACH,87,60,78,2,0,0,54,0,20,0,0,0.07,0.02,tag 9 (Pausa 5 s) a 237 cm
+14.381,APPROACH,87,60,77,2,0,0,54,0,20,0,0,0.01,0.02,tag 9 (Pausa 5 s) a 237 cm
+14.431,APPROACH,87,60,77,2,0,0,54,0,20,0,0,0.06,0.02,tag 9 (Pausa 5 s) a 237 cm
+14.481,APPROACH,86,60,77,2,0,0,54,0,20,0,0,0.03,0.02,tag 9 (Pausa 5 s) a 237 cm
+14.531,APPROACH,86,60,77,2,0,0,54,0,20,0,0,0.08,0.02,tag 9 (Pausa 5 s) a 237 cm
+14.581,APPROACH,86,60,76,2,-1,0,54,0,20,0,0,0.02,0.02,tag 9 (Pausa 5 s) a 237 cm
+14.632,APPROACH,86,60,76,2,-1,0,54,0,20,0,0,0.07,0.01,tag 9 (Pausa 5 s) a 237 cm
+14.682,APPROACH,86,60,75,2,-1,1,54,0,20,0,0,0.02,0.02,tag 9 (Pausa 5 s) a 237 cm
+14.732,APPROACH,86,60,75,2,-1,1,54,0,20,0,0,0.07,0.02,tag 9 (Pausa 5 s) a 237 cm
+14.782,APPROACH,86,60,75,2,-1,1,54,0,20,0,0,0.00,0.02,tag 9 (Pausa 5 s) a 237 cm
+14.832,APPROACH,86,60,75,2,-1,1,54,0,20,0,0,0.05,0.02,tag 9 (Pausa 5 s) a 237 cm
+14.882,APPROACH,86,60,76,2,-1,1,54,0,20,0,0,0.03,0.02,tag 9 (Pausa 5 s) a 237 cm
+14.933,APPROACH,86,60,76,2,-1,1,54,0,20,0,0,0.08,0.02,tag 9 (Pausa 5 s) a 237 cm
+14.983,APPROACH,86,60,75,2,-1,0,54,0,20,0,0,0.01,0.02,tag 9 (Pausa 5 s) a 237 cm
+15.035,APPROACH,86,60,75,2,-1,0,54,0,20,0,0,0.06,0.02,tag 9 (Pausa 5 s) a 237 cm
+15.085,APPROACH,86,60,75,2,-1,0,54,0,20,0,0,0.03,0.02,tag 9 (Pausa 5 s) a 237 cm
+15.135,APPROACH,86,60,75,2,-1,0,54,0,20,0,0,0.08,0.02,tag 9 (Pausa 5 s) a 237 cm
+15.185,APPROACH,86,60,75,2,-1,0,54,0,20,0,0,0.01,0.02,tag 9 (Pausa 5 s) a 237 cm
+15.235,APPROACH,86,60,75,2,-1,0,54,0,20,0,0,0.06,0.02,tag 9 (Pausa 5 s) a 237 cm
+15.285,APPROACH,86,60,75,2,-1,0,54,0,20,0,0,0.00,0.02,tag 9 (Pausa 5 s) a 237 cm
+15.338,APPROACH,86,60,75,2,-1,0,54,0,20,0,0,0.05,0.02,tag 9 (Pausa 5 s) a 237 cm
+15.388,APPROACH,86,50,75,2,-1,0,54,0,20,0,0,0.03,0.02,tag 9 (Pausa 5 s) a 237 cm
+15.438,APPROACH,86,50,75,2,-1,0,54,0,20,0,0,0.08,0.02,tag 9 (Pausa 5 s) a 237 cm
+15.488,APPROACH,86,50,75,2,-1,0,54,0,20,0,0,0.01,0.02,tag 9 (Pausa 5 s) a 237 cm
+15.541,APPROACH,86,50,75,2,-1,0,54,0,20,0,0,0.06,0.02,tag 9 (Pausa 5 s) a 237 cm
+15.591,APPROACH,86,50,74,2,-1,0,54,0,20,0,0,0.00,0.02,tag 9 (Pausa 5 s) a 237 cm
+15.642,APPROACH,86,50,74,2,-1,0,54,0,20,0,0,0.05,0.02,tag 9 (Pausa 5 s) a 237 cm
+15.692,APPROACH,86,50,74,2,0,0,54,0,20,0,0,0.02,0.02,tag 9 (Pausa 5 s) a 237 cm
+15.742,APPROACH,86,50,74,2,0,0,54,0,20,0,0,0.07,0.04,tag 9 (Pausa 5 s) a 237 cm
+15.792,APPROACH,86,50,74,2,0,0,54,0,20,0,0,0.02,0.02,tag 9 (Pausa 5 s) a 237 cm
+15.842,APPROACH,86,50,74,2,0,0,54,0,20,0,0,0.07,0.02,tag 9 (Pausa 5 s) a 237 cm
+15.892,APPROACH,86,50,74,2,-1,0,54,0,20,0,0,0.01,0.02,tag 9 (Pausa 5 s) a 237 cm
+15.942,APPROACH,86,50,74,2,-1,0,54,0,20,0,0,0.06,0.02,tag 9 (Pausa 5 s) a 237 cm
+15.992,APPROACH,86,50,74,2,-1,0,54,0,20,0,0,0.00,0.02,tag 9 (Pausa 5 s) a 237 cm
+16.043,APPROACH,86,50,74,2,-1,0,54,0,20,0,0,0.05,0.02,tag 9 (Pausa 5 s) a 237 cm
+16.093,APPROACH,86,50,74,2,-1,1,54,0,20,0,0,0.02,0.02,tag 9 (Pausa 5 s) a 237 cm
+16.143,APPROACH,86,60,75,2,-1,0,54,0,20,0,0,0.00,0.03,tag 9 (Pausa 5 s) a 237 cm
+16.193,APPROACH,86,60,75,2,-1,0,54,0,20,0,0,0.05,0.02,tag 9 (Pausa 5 s) a 237 cm
+16.243,APPROACH,86,60,75,2,-1,0,54,0,20,0,0,0.10,0.02,tag 9 (Pausa 5 s) a 237 cm
+16.293,APPROACH,86,60,74,2,-1,0,55,0,20,0,0,0.02,0.02,tag 9 (Pausa 5 s) a 237 cm
+16.343,APPROACH,86,60,74,2,-1,0,55,0,20,0,0,0.07,0.02,tag 9 (Pausa 5 s) a 237 cm
+16.394,APPROACH,86,60,75,2,-1,0,55,0,20,0,0,0.00,0.02,tag 9 (Pausa 5 s) a 237 cm
+16.444,APPROACH,85,60,75,2,-1,0,55,0,20,0,0,0.01,0.02,tag 9 (Pausa 5 s) a 237 cm
+16.494,APPROACH,85,60,75,2,-1,0,55,0,20,0,0,0.06,0.02,tag 9 (Pausa 5 s) a 237 cm
+16.544,APPROACH,85,60,75,2,-1,0,55,0,20,0,0,0.00,0.02,tag 9 (Pausa 5 s) a 237 cm
+16.594,APPROACH,85,60,75,2,-1,0,55,0,20,0,0,0.05,0.02,tag 9 (Pausa 5 s) a 237 cm
+16.645,APPROACH,85,60,75,2,-2,0,55,0,20,0,0,0.00,0.02,tag 9 (Pausa 5 s) a 237 cm
+16.695,APPROACH,85,60,75,2,-2,0,55,0,20,0,0,0.05,0.02,tag 9 (Pausa 5 s) a 237 cm
+16.745,APPROACH,85,60,76,2,-1,0,55,0,20,0,0,0.01,0.04,tag 9 (Pausa 5 s) a 237 cm
+16.795,APPROACH,85,60,76,2,-1,0,55,0,20,0,0,0.06,0.02,tag 9 (Pausa 5 s) a 237 cm
+16.845,APPROACH,85,60,76,2,-1,0,55,0,20,0,0,0.00,0.02,tag 9 (Pausa 5 s) a 237 cm
+16.895,APPROACH,85,60,76,2,-1,0,55,0,20,0,0,0.05,0.02,tag 9 (Pausa 5 s) a 237 cm
+16.945,APPROACH,85,60,76,2,-1,1,55,0,20,0,0,0.00,0.02,tag 9 (Pausa 5 s) a 237 cm
+16.995,APPROACH,85,60,76,2,-1,1,55,0,20,0,0,0.05,0.02,tag 9 (Pausa 5 s) a 237 cm
+17.046,APPROACH,85,60,77,2,-1,1,55,0,20,0,0,0.00,0.02,tag 9 (Pausa 5 s) a 237 cm
+17.096,APPROACH,85,60,77,2,-1,1,55,0,20,0,0,0.05,0.02,tag 9 (Pausa 5 s) a 237 cm
+17.146,APPROACH,85,60,77,2,-1,1,55,0,20,0,0,0.00,0.02,tag 9 (Pausa 5 s) a 237 cm
+17.196,APPROACH,85,60,77,2,-1,1,55,0,20,0,0,0.05,0.02,tag 9 (Pausa 5 s) a 237 cm
+17.246,APPROACH,85,60,78,2,-1,1,54,0,20,0,0,0.00,0.02,tag 9 (Pausa 5 s) a 237 cm
+17.296,APPROACH,85,60,78,2,-1,1,54,0,20,0,0,0.05,0.02,tag 9 (Pausa 5 s) a 237 cm
+17.348,APPROACH,85,60,78,2,-1,1,54,0,20,0,0,0.10,0.02,tag 9 (Pausa 5 s) a 237 cm
+17.398,APPROACH,85,60,78,2,-1,1,54,0,20,0,0,0.03,0.02,tag 9 (Pausa 5 s) a 237 cm
+17.448,APPROACH,85,60,78,2,-1,1,54,0,20,0,0,0.08,0.02,tag 9 (Pausa 5 s) a 237 cm
+17.498,APPROACH,85,60,78,2,-1,0,54,0,20,0,0,0.01,0.02,tag 9 (Pausa 5 s) a 237 cm
+17.548,APPROACH,85,60,78,2,-1,0,54,0,20,0,0,0.06,0.02,tag 9 (Pausa 5 s) a 237 cm
+17.598,APPROACH,85,60,78,2,-1,0,54,0,20,0,0,0.04,0.02,tag 9 (Pausa 5 s) a 237 cm
+17.648,APPROACH,85,60,78,2,-1,0,54,0,20,0,0,0.09,0.02,tag 9 (Pausa 5 s) a 237 cm
+17.698,APPROACH,85,60,78,2,-1,0,54,0,20,0,0,0.02,0.02,tag 9 (Pausa 5 s) a 237 cm
+17.748,APPROACH,85,60,78,2,-1,0,54,0,20,0,0,0.07,0.02,tag 9 (Pausa 5 s) a 237 cm
+17.798,APPROACH,85,60,78,2,-1,0,54,0,20,0,0,0.04,0.02,tag 9 (Pausa 5 s) a 237 cm
+17.849,APPROACH,85,60,78,2,-1,0,54,0,20,0,0,0.09,0.02,tag 9 (Pausa 5 s) a 237 cm
+17.900,APPROACH,85,60,77,2,-1,0,54,0,20,0,0,0.02,0.02,tag 9 (Pausa 5 s) a 237 cm
+17.951,APPROACH,85,60,77,2,-1,0,54,0,20,0,0,0.07,0.02,tag 9 (Pausa 5 s) a 237 cm
+18.001,APPROACH,85,60,77,2,-1,0,54,0,20,0,0,0.01,0.02,tag 9 (Pausa 5 s) a 237 cm
+18.051,APPROACH,85,60,77,2,-1,0,54,0,20,0,0,0.06,0.02,tag 9 (Pausa 5 s) a 237 cm
+18.101,APPROACH,85,60,78,2,-1,0,54,0,20,0,0,0.03,0.02,tag 9 (Pausa 5 s) a 237 cm
+18.152,APPROACH,85,60,78,2,-1,0,54,0,20,0,0,0.08,0.02,tag 9 (Pausa 5 s) a 237 cm
+18.202,APPROACH,85,60,78,2,-1,0,54,0,20,0,0,0.01,0.02,tag 9 (Pausa 5 s) a 237 cm
+18.252,APPROACH,85,60,78,2,-1,0,54,0,20,0,0,0.06,0.02,tag 9 (Pausa 5 s) a 237 cm
+18.302,APPROACH,85,60,78,2,-1,0,55,0,20,0,0,0.00,0.02,tag 9 (Pausa 5 s) a 237 cm
+18.352,APPROACH,85,60,78,2,-1,0,55,0,20,0,0,0.05,0.02,tag 9 (Pausa 5 s) a 237 cm
+18.404,APPROACH,85,60,77,2,0,1,55,0,20,0,0,0.01,0.02,tag 9 (Pausa 5 s) a 237 cm
+18.454,APPROACH,85,60,77,2,0,1,55,0,20,0,0,0.06,0.02,tag 9 (Pausa 5 s) a 237 cm
+18.504,APPROACH,84,60,79,2,-1,1,55,0,20,0,0,0.00,0.02,tag 9 (Pausa 5 s) a 237 cm
+18.554,APPROACH,84,60,79,2,-1,1,55,0,20,0,0,0.05,0.02,tag 9 (Pausa 5 s) a 237 cm
+18.605,APPROACH,84,60,78,2,-1,0,55,0,20,0,0,0.02,0.02,tag 9 (Pausa 5 s) a 237 cm
+18.655,APPROACH,84,60,78,2,-1,0,55,0,20,0,0,0.07,0.02,tag 9 (Pausa 5 s) a 237 cm
+18.705,APPROACH,84,60,77,2,-1,0,55,0,20,0,0,0.01,0.02,tag 9 (Pausa 5 s) a 237 cm
+18.755,APPROACH,84,60,77,2,-1,0,55,0,20,0,0,0.06,0.02,tag 9 (Pausa 5 s) a 237 cm
+18.806,APPROACH,84,60,76,2,-1,0,55,0,20,0,0,0.02,0.02,tag 9 (Pausa 5 s) a 237 cm
+18.856,APPROACH,84,60,76,2,-1,0,55,0,20,0,0,0.07,0.02,tag 9 (Pausa 5 s) a 237 cm
+18.906,APPROACH,84,60,75,2,-1,0,55,0,20,0,0,0.01,0.02,tag 9 (Pausa 5 s) a 237 cm
+18.957,APPROACH,84,60,75,2,-1,0,55,0,20,0,0,0.06,0.02,tag 9 (Pausa 5 s) a 237 cm
+19.007,APPROACH,84,60,75,2,-1,0,55,0,20,0,0,0.00,0.02,tag 9 (Pausa 5 s) a 237 cm
+19.057,APPROACH,84,60,75,2,-1,0,55,0,20,0,0,0.05,0.02,tag 9 (Pausa 5 s) a 237 cm
+19.107,APPROACH,84,60,73,2,-1,0,55,0,20,0,0,0.02,0.02,tag 9 (Pausa 5 s) a 237 cm
+19.157,APPROACH,84,60,73,2,-1,0,55,0,20,0,0,0.07,0.02,tag 9 (Pausa 5 s) a 237 cm
+19.207,APPROACH,84,60,72,2,-1,0,55,0,20,0,0,0.01,0.02,tag 9 (Pausa 5 s) a 237 cm
+19.257,APPROACH,84,60,72,2,-1,0,55,0,20,0,0,0.06,0.02,tag 9 (Pausa 5 s) a 237 cm
+19.308,APPROACH,84,50,71,2,-1,0,56,0,20,0,0,0.00,0.02,tag 9 (Pausa 5 s) a 237 cm
+19.358,APPROACH,84,50,71,2,-1,0,56,0,20,0,0,0.05,0.02,tag 9 (Pausa 5 s) a 237 cm
+19.408,APPROACH,84,50,69,2,0,0,56,0,20,0,0,0.02,0.02,tag 9 (Pausa 5 s) a 237 cm
+19.458,APPROACH,84,50,69,2,0,0,56,0,20,0,0,0.07,0.02,tag 9 (Pausa 5 s) a 237 cm
+19.508,APPROACH,84,50,68,3,0,0,56,0,20,0,0,0.01,0.02,tag 9 (Pausa 5 s) a 237 cm
+19.558,APPROACH,84,50,68,3,0,0,56,0,20,0,0,0.06,0.02,tag 9 (Pausa 5 s) a 237 cm
+19.609,APPROACH,84,50,67,3,0,0,56,0,20,0,0,0.00,0.02,tag 9 (Pausa 5 s) a 237 cm
+19.659,APPROACH,84,50,67,3,0,0,56,0,20,0,0,0.05,0.02,tag 9 (Pausa 5 s) a 237 cm
+19.709,APPROACH,84,50,66,2,0,0,56,0,20,0,0,0.00,0.02,tag 9 (Pausa 5 s) a 237 cm
+19.759,APPROACH,84,50,66,2,0,0,56,0,20,0,0,0.05,0.02,tag 9 (Pausa 5 s) a 237 cm
+19.809,APPROACH,84,50,66,2,0,0,56,0,20,0,0,0.00,0.02,tag 9 (Pausa 5 s) a 237 cm
+19.860,APPROACH,84,50,66,2,0,0,56,0,20,0,0,0.05,0.02,tag 9 (Pausa 5 s) a 237 cm
+19.910,APPROACH,84,50,64,2,0,0,56,0,20,0,0,0.00,0.02,tag 9 (Pausa 5 s) a 237 cm
+19.960,APPROACH,84,50,64,2,0,0,56,0,20,0,0,0.00,0.02,tag 9 (Pausa 5 s) a 237 cm
+20.010,APPROACH,84,50,64,2,0,0,56,0,20,0,0,0.05,0.02,tag 9 (Pausa 5 s) a 237 cm
+20.061,APPROACH,84,50,62,2,0,0,56,0,20,0,0,0.01,0.01,tag 9 (Pausa 5 s) a 237 cm
+20.111,APPROACH,84,50,62,2,0,0,56,0,20,0,0,0.06,0.01,tag 9 (Pausa 5 s) a 237 cm
+20.161,APPROACH,84,50,61,3,0,0,56,0,20,0,0,0.01,0.01,tag 9 (Pausa 5 s) a 237 cm
+20.211,APPROACH,84,50,61,3,0,0,56,0,20,0,0,0.06,0.03,tag 9 (Pausa 5 s) a 237 cm
+20.261,APPROACH,84,50,61,3,0,0,56,0,20,0,0,0.11,0.02,tag 9 (Pausa 5 s) a 237 cm
+20.312,APPROACH,84,50,60,6,0,0,56,0,20,0,0,0.00,0.02,tag 9 (Pausa 5 s) a 237 cm
+20.362,APPROACH,84,50,60,6,0,0,56,0,20,0,0,0.05,0.01,tag 9 (Pausa 5 s) a 237 cm
+20.412,APPROACH,84,50,58,8,0,0,56,0,20,0,0,0.00,0.02,tag 9 (Pausa 5 s) a 237 cm
+20.462,APPROACH,83,50,56,11,0,0,56,0,20,0,0,0.00,0.01,tag 9 (Pausa 5 s) a 237 cm
+20.512,APPROACH,83,50,56,11,0,0,56,0,20,0,0,0.05,0.01,tag 9 (Pausa 5 s) a 237 cm
+20.562,APPROACH,83,40,55,15,0,0,56,0,20,0,0,0.00,0.02,tag 9 (Pausa 5 s) a 237 cm
+20.612,APPROACH,83,40,55,15,0,0,56,0,20,0,0,0.05,0.02,tag 9 (Pausa 5 s) a 237 cm
+20.662,APPROACH,83,40,55,15,0,0,56,0,20,0,-20,0.10,0.01,tag 9 (Pausa 5 s) a 237 cm
+20.713,APPROACH,83,40,53,19,0,0,56,0,20,0,-20,0.04,0.01,tag 9 (Pausa 5 s) a 237 cm
+20.763,APPROACH,83,40,53,19,0,0,56,0,20,0,-20,0.09,0.02,tag 9 (Pausa 5 s) a 237 cm
+20.813,APPROACH,83,40,52,24,0,0,56,0,0,0,0,0.04,0.02,tag 9 (Pausa 5 s) a 237 cm
+20.863,APPROACH,83,40,52,24,0,0,56,0,0,0,0,0.09,0.02,tag 9 (Pausa 5 s) a 237 cm
+20.913,APPROACH,83,40,50,30,0,-1,56,0,0,0,0,0.03,0.01,tag 9 (Pausa 5 s) a 237 cm
+20.963,APPROACH,83,40,50,30,0,-1,56,0,0,0,0,0.08,0.01,tag 9 (Pausa 5 s) a 237 cm
+21.014,APPROACH,83,40,49,37,0,-1,56,0,0,0,0,0.03,0.01,tag 9 (Pausa 5 s) a 237 cm
+21.064,APPROACH,83,40,49,37,0,-1,56,0,0,0,0,0.08,0.01,tag 9 (Pausa 5 s) a 237 cm
+21.114,APPROACH,83,40,49,44,0,-1,56,0,0,0,0,0.02,0.02,tag 9 (Pausa 5 s) a 237 cm
+21.164,APPROACH,83,40,49,44,0,-1,56,0,0,0,0,0.07,0.02,tag 9 (Pausa 5 s) a 237 cm
+21.214,APPROACH,83,40,48,51,0,-2,56,0,0,0,0,0.01,0.01,tag 9 (Pausa 5 s) a 237 cm
+21.264,APPROACH,83,40,48,51,0,-2,56,0,0,0,0,0.06,0.01,tag 9 (Pausa 5 s) a 237 cm
+21.315,APPROACH,83,40,48,58,0,-1,57,0,0,0,0,0.01,0.02,tag 9 (Pausa 5 s) a 237 cm
+21.365,APPROACH,83,40,48,58,0,-1,57,0,0,0,0,0.06,0.02,tag 9 (Pausa 5 s) a 237 cm
+21.415,APPROACH,83,40,47,65,0,-1,57,0,0,0,0,0.03,0.02,tag 9 (Pausa 5 s) a 237 cm
+21.465,APPROACH,83,40,47,65,0,-1,57,0,0,0,0,0.08,0.01,tag 9 (Pausa 5 s) a 237 cm
+21.515,APPROACH,83,40,47,73,1,0,57,0,0,0,0,0.03,0.01,tag 9 (Pausa 5 s) a 237 cm
+21.566,APPROACH,83,40,47,73,1,0,57,0,0,0,0,0.08,0.01,tag 9 (Pausa 5 s) a 237 cm
+21.616,APPROACH,83,40,46,80,0,0,57,0,0,0,0,0.03,0.01,tag 9 (Pausa 5 s) a 237 cm
+21.666,APPROACH,83,40,46,80,0,0,57,0,0,0,0,0.08,0.01,tag 9 (Pausa 5 s) a 237 cm
+21.716,APPROACH,83,40,46,87,0,-3,57,0,0,0,0,0.02,0.02,tag 9 (Pausa 5 s) a 237 cm
+21.766,APPROACH,83,40,46,87,0,-3,57,0,0,0,0,0.07,0.01,tag 9 (Pausa 5 s) a 237 cm
+21.816,APPROACH,83,40,46,93,0,-4,57,0,0,0,0,0.00,0.03,tag 9 (Pausa 5 s) a 237 cm
+21.866,APPROACH,83,40,46,93,0,-4,57,0,0,0,0,0.05,0.01,tag 9 (Pausa 5 s) a 237 cm
+21.916,APPROACH,83,40,47,99,0,-4,57,0,0,0,0,0.00,0.01,tag 9 (Pausa 5 s) a 237 cm
+21.966,APPROACH,83,40,47,99,0,-4,57,0,0,0,0,0.05,0.01,tag 9 (Pausa 5 s) a 237 cm
+22.017,APPROACH,83,40,48,104,0,-3,57,0,0,0,0,0.00,0.02,tag 9 (Pausa 5 s) a 237 cm
+22.067,APPROACH,83,40,48,104,0,-3,57,0,0,0,0,0.05,0.01,tag 9 (Pausa 5 s) a 237 cm
+22.118,APPROACH,83,40,49,108,0,-1,57,0,0,0,0,0.00,0.01,tag 9 (Pausa 5 s) a 237 cm
+22.168,APPROACH,83,40,49,108,0,-1,57,0,0,0,0,0.05,0.01,tag 9 (Pausa 5 s) a 237 cm
+22.218,APPROACH,83,50,49,112,0,0,57,0,0,0,0,0.00,0.01,tag 9 (Pausa 5 s) a 237 cm
+22.268,APPROACH,83,50,49,112,0,0,57,0,0,0,0,0.05,0.01,tag 9 (Pausa 5 s) a 237 cm
+22.318,APPROACH,83,50,51,114,0,0,58,0,0,0,0,0.00,0.01,tag 9 (Pausa 5 s) a 237 cm
+22.368,APPROACH,83,50,51,114,0,0,58,0,0,0,0,0.05,0.01,tag 9 (Pausa 5 s) a 237 cm
+22.418,APPROACH,83,50,51,117,0,0,58,0,0,0,0,0.00,0.01,tag 9 (Pausa 5 s) a 237 cm
+22.468,APPROACH,83,50,51,117,0,0,58,0,0,0,0,0.05,0.01,tag 9 (Pausa 5 s) a 237 cm
+22.518,APPROACH,82,50,52,120,0,0,58,0,0,0,0,0.00,0.01,tag 9 (Pausa 5 s) a 237 cm
+22.569,APPROACH,82,50,52,120,0,0,58,0,0,0,0,0.05,0.02,tag 9 (Pausa 5 s) a 237 cm
+22.619,APPROACH,82,50,52,122,0,-1,58,0,0,0,0,0.00,0.01,tag 9 (Pausa 5 s) a 237 cm
+22.673,APPROACH,82,50,52,122,0,-1,58,0,0,0,0,0.05,0.01,tag 9 (Pausa 5 s) a 237 cm
+22.723,APPROACH,82,50,53,124,0,-1,58,0,0,0,0,0.00,0.02,tag 9 (Pausa 5 s) a 237 cm
+22.773,EMERGENCY_LAND,82,50,53,124,0,-1,58,0,0,0,0,0.05,0.01,tag 9 perdido en el acercamiento
+22.823,EMERGENCY_LAND,82,50,53,126,0,-1,58,0,0,0,0,0.00,0.01,tag 9 perdido en el acercamiento
+22.873,EMERGENCY_LAND,82,50,53,126,0,-1,58,0,0,0,0,0.05,0.06,tag 9 perdido en el acercamiento
+22.924,EMERGENCY_LAND,82,50,53,128,0,-2,58,0,0,0,0,0.00,0.02,tag 9 perdido en el acercamiento
+22.974,EMERGENCY_LAND,82,50,53,128,0,-2,58,0,0,0,0,0.05,0.02,tag 9 perdido en el acercamiento
+23.025,EMERGENCY_LAND,82,50,54,129,1,-2,58,0,0,0,0,0.01,0.02,tag 9 perdido en el acercamiento
+23.075,EMERGENCY_LAND,82,50,54,129,1,-2,58,0,0,0,0,0.06,0.02,tag 9 perdido en el acercamiento
+23.125,EMERGENCY_LAND,82,50,54,129,1,-2,58,0,0,0,0,0.00,0.01,tag 9 perdido en el acercamiento
+23.175,EMERGENCY_LAND,82,50,54,129,1,-2,58,0,0,0,0,0.05,0.01,tag 9 perdido en el acercamiento
+23.225,EMERGENCY_LAND,82,50,55,127,1,-2,58,0,0,0,0,0.00,0.02,tag 9 perdido en el acercamiento
+23.276,EMERGENCY_LAND,82,50,55,127,1,-2,58,0,0,0,0,0.05,0.02,tag 9 perdido en el acercamiento
+23.326,EMERGENCY_LAND,82,50,56,124,0,-3,58,0,0,0,0,0.00,0.02,tag 9 perdido en el acercamiento
+23.378,EMERGENCY_LAND,82,50,56,124,0,-3,58,0,0,0,0,0.05,0.02,tag 9 perdido en el acercamiento
+23.428,EMERGENCY_LAND,82,50,57,120,0,-3,58,0,0,0,0,0.00,0.02,tag 9 perdido en el acercamiento
+23.480,EMERGENCY_LAND,82,50,57,120,0,-3,58,0,0,0,0,0.05,0.02,tag 9 perdido en el acercamiento
+23.530,EMERGENCY_LAND,82,50,56,114,0,-3,58,0,0,0,0,0.00,0.01,tag 9 perdido en el acercamiento
+23.580,EMERGENCY_LAND,82,50,56,114,0,-3,58,0,0,0,0,0.05,0.01,tag 9 perdido en el acercamiento
+23.630,EMERGENCY_LAND,82,50,55,107,0,-1,58,0,0,0,0,0.00,0.01,tag 9 perdido en el acercamiento
+23.681,EMERGENCY_LAND,82,50,55,107,0,-1,58,0,0,0,0,0.05,0.01,tag 9 perdido en el acercamiento
+23.731,EMERGENCY_LAND,82,50,53,99,0,0,58,0,0,0,0,0.00,0.02,tag 9 perdido en el acercamiento
+23.781,EMERGENCY_LAND,82,50,53,99,0,0,58,0,0,0,0,0.05,0.01,tag 9 perdido en el acercamiento
+23.831,EMERGENCY_LAND,82,50,49,91,0,0,58,0,0,0,0,0.01,0.01,tag 9 perdido en el acercamiento
+23.882,EMERGENCY_LAND,82,50,49,91,0,0,58,0,0,0,0,0.06,0.03,tag 9 perdido en el acercamiento
+23.932,EMERGENCY_LAND,82,40,45,87,0,0,58,0,0,0,0,0.00,0.02,tag 9 perdido en el acercamiento
+23.982,EMERGENCY_LAND,82,40,45,87,0,0,58,0,0,0,0,0.05,0.01,tag 9 perdido en el acercamiento
+24.032,EMERGENCY_LAND,82,40,42,83,0,0,58,0,0,0,0,0.00,0.02,tag 9 perdido en el acercamiento
+24.082,EMERGENCY_LAND,82,40,42,83,0,0,58,0,0,0,0,0.05,0.01,tag 9 perdido en el acercamiento
+24.132,EMERGENCY_LAND,82,40,42,83,0,0,58,0,0,0,0,0.10,0.01,tag 9 perdido en el acercamiento
+24.183,EMERGENCY_LAND,82,30,34,79,0,0,58,0,0,0,0,0.00,0.01,tag 9 perdido en el acercamiento
+24.233,EMERGENCY_LAND,82,30,34,79,0,0,58,0,0,0,0,0.05,0.01,tag 9 perdido en el acercamiento
+24.283,EMERGENCY_LAND,82,30,34,79,0,0,58,0,0,0,0,0.10,0.01,tag 9 perdido en el acercamiento
+24.333,EMERGENCY_LAND,82,30,34,79,0,0,58,0,0,0,0,0.15,0.01,tag 9 perdido en el acercamiento
+24.383,EMERGENCY_LAND,82,30,28,78,0,0,58,0,0,0,0,0.03,0.01,tag 9 perdido en el acercamiento
+24.433,EMERGENCY_LAND,82,30,28,78,0,0,58,0,0,0,0,0.08,0.02,tag 9 perdido en el acercamiento
+24.483,EMERGENCY_LAND,81,20,25,77,-1,0,58,0,0,0,0,0.03,0.01,tag 9 perdido en el acercamiento
+24.534,EMERGENCY_LAND,81,20,25,77,-1,0,58,0,0,0,0,0.08,0.02,tag 9 perdido en el acercamiento
+24.584,EMERGENCY_LAND,81,20,21,76,-1,0,58,0,0,0,0,0.03,0.01,tag 9 perdido en el acercamiento
+24.634,EMERGENCY_LAND,81,20,21,76,-1,0,58,0,0,0,0,0.08,0.01,tag 9 perdido en el acercamiento
+24.684,EMERGENCY_LAND,81,10,17,76,-1,0,58,0,0,0,0,0.03,0.01,tag 9 perdido en el acercamiento
+24.734,EMERGENCY_LAND,81,10,17,76,-1,0,58,0,0,0,0,0.08,0.02,tag 9 perdido en el acercamiento
+24.784,EMERGENCY_LAND,81,10,14,77,-1,0,58,0,0,0,0,0.04,0.02,tag 9 perdido en el acercamiento
+24.835,EMERGENCY_LAND,81,10,14,77,-1,0,58,0,0,0,0,0.09,0.01,tag 9 perdido en el acercamiento
+24.885,EMERGENCY_LAND,81,10,13,77,-1,0,58,0,0,0,0,0.04,0.01,tag 9 perdido en el acercamiento
+24.935,EMERGENCY_LAND,81,10,13,77,-1,0,58,0,0,0,0,0.09,0.02,tag 9 perdido en el acercamiento
+24.985,EMERGENCY_LAND,81,0,10,78,0,0,58,0,0,0,0,0.04,0.01,tag 9 perdido en el acercamiento
+25.035,EMERGENCY_LAND,81,0,10,79,0,0,58,0,0,0,0,0.02,0.01,tag 9 perdido en el acercamiento
+25.085,EMERGENCY_LAND,81,0,10,79,0,0,58,0,0,0,0,0.07,0.01,tag 9 perdido en el acercamiento
+25.136,EMERGENCY_LAND,81,0,10,80,0,0,58,0,0,0,0,0.01,0.02,tag 9 perdido en el acercamiento
+25.186,EMERGENCY_LAND,81,0,10,80,0,0,58,0,0,0,0,0.06,0.01,tag 9 perdido en el acercamiento
+25.236,EMERGENCY_LAND,81,0,10,82,0,0,58,0,0,0,0,0.01,0.02,tag 9 perdido en el acercamiento
+25.286,EMERGENCY_LAND,81,0,10,82,0,0,58,0,0,0,0,0.06,0.01,tag 9 perdido en el acercamiento
+25.336,EMERGENCY_LAND,81,0,10,84,0,0,59,0,0,0,0,0.01,0.01,tag 9 perdido en el acercamiento
+25.386,EMERGENCY_LAND,81,0,10,84,0,0,59,0,0,0,0,0.06,0.01,tag 9 perdido en el acercamiento
+25.436,EMERGENCY_LAND,81,0,10,85,1,1,59,0,0,0,0,0.01,0.01,tag 9 perdido en el acercamiento
+25.487,EMERGENCY_LAND,81,0,10,85,1,1,59,0,0,0,0,0.06,0.01,tag 9 perdido en el acercamiento
+25.537,EMERGENCY_LAND,81,0,10,88,0,0,59,0,0,0,0,0.01,0.01,tag 9 perdido en el acercamiento
+25.587,EMERGENCY_LAND,81,0,10,88,0,0,59,0,0,0,0,0.06,0.01,tag 9 perdido en el acercamiento
+25.639,EMERGENCY_LAND,81,0,10,88,0,0,59,0,0,0,0,0.02,0.01,tag 9 perdido en el acercamiento
+25.690,EMERGENCY_LAND,81,0,10,88,0,0,59,0,0,0,0,0.07,0.01,tag 9 perdido en el acercamiento
+25.740,EMERGENCY_LAND,81,0,10,90,0,0,59,0,0,0,0,0.02,0.01,tag 9 perdido en el acercamiento
+25.790,EMERGENCY_LAND,81,0,10,90,0,0,59,0,0,0,0,0.07,0.03,tag 9 perdido en el acercamiento
+25.841,EMERGENCY_LAND,81,0,10,93,0,0,59,0,0,0,0,0.00,0.02,tag 9 perdido en el acercamiento
+25.891,EMERGENCY_LAND,81,0,10,93,0,0,59,0,0,0,0,0.05,0.01,tag 9 perdido en el acercamiento
+25.941,EMERGENCY_LAND,81,0,10,94,0,0,59,0,0,0,0,0.02,0.02,tag 9 perdido en el acercamiento
+25.991,EMERGENCY_LAND,81,0,10,94,0,0,59,0,0,0,0,0.07,0.01,tag 9 perdido en el acercamiento
+26.041,EMERGENCY_LAND,81,0,10,94,0,0,59,0,0,0,0,0.02,0.01,tag 9 perdido en el acercamiento
+26.092,EMERGENCY_LAND,81,0,10,94,0,0,59,0,0,0,0,0.07,0.01,tag 9 perdido en el acercamiento
+26.142,EMERGENCY_LAND,81,0,10,94,0,0,59,0,0,0,0,0.00,0.01,tag 9 perdido en el acercamiento
+26.192,EMERGENCY_LAND,81,0,10,94,0,0,59,0,0,0,0,0.05,0.01,tag 9 perdido en el acercamiento
+26.242,DONE,81,0,10,94,0,0,59,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+26.292,DONE,81,0,10,94,0,0,59,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+26.342,DONE,81,0,10,94,0,0,58,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+26.393,DONE,81,0,10,94,0,0,58,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+26.443,DONE,80,0,10,94,0,0,58,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+26.493,DONE,80,0,10,94,0,0,58,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+26.543,DONE,80,0,10,94,0,0,58,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+26.593,DONE,80,0,10,94,0,0,58,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+26.643,DONE,80,0,10,94,0,0,58,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+26.694,DONE,80,0,10,94,0,0,58,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)
+26.744,DONE,80,0,10,94,0,0,58,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+26.794,DONE,80,0,10,94,0,0,58,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+26.844,DONE,80,0,10,94,0,0,58,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+26.895,DONE,80,0,10,94,0,0,58,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+26.946,DONE,80,0,10,94,0,0,58,0,0,0,0,0.00,0.02,aterrizado (tag 9 perdido en el acercamiento)
+26.996,DONE,80,0,10,94,0,0,58,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+27.046,DONE,80,0,10,94,0,0,58,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+27.096,DONE,80,0,10,94,0,0,58,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+27.146,DONE,80,0,10,94,0,0,58,0,0,0,0,0.00,0.02,aterrizado (tag 9 perdido en el acercamiento)
+27.196,DONE,80,0,10,94,0,0,58,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+27.247,DONE,80,0,10,94,0,0,58,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+27.297,DONE,80,0,10,94,0,0,58,0,0,0,0,0.05,0.03,aterrizado (tag 9 perdido en el acercamiento)
+27.347,DONE,80,0,10,94,0,0,59,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+27.397,DONE,80,0,10,94,0,0,59,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+27.447,DONE,80,0,10,94,0,0,59,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+27.498,DONE,80,0,10,94,0,0,59,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+27.548,DONE,80,0,10,94,0,0,59,0,0,0,0,0.10,0.01,aterrizado (tag 9 perdido en el acercamiento)
+27.602,DONE,80,0,10,94,0,0,59,0,0,0,0,0.02,0.02,aterrizado (tag 9 perdido en el acercamiento)
+27.652,DONE,80,0,10,94,0,0,59,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+27.702,DONE,80,0,10,94,0,0,59,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+27.752,DONE,80,0,10,94,0,0,59,0,0,0,0,0.10,0.01,aterrizado (tag 9 perdido en el acercamiento)
+27.802,DONE,80,0,10,94,0,0,59,0,0,0,0,0.03,0.03,aterrizado (tag 9 perdido en el acercamiento)
+27.852,DONE,80,0,10,94,0,0,59,0,0,0,0,0.08,0.01,aterrizado (tag 9 perdido en el acercamiento)
+27.904,DONE,80,0,10,94,0,0,59,0,0,0,0,0.03,0.02,aterrizado (tag 9 perdido en el acercamiento)
+27.954,DONE,80,0,10,94,0,0,59,0,0,0,0,0.08,0.01,aterrizado (tag 9 perdido en el acercamiento)
+28.004,DONE,80,0,10,94,0,0,59,0,0,0,0,0.03,0.01,aterrizado (tag 9 perdido en el acercamiento)
+28.055,DONE,80,0,10,94,0,0,59,0,0,0,0,0.04,0.01,aterrizado (tag 9 perdido en el acercamiento)
+28.105,DONE,80,0,10,94,0,0,59,0,0,0,0,0.09,0.02,aterrizado (tag 9 perdido en el acercamiento)
+28.155,DONE,80,0,10,94,0,0,59,0,0,0,0,0.04,0.02,aterrizado (tag 9 perdido en el acercamiento)
+28.205,DONE,80,0,10,94,0,0,59,0,0,0,0,0.09,0.01,aterrizado (tag 9 perdido en el acercamiento)
+28.255,DONE,80,0,10,94,0,0,59,0,0,0,0,0.04,0.01,aterrizado (tag 9 perdido en el acercamiento)
+28.305,DONE,80,0,10,94,0,0,59,0,0,0,0,0.09,0.01,aterrizado (tag 9 perdido en el acercamiento)
+28.356,DONE,80,0,10,94,0,0,59,0,0,0,0,0.14,0.01,aterrizado (tag 9 perdido en el acercamiento)
+28.406,DONE,80,0,10,94,0,0,59,0,0,0,0,0.03,0.02,aterrizado (tag 9 perdido en el acercamiento)
+28.456,DONE,79,0,10,94,0,0,59,0,0,0,0,0.01,0.01,aterrizado (tag 9 perdido en el acercamiento)
+28.506,DONE,79,0,10,94,0,0,59,0,0,0,0,0.06,0.01,aterrizado (tag 9 perdido en el acercamiento)
+28.556,DONE,79,0,10,94,0,0,59,0,0,0,0,0.01,0.02,aterrizado (tag 9 perdido en el acercamiento)
+28.606,DONE,79,0,10,94,0,0,59,0,0,0,0,0.06,0.01,aterrizado (tag 9 perdido en el acercamiento)
+28.657,DONE,79,0,10,94,0,0,59,0,0,0,0,0.01,0.01,aterrizado (tag 9 perdido en el acercamiento)
+28.707,DONE,79,0,10,94,0,0,59,0,0,0,0,0.06,0.02,aterrizado (tag 9 perdido en el acercamiento)
+28.757,DONE,79,0,10,94,0,0,59,0,0,0,0,0.02,0.03,aterrizado (tag 9 perdido en el acercamiento)
+28.807,DONE,79,0,10,94,0,0,59,0,0,0,0,0.07,0.02,aterrizado (tag 9 perdido en el acercamiento)
+28.857,DONE,79,0,10,94,0,0,59,0,0,0,0,0.01,0.02,aterrizado (tag 9 perdido en el acercamiento)
+28.907,DONE,79,0,10,94,0,0,59,0,0,0,0,0.06,0.02,aterrizado (tag 9 perdido en el acercamiento)
+28.958,DONE,79,0,10,94,0,0,59,0,0,0,0,0.01,0.01,aterrizado (tag 9 perdido en el acercamiento)
+29.008,DONE,79,0,10,94,0,0,59,0,0,0,0,0.06,0.01,aterrizado (tag 9 perdido en el acercamiento)
+29.058,DONE,79,0,10,94,0,0,59,0,0,0,0,0.01,0.01,aterrizado (tag 9 perdido en el acercamiento)
+29.108,DONE,79,0,10,94,0,0,59,0,0,0,0,0.06,0.02,aterrizado (tag 9 perdido en el acercamiento)
+29.158,DONE,79,0,10,94,0,0,59,0,0,0,0,0.01,0.01,aterrizado (tag 9 perdido en el acercamiento)
+29.209,DONE,79,0,10,94,0,0,59,0,0,0,0,0.06,0.02,aterrizado (tag 9 perdido en el acercamiento)
+29.259,DONE,79,0,10,94,0,0,59,0,0,0,0,0.01,0.01,aterrizado (tag 9 perdido en el acercamiento)
+29.309,DONE,79,0,10,94,0,0,59,0,0,0,0,0.06,0.01,aterrizado (tag 9 perdido en el acercamiento)
+29.359,DONE,79,0,10,94,0,0,59,0,0,0,0,0.01,0.01,aterrizado (tag 9 perdido en el acercamiento)
+29.409,DONE,79,0,10,94,0,0,59,0,0,0,0,0.06,0.01,aterrizado (tag 9 perdido en el acercamiento)
+29.460,DONE,79,0,10,94,0,0,59,0,0,0,0,0.01,0.01,aterrizado (tag 9 perdido en el acercamiento)
+29.510,DONE,79,0,10,94,0,0,59,0,0,0,0,0.06,0.01,aterrizado (tag 9 perdido en el acercamiento)
+29.560,DONE,79,0,10,94,0,0,59,0,0,0,0,0.01,0.01,aterrizado (tag 9 perdido en el acercamiento)
+29.610,DONE,79,0,10,94,0,0,59,0,0,0,0,0.06,0.01,aterrizado (tag 9 perdido en el acercamiento)
+29.660,DONE,79,0,10,94,0,0,59,0,0,0,0,0.01,0.01,aterrizado (tag 9 perdido en el acercamiento)
+29.711,DONE,79,0,10,94,0,0,59,0,0,0,0,0.06,0.01,aterrizado (tag 9 perdido en el acercamiento)
+29.761,DONE,79,0,10,94,0,0,59,0,0,0,0,0.00,0.04,aterrizado (tag 9 perdido en el acercamiento)
+29.811,DONE,79,0,10,94,0,0,59,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+29.861,DONE,79,0,10,94,0,0,59,0,0,0,0,0.01,0.01,aterrizado (tag 9 perdido en el acercamiento)
+29.911,DONE,79,0,10,94,0,0,59,0,0,0,0,0.06,0.01,aterrizado (tag 9 perdido en el acercamiento)
+29.965,DONE,79,0,10,94,0,0,59,0,0,0,0,0.02,0.01,aterrizado (tag 9 perdido en el acercamiento)
+30.015,DONE,79,0,10,94,0,0,59,0,0,0,0,0.07,0.01,aterrizado (tag 9 perdido en el acercamiento)
+30.067,DONE,79,0,10,94,0,0,59,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+30.117,DONE,79,0,10,94,0,0,59,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+30.167,DONE,79,0,10,94,0,0,59,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+30.218,DONE,79,0,10,94,0,0,59,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+30.268,DONE,79,0,10,94,0,0,59,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+30.318,DONE,79,0,10,94,0,0,59,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)
+30.368,DONE,79,0,10,94,0,0,59,0,0,0,0,0.00,0.02,aterrizado (tag 9 perdido en el acercamiento)
+30.418,DONE,79,0,10,94,0,0,59,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+30.468,DONE,78,0,10,94,0,0,59,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+30.519,DONE,78,0,10,94,0,0,59,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+30.569,DONE,78,0,10,94,0,0,59,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+30.619,DONE,78,0,10,94,0,0,59,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+30.669,DONE,78,0,10,94,0,0,59,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+30.719,DONE,78,0,10,94,0,0,59,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)
+30.769,DONE,78,0,10,94,0,0,59,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+30.820,DONE,78,0,10,94,0,0,59,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+30.870,DONE,78,0,10,94,0,0,59,0,0,0,0,0.00,0.03,aterrizado (tag 9 perdido en el acercamiento)
+30.920,DONE,78,0,10,94,0,0,59,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)
+30.971,DONE,78,0,10,94,0,0,59,0,0,0,0,0.00,0.02,aterrizado (tag 9 perdido en el acercamiento)
+31.021,DONE,78,0,10,94,0,0,59,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)
+31.071,DONE,78,0,10,94,0,0,59,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+31.121,DONE,78,0,10,94,0,0,59,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)
+31.171,DONE,78,0,10,94,0,0,59,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+31.221,DONE,78,0,10,94,0,0,59,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+31.271,DONE,78,0,10,94,0,0,59,0,0,0,0,0.10,0.01,aterrizado (tag 9 perdido en el acercamiento)
+31.322,DONE,78,0,10,94,0,0,59,0,0,0,0,0.04,0.01,aterrizado (tag 9 perdido en el acercamiento)
+31.372,DONE,78,0,10,94,0,0,59,0,0,0,0,0.09,0.02,aterrizado (tag 9 perdido en el acercamiento)
+31.422,DONE,78,0,10,94,0,0,59,0,0,0,0,0.04,0.01,aterrizado (tag 9 perdido en el acercamiento)
+31.472,DONE,78,0,10,94,0,0,59,0,0,0,0,0.09,0.01,aterrizado (tag 9 perdido en el acercamiento)
+31.522,DONE,78,0,10,94,0,0,59,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+31.573,DONE,78,0,10,94,0,0,59,0,0,0,0,0.02,0.01,aterrizado (tag 9 perdido en el acercamiento)
+31.623,DONE,78,0,10,94,0,0,59,0,0,0,0,0.07,0.01,aterrizado (tag 9 perdido en el acercamiento)
+31.673,DONE,78,0,10,94,0,0,59,0,0,0,0,0.03,0.01,aterrizado (tag 9 perdido en el acercamiento)
+31.723,DONE,78,0,10,94,0,0,59,0,0,0,0,0.08,0.01,aterrizado (tag 9 perdido en el acercamiento)
+31.773,DONE,78,0,10,94,0,0,59,0,0,0,0,0.03,0.03,aterrizado (tag 9 perdido en el acercamiento)
+31.823,DONE,78,0,10,94,0,0,59,0,0,0,0,0.08,0.01,aterrizado (tag 9 perdido en el acercamiento)
+31.874,DONE,78,0,10,94,0,0,59,0,0,0,0,0.03,0.01,aterrizado (tag 9 perdido en el acercamiento)
+31.924,DONE,78,0,10,94,0,0,59,0,0,0,0,0.08,0.01,aterrizado (tag 9 perdido en el acercamiento)
+31.974,DONE,78,0,10,94,0,0,59,0,0,0,0,0.03,0.01,aterrizado (tag 9 perdido en el acercamiento)
+32.024,DONE,78,0,10,94,0,0,59,0,0,0,0,0.08,0.01,aterrizado (tag 9 perdido en el acercamiento)
+32.074,DONE,78,0,10,94,0,0,59,0,0,0,0,0.03,0.01,aterrizado (tag 9 perdido en el acercamiento)
+32.125,DONE,78,0,10,94,0,0,59,0,0,0,0,0.08,0.01,aterrizado (tag 9 perdido en el acercamiento)
+32.175,DONE,78,0,10,94,0,0,59,0,0,0,0,0.03,0.01,aterrizado (tag 9 perdido en el acercamiento)
+32.225,DONE,78,0,10,94,0,0,59,0,0,0,0,0.08,0.01,aterrizado (tag 9 perdido en el acercamiento)
+32.275,DONE,78,0,10,93,0,0,59,0,0,0,0,0.03,0.01,aterrizado (tag 9 perdido en el acercamiento)
+32.325,DONE,78,0,10,93,0,0,59,0,0,0,0,0.08,0.02,aterrizado (tag 9 perdido en el acercamiento)
+32.375,DONE,78,0,10,93,0,0,59,0,0,0,0,0.03,0.01,aterrizado (tag 9 perdido en el acercamiento)
+32.426,DONE,78,0,10,93,0,0,59,0,0,0,0,0.08,0.01,aterrizado (tag 9 perdido en el acercamiento)
+32.476,DONE,77,0,10,93,0,0,59,0,0,0,0,0.03,0.01,aterrizado (tag 9 perdido en el acercamiento)
+32.526,DONE,77,0,10,93,0,0,59,0,0,0,0,0.08,0.01,aterrizado (tag 9 perdido en el acercamiento)
+32.576,DONE,77,0,10,93,0,0,59,0,0,0,0,0.03,0.01,aterrizado (tag 9 perdido en el acercamiento)
+32.626,DONE,77,0,10,93,0,0,59,0,0,0,0,0.08,0.01,aterrizado (tag 9 perdido en el acercamiento)
+32.676,DONE,77,0,10,93,0,0,59,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+32.726,DONE,77,0,10,93,0,0,59,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)
+32.777,DONE,77,0,10,93,0,0,59,0,0,0,0,0.01,0.01,aterrizado (tag 9 perdido en el acercamiento)
+32.827,DONE,77,0,10,93,0,0,59,0,0,0,0,0.06,0.01,aterrizado (tag 9 perdido en el acercamiento)
+32.877,DONE,77,0,10,93,0,0,59,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+32.927,DONE,77,0,10,93,0,0,59,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+32.977,DONE,77,0,10,93,0,0,59,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+33.027,DONE,77,0,10,93,0,0,59,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+33.077,DONE,77,0,10,93,0,0,59,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+33.128,DONE,77,0,10,93,0,0,59,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)
+33.178,DONE,77,0,10,93,0,0,59,0,0,0,0,0.00,0.02,aterrizado (tag 9 perdido en el acercamiento)
+33.228,DONE,77,0,10,93,0,0,59,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+33.278,DONE,77,0,10,93,0,1,59,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+33.332,DONE,77,0,10,93,0,1,59,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+33.382,DONE,77,0,10,93,0,1,59,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+33.432,DONE,77,0,10,93,0,1,59,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+33.482,DONE,77,0,10,93,0,1,59,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+33.533,DONE,77,0,10,93,0,1,59,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+33.583,DONE,77,0,10,93,0,1,59,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+33.634,DONE,77,0,10,93,0,1,59,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+33.684,DONE,77,0,10,93,0,1,59,0,0,0,0,0.00,0.02,aterrizado (tag 9 perdido en el acercamiento)
+33.735,DONE,77,0,10,93,0,1,59,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+33.785,DONE,77,0,10,93,0,1,59,0,0,0,0,0.00,0.02,aterrizado (tag 9 perdido en el acercamiento)
+33.835,DONE,77,0,10,93,0,1,59,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+33.885,DONE,77,0,10,93,0,1,59,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+33.935,DONE,77,0,10,93,0,1,59,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+33.985,DONE,77,0,10,93,0,1,59,0,0,0,0,0.00,0.02,aterrizado (tag 9 perdido en el acercamiento)
+34.036,DONE,77,0,10,93,0,1,59,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+34.086,DONE,77,0,10,93,0,1,59,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+34.136,DONE,77,0,10,93,0,1,59,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+34.186,DONE,77,0,10,93,0,1,59,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+34.237,DONE,77,0,10,93,0,1,59,0,0,0,0,0.06,0.02,aterrizado (tag 9 perdido en el acercamiento)
+34.288,DONE,77,0,10,93,0,1,59,0,0,0,0,0.00,0.03,aterrizado (tag 9 perdido en el acercamiento)
+34.338,DONE,77,0,10,93,0,1,59,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)
+34.388,DONE,77,0,10,93,0,1,60,0,0,0,0,0.00,0.02,aterrizado (tag 9 perdido en el acercamiento)
+34.438,DONE,77,0,10,93,0,1,60,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)
+34.488,DONE,77,0,10,93,0,1,60,0,0,0,0,0.10,0.01,aterrizado (tag 9 perdido en el acercamiento)
+34.539,DONE,76,0,10,93,0,1,60,0,0,0,0,0.03,0.01,aterrizado (tag 9 perdido en el acercamiento)
+34.589,DONE,76,0,10,93,0,1,60,0,0,0,0,0.08,0.01,aterrizado (tag 9 perdido en el acercamiento)
+34.639,DONE,76,0,10,93,0,1,60,0,0,0,0,0.02,0.01,aterrizado (tag 9 perdido en el acercamiento)
+34.689,DONE,76,0,10,93,0,1,60,0,0,0,0,0.07,0.01,aterrizado (tag 9 perdido en el acercamiento)
+34.741,DONE,76,0,10,93,0,1,60,0,0,0,0,0.02,0.03,aterrizado (tag 9 perdido en el acercamiento)
+34.791,DONE,76,0,10,93,0,1,60,0,0,0,0,0.07,0.02,aterrizado (tag 9 perdido en el acercamiento)
+34.842,DONE,76,0,10,93,0,1,60,0,0,0,0,0.03,0.01,aterrizado (tag 9 perdido en el acercamiento)
+34.896,DONE,76,0,10,93,0,1,60,0,0,0,0,0.02,0.01,aterrizado (tag 9 perdido en el acercamiento)
+34.946,DONE,76,0,10,93,0,1,60,0,0,0,0,0.07,0.01,aterrizado (tag 9 perdido en el acercamiento)
+34.997,DONE,76,0,10,93,0,1,60,0,0,0,0,0.02,0.01,aterrizado (tag 9 perdido en el acercamiento)
+35.047,DONE,76,0,10,93,0,1,60,0,0,0,0,0.07,0.01,aterrizado (tag 9 perdido en el acercamiento)
+35.098,DONE,76,0,10,93,0,1,60,0,0,0,0,0.02,0.01,aterrizado (tag 9 perdido en el acercamiento)
+35.148,DONE,76,0,10,93,0,1,60,0,0,0,0,0.07,0.01,aterrizado (tag 9 perdido en el acercamiento)
+35.198,DONE,76,0,10,93,0,1,60,0,0,0,0,0.02,0.01,aterrizado (tag 9 perdido en el acercamiento)
+35.248,DONE,76,0,10,93,0,1,60,0,0,0,0,0.07,0.01,aterrizado (tag 9 perdido en el acercamiento)
+35.298,DONE,76,0,10,93,0,1,60,0,0,0,0,0.02,0.01,aterrizado (tag 9 perdido en el acercamiento)
+35.349,DONE,76,0,10,93,0,1,60,0,0,0,0,0.07,0.01,aterrizado (tag 9 perdido en el acercamiento)
+35.399,DONE,76,0,10,93,0,1,59,0,0,0,0,0.02,0.01,aterrizado (tag 9 perdido en el acercamiento)
+35.449,DONE,76,0,10,93,0,1,59,0,0,0,0,0.07,0.01,aterrizado (tag 9 perdido en el acercamiento)
+35.499,DONE,76,0,10,93,0,1,59,0,0,0,0,0.02,0.01,aterrizado (tag 9 perdido en el acercamiento)
+35.550,DONE,76,0,10,93,0,1,59,0,0,0,0,0.07,0.03,aterrizado (tag 9 perdido en el acercamiento)
+35.600,DONE,76,0,10,93,0,1,59,0,0,0,0,0.02,0.02,aterrizado (tag 9 perdido en el acercamiento)
+35.650,DONE,76,0,10,93,0,1,59,0,0,0,0,0.07,0.01,aterrizado (tag 9 perdido en el acercamiento)
+35.702,DONE,76,0,10,93,0,1,59,0,0,0,0,0.02,0.02,aterrizado (tag 9 perdido en el acercamiento)
+35.752,DONE,76,0,10,93,0,1,59,0,0,0,0,0.07,0.03,aterrizado (tag 9 perdido en el acercamiento)
+35.802,DONE,76,0,10,93,0,1,59,0,0,0,0,0.03,0.01,aterrizado (tag 9 perdido en el acercamiento)
+35.852,DONE,76,0,10,93,0,1,59,0,0,0,0,0.08,0.02,aterrizado (tag 9 perdido en el acercamiento)
+35.902,DONE,76,0,10,93,0,1,59,0,0,0,0,0.03,0.02,aterrizado (tag 9 perdido en el acercamiento)
+35.952,DONE,76,0,10,93,0,1,59,0,0,0,0,0.08,0.01,aterrizado (tag 9 perdido en el acercamiento)
+36.002,DONE,76,0,10,93,0,1,59,0,0,0,0,0.03,0.01,aterrizado (tag 9 perdido en el acercamiento)
+36.052,DONE,76,0,10,93,0,1,59,0,0,0,0,0.08,0.01,aterrizado (tag 9 perdido en el acercamiento)
+36.103,DONE,76,0,10,93,0,1,59,0,0,0,0,0.03,0.02,aterrizado (tag 9 perdido en el acercamiento)
+36.153,DONE,76,0,10,93,0,1,59,0,0,0,0,0.08,0.01,aterrizado (tag 9 perdido en el acercamiento)
+36.203,DONE,76,0,10,93,0,1,59,0,0,0,0,0.02,0.01,aterrizado (tag 9 perdido en el acercamiento)
+36.253,DONE,76,0,10,93,0,1,59,0,0,0,0,0.07,0.01,aterrizado (tag 9 perdido en el acercamiento)
+36.304,DONE,76,0,10,93,0,1,59,0,0,0,0,0.02,0.01,aterrizado (tag 9 perdido en el acercamiento)
+36.354,DONE,76,0,10,93,0,1,59,0,0,0,0,0.07,0.01,aterrizado (tag 9 perdido en el acercamiento)
+36.404,DONE,76,0,10,93,0,1,61,0,0,0,0,0.02,0.01,aterrizado (tag 9 perdido en el acercamiento)
+36.454,DONE,76,0,10,93,0,1,61,0,0,0,0,0.07,0.01,aterrizado (tag 9 perdido en el acercamiento)
+36.504,DONE,76,0,10,93,0,1,61,0,0,0,0,0.02,0.01,aterrizado (tag 9 perdido en el acercamiento)
+36.555,DONE,76,0,10,93,0,1,61,0,0,0,0,0.07,0.01,aterrizado (tag 9 perdido en el acercamiento)
+36.605,DONE,76,0,10,93,0,1,61,0,0,0,0,0.02,0.01,aterrizado (tag 9 perdido en el acercamiento)
+36.655,DONE,76,0,10,93,0,1,61,0,0,0,0,0.07,0.01,aterrizado (tag 9 perdido en el acercamiento)
+36.705,DONE,76,0,10,93,0,1,61,0,0,0,0,0.02,0.02,aterrizado (tag 9 perdido en el acercamiento)
+36.755,DONE,76,0,10,93,0,1,61,0,0,0,0,0.07,0.03,aterrizado (tag 9 perdido en el acercamiento)
+36.805,DONE,76,0,10,93,0,1,61,0,0,0,0,0.00,0.02,aterrizado (tag 9 perdido en el acercamiento)
+36.855,DONE,76,0,10,93,0,1,61,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+36.905,DONE,76,0,10,93,0,1,61,0,0,0,0,0.00,0.02,aterrizado (tag 9 perdido en el acercamiento)
+36.956,DONE,76,0,10,93,0,1,61,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)
+37.006,DONE,76,0,10,93,0,1,61,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+37.056,DONE,76,0,10,93,0,1,61,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+37.106,DONE,76,0,10,93,0,1,61,0,0,0,0,0.00,0.02,aterrizado (tag 9 perdido en el acercamiento)
+37.156,DONE,76,0,10,93,0,1,61,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+37.206,DONE,76,0,10,93,0,1,61,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+37.256,DONE,76,0,10,93,0,1,61,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+37.307,DONE,76,0,10,93,0,1,61,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+37.357,DONE,76,0,10,93,0,1,61,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)
+37.407,DONE,76,0,10,93,0,1,61,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+37.457,DONE,76,0,10,93,0,1,61,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+37.507,DONE,76,0,10,93,0,1,61,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+37.557,DONE,76,0,10,93,0,1,61,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+37.608,DONE,76,0,10,93,0,1,61,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+37.658,DONE,76,0,10,93,0,1,61,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+37.708,DONE,76,0,10,93,0,1,61,0,0,0,0,0.10,0.01,aterrizado (tag 9 perdido en el acercamiento)
+37.758,DONE,76,0,10,93,0,1,61,0,0,0,0,0.04,0.06,aterrizado (tag 9 perdido en el acercamiento)
+37.808,DONE,76,0,10,93,0,1,61,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+37.859,DONE,76,0,10,93,0,1,61,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+37.909,DONE,76,0,10,93,0,1,61,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+37.959,DONE,76,0,10,93,0,1,61,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+38.009,DONE,76,0,10,93,0,1,61,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+38.059,DONE,76,0,10,93,0,1,61,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)
+38.109,DONE,76,0,10,93,0,1,61,0,0,0,0,0.03,0.01,aterrizado (tag 9 perdido en el acercamiento)
+38.160,DONE,76,0,10,93,0,1,61,0,0,0,0,0.08,0.01,aterrizado (tag 9 perdido en el acercamiento)
+38.210,DONE,76,0,10,93,0,1,61,0,0,0,0,0.03,0.01,aterrizado (tag 9 perdido en el acercamiento)
+38.260,DONE,76,0,10,93,0,1,61,0,0,0,0,0.08,0.01,aterrizado (tag 9 perdido en el acercamiento)
+38.310,DONE,76,0,10,93,0,1,61,0,0,0,0,0.03,0.01,aterrizado (tag 9 perdido en el acercamiento)
+38.360,DONE,76,0,10,93,0,1,61,0,0,0,0,0.08,0.01,aterrizado (tag 9 perdido en el acercamiento)
+38.410,DONE,76,0,10,93,0,1,60,0,0,0,0,0.03,0.01,aterrizado (tag 9 perdido en el acercamiento)
+38.460,DONE,76,0,10,93,0,1,60,0,0,0,0,0.08,0.02,aterrizado (tag 9 perdido en el acercamiento)
+38.511,DONE,76,0,10,93,0,1,60,0,0,0,0,0.03,0.01,aterrizado (tag 9 perdido en el acercamiento)
+38.561,DONE,76,0,10,93,0,1,60,0,0,0,0,0.08,0.01,aterrizado (tag 9 perdido en el acercamiento)
+38.611,DONE,76,0,10,93,0,1,60,0,0,0,0,0.03,0.01,aterrizado (tag 9 perdido en el acercamiento)
+38.661,DONE,76,0,10,93,0,1,60,0,0,0,0,0.08,0.01,aterrizado (tag 9 perdido en el acercamiento)
+38.711,DONE,76,0,10,93,0,1,60,0,0,0,0,0.03,0.01,aterrizado (tag 9 perdido en el acercamiento)
+38.764,DONE,76,0,10,93,0,1,60,0,0,0,0,0.08,0.04,aterrizado (tag 9 perdido en el acercamiento)
+38.814,DONE,76,0,10,93,0,1,60,0,0,0,0,0.01,0.01,aterrizado (tag 9 perdido en el acercamiento)
+38.865,DONE,76,0,10,93,0,1,60,0,0,0,0,0.06,0.01,aterrizado (tag 9 perdido en el acercamiento)
+38.915,DONE,76,0,10,93,0,1,60,0,0,0,0,0.01,0.02,aterrizado (tag 9 perdido en el acercamiento)
+38.965,DONE,76,0,10,93,0,1,60,0,0,0,0,0.06,0.01,aterrizado (tag 9 perdido en el acercamiento)
+39.015,DONE,76,0,10,93,0,1,60,0,0,0,0,0.00,0.02,aterrizado (tag 9 perdido en el acercamiento)
+39.066,DONE,76,0,10,93,0,1,60,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)
+39.116,DONE,76,0,10,93,0,1,60,0,0,0,0,0.03,0.01,aterrizado (tag 9 perdido en el acercamiento)
+39.166,DONE,76,0,10,93,0,1,60,0,0,0,0,0.08,0.01,aterrizado (tag 9 perdido en el acercamiento)
+39.216,DONE,76,0,10,93,0,1,60,0,0,0,0,0.03,0.01,aterrizado (tag 9 perdido en el acercamiento)
+39.266,DONE,76,0,10,93,0,1,60,0,0,0,0,0.08,0.03,aterrizado (tag 9 perdido en el acercamiento)
+39.316,DONE,76,0,10,93,0,1,60,0,0,0,0,0.01,0.02,aterrizado (tag 9 perdido en el acercamiento)
+39.367,DONE,76,0,10,93,0,1,60,0,0,0,0,0.06,0.02,aterrizado (tag 9 perdido en el acercamiento)
+39.417,DONE,76,0,10,93,0,1,61,0,0,0,0,0.01,0.01,aterrizado (tag 9 perdido en el acercamiento)
+39.467,DONE,76,0,10,93,0,1,61,0,0,0,0,0.06,0.01,aterrizado (tag 9 perdido en el acercamiento)
+39.517,DONE,76,0,10,93,0,1,61,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+39.568,DONE,76,0,10,93,0,1,61,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+39.618,DONE,76,0,10,93,0,1,61,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+39.668,DONE,76,0,10,93,0,1,61,0,0,0,0,0.05,0.03,aterrizado (tag 9 perdido en el acercamiento)
+39.719,DONE,76,0,10,93,0,1,61,0,0,0,0,0.01,0.01,aterrizado (tag 9 perdido en el acercamiento)
+39.769,DONE,76,0,10,93,0,1,61,0,0,0,0,0.06,0.05,aterrizado (tag 9 perdido en el acercamiento)
+39.819,DONE,76,0,10,93,0,1,61,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+39.869,DONE,76,0,10,93,0,1,61,0,0,0,0,0.05,0.03,aterrizado (tag 9 perdido en el acercamiento)
+39.919,DONE,76,0,10,93,0,1,61,0,0,0,0,0.02,0.02,aterrizado (tag 9 perdido en el acercamiento)
+39.969,DONE,76,0,10,93,0,1,61,0,0,0,0,0.07,0.02,aterrizado (tag 9 perdido en el acercamiento)
+40.019,DONE,76,0,10,93,0,1,61,0,0,0,0,0.01,0.01,aterrizado (tag 9 perdido en el acercamiento)
+40.070,DONE,76,0,10,93,0,1,61,0,0,0,0,0.06,0.01,aterrizado (tag 9 perdido en el acercamiento)
+40.120,DONE,76,0,10,93,0,1,61,0,0,0,0,0.01,0.01,aterrizado (tag 9 perdido en el acercamiento)
+40.170,DONE,76,0,10,93,0,1,61,0,0,0,0,0.06,0.01,aterrizado (tag 9 perdido en el acercamiento)
+40.220,DONE,76,0,10,93,0,1,61,0,0,0,0,0.01,0.01,aterrizado (tag 9 perdido en el acercamiento)
+40.270,DONE,76,0,10,93,0,1,61,0,0,0,0,0.06,0.01,aterrizado (tag 9 perdido en el acercamiento)
+40.320,DONE,76,0,10,93,0,1,61,0,0,0,0,0.01,0.01,aterrizado (tag 9 perdido en el acercamiento)
+40.370,DONE,76,0,10,93,0,1,61,0,0,0,0,0.06,0.01,aterrizado (tag 9 perdido en el acercamiento)
+40.421,DONE,76,0,10,93,0,1,61,0,0,0,0,0.01,0.01,aterrizado (tag 9 perdido en el acercamiento)
+40.471,DONE,76,0,10,93,0,1,61,0,0,0,0,0.06,0.01,aterrizado (tag 9 perdido en el acercamiento)
+40.521,DONE,76,0,10,93,0,1,61,0,0,0,0,0.01,0.01,aterrizado (tag 9 perdido en el acercamiento)
+40.571,DONE,76,0,10,93,0,1,61,0,0,0,0,0.06,0.01,aterrizado (tag 9 perdido en el acercamiento)
+40.622,DONE,76,0,10,93,0,1,61,0,0,0,0,0.01,0.01,aterrizado (tag 9 perdido en el acercamiento)
+40.672,DONE,76,0,10,93,0,1,61,0,0,0,0,0.06,0.01,aterrizado (tag 9 perdido en el acercamiento)
+40.722,DONE,76,0,10,93,0,1,61,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+40.772,DONE,76,0,10,93,0,1,61,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)
+40.822,DONE,76,0,10,93,0,1,61,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+40.873,DONE,76,0,10,93,0,1,61,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+40.923,DONE,76,0,10,93,0,1,61,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+40.973,DONE,76,0,10,93,0,1,61,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+41.023,DONE,76,0,10,93,0,1,61,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+41.073,DONE,76,0,10,93,0,1,61,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+41.123,DONE,76,0,10,93,0,1,61,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+41.174,DONE,76,0,10,93,0,1,61,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+41.224,DONE,76,0,10,93,0,1,61,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+41.274,DONE,76,0,10,93,0,1,61,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+41.324,DONE,76,0,10,93,0,1,61,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+41.374,DONE,76,0,10,93,0,1,61,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+41.425,DONE,76,0,10,93,0,1,61,0,0,0,0,0.10,0.01,aterrizado (tag 9 perdido en el acercamiento)
+41.475,DONE,76,0,10,93,0,1,61,0,0,0,0,0.03,0.01,aterrizado (tag 9 perdido en el acercamiento)
+41.525,DONE,76,0,10,93,0,1,61,0,0,0,0,0.08,0.01,aterrizado (tag 9 perdido en el acercamiento)
+41.575,DONE,76,0,10,93,0,1,61,0,0,0,0,0.03,0.01,aterrizado (tag 9 perdido en el acercamiento)
+41.625,DONE,76,0,10,93,0,1,61,0,0,0,0,0.08,0.01,aterrizado (tag 9 perdido en el acercamiento)
+41.675,DONE,76,0,10,93,0,1,61,0,0,0,0,0.03,0.01,aterrizado (tag 9 perdido en el acercamiento)
+41.726,DONE,76,0,10,93,0,1,61,0,0,0,0,0.04,0.01,aterrizado (tag 9 perdido en el acercamiento)
+41.776,DONE,76,0,10,93,0,1,61,0,0,0,0,0.09,0.02,aterrizado (tag 9 perdido en el acercamiento)
+41.826,DONE,76,0,10,93,0,1,61,0,0,0,0,0.02,0.02,aterrizado (tag 9 perdido en el acercamiento)
+41.876,DONE,76,0,10,93,0,1,61,0,0,0,0,0.07,0.01,aterrizado (tag 9 perdido en el acercamiento)
+41.926,DONE,76,0,10,93,0,1,61,0,0,0,0,0.02,0.01,aterrizado (tag 9 perdido en el acercamiento)
+41.977,DONE,76,0,10,93,0,1,61,0,0,0,0,0.07,0.01,aterrizado (tag 9 perdido en el acercamiento)
+42.027,DONE,76,0,10,93,0,1,61,0,0,0,0,0.02,0.01,aterrizado (tag 9 perdido en el acercamiento)
+42.077,DONE,76,0,10,93,0,1,61,0,0,0,0,0.07,0.01,aterrizado (tag 9 perdido en el acercamiento)
+42.127,DONE,76,0,10,93,0,1,61,0,0,0,0,0.02,0.01,aterrizado (tag 9 perdido en el acercamiento)
+42.177,DONE,76,0,10,93,0,1,61,0,0,0,0,0.07,0.01,aterrizado (tag 9 perdido en el acercamiento)
+42.227,DONE,76,0,10,93,0,1,61,0,0,0,0,0.02,0.01,aterrizado (tag 9 perdido en el acercamiento)
+42.277,DONE,76,0,10,93,0,1,61,0,0,0,0,0.07,0.01,aterrizado (tag 9 perdido en el acercamiento)
+42.327,DONE,76,0,10,93,0,1,61,0,0,0,0,0.02,0.01,aterrizado (tag 9 perdido en el acercamiento)
+42.378,DONE,76,0,10,93,0,1,61,0,0,0,0,0.07,0.02,aterrizado (tag 9 perdido en el acercamiento)
+42.429,DONE,76,0,10,93,0,1,62,0,0,0,0,0.02,0.01,aterrizado (tag 9 perdido en el acercamiento)
+42.479,DONE,76,0,10,93,0,1,62,0,0,0,0,0.07,0.03,aterrizado (tag 9 perdido en el acercamiento)
+42.529,DONE,76,0,10,93,0,1,62,0,0,0,0,0.02,0.02,aterrizado (tag 9 perdido en el acercamiento)
+42.579,DONE,76,0,10,93,0,1,62,0,0,0,0,0.07,0.01,aterrizado (tag 9 perdido en el acercamiento)
+42.629,DONE,76,0,10,93,0,1,62,0,0,0,0,0.02,0.02,aterrizado (tag 9 perdido en el acercamiento)
+42.679,DONE,76,0,10,93,0,1,62,0,0,0,0,0.07,0.01,aterrizado (tag 9 perdido en el acercamiento)
+42.729,DONE,76,0,10,93,0,1,62,0,0,0,0,0.02,0.03,aterrizado (tag 9 perdido en el acercamiento)
+42.779,DONE,76,0,10,93,0,1,62,0,0,0,0,0.07,0.05,aterrizado (tag 9 perdido en el acercamiento)
+42.829,DONE,76,0,10,93,0,1,62,0,0,0,0,0.02,0.01,aterrizado (tag 9 perdido en el acercamiento)
+42.880,DONE,76,0,10,93,0,1,62,0,0,0,0,0.07,0.03,aterrizado (tag 9 perdido en el acercamiento)
+42.930,DONE,76,0,10,93,0,1,62,0,0,0,0,0.00,0.02,aterrizado (tag 9 perdido en el acercamiento)
+42.980,DONE,76,0,10,93,0,1,62,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)
+43.031,DONE,76,0,10,93,0,1,62,0,0,0,0,0.02,0.02,aterrizado (tag 9 perdido en el acercamiento)
+43.081,DONE,76,0,10,93,0,1,62,0,0,0,0,0.07,0.01,aterrizado (tag 9 perdido en el acercamiento)
+43.131,DONE,76,0,10,93,0,1,62,0,0,0,0,0.02,0.01,aterrizado (tag 9 perdido en el acercamiento)
+43.181,DONE,76,0,10,93,0,1,62,0,0,0,0,0.07,0.01,aterrizado (tag 9 perdido en el acercamiento)
+43.233,DONE,76,0,10,93,0,1,62,0,0,0,0,0.00,0.03,aterrizado (tag 9 perdido en el acercamiento)
+43.283,DONE,76,0,10,93,0,1,62,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)
+43.336,DONE,76,0,10,93,0,1,62,0,0,0,0,0.00,0.02,aterrizado (tag 9 perdido en el acercamiento)
+43.386,DONE,76,0,10,93,0,1,62,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)
+43.436,DONE,76,0,10,93,0,1,61,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+43.486,DONE,76,0,10,93,0,1,61,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+43.536,DONE,76,0,10,93,0,1,61,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+43.586,DONE,76,0,10,93,0,1,61,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+43.637,DONE,76,0,10,93,0,1,61,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+43.687,DONE,76,0,10,93,0,1,61,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+43.737,DONE,76,0,10,93,0,1,61,0,0,0,0,0.00,0.04,aterrizado (tag 9 perdido en el acercamiento)
+43.787,DONE,76,0,10,93,0,1,61,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+43.837,DONE,76,0,10,93,0,1,61,0,0,0,0,0.00,0.02,aterrizado (tag 9 perdido en el acercamiento)
+43.887,DONE,76,0,10,93,0,1,61,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)
+43.937,DONE,76,0,10,93,0,1,61,0,0,0,0,0.00,0.02,aterrizado (tag 9 perdido en el acercamiento)
+43.988,DONE,76,0,10,93,0,1,61,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+44.038,DONE,76,0,10,93,0,1,61,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+44.088,DONE,76,0,10,93,0,1,61,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+44.138,DONE,76,0,10,93,0,1,61,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+44.188,DONE,76,0,10,93,0,1,61,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+44.238,DONE,76,0,10,93,0,1,61,0,0,0,0,0.00,0.02,aterrizado (tag 9 perdido en el acercamiento)
+44.289,DONE,76,0,10,93,0,1,61,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)
+44.339,DONE,76,0,10,93,0,1,61,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+44.389,DONE,76,0,10,93,0,1,61,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+44.439,DONE,76,0,10,93,0,1,61,0,0,0,0,0.00,0.02,aterrizado (tag 9 perdido en el acercamiento)
+44.489,DONE,76,0,10,93,0,1,61,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+44.540,DONE,76,0,10,93,0,1,61,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+44.590,DONE,76,0,10,93,0,1,61,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+44.640,DONE,76,0,10,93,0,1,61,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+44.690,DONE,76,0,10,93,0,1,61,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)
+44.740,DONE,76,0,10,93,0,1,61,0,0,0,0,0.10,0.03,aterrizado (tag 9 perdido en el acercamiento)
+44.790,DONE,76,0,10,93,0,1,61,0,0,0,0,0.02,0.02,aterrizado (tag 9 perdido en el acercamiento)
+44.841,DONE,76,0,10,93,0,1,61,0,0,0,0,0.07,0.01,aterrizado (tag 9 perdido en el acercamiento)
+44.891,DONE,76,0,10,93,0,1,61,0,0,0,0,0.02,0.01,aterrizado (tag 9 perdido en el acercamiento)
+44.941,DONE,76,0,10,93,0,1,61,0,0,0,0,0.04,0.01,aterrizado (tag 9 perdido en el acercamiento)
+44.991,DONE,76,0,10,93,0,1,61,0,0,0,0,0.09,0.01,aterrizado (tag 9 perdido en el acercamiento)
+45.041,DONE,76,0,10,93,0,1,61,0,0,0,0,0.04,0.02,aterrizado (tag 9 perdido en el acercamiento)
+45.091,DONE,76,0,10,93,0,1,61,0,0,0,0,0.09,0.01,aterrizado (tag 9 perdido en el acercamiento)
+45.142,DONE,76,0,10,93,0,1,61,0,0,0,0,0.03,0.01,aterrizado (tag 9 perdido en el acercamiento)
+45.192,DONE,76,0,10,93,0,1,61,0,0,0,0,0.08,0.02,aterrizado (tag 9 perdido en el acercamiento)
+45.242,DONE,76,0,10,93,0,1,61,0,0,0,0,0.03,0.01,aterrizado (tag 9 perdido en el acercamiento)
+45.292,DONE,76,0,10,93,0,1,61,0,0,0,0,0.08,0.01,aterrizado (tag 9 perdido en el acercamiento)
+45.342,DONE,76,0,10,93,0,1,61,0,0,0,0,0.03,0.01,aterrizado (tag 9 perdido en el acercamiento)
+45.393,DONE,76,0,10,93,0,1,61,0,0,0,0,0.08,0.01,aterrizado (tag 9 perdido en el acercamiento)
+45.443,DONE,76,0,10,93,0,1,62,0,0,0,0,0.03,0.01,aterrizado (tag 9 perdido en el acercamiento)
+45.493,DONE,76,0,10,93,0,1,62,0,0,0,0,0.08,0.01,aterrizado (tag 9 perdido en el acercamiento)
+45.543,DONE,76,0,10,93,0,1,62,0,0,0,0,0.03,0.02,aterrizado (tag 9 perdido en el acercamiento)
+45.593,DONE,76,0,10,93,0,1,62,0,0,0,0,0.08,0.01,aterrizado (tag 9 perdido en el acercamiento)
+45.643,DONE,76,0,10,93,0,1,62,0,0,0,0,0.03,0.01,aterrizado (tag 9 perdido en el acercamiento)
+45.694,DONE,76,0,10,93,0,1,62,0,0,0,0,0.08,0.01,aterrizado (tag 9 perdido en el acercamiento)
+45.744,DONE,76,0,10,93,0,1,62,0,0,0,0,0.02,0.02,aterrizado (tag 9 perdido en el acercamiento)
+45.794,DONE,76,0,10,93,0,1,62,0,0,0,0,0.07,0.01,aterrizado (tag 9 perdido en el acercamiento)
+45.844,DONE,76,0,10,93,0,1,62,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+45.894,DONE,76,0,10,93,0,1,62,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)
+45.945,DONE,76,0,10,93,0,1,62,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+45.995,DONE,76,0,10,93,0,1,62,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+46.045,DONE,76,0,10,93,0,1,62,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+46.095,DONE,76,0,10,93,0,1,62,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)
+46.145,DONE,76,0,10,93,0,1,62,0,0,0,0,0.03,0.01,aterrizado (tag 9 perdido en el acercamiento)
+46.199,DONE,76,0,10,93,0,1,62,0,0,0,0,0.08,0.04,aterrizado (tag 9 perdido en el acercamiento)
+46.249,DONE,76,0,10,93,0,1,62,0,0,0,0,0.01,0.01,aterrizado (tag 9 perdido en el acercamiento)
+46.301,DONE,76,0,10,93,0,1,62,0,0,0,0,0.06,0.01,aterrizado (tag 9 perdido en el acercamiento)
+46.352,DONE,76,0,10,93,0,1,62,0,0,0,0,0.01,0.02,aterrizado (tag 9 perdido en el acercamiento)
+46.402,DONE,76,0,10,93,0,1,62,0,0,0,0,0.06,0.01,aterrizado (tag 9 perdido en el acercamiento)
+46.452,DONE,76,0,10,93,0,1,62,0,0,0,0,0.01,0.01,aterrizado (tag 9 perdido en el acercamiento)
+46.503,DONE,76,0,10,93,0,1,62,0,0,0,0,0.06,0.01,aterrizado (tag 9 perdido en el acercamiento)
+46.553,DONE,76,0,10,93,0,1,62,0,0,0,0,0.01,0.01,aterrizado (tag 9 perdido en el acercamiento)
+46.603,DONE,76,0,10,93,0,1,62,0,0,0,0,0.06,0.01,aterrizado (tag 9 perdido en el acercamiento)
+46.653,DONE,76,0,10,93,0,1,62,0,0,0,0,0.01,0.01,aterrizado (tag 9 perdido en el acercamiento)
+46.703,DONE,76,0,10,93,0,1,62,0,0,0,0,0.06,0.01,aterrizado (tag 9 perdido en el acercamiento)
+46.754,DONE,76,0,10,93,0,1,62,0,0,0,0,0.01,0.05,aterrizado (tag 9 perdido en el acercamiento)
+46.804,DONE,76,0,10,93,0,1,62,0,0,0,0,0.06,0.01,aterrizado (tag 9 perdido en el acercamiento)
+46.854,DONE,76,0,10,93,0,1,62,0,0,0,0,0.01,0.01,aterrizado (tag 9 perdido en el acercamiento)
+46.904,DONE,76,0,10,93,0,1,62,0,0,0,0,0.06,0.01,aterrizado (tag 9 perdido en el acercamiento)
+46.954,DONE,76,0,10,93,0,1,62,0,0,0,0,0.01,0.01,aterrizado (tag 9 perdido en el acercamiento)
+47.005,DONE,76,0,10,93,0,1,62,0,0,0,0,0.06,0.01,aterrizado (tag 9 perdido en el acercamiento)
+47.055,DONE,76,0,10,93,0,1,62,0,0,0,0,0.01,0.02,aterrizado (tag 9 perdido en el acercamiento)
+47.105,DONE,76,0,10,93,0,1,62,0,0,0,0,0.06,0.02,aterrizado (tag 9 perdido en el acercamiento)
+47.155,DONE,76,0,10,93,0,1,62,0,0,0,0,0.01,0.01,aterrizado (tag 9 perdido en el acercamiento)
+47.205,DONE,76,0,10,93,0,1,62,0,0,0,0,0.06,0.01,aterrizado (tag 9 perdido en el acercamiento)
+47.256,DONE,76,0,10,93,0,1,62,0,0,0,0,0.01,0.01,aterrizado (tag 9 perdido en el acercamiento)
+47.306,DONE,76,0,10,93,0,1,62,0,0,0,0,0.06,0.01,aterrizado (tag 9 perdido en el acercamiento)
+47.356,DONE,76,0,10,93,0,1,62,0,0,0,0,0.01,0.01,aterrizado (tag 9 perdido en el acercamiento)
+47.406,DONE,76,0,10,93,0,1,62,0,0,0,0,0.06,0.01,aterrizado (tag 9 perdido en el acercamiento)
+47.456,DONE,76,0,10,93,0,1,62,0,0,0,0,0.01,0.01,aterrizado (tag 9 perdido en el acercamiento)
+47.506,DONE,76,0,10,93,0,1,62,0,0,0,0,0.06,0.01,aterrizado (tag 9 perdido en el acercamiento)
+47.556,DONE,76,0,10,93,0,1,62,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+47.606,DONE,76,0,10,93,0,1,62,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+47.657,DONE,76,0,10,93,0,1,62,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+47.707,DONE,76,0,10,93,0,1,62,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)
+47.757,DONE,76,0,10,93,0,1,62,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+47.807,DONE,76,0,10,93,0,1,62,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)
+47.857,DONE,76,0,10,93,0,1,62,0,0,0,0,0.00,0.02,aterrizado (tag 9 perdido en el acercamiento)
+47.907,DONE,76,0,10,93,0,1,62,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)
+47.958,DONE,76,0,10,93,0,1,62,0,0,0,0,0.00,0.02,aterrizado (tag 9 perdido en el acercamiento)
+48.008,DONE,76,0,10,93,0,1,62,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)
+48.059,DONE,76,0,10,93,0,1,62,0,0,0,0,0.10,0.01,aterrizado (tag 9 perdido en el acercamiento)
+48.109,DONE,76,0,10,93,0,1,62,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+48.160,DONE,76,0,10,93,0,1,62,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+48.210,DONE,76,0,10,93,0,1,62,0,0,0,0,0.00,0.03,aterrizado (tag 9 perdido en el acercamiento)
+48.260,DONE,76,0,10,93,0,1,62,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)
+48.310,DONE,76,0,10,93,0,1,62,0,0,0,0,0.10,0.02,aterrizado (tag 9 perdido en el acercamiento)
+48.362,DONE,76,0,10,93,0,1,62,0,0,0,0,0.02,0.02,aterrizado (tag 9 perdido en el acercamiento)
+48.412,DONE,76,0,10,93,0,1,62,0,0,0,0,0.07,0.01,aterrizado (tag 9 perdido en el acercamiento)
+48.462,DONE,76,0,10,93,0,1,62,0,0,0,0,0.12,0.02,aterrizado (tag 9 perdido en el acercamiento)
+48.512,DONE,76,0,10,93,0,1,63,0,0,0,0,0.04,0.02,aterrizado (tag 9 perdido en el acercamiento)
+48.565,DONE,76,0,10,93,0,1,63,0,0,0,0,0.02,0.01,aterrizado (tag 9 perdido en el acercamiento)
+48.616,DONE,76,0,10,93,0,1,63,0,0,0,0,0.07,0.01,aterrizado (tag 9 perdido en el acercamiento)
+48.667,DONE,76,0,10,93,0,1,63,0,0,0,0,0.02,0.01,aterrizado (tag 9 perdido en el acercamiento)
+48.717,DONE,76,0,10,93,0,1,63,0,0,0,0,0.07,0.02,aterrizado (tag 9 perdido en el acercamiento)
+48.767,DONE,76,0,10,93,0,1,63,0,0,0,0,0.01,0.01,aterrizado (tag 9 perdido en el acercamiento)
+48.817,DONE,76,0,10,93,0,1,63,0,0,0,0,0.07,0.01,aterrizado (tag 9 perdido en el acercamiento)
+48.867,DONE,76,0,10,93,0,1,63,0,0,0,0,0.02,0.01,aterrizado (tag 9 perdido en el acercamiento)
+48.917,DONE,76,0,10,93,0,1,63,0,0,0,0,0.07,0.01,aterrizado (tag 9 perdido en el acercamiento)
+48.967,DONE,76,0,10,93,0,1,63,0,0,0,0,0.03,0.01,aterrizado (tag 9 perdido en el acercamiento)
+49.018,DONE,76,0,10,93,0,1,63,0,0,0,0,0.08,0.01,aterrizado (tag 9 perdido en el acercamiento)
+49.068,DONE,76,0,10,93,0,1,63,0,0,0,0,0.03,0.01,aterrizado (tag 9 perdido en el acercamiento)
+49.118,DONE,76,0,10,93,0,1,63,0,0,0,0,0.08,0.01,aterrizado (tag 9 perdido en el acercamiento)
+49.169,DONE,76,0,10,93,0,1,63,0,0,0,0,0.03,0.01,aterrizado (tag 9 perdido en el acercamiento)
+49.219,DONE,76,0,10,93,0,1,63,0,0,0,0,0.08,0.01,aterrizado (tag 9 perdido en el acercamiento)
+49.270,DONE,76,0,10,93,0,1,63,0,0,0,0,0.02,0.01,aterrizado (tag 9 perdido en el acercamiento)
+49.320,DONE,76,0,10,93,0,1,63,0,0,0,0,0.07,0.01,aterrizado (tag 9 perdido en el acercamiento)
+49.371,DONE,76,0,10,93,0,1,63,0,0,0,0,0.02,0.01,aterrizado (tag 9 perdido en el acercamiento)
+49.421,DONE,76,0,10,93,0,1,63,0,0,0,0,0.07,0.01,aterrizado (tag 9 perdido en el acercamiento)
+49.472,DONE,76,0,10,93,0,1,63,0,0,0,0,0.02,0.01,aterrizado (tag 9 perdido en el acercamiento)
+49.522,DONE,76,0,10,93,0,1,63,0,0,0,0,0.07,0.01,aterrizado (tag 9 perdido en el acercamiento)
+49.572,DONE,76,0,10,93,0,1,63,0,0,0,0,0.02,0.02,aterrizado (tag 9 perdido en el acercamiento)
+49.622,DONE,76,0,10,93,0,1,63,0,0,0,0,0.07,0.01,aterrizado (tag 9 perdido en el acercamiento)
+49.673,DONE,76,0,10,93,0,1,63,0,0,0,0,0.02,0.01,aterrizado (tag 9 perdido en el acercamiento)
+49.723,DONE,76,0,10,93,0,1,63,0,0,0,0,0.07,0.02,aterrizado (tag 9 perdido en el acercamiento)
+49.773,DONE,76,0,10,93,0,1,63,0,0,0,0,0.02,0.01,aterrizado (tag 9 perdido en el acercamiento)
+49.823,DONE,76,0,10,93,0,1,63,0,0,0,0,0.07,0.01,aterrizado (tag 9 perdido en el acercamiento)
+49.874,DONE,76,0,10,93,0,1,63,0,0,0,0,0.03,0.03,aterrizado (tag 9 perdido en el acercamiento)
+49.924,DONE,76,0,10,93,0,1,63,0,0,0,0,0.08,0.02,aterrizado (tag 9 perdido en el acercamiento)
+49.974,DONE,76,0,10,93,0,1,63,0,0,0,0,0.00,0.02,aterrizado (tag 9 perdido en el acercamiento)
+50.024,DONE,76,0,10,93,0,1,63,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)
+50.074,DONE,76,0,10,93,0,1,63,0,0,0,0,0.03,0.01,aterrizado (tag 9 perdido en el acercamiento)
+50.125,DONE,76,0,10,93,0,1,63,0,0,0,0,0.08,0.01,aterrizado (tag 9 perdido en el acercamiento)
+50.175,DONE,76,0,10,93,0,1,63,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+50.225,DONE,76,0,10,93,0,1,63,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+50.275,DONE,76,0,10,93,0,1,63,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+50.325,DONE,76,0,10,93,0,1,63,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)
+50.375,DONE,76,0,10,93,0,1,63,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+50.425,DONE,76,0,10,93,0,1,63,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)
+50.476,DONE,76,0,10,93,0,1,63,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+50.526,DONE,76,0,10,93,0,1,63,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+50.576,DONE,76,0,10,93,0,1,63,0,0,0,0,0.00,0.02,aterrizado (tag 9 perdido en el acercamiento)
+50.626,DONE,76,0,10,93,0,1,63,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+50.676,DONE,76,0,10,93,0,1,63,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+50.726,DONE,76,0,10,93,0,1,63,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)
+50.777,DONE,76,0,10,93,0,1,63,0,0,0,0,0.01,0.02,aterrizado (tag 9 perdido en el acercamiento)
+50.827,DONE,76,0,10,93,0,1,63,0,0,0,0,0.06,0.02,aterrizado (tag 9 perdido en el acercamiento)
+50.877,DONE,76,0,10,93,0,1,63,0,0,0,0,0.00,0.02,aterrizado (tag 9 perdido en el acercamiento)
+50.927,DONE,76,0,10,93,0,1,63,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+50.977,DONE,76,0,10,93,0,1,63,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+51.027,DONE,76,0,10,93,0,1,63,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+51.077,DONE,76,0,10,93,0,1,63,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+51.128,DONE,76,0,10,93,0,1,63,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+51.178,DONE,76,0,10,93,0,1,63,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+51.228,DONE,76,0,10,93,0,1,63,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+51.278,DONE,76,0,10,93,0,1,63,0,0,0,0,0.00,0.02,aterrizado (tag 9 perdido en el acercamiento)
+51.331,DONE,76,0,10,93,0,1,63,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+51.381,DONE,76,0,10,93,0,1,63,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+51.431,DONE,76,0,10,93,0,1,63,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)
+51.481,DONE,76,0,10,93,0,1,63,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+51.532,DONE,76,0,10,93,0,1,63,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)
+51.582,DONE,76,0,10,93,0,1,63,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+51.633,DONE,76,0,10,93,0,1,63,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+51.683,DONE,76,0,10,93,0,1,63,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+51.733,DONE,76,0,10,93,0,1,63,0,0,0,0,0.00,0.02,aterrizado (tag 9 perdido en el acercamiento)
+51.784,DONE,76,0,10,93,0,1,63,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)
+51.834,DONE,76,0,10,93,0,1,63,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+51.884,DONE,76,0,10,93,0,1,63,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)
+51.934,DONE,76,0,10,93,0,1,63,0,0,0,0,0.00,0.02,aterrizado (tag 9 perdido en el acercamiento)
+51.984,DONE,76,0,10,93,0,1,63,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)
+52.035,DONE,76,0,10,93,0,1,63,0,0,0,0,0.10,0.01,aterrizado (tag 9 perdido en el acercamiento)
+52.085,DONE,76,0,10,93,0,1,63,0,0,0,0,0.04,0.02,aterrizado (tag 9 perdido en el acercamiento)
+52.135,DONE,76,0,10,93,0,1,63,0,0,0,0,0.09,0.02,aterrizado (tag 9 perdido en el acercamiento)
+52.185,DONE,76,0,10,93,0,1,63,0,0,0,0,0.03,0.02,aterrizado (tag 9 perdido en el acercamiento)
+52.236,DONE,76,0,10,93,0,1,63,0,0,0,0,0.08,0.02,aterrizado (tag 9 perdido en el acercamiento)
+52.286,DONE,76,0,10,93,0,1,63,0,0,0,0,0.03,0.02,aterrizado (tag 9 perdido en el acercamiento)
+52.337,DONE,76,0,10,93,0,1,63,0,0,0,0,0.08,0.02,aterrizado (tag 9 perdido en el acercamiento)
+52.387,DONE,76,0,10,93,0,1,63,0,0,0,0,0.02,0.02,aterrizado (tag 9 perdido en el acercamiento)
+52.438,DONE,76,0,10,93,0,1,63,0,0,0,0,0.07,0.02,aterrizado (tag 9 perdido en el acercamiento)
+52.488,DONE,76,0,10,93,0,1,63,0,0,0,0,0.01,0.02,aterrizado (tag 9 perdido en el acercamiento)
+52.538,DONE,76,0,10,93,0,1,63,0,0,0,0,0.06,0.01,aterrizado (tag 9 perdido en el acercamiento)
+52.588,DONE,76,0,10,93,0,1,63,0,0,0,0,0.04,0.01,aterrizado (tag 9 perdido en el acercamiento)
+52.638,DONE,76,0,10,93,0,1,63,0,0,0,0,0.09,0.03,aterrizado (tag 9 perdido en el acercamiento)
+52.689,DONE,76,0,10,93,0,1,63,0,0,0,0,0.01,0.02,aterrizado (tag 9 perdido en el acercamiento)
+52.739,DONE,76,0,10,93,0,1,63,0,0,0,0,0.06,0.04,aterrizado (tag 9 perdido en el acercamiento)
+52.789,DONE,76,0,10,93,0,1,63,0,0,0,0,0.01,0.02,aterrizado (tag 9 perdido en el acercamiento)
+52.839,DONE,76,0,10,93,0,1,63,0,0,0,0,0.06,0.01,aterrizado (tag 9 perdido en el acercamiento)
+52.889,DONE,76,0,10,93,0,1,63,0,0,0,0,0.01,0.01,aterrizado (tag 9 perdido en el acercamiento)
+52.939,DONE,76,0,10,93,0,1,63,0,0,0,0,0.06,0.01,aterrizado (tag 9 perdido en el acercamiento)
+52.989,DONE,76,0,10,93,0,1,63,0,0,0,0,0.01,0.01,aterrizado (tag 9 perdido en el acercamiento)
+53.040,DONE,76,0,10,93,0,1,63,0,0,0,0,0.06,0.01,aterrizado (tag 9 perdido en el acercamiento)
+53.090,DONE,76,0,10,93,0,1,63,0,0,0,0,0.01,0.01,aterrizado (tag 9 perdido en el acercamiento)
+53.140,DONE,76,0,10,93,0,1,63,0,0,0,0,0.06,0.01,aterrizado (tag 9 perdido en el acercamiento)
+53.190,DONE,76,0,10,93,0,1,63,0,0,0,0,0.01,0.01,aterrizado (tag 9 perdido en el acercamiento)
+53.240,DONE,76,0,10,93,0,1,63,0,0,0,0,0.06,0.01,aterrizado (tag 9 perdido en el acercamiento)
+53.290,DONE,76,0,10,93,0,1,63,0,0,0,0,0.01,0.01,aterrizado (tag 9 perdido en el acercamiento)
+53.340,DONE,76,0,10,93,0,1,63,0,0,0,0,0.06,0.01,aterrizado (tag 9 perdido en el acercamiento)
+53.390,DONE,76,0,10,93,0,1,63,0,0,0,0,0.01,0.01,aterrizado (tag 9 perdido en el acercamiento)
+53.441,DONE,76,0,10,93,0,1,63,0,0,0,0,0.06,0.01,aterrizado (tag 9 perdido en el acercamiento)
+53.491,DONE,76,0,10,93,0,1,63,0,0,0,0,0.01,0.01,aterrizado (tag 9 perdido en el acercamiento)
+53.541,DONE,76,0,10,93,0,1,63,0,0,0,0,0.06,0.02,aterrizado (tag 9 perdido en el acercamiento)
+53.591,DONE,76,0,10,93,0,1,63,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+53.641,DONE,76,0,10,93,0,1,63,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+53.691,DONE,76,0,10,93,0,1,63,0,0,0,0,0.00,0.02,aterrizado (tag 9 perdido en el acercamiento)
+53.741,DONE,76,0,10,93,0,1,63,0,0,0,0,0.05,0.06,aterrizado (tag 9 perdido en el acercamiento)
+53.792,DONE,76,0,10,93,0,1,63,0,0,0,0,0.02,0.02,aterrizado (tag 9 perdido en el acercamiento)
+53.842,DONE,76,0,10,93,0,1,63,0,0,0,0,0.07,0.01,aterrizado (tag 9 perdido en el acercamiento)
+53.892,DONE,76,0,10,93,0,1,63,0,0,0,0,0.01,0.01,aterrizado (tag 9 perdido en el acercamiento)
+53.942,DONE,76,0,10,93,0,1,63,0,0,0,0,0.06,0.01,aterrizado (tag 9 perdido en el acercamiento)
+53.995,DONE,76,0,10,93,0,1,63,0,0,0,0,0.02,0.01,aterrizado (tag 9 perdido en el acercamiento)
+54.045,DONE,76,0,10,93,0,1,63,0,0,0,0,0.07,0.01,aterrizado (tag 9 perdido en el acercamiento)
+54.098,DONE,76,0,10,93,0,1,63,0,0,0,0,0.02,0.01,aterrizado (tag 9 perdido en el acercamiento)
+54.148,DONE,76,0,10,93,0,1,63,0,0,0,0,0.07,0.01,aterrizado (tag 9 perdido en el acercamiento)
+54.200,DONE,76,0,10,93,0,1,63,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+54.250,DONE,76,0,10,93,0,1,63,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+54.301,DONE,76,0,10,93,0,1,63,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+54.351,DONE,76,0,10,93,0,1,63,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+54.402,DONE,76,0,10,93,0,1,63,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+54.452,DONE,76,0,10,93,0,1,63,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+54.502,DONE,76,0,10,93,0,1,63,0,0,0,0,0.00,0.02,aterrizado (tag 9 perdido en el acercamiento)
+54.552,DONE,76,0,10,93,0,1,63,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)
+54.602,DONE,76,0,10,93,0,1,63,0,0,0,0,0.02,0.02,aterrizado (tag 9 perdido en el acercamiento)
+54.652,DONE,76,0,10,93,0,1,63,0,0,0,0,0.07,0.01,aterrizado (tag 9 perdido en el acercamiento)
+54.702,DONE,76,0,10,93,0,1,63,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+54.752,DONE,76,0,10,93,0,1,63,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+54.802,DONE,76,0,10,93,0,1,63,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+54.853,DONE,76,0,10,93,0,1,63,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+54.903,DONE,76,0,10,93,0,1,63,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+54.953,DONE,76,0,10,93,0,1,63,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+55.003,DONE,76,0,10,93,0,1,63,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+55.053,DONE,76,0,10,93,0,1,63,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+55.103,DONE,76,0,10,93,0,1,63,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)
+55.153,DONE,76,0,10,93,0,1,63,0,0,0,0,0.00,0.03,aterrizado (tag 9 perdido en el acercamiento)
+55.204,DONE,76,0,10,93,0,1,63,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+55.254,DONE,76,0,10,93,0,1,63,0,0,0,0,0.00,0.02,aterrizado (tag 9 perdido en el acercamiento)
+55.304,DONE,76,0,10,93,0,1,63,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)
+55.354,DONE,76,0,10,93,0,1,63,0,0,0,0,0.00,0.02,aterrizado (tag 9 perdido en el acercamiento)
+55.405,DONE,76,0,10,93,0,1,63,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)
+55.455,DONE,76,0,10,93,0,1,64,0,0,0,0,0.00,0.02,aterrizado (tag 9 perdido en el acercamiento)
+55.505,DONE,76,0,10,93,0,1,64,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+55.555,DONE,76,0,10,93,0,1,64,0,0,0,0,0.10,0.01,aterrizado (tag 9 perdido en el acercamiento)
+55.605,DONE,76,0,10,93,0,1,64,0,0,0,0,0.02,0.01,aterrizado (tag 9 perdido en el acercamiento)
+55.655,DONE,76,0,10,93,0,1,64,0,0,0,0,0.07,0.01,aterrizado (tag 9 perdido en el acercamiento)
+55.705,DONE,76,0,10,93,0,1,64,0,0,0,0,0.04,0.01,aterrizado (tag 9 perdido en el acercamiento)
+55.756,DONE,76,0,10,93,0,1,64,0,0,0,0,0.09,0.04,aterrizado (tag 9 perdido en el acercamiento)
+55.806,DONE,76,0,10,93,0,1,64,0,0,0,0,0.04,0.01,aterrizado (tag 9 perdido en el acercamiento)
+55.856,DONE,76,0,10,93,0,1,64,0,0,0,0,0.09,0.02,aterrizado (tag 9 perdido en el acercamiento)
+55.906,DONE,76,0,10,93,0,1,64,0,0,0,0,0.01,0.02,aterrizado (tag 9 perdido en el acercamiento)
+55.956,DONE,76,0,10,93,0,1,64,0,0,0,0,0.06,0.03,aterrizado (tag 9 perdido en el acercamiento)
+56.006,DONE,76,0,10,93,0,1,64,0,0,0,0,0.03,0.02,aterrizado (tag 9 perdido en el acercamiento)
+56.056,DONE,76,0,10,93,0,1,64,0,0,0,0,0.08,0.01,aterrizado (tag 9 perdido en el acercamiento)
+56.107,DONE,76,0,10,93,0,1,64,0,0,0,0,0.02,0.01,aterrizado (tag 9 perdido en el acercamiento)
+56.157,DONE,76,0,10,93,0,1,64,0,0,0,0,0.07,0.02,aterrizado (tag 9 perdido en el acercamiento)
+56.207,DONE,76,0,10,93,0,1,64,0,0,0,0,0.02,0.01,aterrizado (tag 9 perdido en el acercamiento)
+56.257,DONE,76,0,10,93,0,1,64,0,0,0,0,0.07,0.01,aterrizado (tag 9 perdido en el acercamiento)
+56.307,DONE,76,0,10,93,0,1,64,0,0,0,0,0.02,0.02,aterrizado (tag 9 perdido en el acercamiento)
+56.357,DONE,76,0,10,93,0,1,64,0,0,0,0,0.07,0.01,aterrizado (tag 9 perdido en el acercamiento)
+56.407,DONE,76,0,10,93,0,1,64,0,0,0,0,0.02,0.01,aterrizado (tag 9 perdido en el acercamiento)
+56.458,DONE,76,0,10,93,0,1,64,0,0,0,0,0.07,0.01,aterrizado (tag 9 perdido en el acercamiento)
+56.508,DONE,76,0,10,93,0,1,64,0,0,0,0,0.02,0.01,aterrizado (tag 9 perdido en el acercamiento)
+56.558,DONE,76,0,10,93,0,1,64,0,0,0,0,0.07,0.01,aterrizado (tag 9 perdido en el acercamiento)
+56.608,DONE,76,0,10,93,0,1,64,0,0,0,0,0.02,0.02,aterrizado (tag 9 perdido en el acercamiento)
+56.658,DONE,76,0,10,93,0,1,64,0,0,0,0,0.07,0.01,aterrizado (tag 9 perdido en el acercamiento)
+56.708,DONE,76,0,10,93,0,1,64,0,0,0,0,0.01,0.02,aterrizado (tag 9 perdido en el acercamiento)
+56.758,DONE,76,0,10,93,0,1,64,0,0,0,0,0.06,0.02,aterrizado (tag 9 perdido en el acercamiento)
+56.808,DONE,76,0,10,93,0,1,64,0,0,0,0,0.01,0.01,aterrizado (tag 9 perdido en el acercamiento)
+56.863,DONE,76,0,10,93,0,1,64,0,0,0,0,0.06,0.02,aterrizado (tag 9 perdido en el acercamiento)
+56.913,DONE,76,0,10,93,0,1,64,0,0,0,0,0.01,0.02,aterrizado (tag 9 perdido en el acercamiento)
+56.966,DONE,76,0,10,93,0,1,64,0,0,0,0,0.06,0.01,aterrizado (tag 9 perdido en el acercamiento)
+57.016,DONE,76,0,10,93,0,1,64,0,0,0,0,0.01,0.01,aterrizado (tag 9 perdido en el acercamiento)
+57.066,DONE,76,0,10,93,0,1,64,0,0,0,0,0.06,0.01,aterrizado (tag 9 perdido en el acercamiento)
+57.116,DONE,76,0,10,93,0,1,64,0,0,0,0,0.01,0.02,aterrizado (tag 9 perdido en el acercamiento)
+57.167,DONE,76,0,10,93,0,1,64,0,0,0,0,0.06,0.02,aterrizado (tag 9 perdido en el acercamiento)
+57.217,DONE,76,0,10,93,0,1,64,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+57.267,DONE,76,0,10,93,0,1,64,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)
+57.317,DONE,76,0,10,93,0,1,64,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+57.367,DONE,76,0,10,93,0,1,64,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+57.417,DONE,76,0,10,93,0,1,64,0,0,0,0,0.01,0.02,aterrizado (tag 9 perdido en el acercamiento)
+57.467,DONE,76,0,10,93,0,1,64,0,0,0,0,0.06,0.02,aterrizado (tag 9 perdido en el acercamiento)
+57.518,DONE,76,0,10,93,0,1,63,0,0,0,0,0.00,0.02,aterrizado (tag 9 perdido en el acercamiento)
+57.568,DONE,76,0,10,93,0,1,63,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)
+57.618,DONE,76,0,10,93,0,1,63,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+57.668,DONE,76,0,10,93,0,1,63,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)
+57.718,DONE,76,0,10,93,0,1,63,0,0,0,0,0.00,0.02,aterrizado (tag 9 perdido en el acercamiento)
+57.768,DONE,76,0,10,93,0,1,63,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)
+57.818,DONE,76,0,10,93,0,1,63,0,0,0,0,0.00,0.02,aterrizado (tag 9 perdido en el acercamiento)
+57.868,DONE,76,0,10,93,0,1,63,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+57.918,DONE,76,0,10,93,0,1,63,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+57.969,DONE,76,0,10,93,0,1,63,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)
+58.019,DONE,76,0,10,93,0,1,63,0,0,0,0,0.01,0.03,aterrizado (tag 9 perdido en el acercamiento)
+58.069,DONE,76,0,10,93,0,1,63,0,0,0,0,0.06,0.02,aterrizado (tag 9 perdido en el acercamiento)
+58.119,DONE,76,0,10,93,0,1,63,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+58.169,DONE,76,0,10,93,0,1,63,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+58.219,DONE,76,0,10,93,0,1,63,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+58.270,DONE,76,0,10,93,0,1,63,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+58.320,DONE,76,0,10,93,0,1,63,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+58.370,DONE,76,0,10,93,0,1,63,0,0,0,0,0.00,0.01,aterrizado (tag 9 perdido en el acercamiento)
+58.420,DONE,76,0,10,93,0,1,63,0,0,0,0,0.05,0.01,aterrizado (tag 9 perdido en el acercamiento)
+58.470,DONE,76,0,10,93,0,1,64,0,0,0,0,0.00,0.02,aterrizado (tag 9 perdido en el acercamiento)
+58.522,DONE,76,0,10,93,0,1,64,0,0,0,0,0.06,0.02,aterrizado (tag 9 perdido en el acercamiento)
+58.572,DONE,76,0,10,93,0,1,64,0,0,0,0,0.00,0.02,aterrizado (tag 9 perdido en el acercamiento)
+58.622,DONE,76,0,10,93,0,1,64,0,0,0,0,0.05,0.02,aterrizado (tag 9 perdido en el acercamiento)

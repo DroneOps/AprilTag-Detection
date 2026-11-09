@@ -1,0 +1,105 @@
+Resumen de sesión — 2026-11-09 15:17 — 9 bitácoras
+
+== vuelo_20261024_111511.csv  (vuelo)
+   vuelo 29 s | batería 72% -> 54% | temp max 63 C
+   despegue: en el aire a 73 cm (estable, despegue 4.1 s)
+   altura en vuelo: min 64 cm, max 122 cm
+   flip omitido: no alcanzo 120 cm (esta a 115)
+   final: DONE — aterrizado (fin de la prueba)
+   problemas: no alcanzó la altura del flip, flip omitido
+   VEREDICTO: REVISAR
+
+== vuelo_20261024_111610.csv  (vuelo)
+   vuelo 18 s | batería 47% -> 32% | temp max 70 C
+   despegue: en el aire a 64 cm (estable, despegue 3.9 s)
+   altura en vuelo: min 61 cm, max 78 cm
+   final: DONE — aterrizado (flip no permitido: bateria 39% < 50%)
+   VEREDICTO: REVISAR
+
+== vuelo_20261024_113329.csv  (vuelo)
+   vuelo 30 s | batería 100% -> 84% | temp max 66 C
+   despegue: en el aire a 68 cm (estable, despegue 5.6 s)
+   altura en vuelo: min 39 cm, max 116 cm
+   flip a los 30.3 s: antes 115 cm, minimo despues 39.0 cm, a los 5 s 68.0 cm -> OK
+   flip HECHO: inclinacion max 179 grados, altura min 80 cm, respuesta ninguna
+   altura recuperada: 70 cm (flip HECHO: inclinacion max 179 grados, altura min 80 cm, respuesta ninguna)
+   final: DONE — aterrizado (fin de la prueba)
+   VEREDICTO: OK
+
+== rccal_20261024_113433.csv  (rccal)
+   vuelo 46 s | batería 82% -> 78% | temp max 77 C
+   despegue: en el aire a 76 cm (estable, despegue 4.2 s)
+   altura en vuelo: min 72 cm, max 92 cm
+   final: EMERGENCY_LAND — PARO: Ctrl+C
+   detenido a mano: PARO: Ctrl+C
+   VEREDICTO: OK hasta que se detuvo a mano
+
+== rccal_20261024_113549.csv  (rccal)
+   vuelo 70 s | batería 78% -> 73% | temp max 83 C
+   despegue: en el aire a 69 cm (estable, despegue 4.3 s)
+   altura en vuelo: min 67 cm, max 118 cm
+   final: DONE — aterrizado (calibracion terminada)
+   VEREDICTO: OK
+
+== mision_20261024_113757.csv  (mision)
+   NO DESPEGÓ: NO despega: temperatura 88 C < 80 C
+   batería 72.0%, temperatura 90.0 C
+   VEREDICTO: sin vuelo
+
+== mision_20261024_114459.csv  (mision)
+   vuelo 19 s | batería 81% -> 79% | temp max 69 C
+   despegue: en el aire a 74 cm (estable, despegue 4.5 s)
+   altura en vuelo: min 69 cm, max 77 cm
+   final: DONE — aterrizado (sin tags al frente por 6 s: fin)
+   VEREDICTO: OK
+
+== mision_20261024_114542.csv  (mision)
+   vuelo 36 s | batería 79% -> 69% | temp max 76 C
+   despegue: en el aire a 71 cm (estable, despegue 3.8 s)
+   altura en vuelo: min 67 cm, max 102 cm
+   EJECUTÓ tag 2 (Giro izquierda 90) a 63 cm, lateral -3 cm, angulo -1
+   vio tag 2 (Giro izquierda 90) a 214 cm
+   final: DONE — aterrizado (sin tags al frente por 6 s: fin)
+   VEREDICTO: OK
+
+== mision_20261024_114644.csv  (mision)
+   vuelo 43 s | batería 69% -> 62% | temp max 82 C
+   despegue: en el aire a 61 cm (estable, despegue 8.8 s)
+   altura en vuelo: min 61 cm, max 101 cm
+   EJECUTÓ tag 2 (Giro izquierda 90) a 63 cm, lateral -5 cm, angulo -3
+   vio tag 2 (Giro izquierda 90) a 220 cm
+   final: DONE — aterrizado (sin tags al frente por 6 s: fin)
+   VEREDICTO: OK
+
+== rc_calib_20261024_113706.txt
+Calibracion rc  (velocidad efectiva: desplazamiento total / 1.5 s de mando)
+
+fb  adelante(+)/atras(-)
+   rc +10:   +7.9 cm/s
+   rc -10:   -5.5 cm/s
+   rc +15:  +17.9 cm/s
+   rc -15:  -15.6 cm/s
+   rc +20:  +27.3 cm/s
+   rc -20:  -18.2 cm/s
+   menor rc que mueve (>= 3 cm/s): 10
+
+lr  derecha(+)/izquierda(-)
+   rc +10:   +6.5 cm/s
+   rc -10:   -4.9 cm/s
+   rc +15:  +20.0 cm/s
+   rc -15:  -17.4 cm/s
+   rc +20:  +23.7 cm/s
+   rc -20:  -28.1 cm/s
+   menor rc que mueve (>= 3 cm/s): 10
+
+ud  arriba(+)/abajo(-)
+   rc +10:   +4.7 cm/s
+   rc -10:   -1.0 cm/s
+   rc +15:  +10.0 cm/s
+   rc -15:   -4.7 cm/s
+   rc +20:   +5.3 cm/s
+   rc -20:  -10.0 cm/s
+   menor rc que mueve (>= 3 cm/s): 10
+
+
+

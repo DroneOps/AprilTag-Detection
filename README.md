@@ -6,21 +6,20 @@ Hidalgo). Un DJI Tello recorre una pista, detecta etiquetas AprilTag **tag25h9 e
 y ejecuta la acción de cada una (girar, flip, subir, aterrizar...). Todo el procesamiento
 corre en una laptop conectada al Tello por WiFi.
 
-## Estado (2-nov)
+## Estado (9-nov)
 
-- **Funciona en simulación:**
-  - detección (ID 1–10, 100 % en la prueba sintética);
-  - misiones con tags en el piso, con cámara al frente o con espejo;
-  - flips seguros, sostener altura y aterrizaje si el dron no obedece;
-  - ~40 escenarios.
-- **En vuelo real:**
-  - el flip está aprobado;
-  - la misión de piso está a medias;
-  - el dron necesita revisión (IMU y hélices) antes de seguir probando.
-- **Siguiente:** revisar el dron, repetir las pruebas de piso F1 y F3, e imprimir los
-  clips de espejo.
+- **Estrategia principal: espejo hacia abajo** (`scripts/mision_espejo.py`), con un clip
+  impreso.
+- **En simulación funciona todo:** detección, misión con espejo, flips seguros, sostener
+  altura y aterrizaje si el dron no obedece (~43 escenarios).
+- **En vuelo real:** con espejo ya se centra encima del tag (E3). Falta el circuito (E5):
+  hay que descartar que el clip interfiera con los sensores de la panza.
 
-El detalle está en [`docs/bitacora.md`](docs/bitacora.md).
+Pendientes y detalle en [`docs/bitacora.md`](docs/bitacora.md); cada día de laboratorio, con
+sus bitácoras de vuelo, está en [`sesiones/`](sesiones/).
+
+**¿Trabajas con Claude?** Las instrucciones para él están en [`CLAUDE.md`](CLAUDE.md) y las
+lee solo al empezar.
 
 ## Inicio rápido
 
@@ -97,13 +96,17 @@ scripts/
   calibrate_camera.py   calibración de la cámara con tablero de ajedrez
   rc_calib.py           mide la velocidad real del dron según el rc
   resumen_vuelos.py     veredicto de cada vuelo de la sesión, leyendo logs/
+  traza_vuelo.py        una bitácora de vuelo condensada, estado por estado
+  guardar_sesion.py     sube una sesión de laboratorio a sesiones/
   make_tags.py          PDF de los tags 1–10 al tamaño que quieras
 sim/
   sim_world.py          simulador 3D con el detector y la misión reales
 config/                 todos los parámetros ajustables (JSON)
 tags/                   PDFs listos para imprimir: tags de 8 y 15 cm y tablero de calibración
 docs/                   documentación (empieza por docs/README.md)
-logs/  capturas/        se crean al volar; no van a git
+sesiones/               cada día de laboratorio: notas, veredictos y bitácoras de vuelo
+CLAUDE.md               instrucciones para Claude Code
+logs/  capturas/        se crean al volar; no van a git (se suben con guardar_sesion.py)
 ```
 
 ## Documentación
@@ -126,10 +129,14 @@ Empieza por [`docs/README.md`](docs/README.md): dice qué leer y en qué orden.
 - **Simulador antes de volar.** Todo cambio de control se prueba primero con
   `python sim/sim_world.py <escenario>`. Antes de subir algo grande, corre la regresión
   completa (ver `docs/simulador.md`).
-- **Después de cada sesión de laboratorio:** `python scripts/resumen_vuelos.py` y una entrada
-  en `docs/bitacora.md`.
+- **Todo se sube en cuanto pasa.** Después de cada cambio, prueba o tanda de vuelos: commit y
+  push. Así el equipo ve el avance desde GitHub.
+- **En el laboratorio:** después de cada tanda de vuelos,
+  `python scripts/guardar_sesion.py --notas "qué se probó y qué salió"`, y luego commit y
+  push de `sesiones/`. Al cerrar el día, una entrada en `docs/bitacora.md`.
 - **Git:**
-  - mensajes cortos en español;
-  - cada quien en su rama y se une por pull request, para no pisarse;
-  - no se suben videos, bitácoras (`logs/`), `capturas/` ni fotos donde salgan personas.
+  - se trabaja en `main`, con `git pull --rebase` antes de cada push;
+  - mensajes cortos en español, sin firmas ni marcas de IA;
+  - no se suben videos, `logs/` ni `capturas/` crudos (para eso está `sesiones/`), ni fotos
+    donde salgan personas.
 - **Seguridad:** nunca se vuela sin alguien en el teclado listo para el paro.
