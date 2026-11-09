@@ -1,0 +1,386 @@
+t,state,bat,h,tof,yaw,pitch,roll,temph,rc_lr,rc_fb,rc_ud,rc_yaw,state_age,video_age,reason,vgx,vgy,vgz
+0.000,IDLE,90,0,10,-5,-1,0,63,0,0,0,0,0.00,inf,esperando despegue (t),0,0,0
+0.050,IDLE,90,0,10,-5,-1,0,63,0,0,0,0,0.00,inf,esperando despegue (t),0,0,0
+0.101,IDLE,90,0,10,-5,-1,0,63,0,0,0,0,0.05,inf,esperando despegue (t),0,0,0
+0.151,IDLE,90,0,10,-5,-1,0,63,0,0,0,0,0.00,inf,esperando despegue (t),0,0,0
+0.201,IDLE,90,0,10,-5,-1,0,63,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+0.254,IDLE,90,0,10,-5,-1,0,63,0,0,0,0,0.10,0.01,esperando despegue (t),0,0,0
+0.304,IDLE,90,0,10,-5,-1,0,63,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+0.354,IDLE,90,0,10,-5,-1,0,63,0,0,0,0,0.03,0.01,esperando despegue (t),0,0,0
+0.404,IDLE,90,0,10,-5,-1,0,63,0,0,0,0,0.08,0.01,esperando despegue (t),0,0,0
+0.455,IDLE,90,0,10,-5,-1,0,63,0,0,0,0,0.02,0.01,esperando despegue (t),0,1,0
+0.505,IDLE,90,0,10,-5,-1,0,63,0,0,0,0,0.01,0.01,esperando despegue (t),0,1,0
+0.555,IDLE,90,0,10,-5,-1,0,63,0,0,0,0,0.06,0.01,esperando despegue (t),0,1,0
+0.605,IDLE,90,0,10,-5,-1,0,63,0,0,0,0,0.11,0.01,esperando despegue (t),0,1,0
+0.655,IDLE,90,0,10,-5,-1,0,63,0,0,0,0,0.03,0.01,esperando despegue (t),0,0,0
+0.705,IDLE,90,0,10,-5,-1,0,63,0,0,0,0,0.00,0.03,esperando despegue (t),0,0,0
+0.756,IDLE,90,0,10,-5,-1,0,63,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+0.806,IDLE,90,0,10,-5,-1,0,63,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+0.856,IDLE,90,0,10,-5,-1,0,63,0,0,0,0,0.06,0.01,esperando despegue (t),0,0,0
+0.906,IDLE,90,0,10,-5,-1,0,63,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0
+0.956,IDLE,90,0,10,-5,-1,0,63,0,0,0,0,0.07,0.03,esperando despegue (t),0,0,0
+1.007,IDLE,90,0,10,-5,-1,0,63,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+1.057,IDLE,90,0,10,-5,-1,0,63,0,0,0,0,0.06,0.03,esperando despegue (t),0,0,0
+1.107,IDLE,90,0,10,-5,-1,0,63,0,0,0,0,0.11,0.01,esperando despegue (t),0,0,0
+1.157,IDLE,90,0,10,-5,-1,0,63,0,0,0,0,0.04,0.01,esperando despegue (t),0,0,0
+1.207,IDLE,90,0,10,-5,-1,0,63,0,0,0,0,0.00,0.05,esperando despegue (t),0,0,0
+1.257,IDLE,90,0,10,-5,-1,0,63,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+1.308,IDLE,90,0,10,-5,-1,0,63,0,0,0,0,0.00,0.03,esperando despegue (t),0,0,0
+1.358,IDLE,90,0,10,-5,-1,0,63,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+1.408,IDLE,90,0,10,-5,-1,0,63,0,0,0,0,0.10,0.03,esperando despegue (t),0,0,0
+1.458,IDLE,90,0,10,-5,-1,0,63,0,0,0,0,0.15,0.01,esperando despegue (t),0,0,0
+1.509,IDLE,90,0,10,-5,-1,0,63,0,0,0,0,0.02,0.05,esperando despegue (t),0,0,0
+1.559,IDLE,90,0,10,-5,-1,0,63,0,0,0,0,0.00,0.03,esperando despegue (t),0,0,0
+1.612,IDLE,90,0,10,-5,-1,0,63,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+1.663,IDLE,90,0,10,-5,-1,0,63,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+1.713,IDLE,90,0,10,-5,-1,0,63,0,0,0,0,0.10,0.01,esperando despegue (t),0,0,0
+1.763,IDLE,90,0,10,-5,-1,0,63,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0
+1.813,IDLE,90,0,10,-4,-1,0,63,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+1.864,IDLE,90,0,10,-4,-1,0,63,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+1.914,IDLE,90,0,10,-4,-1,0,63,0,0,0,0,0.10,0.05,esperando despegue (t),0,0,0
+1.968,IDLE,90,0,10,-5,-1,0,64,0,0,0,0,0.00,0.03,esperando despegue (t),0,0,0
+2.018,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+2.068,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+2.118,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+2.169,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.05,0.03,esperando despegue (t),0,0,0
+2.219,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.10,0.01,esperando despegue (t),0,0,0
+2.269,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.02,0.05,esperando despegue (t),0,0,0
+2.319,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.07,0.01,esperando despegue (t),0,0,0
+2.369,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.04,0.01,esperando despegue (t),0,0,0
+2.420,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.10,0.01,esperando despegue (t),0,0,0
+2.471,IDLE,90,0,10,-5,-1,0,64,0,0,0,0,0.04,0.01,esperando despegue (t),0,0,0
+2.521,IDLE,90,0,10,-5,-1,0,64,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+2.571,IDLE,90,0,10,-5,-1,0,64,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+2.621,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+2.671,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+2.721,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.10,0.01,esperando despegue (t),0,0,0
+2.771,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.03,0.01,esperando despegue (t),0,0,0
+2.823,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.08,0.05,esperando despegue (t),0,0,0
+2.873,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.04,0.01,esperando despegue (t),0,0,0
+2.923,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.09,0.01,esperando despegue (t),0,0,0
+2.973,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+3.024,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+3.074,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.10,0.01,esperando despegue (t),0,0,0
+3.124,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+3.174,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.06,0.05,esperando despegue (t),0,0,0
+3.224,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.11,0.03,esperando despegue (t),0,0,0
+3.274,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.04,0.01,esperando despegue (t),0,0,0
+3.325,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+3.375,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.05,0.03,esperando despegue (t),0,0,0
+3.425,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+3.475,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+3.525,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.10,0.03,esperando despegue (t),0,0,0
+3.575,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.15,0.03,esperando despegue (t),0,0,0
+3.626,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.03,0.05,esperando despegue (t),0,0,0
+3.676,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.00,0.03,esperando despegue (t),0,0,0
+3.726,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0
+3.776,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.07,0.01,esperando despegue (t),0,0,0
+3.826,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+3.878,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+3.928,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+3.978,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+4.028,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.10,0.05,esperando despegue (t),0,0,0
+4.078,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.00,0.03,esperando despegue (t),0,0,0
+4.129,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+4.179,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.04,0.01,esperando despegue (t),0,0,0
+4.229,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+4.279,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+4.329,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+4.379,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+4.429,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.10,0.03,esperando despegue (t),0,0,0
+4.480,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.04,0.01,esperando despegue (t),0,0,0
+4.530,IDLE,90,0,10,-4,-1,0,64,0,0,0,0,0.02,0.05,esperando despegue (t),0,0,0
+4.580,IDLE,90,0,10,2,0,-1,64,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+4.630,IDLE,90,0,10,2,0,-1,64,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+4.680,IDLE,90,0,10,2,0,-1,64,0,0,0,0,0.10,0.01,esperando despegue (t),0,0,0
+4.730,IDLE,90,0,10,-1,0,-2,64,0,0,0,0,0.03,0.01,esperando despegue (t),0,0,0
+4.781,IDLE,90,0,10,-1,0,-2,64,0,0,0,0,0.08,0.01,esperando despegue (t),0,0,0
+4.831,IDLE,90,0,10,0,-2,0,64,0,0,0,0,0.03,0.03,esperando despegue (t),0,0,0
+4.882,IDLE,90,0,10,0,-2,0,64,0,0,0,0,0.08,0.01,esperando despegue (t),0,0,0
+4.933,IDLE,90,0,10,2,-1,0,64,0,0,0,0,0.00,0.03,esperando despegue (t),0,0,0
+4.984,IDLE,90,0,10,2,-1,0,64,0,0,0,0,0.05,0.02,esperando despegue (t),0,0,0
+5.034,IDLE,90,0,10,2,-1,0,64,0,0,0,0,0.03,0.01,esperando despegue (t),0,0,0
+5.084,IDLE,90,0,10,2,-1,0,64,0,0,0,0,0.08,0.01,esperando despegue (t),0,0,0
+5.134,IDLE,90,0,10,2,-1,0,64,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+5.184,IDLE,90,0,10,2,-1,0,64,0,0,0,0,0.06,0.01,esperando despegue (t),0,0,0
+5.234,IDLE,90,0,10,2,-1,0,64,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+5.286,IDLE,90,0,10,2,-1,0,64,0,0,0,0,0.07,0.03,esperando despegue (t),0,0,0
+5.336,IDLE,90,0,10,2,-1,0,64,0,0,0,0,0.12,0.03,esperando despegue (t),0,0,0
+5.386,IDLE,90,0,10,2,-1,0,64,0,0,0,0,0.04,0.01,esperando despegue (t),0,0,0
+5.437,IDLE,90,0,10,2,-1,0,64,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+5.487,IDLE,90,0,10,2,-1,0,64,0,0,0,0,0.06,0.01,esperando despegue (t),0,0,0
+5.537,IDLE,90,0,10,2,-1,0,64,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+5.587,IDLE,90,0,10,2,-1,0,64,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+5.642,IDLE,90,0,10,2,-1,0,64,0,0,0,0,0.10,0.03,esperando despegue (t),0,0,0
+5.692,IDLE,90,0,10,2,-1,0,64,0,0,0,0,0.00,0.03,esperando despegue (t),0,0,0
+5.742,IDLE,90,0,10,2,-1,0,64,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+5.797,IDLE,90,0,10,2,-1,0,64,0,0,0,0,0.00,0.03,esperando despegue (t),0,0,0
+5.847,IDLE,90,0,10,2,-1,0,64,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+5.897,IDLE,90,0,10,2,-1,0,64,0,0,0,0,0.06,0.01,esperando despegue (t),0,0,0
+5.948,IDLE,90,0,10,2,-1,0,64,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0
+5.998,IDLE,90,0,10,2,-1,0,64,0,0,0,0,0.07,0.01,esperando despegue (t),0,0,0
+6.048,IDLE,90,0,10,2,-1,0,64,0,0,0,0,0.03,0.01,esperando despegue (t),0,0,0
+6.099,IDLE,90,0,10,2,-1,0,64,0,0,0,0,0.08,0.01,esperando despegue (t),0,0,0
+6.150,IDLE,90,0,10,2,-1,0,64,0,0,0,0,0.03,0.01,esperando despegue (t),0,0,0
+6.200,IDLE,90,0,10,2,-1,0,64,0,0,0,0,0.08,0.05,esperando despegue (t),0,0,0
+6.250,IDLE,90,0,10,2,-1,0,64,0,0,0,0,0.04,0.01,esperando despegue (t),0,0,0
+6.300,IDLE,90,0,10,2,-1,0,64,0,0,0,0,0.09,0.03,esperando despegue (t),0,0,0
+6.350,IDLE,90,0,10,2,-1,0,64,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0
+6.400,IDLE,90,0,10,2,-1,0,64,0,0,0,0,0.07,0.01,esperando despegue (t),0,0,0
+6.450,IDLE,90,0,10,2,-1,0,64,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0
+6.501,IDLE,90,0,10,2,-1,0,64,0,0,0,0,0.07,0.01,esperando despegue (t),0,0,0
+6.552,IDLE,90,0,10,2,-1,0,64,0,0,0,0,0.00,0.03,esperando despegue (t),0,0,0
+6.602,IDLE,90,0,10,2,-1,0,64,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+6.652,IDLE,90,0,10,2,-1,0,64,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+6.702,IDLE,90,0,10,2,-1,0,64,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+6.753,IDLE,90,0,10,2,-1,0,64,0,0,0,0,0.00,0.03,esperando despegue (t),0,0,0
+6.803,IDLE,90,0,10,2,-1,0,64,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+6.853,IDLE,90,0,10,2,-1,0,64,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+6.903,IDLE,90,0,10,2,-1,0,64,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+6.953,TAKEOFF,90,0,10,2,-1,0,64,0,0,0,0,0.10,0.03,despegando,0,0,0
+7.005,TAKEOFF,90,0,10,2,-1,0,64,0,0,0,0,0.04,0.01,despegando,0,0,0
+7.055,TAKEOFF,90,0,10,2,-1,0,64,0,0,0,0,0.00,0.03,despegando,0,0,0
+7.105,TAKEOFF,90,0,10,2,-1,0,64,0,0,0,0,0.05,0.01,despegando,0,0,0
+7.155,TAKEOFF,90,0,10,2,-1,0,64,0,0,0,0,0.00,0.01,despegando,0,0,0
+7.206,TAKEOFF,90,0,10,2,-1,0,64,0,0,0,0,0.05,0.03,despegando,0,0,0
+7.256,TAKEOFF,90,0,10,2,-1,0,64,0,0,0,0,0.00,0.01,despegando,0,0,0
+7.306,TAKEOFF,90,0,10,2,-1,0,64,0,0,0,0,0.05,0.01,despegando,0,0,0
+7.356,TAKEOFF,90,0,10,2,-1,0,64,0,0,0,0,0.10,0.01,despegando,0,0,0
+7.407,TAKEOFF,90,0,10,3,-1,0,64,0,0,0,0,0.03,0.01,despegando,0,0,0
+7.457,TAKEOFF,90,0,10,3,-1,0,64,0,0,0,0,0.08,0.01,despegando,0,0,0
+7.507,TAKEOFF,90,0,10,4,-1,0,64,0,0,0,0,0.02,0.03,despegando,0,0,0
+7.558,TAKEOFF,90,0,10,4,-1,0,64,0,0,0,0,0.00,0.01,despegando,0,0,0
+7.608,TAKEOFF,90,0,10,4,-1,0,64,0,0,0,0,0.00,0.01,despegando,0,0,0
+7.658,TAKEOFF,90,0,10,4,-1,0,64,0,0,0,0,0.05,0.01,despegando,0,0,0
+7.708,TAKEOFF,90,0,10,4,-1,0,64,0,0,0,0,0.10,0.01,despegando,0,0,0
+7.758,TAKEOFF,90,0,10,4,-1,0,64,0,0,0,0,0.00,0.01,despegando,0,0,-2
+7.808,TAKEOFF,90,0,10,4,-1,0,64,0,0,0,0,0.05,0.03,despegando,0,0,-2
+7.858,TAKEOFF,90,0,10,4,-1,0,64,0,0,0,0,0.10,0.01,despegando,0,0,-2
+7.909,TAKEOFF,90,0,13,4,0,0,64,0,0,0,0,0.02,0.03,despegando,0,0,-5
+7.959,TAKEOFF,90,10,20,4,0,0,65,0,0,0,0,0.01,0.01,despegando,0,0,-7
+8.009,TAKEOFF,90,10,20,4,0,0,65,0,0,0,0,0.06,0.01,despegando,0,0,-7
+8.059,TAKEOFF,90,10,23,4,0,0,65,0,0,0,0,0.02,0.01,despegando,0,0,-8
+8.110,TAKEOFF,90,10,23,4,0,0,65,0,0,0,0,0.07,0.01,despegando,0,0,-8
+8.160,TAKEOFF,90,20,32,4,0,0,65,0,0,0,0,0.01,0.03,despegando,0,0,-8
+8.210,TAKEOFF,90,20,32,4,0,0,65,0,0,0,0,0.06,0.01,despegando,0,0,-8
+8.260,TAKEOFF,90,20,32,4,0,0,65,0,0,0,0,0.11,0.01,despegando,0,0,-8
+8.310,TAKEOFF,90,30,40,4,0,0,65,0,0,0,0,0.00,0.05,despegando,0,0,-8
+8.361,TAKEOFF,90,40,47,4,0,0,65,0,0,0,0,0.00,0.01,despegando,0,0,-7
+8.411,TAKEOFF,90,40,47,4,0,0,65,0,0,0,0,0.05,0.01,despegando,0,0,-7
+8.461,TAKEOFF,90,40,52,4,0,0,65,0,0,0,0,0.01,0.01,despegando,0,0,-6
+8.511,TAKEOFF,90,40,52,4,0,0,65,0,0,0,0,0.06,0.03,despegando,0,0,-6
+8.561,TAKEOFF,90,40,52,4,0,0,65,0,0,0,0,0.11,0.01,despegando,0,0,-6
+8.611,TAKEOFF,90,50,56,4,0,0,65,0,0,0,0,0.02,0.01,despegando,0,0,-4
+8.662,TAKEOFF,90,50,56,4,0,0,65,0,0,0,0,0.07,0.05,despegando,0,0,-4
+8.712,TAKEOFF,90,50,59,4,0,0,65,0,0,0,0,0.02,0.01,despegando,0,0,-3
+8.762,TAKEOFF,90,50,61,4,0,0,65,0,0,0,0,0.00,0.05,despegando,0,0,-2
+8.812,TAKEOFF,90,50,61,4,0,0,65,0,0,0,0,0.05,0.01,despegando,0,0,-2
+8.862,TAKEOFF,90,50,62,4,0,0,65,0,0,0,0,0.01,0.01,despegando,0,0,-1
+8.912,TAKEOFF,90,50,62,4,0,0,65,0,0,0,0,0.06,0.01,despegando,0,0,-1
+8.963,TAKEOFF,90,50,63,4,0,0,65,0,0,0,0,0.03,0.01,despegando,0,0,0
+9.013,TAKEOFF,90,50,63,4,0,0,65,0,0,0,0,0.08,0.03,despegando,0,0,0
+9.063,TAKEOFF,90,50,63,4,0,1,65,0,0,0,0,0.00,0.01,despegando,0,0,0
+9.113,TAKEOFF,90,50,63,4,0,1,65,0,0,0,0,0.05,0.03,despegando,0,0,0
+9.163,TAKEOFF,90,50,63,4,0,1,65,0,0,0,0,0.00,0.05,despegando,0,0,0
+9.213,TAKEOFF,90,50,63,4,0,1,65,0,0,0,0,0.06,0.01,despegando,0,0,0
+9.267,TAKEOFF,90,50,64,4,0,0,65,0,0,0,0,0.02,0.01,despegando,0,0,0
+9.317,TAKEOFF,90,50,64,4,0,0,65,0,0,0,0,0.07,0.02,despegando,0,0,0
+9.369,TAKEOFF,90,50,64,4,0,0,65,0,0,0,0,0.00,0.01,despegando,0,0,-1
+9.419,TAKEOFF,90,50,64,4,0,0,65,0,0,0,0,0.05,0.01,despegando,0,0,-1
+9.470,TAKEOFF,90,50,65,4,0,0,65,0,0,0,0,0.02,0.01,despegando,0,0,-1
+9.520,TAKEOFF,90,50,65,4,0,0,65,0,0,0,0,0.07,0.03,despegando,0,0,-1
+9.570,TAKEOFF,90,50,65,4,0,0,65,0,0,0,0,0.12,0.01,despegando,0,0,-1
+9.620,TAKEOFF,90,50,66,5,0,0,65,0,0,0,0,0.03,0.05,despegando,0,0,-1
+9.671,TAKEOFF,90,50,67,5,-1,0,65,0,0,0,0,0.02,0.03,despegando,0,0,-1
+9.721,TAKEOFF,90,50,67,5,-1,0,65,0,0,0,0,0.07,0.01,despegando,0,0,-1
+9.771,TAKEOFF,90,50,68,5,-1,0,65,0,0,0,0,0.01,0.01,despegando,0,0,-1
+9.822,TAKEOFF,90,50,68,5,-1,0,65,0,0,0,0,0.06,0.01,despegando,0,0,-1
+9.872,TAKEOFF,90,60,69,4,-1,0,65,0,0,0,0,0.01,0.01,despegando,0,0,-1
+9.922,TAKEOFF,90,60,69,4,-1,0,65,0,0,0,0,0.07,0.03,despegando,0,0,-1
+9.972,TAKEOFF,90,60,69,4,0,0,65,0,0,0,0,0.01,0.01,despegando,0,0,-1
+10.022,TAKEOFF,90,60,69,4,0,0,65,0,0,0,0,0.06,0.01,despegando,0,0,-1
+10.074,TAKEOFF,90,60,70,4,0,0,65,0,0,0,0,0.00,0.01,despegando,0,0,-1
+10.124,TAKEOFF,90,60,70,4,0,0,65,0,0,0,0,0.05,0.01,despegando,0,0,-1
+10.174,TAKEOFF,90,60,71,4,0,0,65,0,0,0,0,0.00,0.05,despegando,0,0,-1
+10.224,TAKEOFF,90,60,71,4,0,0,65,0,0,0,0,0.05,0.01,despegando,0,0,-1
+10.274,TAKEOFF,90,60,72,4,0,0,65,0,0,0,0,0.00,0.01,despegando,0,0,-1
+10.324,TAKEOFF,90,60,72,4,0,0,65,0,0,0,0,0.05,0.01,despegando,0,0,-1
+10.375,TAKEOFF,90,60,72,4,0,0,65,0,0,0,0,0.00,0.01,despegando,0,0,-1
+10.425,TAKEOFF,90,60,71,4,0,0,65,0,0,0,0,0.00,0.01,despegando,0,0,-1
+10.476,TAKEOFF,90,60,71,4,0,0,65,0,0,0,0,0.05,0.01,despegando,0,0,-1
+10.526,TAKEOFF,90,60,72,5,0,0,65,0,0,0,0,0.01,0.01,despegando,0,0,-1
+10.576,TAKEOFF,90,60,72,5,0,0,65,0,0,0,0,0.06,0.03,despegando,0,0,-1
+10.626,TAKEOFF,90,60,71,4,0,0,65,0,0,0,0,0.00,0.01,despegando,0,0,0
+10.676,TAKEOFF,90,60,71,4,0,0,65,0,0,0,0,0.05,0.01,despegando,0,0,0
+10.726,TAKEOFF,90,60,70,4,0,0,65,0,0,0,0,0.00,0.01,despegando,0,0,0
+10.776,TAKEOFF,90,60,70,4,0,0,65,0,0,0,0,0.05,0.01,despegando,0,0,0
+10.827,TAKEOFF,90,70,70,5,0,0,65,0,0,0,0,0.00,0.01,despegando,0,0,0
+10.877,TAKEOFF,90,70,70,5,0,0,65,0,0,0,0,0.05,0.03,despegando,0,0,0
+10.927,TAKEOFF,90,70,70,4,0,0,66,0,0,0,0,0.00,0.01,despegando,0,0,0
+10.977,TAKEOFF,90,70,70,4,0,0,66,0,0,0,0,0.05,0.01,despegando,0,0,0
+11.027,TAKEOFF,90,70,70,4,0,0,66,0,0,0,0,0.10,0.03,despegando,0,0,0
+11.077,TAKEOFF,90,70,70,4,0,0,66,0,0,0,0,0.01,0.01,despegando,0,0,-1
+11.128,TAKEOFF,90,70,70,4,0,0,66,0,0,0,0,0.06,0.01,despegando,0,0,-1
+11.178,TAKEOFF,90,70,70,4,0,0,66,0,0,0,0,0.00,0.03,despegando,0,0,-1
+11.232,TAKEOFF,90,70,70,4,0,0,66,0,0,0,0,0.06,0.01,despegando,0,0,-1
+11.282,TAKEOFF,90,70,70,4,0,0,66,0,0,0,0,0.05,0.01,despegando,0,0,-1
+11.332,TAKEOFF,90,70,70,4,0,0,66,0,0,0,0,0.10,0.01,despegando,0,0,-1
+11.383,TAKEOFF,90,70,69,4,0,0,66,0,0,0,0,0.03,0.01,despegando,0,0,-1
+11.433,TAKEOFF,90,70,69,4,0,0,66,0,0,0,0,0.08,0.01,despegando,0,0,-1
+11.483,TAKEOFF,90,70,69,4,0,0,66,0,0,0,0,0.03,0.01,despegando,0,0,-1
+11.533,TAKEOFF,90,70,69,4,0,0,66,0,0,0,0,0.08,0.03,despegando,0,0,-1
+11.583,TAKEOFF,90,70,70,4,0,0,66,0,0,0,0,0.02,0.01,despegando,0,0,-1
+11.636,TAKEOFF,90,70,70,4,0,0,66,0,0,0,0,0.07,0.01,despegando,0,0,-1
+11.686,TAKEOFF,90,80,70,4,0,0,66,0,0,0,0,0.02,0.01,despegando,0,0,-1
+11.736,TAKEOFF,90,80,70,4,0,0,66,0,0,0,0,0.07,0.01,despegando,0,0,-1
+11.787,TAKEOFF,90,80,70,5,0,0,66,0,0,0,0,0.02,0.01,despegando,0,0,-1
+11.837,TAKEOFF,90,80,70,5,0,0,66,0,0,0,0,0.07,0.01,despegando,0,0,-1
+11.887,TAKEOFF,90,80,71,5,0,0,66,0,0,0,0,0.04,0.01,despegando,0,0,-1
+11.937,TAKEOFF,90,80,71,5,0,0,66,0,0,0,0,0.09,0.01,despegando,0,0,-1
+11.987,TAKEOFF,90,80,72,4,0,0,65,0,0,0,0,0.01,0.03,despegando,0,0,-1
+12.038,TAKEOFF,90,80,72,4,0,0,65,0,0,0,0,0.06,0.01,despegando,0,0,-1
+12.089,TAKEOFF,90,80,72,4,0,0,65,0,0,0,0,0.02,0.01,despegando,0,0,-1
+12.140,TAKEOFF,90,80,72,4,0,0,65,0,0,0,0,0.07,0.01,despegando,0,0,-1
+12.190,TAKEOFF,90,80,72,4,0,0,65,0,0,0,0,0.04,0.05,despegando,0,0,-1
+12.240,TAKEOFF,90,80,72,4,0,0,65,0,0,0,0,0.09,0.01,despegando,0,0,-1
+12.290,TAKEOFF,90,80,71,4,0,0,65,0,0,0,0,0.03,0.01,despegando,0,0,-1
+12.340,TAKEOFF,90,80,71,4,0,0,65,0,0,0,0,0.08,0.01,despegando,0,0,-1
+12.390,TAKEOFF,90,80,70,5,0,0,65,0,0,0,0,0.02,0.01,despegando,0,0,-1
+12.440,TAKEOFF,90,80,70,5,0,0,65,0,0,0,0,0.07,0.01,despegando,0,0,-1
+12.491,TAKEOFF,90,80,70,5,0,0,65,0,0,0,0,0.01,0.01,despegando,0,0,-1
+12.541,TAKEOFF,90,80,70,5,0,0,65,0,0,0,0,0.06,0.01,despegando,0,0,-1
+12.591,TAKEOFF,90,80,69,5,0,0,65,0,0,0,0,0.00,0.01,despegando,0,-1,-1
+12.642,TAKEOFF,90,80,69,5,0,0,65,0,0,0,0,0.05,0.03,despegando,0,-1,-1
+12.692,TAKEOFF,90,80,68,5,0,2,65,0,0,0,0,0.03,0.01,despegando,0,-1,-1
+12.742,TAKEOFF,90,80,68,5,0,2,65,0,0,0,0,0.08,0.03,despegando,0,-1,-1
+12.793,TAKEOFF,90,80,67,5,0,0,65,0,0,0,0,0.00,0.01,despegando,0,0,-1
+12.843,TAKEOFF,90,80,67,5,0,0,65,0,0,0,0,0.05,0.01,despegando,0,0,-1
+12.894,TAKEOFF,90,80,67,4,0,0,65,0,0,0,0,0.00,0.01,despegando,0,0,-1
+12.944,TAKEOFF,90,80,67,4,0,0,65,0,0,0,0,0.05,0.01,despegando,0,0,-1
+12.994,TAKEOFF,90,90,66,4,0,0,66,0,0,0,0,0.00,0.03,despegando,0,0,-1
+13.044,TAKEOFF,90,90,66,4,0,0,66,0,0,0,0,0.05,0.01,despegando,0,0,-1
+13.094,TAKEOFF,90,90,65,4,0,0,66,0,0,0,0,0.00,0.01,despegando,0,0,-1
+13.144,TAKEOFF,90,90,65,4,0,0,66,0,0,0,0,0.05,0.01,despegando,0,0,-1
+13.195,TAKEOFF,90,90,64,4,0,0,66,0,0,0,0,0.00,0.05,despegando,0,0,-2
+13.245,TAKEOFF,90,90,64,4,0,0,66,0,0,0,0,0.05,0.01,despegando,0,0,-2
+13.295,TAKEOFF,90,90,63,4,0,0,66,0,0,0,0,0.01,0.01,despegando,0,0,-2
+13.345,TAKEOFF,90,90,63,4,0,0,66,0,0,0,0,0.06,0.03,despegando,0,0,-2
+13.395,TAKEOFF,90,90,62,4,0,0,66,0,0,0,0,0.00,0.01,despegando,0,0,-2
+13.445,TAKEOFF,90,90,62,4,0,0,66,0,0,0,0,0.05,0.01,despegando,0,0,-2
+13.496,TAKEOFF,90,100,61,4,0,0,66,0,0,0,0,0.00,0.01,despegando,0,0,-2
+13.546,TAKEOFF,90,100,61,4,0,0,66,0,0,0,0,0.05,0.01,despegando,0,0,-2
+13.596,TAKEOFF,90,100,61,4,0,0,66,0,0,0,0,0.00,0.03,despegando,0,0,-2
+13.646,TAKEOFF,90,100,59,4,0,0,66,0,0,0,0,0.00,0.01,despegando,0,0,-2
+13.696,TAKEOFF,90,100,59,4,0,0,66,0,0,0,0,0.05,0.01,despegando,0,0,-2
+13.746,TAKEOFF,90,100,58,4,0,0,66,0,0,0,0,0.00,0.01,despegando,0,0,-2
+13.796,TAKEOFF,90,100,58,4,0,0,66,0,0,0,0,0.05,0.01,despegando,0,0,-2
+13.846,TAKEOFF,90,100,56,5,0,0,66,0,0,0,0,0.00,0.01,despegando,0,0,-2
+13.897,TAKEOFF,90,100,56,5,0,0,66,0,0,0,0,0.05,0.03,despegando,0,0,-2
+13.947,TAKEOFF,90,110,53,5,0,0,66,0,0,0,0,0.00,0.01,despegando,0,0,-2
+13.997,TAKEOFF,90,110,53,5,0,0,66,0,0,0,0,0.05,0.01,despegando,0,0,-2
+14.047,TAKEOFF,90,110,53,5,0,0,66,0,0,0,0,0.10,0.01,despegando,0,0,-2
+14.097,TAKEOFF,90,110,51,5,0,0,66,0,0,0,0,0.02,0.03,despegando,0,0,-3
+14.147,TAKEOFF,90,110,51,5,0,0,66,0,0,0,0,0.07,0.01,despegando,0,0,-3
+14.197,TAKEOFF,90,110,50,4,0,0,66,0,0,0,0,0.03,0.03,despegando,0,0,-3
+14.247,TAKEOFF,90,110,48,4,0,0,66,0,0,0,0,0.00,0.01,despegando,0,0,-3
+14.298,TAKEOFF,90,110,48,4,0,0,66,0,0,0,0,0.05,0.01,despegando,0,0,-3
+14.348,TAKEOFF,90,110,46,4,0,0,66,0,0,0,0,0.00,0.01,despegando,0,0,-3
+14.398,TAKEOFF,90,110,46,4,0,0,66,0,0,0,0,0.05,0.01,despegando,0,0,-3
+14.448,TAKEOFF,90,110,46,4,0,0,66,0,0,0,0,0.10,0.01,despegando,0,0,-3
+14.498,TAKEOFF,90,110,45,4,0,0,66,0,0,0,0,0.04,0.03,despegando,0,0,-3
+14.548,TAKEOFF,90,110,45,4,0,0,66,0,0,0,0,0.09,0.01,despegando,0,0,-3
+14.601,TAKEOFF,90,120,44,4,0,0,66,0,0,0,0,0.03,0.01,despegando,0,0,-3
+14.651,TAKEOFF,90,120,44,4,0,0,66,0,0,0,0,0.08,0.01,despegando,0,0,-3
+14.702,TAKEOFF,90,120,44,4,0,0,66,0,0,0,0,0.04,0.01,despegando,0,0,-3
+14.752,TAKEOFF,90,120,44,4,0,0,66,0,0,0,0,0.09,0.01,despegando,0,0,-3
+14.802,TAKEOFF,90,120,43,5,0,0,66,0,0,0,0,0.03,0.01,despegando,0,0,-4
+14.852,TAKEOFF,90,120,43,5,0,0,66,0,0,0,0,0.08,0.01,despegando,0,0,-4
+14.903,TAKEOFF,90,120,41,5,0,0,66,0,0,0,0,0.03,0.01,despegando,0,0,-3
+14.953,TAKEOFF,90,120,41,5,0,0,66,0,0,0,0,0.08,0.02,despegando,0,0,-3
+15.005,TAKEOFF,90,120,39,5,0,0,67,0,0,0,0,0.03,0.01,despegando,0,0,-2
+15.055,TAKEOFF,90,120,39,5,0,0,67,0,0,0,0,0.08,0.01,despegando,0,0,-2
+15.105,TAKEOFF,90,120,36,5,0,0,67,0,0,0,0,0.04,0.01,despegando,0,0,-1
+15.155,TAKEOFF,90,120,36,5,0,0,67,0,0,0,0,0.09,0.01,despegando,0,0,-1
+15.206,TAKEOFF,90,120,32,4,0,0,67,0,0,0,0,0.00,0.01,despegando,0,0,0
+15.256,TAKEOFF,90,120,32,4,0,0,67,0,0,0,0,0.05,0.01,despegando,0,0,0
+15.306,TAKEOFF,90,120,27,4,0,0,67,0,0,0,0,0.00,0.01,despegando,0,0,0
+15.357,TAKEOFF,90,120,27,4,0,0,67,0,0,0,0,0.05,0.01,despegando,0,0,0
+15.407,TAKEOFF,90,120,23,4,0,0,67,0,0,0,0,0.00,0.01,despegando,0,0,0
+15.457,EMERGENCY_LAND,90,120,23,4,0,0,67,0,0,0,0,0.05,0.01,el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,0
+15.507,EMERGENCY_LAND,90,120,21,4,0,0,67,0,0,0,0,0.01,0.01,el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,0
+15.557,EMERGENCY_LAND,90,120,21,4,0,0,67,0,0,0,0,0.06,0.01,el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,0
+15.609,EMERGENCY_LAND,90,110,15,4,0,0,67,0,0,0,0,0.01,0.01,el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,0
+15.659,EMERGENCY_LAND,90,110,15,4,0,0,67,0,0,0,0,0.06,0.03,el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,0
+15.709,EMERGENCY_LAND,90,110,10,4,0,0,67,0,0,0,0,0.00,0.01,el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,0
+15.759,EMERGENCY_LAND,90,110,10,4,0,0,67,0,0,0,0,0.05,0.01,el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,0
+15.810,EMERGENCY_LAND,90,100,10,4,0,0,67,0,0,0,0,0.03,0.01,el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,0
+15.860,EMERGENCY_LAND,90,100,10,4,0,0,67,0,0,0,0,0.08,0.01,el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,0
+15.910,EMERGENCY_LAND,90,90,10,4,0,0,67,0,0,0,0,0.00,0.01,el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,0
+15.960,EMERGENCY_LAND,90,90,10,4,0,0,67,0,0,0,0,0.05,0.01,el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,0
+16.011,EMERGENCY_LAND,90,90,10,5,1,1,66,0,0,0,0,0.00,0.01,el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-4
+16.061,EMERGENCY_LAND,90,90,10,5,1,1,66,0,0,0,0,0.05,0.01,el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-4
+16.111,EMERGENCY_LAND,90,100,10,11,0,1,66,0,0,0,0,0.00,0.01,el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-3
+16.161,EMERGENCY_LAND,90,100,10,11,0,1,66,0,0,0,0,0.05,0.01,el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-3
+16.211,EMERGENCY_LAND,90,100,10,16,0,1,66,0,0,0,0,0.01,0.01,el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-3
+16.264,EMERGENCY_LAND,90,100,10,16,0,1,66,0,0,0,0,0.06,0.03,el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-3
+16.314,EMERGENCY_LAND,90,90,10,18,-2,1,66,0,0,0,0,0.02,0.01,el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-3
+16.364,EMERGENCY_LAND,90,90,10,18,-2,1,66,0,0,0,0,0.07,0.03,el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-3
+16.414,EMERGENCY_LAND,90,100,10,19,-2,1,66,0,0,0,0,0.00,0.01,el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-3
+16.465,EMERGENCY_LAND,90,100,10,19,-2,1,66,0,0,0,0,0.05,0.01,el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-3
+16.515,EMERGENCY_LAND,90,100,10,19,-2,1,66,0,0,0,0,0.00,0.01,el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-2
+16.566,EMERGENCY_LAND,90,100,10,19,-2,1,66,0,0,0,0,0.05,0.03,el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-2
+16.616,EMERGENCY_LAND,90,110,10,19,-2,1,66,0,0,0,0,0.00,0.01,el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-2
+16.666,EMERGENCY_LAND,90,110,10,19,-2,1,66,0,0,0,0,0.05,0.01,el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-2
+16.717,EMERGENCY_LAND,90,110,10,19,-2,1,66,0,0,0,0,0.00,0.05,el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-2
+16.767,EMERGENCY_LAND,90,110,10,19,-2,1,66,0,0,0,0,0.05,0.03,el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-2
+16.817,EMERGENCY_LAND,90,110,10,20,-2,1,66,0,0,0,0,0.00,0.01,el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-2
+16.867,EMERGENCY_LAND,89,110,10,20,-2,1,66,0,0,0,0,0.00,0.01,el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-2
+16.918,EMERGENCY_LAND,89,110,10,20,-2,1,66,0,0,0,0,0.05,0.01,el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-2
+16.968,EMERGENCY_LAND,89,110,10,20,-2,1,66,0,0,0,0,0.10,0.01,el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-2
+17.018,EMERGENCY_LAND,89,110,10,20,-2,1,67,0,0,0,0,0.00,0.01,el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-2
+17.068,EMERGENCY_LAND,89,110,10,20,-2,1,67,0,0,0,0,0.05,0.01,el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-2
+17.118,EMERGENCY_LAND,89,110,10,20,-2,1,67,0,0,0,0,0.00,0.01,el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-1
+17.168,DONE,89,0,10,20,-2,1,67,0,0,0,0,0.00,0.01,aterrizado (el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,-1
+17.218,DONE,89,0,10,20,-2,1,67,0,0,0,0,0.05,0.01,aterrizado (el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,-1
+17.269,DONE,89,0,10,20,-2,1,67,0,0,0,0,0.00,0.03,aterrizado (el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,-1
+17.319,DONE,89,0,10,20,-2,1,67,0,0,0,0,0.05,0.01,aterrizado (el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,-1
+17.371,DONE,89,0,10,20,-2,1,67,0,0,0,0,0.10,0.01,aterrizado (el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,-1
+17.422,DONE,89,0,10,20,-2,1,67,0,0,0,0,0.04,0.03,aterrizado (el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,-1
+17.472,DONE,89,0,10,20,-2,1,67,0,0,0,0,0.09,0.01,aterrizado (el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,-1
+17.522,DONE,89,0,10,20,-2,1,67,0,0,0,0,0.00,0.01,aterrizado (el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,-1
+17.572,DONE,89,0,10,20,-2,1,67,0,0,0,0,0.05,0.05,aterrizado (el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,-1
+17.622,DONE,89,0,10,20,-2,1,67,0,0,0,0,0.00,0.05,aterrizado (el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,-1
+17.673,DONE,89,0,10,20,-2,1,67,0,0,0,0,0.05,0.01,aterrizado (el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,-1
+17.723,DONE,89,0,10,20,-2,1,67,0,0,0,0,0.10,0.01,aterrizado (el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,-1
+17.773,DONE,89,0,10,20,-2,1,67,0,0,0,0,0.00,0.01,aterrizado (el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0
+17.823,DONE,89,0,10,20,-2,1,67,0,0,0,0,0.05,0.01,aterrizado (el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0
+17.873,DONE,89,0,10,20,-2,1,67,0,0,0,0,0.10,0.03,aterrizado (el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0
+17.923,DONE,89,0,10,20,-2,1,67,0,0,0,0,0.03,0.01,aterrizado (el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0
+17.973,DONE,89,0,10,20,-2,1,67,0,0,0,0,0.08,0.05,aterrizado (el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0
+18.024,DONE,89,0,10,20,-2,1,66,0,0,0,0,0.03,0.01,aterrizado (el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0
+18.074,DONE,89,0,10,20,-2,1,66,0,0,0,0,0.08,0.01,aterrizado (el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0
+18.124,DONE,89,0,10,20,-2,1,66,0,0,0,0,0.03,0.01,aterrizado (el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0
+18.174,DONE,89,0,10,20,-2,1,66,0,0,0,0,0.08,0.03,aterrizado (el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0
+18.224,DONE,89,0,10,20,-2,1,66,0,0,0,0,0.04,0.01,aterrizado (el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0
+18.274,DONE,89,0,10,20,-2,1,66,0,0,0,0,0.09,0.01,aterrizado (el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0
+18.324,DONE,89,0,10,20,-2,1,66,0,0,0,0,0.04,0.01,aterrizado (el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0
+18.375,DONE,89,0,10,20,-2,1,66,0,0,0,0,0.09,0.01,aterrizado (el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0
+18.425,DONE,89,0,10,20,-2,1,66,0,0,0,0,0.02,0.01,aterrizado (el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0
+18.475,DONE,89,0,10,20,-2,1,66,0,0,0,0,0.07,0.03,aterrizado (el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0
+18.525,DONE,89,0,10,20,-2,1,66,0,0,0,0,0.04,0.01,aterrizado (el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0
+18.576,DONE,89,0,10,20,-2,1,66,0,0,0,0,0.09,0.01,aterrizado (el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0
+18.626,DONE,89,0,10,20,-2,1,66,0,0,0,0,0.04,0.01,aterrizado (el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,-1
+18.676,DONE,89,0,10,20,-2,1,66,0,0,0,0,0.09,0.03,aterrizado (el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,-1
+18.730,DONE,89,0,10,20,-2,1,66,0,0,0,0,0.00,0.03,aterrizado (el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,-1
+18.780,DONE,89,0,10,20,-2,1,66,0,0,0,0,0.05,0.01,aterrizado (el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,-1
+18.831,DONE,89,0,10,20,-2,1,66,0,0,0,0,0.00,0.05,aterrizado (el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,-2
+18.881,DONE,89,0,10,20,-2,1,66,0,0,0,0,0.05,0.01,aterrizado (el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,-2
+18.933,DONE,89,0,10,20,-2,1,66,0,0,0,0,0.00,0.01,aterrizado (el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0
+18.987,DONE,89,0,10,20,-2,1,66,0,0,0,0,0.05,0.03,aterrizado (el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0
+19.037,DONE,89,0,10,20,-2,1,66,0,0,0,0,0.00,0.01,aterrizado (el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0
+19.087,DONE,89,0,10,20,-2,1,66,0,0,0,0,0.05,0.01,aterrizado (el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0
+19.137,DONE,89,0,10,20,-2,1,66,0,0,0,0,0.10,0.03,aterrizado (el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0
+19.188,DONE,89,0,10,20,-2,1,66,0,0,0,0,0.15,0.07,aterrizado (el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0
+19.238,DONE,89,0,10,20,-1,1,66,0,0,0,0,0.00,0.03,aterrizado (el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0
+19.288,DONE,89,0,10,20,-1,1,66,0,0,0,0,0.05,0.01,aterrizado (el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0
+19.338,DONE,89,0,10,20,-1,1,66,0,0,0,0,0.01,0.01,aterrizado (el despegue se vino abajo (subio a 62 y volvio a 13 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0

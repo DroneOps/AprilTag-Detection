@@ -5,10 +5,11 @@ Las bitácoras de vuelo (`logs/*.csv`) y los videos están en la laptop, no en e
 
 ## Pendiente ahora
 
-1. **Estacionario con y sin clip** (`first_flight.py`, una vez sin el clip y otra con él,
-   con la misma batería). Sirve para ver si el clip interfiere con los sensores de la panza:
-   el 9-nov hubo despegues que subían solos a 151 cm o se regresaban al piso. Si interfiere,
-   ajustar el clip y repetir E1.
+1. **Arreglar la altura del Tello.** El 9-nov a las 17:15, con y sin clip, el despegue subió
+   a ~70 cm y se regresó solo al piso, mientras el `h` del Tello subía: su estimación interna
+   de altura está mal. **No es el clip.** Calibrar IMU y centro de gravedad en la app Tello
+   (con el dron quieto sobre superficie plana al encenderlo), revisar firmware y repetir el
+   estacionario sin clip hasta que salga bien.
 2. Con espejo, en orden: **E3 → E4 → E5 → E6 → E7** ([`laboratorio.md`](laboratorio.md)).
    Ajustar `advance_timeout_s` y `cruise_alt_cm` según la pista.
 3. Respuestas del comité: tamaño de tags, cómo es la trayectoria visible y la etiqueta de

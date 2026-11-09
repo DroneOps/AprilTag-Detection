@@ -154,7 +154,7 @@ Síntomas que ya conocemos:
 
 | Síntoma | Causa probable | Qué hacer |
 |---|---|---|
-| Al despegar sube solo a ~150 cm, o se regresa al piso | el Tello no sostiene su altura; posiblemente el clip interfiere con los sensores de la panza | estacionario con y sin clip; ajustar el clip |
+| Al despegar sube solo a ~150 cm, o se regresa al piso; `h` sube mientras `tof` baja | la estimación de altura interna del Tello está mal (IMU); pasó igual con y sin clip (9-nov) | calibrar IMU y centro de gravedad en la app Tello, encender el dron quieto, repetir el estacionario sin clip |
 | `el dron no obedece` / `avanza solo` | IMU descalibrado o hélice dañada | "Revisar el dron" |
 | Se hunde ~10–13 cm/s al avanzar | normal en este Tello | lo corrige el sostener altura |
 | Al centrarse oscila ±10 cm | deriva normal (~5 cm/s) | normal; si es más, revisar el dron |

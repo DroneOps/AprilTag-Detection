@@ -1,0 +1,336 @@
+t,state,bat,h,tof,yaw,pitch,roll,temph,rc_lr,rc_fb,rc_ud,rc_yaw,state_age,video_age,reason,vgx,vgy,vgz
+0.000,IDLE,95,0,10,0,0,0,52,0,0,0,0,0.00,inf,esperando despegue (t),0,0,0
+0.051,IDLE,95,0,10,0,0,0,52,0,0,0,0,0.00,inf,esperando despegue (t),0,0,0
+0.102,IDLE,95,0,10,0,0,0,52,0,0,0,0,0.05,inf,esperando despegue (t),0,0,0
+0.152,IDLE,95,0,10,0,0,0,52,0,0,0,0,0.00,inf,esperando despegue (t),0,0,0
+0.202,IDLE,95,0,10,0,0,0,52,0,0,0,0,0.05,inf,esperando despegue (t),0,0,0
+0.253,IDLE,95,0,10,0,0,0,52,0,0,0,0,0.00,inf,esperando despegue (t),0,0,0
+0.303,IDLE,95,0,10,0,0,0,52,0,0,0,0,0.05,inf,esperando despegue (t),0,0,0
+0.353,IDLE,95,0,10,0,0,0,52,0,0,0,0,0.10,inf,esperando despegue (t),0,0,0
+0.403,IDLE,95,0,10,0,0,0,52,0,0,0,0,0.00,inf,esperando despegue (t),0,0,0
+0.453,IDLE,95,0,10,0,0,0,52,0,0,0,0,0.00,inf,esperando despegue (t),0,0,0
+0.503,IDLE,95,0,10,0,0,0,52,0,0,0,0,0.05,inf,esperando despegue (t),0,0,0
+0.554,IDLE,95,0,10,0,0,0,52,0,0,0,0,0.00,inf,esperando despegue (t),0,0,0
+0.604,IDLE,95,0,10,0,0,0,52,0,0,0,0,0.05,inf,esperando despegue (t),0,0,0
+0.654,IDLE,95,0,10,0,0,0,52,0,0,0,0,0.10,inf,esperando despegue (t),0,0,0
+0.704,IDLE,95,0,10,0,0,0,52,0,0,0,0,0.15,inf,esperando despegue (t),0,0,0
+0.754,IDLE,95,0,10,0,0,0,52,0,0,0,0,0.02,0.03,esperando despegue (t),0,0,0
+0.804,IDLE,95,0,10,0,0,0,52,0,0,0,0,0.00,0.03,esperando despegue (t),0,0,0
+0.855,IDLE,95,0,10,0,0,0,52,0,0,0,0,0.05,0.02,esperando despegue (t),0,0,0
+0.905,IDLE,95,0,10,0,0,0,52,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+0.955,IDLE,95,0,10,0,0,0,52,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+1.005,IDLE,95,0,10,0,0,0,52,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+1.057,IDLE,95,0,10,0,0,0,52,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+1.107,IDLE,95,0,10,0,0,0,52,0,0,0,0,0.10,0.01,esperando despegue (t),0,0,0
+1.157,IDLE,95,0,10,0,0,0,52,0,0,0,0,0.00,0.05,esperando despegue (t),0,0,0
+1.207,IDLE,95,0,10,0,0,0,52,0,0,0,0,0.05,0.09,esperando despegue (t),0,0,0
+1.257,IDLE,95,0,10,0,0,0,52,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0
+1.308,IDLE,95,0,10,0,0,0,52,0,0,0,0,0.04,0.01,esperando despegue (t),0,0,0
+1.358,IDLE,95,0,10,0,0,0,52,0,0,0,0,0.09,0.01,esperando despegue (t),0,0,0
+1.409,IDLE,94,0,10,0,0,0,52,0,0,0,0,0.00,0.03,esperando despegue (t),0,0,0
+1.459,IDLE,94,0,10,0,0,0,52,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+1.510,IDLE,94,0,10,0,0,0,52,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+1.560,IDLE,94,0,10,0,0,0,52,0,0,0,0,0.06,0.03,esperando despegue (t),0,0,0
+1.610,IDLE,94,0,10,0,0,0,52,0,0,0,0,0.11,0.01,esperando despegue (t),0,0,0
+1.661,IDLE,94,0,10,0,0,0,52,0,0,0,0,0.03,0.01,esperando despegue (t),0,0,0
+1.711,IDLE,94,0,10,0,0,0,52,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0
+1.761,IDLE,94,0,10,0,0,0,52,0,0,0,0,0.07,0.01,esperando despegue (t),0,0,0
+1.811,IDLE,94,0,10,0,0,0,52,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+1.862,IDLE,94,0,10,0,0,0,52,0,0,0,0,0.06,0.01,esperando despegue (t),0,0,0
+1.912,IDLE,94,0,10,0,0,0,52,0,0,0,0,0.11,0.05,esperando despegue (t),0,0,0
+1.962,IDLE,94,0,10,0,0,0,52,0,0,0,0,0.03,0.03,esperando despegue (t),0,0,0
+2.012,IDLE,94,0,10,0,0,0,52,0,0,0,0,0.08,0.08,esperando despegue (t),0,0,0
+2.062,IDLE,94,0,10,0,0,0,52,0,0,0,0,0.01,0.03,esperando despegue (t),0,0,0
+2.112,IDLE,94,0,10,0,0,0,52,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+2.162,IDLE,94,0,10,0,0,0,52,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+2.213,IDLE,94,0,10,0,0,0,52,0,0,0,0,0.01,0.03,esperando despegue (t),0,0,0
+2.263,IDLE,94,0,10,0,0,0,52,0,0,0,0,0.06,0.01,esperando despegue (t),0,0,0
+2.313,IDLE,94,0,10,0,0,0,52,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0
+2.363,IDLE,94,0,10,0,0,0,52,0,0,0,0,0.07,0.03,esperando despegue (t),0,0,0
+2.413,IDLE,94,0,10,0,0,0,52,0,0,0,0,0.12,0.03,esperando despegue (t),0,0,0
+2.464,IDLE,94,0,10,0,0,0,52,0,0,0,0,0.04,0.01,esperando despegue (t),0,0,0
+2.514,IDLE,94,0,10,0,0,0,52,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+2.564,IDLE,94,0,10,0,0,0,52,0,0,0,0,0.06,0.01,esperando despegue (t),0,0,0
+2.614,IDLE,94,0,10,0,0,0,52,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+2.664,IDLE,94,0,10,0,0,0,52,0,0,0,0,0.06,0.03,esperando despegue (t),0,0,0
+2.715,IDLE,94,0,10,0,0,0,52,0,0,0,0,0.03,0.01,esperando despegue (t),0,0,0
+2.765,IDLE,94,0,10,0,0,0,52,0,0,0,0,0.08,0.01,esperando despegue (t),0,0,0
+2.815,IDLE,94,0,10,0,0,0,52,0,0,0,0,0.00,0.05,esperando despegue (t),0,0,0
+2.865,IDLE,94,0,10,0,0,0,52,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+2.917,IDLE,94,0,10,0,0,0,52,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+2.967,IDLE,94,0,10,0,0,0,52,0,0,0,0,0.06,0.01,esperando despegue (t),0,0,0
+3.017,IDLE,94,0,10,0,0,0,52,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0
+3.068,IDLE,94,0,10,0,0,0,52,0,0,0,0,0.07,0.01,esperando despegue (t),0,0,0
+3.118,IDLE,94,0,10,0,0,0,52,0,0,0,0,0.03,0.01,esperando despegue (t),0,0,0
+3.172,IDLE,94,0,10,0,0,0,52,0,0,0,0,0.09,0.01,esperando despegue (t),0,0,0
+3.222,IDLE,94,0,10,0,0,0,53,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0
+3.272,IDLE,94,0,10,0,0,0,53,0,0,0,0,0.07,0.01,esperando despegue (t),0,0,0
+3.322,IDLE,94,0,10,0,0,0,53,0,0,0,0,0.03,0.01,esperando despegue (t),0,0,0
+3.372,IDLE,94,0,10,0,0,0,53,0,0,0,0,0.08,0.01,esperando despegue (t),0,0,0
+3.423,TAKEOFF,94,0,10,0,0,0,53,0,0,0,0,0.04,0.01,despegando,0,0,0
+3.473,TAKEOFF,94,0,10,0,0,0,53,0,0,0,0,0.09,0.01,despegando,0,0,0
+3.523,TAKEOFF,94,0,10,0,0,0,53,0,0,0,0,0.03,0.01,despegando,0,0,0
+3.573,TAKEOFF,94,0,10,0,0,0,53,0,0,0,0,0.08,0.01,despegando,0,0,0
+3.623,TAKEOFF,94,0,10,0,0,0,53,0,0,0,0,0.01,0.01,despegando,0,0,0
+3.673,TAKEOFF,94,0,10,0,0,0,53,0,0,0,0,0.06,0.01,despegando,0,0,0
+3.724,TAKEOFF,94,0,10,0,0,0,53,0,0,0,0,0.03,0.05,despegando,0,0,0
+3.774,TAKEOFF,94,0,10,0,0,0,53,0,0,0,0,0.08,0.01,despegando,0,0,0
+3.824,TAKEOFF,94,0,10,0,0,0,53,0,0,0,0,0.02,0.01,despegando,0,0,0
+3.874,TAKEOFF,94,0,10,0,0,0,53,0,0,0,0,0.07,0.01,despegando,0,0,0
+3.924,TAKEOFF,94,0,10,1,0,0,53,0,0,0,0,0.02,0.01,despegando,0,0,0
+3.974,TAKEOFF,94,0,10,1,0,0,53,0,0,0,0,0.07,0.01,despegando,0,0,0
+4.024,TAKEOFF,94,0,10,2,0,0,53,0,0,0,0,0.00,0.01,despegando,0,0,0
+4.074,TAKEOFF,94,0,10,2,0,0,53,0,0,0,0,0.05,0.01,despegando,0,0,0
+4.125,TAKEOFF,94,0,10,2,0,0,53,0,0,0,0,0.10,0.05,despegando,0,0,0
+4.175,TAKEOFF,94,0,10,2,-1,0,53,0,0,0,0,0.02,0.03,despegando,0,0,0
+4.225,TAKEOFF,94,0,10,2,-2,0,53,0,0,0,0,0.00,0.01,despegando,0,0,-1
+4.275,TAKEOFF,94,0,10,2,-2,0,53,0,0,0,0,0.05,0.01,despegando,0,0,-1
+4.325,TAKEOFF,94,0,10,2,-1,0,53,0,0,0,0,0.00,0.01,despegando,0,0,-3
+4.375,TAKEOFF,94,0,10,2,-1,0,53,0,0,0,0,0.05,0.01,despegando,0,0,-3
+4.425,TAKEOFF,94,0,10,2,-1,0,53,0,0,0,0,0.10,0.01,despegando,0,0,-3
+4.476,TAKEOFF,94,0,15,2,0,0,53,0,0,0,0,0.02,0.03,despegando,1,0,-6
+4.526,TAKEOFF,94,10,22,2,2,-1,53,0,0,0,0,0.00,0.01,despegando,0,0,-7
+4.576,TAKEOFF,94,10,22,2,2,-1,53,0,0,0,0,0.05,0.01,despegando,0,0,-7
+4.626,TAKEOFF,94,20,28,2,1,-1,53,0,0,0,0,0.01,0.01,despegando,0,0,-8
+4.676,TAKEOFF,94,20,28,2,1,-1,53,0,0,0,0,0.06,0.01,despegando,0,0,-8
+4.726,TAKEOFF,94,20,35,2,0,0,53,0,0,0,0,0.03,0.03,despegando,0,0,-7
+4.777,TAKEOFF,94,20,35,2,0,0,53,0,0,0,0,0.08,0.01,despegando,0,0,-7
+4.827,TAKEOFF,94,30,41,2,0,0,53,0,0,0,0,0.04,0.01,despegando,0,0,-7
+4.877,TAKEOFF,94,30,41,2,0,0,53,0,0,0,0,0.09,0.01,despegando,0,0,-7
+4.927,TAKEOFF,94,40,47,2,0,0,53,0,0,0,0,0.01,0.01,despegando,0,0,-6
+4.977,TAKEOFF,94,40,47,2,0,0,53,0,0,0,0,0.06,0.01,despegando,0,0,-6
+5.027,TAKEOFF,94,40,52,2,0,0,53,0,0,0,0,0.00,0.03,despegando,0,0,-5
+5.077,TAKEOFF,94,40,52,2,0,0,53,0,0,0,0,0.05,0.01,despegando,0,0,-5
+5.127,TAKEOFF,94,40,56,2,0,0,53,0,0,0,0,0.00,0.01,despegando,0,0,-4
+5.178,TAKEOFF,94,40,56,2,0,0,53,0,0,0,0,0.06,0.03,despegando,0,0,-4
+5.228,TAKEOFF,94,50,58,2,0,0,53,0,0,0,0,0.00,0.01,despegando,0,0,-3
+5.278,TAKEOFF,94,50,58,2,0,0,53,0,0,0,0,0.05,0.01,despegando,0,0,-3
+5.328,TAKEOFF,94,50,58,2,0,0,53,0,0,0,0,0.10,0.01,despegando,0,0,-3
+5.378,TAKEOFF,94,50,61,2,0,0,53,0,0,0,0,0.03,0.01,despegando,0,0,-2
+5.428,TAKEOFF,94,50,61,2,0,0,53,0,0,0,0,0.08,0.01,despegando,0,0,-2
+5.479,TAKEOFF,94,50,63,2,0,0,53,0,0,0,0,0.05,0.01,despegando,0,0,-1
+5.529,TAKEOFF,94,50,64,2,0,2,53,0,0,0,0,0.01,0.01,despegando,0,0,-1
+5.579,TAKEOFF,94,50,65,2,0,2,53,0,0,0,0,0.00,0.01,despegando,0,0,-1
+5.629,TAKEOFF,94,50,65,2,0,2,53,0,0,0,0,0.05,0.01,despegando,0,0,-1
+5.679,TAKEOFF,94,50,65,2,0,2,53,0,0,0,0,0.10,0.01,despegando,0,0,-1
+5.733,TAKEOFF,94,50,66,2,0,1,53,0,0,0,0,0.01,0.01,despegando,0,0,-1
+5.783,TAKEOFF,94,50,66,2,0,1,53,0,0,0,0,0.06,0.03,despegando,0,0,-1
+5.834,TAKEOFF,94,50,67,2,0,0,53,0,0,0,0,0.04,0.01,despegando,0,0,-1
+5.884,TAKEOFF,94,50,67,2,0,0,53,0,0,0,0,0.09,0.05,despegando,0,0,-1
+5.934,TAKEOFF,94,50,67,2,0,0,53,0,0,0,0,0.04,0.01,despegando,0,0,-1
+5.984,TAKEOFF,94,50,68,2,0,0,53,0,0,0,0,0.00,0.03,despegando,0,0,-1
+6.034,TAKEOFF,94,50,68,2,0,0,53,0,0,0,0,0.05,0.01,despegando,0,0,-1
+6.085,TAKEOFF,94,60,68,2,0,0,53,0,0,0,0,0.00,0.01,despegando,0,0,-1
+6.135,TAKEOFF,94,60,68,2,0,0,53,0,0,0,0,0.05,0.01,despegando,0,0,-1
+6.185,TAKEOFF,94,60,68,2,0,0,53,0,0,0,0,0.10,0.03,despegando,0,0,-1
+6.235,TAKEOFF,94,60,69,2,0,0,54,0,0,0,0,0.01,0.01,despegando,0,0,-1
+6.286,TAKEOFF,94,60,69,2,0,0,54,0,0,0,0,0.06,0.03,despegando,0,0,-1
+6.336,TAKEOFF,94,60,70,2,0,0,54,0,0,0,0,0.03,0.01,despegando,0,0,-1
+6.386,TAKEOFF,94,60,69,2,0,0,54,0,0,0,0,0.00,0.01,despegando,0,0,-1
+6.436,TAKEOFF,94,60,69,2,0,0,54,0,0,0,0,0.05,0.01,despegando,0,0,-1
+6.486,TAKEOFF,94,60,69,2,0,0,54,0,0,0,0,0.00,0.01,despegando,0,0,-1
+6.536,TAKEOFF,94,60,69,2,0,0,54,0,0,0,0,0.05,0.01,despegando,0,0,-1
+6.587,TAKEOFF,94,60,69,2,0,0,54,0,0,0,0,0.10,0.01,despegando,0,0,-1
+6.637,TAKEOFF,94,60,69,2,0,0,54,0,0,0,0,0.04,0.01,despegando,0,0,-1
+6.687,TAKEOFF,94,60,69,2,0,0,54,0,0,0,0,0.09,0.01,despegando,0,0,-1
+6.737,TAKEOFF,94,60,68,2,0,0,54,0,0,0,0,0.03,0.03,despegando,0,0,-1
+6.787,TAKEOFF,94,60,68,2,0,0,54,0,0,0,0,0.08,0.01,despegando,0,0,-1
+6.837,TAKEOFF,94,60,68,2,0,0,54,0,0,0,0,0.04,0.01,despegando,0,0,-1
+6.888,TAKEOFF,94,60,68,2,0,0,54,0,0,0,0,0.09,0.01,despegando,0,0,-1
+6.939,TAKEOFF,94,60,67,2,0,0,54,0,0,0,0,0.01,0.01,despegando,0,0,-1
+6.989,TAKEOFF,94,60,67,2,0,0,54,0,0,0,0,0.06,0.01,despegando,0,0,-1
+7.039,TAKEOFF,94,60,66,2,0,0,54,0,0,0,0,0.02,0.01,despegando,0,0,-1
+7.089,TAKEOFF,94,60,66,2,0,0,54,0,0,0,0,0.07,0.03,despegando,0,0,-1
+7.139,TAKEOFF,94,70,64,2,0,0,54,0,0,0,0,0.01,0.01,despegando,0,0,-1
+7.189,TAKEOFF,94,70,64,2,0,0,54,0,0,0,0,0.06,0.01,despegando,0,0,-1
+7.239,TAKEOFF,94,70,64,2,0,0,54,0,0,0,0,0.02,0.01,despegando,0,0,-1
+7.290,TAKEOFF,94,70,64,2,0,0,54,0,0,0,0,0.07,0.03,despegando,0,0,-1
+7.340,TAKEOFF,94,70,63,2,0,0,54,0,0,0,0,0.01,0.01,despegando,0,0,-1
+7.390,TAKEOFF,94,70,63,2,0,0,54,0,0,0,0,0.06,0.03,despegando,0,0,-1
+7.440,TAKEOFF,94,70,61,2,0,0,54,0,0,0,0,0.00,0.01,despegando,0,0,-1
+7.490,TAKEOFF,94,70,61,2,0,0,54,0,0,0,0,0.05,0.01,despegando,0,0,-1
+7.541,TAKEOFF,94,70,59,2,0,0,54,0,0,0,0,0.02,0.01,despegando,0,0,-1
+7.591,TAKEOFF,94,70,59,2,0,0,54,0,0,0,0,0.07,0.01,despegando,0,0,-1
+7.641,TAKEOFF,94,70,57,2,0,0,54,0,0,0,0,0.01,0.01,despegando,0,0,-1
+7.691,TAKEOFF,94,70,57,2,0,0,54,0,0,0,0,0.06,0.01,despegando,0,0,-1
+7.741,TAKEOFF,94,80,56,2,0,0,54,0,0,0,0,0.03,0.03,despegando,0,0,-2
+7.791,TAKEOFF,94,80,56,2,0,0,54,0,0,0,0,0.08,0.01,despegando,0,0,-2
+7.842,TAKEOFF,94,80,54,2,0,0,54,0,0,0,0,0.01,0.01,despegando,0,0,-2
+7.892,TAKEOFF,94,80,54,2,0,0,54,0,0,0,0,0.06,0.01,despegando,0,0,-2
+7.942,TAKEOFF,94,80,52,2,0,0,54,0,0,0,0,0.00,0.01,despegando,0,0,-2
+7.992,TAKEOFF,94,80,52,2,0,0,54,0,0,0,0,0.05,0.01,despegando,0,0,-2
+8.042,TAKEOFF,94,80,50,3,0,0,54,0,0,0,0,0.01,0.01,despegando,0,0,-2
+8.093,TAKEOFF,94,80,50,3,0,0,54,0,0,0,0,0.06,0.01,despegando,0,0,-2
+8.143,TAKEOFF,94,80,48,3,0,0,54,0,0,0,0,0.01,0.01,despegando,0,0,-2
+8.193,TAKEOFF,94,80,48,3,0,0,54,0,0,0,0,0.06,0.01,despegando,0,0,-2
+8.243,TAKEOFF,94,80,46,3,0,0,54,0,0,0,0,0.00,0.03,despegando,0,0,-2
+8.293,TAKEOFF,94,80,46,3,0,0,54,0,0,0,0,0.05,0.01,despegando,0,0,-2
+8.344,TAKEOFF,94,80,44,3,0,0,54,0,0,0,0,0.02,0.01,despegando,0,0,-3
+8.394,TAKEOFF,94,80,44,3,0,0,54,0,0,0,0,0.07,0.01,despegando,0,0,-3
+8.444,TAKEOFF,93,90,43,2,0,0,54,0,0,0,0,0.01,0.03,despegando,0,0,-3
+8.494,TAKEOFF,93,90,43,2,0,0,54,0,0,0,0,0.06,0.01,despegando,0,0,-3
+8.545,TAKEOFF,93,90,42,2,0,0,54,0,0,0,0,0.00,0.01,despegando,0,0,-3
+8.595,TAKEOFF,93,90,42,2,0,0,54,0,0,0,0,0.05,0.01,despegando,0,0,-3
+8.645,TAKEOFF,93,90,40,2,0,0,54,0,0,0,0,0.01,0.01,despegando,0,0,-3
+8.695,TAKEOFF,93,90,39,2,0,1,54,0,0,0,0,0.01,0.01,despegando,0,0,-2
+8.746,TAKEOFF,93,90,39,2,0,1,54,0,0,0,0,0.06,0.01,despegando,0,0,-2
+8.796,TAKEOFF,93,90,37,2,0,1,54,0,0,0,0,0.00,0.01,despegando,0,0,-3
+8.846,TAKEOFF,93,90,37,2,0,1,54,0,0,0,0,0.05,0.01,despegando,0,0,-3
+8.896,TAKEOFF,93,90,35,2,0,0,54,0,0,0,0,0.00,0.01,despegando,0,0,-3
+8.946,TAKEOFF,93,90,35,2,0,0,54,0,0,0,0,0.05,0.01,despegando,0,0,-3
+8.999,TAKEOFF,93,90,33,2,0,0,54,0,0,0,0,0.00,0.01,despegando,0,0,-3
+9.049,TAKEOFF,93,90,33,2,0,0,54,0,0,0,0,0.05,0.01,despegando,0,0,-3
+9.099,TAKEOFF,93,90,33,2,0,0,54,0,0,0,0,0.10,0.03,despegando,0,0,-3
+9.149,TAKEOFF,93,90,31,2,0,0,54,0,0,0,0,0.03,0.01,despegando,0,0,-3
+9.199,TAKEOFF,93,90,28,2,0,0,55,0,0,0,0,0.00,0.01,despegando,0,0,-3
+9.249,TAKEOFF,93,90,28,2,0,0,55,0,0,0,0,0.05,0.01,despegando,0,0,-3
+9.300,TAKEOFF,93,90,28,2,0,0,55,0,0,0,0,0.10,0.01,despegando,0,0,-3
+9.351,TAKEOFF,93,90,26,2,0,0,55,0,0,0,0,0.02,0.01,despegando,0,0,-3
+9.401,TAKEOFF,93,90,26,2,0,0,55,0,0,0,0,0.07,0.01,despegando,0,0,-3
+9.451,TAKEOFF,93,100,24,2,0,0,55,0,0,0,0,0.03,0.01,despegando,0,0,-3
+9.501,EMERGENCY_LAND,93,100,24,2,0,0,55,0,0,0,0,0.08,0.03,el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-3
+9.551,EMERGENCY_LAND,93,100,21,2,0,0,55,0,0,0,0,0.03,0.01,el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-3
+9.601,EMERGENCY_LAND,93,100,21,2,0,0,55,0,0,0,0,0.08,0.01,el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-3
+9.652,EMERGENCY_LAND,93,100,20,2,0,0,55,0,0,0,0,0.00,0.01,el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-4
+9.702,EMERGENCY_LAND,93,100,20,2,0,0,55,0,0,0,0,0.05,0.01,el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-4
+9.752,EMERGENCY_LAND,93,100,18,2,0,0,55,0,0,0,0,0.03,0.03,el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-4
+9.802,EMERGENCY_LAND,93,100,18,2,0,0,55,0,0,0,0,0.08,0.01,el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-4
+9.853,EMERGENCY_LAND,93,100,15,2,0,0,55,0,0,0,0,0.02,0.01,el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-4
+9.903,EMERGENCY_LAND,93,100,15,2,0,0,55,0,0,0,0,0.07,0.01,el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-4
+9.953,EMERGENCY_LAND,93,100,13,2,0,-1,55,0,0,0,0,0.02,0.01,el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-4
+10.003,EMERGENCY_LAND,93,100,13,2,0,-1,55,0,0,0,0,0.07,0.01,el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-4
+10.053,EMERGENCY_LAND,93,90,15,2,0,0,55,0,0,0,0,0.03,0.01,el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-4
+10.103,EMERGENCY_LAND,93,90,15,2,0,0,55,0,0,0,0,0.08,0.01,el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-4
+10.153,EMERGENCY_LAND,93,80,11,2,0,0,55,0,0,0,0,0.04,0.01,el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-4
+10.204,EMERGENCY_LAND,93,80,11,2,0,0,55,0,0,0,0,0.09,0.01,el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-4
+10.254,EMERGENCY_LAND,93,80,10,2,0,0,55,0,0,0,0,0.02,0.01,el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-4
+10.304,EMERGENCY_LAND,93,80,10,2,0,0,55,0,0,0,0,0.07,0.01,el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-4
+10.354,EMERGENCY_LAND,93,70,10,2,0,0,55,0,0,0,0,0.02,0.01,el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-4
+10.407,EMERGENCY_LAND,93,70,10,2,0,0,55,0,0,0,0,0.07,0.01,el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-4
+10.457,EMERGENCY_LAND,92,70,10,2,0,0,55,0,0,0,0,0.03,0.01,el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-4
+10.507,EMERGENCY_LAND,92,70,10,2,0,0,55,0,0,0,0,0.08,0.01,el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-4
+10.558,EMERGENCY_LAND,92,60,10,2,0,0,55,0,0,0,0,0.01,0.01,el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-4
+10.608,EMERGENCY_LAND,92,60,10,2,0,0,55,0,0,0,0,0.06,0.03,el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-4
+10.658,EMERGENCY_LAND,92,50,10,2,0,0,55,0,0,0,0,0.02,0.03,el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-4
+10.708,EMERGENCY_LAND,92,50,10,2,0,0,55,0,0,0,0,0.07,0.01,el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-4
+10.758,EMERGENCY_LAND,92,50,10,2,0,0,55,0,0,0,0,0.00,0.03,el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-4
+10.808,EMERGENCY_LAND,92,50,10,2,0,0,55,0,0,0,0,0.05,0.01,el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-4
+10.858,EMERGENCY_LAND,92,60,10,2,0,0,55,0,0,0,0,0.00,0.01,el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-4
+10.909,EMERGENCY_LAND,92,60,10,2,0,0,55,0,0,0,0,0.05,0.01,el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-4
+10.959,EMERGENCY_LAND,92,60,10,2,0,0,55,0,0,0,0,0.00,0.01,el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-5
+11.009,EMERGENCY_LAND,92,60,10,2,0,0,55,0,0,0,0,0.05,0.01,el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-5
+11.060,EMERGENCY_LAND,92,70,10,2,0,0,55,0,0,0,0,0.00,0.01,el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-5
+11.111,EMERGENCY_LAND,92,70,10,2,0,0,55,0,0,0,0,0.05,0.01,el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-5
+11.161,EMERGENCY_LAND,92,70,10,2,0,0,55,0,0,0,0,0.00,0.01,el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo,0,0,-5
+11.211,DONE,92,70,10,2,0,0,55,0,0,0,0,0.05,0.01,aterrizado (el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,-5
+11.261,DONE,92,70,10,2,0,0,57,0,0,0,0,0.00,0.01,aterrizado (el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,-4
+11.311,DONE,92,70,10,2,0,0,57,0,0,0,0,0.05,0.01,aterrizado (el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,-4
+11.361,DONE,92,70,10,2,0,0,57,0,0,0,0,0.00,0.01,aterrizado (el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,-3
+11.411,DONE,92,70,10,2,0,0,57,0,0,0,0,0.05,0.01,aterrizado (el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,-3
+11.461,DONE,92,70,10,2,0,0,57,0,0,0,0,0.00,0.01,aterrizado (el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,-2
+11.512,DONE,92,70,10,2,0,0,57,0,0,0,0,0.05,0.01,aterrizado (el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,-2
+11.562,DONE,92,70,10,2,0,0,57,0,0,0,0,0.00,0.01,aterrizado (el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,-2
+11.612,DONE,92,70,10,2,0,0,57,0,0,0,0,0.05,0.01,aterrizado (el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,-2
+11.662,DONE,92,70,10,2,1,0,57,0,0,0,0,0.00,0.01,aterrizado (el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,-2
+11.713,DONE,92,70,10,2,1,0,57,0,0,0,0,0.05,0.01,aterrizado (el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,-2
+11.763,DONE,92,70,10,2,1,0,57,0,0,0,0,0.10,0.01,aterrizado (el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,-2
+11.813,DONE,92,70,10,0,-4,1,57,0,0,0,0,0.00,0.01,aterrizado (el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,-3
+11.863,DONE,92,70,10,0,-4,1,57,0,0,0,0,0.05,0.01,aterrizado (el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,-3
+11.913,DONE,92,70,10,0,-4,1,57,0,0,0,0,0.10,0.01,aterrizado (el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,-3
+11.963,DONE,92,80,10,0,0,0,57,0,0,0,0,0.02,0.01,aterrizado (el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,-2
+12.013,DONE,92,80,10,0,0,0,57,0,0,0,0,0.07,0.01,aterrizado (el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,-2
+12.064,DONE,92,80,10,1,0,0,57,0,0,0,0,0.03,0.01,aterrizado (el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,-2
+12.114,DONE,92,80,10,1,0,0,57,0,0,0,0,0.08,0.01,aterrizado (el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,-2
+12.166,DONE,92,70,10,2,0,0,57,0,0,0,0,0.03,0.01,aterrizado (el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,-1
+12.216,DONE,92,70,10,2,0,0,56,0,0,0,0,0.00,0.01,aterrizado (el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0
+12.267,DONE,92,70,10,2,0,0,56,0,0,0,0,0.05,0.01,aterrizado (el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0
+12.317,DONE,92,70,10,2,0,0,56,0,0,0,0,0.00,0.01,aterrizado (el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0
+12.368,DONE,92,70,10,2,0,0,56,0,0,0,0,0.05,0.01,aterrizado (el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0
+12.418,DONE,91,70,10,2,0,0,56,0,0,0,0,0.00,0.01,aterrizado (el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0
+12.468,DONE,91,70,10,2,0,0,56,0,0,0,0,0.05,0.01,aterrizado (el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0
+12.518,DONE,91,70,10,2,0,0,56,0,0,0,0,0.00,0.01,aterrizado (el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0
+12.569,DONE,91,70,10,2,0,0,56,0,0,0,0,0.05,0.01,aterrizado (el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0
+12.619,DONE,91,70,10,2,0,0,56,0,0,0,0,0.10,0.01,aterrizado (el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0
+12.669,DONE,91,70,10,2,0,0,56,0,0,0,0,0.04,0.01,aterrizado (el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0
+12.719,DONE,91,70,10,2,0,0,56,0,0,0,0,0.00,0.01,aterrizado (el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0
+12.770,DONE,91,70,10,2,0,0,56,0,0,0,0,0.05,0.01,aterrizado (el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0
+12.820,DONE,91,70,10,2,0,0,56,0,0,0,0,0.00,0.01,aterrizado (el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0
+12.870,DONE,91,70,10,2,0,0,56,0,0,0,0,0.05,0.01,aterrizado (el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0
+12.920,DONE,91,70,10,2,0,0,56,0,0,0,0,0.10,0.01,aterrizado (el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0
+12.970,DONE,91,70,10,1,0,0,56,0,0,0,0,0.02,0.03,aterrizado (el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0
+13.020,DONE,91,70,10,1,0,0,56,0,0,0,0,0.07,0.01,aterrizado (el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0
+13.070,DONE,91,70,10,1,0,0,56,0,0,0,0,0.04,0.01,aterrizado (el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0
+13.120,DONE,91,70,10,1,0,0,56,0,0,0,0,0.09,0.01,aterrizado (el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0
+13.171,DONE,91,70,12,1,0,0,56,0,0,0,0,0.01,0.01,aterrizado (el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0
+13.221,DONE,91,70,12,1,0,0,56,0,0,0,0,0.06,0.02,aterrizado (el despegue se vino abajo (subio a 60 y volvio a 14 cm): el Tello no sostiene la altura - revisa que el clip no tape los sensores de abajo),0,0,0
+13.271,KILLED,91,70,15,1,0,0,57,0,0,0,0,0.01,0.01,motores apagados por el usuario,0,0,0
+13.321,KILLED,91,70,15,1,0,0,57,0,0,0,0,0.06,0.01,motores apagados por el usuario,0,0,0
+13.371,KILLED,91,70,10,0,1,1,57,0,0,0,0,0.00,0.01,motores apagados por el usuario,0,0,0
+13.421,KILLED,91,70,10,0,1,1,57,0,0,0,0,0.05,0.05,motores apagados por el usuario,0,0,0
+13.471,KILLED,91,0,10,-1,14,-2,57,0,0,0,0,0.00,0.03,motores apagados por el usuario,0,0,2
+13.522,KILLED,91,0,10,-1,14,-2,57,0,0,0,0,0.05,0.01,motores apagados por el usuario,0,0,2
+13.572,KILLED,91,0,10,-3,20,-3,57,0,0,0,0,0.00,0.01,motores apagados por el usuario,0,0,8
+13.622,KILLED,91,0,10,-3,20,-3,57,0,0,0,0,0.06,0.01,motores apagados por el usuario,0,0,8
+13.672,KILLED,91,-10,10,-3,-3,22,57,0,0,0,0,0.03,0.05,motores apagados por el usuario,0,0,15
+13.723,KILLED,91,-10,10,-3,-3,22,57,0,0,0,0,0.08,0.01,motores apagados por el usuario,0,0,15
+13.773,KILLED,91,-20,10,-20,-7,-8,57,0,0,0,0,0.01,0.01,motores apagados por el usuario,0,0,5
+13.823,KILLED,91,-20,10,-20,-7,-8,57,0,0,0,0,0.06,0.01,motores apagados por el usuario,0,0,5
+13.873,KILLED,91,-20,10,-20,-7,-8,57,0,0,0,0,0.11,0.02,motores apagados por el usuario,0,0,5
+13.923,KILLED,91,-20,10,-34,0,0,57,0,0,0,0,0.00,0.01,motores apagados por el usuario,0,0,4
+13.974,KILLED,91,-20,10,-34,0,1,57,0,0,0,0,0.00,0.01,motores apagados por el usuario,0,0,2
+14.024,KILLED,91,-20,10,-34,0,1,57,0,0,0,0,0.05,0.03,motores apagados por el usuario,0,0,2
+14.074,KILLED,91,-20,10,-34,0,1,57,0,0,0,0,0.00,0.01,motores apagados por el usuario,0,0,2
+14.125,KILLED,91,-20,10,-34,0,1,57,0,0,0,0,0.05,0.01,motores apagados por el usuario,0,0,2
+14.175,KILLED,91,-20,10,-34,0,1,57,0,0,0,0,0.01,0.01,motores apagados por el usuario,0,0,2
+14.225,KILLED,91,-20,10,-34,0,1,57,0,0,0,0,0.06,0.01,motores apagados por el usuario,0,0,2
+14.275,KILLED,91,-20,10,-34,0,1,57,0,0,0,0,0.11,0.05,motores apagados por el usuario,0,0,2
+14.325,KILLED,91,-20,10,-34,0,1,57,0,0,0,0,0.02,0.03,motores apagados por el usuario,0,0,2
+14.375,KILLED,90,-20,10,-34,0,1,57,0,0,0,0,0.01,0.01,motores apagados por el usuario,0,0,2
+14.426,KILLED,90,-20,10,-34,0,1,57,0,0,0,0,0.06,0.01,motores apagados por el usuario,0,0,2
+14.476,KILLED,90,0,10,-34,0,1,57,0,0,0,0,0.01,0.01,motores apagados por el usuario,0,0,2
+14.526,KILLED,90,0,10,-34,0,1,57,0,0,0,0,0.06,0.01,motores apagados por el usuario,0,0,2
+14.576,KILLED,90,0,10,-34,0,1,57,0,0,0,0,0.11,0.01,motores apagados por el usuario,0,0,2
+14.626,KILLED,90,0,10,-34,0,1,57,0,0,0,0,0.02,0.01,motores apagados por el usuario,0,0,2
+14.676,KILLED,90,0,10,-34,0,1,57,0,0,0,0,0.01,0.01,motores apagados por el usuario,0,0,2
+14.726,KILLED,90,0,10,-34,0,1,57,0,0,0,0,0.06,0.01,motores apagados por el usuario,0,0,2
+14.777,KILLED,90,0,10,-34,0,1,57,0,0,0,0,0.00,0.03,motores apagados por el usuario,0,0,2
+14.827,KILLED,90,0,10,-34,0,1,57,0,0,0,0,0.01,0.01,motores apagados por el usuario,0,0,2
+14.877,KILLED,90,0,10,-34,0,1,57,0,0,0,0,0.06,0.01,motores apagados por el usuario,0,0,2
+14.927,KILLED,90,0,10,-34,0,1,57,0,0,0,0,0.00,0.01,motores apagados por el usuario,0,0,2
+14.977,KILLED,90,0,10,-34,0,1,57,0,0,0,0,0.05,0.01,motores apagados por el usuario,0,0,2
+15.027,KILLED,90,0,10,-34,0,1,57,0,0,0,0,0.00,0.01,motores apagados por el usuario,0,0,2
+15.079,KILLED,90,0,10,-34,0,1,57,0,0,0,0,0.05,0.01,motores apagados por el usuario,0,0,2
+15.130,KILLED,90,0,10,-34,0,1,57,0,0,0,0,0.10,0.01,motores apagados por el usuario,0,0,2
+15.180,KILLED,90,0,10,-34,0,1,57,0,0,0,0,0.02,0.01,motores apagados por el usuario,0,0,2
+15.232,KILLED,90,0,10,-34,0,1,58,0,0,0,0,0.00,0.01,motores apagados por el usuario,0,0,2
+15.282,KILLED,90,0,10,-34,0,1,58,0,0,0,0,0.05,0.03,motores apagados por el usuario,0,0,2
+15.332,KILLED,90,0,10,-34,0,1,58,0,0,0,0,0.10,0.01,motores apagados por el usuario,0,0,2
+15.382,KILLED,90,0,10,-34,0,1,58,0,0,0,0,0.02,0.01,motores apagados por el usuario,0,0,2
+15.432,KILLED,90,0,10,-34,0,1,58,0,0,0,0,0.07,0.01,motores apagados por el usuario,0,0,2
+15.482,KILLED,90,0,10,-34,0,1,58,0,0,0,0,0.04,0.01,motores apagados por el usuario,0,0,2
+15.533,KILLED,90,0,10,-34,0,1,58,0,0,0,0,0.09,0.03,motores apagados por el usuario,0,0,2
+15.583,KILLED,90,0,10,-34,0,1,58,0,0,0,0,0.00,0.01,motores apagados por el usuario,0,0,2
+15.633,KILLED,90,0,10,-34,0,1,58,0,0,0,0,0.05,0.01,motores apagados por el usuario,0,0,2
+15.683,KILLED,90,0,10,-34,0,1,58,0,0,0,0,0.04,0.01,motores apagados por el usuario,0,0,0
+15.733,KILLED,90,0,10,-34,0,1,58,0,0,0,0,0.09,0.01,motores apagados por el usuario,0,0,0
+15.783,KILLED,90,0,10,-34,0,1,58,0,0,0,0,0.04,0.01,motores apagados por el usuario,0,0,0
+15.834,KILLED,90,0,10,-34,0,1,58,0,0,0,0,0.09,0.01,motores apagados por el usuario,0,0,0
+15.884,KILLED,90,0,10,-34,0,1,58,0,0,0,0,0.02,0.01,motores apagados por el usuario,0,0,0
+15.934,KILLED,90,0,10,-34,0,1,58,0,0,0,0,0.07,0.03,motores apagados por el usuario,0,0,0
+15.984,KILLED,90,0,10,-34,0,1,58,0,0,0,0,0.02,0.01,motores apagados por el usuario,0,0,0
+16.035,KILLED,90,0,10,-34,0,1,58,0,0,0,0,0.07,0.01,motores apagados por el usuario,0,0,0
+16.085,KILLED,90,0,10,-34,0,1,58,0,0,0,0,0.04,0.01,motores apagados por el usuario,0,0,0
+16.135,KILLED,90,0,10,-34,0,1,58,0,0,0,0,0.09,0.01,motores apagados por el usuario,0,0,0
+16.185,KILLED,90,0,10,-34,0,1,58,0,0,0,0,0.04,0.01,motores apagados por el usuario,0,0,0
+16.235,KILLED,90,0,10,-34,0,1,58,0,0,0,0,0.09,0.01,motores apagados por el usuario,0,0,0
+16.286,KILLED,90,0,10,-34,0,1,58,0,0,0,0,0.03,0.03,motores apagados por el usuario,0,0,0
+16.336,KILLED,90,0,10,-34,0,1,58,0,0,0,0,0.08,0.01,motores apagados por el usuario,0,0,0
+16.386,KILLED,90,0,10,-34,0,1,58,0,0,0,0,0.01,0.01,motores apagados por el usuario,0,0,0
+16.436,KILLED,90,0,10,-34,0,1,58,0,0,0,0,0.06,0.01,motores apagados por el usuario,0,0,0
+16.486,KILLED,90,0,10,-34,0,1,58,0,0,0,0,0.03,0.01,motores apagados por el usuario,0,0,0
+16.536,KILLED,90,0,10,-34,0,1,58,0,0,0,0,0.08,0.01,motores apagados por el usuario,0,0,0
+16.586,KILLED,90,0,10,-34,0,1,58,0,0,0,0,0.02,0.01,motores apagados por el usuario,0,0,0
+16.637,KILLED,90,0,10,-34,0,1,58,0,0,0,0,0.07,0.01,motores apagados por el usuario,0,0,0
+16.687,KILLED,90,0,10,-34,0,1,58,0,0,0,0,0.01,0.01,motores apagados por el usuario,0,0,0
+16.737,KILLED,90,0,10,-34,0,1,58,0,0,0,0,0.06,0.01,motores apagados por el usuario,0,0,0
+16.787,KILLED,90,0,10,-34,0,1,58,0,0,0,0,0.11,0.03,motores apagados por el usuario,0,0,0
