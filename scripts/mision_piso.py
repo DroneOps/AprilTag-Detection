@@ -37,7 +37,7 @@ from pathlib import Path
 import cv2
 import numpy as np
 
-from first_flight import ROOT, FlightConfig, connect, run_app, with_min, wrap_deg
+from first_flight import ROOT, FlightConfig, connect, run_app, with_min
 from mission_tags import MissionConfig, TagMission, Vision
 from mision_espejo import rot_mod90
 from test_tags import DEFAULT_CALIB, TAG_FUNCTIONS, draw, floor_from_front
@@ -169,11 +169,6 @@ class FloorMission(TagMission):
         if elapsed > f.advance_timeout_s:
             return self._begin_landing("LANDING", f"sin tags en el piso por {f.advance_timeout_s:.0f} s: fin")
         self._send_rc(0, f.advance_fb, 0, self._heading_rate(yaw))
-
-    def _heading_rate(self, yaw: float) -> int:
-        """rc de giro para sostener el rumbo del tramo."""
-        err = wrap_deg(self._heading - yaw)
-        return 0 if abs(err) <= 3 else with_min(self.m.heading_kp * err, self.m.az_min, self.m.heading_max)
 
     # ---- acercarse, recorrer a ciegas, quedarse encima
     def _approach(self, yaw: float, alt: float, now: float, elapsed: float) -> None:

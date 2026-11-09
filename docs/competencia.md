@@ -65,10 +65,11 @@ importante:
 
 ## Estrategia actual
 
-- **Sin espejo** (`scripts/mision_piso.py`): la cámara al frente ve los tags del piso
-  entre ~1 y ~1.7 m adelante y recorre a ciegas el último metro.
-- **Con espejo** (`scripts/mision_espejo.py`): la cámara ve hacia abajo y el dron se
-  centra encima del tag. Es más preciso, pero no ve hacia adelante. Hay prototipos de
-  clip en diseño (`anexos/prompt_espejo_3d.md`), incluido uno de mitad frente y mitad piso.
+- **Con espejo, la principal** (`scripts/mision_espejo.py`): la cámara ve hacia abajo y
+  el dron se centra encima de cada tag sin girar (sostiene el rumbo del tramo). Es más
+  preciso, pero no ve hacia adelante: avanza hasta 12 s buscando el siguiente tag. Los
+  prototipos del clip están en `anexos/prompt_espejo_3d.md`.
+- **Sin espejo, de respaldo** (`scripts/mision_piso.py`): la cámara al frente ve los tags
+  del piso entre ~1 y ~1.7 m adelante y recorre a ciegas el último metro.
 - **Misión de pared** (`scripts/mission_tags.py`): quedó como base de las otras dos (las
   acciones, el flip y la seguridad viven ahí). Los tags no irán en pared.

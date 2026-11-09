@@ -239,6 +239,11 @@ class TagMission(Flight):
             t = self._last_seen.get(tag_id)
         return t is not None and now - t < self.m.reacquire_s
 
+    def _heading_rate(self, yaw: float) -> int:
+        """rc de giro para sostener el rumbo del tramo."""
+        err = wrap_deg(self._heading - yaw)
+        return 0 if abs(err) <= 3 else with_min(self.m.heading_kp * err, self.m.az_min, self.m.heading_max)
+
     # ------------------------------------------------ HMI
 
     def overlay(self, img: np.ndarray) -> None:
@@ -331,8 +336,7 @@ class TagMission(Flight):
         if elapsed > self.m.advance_timeout_s:
             why = "bloqueado por un tag al frente" if blocked else "sin tags al frente"
             return self._begin_landing("LANDING", f"{why} por {self.m.advance_timeout_s:.0f} s: fin")
-        err = wrap_deg(self._heading - yaw)
-        rate = 0 if abs(err) <= 3 else with_min(self.m.heading_kp * err, self.m.az_min, self.m.heading_max)
+        rate = self._heading_rate(yaw)
         fb = self.m.advance_fb
         if blocked:
             # con el tag a la vista, sostener la distancia (retroceder si la deriva lo

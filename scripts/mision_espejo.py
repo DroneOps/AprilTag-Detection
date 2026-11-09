@@ -2,10 +2,11 @@
 """Misión con espejo: la cámara ve HACIA ABAJO y los tags están en el piso.
 
 El dron avanza despacio mirando el piso. Cuando un tag confirmado aparece
-debajo, se centra ENCIMA de él (adelante/atrás y lados), se alinea con sus
-bordes (giro módulo 90°, suponiendo tags puestos derechos respecto a la pista),
-ejecuta su función y sigue hacia el frente. Las acciones, el flip seguro, el
-paro y los vigilantes son los de mission_tags.py / first_flight.py.
+debajo, se centra ENCIMA de él (adelante/atrás y lados) sosteniendo el rumbo del
+tramo, ejecuta su función y sigue hacia el frente. No se alinea con los bordes
+del tag: el reglamento pide funcionar con tags girados (alinear_bordes lo
+reactiva). El tag sobre el que despega se ignora (ignorar_inicio). Las acciones,
+el flip seguro, el paro y los vigilantes son los de mission_tags.py / first_flight.py.
 
 ATENCIÓN: con el espejo cubriendo toda la cámara NO hay vista al frente: el dron
 no ve paredes ni obstáculos. Avanza como máximo advance_timeout_s sin ver tags.
@@ -31,7 +32,7 @@ from pathlib import Path
 import cv2
 import numpy as np
 
-from first_flight import ROOT, FlightConfig, connect, run_app, with_min, wrap_deg
+from first_flight import ROOT, FlightConfig, connect, run_app, with_min
 from mission_tags import MissionConfig, TagMission, Vision
 from test_tags import DEFAULT_CALIB, TAG_FUNCTIONS, draw, floor_view
 
@@ -40,8 +41,11 @@ from test_tags import DEFAULT_CALIB, TAG_FUNCTIONS, draw, floor_view
 class MirrorConfig:
     espejo: str = "v"  # cómo se voltea la imagen (ver test_tags.py --espejo)
     quieto: bool = False  # True: no avanza, espera a que haya un tag debajo
-    advance_fb: int = 12  # rc 12 ≈ 10 cm/s (calibración real)
-    advance_timeout_s: float = 8.0  # sin vista al frente: avanzar a ciegas poco
+    cruise_alt_cm: float = 100.0  # más alto = ve más piso debajo (a 100 cm: ±39 cm adelante, ±52 de lado)
+    advance_fb: int = 15  # rc 15 ≈ 16–20 cm/s (calibración real)
+    advance_timeout_s: float = 12.0  # sin ver tag debajo por esto: fin (sin vista al frente)
+    alinear_bordes: bool = False  # True: girar para alinearse con los bordes del tag (supone tags derechos)
+    ignorar_inicio: bool = True  # ignorar el tag que está debajo al empezar a avanzar (el de inicio)
     quieto_timeout_s: float = 20.0
     center_kp: float = 0.6
     center_min: int = 10
@@ -73,8 +77,10 @@ class MirrorMission(TagMission):
 
     def __init__(self, tello, cfg: FlightConfig, mcfg: MissionConfig, ecfg: MirrorConfig,
                  log_path: Path, calib: Path) -> None:
+        mcfg.cruise_alt_cm = ecfg.cruise_alt_cm
         super().__init__(tello, cfg, mcfg, log_path, calib)
         self.e = ecfg
+        self._started = False
         self.pose_est = self.pose_est.mirrored(ecfg.espejo)
         self._floor_hist: dict[int, deque] = {}
         self._heights: dict[int, float] = {}
@@ -135,6 +141,16 @@ class MirrorMission(TagMission):
         e, v = self.e, self._vision(now)
         if v is None:
             return self._send_rc(0, 0, 0, 0)
+        if not self._started:
+            self._started = True
+            if e.ignorar_inicio and not e.quieto:  # en --quieto el tag de debajo es el de la prueba
+                # el tag sobre el que despegó es el de inicio: no ejecutarlo
+                below = sorted({d.tag_id for d in v.dets if d.accepted})
+                with self._vis_lock:
+                    for tid in below:
+                        self._last_seen[tid] = now
+                if below:
+                    print(f"[vuelo] ADVANCE: ignorando el tag de inicio {below}")
         cands = [(abs(v.tagframe[d.tag_id][0]) + abs(v.tagframe[d.tag_id][1]), d.tag_id)
                  for d in v.dets if d.tag_id in v.confirmed and d.tag_id in v.tagframe
                  and not self._ignored(d.tag_id, now)]
@@ -147,9 +163,7 @@ class MirrorMission(TagMission):
         limit = e.quieto_timeout_s if e.quieto else e.advance_timeout_s
         if elapsed > limit:
             return self._begin_landing("LANDING", f"sin tags debajo por {limit:.0f} s: fin")
-        err = wrap_deg(self._heading - yaw)
-        rate = 0 if abs(err) <= 3 else with_min(self.m.heading_kp * err, self.m.az_min, self.m.heading_max)
-        self._send_rc(0, 0 if e.quieto else e.advance_fb, 0, rate)
+        self._send_rc(0, 0 if e.quieto else e.advance_fb, 0, self._heading_rate(yaw))
 
     # ---- centrarse encima y alinearse
     def _approach(self, yaw: float, alt: float, now: float, elapsed: float) -> None:
@@ -169,8 +183,11 @@ class MirrorMission(TagMission):
         self._last_floor = (fwd, right)
         fb = 0 if abs(fwd) <= e.center_tol_cm else with_min(e.center_kp * fwd, e.center_min, e.center_max)
         lr = 0 if abs(right) <= e.center_tol_cm else with_min(e.center_kp * right, e.center_min, e.center_max)
-        # tag girado a la derecha en la imagen (+): girar el dron a la derecha lo endereza
-        yr = 0 if abs(rot) <= e.rot_tol_deg else with_min(e.rot_kp * rot, m.az_min, m.az_max)
+        if e.alinear_bordes:
+            # tag girado a la derecha en la imagen (+): girar el dron a la derecha lo endereza
+            yr = 0 if abs(rot) <= e.rot_tol_deg else with_min(e.rot_kp * rot, m.az_min, m.az_max)
+        else:
+            yr = self._heading_rate(yaw)  # sostener el rumbo del tramo, esté como esté girado el tag
         self._send_rc(lr, fb, 0, yr)
         if fb == 0 and lr == 0 and yr == 0:
             self._t_hold = self._t_hold or now

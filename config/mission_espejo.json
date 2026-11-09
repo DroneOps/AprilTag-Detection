@@ -1,8 +1,11 @@
 {
   "espejo": "v",
   "quieto": false,
-  "advance_fb": 12,
-  "advance_timeout_s": 8,
+  "cruise_alt_cm": 100,
+  "advance_fb": 15,
+  "advance_timeout_s": 12,
+  "alinear_bordes": false,
+  "ignorar_inicio": true,
   "quieto_timeout_s": 20,
   "center_kp": 0.6,
   "center_min": 10,

@@ -4,7 +4,8 @@ Guía para llegar y solo ejecutar comandos. Las pruebas van **en orden de priori
 se acaba el tiempo, lo que falte es lo menos importante. Qué se probó antes y qué salió
 está en [`bitacora.md`](bitacora.md).
 
-**Orden actual:** Revisar el dron → F1 → F3 → F4 → F2 → espejo (si hay clip impreso).
+**Orden actual (con espejo):** Revisar el dron (con el clip puesto) → E1 → E2 → E3 → E4 →
+E5 → E6 → E7 (ensayo de competencia). Las de piso sin espejo (F1–F4) quedan de respaldo.
 
 ---
 
@@ -142,11 +143,27 @@ caso baja `flip_min_alt_cm` en `config/flight.json` (por ejemplo, a 115).
 
 ---
 
-## Con espejo (cámara hacia abajo)
+## Con espejo (cámara hacia abajo) ⭐
 
 Con un espejo que cubre toda la cámara **no hay vista al frente**: el dron no ve paredes ni
 obstáculos. Prueba en espacio abierto, con los tags en el piso. **Cada clip nuevo necesita
 E1** para medir su inclinación.
+
+Antes de volar con el clip: que esté firme, que el espejo esté limpio, que **no tape los
+sensores de la panza** y que no quede más abajo que la base del dron.
+
+Cómo vuela: sube a **100 cm**, avanza sosteniendo el rumbo hasta ver un tag debajo (hasta
+12 s, ~2 m), se centra encima **sin girar** (aunque el tag esté girado), ejecuta y sigue. El
+tag que está debajo al despegar se toma como el de inicio y **se ignora**. Se ajusta en
+`config/mission_espejo.json`:
+
+| Parámetro | Para qué |
+|---|---|
+| `cruise_alt_cm` | altura de vuelo; más alto ve más piso (a 100 cm: ±39 cm adelante, ±52 de lado) |
+| `advance_fb`, `advance_timeout_s` | qué tan rápido y cuánto tiempo avanza buscando el siguiente tag |
+| `ignorar_inicio` | `false` si el tag de inicio sí debe ejecutarse |
+| `alinear_bordes` | `true` solo si los tags siempre van derechos respecto a la pista |
+| `vista_adelante_deg`, `vista_lado_deg` | inclinación del clip, medida con E1 |
 
 **E1 — Detección y orientación** (sin volar). Sostén el dron a ~80 cm sobre un tag en el piso:
 
@@ -188,7 +205,14 @@ python scripts/mision_espejo.py --record espejo_m1.mp4
 **E5 — Circuito en el piso.** Tag 1 a 80 cm al frente; tag 2 a 70 cm a la derecha del 1;
 tag 7 a 70 cm adelante del 2. Mismo comando que E4.
 
-Los flips con espejo, **solo con el montaje firme**.
+**E6 — Flip con espejo** (batería ≥ 70 %, ~1.7 m libres arriba, **solo con el clip firme**).
+Tag 4 a ~1 m adelante; luego el 8. Mismo comando que E4. Revisa después del flip que el
+espejo no se haya movido (si se movió, repite E1).
+
+**E7 — Ensayo de competencia.** Arma un recorrido con varios tags en un orden al azar (por
+ejemplo 9 → 1 → 3 → 4 → 2 → 7), con 0.7–1.5 m entre ellos y un tag que no sea del 1 al 10, o
+cualquiera, debajo del despegue como "inicio". Haz **3 intentos** cronometrados, como en la
+competencia, y anota cuántos tags ejecutó bien cada uno. Mismo comando que E4.
 
 ---
 
@@ -241,11 +265,14 @@ fue a mano y por qué. Luego agrega la sesión a [`bitacora.md`](bitacora.md).
 
 ## Registro rápido (a mano)
 
-| Prueba | Batería inicio | ¿Aprobó? | Distancia nariz–tag | Notas |
+| Prueba | Batería inicio | ¿Aprobó? | Tags ejecutados / distancia al tag | Notas |
 |---|---|---|---|---|
-| Estacionario | | | — | |
-| F1 un tag | | | | |
-| F2 girado | | | | |
-| F3 circuito | | | | |
-| F4 flip en piso | | | | |
-| E1 espejo | — | | — | |
+| Estacionario con clip | | | — | |
+| E1 inclinación | — | | — | adelante ___° lado ___° |
+| E3 tag debajo | | | | |
+| E4 un tag | | | | |
+| E5 circuito | | | | |
+| E6 flip | | | | |
+| E7 intento 1 | | | __ de __ | tiempo: |
+| E7 intento 2 | | | __ de __ | tiempo: |
+| E7 intento 3 | | | __ de __ | tiempo: |

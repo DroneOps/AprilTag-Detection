@@ -16,7 +16,7 @@ Uso:
 Escenarios: circuito pausa giro360 sube_ciego perdido flip8 caja deriva
             deriva_sin_lateral ladeado ladeado_sin_alinear angulo25 angulo38
             angulo38_deriva flip_prueba flip_prueba_bateria flip4 flip4_bateria tag_alto
-            tag_bajo rc_calib sin_tags espejo_uno espejo_circuito espejo_quieto
+            tag_bajo rc_calib sin_tags espejo_uno espejo_inicio espejo_girado espejo_circuito espejo_quieto
             espejo_deriva espejo_flip espejo_inclinado espejo_inclinado_sin_config
             piso_uno piso_girado piso_circuito piso_deriva piso_flip piso_lento piso_rapido
             piso_hundimiento piso_lado piso_tof_falso piso_imu_mal
@@ -399,8 +399,12 @@ def scenario(sc: str) -> None:
         def floor(tid, x, y, rot=0.0):  # rot: grados que el tag está girado (horario visto desde arriba)
             a = math.radians(rot)
             return Tag(tid, (x, y, 0), up, top=(math.sin(a), math.cos(a), 0))
-        if sc == "espejo_uno":  # tag 2 girado 12°: se alinea (yaw 12) y gira a la izquierda (yaw -78)
+        if sc == "espejo_uno":  # tag 2 girado 12°: sostiene el rumbo y gira a la izquierda (yaw -90)
             run(sc, [floor(2, 6, 90, 12)], mirror="v")
+        elif sc == "espejo_inicio":  # despega encima de un tag 7: ignorarlo y seguir al 2
+            run(sc, [floor(7, 0, 0), floor(2, 0, 120)], mirror="v")
+        elif sc == "espejo_girado":  # tag 1 girado 30°: el giro de 90° es respecto al rumbo, no al tag
+            run(sc, [floor(1, 0, 100, 30)], mirror="v")
         elif sc == "espejo_circuito":  # 1 (derecha) -> 2 (izquierda) -> 7 (aterrizar), a 70 cm
             run(sc, [floor(1, 0, 80), floor(2, 70, 80), floor(7, 70, 150)], mirror="v")
         elif sc == "espejo_quieto":  # sin avanzar: el tag ya está debajo, desplazado y girado
@@ -457,7 +461,8 @@ ALL = ["circuito", "pausa", "giro360", "sube_ciego", "perdido", "flip8", "caja",
        "deriva", "deriva_sin_lateral", "ladeado", "ladeado_sin_alinear",
        "angulo25", "angulo38", "angulo38_deriva", "flip_prueba", "flip_prueba_bateria",
        "flip4", "flip4_bateria", "tag_alto", "tag_bajo", "rc_calib", "sin_tags",
-       "espejo_uno", "espejo_circuito", "espejo_quieto", "espejo_deriva", "espejo_flip",
+       "espejo_uno", "espejo_inicio", "espejo_girado", "espejo_circuito", "espejo_quieto", "espejo_deriva",
+       "espejo_flip",
        "espejo_inclinado", "espejo_inclinado_sin_config",
        "piso_uno", "piso_girado", "piso_circuito", "piso_deriva", "piso_flip", "piso_lento", "piso_rapido",
        "piso_hundimiento", "piso_lado", "piso_tof_falso", "piso_imu_mal"]

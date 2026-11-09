@@ -92,8 +92,8 @@ scripts/
   test_tags.py          visión: detector, pose (PnP) y prueba de detección sin volar
   first_flight.py       vuelo base: estados, seguridad, HMI y bitácora; prueba de flip y giro
   mission_tags.py       misión base: acciones de cada tag, flip seguro, sostener altura
-  mision_piso.py        MISIÓN PRINCIPAL: tags en el piso con la cámara al frente
-  mision_espejo.py      tags en el piso viendo hacia abajo con un espejo
+  mision_espejo.py      MISIÓN PRINCIPAL: tags en el piso viendo hacia abajo con un espejo
+  mision_piso.py        respaldo: tags en el piso con la cámara al frente, sin espejo
   calibrate_camera.py   calibración de la cámara con tablero de ajedrez
   rc_calib.py           mide la velocidad real del dron según el rc
   resumen_vuelos.py     veredicto de cada vuelo de la sesión, leyendo logs/
