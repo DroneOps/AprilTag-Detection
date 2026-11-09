@@ -5,6 +5,10 @@ Las bitácoras de vuelo (`logs/*.csv`) y los videos están en la laptop, no en e
 
 ## Pendiente ahora
 
+0. **El VPS de nuestro Tello parece dañado.** Tras calibrar el IMU, la app oficial avisa
+   "posicionamiento visual no disponible" aun con buena luz, piso con textura y la panza
+   limpia (9-nov, tarde). Sin VPS no sostiene posición ni altura. Usar **otro Tello**
+   (calibrar IMU, estacionario, E1 con el clip) o reparar el módulo de visión de abajo.
 1. **Arreglar la altura del Tello.** El 9-nov a las 17:15, con y sin clip, el despegue subió
    a ~70 cm y se regresó solo al piso, mientras el `h` del Tello subía: su estimación interna
    de altura está mal. **No es el clip.** Calibrar IMU y centro de gravedad en la app Tello

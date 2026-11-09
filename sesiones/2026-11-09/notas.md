@@ -13,3 +13,7 @@ Estacionario con clip (17:14) y sin clip (17:15), batería 90–95 %, 58–67 °
 ## 17:21
 
 Tras calibrar el IMU, volando con la app oficial Tello aparece 'Aviso de posicionamiento visual no disponible, aterrice cuanto antes'. El sistema de visión de abajo (VPS: cámara y sensores de la panza) no funciona; eso explica la deriva y la altura que se va de hoy, y no depende de nuestro código ni del clip. Revisar: sensores de la panza limpios y sin nada encima, buena luz, piso con textura; si persiste, daño del módulo VPS (hubo caídas) -> reparar o usar otro Tello.
+
+## 17:21
+
+El aviso de 'posicionamiento visual no disponible' sigue con buena luz, piso con textura y la panza limpia: el sistema de visión de abajo (VPS) de este Tello parece dañado (cámara, sensor o cable, probablemente por las caídas). Con este dron no se puede seguir; hay que usar otro Tello o reparar el módulo.
