@@ -50,9 +50,12 @@ class MirrorConfig:
     inicio_alt_cm: float = 70.0  # ...solo el visto abajo de esta altura, aún sobre el punto de despegue
     quieto_timeout_s: float = 20.0
     center_kp: float = 0.6
+    center_kd: float = 1.0  # rc por cm/s: frena según qué tan rápido se acerca (real 9-nov: oscilaba ±15–20 cm)
     center_min: int = 10
     center_max: int = 15
-    center_tol_cm: float = 4.0
+    center_dead: float = 5.0  # mando calculado menor que esto: no mandar nada (el Tello frena solo)
+    center_tol_cm: float = 6.0
+    center_vel_tol: float = 4.0  # cm/s: para ejecutar, además de cerca, casi quieto
     rot_kp: float = 1.0
     rot_tol_deg: float = 4.0
     window: int = 7  # mediana de N frames
@@ -83,6 +86,7 @@ class MirrorMission(TagMission):
         super().__init__(tello, cfg, mcfg, log_path, calib)
         self.e = ecfg
         self._started = False
+        self._center_hist: deque = deque(maxlen=60)  # (t del frame, adelante, derecha) del tag objetivo
         self._start_ids: set[int] = set()  # tags vistos durante el despegue
         self.pose_est = self.pose_est.mirrored(ecfg.espejo)
         self._floor_hist: dict[int, deque] = {}
@@ -163,6 +167,7 @@ class MirrorMission(TagMission):
             _, tid = min(cands)
             fwd, right, rot = v.tagframe[tid]
             self._target, self._t_target_seen, self._t_hold = tid, now, None
+            self._center_hist.clear()
             return self._goto("APPROACH", f"tag {tid} ({TAG_FUNCTIONS[tid]}) debajo: adelante {fwd:+.0f}, "
                                           f"lado {right:+.0f} cm")
         limit = e.quieto_timeout_s if e.quieto else e.advance_timeout_s
@@ -186,15 +191,17 @@ class MirrorMission(TagMission):
         self._t_target_seen = now
         fwd, right, rot = fl
         self._last_floor = (fwd, right)
-        fb = 0 if abs(fwd) <= e.center_tol_cm else with_min(e.center_kp * fwd, e.center_min, e.center_max)
-        lr = 0 if abs(right) <= e.center_tol_cm else with_min(e.center_kp * right, e.center_min, e.center_max)
+        vf, vr = self._tag_velocity(v.t, fwd, right)
+        fb, lr = self._center_axis(fwd, vf), self._center_axis(right, vr)
         if e.alinear_bordes:
             # tag girado a la derecha en la imagen (+): girar el dron a la derecha lo endereza
             yr = 0 if abs(rot) <= e.rot_tol_deg else with_min(e.rot_kp * rot, m.az_min, m.az_max)
         else:
             yr = self._heading_rate(yaw)  # sostener el rumbo del tramo, esté como esté girado el tag
         self._send_rc(lr, fb, 0, yr)
-        if fb == 0 and lr == 0 and yr == 0:
+        settled = (abs(fwd) <= e.center_tol_cm and abs(right) <= e.center_tol_cm
+                   and abs(vf) <= e.center_vel_tol and abs(vr) <= e.center_vel_tol)
+        if settled and yr == 0:
             self._t_hold = self._t_hold or now
             if now - self._t_hold >= m.hold_s:
                 return self._start_execute(now, f"encima: adelante {fwd:+.0f}, lado {right:+.0f} cm, giro {rot:+.0f}")
@@ -202,6 +209,29 @@ class MirrorMission(TagMission):
             self._t_hold = None
         if elapsed > m.approach_timeout_s:
             self._start_execute(now, f"centrado incompleto (adelante {fwd:+.0f}, lado {right:+.0f}, giro {rot:+.0f})")
+
+    def _tag_velocity(self, t_frame: float, fwd: float, right: float) -> tuple[float, float]:
+        """Velocidad del tag respecto al dron (cm/s) en el último ~0.5 s, una muestra por frame."""
+        h = self._center_hist
+        if not h or t_frame > h[-1][0]:
+            h.append((t_frame, fwd, right))
+        pts = [p for p in h if t_frame - p[0] <= 0.5]
+        if len(pts) < 4 or pts[-1][0] - pts[0][0] < 0.25:
+            return 0.0, 0.0
+        t = [p[0] for p in pts]
+        return float(np.polyfit(t, [p[1] for p in pts], 1)[0]), float(np.polyfit(t, [p[2] for p in pts], 1)[0])
+
+    def _center_axis(self, err: float, vel: float) -> int:
+        """Mando de un eje para quedar encima del tag. Con el retraso del video y la
+        inercia, sin frenar se pasaba y oscilaba; aquí la velocidad resta: si ya va
+        hacia el tag lo bastante rápido, no empuja, y si se pasa, manda en contra."""
+        e = self.e
+        u = e.center_kp * err + e.center_kd * vel  # vel = cambio de err; acercarse la hace negativa
+        if abs(err) > e.center_tol_cm and abs(vel) < e.center_vel_tol and u * err > 0:
+            return with_min(u, e.center_min, e.center_max)  # lejos y quieto: empujar hacia el tag
+        if abs(u) < e.center_dead:
+            return 0
+        return with_min(u, e.center_min, e.center_max)
 
 
 def main() -> None:

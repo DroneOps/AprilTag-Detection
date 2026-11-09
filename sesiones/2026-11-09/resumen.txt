@@ -1,4 +1,4 @@
-Resumen de sesión — 2026-11-09 17:42 — 20 bitácoras
+Resumen de sesión — 2026-11-09 17:48 — 21 bitácoras
 
 == vuelo_20261109_140758.csv  (vuelo)
    NO DESPEGÓ: NO despega: bateria 17% >= 30%; temperatura 93 C < 80 C
@@ -129,6 +129,15 @@ Resumen de sesión — 2026-11-09 17:42 — 20 bitácoras
    vuelo 7 s | batería 76% -> 76% | temp max 77 C
    final: KILLED — motores apagados por el usuario
    detenido a mano: PARO: q en el aire
+   VEREDICTO: REVISAR
+
+== espejo_20261109_174259.csv  (espejo)
+   vuelo 44 s | batería 90% -> 65% | temp max 72 C
+   despegue: en el aire a 69 cm (estable, ok del Tello, despegue 6.5 s)
+   altura en vuelo: min 59 cm, max 117 cm
+   EJECUTÓ tag 1 (Giro derecha 90) encima: adelante +1, lado -3 cm, giro +2
+   vio tag 1 (Giro derecha 90) debajo: adelante +17, lado +3 cm
+   final: KILLED — motores apagados por el usuario
    VEREDICTO: REVISAR
 
 == enlace (test_tags.py)

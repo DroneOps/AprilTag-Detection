@@ -25,3 +25,7 @@ Con OTRO Tello (17:22–17:32) también deriva hacia atrás y se tambalea, duran
 ## 17:42
 
 Sobre la pista del seguidor: estacionario con clip quieto (68–73 cm). Dos intentos de E5 'se fueron a la derecha'. Intento 1: el tag 1 estaba justo debajo del despegue (visto a 47 cm, adelante +0), se tomó como tag de inicio y se ignoró; el dron siguió derecho sin girar. Además derivó solo ~25–30 cm hacia atrás y ~8 cm a la derecha durante despegue y subida (rc en 0). Intento 2: derivó ~37 cm a la derecha ya en el despegue; se paró a los 7 s. Cambio: ignorar_inicio en false para las pruebas (no hay tag de inicio especial).
+
+## 17:48
+
+E5 con ignorar_inicio en false: vio el tag 1, se centró y ejecutó el giro a la derecha, pero oscilando ±15–20 cm durante ~25 s (sin frenar: se pasaba por inercia y retraso del video). Tras el giro avanzó sin ver el tag 2 (la deriva lo sacó de lo que ve debajo); a los 45 s el sensor de abajo brincó 106→71 cm (¿pasó sobre algo?) y aterrizó por 'no obedece'; luego paro de motores. Cambio: centrado que frena con la velocidad del tag (center_kd), tolerancia 6 cm y ejecutar solo cerca y quieto.
