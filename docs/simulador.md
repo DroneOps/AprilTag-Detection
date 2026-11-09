@@ -74,6 +74,7 @@ Si algo falla en simulación, seguro falla en el dron; al revés no.
 |---|---|
 | `espejo_uno`, `espejo_circuito` | centrarse encima sosteniendo el rumbo y ejecutar |
 | `espejo_inicio` | despega encima de un tag 7: debe ignorarlo y seguir al siguiente |
+| `espejo_cerca` | tag a 35 cm que solo se ve ya arriba: no es el de inicio, debe ejecutarlo |
 | `espejo_girado` | tag girado 30°: el giro de 90° es respecto al rumbo, no al tag |
 | `espejo_quieto` | sin avanzar: el tag ya está debajo, corrido y girado |
 | `espejo_deriva`, `espejo_flip` | viento y flip con espejo |

@@ -16,7 +16,7 @@ Uso:
 Escenarios: circuito pausa giro360 sube_ciego perdido flip8 caja deriva
             deriva_sin_lateral ladeado ladeado_sin_alinear angulo25 angulo38
             angulo38_deriva flip_prueba flip_prueba_bateria flip4 flip4_bateria tag_alto
-            tag_bajo rc_calib sin_tags espejo_uno espejo_inicio espejo_girado espejo_circuito espejo_quieto
+            tag_bajo rc_calib sin_tags espejo_uno espejo_inicio espejo_cerca espejo_girado espejo_circuito espejo_quieto
             espejo_deriva espejo_flip espejo_inclinado espejo_inclinado_sin_config
             piso_uno piso_girado piso_circuito piso_deriva piso_flip piso_lento piso_rapido
             piso_hundimiento piso_lado piso_tof_falso piso_imu_mal
@@ -403,6 +403,8 @@ def scenario(sc: str) -> None:
             run(sc, [floor(2, 6, 90, 12)], mirror="v")
         elif sc == "espejo_inicio":  # despega encima de un tag 7: ignorarlo y seguir al 2
             run(sc, [floor(7, 0, 0), floor(2, 0, 120)], mirror="v")
+        elif sc == "espejo_cerca":  # tag 1 a 35 cm: no se ve al despegar pero sí a 100 cm; no es el de inicio
+            run(sc, [floor(1, 0, 35)], mirror="v")
         elif sc == "espejo_girado":  # tag 1 girado 30°: el giro de 90° es respecto al rumbo, no al tag
             run(sc, [floor(1, 0, 100, 30)], mirror="v")
         elif sc == "espejo_circuito":  # 1 (derecha) -> 2 (izquierda) -> 7 (aterrizar), a 70 cm
@@ -461,7 +463,7 @@ ALL = ["circuito", "pausa", "giro360", "sube_ciego", "perdido", "flip8", "caja",
        "deriva", "deriva_sin_lateral", "ladeado", "ladeado_sin_alinear",
        "angulo25", "angulo38", "angulo38_deriva", "flip_prueba", "flip_prueba_bateria",
        "flip4", "flip4_bateria", "tag_alto", "tag_bajo", "rc_calib", "sin_tags",
-       "espejo_uno", "espejo_inicio", "espejo_girado", "espejo_circuito", "espejo_quieto", "espejo_deriva",
+       "espejo_uno", "espejo_inicio", "espejo_cerca", "espejo_girado", "espejo_circuito", "espejo_quieto", "espejo_deriva",
        "espejo_flip",
        "espejo_inclinado", "espejo_inclinado_sin_config",
        "piso_uno", "piso_girado", "piso_circuito", "piso_deriva", "piso_flip", "piso_lento", "piso_rapido",

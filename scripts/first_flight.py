@@ -188,6 +188,7 @@ class Flight:
         self._t_low: float | None = None
         self._t_on_target: float | None = None
         self._takeoff_h: list[tuple[float, int]] = []
+        self._takeoff_max = 0  # altura máxima alcanzada en el despegue
         self._yaw_target = 0.0
         self._yaw_done = False
         log_path.parent.mkdir(exist_ok=True)
@@ -300,7 +301,7 @@ class Flight:
                 self._takeoff_req.clear()
                 self.t.get_own_udp_object()["responses"].clear()  # para leer el "ok" del despegue
                 self.t.send_command_without_return("takeoff")
-                self._takeoff_h = []
+                self._takeoff_h, self._takeoff_max = [], 0
                 self._goto("TAKEOFF", "despegando")
             return
         if st in TERMINAL:
@@ -332,8 +333,15 @@ class Flight:
         elapsed = now - self._t_state
         if st == "TAKEOFF":
             # El despegue automático sigue subiendo ~6 s después de pasar 30 cm; mandar
-            # rc antes lo interrumpe. Sin rc hasta que la altura se estabilice.
+            # rc antes lo interrumpe. Sin rc hasta el "ok" del Tello (o, sin ok, hasta
+            # que la altura se estabilice).
             self._takeoff_h.append((now, h))
+            self._takeoff_max = max(self._takeoff_max, h)
+            if self._takeoff_max >= cfg.takeoff_min_height_cm and h <= 15:
+                # real 9-nov con el clip: subió a ~40 cm y el Tello se regresó solo al piso
+                return self._begin_landing("EMERGENCY_LAND", f"el despegue se vino abajo (subio a {self._takeoff_max} "
+                                           f"y volvio a {h} cm): el Tello no sostiene la altura - revisa que el "
+                                           f"clip no tape los sensores de abajo")
             while self._takeoff_h and now - self._takeoff_h[0][0] > cfg.takeoff_settle_s:
                 self._takeoff_h.pop(0)
             hs = [x for _, x in self._takeoff_h]
@@ -342,7 +350,9 @@ class Flight:
             # seguir subiendo aunque la altura parezca estable un momento (real: 73 -> 109 cm)
             ok = any(r.strip() == b"ok" if isinstance(r, bytes) else str(r).strip() == "ok"
                      for r in list(self.t.get_own_udp_object()["responses"]))
-            ready = settled and (ok or elapsed > cfg.takeoff_ok_max_s)
+            # con el "ok" ya acepta rc: no esperar a que se estabilice (real 9-nov: oscilaba
+            # 125–151 cm con el ok recibido y se esperó hasta el límite sin corregir)
+            ready = ok or (settled and elapsed > cfg.takeoff_ok_max_s)
             if h >= cfg.takeoff_min_height_cm and (ready or elapsed > cfg.takeoff_timeout_s):
                 self._t_air = now
                 self.t.is_flying = True  # Tello.end() aterriza si esto queda en True

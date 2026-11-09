@@ -5,7 +5,8 @@ El dron avanza despacio mirando el piso. Cuando un tag confirmado aparece
 debajo, se centra ENCIMA de él (adelante/atrás y lados) sosteniendo el rumbo del
 tramo, ejecuta su función y sigue hacia el frente. No se alinea con los bordes
 del tag: el reglamento pide funcionar con tags girados (alinear_bordes lo
-reactiva). El tag sobre el que despega se ignora (ignorar_inicio). Las acciones,
+reactiva). El tag que ve mientras despega (el de inicio) se ignora
+(ignorar_inicio). Las acciones,
 el flip seguro, el paro y los vigilantes son los de mission_tags.py / first_flight.py.
 
 ATENCIÓN: con el espejo cubriendo toda la cámara NO hay vista al frente: el dron
@@ -32,7 +33,7 @@ from pathlib import Path
 import cv2
 import numpy as np
 
-from first_flight import ROOT, FlightConfig, connect, run_app, with_min
+from first_flight import ROOT, FlightConfig, altitude, connect, run_app, with_min
 from mission_tags import MissionConfig, TagMission, Vision
 from test_tags import DEFAULT_CALIB, TAG_FUNCTIONS, draw, floor_view
 
@@ -45,7 +46,8 @@ class MirrorConfig:
     advance_fb: int = 15  # rc 15 ≈ 16–20 cm/s (calibración real)
     advance_timeout_s: float = 12.0  # sin ver tag debajo por esto: fin (sin vista al frente)
     alinear_bordes: bool = False  # True: girar para alinearse con los bordes del tag (supone tags derechos)
-    ignorar_inicio: bool = True  # ignorar el tag que está debajo al empezar a avanzar (el de inicio)
+    ignorar_inicio: bool = True  # ignorar el tag que se ve mientras despega (el de inicio)
+    inicio_alt_cm: float = 70.0  # ...solo el visto abajo de esta altura, aún sobre el punto de despegue
     quieto_timeout_s: float = 20.0
     center_kp: float = 0.6
     center_min: int = 10
@@ -81,6 +83,7 @@ class MirrorMission(TagMission):
         super().__init__(tello, cfg, mcfg, log_path, calib)
         self.e = ecfg
         self._started = False
+        self._start_ids: set[int] = set()  # tags vistos durante el despegue
         self.pose_est = self.pose_est.mirrored(ecfg.espejo)
         self._floor_hist: dict[int, deque] = {}
         self._heights: dict[int, float] = {}
@@ -95,6 +98,8 @@ class MirrorMission(TagMission):
         dets = self.detector.detect(cv2.cvtColor(img, cv2.COLOR_BGR2GRAY))
         poses = [self.pose_est.estimate(d) if d.accepted else None for d in dets]
         confirmed = self.confirmer.update({d.tag_id for d in dets if d.accepted})
+        if self.state in ("IDLE", "TAKEOFF") and altitude(self.tel.snapshot()[0]) < self.e.inicio_alt_cm:
+            self._start_ids.update(d.tag_id for d in dets if d.accepted)
         floor = {}
         for d, p in zip(dets, poses):
             if p is not None:
@@ -143,14 +148,14 @@ class MirrorMission(TagMission):
             return self._send_rc(0, 0, 0, 0)
         if not self._started:
             self._started = True
-            if e.ignorar_inicio and not e.quieto:  # en --quieto el tag de debajo es el de la prueba
-                # el tag sobre el que despegó es el de inicio: no ejecutarlo
-                below = sorted({d.tag_id for d in v.dets if d.accepted})
+            if e.ignorar_inicio and not e.quieto and self._start_ids:  # en --quieto el de debajo es el de la prueba
+                # el tag que vio al despegar es el de inicio: no ejecutarlo. Antes se tomaba el
+                # que estuviera debajo al empezar a avanzar, pero tras la deriva del despegue
+                # ese ya podía ser el primero del recorrido (real 9-nov: ignoró el tag 1)
                 with self._vis_lock:
-                    for tid in below:
+                    for tid in self._start_ids:
                         self._last_seen[tid] = now
-                if below:
-                    print(f"[vuelo] ADVANCE: ignorando el tag de inicio {below}")
+                print(f"[vuelo] ADVANCE: ignorando el tag de inicio {sorted(self._start_ids)}")
         cands = [(abs(v.tagframe[d.tag_id][0]) + abs(v.tagframe[d.tag_id][1]), d.tag_id)
                  for d in v.dets if d.tag_id in v.confirmed and d.tag_id in v.tagframe
                  and not self._ignored(d.tag_id, now)]

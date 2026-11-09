@@ -6,6 +6,7 @@
   "advance_timeout_s": 12,
   "alinear_bordes": false,
   "ignorar_inicio": true,
+  "inicio_alt_cm": 70,
   "quieto_timeout_s": 20,
   "center_kp": 0.6,
   "center_min": 10,
@@ -14,6 +15,6 @@
   "rot_kp": 1.0,
   "rot_tol_deg": 4,
   "window": 7,
-  "vista_adelante_deg": 7.9,
-  "vista_lado_deg": 4.3
+  "vista_adelante_deg": 4.1,
+  "vista_lado_deg": 0.8
 }
