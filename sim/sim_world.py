@@ -401,7 +401,8 @@ def scenario(sc: str) -> None:
             return Tag(tid, (x, y, 0), up, top=(math.sin(a), math.cos(a), 0))
         if sc == "espejo_uno":  # tag 2 girado 12°: sostiene el rumbo y gira a la izquierda (yaw -90)
             run(sc, [floor(2, 6, 90, 12)], mirror="v")
-        elif sc == "espejo_inicio":  # despega encima de un tag 7: ignorarlo y seguir al 2
+        elif sc == "espejo_inicio":  # despega encima de un tag 7: con ignorar_inicio, ignorarlo y seguir al 2
+            OVER_E["ignorar_inicio"] = True
             run(sc, [floor(7, 0, 0), floor(2, 0, 120)], mirror="v")
         elif sc == "espejo_cerca":  # tag 1 a 35 cm: no se ve al despegar pero sí a 100 cm; no es el de inicio
             run(sc, [floor(1, 0, 35)], mirror="v")

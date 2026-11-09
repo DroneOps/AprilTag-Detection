@@ -21,3 +21,7 @@ El aviso de 'posicionamiento visual no disponible' sigue con buena luz, piso con
 ## 17:35
 
 Con OTRO Tello (17:22–17:32) también deriva hacia atrás y se tambalea, durante el despegue y el estacionario con rc en 0 (el programa no manda nada). Voló a 73–84 °C y en dos corridas con 38–41 % de batería. Se revisó DroneOps/Line_Follower (funciona con ese mismo dron): no tiene configuración especial del Tello (connect, streamon, takeoff bloqueante, rc ~30 Hz) y también usa espejo (voltea la imagen). Conclusión: la diferencia es el lugar (luz y textura del piso para la cámara de abajo) y la temperatura, no el código. Siguiente: estacionario sobre la pista donde vuela el seguidor de línea, con el dron frío y batería > 70 %.
+
+## 17:42
+
+Sobre la pista del seguidor: estacionario con clip quieto (68–73 cm). Dos intentos de E5 'se fueron a la derecha'. Intento 1: el tag 1 estaba justo debajo del despegue (visto a 47 cm, adelante +0), se tomó como tag de inicio y se ignoró; el dron siguió derecho sin girar. Además derivó solo ~25–30 cm hacia atrás y ~8 cm a la derecha durante despegue y subida (rc en 0). Intento 2: derivó ~37 cm a la derecha ya en el despegue; se paró a los 7 s. Cambio: ignorar_inicio en false para las pruebas (no hay tag de inicio especial).

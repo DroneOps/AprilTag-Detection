@@ -1,4 +1,4 @@
-Resumen de sesión — 2026-11-09 17:35 — 17 bitácoras
+Resumen de sesión — 2026-11-09 17:42 — 20 bitácoras
 
 == vuelo_20261109_140758.csv  (vuelo)
    NO DESPEGÓ: NO despega: bateria 17% >= 30%; temperatura 93 C < 80 C
@@ -106,6 +106,27 @@ Resumen de sesión — 2026-11-09 17:35 — 17 bitácoras
    vuelo 14 s | batería 68% -> 62% | temp max 78 C
    despegue: en el aire a 74 cm (estable, ok del Tello, despegue 4.5 s)
    altura en vuelo: min 70 cm, max 103 cm
+   final: KILLED — motores apagados por el usuario
+   detenido a mano: PARO: q en el aire
+   VEREDICTO: REVISAR
+
+== espejo_20261109_173752.csv  (espejo)
+   vuelo 21 s | batería 100% -> 90% | temp max 67 C
+   despegue: en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)
+   altura en vuelo: min 68 cm, max 102 cm
+   final: KILLED — motores apagados por el usuario
+   detenido a mano: PARO: q en el aire
+   VEREDICTO: REVISAR
+
+== vuelo_20261109_173833.csv  (vuelo)
+   vuelo 21 s | batería 82% -> 76% | temp max 75 C
+   despegue: en el aire a 72 cm (estable, sin ok, despegue 7.0 s)
+   altura en vuelo: min 68 cm, max 73 cm
+   final: DONE — aterrizado (fin de la prueba)
+   VEREDICTO: OK
+
+== espejo_20261109_173903.csv  (espejo)
+   vuelo 7 s | batería 76% -> 76% | temp max 77 C
    final: KILLED — motores apagados por el usuario
    detenido a mano: PARO: q en el aire
    VEREDICTO: REVISAR

@@ -161,7 +161,7 @@ tag que está debajo al despegar se toma como el de inicio y **se ignora**. Se a
 |---|---|
 | `cruise_alt_cm` | altura de vuelo; más alto ve más piso (a 100 cm: ±39 cm adelante, ±52 de lado) |
 | `advance_fb`, `advance_timeout_s` | qué tan rápido y cuánto tiempo avanza buscando el siguiente tag |
-| `ignorar_inicio` | `false` si el tag de inicio sí debe ejecutarse |
+| `ignorar_inicio` | `true` ignora el tag que ve al despegar. **En las pruebas va en `false`**: no hay tag de inicio especial y, si el tag 1 queda cerca del despegue, lo ignoraría (pasó el 9-nov). Para la competencia, decidir cuando se sepa cuál es el tag de inicio |
 | `alinear_bordes` | `true` solo si los tags siempre van derechos respecto a la pista |
 | `vista_adelante_deg`, `vista_lado_deg` | inclinación del clip, medida con E1 |
 
