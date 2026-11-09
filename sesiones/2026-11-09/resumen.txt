@@ -1,4 +1,4 @@
-Resumen de sesión — 2026-11-09 17:16 — 11 bitácoras
+Resumen de sesión — 2026-11-09 17:21 — 11 bitácoras
 
 == vuelo_20261109_140758.csv  (vuelo)
    NO DESPEGÓ: NO despega: bateria 17% >= 30%; temperatura 93 C < 80 C

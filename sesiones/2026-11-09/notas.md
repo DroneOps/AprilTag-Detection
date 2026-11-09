@@ -9,3 +9,7 @@ Con espejo (clip impreso). E1: inclinación 4.1° adelante y 0.8° de lado (ya e
 ## 17:16
 
 Estacionario con clip (17:14) y sin clip (17:15), batería 90–95 %, 58–67 °C. En los DOS el despegue subió a ~70 cm y se regresó solo al piso; el aviso 'el despegue se vino abajo' aterrizó bien. El h del Tello subía (60→120) mientras el tof bajaba (70→13): la estimación de altura interna del Tello está mal. NO es el clip. Siguiente: calibrar IMU y centro de gravedad en la app Tello, encender el dron quieto sobre superficie plana, revisar firmware y repetir el estacionario sin clip.
+
+## 17:21
+
+Tras calibrar el IMU, volando con la app oficial Tello aparece 'Aviso de posicionamiento visual no disponible, aterrice cuanto antes'. El sistema de visión de abajo (VPS: cámara y sensores de la panza) no funciona; eso explica la deriva y la altura que se va de hoy, y no depende de nuestro código ni del clip. Revisar: sensores de la panza limpios y sin nada encima, buena luz, piso con textura; si persiste, daño del módulo VPS (hubo caídas) -> reparar o usar otro Tello.
