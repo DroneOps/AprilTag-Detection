@@ -45,6 +45,8 @@ class MirrorConfig:
     cruise_alt_cm: float = 100.0  # más alto = ve más piso debajo (a 100 cm: ±39 cm adelante, ±52 de lado)
     advance_fb: int = 15  # rc 15 ≈ 16–20 cm/s (calibración real)
     advance_timeout_s: float = 12.0  # sin ver tag debajo por esto: fin (sin vista al frente)
+    advance_lr: int = 0  # rc lateral fijo al avanzar sin tag, para compensar si el dron se va de un lado
+    # (se va a la derecha: negativo, p. ej. -10)
     alinear_bordes: bool = False  # True: girar para alinearse con los bordes del tag (supone tags derechos)
     ignorar_inicio: bool = True  # ignorar el tag que se ve mientras despega (el de inicio)
     inicio_alt_cm: float = 70.0  # ...solo el visto abajo de esta altura, aún sobre el punto de despegue
@@ -56,6 +58,7 @@ class MirrorConfig:
     center_dead: float = 5.0  # mando calculado menor que esto: no mandar nada (el Tello frena solo)
     center_tol_cm: float = 6.0
     center_vel_tol: float = 4.0  # cm/s: para ejecutar, además de cerca, casi quieto
+    centrar_max_s: float = 8.0  # si no se estabiliza encima en este tiempo, ejecuta igual (el punto es por el tag)
     rot_kp: float = 1.0
     rot_tol_deg: float = 4.0
     window: int = 7  # mediana de N frames
@@ -173,7 +176,7 @@ class MirrorMission(TagMission):
         limit = e.quieto_timeout_s if e.quieto else e.advance_timeout_s
         if elapsed > limit:
             return self._begin_landing("LANDING", f"sin tags debajo por {limit:.0f} s: fin")
-        self._send_rc(0, 0 if e.quieto else e.advance_fb, 0, self._heading_rate(yaw))
+        self._send_rc(0 if e.quieto else e.advance_lr, 0 if e.quieto else e.advance_fb, 0, self._heading_rate(yaw))
 
     # ---- centrarse encima y alinearse
     def _approach(self, yaw: float, alt: float, now: float, elapsed: float) -> None:
@@ -207,7 +210,7 @@ class MirrorMission(TagMission):
                 return self._start_execute(now, f"encima: adelante {fwd:+.0f}, lado {right:+.0f} cm, giro {rot:+.0f}")
         else:
             self._t_hold = None
-        if elapsed > m.approach_timeout_s:
+        if elapsed > e.centrar_max_s:
             self._start_execute(now, f"centrado incompleto (adelante {fwd:+.0f}, lado {right:+.0f}, giro {rot:+.0f})")
 
     def _tag_velocity(self, t_frame: float, fwd: float, right: float) -> tuple[float, float]:

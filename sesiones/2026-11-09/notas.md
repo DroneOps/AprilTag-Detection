@@ -29,3 +29,7 @@ Sobre la pista del seguidor: estacionario con clip quieto (68–73 cm). Dos inte
 ## 17:48
 
 E5 con ignorar_inicio en false: vio el tag 1, se centró y ejecutó el giro a la derecha, pero oscilando ±15–20 cm durante ~25 s (sin frenar: se pasaba por inercia y retraso del video). Tras el giro avanzó sin ver el tag 2 (la deriva lo sacó de lo que ve debajo); a los 45 s el sensor de abajo brincó 106→71 cm (¿pasó sobre algo?) y aterrizó por 'no obedece'; luego paro de motores. Cambio: centrado que frena con la velocidad del tag (center_kd), tolerancia 6 cm y ejecutar solo cerca y quieto.
+
+## 18:00
+
+Tres corridas más de E5 (17:50–17:53): siempre se va a la derecha cuando no ve tags. En 175209 el centrado oscilaba (±10–20 cm/s según el flujo del piso del video del espejo) y ejecutó por tiempo a los 25 s; tras el giro a la derecha el rumbo siguió rotando de 90 a 101° y la corrección con rc 15 de giro no alcanzaba (zona muerta), así que 'derecho' se curvaba a la derecha. Cambios: sostener rumbo con mínimo rc 20 (heading_min), ajuste lateral fijo al avanzar (advance_lr, 0 por defecto), centrado más tolerante (12 cm) y máximo 8 s antes de ejecutar.

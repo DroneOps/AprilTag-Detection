@@ -66,7 +66,8 @@ class MissionConfig:
     advance_fb: int = 12
     advance_timeout_s: float = 10.0
     heading_kp: float = 1.0
-    heading_max: int = 20
+    heading_min: int = 20  # con rc 15 el Tello casi no gira: tras un giro seguía rotando 8–11° (real 9-nov)
+    heading_max: int = 30
     min_front_cm: float = 50.0
     obstacle_guard: bool = False  # aterrizar si el tof baja de golpe. Apagado: en vuelo real el dron se hunde
     # al avanzar y 'h' no se entera, así que se confundía con un obstáculo (27-oct: 5 aterrizajes falsos)
@@ -242,7 +243,7 @@ class TagMission(Flight):
     def _heading_rate(self, yaw: float) -> int:
         """rc de giro para sostener el rumbo del tramo."""
         err = wrap_deg(self._heading - yaw)
-        return 0 if abs(err) <= 3 else with_min(self.m.heading_kp * err, self.m.az_min, self.m.heading_max)
+        return 0 if abs(err) <= 3 else with_min(self.m.heading_kp * err, self.m.heading_min, self.m.heading_max)
 
     # ------------------------------------------------ HMI
 

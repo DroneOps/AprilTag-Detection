@@ -1,4 +1,4 @@
-Resumen de sesión — 2026-11-09 17:48 — 21 bitácoras
+Resumen de sesión — 2026-11-09 18:00 — 24 bitácoras
 
 == vuelo_20261109_140758.csv  (vuelo)
    NO DESPEGÓ: NO despega: bateria 17% >= 30%; temperatura 93 C < 80 C
@@ -138,6 +138,34 @@ Resumen de sesión — 2026-11-09 17:48 — 21 bitácoras
    EJECUTÓ tag 1 (Giro derecha 90) encima: adelante +1, lado -3 cm, giro +2
    vio tag 1 (Giro derecha 90) debajo: adelante +17, lado +3 cm
    final: KILLED — motores apagados por el usuario
+   VEREDICTO: REVISAR
+
+== espejo_20261109_175055.csv  (espejo)
+   vuelo 16 s | batería 83% -> 72% | temp max 63 C
+   despegue: en el aire a 68 cm (estable, ok del Tello, despegue 6.2 s)
+   altura en vuelo: min 61 cm, max 102 cm
+   vio tag 2 (Giro izquierda 90) debajo: adelante +37, lado +12 cm
+   final: KILLED — motores apagados por el usuario
+   detenido a mano: PARO: q en el aire
+   VEREDICTO: REVISAR
+
+== espejo_20261109_175144.csv  (espejo)
+   vuelo 10 s | batería 67% -> 67% | temp max 69 C
+   despegue: en el aire a 67 cm (sin estabilizar, ok del Tello, despegue 5.9 s)
+   altura en vuelo: min 67 cm, max 69 cm
+   final: KILLED — motores apagados por el usuario
+   detenido a mano: PARO: q en el aire
+   VEREDICTO: REVISAR
+
+== espejo_20261109_175209.csv  (espejo)
+   vuelo 45 s | batería 67% -> 45% | temp max 76 C
+   despegue: en el aire a 74 cm (estable, sin ok, despegue 7.0 s)
+   altura en vuelo: min 74 cm, max 112 cm
+   EJECUTÓ tag 1 (Giro derecha 90) centrado incompleto (adelante -10, lado +1, giro -2)
+   vio tag 1 (Giro derecha 90) debajo: adelante +29, lado +23 cm
+   final: KILLED — motores apagados por el usuario
+   problemas: acercamiento incompleto (por tiempo)
+   detenido a mano: PARO: q en el aire
    VEREDICTO: REVISAR
 
 == enlace (test_tags.py)
