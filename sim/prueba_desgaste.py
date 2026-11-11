@@ -14,6 +14,7 @@ Uso:
     python sim/prueba_desgaste.py                 # todos los desgastes, 150 cuadros cada uno
     python sim/prueba_desgaste.py --n 400         # más cuadros (más exacto, más lento)
     python sim/prueba_desgaste.py --videos        # además, los videos reales con espejo (*.mp4)
+    python sim/prueba_desgaste.py --n 0 --pasadas 30   # solo: ¿a qué distancia confirma al avanzar?
 """
 from __future__ import annotations
 
@@ -131,6 +132,53 @@ def banco(detectores, n: int) -> None:
               f"{1000 * vacio:.1f} ms sin tag")
 
 
+def pasadas(n: int) -> None:
+    """El dron avanza a 17 cm/s y el tag gastado entra por el frente de la vista: ¿a qué
+    distancia lo confirma la misión con n seguidos o con n de los últimos m cuadros?"""
+    sim = SW.SimTello([], mirror="v", hilo=False)
+    det = TT.TagDetector(IDS, True, 2.0)
+    opciones = [(3, 3), (3, 4), (3, 5)]
+    print(f"\nPasar por encima a 17 cm/s ({n} pasadas por desgaste): adelante (cm) al confirmar, mediana; "
+          "% confirmado antes de tenerlo debajo")
+    print(f"{'desgaste':18s}" + "".join(f"{f'{a} de {b}':>22s}" for a, b in opciones))
+    for nombre, desg in NIVELES:
+        if nombre in ("limpio", "desteñido 185", "manchas 10 %", "faltante 4 %"):
+            continue
+        rng = np.random.default_rng(11)
+        dist = {o: [] for o in opciones}
+        mal = Counter()
+        for _ in range(n):
+            tid = int(rng.integers(1, 11))
+            d = {**desg, "semilla": int(rng.integers(1 << 30))} if desg else None
+            a = rng.uniform(0, 2 * math.pi)
+            tag = SW.Tag(tid, (0, 0, 0), (0, 0, 1), top=(math.sin(a), math.cos(a), 0), desgaste=d)
+            sim.tags = [tag]
+            lado, z = rng.uniform(-30, 30), rng.uniform(90, 110)
+            vistos = []
+            for adelante in np.arange(50, -1, -17 / 30):  # un cuadro cada 1/30 s
+                sim.x, sim.y, sim.z, sim.yaw = -lado, -adelante, z, 0.0
+                img = sim.render()
+                img = cv2.GaussianBlur(img, (0, 0), rng.uniform(0.3, 1.2))
+                img = cv2.imdecode(cv2.imencode(".jpg", img, [cv2.IMWRITE_JPEG_QUALITY, int(rng.uniform(40, 90))])[1],
+                                   cv2.IMREAD_COLOR)
+                gray = cv2.cvtColor(cv2.flip(img, 0), cv2.COLOR_BGR2GRAY)
+                vistos.append((adelante, {x.tag_id for x in det.detect(gray) if x.accepted}))
+            for o in opciones:
+                conf = TT.Confirmer(*o)
+                for adelante, ids in vistos:
+                    c = conf.update(ids)
+                    if c - {tid}:
+                        mal[o] += 1
+                    if tid in c:
+                        dist[o].append(adelante)
+                        break
+        fila = ""
+        for o in opciones:
+            med = f"{np.median(dist[o]):.0f}" if dist[o] else "-"
+            fila += f"{med:>13s} cm {100 * len(dist[o]) / n:4.0f} %" + (f"({mal[o]})" if mal[o] else "")
+        print(f"{nombre:18s}{fila}", flush=True)
+
+
 def videos(detectores) -> None:
     """Videos reales con espejo: cuántos cuadros con tag encuentra cada detector y qué IDs."""
     files = sorted(glob.glob(str(ROOT / "e5_circuito*.mp4"))) + sorted(glob.glob(str(ROOT / "con_clip*.mp4")))
@@ -167,9 +215,13 @@ def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--n", type=int, default=150, help="cuadros por desgaste")
     ap.add_argument("--videos", action="store_true", help="probar también con los videos reales (*.mp4)")
+    ap.add_argument("--pasadas", type=int, default=0, help="además, N pasadas por encima para medir la confirmación")
     args = ap.parse_args()
     detectores = [Anterior(), Actual()]
-    banco(detectores, args.n)
+    if args.n:
+        banco(detectores, args.n)
+    if args.pasadas:
+        pasadas(args.pasadas)
     if args.videos:
         videos(detectores)
 

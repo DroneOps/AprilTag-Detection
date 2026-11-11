@@ -26,10 +26,13 @@ Las bitácoras de vuelo (`logs/*.csv`) y los videos están en la laptop, no en e
    subida a 100 cm pasan ~12 s sin ninguna referencia de posición. Con ~5 cm/s de deriva, a
    veces se corre 35 cm o más y no ve el primer tag. Hay que decidir en equipo; ideas sin
    probar: sostenerse sobre el tag de inicio mientras sube, o subir más rápido.
-7. Al cerrar cada sesión, correr `python sim/comparar_vuelos.py` y, si cambió el Tello o el
+7. **Tags gastados (11-nov):** en el laboratorio, comparar la detección con y sin el rescate
+   sobre los tags más gastados, sin volar: `python scripts/test_tags.py --source tello
+   --espejo` y luego con `--sin-rescate`. Si alguno no se detecta ni así, reimprimirlo.
+8. Al cerrar cada sesión, correr `python sim/comparar_vuelos.py` y, si cambió el Tello o el
    clip, reajustar `config/sim_tello.json` ([`simulador.md`](simulador.md)).
 
-## 11-nov — Simulador ajustado a los vuelos reales
+## 11-nov — Simulador ajustado a los vuelos reales y tags gastados
 
 Sin volar. Detalle en [`simulador.md`](simulador.md).
 
@@ -45,6 +48,17 @@ Sin volar. Detalle en [`simulador.md`](simulador.md).
 - Según las bitácoras, el 9-nov 6 de 21 despegues se vinieron abajo (subieron y regresaron al piso).
 - Regresión realista: la misión con espejo pasa, pero `espejo_inicio` falló 1 de 5 veces
   por la deriva durante el despegue (pendiente 6).
+- **Tags gastados:** en los videos de E5 los tags se ven desteñidos (negro ~150 de 255,
+  contraste ~105; [`tello.md`](tello.md)). El simulador ahora puede desteñirlos, mancharlos y
+  arrancarles pedazos (escenarios `espejo_lab`, `espejo_gastado`).
+  - El detector hace un **rescate** cuando no ve nada: umbral más sensible, o imagen
+    erosionada con contornos menos exigentes, y solo acepta lo que parece tag.
+  - Se confirma con **3 de los últimos 5** cuadros en vez de 3 seguidos.
+  - Con `sim/prueba_desgaste.py`: muy desteñido 22 → 79 %, manchas 20 % 16 → 52 %, pedazos
+    faltantes 8 % 35 → 60 %, sin IDs equivocados. En los videos reales, 1,634 → 1,685 cuadros
+    con tag; el tag 2 dañado de 6 a 20; ningún ID falso.
+  - En vuelo simulado con tags gastados, el detector de antes no ejecutó ninguno; el nuevo
+    ejecuta 2 o 3 de 3.
 
 ## 9-nov — Espejo en vuelo real
 

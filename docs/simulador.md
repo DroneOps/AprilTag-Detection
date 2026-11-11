@@ -16,7 +16,7 @@ python sim/sim_world.py piso_uno                    # un escenario, con salida e
 python sim/sim_world.py piso_uno piso_circuito      # varios, en paralelo de 4 en 4
 ```
 ```bash
-python sim/sim_world.py todos > sim/logs/regresion.txt 2>&1   # los ~46, unos 12 min
+python sim/sim_world.py todos > sim/logs/regresion.txt 2>&1   # los ~49, unos 13 min
 ```
 
 Corre en tiempo real: cada escenario tarda 30–70 s. Para `todos`, mándalo a un archivo
@@ -159,6 +159,8 @@ saber si falla siempre o solo a veces.
 | `espejo_quieto` | sin avanzar: el tag ya está debajo, corrido y girado |
 | `espejo_deriva`, `espejo_flip` | viento y flip con espejo |
 | `espejo_inclinado`, `espejo_inclinado_sin_config` | espejo inclinado 8°, con y sin la medida en la config |
+| `espejo_lab` | circuito con los tags desteñidos como los del laboratorio (negro ~150) |
+| `espejo_gastado`, `espejo_gastado_sin_rescate` | tag 1 manchado, 2 con pedazos faltantes y 7 muy desteñido; con y sin el rescate del detector |
 | `espejo_despegue_cae` | el despegue sube ~40 cm y regresa al piso: aterrizar con aviso |
 | `espejo_despegue_alto` | el despegue sube solo a ~141 cm: bajar a crucero y seguir |
 | `espejo_sin_ok` | el Tello no contesta "ok" al despegar: seguir tras asentarse |
@@ -174,6 +176,69 @@ saber si falla siempre o solo a veces.
 | `piso_tof_falso` | el tof marca 14 cm durante 0.4 s: no debe aterrizar ni brincar |
 | `piso_imu_mal` | se va solo hacia adelante y abajo: debe aterrizar antes del piso |
 | `piso_deriva`, `piso_flip` | viento lateral; flip encima del tag |
+
+## Tags gastados y `sim/prueba_desgaste.py`
+
+Los tags del simulador pueden estar gastados: `Tag(..., desgaste={...})` o, en los
+escenarios de espejo, `floor(..., desgaste="lab")`. Opciones de `desgastar()`:
+
+| Opción | Qué hace |
+|---|---|
+| `negro`, `blanco` | a qué gris quedan; desteñido disparejo (±20 en manchones) |
+| `manchas` | fracción del negro con puntos y rayones blancos (0.2 = 20 %) |
+| `faltante` | fracción del tag arrancada en 1–3 pedazos, que pueden caer en el borde |
+
+Juegos listos en `DESGASTE`: `lab` (negro 150, como se ven los del laboratorio por el
+espejo, ver [`tello.md`](tello.md)), `muy_desteñido`, `manchas`, `faltante` y `todo`.
+
+`sim/prueba_desgaste.py` mide la detección sin volar, en 1–3 min. Dibuja el tag bajo el
+espejo en cientos de posiciones al azar, con desenfoque y compresión como el video del
+Tello, y compara el detector de antes con el actual. Con `--videos` revisa además los
+videos reales con espejo (`e5_circuito*.mp4`, `con_clip*.mp4`), que solo están en la laptop.
+
+```bash
+python sim/prueba_desgaste.py --videos
+```
+
+Resultado del 11-nov (200 cuadros por desgaste; % con el ID correcto):
+
+| Desgaste | Antes | Con rescate |
+|---|---|---|
+| limpio, lab (negro 150), desteñido 185 | 98–100 % | 100 % |
+| desteñido 205 | 22 % | 79 % |
+| manchas 10 / 20 / 30 % | 58 / 16 / 2 % | 88 / 52 / 23 % |
+| faltante 4 / 8 / 12 % | 64 / 35 / 21 % | 88 / 60 / 40 % |
+| todo junto | 12 % | 35 % |
+| **IDs equivocados** | 0 | 0 |
+| Tiempo por cuadro | ~2 ms | ~6 ms |
+
+En los videos reales: 1,634 → 1,685 cuadros con tag, el tag 2 dañado de 6 a 20, y ningún
+ID falso. **Antes de cambiar el detector, corre esta prueba y `python
+scripts/test_tags.py --selftest`: un ID equivocado es peor que no ver el tag.** Juntar
+"umbral sensible" con "contornos menos exigentes" en una misma pasada dio IDs falsos con
+ruido. Sin el filtro de forma, aparecieron un 6 falso sobre una raya del piso y otro en una
+manchita de 12 px.
+
+Un tag gastado "parpadea": se detecta en un cuadro sí y en otro no. Por eso la misión lo
+confirma con **3 de los últimos 5 cuadros** (`confirm_ventana` en
+`config/mission_tags.json`; antes, 3 seguidos). Con `--pasadas` se mide: el dron avanza a
+17 cm/s sobre el tag y se ve cuántas veces lo confirma antes de tenerlo debajo (30 pasadas,
+~10 min):
+
+```bash
+python sim/prueba_desgaste.py --n 0 --pasadas 30
+```
+
+| Desgaste | 3 seguidos | 3 de 5 |
+|---|---|---|
+| lab (negro 150) | 100 % | 100 % |
+| desteñido 205 | 83 % | 93 % |
+| manchas 20 / 30 % | 47 / 20 % | 60 / 30 % |
+| faltante 8 / 12 % | 67 / 40 % | 70 / 40 % |
+| todo junto | 33 % | 47 % |
+
+Ninguna confirmación equivocada. En vuelo simulado, `espejo_gastado_sin_rescate` no
+ejecuta ningún tag; con el rescate ejecuta 2 o 3 de 3, según la deriva.
 
 ## Agregar un escenario
 

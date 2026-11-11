@@ -19,6 +19,7 @@ Escenarios: circuito pausa giro360 sube_ciego perdido flip8 caja deriva
             tag_bajo rc_calib sin_tags espejo_uno espejo_inicio espejo_cerca espejo_girado espejo_circuito espejo_quieto
             espejo_deriva espejo_flip espejo_inclinado espejo_inclinado_sin_config
             espejo_despegue_cae espejo_despegue_alto espejo_sin_ok
+            espejo_lab espejo_gastado espejo_gastado_sin_rescate
             piso_uno piso_girado piso_circuito piso_deriva piso_flip piso_lento piso_rapido
             piso_hundimiento piso_lado piso_tof_falso piso_imu_mal
 
@@ -609,9 +610,10 @@ def scenario(sc: str) -> None:
     elif sc.startswith("espejo"):
         up = (0, 0, 1)
 
-        def floor(tid, x, y, rot=0.0):  # rot: grados que el tag está girado (horario visto desde arriba)
+        def floor(tid, x, y, rot=0.0, desgaste=None):  # rot: grados que el tag está girado (horario visto desde arriba)
             a = math.radians(rot)
-            return Tag(tid, (x, y, 0), up, top=(math.sin(a), math.cos(a), 0))
+            return Tag(tid, (x, y, 0), up, top=(math.sin(a), math.cos(a), 0),
+                       desgaste=DESGASTE[desgaste] if desgaste else None)
         if sc == "espejo_uno":  # tag 2 girado 12°: sostiene el rumbo y gira a la izquierda (yaw -90)
             run(sc, [floor(2, 6, 90, 12)], mirror="v")
         elif sc == "espejo_inicio":  # despega encima de un tag 7: con ignorar_inicio, ignorarlo y seguir al 2
@@ -636,6 +638,14 @@ def scenario(sc: str) -> None:
             run(sc, [floor(2, 0, 90)], mirror="v", mirror_tilt=8.0)
         elif sc == "espejo_inclinado_sin_config":  # mismo espejo sin decirle a la misión: se centra mal
             run(sc, [floor(2, 0, 90)], mirror="v", mirror_tilt=8.0)
+        elif sc == "espejo_lab":  # circuito con los tags desteñidos como los del laboratorio (negro ~150)
+            run(sc, [floor(1, 0, 80, desgaste="lab"), floor(2, 70, 80, desgaste="lab"),
+                     floor(7, 70, 150, desgaste="lab")], mirror="v")
+        elif sc in ("espejo_gastado", "espejo_gastado_sin_rescate"):  # 1 manchado, 2 con pedazos faltantes, 7 muy desteñido
+            if sc.endswith("sin_rescate"):
+                OVER["deteccion_rescate"] = False  # el detector de antes del 11-nov
+            run(sc, [floor(1, 0, 80, desgaste="manchas"), floor(2, 70, 80, desgaste="faltante"),
+                     floor(7, 70, 150, desgaste="muy_desteñido")], mirror="v")
         elif sc == "espejo_despegue_cae":  # sube ~40 cm y regresa al piso (real 9-nov): aterrizar con aviso
             run(sc, [floor(2, 0, 90)], mirror="v", despegue="cae", limit=40)
         elif sc == "espejo_despegue_alto":  # sube solo a ~141 cm (real 9-nov): bajar a crucero y seguir
@@ -687,6 +697,7 @@ ALL = ["circuito", "pausa", "giro360", "sube_ciego", "perdido", "flip8", "caja",
        "espejo_flip",
        "espejo_inclinado", "espejo_inclinado_sin_config",
        "espejo_despegue_cae", "espejo_despegue_alto", "espejo_sin_ok",
+       "espejo_lab", "espejo_gastado", "espejo_gastado_sin_rescate",
        "piso_uno", "piso_girado", "piso_circuito", "piso_deriva", "piso_flip", "piso_lento", "piso_rapido",
        "piso_hundimiento", "piso_lado", "piso_tof_falso", "piso_imu_mal"]
 

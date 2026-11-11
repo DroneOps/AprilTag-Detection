@@ -21,7 +21,7 @@ import json
 import math
 import threading
 import time
-from collections import defaultdict
+from collections import Counter, defaultdict, deque
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -260,19 +260,18 @@ def floor_from_front(pose: TagPose, pitch_deg: float) -> tuple[float, float, flo
 
 
 class Confirmer:
-    """Un ID se confirma tras verse en N frames consecutivos."""
+    """Un ID se confirma si se ve en el frame actual y en n de los últimos `ventana` frames
+    (ventana = n: n seguidos, como antes). Con tags gastados la detección parpadea; con 3 de 5
+    se confirma antes, y un ID que sale suelto en un frame sigue sin confirmarse."""
 
-    def __init__(self, n: int) -> None:
+    def __init__(self, n: int, ventana: int | None = None) -> None:
         self.n = n
-        self.streak: dict[int, int] = defaultdict(int)
+        self.hist: deque = deque(maxlen=max(n, ventana or n))
 
     def update(self, ids: set[int]) -> set[int]:
-        for i in list(self.streak):
-            if i not in ids:
-                del self.streak[i]
-        for i in ids:
-            self.streak[i] += 1
-        return {i for i, k in self.streak.items() if k >= self.n}
+        self.hist.append(set(ids))
+        cuenta = Counter(i for frame in self.hist for i in frame)
+        return {i for i in ids if cuenta[i] >= self.n}
 
 
 # ---------------------------------------------------------------- fuentes

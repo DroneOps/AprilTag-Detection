@@ -61,6 +61,7 @@ ACTIONS: dict[int, list[tuple]] = {
 class MissionConfig:
     tag_cm: float = 8.0
     confirm_n: int = 3
+    confirm_ventana: int = 3  # confirmar con confirm_n de los últimos tantos frames (3 = seguidos)
     deteccion_rescate: bool = True  # reintentar con la imagen erosionada si no ve tags (tags gastados)
     start_hover_s: float = 2.0
     mission_max_s: float = 240.0
@@ -170,7 +171,7 @@ class TagMission(Flight):
         self.m = mcfg
         self.detector = TagDetector(set(TAG_FUNCTIONS), True, 2.0, mcfg.deteccion_rescate)
         self.pose_est = PoseEstimator(calib, mcfg.tag_cm)
-        self.confirmer = Confirmer(mcfg.confirm_n)
+        self.confirmer = Confirmer(mcfg.confirm_n, mcfg.confirm_ventana)
         self._vis: Vision | None = None
         self._vis_lock = threading.Lock()
         self._last_seen: dict[int, float] = {}  # tags ya ejecutados -> última vez vistos

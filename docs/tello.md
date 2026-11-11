@@ -81,6 +81,10 @@ Solo 2.4 GHz. `test_tags.py` imprime al salir una línea `enlace:` con frames at
   (medido con `test_tags.py --espejo`; está en `config/mission_espejo.json`).
 - Un montaje tapó el **sensor de abajo** y el dron creía estar en el piso: no despegaba.
 - Con espejo, el dron sostiene peor la altura (se vio variar de 95 a 118 cm).
+- **Los tags del laboratorio se ven desteñidos por el espejo** (videos de E5, 9-nov, ~1,400
+  detecciones): el negro se ve en ~150 de 255 (p90: 179) y el papel en ~252. El contraste
+  es de ~105 en la mediana y ~75 en los peores (p10), contra 255 de un tag nuevo. Un tag 2 se
+  ve además con un pedazo blanco. Mide ~71 px de lado a 100 cm.
 
 ## Cuando el dron "no obedece"
 

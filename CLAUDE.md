@@ -105,6 +105,7 @@ Fernando sigue el proyecto por GitHub. Nada debe quedarse solo en la laptop.
 | `scripts/first_flight.py` + `config/flight.json` | vuelo base, despegue, seguridad, HMI, bitácora; prueba de estacionario, giro y flip |
 | `scripts/test_tags.py` | visión: detector, pose, `--espejo`; prueba sin volar |
 | `sim/sim_world.py` + `config/sim_tello.json` | simulador 3D con el detector y la misión reales; el dron simulado se comporta como dice el JSON (`--ideal`: el modelo optimista de antes) |
+| `sim/prueba_desgaste.py` | detección de tags gastados (desteñidos, manchas, pedazos faltantes) sin volar; antes de tocar el detector, correrla junto con `test_tags.py --selftest` |
 | `sim/comparar_vuelos.py` | compara el simulador con vuelos reales y reajusta `config/sim_tello.json`; correr al cerrar cada sesión |
 | `scripts/resumen_vuelos.py`, `scripts/traza_vuelo.py` | analizar vuelos |
 | `scripts/guardar_sesion.py` | subir una sesión de laboratorio a `sesiones/` |
@@ -162,6 +163,7 @@ Síntomas que ya conocemos:
 | Se hunde ~10–13 cm/s al avanzar | normal en este Tello | lo corrige el sostener altura |
 | Al centrarse oscila ±10 cm | deriva normal (~5 cm/s); el centrado frena con la velocidad del tag | normal; si oscila mucho más, subir `center_kd` |
 | Se va siempre a la derecha (o izquierda) al avanzar sin ver tags | el rumbo sigue rotando tras un giro, o deriva propia del dron o una corriente de aire | revisar `rc_yaw` y `yaw` en la bitácora; ajustar `advance_lr`; apagar ventiladores |
+| Pasa encima de un tag y no lo ve, aunque está en el centro | tag gastado o desteñido (por el espejo el negro ya se ve gris, ~150) | revisar que `deteccion_rescate` esté en `true` (`config/mission_tags.json`); reimprimir el tag; probar con `test_tags.py --espejo` |
 | No encuentra el siguiente tag | estaba lejos o fuera de lo que ve debajo (±39 cm adelante a 100 cm) | subir `advance_timeout_s` o `cruise_alt_cm` |
 | Ignora el primer tag del recorrido | se vio al despegar | revisar `ignorar_inicio` e `inicio_alt_cm` |
 | `flip omitido: bateria` | menos de 50 % | cambiar de batería |

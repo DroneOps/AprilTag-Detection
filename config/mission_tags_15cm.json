@@ -1,6 +1,8 @@
 {
   "tag_cm": 15.0,
   "confirm_n": 3,
+  "confirm_ventana": 5,
+  "deteccion_rescate": true,
   "start_hover_s": 2.0,
   "mission_max_s": 240,
   "advance_fb": 15,

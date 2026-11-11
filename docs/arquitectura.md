@@ -59,8 +59,16 @@ CRUISE ─▶ ADVANCE ─▶ APPROACH ─▶ EXECUTE ─▶ ADVANCE ... (hasta e
 ## Visión (`test_tags.py`)
 
 - `TagDetector`: lista blanca de IDs 1–10 y `errorCorrectionRate` 0.8 (en videos de
-  vuelo da +15–130 % de detecciones sin IDs falsos).
-- `Confirmer`: un ID cuenta solo si se vio en **3 frames seguidos**.
+  vuelo da +15–130 % de detecciones sin IDs falsos). Si en un frame no encuentra ningún tag,
+  hace un **rescate para tags gastados** (`deteccion_rescate`, 11-nov):
+  1. umbral más sensible;
+  2. imagen erosionada 3 y 5 px con contornos menos exigentes.
+
+  Cada rescate cambia una sola cosa, y lo rescatado debe verse como un tag (casi cuadrado,
+  ≥ 20 px); si no, salían IDs falsos. Ver `sim/prueba_desgaste.py`.
+- `Confirmer`: un ID cuenta solo si se ve en el frame actual y en `confirm_n` de los últimos
+  `confirm_ventana` frames: **3 de 5** en `config/mission_tags.json` (antes del 11-nov, 3
+  seguidos; con tags gastados la detección parpadea).
 - `PoseEstimator`: `solvePnP` (`IPPE_SQUARE`) con la calibración de
   `config/camera_tello.json`. Su método `mirrored()` da la versión para el espejo.
 - `floor_from_front(pose, 11°)`: para un tag en el piso visto con la cámara al frente,
