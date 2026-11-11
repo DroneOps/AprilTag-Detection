@@ -42,7 +42,7 @@ Sin volar. Detalle en [`simulador.md`](simulador.md).
   lo que hizo cada uno; con `--ajustar --guardar` reajusta el JSON. Error al predecir 1.5 s
   de vuelo: rumbo 1.2° → 0.9°, altura 6.2 → 4.6 cm, posición del tag 14 → 10 cm.
 - Escenarios nuevos: `espejo_despegue_cae`, `espejo_despegue_alto`, `espejo_sin_ok`.
-- El 9-nov, 6 de 21 despegues se vinieron abajo (Tello #1 y los primeros con clip).
+- Según las bitácoras, el 9-nov 6 de 21 despegues se vinieron abajo (subieron y regresaron al piso).
 - Regresión realista: la misión con espejo pasa, pero `espejo_inicio` falló 1 de 5 veces
   por la deriva durante el despegue (pendiente 6).
 
