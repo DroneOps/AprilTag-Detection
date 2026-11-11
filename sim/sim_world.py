@@ -157,7 +157,7 @@ class Tag:
     """Tag en una pared (facing = hacia dónde mira) o en el piso (facing = (0,0,1) y
     top = hacia dónde apunta su borde de arriba, p. ej. (0,1,0) = norte)."""
 
-    def __init__(self, tag_id: int, pos, facing, size: float = 8.0, top=(0, 0, 1)) -> None:
+    def __init__(self, tag_id: int, pos, facing, size: float = 8.0, top=(0, 0, 1), desgaste=None) -> None:
         self.id, self.c = tag_id, np.array(pos, float)
         self.n = np.array(facing, float) / np.linalg.norm(facing)
         up = np.array(top, float) / np.linalg.norm(top)
@@ -167,7 +167,65 @@ class Tag:
                         self.c + a * self.right - a * up, self.c - a * self.right - a * up]
         m = cv2.aruco.generateImageMarker(DICT, tag_id, 7 * 20)
         self.img = cv2.copyMakeBorder(m, 20, 20, 20, 20, cv2.BORDER_CONSTANT, value=255)
+        if desgaste:  # dict con las opciones de desgastar(); la semilla por defecto es el ID
+            self.img = desgastar(self.img, **{"semilla": tag_id, **desgaste})
         self.visible = True
+
+
+# Tags del laboratorio vistos por el espejo (videos de E5, 9-nov): el "negro" se ve en ~150 y el
+# papel en ~252; el contraste va de ~75 a ~105 (p10 y mediana).
+DESGASTE = {
+    "lab": {"negro": 150},
+    "muy_desteñido": {"negro": 185, "blanco": 240},
+    "manchas": {"negro": 150, "manchas": 0.2},
+    "faltante": {"negro": 150, "faltante": 0.08},
+    "todo": {"negro": 170, "blanco": 245, "manchas": 0.15, "faltante": 0.06},
+}
+
+
+def desgastar(img: np.ndarray, negro: float = 0, blanco: float = 255, manchas: float = 0.0,
+              faltante: float = 0.0, semilla: int = 0) -> np.ndarray:
+    """Tag gastado. img: 180x180 (9 módulos de 20 px; 0 = negro, 255 = blanco).
+    negro/blanco: a qué gris quedan (desteñido, parejo solo más o menos: ±20 en manchones);
+    manchas: fracción del negro con puntos y rayones blancos (0.2 = 20 %);
+    faltante: fracción del tag (sin el margen blanco) arrancada en 1–3 pedazos, que pueden caer
+    en el borde negro (lo que más estorba para detectarlo)."""
+    rng = np.random.default_rng(semilla)
+    n = img.shape[0]
+    dark = img < 128
+    ink = np.zeros(img.shape, np.float32)  # 1 = hay tinta negra
+    ink[dark] = 1.0
+    inner = np.zeros(img.shape, bool)
+    inner[20:n - 20, 20:n - 20] = True
+    if manchas > 0:  # puntos de 2–7 px y algún rayón, hasta cubrir esa fracción del negro
+        objetivo, total = manchas * dark.sum(), 0
+        while total < objetivo:
+            hueco = np.zeros(img.shape, np.uint8)
+            if rng.random() < 0.15:
+                p0, p1 = rng.integers(20, n - 20, 2), rng.integers(20, n - 20, 2)
+                cv2.line(hueco, tuple(int(v) for v in p0), tuple(int(v) for v in p1), 1, int(rng.integers(1, 3)))
+            else:
+                c = tuple(int(v) for v in rng.integers(20, n - 20, 2))
+                cv2.circle(hueco, c, int(rng.integers(2, 8)), 1, -1)
+            nuevo = (hueco > 0) & (ink > 0)
+            total += nuevo.sum()
+            ink[nuevo] = 0.0
+    if faltante > 0:  # 1–3 pedazos irregulares (elipses giradas) que se llevan tinta y todo
+        k = int(rng.integers(1, 4))
+        area = faltante * (n - 40) ** 2 / k
+        for _ in range(k):
+            ax = math.sqrt(area / math.pi) * rng.uniform(0.6, 1.6)
+            ay = area / (math.pi * ax)
+            c = tuple(int(v) for v in rng.integers(20, n - 20, 2))
+            hueco = np.zeros(img.shape, np.uint8)
+            cv2.ellipse(hueco, c, (max(1, int(ax)), max(1, int(ay))), float(rng.uniform(0, 180)), 0, 360, 1, -1)
+            ink[(hueco > 0) & inner] = 0.0
+    # desteñido disparejo: el gris del negro varía ±20 en manchones grandes
+    campo = cv2.resize(rng.uniform(-1, 1, (4, 4)).astype(np.float32), img.shape[::-1], interpolation=cv2.INTER_CUBIC)
+    gris_negro = np.clip(negro + 20 * campo * (negro > 0), 0, 255)
+    out = blanco * (1 - ink) + gris_negro * ink
+    out = cv2.GaussianBlur(out, (3, 3), 0.7)  # orillas de la tinta no perfectas
+    return np.clip(out, 0, 255).astype(np.uint8)
 
 
 def dead(rc: float, db: float = 5) -> float:

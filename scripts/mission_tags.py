@@ -61,6 +61,7 @@ ACTIONS: dict[int, list[tuple]] = {
 class MissionConfig:
     tag_cm: float = 8.0
     confirm_n: int = 3
+    deteccion_rescate: bool = True  # reintentar con la imagen erosionada si no ve tags (tags gastados)
     start_hover_s: float = 2.0
     mission_max_s: float = 240.0
     advance_fb: int = 12
@@ -167,7 +168,7 @@ class TagMission(Flight):
     def __init__(self, tello, cfg: FlightConfig, mcfg: MissionConfig, log_path: Path, calib: Path) -> None:
         super().__init__(tello, cfg, log_path, None)
         self.m = mcfg
-        self.detector = TagDetector(set(TAG_FUNCTIONS), True, 2.0)
+        self.detector = TagDetector(set(TAG_FUNCTIONS), True, 2.0, mcfg.deteccion_rescate)
         self.pose_est = PoseEstimator(calib, mcfg.tag_cm)
         self.confirmer = Confirmer(mcfg.confirm_n)
         self._vis: Vision | None = None

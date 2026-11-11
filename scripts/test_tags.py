@@ -75,21 +75,43 @@ class Detection:
 
 
 class TagDetector:
-    def __init__(self, whitelist: set[int] | None, refine: bool, decimate: float) -> None:
-        dictionary = cv2.aruco.getPredefinedDictionary(cv2.aruco.DICT_APRILTAG_25h9)
-        params = cv2.aruco.DetectorParameters()
-        if refine:
-            params.cornerRefinementMethod = cv2.aruco.CORNER_REFINE_SUBPIX
-        params.aprilTagQuadDecimate = decimate
-        # corregir más bits: en los videos de vuelo del 27-oct, +15–130 % de detecciones y
-        # ningún ID falso entre 1 y 10 (con 1.0 ya salían 5, 6 y 7 falsos)
-        params.errorCorrectionRate = 0.8
-        params.maxErroneousBitsInBorderRate = 0.5
-        self._det = cv2.aruco.ArucoDetector(dictionary, params)
-        self.whitelist = whitelist
+    """Detector de tag25h9. La primera pasada es la de siempre; si no encuentra ningún tag de la
+    lista y rescate=True, reintenta para tags gastados (sim/prueba_desgaste.py, 11-nov):
+      1. umbral más sensible (desteñidos: en los videos de E5 el negro se ve en ~150 de 255);
+      2. imagen erosionada 3 y 5 px, con contornos menos exigentes: el negro "crece" y tapa
+         manchas blancas y huecos del borde, y un pedazo faltante ya no lo descarta.
+    Cada rescate cambia una sola cosa: juntando umbral sensible y contornos menos exigentes, el
+    ruido salía como IDs falsos. Además, lo rescatado debe verse como un tag (casi cuadrado, de
+    20 px o más): en los videos reales, los únicos falsos fueron una astilla sobre una raya del
+    piso y una manchita de 12 px."""
 
-    def detect(self, gray: np.ndarray) -> list[Detection]:
-        corners, ids, _ = self._det.detectMarkers(gray)
+    _KERNELS = {3: np.ones((3, 3), np.uint8), 5: np.ones((5, 5), np.uint8)}
+
+    def __init__(self, whitelist: set[int] | None, refine: bool, decimate: float, rescate: bool = True) -> None:
+        dictionary = cv2.aruco.getPredefinedDictionary(cv2.aruco.DICT_APRILTAG_25h9)
+
+        def detector(**extra) -> cv2.aruco.ArucoDetector:
+            params = cv2.aruco.DetectorParameters()
+            if refine:
+                params.cornerRefinementMethod = cv2.aruco.CORNER_REFINE_SUBPIX
+            params.aprilTagQuadDecimate = decimate
+            # corregir más bits: en los videos de vuelo del 27-oct, +15–130 % de detecciones y
+            # ningún ID falso entre 1 y 10 (con 1.0 ya salían 5, 6 y 7 falsos)
+            params.errorCorrectionRate = 0.8
+            params.maxErroneousBitsInBorderRate = 0.5
+            for k, v in extra.items():
+                setattr(params, k, v)
+            return cv2.aruco.ArucoDetector(dictionary, params)
+
+        self._det = detector()
+        self._rescates = [(detector(adaptiveThreshConstant=3), 0),
+                          (detector(polygonalApproxAccuracyRate=0.08), 3),
+                          (detector(polygonalApproxAccuracyRate=0.08), 5)] if rescate else []
+        self.whitelist = whitelist
+        self.rescatados = 0  # cuadros en que solo un rescate encontró el tag
+
+    def _detect(self, det, gray: np.ndarray) -> list[Detection]:
+        corners, ids, _ = det.detectMarkers(gray)
         if ids is None:
             return []
         out = []
@@ -97,6 +119,29 @@ class TagDetector:
             tag_id = int(i)
             ok = self.whitelist is None or tag_id in self.whitelist
             out.append(Detection(tag_id, c.reshape(4, 2), ok))
+        return out
+
+    @staticmethod
+    def _parece_tag(d: Detection) -> bool:
+        lados = [float(np.linalg.norm(d.corners[i] - d.corners[(i + 1) % 4])) for i in range(4)]
+        return (min(lados) >= 20 and min(lados) >= 0.5 * max(lados)
+                and cv2.isContourConvex(d.corners.astype(np.float32).reshape(-1, 1, 2)))
+
+    def detect(self, gray: np.ndarray) -> list[Detection]:
+        out = self._detect(self._det, gray)
+        if any(d.accepted for d in out):
+            return out
+        for det, k in self._rescates:
+            img = cv2.erode(gray, self._KERNELS[k]) if k else gray
+            res = [d for d in self._detect(det, img) if d.accepted and self._parece_tag(d)]
+            if res:
+                self.rescatados += 1
+                if k:  # la erosión agranda el tag ~1–2 px: esquinas sobre la imagen original
+                    crit = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 20, 0.05)
+                    for d in res:
+                        c = d.corners.astype(np.float32).reshape(-1, 1, 2)
+                        d.corners = cv2.cornerSubPix(gray, c, (3, 3), (-1, -1), crit).reshape(4, 2)
+                return res
         return out
 
 
@@ -583,6 +628,7 @@ def main() -> None:
     ap.add_argument("--ids", default="1-10", help="lista blanca, p.ej. '1-10' o 'all'")
     ap.add_argument("--decimate", type=float, default=2.0, help="aprilTagQuadDecimate (1 = más lento y preciso)")
     ap.add_argument("--no-refine", action="store_true", help="sin refinamiento subpíxel de esquinas")
+    ap.add_argument("--sin-rescate", action="store_true", help="sin el reintento para tags gastados")
     ap.add_argument("--record", help="guardar el video crudo (mp4) para repetirlo después")
     ap.add_argument("--selftest", action="store_true", help="prueba sintética, sin cámara")
     ap.add_argument("--calib", default=str(DEFAULT_CALIB), help="calibración de la cámara (json)")
@@ -595,7 +641,7 @@ def main() -> None:
     args = ap.parse_args()
 
     print(f"OpenCV {cv2.__version__}")
-    detector = TagDetector(parse_ids(args.ids), not args.no_refine, args.decimate)
+    detector = TagDetector(parse_ids(args.ids), not args.no_refine, args.decimate, not args.sin_rescate)
     if args.selftest:
         run_selftest(detector)
     else:
