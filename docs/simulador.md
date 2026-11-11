@@ -50,6 +50,25 @@ completa queda en `sim/logs/<escenario>.csv`, con el mismo formato que las de vu
 El simulador es **optimista**: no modela desenfoque, IMU descalibrado ni hélices dañadas.
 Si algo falla en simulación, seguro falla en el dron; al revés no.
 
+### Qué tan optimista es (medido el 10-nov contra los vuelos del 9-nov)
+
+| Qué | Dron real (9-nov) | Simulador |
+|---|---|---|
+| Giro con `rc_yaw` 15–19 | ≈ 0 °/s (no gira) | 7.6 °/s |
+| Lo que sigue girando tras un giro de 90° | 23–24° | 15–16° |
+| Altura al despegar | 31–141 cm (casi siempre 74–85) | siempre 67–70 cm |
+| Altura avanzando (p10–p90) | 91–105 cm | 97–103 cm |
+| Deriva con `rc` en 0 sobre el tag | ~10 cm/s (solo 4 tramos) | ~4 cm/s |
+| Atraso del video | ~170 ms | 0 |
+| Temperatura | 52–93 °C | siempre 65 °C |
+
+Con cuatro de esas diferencias agregadas a mano (giro real, video atrasado 170 ms, deriva
+de ~5 cm/s y hundimiento de 10 cm/s también con espejo), `espejo_circuito` se completó
+igual, con el código actual y con el del 9-nov (`324a07d`). Solo tardó más: 38–40 s en vez
+de 31–34 s. O sea, el simulador **no reproduce lo que falló el 9-nov** (despegue, deriva,
+rumbo que sigue girando). Esos problemas vienen del dron y no están modelados. Sirve para
+la lógica de la misión y la geometría de la cámara, no para ajustar el control fino.
+
 ## Escenarios
 
 **Tags en pared** (`mission_tags.py`)
