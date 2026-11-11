@@ -5,18 +5,22 @@ Las bitácoras de vuelo (`logs/*.csv`) y los videos están en la laptop, no en e
 
 ## Pendiente ahora
 
-0. **El VPS de nuestro Tello parece dañado.** Tras calibrar el IMU, la app oficial avisa
-   "posicionamiento visual no disponible" aun con buena luz, piso con textura y la panza
-   limpia (9-nov, tarde). Sin VPS no sostiene posición ni altura. Usar **otro Tello**
-   (calibrar IMU, estacionario, E1 con el clip) o reparar el módulo de visión de abajo.
-1. **Arreglar la altura del Tello.** El 9-nov a las 17:15, con y sin clip, el despegue subió
-   a ~70 cm y se regresó solo al piso, mientras el `h` del Tello subía: su estimación interna
-   de altura está mal. **No es el clip.** Calibrar IMU y centro de gravedad en la app Tello
-   (con el dron quieto sobre superficie plana al encenderlo), revisar firmware y repetir el
-   estacionario sin clip hasta que salga bien.
-2. Con espejo, en orden: **E3 → E4 → E5 → E6 → E7** ([`laboratorio.md`](laboratorio.md)).
-   Ajustar `advance_timeout_s` y `cruise_alt_cm` según la pista.
-3. Respuestas del comité: tamaño de tags, cómo es la trayectoria visible y la etiqueta de
+1. **Probar en el laboratorio los cambios del 9-nov (noche), sin volar todavía:** rumbo más
+   firme tras los giros (`heading_min` 20), centrado de ≤12 cm con máximo 8 s, y
+   `ignorar_inicio` en `false`. Repetir **E5** sobre la pista del seguidor de línea, con el
+   dron frío y la batería arriba de 70 %.
+2. **Si se sigue yendo a la derecha al avanzar sin ver tags:** probar `advance_lr` en -10 o
+   -15 (`config/mission_espejo.json`) y revisar si hay ventilador o corriente de aire. La
+   solución de fondo propuesta, sin hacer: corregir la deriva con el **flujo del piso visto
+   por el espejo**. En el video del 9-nov, la pista del seguidor dio calidad ~0.9 con
+   correlación de fase.
+3. **Tello #1:** su sistema de visión de abajo (VPS) parece dañado; la app avisa
+   "posicionamiento visual no disponible" aun con buena luz y la panza limpia. Repararlo o
+   no usarlo. Las pruebas del 9-nov (tarde) se hicieron con otro Tello, que también usa el
+   seguidor de línea.
+4. Con espejo, en orden: **E5 → E6 → E7** ([`laboratorio.md`](laboratorio.md)). Ajustar
+   `advance_timeout_s` y `cruise_alt_cm` según la pista.
+5. Respuestas del comité: tamaño de tags, cómo es la trayectoria visible y la etiqueta de
    inicio ([`competencia.md`](competencia.md)).
 
 ## 9-nov — Espejo en vuelo real
@@ -38,6 +42,21 @@ Detalle y bitácoras en [`../sesiones/2026-11-09/`](../sesiones/2026-11-09/).
   - **Despegue:** subió solo a 151 cm en uno y se regresó al piso en otros. Ahora el
     despegue pasa con el `ok` del Tello y aterriza con aviso si se viene abajo. Se sospecha
     que el clip interfiere con los sensores de la panza.
+- **Tarde:**
+  - con el Tello #1, el despegue se regresaba solo al piso con y sin clip, y la app avisó
+    que su VPS no estaba disponible;
+  - con otro Tello, sobre la pista del seguidor de línea, el estacionario con clip salió
+    bien, pero en E5 se iba a la derecha.
+  - Causas encontradas:
+    - el tag 1 estaba debajo del despegue y se ignoraba como "de inicio"
+      (`ignorar_inicio` → `false`);
+    - el centrado oscilaba ±15–20 cm (ahora frena con la velocidad del tag y ejecuta a
+      ≤12 cm o a los 8 s);
+    - tras el giro, el rumbo seguía rotando de 90° a 101° porque la corrección con rc 15
+      caía en la zona muerta del Tello (`heading_min` 20).
+
+  `DroneOps/Line_Follower` funciona con el mismo dron, no tiene configuración especial y
+  también usa espejo. Commits: `324a07d`, `4a93400`, `fcaaabd`.
 - Se agregaron `sesiones/` (cada día con sus bitácoras), `scripts/guardar_sesion.py`,
   `scripts/traza_vuelo.py` y `CLAUDE.md`, para que el equipo trabaje y se revise desde GitHub.
 

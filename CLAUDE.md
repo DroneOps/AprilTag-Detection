@@ -99,7 +99,7 @@ Fernando sigue el proyecto por GitHub. Nada debe quedarse solo en la laptop.
 
 | Archivo | Qué es |
 |---|---|
-| `scripts/mision_espejo.py` + `config/mission_espejo.json` | **misión principal**: sube a 100 cm, avanza hasta ver un tag debajo, se centra encima sosteniendo el rumbo, ejecuta y sigue; ignora el tag que ve al despegar (el de inicio) |
+| `scripts/mision_espejo.py` + `config/mission_espejo.json` | **misión principal**: sube a 100 cm, avanza hasta ver un tag debajo, se centra encima sosteniendo el rumbo (≤12 cm, máximo 8 s), ejecuta y sigue |
 | `scripts/mision_piso.py` + `config/mission_piso.json` | respaldo sin espejo: cámara al frente, último metro a ciegas |
 | `scripts/mission_tags.py` + `config/mission_tags.json` | base de las misiones: acciones de cada tag, flip seguro, sostener altura, "el dron no obedece" |
 | `scripts/first_flight.py` + `config/flight.json` | vuelo base, despegue, seguridad, HMI, bitácora; prueba de estacionario, giro y flip |
@@ -116,7 +116,8 @@ Ajustes de `config/mission_espejo.json` que más se mueven en el laboratorio:
 | `advance_fb` | qué tan rápido avanza buscando |
 | `cruise_alt_cm` | altura de vuelo; más alto ve más piso |
 | `vista_adelante_deg`, `vista_lado_deg` | inclinación del clip, medida con E1; cambia con cada clip |
-| `ignorar_inicio` | ignorar o no el tag que ve al despegar |
+| `ignorar_inicio` | ignorar o no el tag que ve al despegar; en las pruebas va en `false` |
+| `advance_lr` | rc lateral fijo al avanzar sin tag, para compensar si el dron se va siempre de un lado (negativo = a la izquierda) |
 
 ## Cómo guiar una sesión de laboratorio
 
@@ -158,7 +159,8 @@ Síntomas que ya conocemos:
 | `el dron no obedece` / `avanza solo` | IMU descalibrado o hélice dañada | "Revisar el dron" |
 | La app oficial dice "posicionamiento visual no disponible" | el sistema de visión de la panza (VPS) no funciona: sensores sucios o tapados, poca luz, piso sin textura, o el módulo dañado por una caída | limpiar la panza, buena luz, piso con textura; si sigue, reparar o usar otro Tello |
 | Se hunde ~10–13 cm/s al avanzar | normal en este Tello | lo corrige el sostener altura |
-| Al centrarse oscila ±10 cm | deriva normal (~5 cm/s) | normal; si es más, revisar el dron |
+| Al centrarse oscila ±10 cm | deriva normal (~5 cm/s); el centrado frena con la velocidad del tag | normal; si oscila mucho más, subir `center_kd` |
+| Se va siempre a la derecha (o izquierda) al avanzar sin ver tags | el rumbo sigue rotando tras un giro, o deriva propia del dron o una corriente de aire | revisar `rc_yaw` y `yaw` en la bitácora; ajustar `advance_lr`; apagar ventiladores |
 | No encuentra el siguiente tag | estaba lejos o fuera de lo que ve debajo (±39 cm adelante a 100 cm) | subir `advance_timeout_s` o `cruise_alt_cm` |
 | Ignora el primer tag del recorrido | se vio al despegar | revisar `ignorar_inicio` e `inicio_alt_cm` |
 | `flip omitido: bateria` | menos de 50 % | cambiar de batería |
