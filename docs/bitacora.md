@@ -25,7 +25,11 @@ Las bitácoras de vuelo (`logs/*.csv`) y los videos están en la laptop, no en e
 6. **Deriva al despegar (visto en el simulador realista, 11-nov):** entre el despegue y la
    subida a 100 cm pasan ~12 s sin ninguna referencia de posición. Con ~5 cm/s de deriva, a
    veces se corre 35 cm o más y no ve el primer tag. Hay que decidir en equipo; ideas sin
-   probar: sostenerse sobre el tag de inicio mientras sube, o subir más rápido.
+   probar: sostenerse sobre el tag de inicio mientras sube, o subir más rápido. **Antes,
+   revisar con vuelos reales si la deriva del simulador es demasiado pesimista** (fuera del
+   laboratorio): hoy es un viento aleatorio sin nada que lo regrese, y el Tello real, con su
+   visión de la panza, tiende a regresar a su lugar. Por eso la regresión realista falla
+   unas veces sí y otras no.
 7. **Tags gastados (11-nov):** en el laboratorio, comparar la detección con y sin el rescate
    sobre los tags más gastados, sin volar: `python scripts/test_tags.py --source tello
    --espejo` y luego con `--sin-rescate`. Si alguno no se detecta ni así, reimprimirlo.
