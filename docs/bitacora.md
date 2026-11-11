@@ -22,6 +22,29 @@ Las bitácoras de vuelo (`logs/*.csv`) y los videos están en la laptop, no en e
    `advance_timeout_s` y `cruise_alt_cm` según la pista.
 5. Respuestas del comité: tamaño de tags, cómo es la trayectoria visible y la etiqueta de
    inicio ([`competencia.md`](competencia.md)).
+6. **Deriva al despegar (visto en el simulador realista, 11-nov):** entre el despegue y la
+   subida a 100 cm pasan ~12 s sin ninguna referencia de posición. Con ~5 cm/s de deriva, a
+   veces se corre 35 cm o más y no ve el primer tag. Hay que decidir en equipo; ideas sin
+   probar: sostenerse sobre el tag de inicio mientras sube, o subir más rápido.
+7. Al cerrar cada sesión, correr `python sim/comparar_vuelos.py` y, si cambió el Tello o el
+   clip, reajustar `config/sim_tello.json` ([`simulador.md`](simulador.md)).
+
+## 11-nov — Simulador ajustado a los vuelos reales
+
+Sin volar. Detalle en [`simulador.md`](simulador.md).
+
+- Antes, el simulador era optimista. Con rc 15–19 giraba 6 °/s y el real no gira; tras un
+  giro el real sigue girando 8° y el simulador no. Además: despegue siempre a 65 cm con
+  "ok" a los 2 s, video sin atraso, la mitad de la deriva y subía el doble de rápido.
+- Ahora el dron simulado se comporta según **`config/sim_tello.json`**, ajustado con los
+  14 vuelos del 9-nov. `--ideal` deja el modelo de antes.
+- **`sim/comparar_vuelos.py`** le pasa al modelo los mismos rc de los vuelos reales y compara
+  lo que hizo cada uno; con `--ajustar --guardar` reajusta el JSON. Error al predecir 1.5 s
+  de vuelo: rumbo 1.2° → 0.9°, altura 6.2 → 4.6 cm, posición del tag 14 → 10 cm.
+- Escenarios nuevos: `espejo_despegue_cae`, `espejo_despegue_alto`, `espejo_sin_ok`.
+- El 9-nov, 6 de 21 despegues se vinieron abajo (Tello #1 y los primeros con clip).
+- Regresión realista: la misión con espejo pasa, pero `espejo_inicio` falló 1 de 5 veces
+  por la deriva durante el despegue (pendiente 6).
 
 ## 9-nov — Espejo en vuelo real
 

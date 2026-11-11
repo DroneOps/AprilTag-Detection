@@ -16,7 +16,7 @@ python sim/sim_world.py piso_uno                    # un escenario, con salida e
 python sim/sim_world.py piso_uno piso_circuito      # varios, en paralelo de 4 en 4
 ```
 ```bash
-python sim/sim_world.py todos > sim/logs/regresion.txt 2>&1   # los ~40, unos 10 min
+python sim/sim_world.py todos > sim/logs/regresion.txt 2>&1   # los ~46, unos 12 min
 ```
 
 Corre en tiempo real: cada escenario tarda 30–70 s. Para `todos`, mándalo a un archivo
@@ -32,42 +32,103 @@ Le siguen los cambios de estado con la **posición verdadera** del dron
 (`[x=… y=… z=… yaw=…]`, en cm; los tags están donde los pone el escenario). La bitácora
 completa queda en `sim/logs/<escenario>.csv`, con el mismo formato que las de vuelo real.
 
-## Qué modela (ajustado a vuelos reales)
+## Qué modela: `config/sim_tello.json`
 
-- **Horizontal:** `1.7·(|rc| − 5)` cm/s, con respuesta de ~0.4 s.
-- **Vertical:** `0.9·(|rc| − 3)` subiendo y `0.5·(|rc| − 3)` bajando.
-- **Giro:** `0.73·(|rc| − 6.6)` °/s.
-- **Despegue:** sube a 65 cm y contesta `ok`.
+Cómo se comporta el dron simulado está en **`config/sim_tello.json`**, ajustado con las
+bitácoras reales por `sim/comparar_vuelos.py` (ver abajo). Con `--ideal` se usa el modelo
+de antes del 11-nov, que era más optimista:
+
+```bash
+python sim/sim_world.py espejo_circuito --ideal
+```
+
+| Qué | Realista (JSON, 9-nov) | Ideal (`--ideal`) |
+|---|---|---|
+| Horizontal | `1.45·(\|rc\| − 5)` cm/s, respuesta ~0.75 s | `1.7·(\|rc\| − 5)`, ~0.4 s |
+| Vertical | `0.4·(\|rc\| − 3)` subiendo, `0.15·…` bajando | `0.9·…` y `0.5·…` |
+| Giro | `0.75·(\|rc\| − 14)` °/s: con rc 15 casi no gira | `0.73·(\|rc\| − 6.6)` |
+| Tras soltar un giro | sigue girando ~8° más, despacio (~2 s) | se detiene en ~0.15 s |
+| Atraso del video | 170 ms | 0 |
+| Deriva con rc en 0 | ~5 cm/s, aleatoria | ~2 cm/s |
+| Hundimiento al avanzar | 1 cm/s | 15 cm/s solo en piso |
+| Despegue | sube a 65–74 cm (+9 de pico); "ok" a los 4.5–7.8 s | 65 cm; "ok" a los 2.2 s |
+| Temperatura | empieza en 65 °C y sube 6.5 °C/min volando | siempre 65 °C |
+
+En los dos modos:
+
 - **Tras un flip:** cae ~50 cm/s de 1 a 3 s, y subir a fondo lo frena.
 - **Sensores:** `h` que deriva y tof con ruido.
 - **Viento:** aleatorio, más un empuje fijo opcional (`bias`).
-- **En piso**, por defecto:
-  - se hunde 15 cm/s al avanzar;
-  - pedir adelante y de lado a la vez lo frena (×0.55).
+- **En piso**, pedir adelante y de lado a la vez lo frena (×0.55; `combo`).
 - El paso de la física usa el **tiempo real transcurrido**. Con un paso fijo, cuando el CPU
   se saturaba el dron iba más lento y falseaba las velocidades.
 
-El simulador es **optimista**: no modela desenfoque, IMU descalibrado ni hélices dañadas.
-Si algo falla en simulación, seguro falla en el dron; al revés no.
+**Despegues que fallan** (escenarios aparte, como el 9-nov): `despegue="cae"` sube ~40 cm y
+regresa al piso mientras su `h` dice que sube; `"alto"` sube solo a ~141 cm; `"sin_ok"` no
+contesta "ok" (pasó en 2 de 14 despegues).
 
-### Qué tan optimista es (medido el 10-nov contra los vuelos del 9-nov)
+Aun así, el simulador no modela desenfoque, IMU descalibrado, hélices dañadas ni el
+sistema de visión de la panza. Si algo falla en simulación, seguro falla en el dron; al
+revés no.
 
-| Qué | Dron real (9-nov) | Simulador |
-|---|---|---|
-| Giro con `rc_yaw` 15–19 | ≈ 0 °/s (no gira) | 7.6 °/s |
-| Lo que sigue girando tras un giro de 90° | 23–24° | 15–16° |
-| Altura al despegar | 31–141 cm (casi siempre 74–85) | siempre 67–70 cm |
-| Altura avanzando (p10–p90) | 91–105 cm | 97–103 cm |
-| Deriva con `rc` en 0 sobre el tag | ~10 cm/s (solo 4 tramos) | ~4 cm/s |
-| Atraso del video | ~170 ms | 0 |
-| Temperatura | 52–93 °C | siempre 65 °C |
+## ¿Se parece al dron? `sim/comparar_vuelos.py`
 
-Con cuatro de esas diferencias agregadas a mano (giro real, video atrasado 170 ms, deriva
-de ~5 cm/s y hundimiento de 10 cm/s también con espejo), `espejo_circuito` se completó
-igual, con el código actual y con el del 9-nov (`324a07d`). Solo tardó más: 38–40 s en vez
-de 31–34 s. O sea, el simulador **no reproduce lo que falló el 9-nov** (despegue, deriva,
-rumbo que sigue girando). Esos problemas vienen del dron y no están modelados. Sirve para
-la lógica de la misión y la geometría de la cámara, no para ajustar el control fino.
+Le pasa al modelo del simulador los mismos `rc` que recibió el dron en vuelos reales y
+compara lo que hizo cada uno: rumbo, altura y, con espejo, la posición del tag. También
+compara despegue, deriva y temperatura. Tarda segundos.
+
+```bash
+python sim/comparar_vuelos.py                       # la sesión más reciente de sesiones/
+```
+```bash
+python sim/comparar_vuelos.py sesiones/2026-11-09 --ajustar            # sugiere valores
+```
+```bash
+python sim/comparar_vuelos.py sesiones/2026-11-09 --ajustar --guardar  # y los escribe
+```
+
+**Córrelo al terminar cada sesión de laboratorio** ([`laboratorio.md`](laboratorio.md)).
+Si cambias de Tello o de clip, reajusta con los vuelos nuevos. `--ajustar` solo mueve un
+valor si mejora el error al menos 1 %, así que con pocos datos deja lo que había. El
+atraso del video no se ajusta: se midió aparte (~170 ms, [`tello.md`](tello.md)).
+
+Con los 14 vuelos del 9-nov:
+
+| | real | modelo ideal | ajustado |
+|---|---|---|---|
+| Giro con rc 15–19 (°/s) | −1.0 | 6.1 | −1.4 |
+| Giro con rc 50+ (°/s) | 37.5 | 36.4 | 37.4 |
+| Sigue girando tras un giro (°) | 8.0 | −4.4 | 8.0 |
+| Subir con rc 10–19 (cm/s) | 4.2 | 11.5 | 5.3 |
+| Error al predecir 1.5 s de rumbo | | 1.2° | 0.9° |
+| Error al predecir 1.5 s de altura | | 6.2 cm | 4.6 cm |
+| Error al predecir 1.5 s de posición del tag | | 14.2 cm | 10.0 cm |
+
+Ojo: son pocos datos (128 tramos de 1.5 s; solo 37 con tag visible). En los vuelos de
+octubre, sin el clip actual, el dron casi no seguía girando tras los giros (2° en 23 giros,
+contra 8° en los 3 del 9-nov). Por eso el ajuste usa solo el 9-nov, que es el clip y los
+drones de ahora. Cada sesión nueva lo mejora.
+
+### Regresión con el dron realista (11-nov)
+
+Los 46 escenarios con `config/sim_tello.json` contra `--ideal` (bitácoras locales en
+`sim/logs/regresion_realista.txt` y `regresion_ideal.txt`):
+
+- **Espejo (misión principal):** todo pasa igual, salvo `espejo_inicio`, que falló 1 de 5
+  veces. Entre el despegue y la subida a 100 cm pasan ~12 s, y con la deriva medida
+  (~5 cm/s) el dron se corrió 35 cm de lado. A 100 cm la cámara ve ±52 cm de lado, así que
+  pasó junto al tag 2 sin verlo. Es lo mismo que pasó el 9-nov ("se iba a la derecha").
+  También se ve el rumbo que sigue girando tras un giro (−90° → −93°).
+- **Despegues que fallan:** `espejo_despegue_cae` aterriza con el aviso "el despegue se vino
+  abajo"; `espejo_despegue_alto` y `espejo_sin_ok` completan el recorrido.
+- **Piso:** todo pasa salvo `piso_hundimiento`. Es una prueba de estrés que lo hunde
+  20 cm/s, y con lo que de verdad sube el Tello (~0.4·rc) no lo compensa; aterriza a salvo.
+- **Pared (ya no se usa):** `circuito`, `ladeado`, `angulo38_deriva` y `tag_alto` ya no
+  completan, y `pausa` choca con la pared. No se corrigió: esa misión ya no es prioridad.
+
+Con la deriva aleatoria **el resultado puede cambiar entre corridas**. Si un escenario
+falla, repítelo (`python sim/sim_world.py espejo_inicio espejo_inicio espejo_inicio`) para
+saber si falla siempre o solo a veces.
 
 ## Escenarios
 
@@ -98,6 +159,9 @@ la lógica de la misión y la geometría de la cámara, no para ajustar el contr
 | `espejo_quieto` | sin avanzar: el tag ya está debajo, corrido y girado |
 | `espejo_deriva`, `espejo_flip` | viento y flip con espejo |
 | `espejo_inclinado`, `espejo_inclinado_sin_config` | espejo inclinado 8°, con y sin la medida en la config |
+| `espejo_despegue_cae` | el despegue sube ~40 cm y regresa al piso: aterrizar con aviso |
+| `espejo_despegue_alto` | el despegue sube solo a ~141 cm: bajar a crucero y seguir |
+| `espejo_sin_ok` | el Tello no contesta "ok" al despegar: seguir tras asentarse |
 
 **Tags en el piso, cámara al frente** (`mision_piso.py`)
 

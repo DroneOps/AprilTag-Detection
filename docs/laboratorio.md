@@ -258,6 +258,20 @@ Luego haz commit y push de `sesiones/`. Al cerrar el día, agrega una entrada a
 [`bitacora.md`](bitacora.md). Para ver un vuelo estado por estado:
 `python scripts/traza_vuelo.py logs/<archivo>.csv`.
 
+Por último, revisa si el simulador se sigue pareciendo al dron (toma la sesión que acabas de
+guardar; ver [`simulador.md`](simulador.md)):
+
+```bash
+python sim/comparar_vuelos.py
+```
+
+Si alguna fila de "real" y "simulador" quedó muy distinta, o si cambiaste de Tello o de clip,
+reajusta y sube `config/sim_tello.json`:
+
+```bash
+python sim/comparar_vuelos.py sesiones/<fecha> --ajustar --guardar
+```
+
 ## Reglas rápidas
 
 | Situación | Qué hacer |
