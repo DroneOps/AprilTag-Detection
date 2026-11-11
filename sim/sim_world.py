@@ -18,19 +18,26 @@ Escenarios: circuito pausa giro360 sube_ciego perdido flip8 caja deriva
             angulo38_deriva flip_prueba flip_prueba_bateria flip4 flip4_bateria tag_alto
             tag_bajo rc_calib sin_tags espejo_uno espejo_inicio espejo_cerca espejo_girado espejo_circuito espejo_quieto
             espejo_deriva espejo_flip espejo_inclinado espejo_inclinado_sin_config
+            espejo_despegue_cae espejo_despegue_alto espejo_sin_ok
             piso_uno piso_girado piso_circuito piso_deriva piso_flip piso_lento piso_rapido
             piso_hundimiento piso_lado piso_tof_falso piso_imu_mal
 
 Corre en tiempo real (cada escenario tarda 30–70 s). Las bitácoras van a sim/logs/.
+
+El dron simulado se comporta según config/sim_tello.json (lo medido en vuelos reales; se
+ajusta con sim/comparar_vuelos.py). Con --ideal usa el modelo de antes del 11-nov:
+    python sim/sim_world.py espejo_circuito --ideal
 """
 from __future__ import annotations
 
+import collections
 import json
 import math
 import subprocess
 import sys
 import threading
 import time
+from dataclasses import dataclass, fields
 from pathlib import Path
 
 import cv2
@@ -50,6 +57,100 @@ K, D = np.array(CAL["K"]), np.array(CAL["dist"])
 PITCH = math.radians(11)  # medido en las pruebas de piso
 DICT = cv2.aruco.getPredefinedDictionary(cv2.aruco.DICT_APRILTAG_25h9)
 OVER: dict = {}  # cambios a MissionConfig por escenario
+
+
+@dataclass
+class SimParams:
+    """Cómo se comporta el dron simulado. Los valores por defecto son el modelo "ideal" (el de
+    antes del 11-nov). config/sim_tello.json los sobrescribe con lo medido en vuelos reales
+    (sim/comparar_vuelos.py --ajustar). Con --ideal se ignora el JSON."""
+    fuente: str = ""  # de dónde salieron los valores
+    # horizontal: cm/s = ganancia·(|rc| − zona muerta); vertical igual, más rápido subiendo
+    avance_ganancia: float = 1.7
+    avance_zona_muerta: float = 5.0
+    subir_ganancia: float = 0.9
+    bajar_ganancia: float = 0.5
+    vertical_zona_muerta: float = 3.0
+    respuesta_s: float = 0.4  # tiempo en llegar a la velocidad horizontal pedida
+    vertical_respuesta_s: float = 0.4  # ...y a la vertical
+    # giro: °/s = ganancia·(|rc| − zona muerta); "sigue" = parte del giro que continúa después
+    # de soltar el mando y se apaga en giro_sigue_s (real 9-nov: de 88° siguió hasta 101°)
+    giro_ganancia: float = 0.73
+    giro_zona_muerta: float = 6.6
+    giro_respuesta_s: float = 0.15
+    giro_sigue: float = 0.0
+    giro_sigue_s: float = 2.0
+    mando_atraso_s: float = 0.0  # el rc tarda esto en hacer efecto
+    video_atraso_s: float = 0.0  # la imagen llega con este atraso (real ~0.17 s)
+    deriva_cm_s: float = 2.0  # viento/deriva aleatoria con rc en 0 (desviación)
+    hundimiento_cm_s: float | None = None  # al avanzar; None: 15 en piso y 0 en otro caso
+    combo: float | None = None  # adelante y de lado a la vez; None: 0.55 en piso y 1 en otro caso
+    # despegue: sube a pico y se asienta en una altura entre los dos valores; el "ok" llega
+    # entre despegue_ok_s (null: al llegar arriba, como el modelo ideal)
+    despegue_cm: tuple = (65.0, 65.0)
+    despegue_pico_cm: float = 0.0
+    despegue_ok_s: tuple | None = None
+    temp_inicial_c: float = 65.0
+    temp_c_por_min: float = 0.0  # cuánto se calienta volando
+
+    @classmethod
+    def load(cls, path: Path) -> SimParams:
+        data = json.loads(path.read_text()) if path.exists() else {}
+        unknown = set(data) - {f.name for f in fields(cls)}
+        if unknown:
+            raise SystemExit(f"{path}: claves desconocidas {sorted(unknown)}")
+        for k in ("despegue_cm", "despegue_ok_s"):
+            if isinstance(data.get(k), list):
+                data[k] = tuple(data[k])
+        return cls(**data)
+
+
+SIM_JSON = ROOT / "config" / "sim_tello.json"
+P = SimParams.load(SIM_JSON)  # --ideal lo cambia por SimParams()
+
+
+def mando(rc: float, zona: float, ganancia: float) -> float:
+    """Velocidad estable (cm/s o °/s) que da un rc, con su zona muerta."""
+    return math.copysign(ganancia * (abs(rc) - zona), rc) if abs(rc) > zona else 0.0
+
+
+def paso_giro(rate: float, sigue: float, yr: float, dt: float, p: SimParams) -> tuple[float, float]:
+    """Un paso del giro. El rumbo avanza (rate + sigue)·dt."""
+    w = mando(yr, p.giro_zona_muerta, p.giro_ganancia)
+    rate += (w - rate) * min(1.0, dt / max(p.giro_respuesta_s, 1e-3))
+    sigue += (p.giro_sigue * w - sigue) * min(1.0, dt / max(p.giro_sigue_s, 1e-3))
+    return rate, sigue
+
+
+def paso_vel(v, rc, dt: float, p: SimParams, speed_factor=1.0, combo=1.0, sag=0.0) -> list[float]:
+    """Un paso de la velocidad [adelante, derecha, arriba] en el marco del dron."""
+    lr, fb, ud = rc[0], rc[1], rc[2]
+    g = p.avance_ganancia * speed_factor
+    want = [mando(fb, p.avance_zona_muerta, g), mando(lr, p.avance_zona_muerta, g),
+            mando(ud, p.vertical_zona_muerta, p.subir_ganancia if ud > 0 else p.bajar_ganancia)]
+    if want[0] and want[1]:
+        want[0], want[1] = want[0] * combo, want[1] * combo
+    if sag and want[0]:
+        want[2] -= sag  # se hunde avanzando, aunque se pida subir un poco (real)
+    k = min(1.0, dt / max(p.respuesta_s, 1e-3))
+    kz = min(1.0, dt / max(p.vertical_respuesta_s, 1e-3))
+    return [v[0] + (want[0] - v[0]) * k, v[1] + (want[1] - v[1]) * k, v[2] + (want[2] - v[2]) * kz]
+
+
+class RcAtrasado:
+    """El rc que de verdad mueve al dron: el enviado hace atraso_s."""
+
+    def __init__(self) -> None:
+        self.hist: collections.deque = collections.deque()
+
+    def put(self, t: float, rc) -> None:
+        self.hist.append((t, tuple(rc)))
+
+    def at(self, t: float, atraso: float):
+        lim = t - atraso
+        while len(self.hist) > 1 and self.hist[1][0] <= lim:
+            self.hist.popleft()
+        return self.hist[0][1] if self.hist and self.hist[0][0] <= lim else (0, 0, 0, 0)
 
 
 class Tag:
@@ -76,9 +177,20 @@ def dead(rc: float, db: float = 5) -> float:
 class SimTello:
     """Imita la interfaz de djitellopy que usa la misión."""
 
-    def __init__(self, tags, drift=2.0, seed=0, boxes=(), bias=(0.0, 0.0), yaw0=0.0, bat=90.0,
+    def __init__(self, tags, drift=None, seed=0, boxes=(), bias=(0.0, 0.0), yaw0=0.0, bat=90.0,
                  mirror=None, mirror_tilt=0.0, speed_factor=1.0, sag=0.0, combo=1.0, glitches=(),
-                 imu_mal=None) -> None:
+                 imu_mal=None, despegue="normal", temp=None, params=None, hilo=True) -> None:
+        # params: SimParams (por defecto P, de config/sim_tello.json). hilo=False: sin hilo de
+        # física; quien lo use llama step() (sim/comparar_vuelos.py).
+        # despegue: "normal", "alto" (sube solo a ~141 cm, real 9-nov) o "cae" (sube ~40 cm y
+        # regresa al piso mientras su 'h' dice que sube, real 9-nov)
+        self.p = params or P
+        drift = self.p.deriva_cm_s if drift is None else drift
+        self.despegue, self.t_takeoff, self._ok_sent = despegue, None, False
+        self.temp = self.p.temp_inicial_c if temp is None else temp
+        self._rc = RcAtrasado()
+        self.yaw_sigue = 0.0
+        self._goal, self._ok_t, self._peaked = None, None, False
         # speed_factor: la misma rc mueve más o menos (real: rc 15 dio 12–20 cm/s entre vuelos).
         # sag: cm/s que se hunde al avanzar sin rc vertical (real: 60 -> 33 cm a 60 cm de altura).
         self.speed_factor, self.sag, self.vz_sink = speed_factor, sag, 0.0
@@ -106,87 +218,117 @@ class SimTello:
         self.min_z_after_takeoff = 1e9
         self.rng, self.drift, self.wind = np.random.default_rng(seed), drift, np.zeros(2)
         self.t0 = time.monotonic()
+        self._k = 0
         self.lock = threading.Lock()
         self._stop = threading.Event()
-        threading.Thread(target=self._loop, daemon=True).start()
+        if hilo:
+            threading.Thread(target=self._loop, daemon=True).start()
 
     def _loop(self) -> None:
-        period, k, last = 0.02, 0, time.monotonic()
+        period, last = 0.02, time.monotonic()
         while not self._stop.wait(period):
             with self.lock:
                 # el paso es el tiempo real transcurrido: con el CPU ocupado (varios escenarios
                 # dibujando y detectando) el ciclo se atrasa, y un paso fijo frenaba al dron
                 now = time.monotonic()
                 dt, last = min(0.1, now - last), now
-                if self.mode == "takeoff":  # el despegue real deja 50–75 cm
-                    self.z = min(65.0, self.z + 30 * dt)
-                    if self.z >= 65:
-                        self.mode = "air"
-                        self.udp["responses"].append(b"ok")
-                elif self.mode == "land":
-                    self.z = max(0.0, self.z - 40 * dt)
-                    if self.z <= 0:
-                        self.mode = "ground"
-                elif self.mode == "air" and now - self.t_flip < 1.0:
-                    # flip: una vuelta en ~1 s, baja ~20 cm, se corre ~30 cm y queda un poco girado;
-                    # el tof da basura mientras voltea (real: 154, 454, 567)
-                    frac = (now - self.t_flip) / 1.0
-                    self.pitch = int(F.wrap_deg(360 * frac))
-                    self.tof_garbage = int(self.rng.uniform(150, 600)) if 0.2 < frac < 0.8 else None
-                    self.z = max(0.0, self.z - 20 * dt)
-                    ps = math.radians(self.yaw)
-                    sgn = {"f": 1, "b": -1}.get(self.flip_dir, 0)
-                    self.x += sgn * 30 * math.sin(ps) * dt
-                    self.y += sgn * 30 * math.cos(ps) * dt
-                    self.yaw = F.wrap_deg(self.yaw + 6 * dt)
-                elif self.mode == "air" and now < self.sink_end:
-                    # tras el flip el Tello CAE ~50 cm/s (real, 26-oct: de 130 al piso) y su
-                    # propia altura no se entera; pedir subir a fondo lo frena en ~1 s
-                    self.pitch, self.tof_garbage = 0, None
-                    climb = 1.25 * dead(self.rc[2], 3) if now - self.t_flip >= 1.2 and self.rc[2] > 0 else 0.0
-                    self.vz_sink += ((-50 + climb) - self.vz_sink) * min(1, dt / 0.3)
-                    self.z = max(0.0, self.z + self.vz_sink * dt)
-                    if self.z <= 0:
-                        self.mode = "ground"  # tocó el piso: el Tello apaga motores
-                elif self.mode == "air":
-                    lr, fb, ud, yr = self.rc
-                    gain = 1.7 * self.speed_factor
-                    # subir es más rápido que bajar (real 27-oct: rc 40 subió ~40 cm/s; rc -40 bajó ~7)
-                    want = np.array([gain * dead(fb), gain * dead(lr), (0.9 if ud > 0 else 0.5) * dead(ud, 3)])
-                    if dead(fb) and dead(lr):
-                        want[:2] *= self.combo
-                    if self.sag and dead(fb):
-                        want[2] -= self.sag  # se hunde avanzando, aunque se pida subir un poco (real)
-                    self.v += (want - self.v) * min(1, dt / 0.4)
-                    wy = math.copysign(max(0, 0.73 * (abs(yr) - 6.6)), yr)
-                    self.yaw_rate += (wy - self.yaw_rate) * min(1, dt / 0.15)
-                    self.yaw = F.wrap_deg(self.yaw + self.yaw_rate * dt)
-                    self.wind = 0.98 * self.wind + self.rng.normal(0, self.drift * 0.2, 2)
-                    ps = math.radians(self.yaw)
-                    self.x += (self.v[0] * math.sin(ps) + self.v[1] * math.cos(ps) + self.wind[0] + self.bias[0]) * dt
-                    self.y += (self.v[0] * math.cos(ps) - self.v[1] * math.sin(ps) + self.wind[1] + self.bias[1]) * dt
-                    self.z = max(0.0, self.z + self.v[2] * dt)
-                    if self.imu_mal and now - self.t0 >= self.imu_mal[0]:
-                        self.x += self.imu_mal[1] * math.sin(ps) * dt
-                        self.y += self.imu_mal[1] * math.cos(ps) * dt
-                        self.z = max(0.0, self.z + self.imu_mal[2] * dt)
-                    self._check_walls()
-                    self.min_z_after_takeoff = min(self.min_z_after_takeoff, self.z)
-                k += 1
-                if k % 5 == 0:  # estado UDP a 10 Hz
-                    self.bat -= 0.01
-                    floor = max([bh for (x0, y0, x1, y1, bh) in self.boxes
-                                 if x0 <= self.x <= x1 and y0 <= self.y <= y1] or [0])
-                    h_bad = self.z * 0.6 - 3 * (now - self.t0)  # 'h' que deriva, como el real
-                    tof = int(self.z - floor + 10 + self.rng.normal(0, 2)) if self.z > 0 else 10
-                    if self.tof_garbage is not None:
-                        tof = self.tof_garbage
-                    for g0, g1, gv in self.glitches:
-                        if g0 <= now - self.t0 < g1:
-                            tof = gv
-                    self.udp["state"] = {"h": int(round(h_bad / 10) * 10), "tof": max(10, tof),
-                                         "bat": int(self.bat), "yaw": int(round(self.yaw)),
-                                         "temph": 65, "pitch": self.pitch, "roll": 0, "vgx": 0, "vgy": 0, "vgz": 0}
+                self.step(dt, now)
+
+    def _takeoff_step(self, dt: float, now: float) -> None:
+        """Despegue: el Tello sube solo e ignora el rc hasta su "ok" (o hasta asentarse sin ok)."""
+        p, el = self.p, now - self.t_takeoff
+        if self.despegue == "cae":  # sube ~40 cm y se regresa al piso; nunca contesta ok
+            goal, ok_t = (40.0 if el < 2.5 else 0.0), None
+        elif self.despegue == "alto":  # sube solo hasta ~141 cm (real 9-nov: "ok" a los 10 s)
+            goal, ok_t = 141.0, 10.0
+        else:  # "normal" o "sin_ok" (real 9-nov: 2 de 14 despegues no contestaron ok)
+            if self._goal is None:
+                lo, hi = p.despegue_cm
+                self._goal = float(self.rng.uniform(lo, hi)) if hi > lo else float(lo)
+                self._ok_t = float(self.rng.uniform(*p.despegue_ok_s)) if p.despegue_ok_s else None
+                if self.despegue == "sin_ok" and self._ok_t is None:
+                    self._ok_t = 7.5
+            self._peaked = self._peaked or self.z >= self._goal + p.despegue_pico_cm - 0.5
+            goal = self._goal if self._peaked else self._goal + p.despegue_pico_cm
+            ok_t = self._ok_t
+        speed = 30.0 if goal > self.z else 15.0
+        self.z = goal if abs(goal - self.z) <= speed * dt else self.z + math.copysign(speed * dt, goal - self.z)
+        if ok_t is None:
+            if self.despegue == "normal" and self.z >= self._goal:  # modelo ideal: ok al llegar arriba
+                self.mode = "air"
+                self.udp["responses"].append(b"ok")
+        elif el >= ok_t:
+            self.mode = "air"  # ya obedece el rc
+            if self.despegue != "sin_ok":
+                self.udp["responses"].append(b"ok")
+
+    def step(self, dt: float, now: float) -> None:
+        """Un paso de la física (lo llama el hilo o, sin hilo, quien lo use)."""
+        p = self.p
+        rc = self._rc.at(now, p.mando_atraso_s)  # el rc que ya hizo efecto
+        if self.mode == "takeoff":
+            self._takeoff_step(dt, now)
+        elif self.mode == "land":
+            self.z = max(0.0, self.z - 40 * dt)
+            if self.z <= 0:
+                self.mode = "ground"
+        elif self.mode == "air" and now - self.t_flip < 1.0:
+            # flip: una vuelta en ~1 s, baja ~20 cm, se corre ~30 cm y queda un poco girado;
+            # el tof da basura mientras voltea (real: 154, 454, 567)
+            frac = (now - self.t_flip) / 1.0
+            self.pitch = int(F.wrap_deg(360 * frac))
+            self.tof_garbage = int(self.rng.uniform(150, 600)) if 0.2 < frac < 0.8 else None
+            self.z = max(0.0, self.z - 20 * dt)
+            ps = math.radians(self.yaw)
+            sgn = {"f": 1, "b": -1}.get(self.flip_dir, 0)
+            self.x += sgn * 30 * math.sin(ps) * dt
+            self.y += sgn * 30 * math.cos(ps) * dt
+            self.yaw = F.wrap_deg(self.yaw + 6 * dt)
+        elif self.mode == "air" and now < self.sink_end:
+            # tras el flip el Tello CAE ~50 cm/s (real, 26-oct: de 130 al piso) y su
+            # propia altura no se entera; pedir subir a fondo lo frena en ~1 s
+            self.pitch, self.tof_garbage = 0, None
+            climb = 1.25 * dead(rc[2], 3) if now - self.t_flip >= 1.2 and rc[2] > 0 else 0.0
+            self.vz_sink += ((-50 + climb) - self.vz_sink) * min(1, dt / 0.3)
+            self.z = max(0.0, self.z + self.vz_sink * dt)
+            if self.z <= 0:
+                self.mode = "ground"  # tocó el piso: el Tello apaga motores
+        elif self.mode == "air":
+            # subir es más rápido que bajar (real 27-oct: rc 40 subió ~40 cm/s; rc -40 bajó ~7)
+            self.v = np.array(paso_vel(self.v, rc, dt, p, self.speed_factor, self.combo, self.sag))
+            self.yaw_rate, self.yaw_sigue = paso_giro(self.yaw_rate, self.yaw_sigue, rc[3], dt, p)
+            self.yaw = F.wrap_deg(self.yaw + (self.yaw_rate + self.yaw_sigue) * dt)
+            self.wind = 0.98 * self.wind + self.rng.normal(0, self.drift * 0.2, 2)
+            ps = math.radians(self.yaw)
+            self.x += (self.v[0] * math.sin(ps) + self.v[1] * math.cos(ps) + self.wind[0] + self.bias[0]) * dt
+            self.y += (self.v[0] * math.cos(ps) - self.v[1] * math.sin(ps) + self.wind[1] + self.bias[1]) * dt
+            self.z = max(0.0, self.z + self.v[2] * dt)
+            if self.imu_mal and now - self.t0 >= self.imu_mal[0]:
+                self.x += self.imu_mal[1] * math.sin(ps) * dt
+                self.y += self.imu_mal[1] * math.cos(ps) * dt
+                self.z = max(0.0, self.z + self.imu_mal[2] * dt)
+            self._check_walls()
+            self.min_z_after_takeoff = min(self.min_z_after_takeoff, self.z)
+        if self.mode != "ground":
+            self.temp += p.temp_c_por_min / 60 * dt
+        self._k += 1
+        if self._k % 5 == 0:  # estado UDP a 10 Hz
+            self.bat -= 0.01
+            floor = max([bh for (x0, y0, x1, y1, bh) in self.boxes
+                         if x0 <= self.x <= x1 and y0 <= self.y <= y1] or [0])
+            h_bad = self.z * 0.6 - 3 * (now - self.t0)  # 'h' que deriva, como el real
+            if self.mode == "takeoff" and self.despegue == "cae":  # real 9-nov: h subía y el tof bajaba
+                h_bad = 60 + 10 * (now - self.t_takeoff)
+            tof = int(self.z - floor + 10 + self.rng.normal(0, 2)) if self.z > 0 else 10
+            if self.tof_garbage is not None:
+                tof = self.tof_garbage
+            for g0, g1, gv in self.glitches:
+                if g0 <= now - self.t0 < g1:
+                    tof = gv
+            self.udp["state"] = {"h": int(round(h_bad / 10) * 10), "tof": max(10, tof),
+                                 "bat": int(self.bat), "yaw": int(round(self.yaw)),
+                                 "temph": int(round(self.temp)), "pitch": self.pitch, "roll": 0,
+                                 "vgx": 0, "vgy": 0, "vgz": 0}
 
     def _check_walls(self) -> None:
         p = np.array([self.x, self.y, self.z])
@@ -204,13 +346,17 @@ class SimTello:
 
     def send_rc_control(self, *rc) -> None:
         with self.lock:
-            self.rc = rc
+            self.set_rc(rc, time.monotonic())
+
+    def set_rc(self, rc, t: float) -> None:
+        self.rc = tuple(rc)
+        self._rc.put(t, rc)
 
     def send_command_without_return(self, c: str) -> None:
         with self.lock:
             self.sent.append(c)
             if c == "takeoff" and self.mode == "ground":
-                self.mode = "takeoff"
+                self.mode, self.t_takeoff, self._goal, self._peaked = "takeoff", time.monotonic(), None, False
             elif c == "land" and self.mode != "ground":
                 self.mode = "land"
             elif c == "emergency":
@@ -270,12 +416,15 @@ OVER_E: dict = {}  # cambios a MirrorConfig por escenario
 OVER_P: dict = {}  # cambios a FloorConfig por escenario
 
 
-def run(name, tags, limit=120, events=None, drift=2.0, boxes=(), bias=(0.0, 0.0), yaw0=0.0, bat=90.0,
+def run(name, tags, limit=120, events=None, drift=None, boxes=(), bias=(0.0, 0.0), yaw0=0.0, bat=90.0,
         flip_test=None, rc_calib=False, mirror=None, mirror_tilt=0.0, start=(0.0, 0.0), piso=False,
-        speed_factor=1.0, sag=None, combo=None, glitches=(), imu_mal=None):
-    # piso: con lo visto en vuelo real (27-oct) se hunde al avanzar y el mando combinado lo frena
-    sag = (15.0 if piso else 0.0) if sag is None else sag
-    combo = (0.55 if piso else 1.0) if combo is None else combo
+        speed_factor=1.0, sag=None, combo=None, glitches=(), imu_mal=None, despegue="normal", temp=None):
+    # hundimiento y mando combinado: los de config/sim_tello.json; en el modelo ideal, solo en
+    # piso (lo visto en vuelo real el 27-oct)
+    if sag is None:
+        sag = P.hundimiento_cm_s if P.hundimiento_cm_s is not None else (15.0 if piso else 0.0)
+    if combo is None:
+        combo = P.combo if P.combo is not None else (0.55 if piso else 1.0)
     cfg = F.FlightConfig.load(ROOT / "config" / "flight.json")
     mcfg = M.MissionConfig.load(ROOT / "config" / "mission_tags.json")
     cfg.hover_s, cfg.max_flight_s = mcfg.start_hover_s, mcfg.mission_max_s
@@ -283,7 +432,7 @@ def run(name, tags, limit=120, events=None, drift=2.0, boxes=(), bias=(0.0, 0.0)
         setattr(mcfg, k, v)
     sim = SimTello(tags, drift=drift, boxes=boxes, bias=bias, yaw0=yaw0, bat=bat, mirror=mirror,
                    mirror_tilt=mirror_tilt, speed_factor=speed_factor, sag=sag, combo=combo, glitches=glitches,
-                   imu_mal=imu_mal)
+                   imu_mal=imu_mal, despegue=despegue, temp=temp)
     sim.x, sim.y = start
     log = ROOT / "sim" / "logs" / f"{name}.csv"
     if flip_test:  # prueba de first_flight.py --flip-test, sin misión
@@ -311,8 +460,14 @@ def run(name, tags, limit=120, events=None, drift=2.0, boxes=(), bias=(0.0, 0.0)
     stop = threading.Event()
 
     def video() -> None:
+        frames: collections.deque = collections.deque()  # el video real llega atrasado (~170 ms)
         while not stop.is_set():
-            mis.on_frame(sim.render(), time.monotonic()) if not flip_test else sim.render()
+            now = time.monotonic()
+            frames.append((now, sim.render()))
+            while len(frames) > 1 and now - frames[1][0] >= P.video_atraso_s:
+                frames.popleft()
+            if not flip_test:
+                mis.on_frame(frames[0][1], now)
             mis.video_age = 0.0
             time.sleep(1 / 30)
 
@@ -423,6 +578,12 @@ def scenario(sc: str) -> None:
             run(sc, [floor(2, 0, 90)], mirror="v", mirror_tilt=8.0)
         elif sc == "espejo_inclinado_sin_config":  # mismo espejo sin decirle a la misión: se centra mal
             run(sc, [floor(2, 0, 90)], mirror="v", mirror_tilt=8.0)
+        elif sc == "espejo_despegue_cae":  # sube ~40 cm y regresa al piso (real 9-nov): aterrizar con aviso
+            run(sc, [floor(2, 0, 90)], mirror="v", despegue="cae", limit=40)
+        elif sc == "espejo_despegue_alto":  # sube solo a ~141 cm (real 9-nov): bajar a crucero y seguir
+            run(sc, [floor(2, 0, 90), floor(7, -70, 90)], mirror="v", despegue="alto")
+        elif sc == "espejo_sin_ok":  # el Tello no contesta "ok" al despegar (real 9-nov, 2 de 14)
+            run(sc, [floor(2, 0, 90), floor(7, -70, 90)], mirror="v", despegue="sin_ok")
         else:
             raise SystemExit(f"escenario desconocido: {sc}")
     # ---- tags en el piso con la cámara al frente (sin espejo)
@@ -467,20 +628,31 @@ ALL = ["circuito", "pausa", "giro360", "sube_ciego", "perdido", "flip8", "caja",
        "espejo_uno", "espejo_inicio", "espejo_cerca", "espejo_girado", "espejo_circuito", "espejo_quieto", "espejo_deriva",
        "espejo_flip",
        "espejo_inclinado", "espejo_inclinado_sin_config",
+       "espejo_despegue_cae", "espejo_despegue_alto", "espejo_sin_ok",
        "piso_uno", "piso_girado", "piso_circuito", "piso_deriva", "piso_flip", "piso_lento", "piso_rapido",
        "piso_hundimiento", "piso_lado", "piso_tof_falso", "piso_imu_mal"]
 
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
+    args = sys.argv[1:]
+    ideal = "--ideal" in args
+    args = [a for a in args if a != "--ideal"]
+    if not args:
         raise SystemExit(__doc__)
-    names = ALL if sys.argv[1] == "todos" else sys.argv[1:]
+    if ideal:  # el modelo de antes del 11-nov, sin lo medido en config/sim_tello.json
+        P = SimParams()
+    dron = "ideal (--ideal)" if ideal else str(SIM_JSON.relative_to(ROOT)) if SIM_JSON.exists() else "ideal (no hay config/sim_tello.json)"
+    print(f"[sim] dron: {dron}", flush=True)
+    names = ALL if args[0] == "todos" else args
     if len(names) == 1:
         scenario(names[0])
     else:  # en paralelo, en tandas: con demasiados a la vez el CPU no alcanza, la visión
         # se atrasa y los acercamientos se alargan por algo que en vuelo real no pasa
         batch = 4
+        extra = ["--ideal"] if ideal else []
         for i in range(0, len(names), batch):
-            procs = [subprocess.Popen([sys.executable, __file__, n], stdout=subprocess.PIPE, text=True)
+            procs = [subprocess.Popen([sys.executable, __file__, n] + extra, stdout=subprocess.PIPE, text=True)
                      for n in names[i:i + batch]]
             for p in procs:
-                print(p.communicate()[0], end="", flush=True)
+                out = p.communicate()[0]
+                print("".join(ln for ln in out.splitlines(True) if not ln.startswith("[sim] dron:")),
+                      end="", flush=True)

@@ -1,0 +1,31 @@
+{
+  "fuente": "ajustado con 14 vuelos de 2026-11-09 (sim/comparar_vuelos.py); el atraso del video se midió aparte (docs/tello.md); deriva: de todas las sesiones (5.9 cm/s en 7 tramos), el 9-nov tuvo solo 2",
+  "avance_ganancia": 1.45,
+  "avance_zona_muerta": 5.0,
+  "subir_ganancia": 0.4,
+  "bajar_ganancia": 0.15,
+  "vertical_zona_muerta": 3.0,
+  "respuesta_s": 0.75,
+  "vertical_respuesta_s": 0.6,
+  "giro_ganancia": 0.75,
+  "giro_zona_muerta": 14,
+  "giro_respuesta_s": 0.1,
+  "giro_sigue": 0.4,
+  "giro_sigue_s": 2.0,
+  "mando_atraso_s": 0.04,
+  "video_atraso_s": 0.17,
+  "deriva_cm_s": 5.0,
+  "hundimiento_cm_s": 1.0,
+  "combo": null,
+  "despegue_cm": [
+    65.0,
+    74.0
+  ],
+  "despegue_pico_cm": 9.0,
+  "despegue_ok_s": [
+    4.5,
+    7.8
+  ],
+  "temp_inicial_c": 65.0,
+  "temp_c_por_min": 6.5
+}
