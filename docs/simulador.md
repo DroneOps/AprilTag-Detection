@@ -87,7 +87,12 @@ Aun así, el simulador no modela desenfoque, IMU descalibrado, hélices dañadas
 sistema de visión de la panza. Si algo falla en simulación, seguro falla en el dron; al
 revés no.
 
-**Qué tanto reproduce el 11-nov** (`espejo_circuito`, 4 corridas por perfil):
+**El piso** (con espejo) es como el del laboratorio: gris oscuro con cuadrícula de cinta cada
+60 cm. Sirve para que la misión mida con él cuánto se mueve (`sostener_piso`). En el
+simulador, esa medida da 88–98 % del movimiento real, de lado y adelante.
+
+**Qué tanto reproduce el 11-nov** (`espejo_circuito`, 4 corridas por perfil, misión sin
+`sostener_piso`):
 
 - `--dron 7`: ninguna ve un tag; se va 3–4.5 m a la derecha. En el laboratorio, ninguna
   corrida del Tello 7 sin ayuda ejecutó un tag, y varias se pararon porque se iba contra la
@@ -95,6 +100,16 @@ revés no.
 - `--dron 1`: se salta el tag 1 por la deriva del despegue y encuentra primero el 2, como las
   corridas reales 1 y 1.4. El simulador se corre algo más (avanza ~60–100 cm corrido; en lo
   real, ~35–50): falta medir mejor la deriva durante el despegue.
+
+**Con `sostener_piso`** (misión del 11-nov), las mismas 4 corridas:
+
+| Perfil | Sin sostener | Sosteniendo con el piso |
+|---|---|---|
+| `--dron 1` | 0 completas; las 4 se saltan el tag 1 | **3 completas** (1 → 2 → 7) |
+| `--dron 7` | ningún tag | 2 llegan al 7 (2 → 7) y 2 ejecutan el 1 |
+
+Con `center_max` 20 en vez de 15, el Tello 7 ejecutó el tag 1 en 4 de 4. No se cambió: 15
+se eligió en el laboratorio para que no oscilara; hay que probarlo ahí.
 
 ## ¿Se parece al dron? `sim/comparar_vuelos.py`
 

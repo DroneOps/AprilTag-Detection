@@ -5,7 +5,16 @@ Las bitácoras de vuelo (`logs/*.csv`) y los videos están en la laptop, no en e
 
 ## Pendiente ahora
 
-1. **La deriva estando quieto (11-nov), lo más urgente.** Los dos Tellos se van a la derecha
+1. **Probar en el laboratorio `sostener_piso` (11-nov, sin volar todavía): E2b primero**
+   ([`laboratorio.md`](laboratorio.md)), con cada dron, y luego E5. Si se aleja en vez de
+   regresar, ESPACIO y `"sostener_piso": false`. Con el Tello 7, probar también
+   `"center_max": 20` (en el simulador ayudó a no perder el tag al centrarse).
+2. **Decidir en equipo el vigilante "el dron no obedece".** Una sola lectura baja del tof
+   (que baja ≤ 10 cm y regresa > 10) cuenta como bajada, y su regreso se descarta. Así dio
+   una falsa alarma en el simulador, y en las bitácoras reales la del 27-oct 13:50. Filtrar
+   con mediana de 5 la quita, pero tampoco habría avisado en las 1.2, 1.4 y 1.9 del 11-nov,
+   que sí se hundían (26–40 cm en ~3 s). No se cambió.
+3. **La deriva estando quieto (11-nov).** Los dos Tellos se van a la derecha
    en estacionario: el Tello 7 de 15 a 37 cm/s y el Tello 1 ~6–7 cm/s, este también sin
    espejo. Por eso E5 falla: los tags aparecen en la orilla de la vista y se pierden al
    centrarse. En el próximo laboratorio:
@@ -13,25 +22,46 @@ Las bitácoras de vuelo (`logs/*.csv`) y los videos están en la laptop, no en e
    - estacionario de los dos **sobre otro piso**: la cuadrícula de cinta azul se repite mucho
      y podría confundir a la cámara de abajo (sospecha, sin medir);
    - calibrar el IMU antes.
-2. **Corregir la deriva con el piso visto por el espejo.** El 11-nov, la medición de lado con
+4. **Corregir la deriva con el piso visto por el espejo** (hecho el 11-nov, falta probarlo: punto 1). El 11-nov, la medición de lado con
    correlación de fase coincidió en signo con la del tag en 72 % de los tramos. Hacia
    adelante cuesta, porque las rayas de la pista van en la dirección del avance. Mientras,
    probar `advance_lr` en -10 y acortar el tiempo quieto antes de avanzar (`start_hover_s`).
-3. **El Tello 1 falla caliente:** a 68–78 °C no despega o "no obedece"; frío (55 °C) va bien.
+5. **El Tello 1 falla caliente:** a 68–78 °C no despega o "no obedece"; frío (55 °C) va bien.
    Volarlo solo abajo de 65 °C y revisar en la app si es el que avisaba "posicionamiento
    visual no disponible".
-4. **Al perder un tag al centrarse, buscarlo en vez de aterrizar** (4 corridas del 11-nov
+6. **Al perder un tag al centrarse, buscarlo en vez de aterrizar** (hecho el 11-nov, falta probarlo) (4 corridas del 11-nov
    terminaron así). El simulador ya lo reproduce con `--dron 1` y `--dron 7` (deriva medida
    de cada dron): probar ahí cualquier cambio de la misión antes de volar. Falta medir bien la
    deriva durante el despegue: en el simulador se corre más que en lo real.
-5. Con espejo, en orden: **E5 → E6 → E7** ([`laboratorio.md`](laboratorio.md)). Ajustar
+7. Con espejo, en orden: **E5 → E6 → E7** ([`laboratorio.md`](laboratorio.md)). Ajustar
    `advance_timeout_s` y `cruise_alt_cm` según la pista. Enfriar entre corridas: el 11-nov
    se volaron 27 en 26 min.
-6. Respuestas del comité: tamaño de tags, cómo es la trayectoria visible y la etiqueta de
+8. Respuestas del comité: tamaño de tags, cómo es la trayectoria visible y la etiqueta de
    inicio ([`competencia.md`](competencia.md)).
-7. Al cerrar cada sesión, correr `python sim/comparar_vuelos.py` y, si cambió el Tello o el
+9. Al cerrar cada sesión, correr `python sim/comparar_vuelos.py` y, si cambió el Tello o el
    clip, reajustar `config/sim_tello.json` ([`simulador.md`](simulador.md)). Las bitácoras
    del 11-nov dicen en `sesiones/2026-11-11/notas.md` qué dron fue cada una.
+
+## 11-nov (noche) — Simulador con la deriva de cada dron y misión que sostiene su posición
+
+Sin volar. Detalle en [`simulador.md`](simulador.md) y [`arquitectura.md`](arquitectura.md).
+
+- **Simulador:**
+  - perfiles por dron (`--dron 1`, `--dron 7`) con la deriva medida;
+  - hundimiento al pedir lado y adelante a la vez;
+  - corrimiento al girar;
+  - piso con la cuadrícula del laboratorio.
+
+  Reproduce lo del 11-nov: el Tello 7 no ve ningún tag y el Tello 1 se salta el 1.
+  `sim/deriva_video.py` mide la deriva con los videos.
+- **Misión con espejo:** `sostener_piso` mide con el piso cuánto se mueve. Regresa al
+  despegue mientras sube, avanza en línea recta y busca el tag que pierde (antes aterrizaba).
+  - En el simulador, el Tello 1 pasó de 0 a 3 circuitos completos de 4.
+  - Tiene un seguro: si se aleja 80 cm, se apaga (probado con la medida al revés).
+- **Regresión:** sin choques en espejo. Hubo dos en pared y piso por los cambios del
+  simulador, no de la misión: `tag_bajo` chocó con la pared al girar 180° a 65 cm (el
+  corrimiento al girar), y `piso_hundimiento` llegó a 8 cm (estrés de 20 cm/s más el
+  hundimiento combinado).
 
 ## 11-nov (tarde) — E5 con dos Tellos
 

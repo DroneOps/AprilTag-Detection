@@ -99,7 +99,7 @@ Fernando sigue el proyecto por GitHub. Nada debe quedarse solo en la laptop.
 
 | Archivo | Qué es |
 |---|---|
-| `scripts/mision_espejo.py` + `config/mission_espejo.json` | **misión principal**: sube a 100 cm, avanza hasta ver un tag debajo, se centra encima sosteniendo el rumbo (≤12 cm, máximo 8 s), ejecuta y sigue |
+| `scripts/mision_espejo.py` + `config/mission_espejo.json` | **misión principal**: sube a 100 cm, avanza hasta ver un tag debajo, se centra encima sosteniendo el rumbo (≤12 cm, máximo 8 s), ejecuta y sigue. Con `sostener_piso` mide con el piso cuánto se mueve: regresa al despegue mientras sube, avanza en línea recta y busca el tag que pierde |
 | `scripts/mision_piso.py` + `config/mission_piso.json` | respaldo sin espejo: cámara al frente, último metro a ciegas |
 | `scripts/mission_tags.py` + `config/mission_tags.json` | base de las misiones: acciones de cada tag, flip seguro, sostener altura, "el dron no obedece" |
 | `scripts/first_flight.py` + `config/flight.json` | vuelo base, despegue, seguridad, HMI, bitácora; prueba de estacionario, giro y flip |
@@ -164,6 +164,7 @@ Síntomas que ya conocemos:
 | Se hunde ~10–13 cm/s al avanzar | normal en este Tello | lo corrige el sostener altura |
 | Al centrarse oscila ±10 cm | deriva normal (~5 cm/s); el centrado frena con la velocidad del tag | normal; si oscila mucho más, subir `center_kd` |
 | Se va siempre a la derecha (o izquierda) al avanzar sin ver tags | el rumbo sigue rotando tras un giro, o deriva propia del dron o una corriente de aire | revisar `rc_yaw` y `yaw` en la bitácora; ajustar `advance_lr`; apagar ventiladores |
+| `sostener_piso APAGADO: se alejo 80 cm` | la medida del piso empujó al dron hacia afuera, o el piso no tiene textura | ver `piso_der`/`piso_ade` y `piso_q` en la bitácora; si sale al revés, `"sostener_piso": false` y avisar; hacer E2b |
 | Pasa encima de un tag y no lo ve, aunque está en el centro | tag gastado o desteñido (por el espejo el negro ya se ve gris, ~150) | revisar que `deteccion_rescate` esté en `true` (`config/mission_tags.json`); reimprimir el tag; probar con `test_tags.py --espejo` |
 | No encuentra el siguiente tag | estaba lejos o fuera de lo que ve debajo (±39 cm adelante a 100 cm) | subir `advance_timeout_s` o `cruise_alt_cm` |
 | Ignora el primer tag del recorrido | se vio al despegar | revisar `ignorar_inicio` e `inicio_alt_cm` |

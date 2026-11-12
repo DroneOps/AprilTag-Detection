@@ -56,6 +56,23 @@ CRUISE ─▶ ADVANCE ─▶ APPROACH ─▶ EXECUTE ─▶ ADVANCE ... (hasta e
   `yaw`, `alt_to`, `flip_go`, `wait`, `land`. El flip sube primero a 130 cm, voltea
   alejándose del tag y luego recupera la altura en tres fases: frenar, sostener y asentar.
 
+## Sostener la posición con el piso (`mision_espejo.py`, 11-nov)
+
+`FlujoPiso` compara cada cuadro del espejo con el anterior (correlación de fase a 240×180, ~2
+ms) y, con la altura, saca cuánto se movió el dron sobre el piso (derecha, adelante). No
+mide mientras gira.
+
+| Estado | Qué hace con esa medida (`sostener_piso`) |
+|---|---|
+| HOVER, CRUISE | regresar al punto de despegue (se mide desde que empieza a despegar) |
+| ADVANCE | sostener la línea del tramo, solo de lado. El tramo nuevo empieza al terminar de ejecutar un tag |
+| APPROACH, tag perdido | ir a donde debe estar el tag, contando lo que se movió el dron; a los `buscar_s` volver a ADVANCE en vez de aterrizar |
+
+La corrección es un PD (`piso_kp`, `piso_kd`) sumado al rc de la misión. Si el dron se aleja
+más de `piso_limite_cm` de donde debía estar, se apaga para todo el vuelo: la medida
+podría estar al revés. Va en la bitácora en `piso_der`, `piso_ade`, `piso_vder`, `piso_vade`
+y `piso_q`.
+
 ## Visión (`test_tags.py`)
 
 - `TagDetector`: lista blanca de IDs 1–10 y `errorCorrectionRate` 0.8 (en videos de

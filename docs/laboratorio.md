@@ -157,6 +157,16 @@ Cómo vuela: sube a **100 cm**, avanza sosteniendo el rumbo hasta ver un tag deb
 tag que está debajo al despegar se toma como el de inicio y **se ignora**. Se ajusta en
 `config/mission_espejo.json`:
 
+**Desde el 11-nov sostiene su posición con el piso** (`sostener_piso`): mide cuánto se mueve
+viendo el piso por el espejo.
+- **Quieto y subiendo:** regresa solo al punto de despegue.
+- **Avanzando sin tag:** sostiene la línea del tramo.
+- **Si pierde un tag al centrarse:** lo busca 4 s donde debe estar (`buscar_s`) y luego sigue
+  avanzando, en vez de aterrizar.
+
+Si se aleja más de 80 cm del punto, la corrección se apaga sola y lo anota en la bitácora.
+**Primero prueba E2b.**
+
 | Parámetro | Para qué |
 |---|---|
 | `cruise_alt_cm` | altura de vuelo; más alto ve más piso (a 100 cm: ±39 cm adelante, ±52 de lado) |
@@ -187,6 +197,20 @@ espejo no se mueve.
 ```bash
 python scripts/first_flight.py --yaw-test 90 --record espejo_giro.mp4
 ```
+
+**E2b — Sostener la posición con el piso** (sin tags debajo; marca el despegue con cinta).
+Corre la misión quieta, que sube a 100 cm y espera ~20 s un tag que no hay:
+
+```bash
+python scripts/mision_espejo.py --quieto --record e2b_piso.mp4
+```
+
+- **Aprueba** si regresa cerca de la cinta mientras sube y no se va más de ~20–30 cm, contra
+  los 50–100 cm del 11-nov.
+- **Si se aleja más rápido que antes**, la corrección empuja al revés: ESPACIO, pon
+  `"sostener_piso": false` y avísale al equipo. El seguro la apaga a los 80 cm.
+- **Repítelo con cada dron:** el Tello 7 se va mucho más que el 1.
+- **Después,** revisa `piso_der` y `piso_ade` en la bitácora: es lo que midió.
 
 **E3 — Tag debajo, sin avanzar.** Tag 9 (pausa) en el piso, ~10–20 cm frente al despegue.
 Debe colocarse encima, alinearse y hacer la pausa de 5 s.
