@@ -5,42 +5,57 @@ Las bitácoras de vuelo (`logs/*.csv`) y los videos están en la laptop, no en e
 
 ## Pendiente ahora
 
-1. **Probar en el laboratorio `sostener_piso` y `sostener_tag` (11-nov, sin volar todavía): E2b primero, con `--dron N`**
-   ([`laboratorio.md`](laboratorio.md)), con cada dron, y luego E5. Si se aleja en vez de
-   regresar, ESPACIO y `"sostener_piso": false`. Con el Tello 7, probar también
-   `"center_max": 20` (en el simulador ayudó a no perder el tag al centrarse).
-2. **Decidir en equipo el vigilante "el dron no obedece".** Una sola lectura baja del tof
+1. **Siguiente tarea principal (código): mejorar todavía más la corrección de la deriva y el
+   PID, pasos 3 a 6** (propuestos el 12-nov). Cómo funciona hoy y cómo se ajusta:
+   [`arquitectura.md`](arquitectura.md).
+   - **Paso 3, compensar el atraso:** en la P de `_piso_mando`, usar la posición predicha
+     (posición + velocidad × ~0.3 s; parámetro nuevo `piso_atraso_s`) en vez de la atrasada.
+     Con un dron sin deriva no cambia nada.
+   - **Paso 4, barrido de ganancias en el simulador:** probar combinaciones de `piso_kp`,
+     `piso_kd`, `piso_ki` y `piso_min` con `espejo_estacionario` y `espejo_circuito`, con
+     `--dron 1` y `--dron 7`, y elegir. Solo cambia números del JSON.
+   - **Paso 5, mandos más finos:** en vez de "0 o al menos 10", modular (por ejemplo, 10 el
+     40 % del tiempo para pedir ~4) y quitar el vaivén de ~10 cm del Tello 1. Revisar en el
+     laboratorio que el Tello no se tambalee con eso.
+   - **Paso 6, filtro de Kalman por eje:** estima posición, velocidad y deriva con el modelo
+     rc → velocidad, y reemplaza a la integral. Volver al PID si crecen sus diferencias entre
+     lo predicho y lo medido.
+
+   **Cuidado:** lo que supone una deriva sin medirla (la integral precargada, la deriva
+   inicial del Kalman) empuja de más a un dron que ya no deriva; esos valores van por dron.
+   Antes del barrido conviene tener las bitácoras de E2b (punto 2) y reajustar con ellas el
+   simulador; si no, se afina a una deriva simulada.
+2. **Probar en el laboratorio `sostener_piso` y `sostener_tag`** (sin volar todavía).
+   - **E2b primero, con `--dron N`** ([`laboratorio.md`](laboratorio.md)), con cada dron;
+     luego E5.
+   - Si se aleja en vez de regresar: ESPACIO y `"sostener_piso": false`.
+   - Al final de E2b, anotar `piso_ider`: es el `piso_i_inicial` de ese dron, en
+     `config/mision_dron<N>.json`.
+   - Con el Tello 7, probar también `"center_max": 20`.
+3. **Decidir en equipo el vigilante "el dron no obedece".** Una sola lectura baja del tof
    (que baja ≤ 10 cm y regresa > 10) cuenta como bajada, y su regreso se descarta. Así dio
    una falsa alarma en el simulador, y en las bitácoras reales la del 27-oct 13:50. Filtrar
    con mediana de 5 la quita, pero tampoco habría avisado en las 1.2, 1.4 y 1.9 del 11-nov,
    que sí se hundían (26–40 cm en ~3 s). No se cambió.
-3. **La deriva estando quieto (11-nov).** Los dos Tellos se van a la derecha
-   en estacionario: el Tello 7 de 15 a 37 cm/s y el Tello 1 ~6–7 cm/s, este también sin
-   espejo. Por eso E5 falla: los tags aparecen en la orilla de la vista y se pierden al
-   centrarse. En el próximo laboratorio:
+4. **La deriva estando quieto (11-nov).** Los dos Tellos se van a la derecha en
+   estacionario: el Tello 7 de 15 a 37 cm/s, y el Tello 1 ~4–7 cm/s, este también sin
+   espejo. En el próximo laboratorio:
    - estacionario del Tello 7 **sin clip**, en el mismo lugar;
-   - estacionario de los dos **sobre otro piso**: la cuadrícula de cinta azul se repite mucho
-     y podría confundir a la cámara de abajo (sospecha, sin medir);
+   - estacionario de los dos **sobre otro piso** (la cuadrícula de cinta azul podría
+     confundir a la cámara de abajo; sospecha, sin medir);
    - calibrar el IMU antes.
-4. **Corregir la deriva con el piso visto por el espejo** (hecho el 11-nov, falta probarlo: punto 1). El 11-nov, la medición de lado con
-   correlación de fase coincidió en signo con la del tag en 72 % de los tramos. Hacia
-   adelante cuesta, porque las rayas de la pista van en la dirección del avance. Mientras,
-   probar `advance_lr` en -10 y acortar el tiempo quieto antes de avanzar (`start_hover_s`).
 5. **El Tello 1 falla caliente:** a 68–78 °C no despega o "no obedece"; frío (55 °C) va bien.
-   Volarlo solo abajo de 65 °C y revisar en la app si es el que avisaba "posicionamiento
+   Volarlo solo abajo de 65 °C, y revisar en la app si es el que avisaba "posicionamiento
    visual no disponible".
-6. **Al perder un tag al centrarse, buscarlo en vez de aterrizar** (hecho el 11-nov, falta probarlo) (4 corridas del 11-nov
-   terminaron así). El simulador ya lo reproduce con `--dron 1` y `--dron 7` (deriva medida
-   de cada dron): probar ahí cualquier cambio de la misión antes de volar. Falta medir bien la
-   deriva durante el despegue: en el simulador se corre más que en lo real.
-7. Con espejo, en orden: **E5 → E6 → E7** ([`laboratorio.md`](laboratorio.md)). Ajustar
+6. Con espejo, en orden: **E5 → E6 → E7** ([`laboratorio.md`](laboratorio.md)). Ajustar
    `advance_timeout_s` y `cruise_alt_cm` según la pista. Enfriar entre corridas: el 11-nov
    se volaron 27 en 26 min.
-8. Respuestas del comité: tamaño de tags, cómo es la trayectoria visible y la etiqueta de
+7. Respuestas del comité: tamaño de tags, cómo es la trayectoria visible y la etiqueta de
    inicio ([`competencia.md`](competencia.md)).
-9. Al cerrar cada sesión, correr `python sim/comparar_vuelos.py` y, si cambió el Tello o el
+8. Al cerrar cada sesión, correr `python sim/comparar_vuelos.py` y, si cambió el Tello o el
    clip, reajustar `config/sim_tello.json` ([`simulador.md`](simulador.md)). Las bitácoras
-   del 11-nov dicen en `sesiones/2026-11-11/notas.md` qué dron fue cada una.
+   del 11-nov dicen en `sesiones/2026-11-11/notas.md` qué dron fue cada una. Falta medir bien
+   la deriva durante el despegue: en el simulador se corre más que en lo real.
 
 ## 12-nov — La medida del piso ya no se engaña al subir
 
