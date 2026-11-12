@@ -164,7 +164,7 @@ Síntomas que ya conocemos:
 | Se hunde ~10–13 cm/s al avanzar | normal en este Tello | lo corrige el sostener altura |
 | Al centrarse oscila ±10 cm | deriva normal (~5 cm/s); el centrado frena con la velocidad del tag | normal; si oscila mucho más, subir `center_kd` |
 | Se va siempre a la derecha (o izquierda) al avanzar sin ver tags | el rumbo sigue rotando tras un giro, o deriva propia del dron o una corriente de aire | revisar `rc_yaw` y `yaw` en la bitácora; ajustar `advance_lr`; apagar ventiladores |
-| `sostener_piso APAGADO: se alejo 80 cm` | la medida del piso empujó al dron hacia afuera, o el piso no tiene textura | ver `piso_der`/`piso_ade` y `piso_q` en la bitácora; si sale al revés, `"sostener_piso": false` y avisar; hacer E2b |
+| `sostener_piso APAGADO: se alejo ... corrigiendo` | la corrección empujó al dron hacia afuera (medida al revés) | ver `piso_der`/`piso_ade` y `piso_q` en la bitácora; si sale al revés, `"sostener_piso": false` y avisar; hacer E2b |
 | Pasa encima de un tag y no lo ve, aunque está en el centro | tag gastado o desteñido (por el espejo el negro ya se ve gris, ~150) | revisar que `deteccion_rescate` esté en `true` (`config/mission_tags.json`); reimprimir el tag; probar con `test_tags.py --espejo` |
 | No encuentra el siguiente tag | estaba lejos o fuera de lo que ve debajo (±39 cm adelante a 100 cm) | subir `advance_timeout_s` o `cruise_alt_cm` |
 | Ignora el primer tag del recorrido | se vio al despegar | revisar `ignorar_inicio` e `inicio_alt_cm` |

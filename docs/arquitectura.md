@@ -68,10 +68,12 @@ mide mientras gira.
 | ADVANCE | sostener la línea del tramo, solo de lado. El tramo nuevo empieza al terminar de ejecutar un tag |
 | APPROACH, tag perdido | ir a donde debe estar el tag, contando lo que se movió el dron; a los `buscar_s` volver a ADVANCE en vez de aterrizar |
 
-La corrección es un PD (`piso_kp`, `piso_kd`) sumado al rc de la misión. Si el dron se aleja
-más de `piso_limite_cm` de donde debía estar, se apaga para todo el vuelo: la medida
-podría estar al revés. Va en la bitácora en `piso_der`, `piso_ade`, `piso_vder`, `piso_vade`
-y `piso_q`.
+La corrección es un PD (`piso_kp`, `piso_kd`) sumado al rc de la misión. **Seguro:** si,
+corrigiendo, se aleja más de `piso_alejandose_cm` (35) en 1.5 s, o se pasa de
+`piso_limite_cm` (150), se apaga para todo el vuelo: la medida podría estar al revés. No
+cuenta lo que se fue al despegar, porque ahí el Tello ignora el rc: el Tello 7 se va más de
+80 cm. Lo que mide va en la bitácora en `piso_der`, `piso_ade`, `piso_vder`, `piso_vade` y
+`piso_q`.
 
 ## Visión (`test_tags.py`)
 

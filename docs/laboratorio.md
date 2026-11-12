@@ -164,7 +164,8 @@ viendo el piso por el espejo.
 - **Si pierde un tag al centrarse:** lo busca 4 s donde debe estar (`buscar_s`) y luego sigue
   avanzando, en vez de aterrizar.
 
-Si se aleja más de 80 cm del punto, la corrección se apaga sola y lo anota en la bitácora.
+Si, corrigiendo, se aleja más de 35 cm en 1.5 s (o se pasa de 150 cm), la corrección se apaga
+sola y lo anota en la bitácora.
 **Primero prueba E2b.**
 
 | Parámetro | Para qué |
@@ -208,7 +209,7 @@ python scripts/mision_espejo.py --quieto --record e2b_piso.mp4
 - **Aprueba** si regresa cerca de la cinta mientras sube y no se va más de ~20–30 cm, contra
   los 50–100 cm del 11-nov.
 - **Si se aleja más rápido que antes**, la corrección empuja al revés: ESPACIO, pon
-  `"sostener_piso": false` y avísale al equipo. El seguro la apaga a los 80 cm.
+  `"sostener_piso": false` y avísale al equipo. El seguro la apaga si se aleja 35 cm en 1.5 s corrigiendo.
 - **Repítelo con cada dron:** el Tello 7 se va mucho más que el 1.
 - **Después,** revisa `piso_der` y `piso_ade` en la bitácora: es lo que midió.
 

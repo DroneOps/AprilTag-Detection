@@ -72,8 +72,12 @@ class MirrorConfig:
     piso_min: int = 10
     piso_max: int = 20
     piso_dead: float = 4.0  # mando menor que esto: nada
-    piso_limite_cm: float = 80.0  # seguro: si se aleja esto de donde debería estar, apagar la corrección
-    # (por si en el dron real la medida sale al revés y empuja hacia afuera)
+    # seguro, por si en el dron real la medida sale al revés y la corrección empuja hacia afuera:
+    # apagarla si, corrigiendo, se aleja piso_alejandose_cm en 1.5 s (al revés, deriva y corrección
+    # suman >30 cm/s) o si se pasa de piso_limite_cm. No cuenta lo que se fue al despegar: ahí el
+    # Tello ignora el rc (el Tello 7 se va >80 cm)
+    piso_alejandose_cm: float = 35.0
+    piso_limite_cm: float = 150.0
     buscar_s: float = 4.0  # tag perdido al centrarse: buscarlo donde debe estar esto, luego seguir avanzando
     vista_adelante_deg: float = 0.0  # inclinación del espejo: medirla con test_tags.py --espejo
     vista_lado_deg: float = 0.0
@@ -157,6 +161,7 @@ class MirrorMission(TagMission):
         self._pos_visto = np.zeros(2)  # posición (piso) cuando se vio el tag objetivo por última vez
         self._yaw_frame = None
         self._piso_apagado = False
+        self._piso_lejos: deque = deque()  # (t, distancia a donde debería estar) mientras corrige
 
     # ---- visión: imagen volteada, posición del tag sobre el piso
     def on_frame(self, bgr: np.ndarray, t: float) -> None:
@@ -227,6 +232,7 @@ class MirrorMission(TagMission):
         piso = getattr(self, "piso", None)
         if piso is not None and (state == "TAKEOFF" or (state == "ADVANCE" and prev == "EXECUTE")):
             piso.reiniciar()  # el punto de despegue, o la línea del tramo nuevo (pasa por el tag ejecutado)
+            getattr(self, "_piso_lejos", deque()).clear()
 
     def _piso_mando(self, err: float, vel: float) -> int:
         e = self.e
@@ -240,11 +246,21 @@ class MirrorMission(TagMission):
         if e.sostener_piso and piso is not None and not self._piso_apagado \
                 and self.state in ("HOVER", "CRUISE", "ADVANCE") and piso.valido(time.monotonic()):
             (pr, pf), (vr, vf) = piso.estado()
+            now = time.monotonic()
             lejos = abs(pr) if self.state == "ADVANCE" else math.hypot(pr, pf)
-            if lejos > e.piso_limite_cm:
+            h = self._piso_lejos
+            if h and (h[-1][2] != (self.state == "ADVANCE") or now - h[-1][0] > 0.5):
+                h.clear()  # otro tipo de corrección, o hubo una pausa
+            h.append((now, lejos, self.state == "ADVANCE"))
+            while now - h[0][0] > 1.5:
+                h.popleft()
+            alejo = lejos - min(x[1] for x in h)
+            if alejo > e.piso_alejandose_cm or lejos > e.piso_limite_cm:
                 self._piso_apagado = True
-                self.reason += f" | sostener_piso APAGADO: se alejo {lejos:.0f} cm (revisar la medida del piso)"
-                print(f"[vuelo] sostener_piso apagado: se alejó {lejos:.0f} cm de donde debía estar")
+                why = f"se alejo {alejo:.0f} cm en 1.5 s corrigiendo" if alejo > e.piso_alejandose_cm \
+                    else f"esta a {lejos:.0f} cm"
+                self.reason += f" | sostener_piso APAGADO: {why} (revisar la medida del piso)"
+                print(f"[vuelo] sostener_piso apagado: {why}")
             else:
                 lr = lr + self._piso_mando(pr, vr)
                 if self.state != "ADVANCE":

@@ -57,7 +57,9 @@ Sin volar. Detalle en [`simulador.md`](simulador.md) y [`arquitectura.md`](arqui
 - **Misión con espejo:** `sostener_piso` mide con el piso cuánto se mueve. Regresa al
   despegue mientras sube, avanza en línea recta y busca el tag que pierde (antes aterrizaba).
   - En el simulador, el Tello 1 pasó de 0 a 3 circuitos completos de 4.
-  - Tiene un seguro: si se aleja 80 cm, se apaga (probado con la medida al revés).
+  - Tiene un seguro: si, corrigiendo, se aleja 35 cm en 1.5 s, se apaga (probado con la medida
+    al revés). Uno primero de 80 cm desde el despegue la apagaba sin razón con el Tello 7,
+    que se va más de 80 cm mientras despega.
 - **Regresión:** sin choques en espejo. Hubo dos en pared y piso por los cambios del
   simulador, no de la misión: `tag_bajo` chocó con la pared al girar 180° a 65 cm (el
   corrimiento al girar), y `piso_hundimiento` llegó a 8 cm (estrés de 20 cm/s más el
