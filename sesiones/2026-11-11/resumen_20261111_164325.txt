@@ -1,0 +1,12 @@
+fuente: tello   frames: 2313   detección media: 4.3 ms
+  ID  1 (Giro derecha 90): 312 frames (13 %)
+  ID  2 (Giro izquierda 90): 477 frames (21 %)
+  ID  3 (Giro 180): 256 frames (11 %)
+  ID  4 (Flip 360): 50 frames (2 %)
+  ID  6 (Bajar 30 cm): 211 frames (9 %)
+  ID  7 (Aterrizar): 322 frames (14 %)
+  ID  8 (Giro 180 + flip): 466 frames (20 %)
+  ID  9 (Pausa 5 s): 452 frames (20 %)
+  ID 10 (Giro 360): 445 frames (19 %)
+espejo: inclinacion de la vista (mediana de 2991): +8.9 adelante, +3.9 lado -> config/mission_espejo.json: "vista_adelante_deg": 8.9, "vista_lado_deg": 3.9
+enlace: 2283 frames en 76 s | intervalo mediano 33 ms | > 100 ms: 0 (0.0/min) | > 300 ms: 0 | maximo 63 ms

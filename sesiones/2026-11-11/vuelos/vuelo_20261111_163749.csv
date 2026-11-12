@@ -1,0 +1,361 @@
+t,state,bat,h,tof,yaw,pitch,roll,temph,rc_lr,rc_fb,rc_ud,rc_yaw,state_age,video_age,reason,vgx,vgy,vgz
+0.000,IDLE,76,0,10,12,-1,0,69,0,0,0,0,0.00,inf,esperando despegue (t),0,0,0
+0.050,IDLE,76,0,10,12,-1,0,69,0,0,0,0,0.00,inf,esperando despegue (t),0,0,0
+0.101,IDLE,76,0,10,12,-1,0,69,0,0,0,0,0.05,inf,esperando despegue (t),0,0,0
+0.151,IDLE,76,0,10,12,-1,0,69,0,0,0,0,0.00,inf,esperando despegue (t),0,0,0
+0.202,IDLE,76,0,10,12,-1,0,69,0,0,0,0,0.05,inf,esperando despegue (t),0,0,0
+0.255,IDLE,76,0,10,12,-1,0,69,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+0.305,IDLE,76,0,10,12,-1,0,69,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+0.355,IDLE,76,0,10,12,-1,0,69,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+0.406,IDLE,76,0,10,12,-1,0,69,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+0.456,IDLE,76,0,10,12,-1,0,69,0,0,0,0,0.10,0.01,esperando despegue (t),0,0,0
+0.506,IDLE,76,0,10,12,-1,0,69,0,0,0,0,0.03,0.01,esperando despegue (t),0,0,0
+0.556,IDLE,76,0,10,12,-1,0,69,0,0,0,0,0.08,0.01,esperando despegue (t),0,0,0
+0.606,IDLE,76,0,10,12,-1,0,69,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0
+0.656,IDLE,76,0,10,12,-1,0,69,0,0,0,0,0.07,0.01,esperando despegue (t),0,0,0
+0.706,IDLE,76,0,10,12,-1,0,69,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+0.756,IDLE,76,0,10,12,-1,0,69,0,0,0,0,0.06,0.01,esperando despegue (t),0,0,0
+0.809,IDLE,76,0,10,12,-1,0,69,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+0.859,IDLE,76,0,10,12,-1,0,69,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+0.909,IDLE,76,0,10,12,-1,0,69,0,0,0,0,0.04,0.02,esperando despegue (t),0,0,0
+0.959,IDLE,76,0,10,12,-1,0,69,0,0,0,0,0.09,0.01,esperando despegue (t),0,0,0
+1.009,IDLE,76,0,10,12,-1,0,69,0,0,0,0,0.04,0.01,esperando despegue (t),0,0,0
+1.059,IDLE,76,0,10,12,-1,0,69,0,0,0,0,0.09,0.01,esperando despegue (t),0,0,0
+1.110,IDLE,76,0,10,12,-1,0,69,0,0,0,0,0.02,0.03,esperando despegue (t),0,0,0
+1.160,IDLE,76,0,10,12,-1,0,69,0,0,0,0,0.07,0.01,esperando despegue (t),0,0,0
+1.210,IDLE,76,0,10,12,-1,0,69,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+1.260,IDLE,76,0,10,12,-1,0,69,0,0,0,0,0.06,0.06,esperando despegue (t),0,0,0
+1.311,IDLE,76,0,10,12,-1,0,70,0,0,0,0,0.03,0.01,esperando despegue (t),0,0,0
+1.361,IDLE,76,0,10,12,-1,0,70,0,0,0,0,0.08,0.05,esperando despegue (t),0,0,0
+1.411,IDLE,76,0,10,12,-1,0,70,0,0,0,0,0.03,0.01,esperando despegue (t),0,0,0
+1.461,IDLE,76,0,10,12,-1,0,70,0,0,0,0,0.08,0.01,esperando despegue (t),0,0,0
+1.511,IDLE,76,0,10,12,-1,0,70,0,0,0,0,0.03,0.01,esperando despegue (t),0,0,0
+1.561,IDLE,76,0,10,12,-1,0,70,0,0,0,0,0.08,0.03,esperando despegue (t),0,0,0
+1.611,TAKEOFF,76,0,10,12,-1,0,70,0,0,0,0,0.00,0.01,despegando,0,0,0
+1.661,TAKEOFF,76,0,10,12,-1,0,70,0,0,0,0,0.05,0.01,despegando,0,0,0
+1.712,TAKEOFF,76,0,10,12,-1,0,70,0,0,0,0,0.00,0.01,despegando,0,0,0
+1.762,TAKEOFF,76,0,10,12,-1,0,70,0,0,0,0,0.05,0.01,despegando,0,0,0
+1.812,TAKEOFF,76,0,10,12,-1,0,70,0,0,0,0,0.00,0.01,despegando,0,0,0
+1.862,TAKEOFF,76,0,10,12,-1,0,70,0,0,0,0,0.02,0.01,despegando,0,0,0
+1.913,TAKEOFF,76,0,10,12,-1,0,70,0,0,0,0,0.07,0.01,despegando,0,0,0
+1.963,TAKEOFF,76,0,10,13,-1,0,70,0,0,0,0,0.02,0.03,despegando,0,0,0
+2.013,TAKEOFF,76,0,10,13,-1,0,70,0,0,0,0,0.07,0.01,despegando,0,0,0
+2.063,TAKEOFF,76,0,10,14,-1,0,70,0,0,0,0,0.00,0.01,despegando,0,0,0
+2.113,TAKEOFF,76,0,10,14,-1,0,70,0,0,0,0,0.05,0.01,despegando,0,0,0
+2.163,TAKEOFF,76,0,10,16,-1,0,70,0,0,0,0,0.00,0.03,despegando,0,0,0
+2.214,TAKEOFF,76,0,10,16,-1,0,70,0,0,0,0,0.05,0.01,despegando,0,0,0
+2.264,TAKEOFF,76,0,10,16,-1,0,70,0,0,0,0,0.01,0.01,despegando,0,0,0
+2.314,TAKEOFF,76,0,10,16,-1,0,70,0,0,0,0,0.06,0.01,despegando,0,0,0
+2.364,TAKEOFF,76,0,10,17,-1,0,70,0,0,0,0,0.00,0.01,despegando,0,0,-1
+2.414,TAKEOFF,76,0,10,17,-1,0,70,0,0,0,0,0.05,0.01,despegando,0,0,-1
+2.465,TAKEOFF,76,0,10,17,1,0,70,0,0,0,0,0.02,0.03,despegando,1,0,-4
+2.515,TAKEOFF,76,0,10,17,1,0,70,0,0,0,0,0.07,0.01,despegando,1,0,-4
+2.565,TAKEOFF,76,10,17,17,2,1,70,0,0,0,0,0.00,0.01,despegando,0,0,-6
+2.615,TAKEOFF,76,10,17,17,2,1,70,0,0,0,0,0.05,0.01,despegando,0,0,-6
+2.665,TAKEOFF,76,10,25,17,1,0,70,0,0,0,0,0.00,0.01,despegando,0,0,-8
+2.715,TAKEOFF,76,10,25,17,1,0,70,0,0,0,0,0.05,0.03,despegando,0,0,-8
+2.765,TAKEOFF,76,20,33,17,0,0,70,0,0,0,0,0.00,0.01,despegando,0,0,-8
+2.816,TAKEOFF,76,20,33,17,0,0,70,0,0,0,0,0.05,0.03,despegando,0,0,-8
+2.866,TAKEOFF,76,30,41,17,0,0,70,0,0,0,0,0.00,0.01,despegando,0,0,-8
+2.917,TAKEOFF,76,30,41,17,0,0,70,0,0,0,0,0.05,0.01,despegando,0,0,-8
+2.967,TAKEOFF,76,40,44,17,0,0,70,0,0,0,0,0.00,0.01,despegando,0,0,-7
+3.017,TAKEOFF,76,40,44,17,0,0,70,0,0,0,0,0.05,0.01,despegando,0,0,-7
+3.067,TAKEOFF,76,40,50,17,0,0,70,0,0,0,0,0.00,0.03,despegando,0,0,-6
+3.117,TAKEOFF,76,40,50,17,0,0,70,0,0,0,0,0.05,0.01,despegando,0,0,-6
+3.167,TAKEOFF,76,50,55,17,0,0,70,0,0,0,0,0.00,0.01,despegando,0,0,-5
+3.217,TAKEOFF,76,50,55,17,0,0,70,0,0,0,0,0.05,0.01,despegando,0,0,-5
+3.268,TAKEOFF,76,50,55,17,0,0,70,0,0,0,0,0.10,0.01,despegando,0,0,-5
+3.318,TAKEOFF,76,50,60,17,0,0,70,0,0,0,0,0.02,0.01,despegando,0,0,-4
+3.369,TAKEOFF,76,50,60,17,0,0,70,0,0,0,0,0.07,0.01,despegando,0,0,-4
+3.419,TAKEOFF,76,50,62,17,0,0,70,0,0,0,0,0.03,0.03,despegando,0,0,-3
+3.469,TAKEOFF,76,60,64,17,0,0,70,0,0,0,0,0.00,0.01,despegando,0,0,-2
+3.519,TAKEOFF,76,60,64,17,0,0,70,0,0,0,0,0.05,0.03,despegando,0,0,-2
+3.570,TAKEOFF,76,60,66,17,0,0,70,0,0,0,0,0.00,0.01,despegando,0,0,-1
+3.620,TAKEOFF,76,60,66,17,0,0,70,0,0,0,0,0.05,0.01,despegando,0,0,-1
+3.670,TAKEOFF,76,60,66,17,0,0,70,0,0,0,0,0.10,0.01,despegando,0,0,-1
+3.720,TAKEOFF,76,60,67,17,0,0,70,0,0,0,0,0.04,0.03,despegando,0,0,-1
+3.770,TAKEOFF,76,60,67,17,0,0,70,0,0,0,0,0.09,0.01,despegando,0,0,-1
+3.821,TAKEOFF,76,60,67,17,0,0,70,0,0,0,0,0.04,0.03,despegando,0,0,-1
+3.871,TAKEOFF,76,60,67,17,0,0,70,0,0,0,0,0.09,0.01,despegando,0,0,-1
+3.921,TAKEOFF,76,60,68,17,0,0,70,0,0,0,0,0.03,0.01,despegando,0,0,0
+3.974,TAKEOFF,76,60,68,17,0,0,70,0,0,0,0,0.09,0.01,despegando,0,0,0
+4.025,TAKEOFF,76,60,68,17,0,0,70,0,0,0,0,0.03,0.01,despegando,0,0,0
+4.075,TAKEOFF,76,60,68,17,0,0,70,0,0,0,0,0.08,0.03,despegando,0,0,0
+4.125,TAKEOFF,76,60,70,17,0,0,70,0,0,0,0,0.02,0.01,despegando,0,0,0
+4.180,TAKEOFF,76,60,70,17,0,0,70,0,0,0,0,0.08,0.03,despegando,0,0,0
+4.230,TAKEOFF,76,60,70,17,0,0,70,0,0,0,0,0.02,0.01,despegando,0,0,0
+4.280,TAKEOFF,76,60,70,17,0,0,70,0,0,0,0,0.07,0.01,despegando,0,0,0
+4.331,TAKEOFF,76,60,73,17,0,0,70,0,0,0,0,0.03,0.03,despegando,0,0,-1
+4.381,TAKEOFF,76,60,73,17,0,0,70,0,0,0,0,0.08,0.01,despegando,0,0,-1
+4.431,TAKEOFF,76,60,73,17,0,-1,70,0,0,0,0,0.03,0.01,despegando,0,0,-1
+4.481,TAKEOFF,76,60,73,17,0,-1,70,0,0,0,0,0.08,0.01,despegando,0,0,-1
+4.531,TAKEOFF,76,60,75,17,0,0,70,0,0,0,0,0.04,0.01,despegando,0,0,-1
+4.581,TAKEOFF,76,60,75,17,0,0,70,0,0,0,0,0.09,0.01,despegando,0,0,-1
+4.631,TAKEOFF,76,70,77,17,0,0,70,0,0,0,0,0.04,0.01,despegando,0,0,-1
+4.682,TAKEOFF,76,70,77,17,0,0,70,0,0,0,0,0.09,0.03,despegando,0,0,-1
+4.732,TAKEOFF,76,70,78,17,0,0,70,0,0,0,0,0.03,0.01,despegando,0,0,-1
+4.783,TAKEOFF,76,70,78,17,0,0,70,0,0,0,0,0.08,0.01,despegando,0,0,-1
+4.833,TAKEOFF,76,70,77,17,0,0,70,0,0,0,0,0.02,0.03,despegando,0,0,0
+4.883,TAKEOFF,76,70,77,17,0,0,70,0,0,0,0,0.07,0.01,despegando,0,0,0
+4.933,TAKEOFF,76,70,78,17,0,0,70,0,0,0,0,0.01,0.01,despegando,0,0,0
+4.983,TAKEOFF,76,70,81,17,0,0,70,0,0,0,0,0.01,0.01,despegando,0,0,0
+5.033,TAKEOFF,76,70,81,17,0,0,70,0,0,0,0,0.06,0.01,despegando,0,0,0
+5.083,TAKEOFF,76,70,81,17,0,0,70,0,0,0,0,0.02,0.01,despegando,0,0,0
+5.135,TAKEOFF,76,70,81,17,0,0,70,0,0,0,0,0.07,0.03,despegando,0,0,0
+5.185,TAKEOFF,76,70,82,17,0,0,70,0,0,0,0,0.02,0.01,despegando,0,0,0
+5.237,TAKEOFF,76,70,82,17,0,0,70,0,0,0,0,0.07,0.01,despegando,0,0,0
+5.287,TAKEOFF,76,70,82,17,0,0,70,0,0,0,0,0.12,0.03,despegando,0,0,0
+5.337,TAKEOFF,76,70,82,17,0,0,71,0,0,0,0,0.01,0.01,despegando,0,0,0
+5.387,TAKEOFF,76,70,82,17,0,0,71,0,0,0,0,0.06,0.01,despegando,0,0,0
+5.438,TAKEOFF,76,70,84,17,0,0,71,0,0,0,0,0.01,0.01,despegando,0,0,0
+5.488,TAKEOFF,76,80,84,17,-1,0,71,0,0,0,0,0.00,0.01,despegando,0,0,0
+5.538,TAKEOFF,76,80,84,17,-1,0,71,0,0,0,0,0.05,0.01,despegando,0,0,0
+5.588,TAKEOFF,76,80,84,17,0,0,71,0,0,0,0,0.02,0.01,despegando,0,0,0
+5.638,TAKEOFF,76,80,84,17,0,0,71,0,0,0,0,0.07,0.01,despegando,0,0,0
+5.688,TAKEOFF,76,80,85,17,0,0,71,0,0,0,0,0.01,0.01,despegando,0,0,0
+5.738,TAKEOFF,76,80,85,17,0,0,71,0,0,0,0,0.06,0.01,despegando,0,0,0
+5.789,TAKEOFF,76,80,85,17,0,0,71,0,0,0,0,0.00,0.03,despegando,0,0,0
+5.839,TAKEOFF,76,80,85,17,0,0,71,0,0,0,0,0.05,0.01,despegando,0,0,0
+5.889,TAKEOFF,76,80,85,17,0,0,71,0,0,0,0,0.00,0.01,despegando,0,0,0
+5.939,TAKEOFF,76,80,85,17,0,0,71,0,0,0,0,0.05,0.03,despegando,0,0,0
+5.989,TAKEOFF,76,80,84,17,0,0,71,0,0,0,0,0.00,0.01,despegando,0,0,0
+6.039,TAKEOFF,76,80,84,17,0,0,71,0,0,0,0,0.05,0.01,despegando,0,0,0
+6.089,TAKEOFF,76,80,83,17,-1,0,71,0,0,0,0,0.00,0.03,despegando,0,0,0
+6.139,TAKEOFF,76,80,83,17,-1,0,71,0,0,0,0,0.05,0.01,despegando,0,0,0
+6.190,TAKEOFF,76,80,81,17,-2,0,71,0,0,0,0,0.00,0.01,despegando,0,0,0
+6.240,TAKEOFF,76,80,81,17,-2,0,71,0,0,0,0,0.05,0.01,despegando,0,0,0
+6.290,TAKEOFF,76,70,82,17,-1,0,70,0,0,0,0,0.00,0.03,despegando,0,0,0
+6.340,TAKEOFF,76,70,82,17,-1,0,70,0,0,0,0,0.05,0.01,despegando,0,0,0
+6.390,TAKEOFF,76,70,81,17,0,0,70,0,0,0,0,0.01,0.01,despegando,0,0,0
+6.440,TAKEOFF,76,70,81,17,0,0,70,0,0,0,0,0.06,0.01,despegando,0,0,0
+6.490,TAKEOFF,76,70,80,17,1,0,70,0,0,0,0,0.00,0.01,despegando,0,0,0
+6.540,TAKEOFF,76,70,80,17,1,0,70,0,0,0,0,0.05,0.03,despegando,0,0,0
+6.590,TAKEOFF,76,70,81,17,0,0,70,0,0,0,0,0.00,0.01,despegando,0,0,0
+6.641,TAKEOFF,76,70,81,17,0,0,70,0,0,0,0,0.05,0.01,despegando,0,0,0
+6.691,TAKEOFF,76,70,79,17,0,0,70,0,0,0,0,0.00,0.01,despegando,0,0,0
+6.741,TAKEOFF,76,70,79,17,0,0,70,0,0,0,0,0.05,0.03,despegando,0,0,0
+6.791,TAKEOFF,76,70,79,17,0,0,70,0,0,0,0,0.00,0.01,despegando,0,0,0
+6.841,TAKEOFF,76,70,79,17,0,0,70,0,0,0,0,0.05,0.01,despegando,0,0,0
+6.891,TAKEOFF,76,70,79,17,0,0,70,0,0,0,0,0.01,0.01,despegando,0,0,0
+6.942,TAKEOFF,76,70,79,17,0,0,70,0,0,0,0,0.06,0.01,despegando,0,0,0
+6.992,TAKEOFF,76,70,79,17,0,0,70,0,0,0,0,0.00,0.01,despegando,0,0,0
+7.042,TAKEOFF,76,70,79,17,0,0,70,0,0,0,0,0.05,0.01,despegando,0,0,0
+7.092,TAKEOFF,76,70,79,17,-1,0,70,0,0,0,0,0.00,0.03,despegando,0,0,0
+7.142,TAKEOFF,76,70,79,17,-1,0,70,0,0,0,0,0.05,0.01,despegando,0,0,0
+7.192,TAKEOFF,76,70,79,17,-1,0,70,0,0,0,0,0.00,0.01,despegando,0,0,0
+7.243,TAKEOFF,76,70,79,17,-1,0,70,0,0,0,0,0.05,0.01,despegando,0,0,0
+7.293,TAKEOFF,76,70,79,17,-1,0,70,0,0,0,0,0.10,0.01,despegando,0,0,0
+7.343,TAKEOFF,76,70,78,17,-1,0,70,0,0,0,0,0.04,0.03,despegando,0,0,0
+7.393,TAKEOFF,76,70,78,17,-1,0,70,0,0,0,0,0.09,0.01,despegando,0,0,0
+7.445,TAKEOFF,76,70,79,17,0,0,70,0,0,0,0,0.03,0.03,despegando,0,0,0
+7.495,TAKEOFF,76,70,79,17,0,0,70,0,0,0,0,0.08,0.01,despegando,0,0,0
+7.545,TAKEOFF,76,70,79,17,-1,0,70,0,0,0,0,0.04,0.01,despegando,0,0,0
+7.595,TAKEOFF,76,70,79,17,-1,0,70,0,0,0,0,0.09,0.02,despegando,0,0,0
+7.645,TAKEOFF,76,70,80,17,-2,0,70,0,0,0,0,0.01,0.01,despegando,0,0,0
+7.695,TAKEOFF,76,70,80,17,-2,0,70,0,0,0,0,0.06,0.01,despegando,0,0,0
+7.746,TAKEOFF,76,70,80,17,0,0,70,0,0,0,0,0.02,0.01,despegando,0,0,0
+7.796,TAKEOFF,76,70,80,17,0,0,70,0,0,0,0,0.07,0.03,despegando,0,0,0
+7.846,TAKEOFF,76,70,80,17,0,0,70,0,0,0,0,0.02,0.01,despegando,0,0,0
+7.896,TAKEOFF,76,70,80,17,0,0,70,0,0,0,0,0.07,0.01,despegando,0,0,0
+7.946,TAKEOFF,76,70,79,17,0,0,70,0,0,0,0,0.01,0.01,despegando,0,0,0
+7.996,TAKEOFF,76,70,79,17,0,0,70,0,0,0,0,0.06,0.01,despegando,0,0,0
+8.046,HOVER,76,70,82,17,0,0,70,0,0,0,0,0.03,0.03,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+8.097,HOVER,76,70,82,17,0,0,70,0,0,0,0,0.08,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+8.147,HOVER,76,70,82,17,0,0,70,0,0,0,0,0.02,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+8.197,HOVER,76,70,82,17,0,0,70,0,0,0,0,0.07,0.03,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+8.247,HOVER,76,70,83,17,0,0,70,0,0,0,0,0.01,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+8.297,HOVER,76,70,83,17,0,0,70,0,0,0,0,0.06,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+8.347,HOVER,76,70,87,17,0,0,70,0,0,0,0,0.03,0.03,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+8.397,HOVER,76,70,87,17,0,0,70,0,0,0,0,0.08,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+8.448,HOVER,76,70,88,17,0,0,70,0,0,0,0,0.01,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+8.498,HOVER,76,70,88,17,0,0,70,0,0,0,0,0.06,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+8.548,HOVER,76,80,90,17,0,0,70,0,0,0,0,0.03,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+8.598,HOVER,76,80,90,17,0,0,70,0,0,0,0,0.08,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+8.648,HOVER,76,80,92,17,0,0,70,0,0,0,0,0.03,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+8.698,HOVER,76,80,92,17,0,0,70,0,0,0,0,0.08,0.03,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+8.748,HOVER,76,80,94,17,0,0,70,0,0,0,0,0.01,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+8.798,HOVER,76,80,94,17,0,0,70,0,0,0,0,0.06,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+8.849,HOVER,76,80,95,17,0,0,70,0,0,0,0,0.01,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+8.899,HOVER,76,80,95,17,0,0,70,0,0,0,0,0.06,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+8.949,HOVER,76,80,96,17,0,0,70,0,0,0,0,0.02,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+8.999,HOVER,76,80,96,17,0,0,70,0,0,0,0,0.00,0.03,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+9.049,HOVER,76,80,96,17,0,0,70,0,0,0,0,0.05,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+9.099,HOVER,76,80,97,17,0,0,70,0,0,0,0,0.00,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+9.150,HOVER,76,80,97,17,0,0,70,0,0,0,0,0.05,0.03,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+9.200,HOVER,76,80,97,17,0,0,70,0,0,0,0,0.10,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+9.251,HOVER,76,80,98,17,0,0,70,0,0,0,0,0.02,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+9.301,HOVER,76,80,98,17,0,0,71,0,0,0,0,0.00,0.03,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+9.351,HOVER,76,80,98,17,0,0,71,0,0,0,0,0.05,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+9.403,HOVER,76,80,100,17,0,0,71,0,0,0,0,0.00,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+9.453,HOVER,76,80,100,17,0,0,71,0,0,0,0,0.05,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+9.503,HOVER,76,80,101,17,0,0,71,0,0,0,0,0.00,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+9.553,HOVER,76,80,101,17,0,0,71,0,0,0,0,0.05,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+9.604,HOVER,76,80,101,17,0,0,71,0,0,0,0,0.10,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+9.654,HOVER,76,90,100,17,0,0,71,0,0,0,0,0.02,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+9.704,HOVER,76,90,100,17,0,0,71,0,0,0,0,0.07,0.03,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+9.754,HOVER,76,90,99,17,0,0,71,0,0,0,0,0.02,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+9.804,HOVER,76,90,99,17,0,0,71,0,0,0,0,0.07,0.03,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+9.854,HOVER,76,90,98,17,0,0,71,0,0,0,0,0.02,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,1,0
+9.905,HOVER,76,90,98,17,0,0,71,0,0,0,0,0.07,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,1,0
+9.955,HOVER,76,90,100,17,0,0,71,0,0,0,0,0.02,0.03,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,1,0
+10.005,HOVER,76,90,100,17,0,0,71,0,0,0,0,0.07,0.03,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,1,0
+10.055,HOVER,76,90,98,17,0,-1,71,0,0,0,0,0.01,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,1
+10.105,HOVER,76,90,98,17,0,-1,71,0,0,0,0,0.06,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,1
+10.156,HOVER,76,90,96,17,0,-1,71,0,0,0,0,0.02,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,1
+10.206,HOVER,76,90,96,17,0,-1,71,0,0,0,0,0.07,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,1
+10.256,HOVER,76,80,95,17,0,0,71,0,0,0,0,0.02,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,1
+10.306,HOVER,76,80,95,17,0,0,71,0,0,0,0,0.07,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,1
+10.356,HOVER,76,80,95,17,0,0,70,0,0,0,0,0.04,0.05,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,1
+10.406,HOVER,76,80,95,17,0,0,70,0,0,0,0,0.09,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,1
+10.456,HOVER,76,80,95,17,0,0,70,0,0,0,0,0.03,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,1
+10.507,HOVER,76,80,95,17,0,0,70,0,0,0,0,0.08,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,1
+10.557,HOVER,76,80,96,17,0,0,70,0,0,0,0,0.02,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,1
+10.609,HOVER,76,80,96,17,0,0,70,0,0,0,0,0.07,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,1
+10.660,HOVER,76,80,93,17,0,0,70,0,0,0,0,0.02,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,1,0
+10.710,HOVER,76,80,93,17,0,0,70,0,0,0,0,0.07,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,1,0
+10.760,HOVER,76,80,95,17,0,0,70,0,0,0,0,0.03,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,1,0
+10.810,HOVER,76,80,95,17,0,0,70,0,0,0,0,0.08,0.03,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,1,0
+10.860,HOVER,76,80,95,17,0,-1,70,0,0,0,0,0.02,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+10.910,HOVER,76,80,95,17,0,-1,70,0,0,0,0,0.07,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+10.960,HOVER,76,80,92,17,0,0,70,0,0,0,0,0.03,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+11.011,HOVER,76,80,92,17,0,0,70,0,0,0,0,0.08,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+11.061,HOVER,76,80,92,17,0,0,70,0,0,0,0,0.02,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+11.111,HOVER,76,80,92,17,0,0,70,0,0,0,0,0.07,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+11.161,HOVER,76,80,93,17,0,0,70,0,0,0,0,0.01,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+11.211,HOVER,76,80,93,17,0,0,70,0,0,0,0,0.06,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+11.261,HOVER,76,80,91,17,0,0,70,0,0,0,0,0.03,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+11.311,HOVER,76,80,91,17,0,0,70,0,0,0,0,0.08,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+11.362,HOVER,76,80,90,17,0,0,71,0,0,0,0,0.01,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+11.412,HOVER,76,80,90,17,0,0,71,0,0,0,0,0.06,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+11.462,HOVER,76,80,89,17,0,0,71,0,0,0,0,0.00,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+11.512,HOVER,76,80,89,17,0,0,71,0,0,0,0,0.05,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+11.565,HOVER,76,80,90,17,0,0,71,0,0,0,0,0.02,0.03,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+11.615,HOVER,76,80,90,17,0,0,71,0,0,0,0,0.07,0.02,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+11.665,HOVER,76,80,89,17,0,0,71,0,0,0,0,0.00,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+11.716,HOVER,76,80,89,17,0,0,71,0,0,0,0,0.05,0.03,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+11.766,HOVER,76,80,88,17,0,0,71,0,0,0,0,0.00,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+11.816,HOVER,76,80,88,17,0,0,71,0,0,0,0,0.05,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+11.867,HOVER,76,80,86,17,0,0,71,0,0,0,0,0.00,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+11.917,HOVER,76,80,86,17,0,0,71,0,0,0,0,0.05,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+11.969,HOVER,76,80,85,17,0,0,71,0,0,0,0,0.01,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+12.019,HOVER,76,80,85,17,0,0,71,0,0,0,0,0.06,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+12.073,HOVER,76,80,84,17,0,0,71,0,0,0,0,0.00,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+12.123,HOVER,76,80,82,17,0,0,71,0,0,0,0,0.00,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+12.175,HOVER,76,80,82,17,0,0,71,0,0,0,0,0.05,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+12.225,HOVER,76,80,80,17,0,0,71,0,0,0,0,0.01,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+12.275,HOVER,76,80,80,17,0,0,71,0,0,0,0,0.06,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+12.325,HOVER,76,80,79,17,0,0,70,0,0,0,0,0.01,0.03,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+12.376,HOVER,76,80,79,17,0,0,70,0,0,0,0,0.06,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+12.426,HOVER,76,70,78,17,0,0,70,0,0,0,0,0.00,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+12.476,HOVER,76,70,78,17,0,0,70,0,0,0,0,0.05,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+12.526,HOVER,76,70,76,17,0,0,70,0,0,0,0,0.02,0.03,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+12.576,HOVER,76,70,76,17,0,0,70,0,0,0,0,0.07,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+12.627,HOVER,76,70,75,17,0,0,70,0,0,0,0,0.00,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+12.678,HOVER,76,70,75,17,0,0,70,0,0,0,0,0.05,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+12.728,HOVER,76,70,73,17,0,0,70,0,0,0,0,0.01,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+12.780,HOVER,76,70,73,17,0,0,70,0,0,0,0,0.06,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+12.831,HOVER,76,70,72,17,0,0,70,0,0,0,0,0.01,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+12.881,HOVER,76,70,72,17,0,0,70,0,0,0,0,0.06,0.03,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+12.931,HOVER,76,70,71,17,0,0,70,0,0,0,0,0.00,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+12.981,HOVER,76,70,71,17,0,0,70,0,0,0,0,0.05,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+13.031,HOVER,76,70,70,17,0,0,70,0,0,0,0,0.00,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+13.081,HOVER,76,70,70,17,0,0,70,0,0,0,0,0.05,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+13.132,HOVER,76,70,70,17,0,0,70,0,0,0,0,0.00,0.03,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+13.182,HOVER,76,70,70,17,0,0,70,0,0,0,0,0.05,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+13.232,HOVER,76,70,69,17,0,0,70,0,0,0,0,0.01,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+13.282,HOVER,76,70,69,17,0,0,70,0,0,0,0,0.06,0.04,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+13.333,HOVER,76,70,68,17,0,0,70,0,0,0,0,0.00,0.03,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+13.383,HOVER,76,70,68,17,0,0,70,0,0,0,0,0.05,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+13.435,HOVER,76,70,68,17,0,0,70,0,0,0,0,0.00,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+13.485,HOVER,76,70,68,17,0,0,70,0,0,0,0,0.05,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+13.536,HOVER,76,70,68,17,0,0,70,0,0,0,0,0.00,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+13.586,HOVER,76,70,68,17,0,0,70,0,0,0,0,0.05,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+13.636,HOVER,76,70,68,17,-1,0,70,0,0,0,0,0.00,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+13.687,HOVER,76,70,68,17,-1,0,70,0,0,0,0,0.05,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+13.739,HOVER,76,70,69,17,0,0,70,0,0,0,0,0.01,0.03,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+13.789,HOVER,76,70,69,17,0,0,70,0,0,0,0,0.06,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+13.840,HOVER,76,70,69,17,0,0,70,0,0,0,0,0.00,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+13.890,HOVER,76,70,69,17,0,0,70,0,0,0,0,0.05,0.03,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+13.940,HOVER,76,70,70,17,0,0,70,0,0,0,0,0.00,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+13.990,HOVER,76,70,70,17,0,0,70,0,0,0,0,0.06,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+14.040,HOVER,75,70,71,17,0,0,70,0,0,0,0,0.00,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+14.090,HOVER,75,70,71,17,0,0,70,0,0,0,0,0.05,0.03,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+14.140,HOVER,75,70,71,17,0,0,70,0,0,0,0,0.00,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+14.191,HOVER,75,70,71,17,0,0,70,0,0,0,0,0.05,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+14.241,HOVER,75,70,72,17,0,0,70,0,0,0,0,0.00,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+14.291,HOVER,75,70,72,17,0,0,70,0,0,0,0,0.05,0.01,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+14.341,HOVER,75,70,72,17,0,0,70,0,0,0,0,0.10,0.05,"en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)",0,0,0
+14.392,EMERGENCY_LAND,75,70,73,17,0,0,70,0,0,0,0,0.02,0.01,PARO: teclado,0,0,0
+14.442,EMERGENCY_LAND,75,70,73,17,0,0,70,0,0,0,0,0.07,0.01,PARO: teclado,0,0,0
+14.492,EMERGENCY_LAND,75,70,73,17,0,0,70,0,0,0,0,0.04,0.03,PARO: teclado,0,0,0
+14.542,EMERGENCY_LAND,75,70,73,17,0,0,70,0,0,0,0,0.09,0.01,PARO: teclado,0,0,0
+14.592,EMERGENCY_LAND,75,70,74,17,0,0,70,0,0,0,0,0.03,0.01,PARO: teclado,0,0,0
+14.643,EMERGENCY_LAND,75,70,74,17,0,0,70,0,0,0,0,0.08,0.01,PARO: teclado,0,0,0
+14.693,EMERGENCY_LAND,75,70,74,17,0,0,70,0,0,0,0,0.04,0.03,PARO: teclado,0,0,0
+14.743,EMERGENCY_LAND,75,70,74,17,0,0,70,0,0,0,0,0.09,0.01,PARO: teclado,0,0,0
+14.793,EMERGENCY_LAND,75,70,73,17,0,0,70,0,0,0,0,0.03,0.01,PARO: teclado,0,0,0
+14.843,EMERGENCY_LAND,75,70,73,17,0,0,70,0,0,0,0,0.08,0.01,PARO: teclado,0,0,0
+14.893,EMERGENCY_LAND,75,70,74,17,0,0,70,0,0,0,0,0.02,0.01,PARO: teclado,0,0,0
+14.944,EMERGENCY_LAND,75,70,74,17,0,0,70,0,0,0,0,0.07,0.01,PARO: teclado,0,0,0
+14.994,EMERGENCY_LAND,75,70,72,17,0,0,70,0,0,0,0,0.03,0.01,PARO: teclado,0,0,0
+15.044,EMERGENCY_LAND,75,70,72,17,0,0,70,0,0,0,0,0.08,0.03,PARO: teclado,0,0,0
+15.094,EMERGENCY_LAND,75,70,71,17,0,0,70,0,0,0,0,0.02,0.01,PARO: teclado,0,0,0
+15.144,EMERGENCY_LAND,75,60,71,17,0,0,70,0,0,0,0,0.01,0.01,PARO: teclado,0,0,1
+15.194,EMERGENCY_LAND,75,60,71,17,0,0,70,0,0,0,0,0.06,0.01,PARO: teclado,0,0,1
+15.244,EMERGENCY_LAND,75,60,68,17,0,0,70,0,0,0,0,0.02,0.01,PARO: teclado,0,0,1
+15.295,EMERGENCY_LAND,75,60,68,17,0,0,70,0,0,0,0,0.07,0.03,PARO: teclado,0,0,1
+15.348,EMERGENCY_LAND,75,60,68,17,0,0,70,0,0,0,0,0.13,0.05,PARO: teclado,0,0,1
+15.398,EMERGENCY_LAND,75,60,66,17,0,0,70,0,0,0,0,0.00,0.03,PARO: teclado,0,0,2
+15.448,EMERGENCY_LAND,75,60,66,17,0,0,70,0,0,0,0,0.05,0.01,PARO: teclado,0,0,2
+15.499,EMERGENCY_LAND,75,60,62,17,0,0,70,0,0,0,0,0.02,0.01,PARO: teclado,0,0,3
+15.549,EMERGENCY_LAND,75,60,62,17,0,0,70,0,0,0,0,0.07,0.01,PARO: teclado,0,0,3
+15.599,EMERGENCY_LAND,75,50,57,17,0,0,70,0,0,0,0,0.03,0.01,PARO: teclado,0,0,3
+15.649,EMERGENCY_LAND,75,50,52,17,0,0,70,0,0,0,0,0.01,0.01,PARO: teclado,0,0,4
+15.699,EMERGENCY_LAND,75,50,52,17,0,0,70,0,0,0,0,0.06,0.01,PARO: teclado,0,0,4
+15.749,EMERGENCY_LAND,75,40,46,17,0,0,70,0,0,0,0,0.02,0.01,PARO: teclado,0,0,4
+15.800,EMERGENCY_LAND,75,40,46,17,0,0,70,0,0,0,0,0.07,0.01,PARO: teclado,0,0,4
+15.850,EMERGENCY_LAND,75,40,40,17,0,0,70,0,0,0,0,0.01,0.01,PARO: teclado,0,0,4
+15.900,EMERGENCY_LAND,75,40,40,17,0,0,70,0,0,0,0,0.06,0.01,PARO: teclado,0,0,4
+15.950,EMERGENCY_LAND,75,30,33,17,0,0,70,0,0,0,0,0.03,0.03,PARO: teclado,0,0,4
+16.000,EMERGENCY_LAND,75,30,33,17,0,0,70,0,0,0,0,0.08,0.01,PARO: teclado,0,0,4
+16.050,EMERGENCY_LAND,74,30,25,17,0,0,70,0,0,0,0,0.01,0.01,PARO: teclado,0,0,4
+16.100,EMERGENCY_LAND,74,30,25,17,0,0,70,0,0,0,0,0.06,0.01,PARO: teclado,0,0,4
+16.151,EMERGENCY_LAND,74,20,19,16,0,0,70,0,0,0,0,0.02,0.01,PARO: teclado,0,0,5
+16.201,EMERGENCY_LAND,74,20,19,16,0,0,70,0,0,0,0,0.07,0.01,PARO: teclado,0,0,5
+16.251,EMERGENCY_LAND,74,20,19,16,0,0,70,0,0,0,0,0.12,0.05,PARO: teclado,0,0,5
+16.301,EMERGENCY_LAND,74,10,12,16,0,0,70,0,0,0,0,0.00,0.05,PARO: teclado,0,0,5
+16.352,EMERGENCY_LAND,74,10,10,16,0,0,71,0,0,0,0,0.01,0.03,PARO: teclado,0,0,4
+16.403,EMERGENCY_LAND,74,10,10,16,0,0,71,0,0,0,0,0.06,0.01,PARO: teclado,0,0,4
+16.453,EMERGENCY_LAND,74,0,10,17,-1,-1,71,0,0,0,0,0.00,0.01,PARO: teclado,0,0,3
+16.503,EMERGENCY_LAND,74,0,10,17,-1,-1,71,0,0,0,0,0.05,0.01,PARO: teclado,0,0,3
+16.553,EMERGENCY_LAND,74,0,10,17,0,2,71,0,0,0,0,0.00,0.01,PARO: teclado,0,0,-2
+16.603,EMERGENCY_LAND,74,0,10,17,0,2,71,0,0,0,0,0.05,0.01,PARO: teclado,0,0,-2
+16.653,EMERGENCY_LAND,74,0,10,15,-1,-1,71,0,0,0,0,0.00,0.01,PARO: teclado,0,0,0
+16.704,EMERGENCY_LAND,74,0,10,15,-1,-1,71,0,0,0,0,0.05,0.03,PARO: teclado,0,0,0
+16.754,EMERGENCY_LAND,74,0,10,15,0,-1,71,0,0,0,0,0.01,0.01,PARO: teclado,0,0,0
+16.804,EMERGENCY_LAND,74,0,10,15,0,-1,71,0,0,0,0,0.06,0.01,PARO: teclado,0,0,0
+16.854,EMERGENCY_LAND,74,0,10,15,0,-1,71,0,0,0,0,0.11,0.05,PARO: teclado,0,0,0
+16.905,EMERGENCY_LAND,74,0,10,15,0,-1,71,0,0,0,0,0.01,0.01,PARO: teclado,0,0,0
+16.955,EMERGENCY_LAND,74,0,10,15,0,-1,71,0,0,0,0,0.01,0.01,PARO: teclado,0,0,0
+17.005,EMERGENCY_LAND,74,0,10,15,0,-1,71,0,0,0,0,0.06,0.01,PARO: teclado,0,0,0
+17.055,EMERGENCY_LAND,74,0,10,15,0,-1,71,0,0,0,0,0.00,0.01,PARO: teclado,0,0,0
+17.105,EMERGENCY_LAND,74,0,10,15,0,-1,71,0,0,0,0,0.05,0.01,PARO: teclado,0,0,0
+17.155,EMERGENCY_LAND,74,0,10,15,0,-1,71,0,0,0,0,0.00,0.03,PARO: teclado,0,0,0
+17.205,EMERGENCY_LAND,74,0,10,15,0,-1,71,0,0,0,0,0.05,0.01,PARO: teclado,0,0,0
+17.255,EMERGENCY_LAND,74,0,10,15,0,-1,71,0,0,0,0,0.00,0.01,PARO: teclado,0,0,0
+17.306,EMERGENCY_LAND,74,0,10,15,0,-1,71,0,0,0,0,0.05,0.01,PARO: teclado,0,0,0
+17.356,EMERGENCY_LAND,74,0,10,15,0,-1,71,0,0,0,0,0.00,0.03,PARO: teclado,0,0,0
+17.407,EMERGENCY_LAND,74,0,10,15,0,-1,71,0,0,0,0,0.05,0.01,PARO: teclado,0,0,0
+17.457,EMERGENCY_LAND,74,0,10,15,0,-1,71,0,0,0,0,0.00,0.01,PARO: teclado,0,0,0
+17.509,EMERGENCY_LAND,74,0,10,15,0,-1,71,0,0,0,0,0.05,0.03,PARO: teclado,0,0,0
+17.559,EMERGENCY_LAND,74,0,10,15,0,-1,71,0,0,0,0,0.00,0.01,PARO: teclado,0,0,0
+17.610,EMERGENCY_LAND,74,0,10,15,0,-1,71,0,0,0,0,0.05,0.01,PARO: teclado,0,0,0
+17.661,EMERGENCY_LAND,74,0,10,15,0,-1,71,0,0,0,0,0.10,0.03,PARO: teclado,0,0,0
+17.711,DONE,74,0,10,15,0,-1,71,0,0,0,0,0.04,0.01,aterrizado (PARO: teclado),0,0,0
+17.761,DONE,74,0,10,15,0,-1,71,0,0,0,0,0.09,0.01,aterrizado (PARO: teclado),0,0,0
+17.811,DONE,74,0,10,15,0,-1,71,0,0,0,0,0.03,0.01,aterrizado (PARO: teclado),0,0,0
+17.862,DONE,74,0,10,15,0,-1,71,0,0,0,0,0.09,0.01,aterrizado (PARO: teclado),0,0,0
+17.912,DONE,74,0,10,15,0,-1,71,0,0,0,0,0.03,0.01,aterrizado (PARO: teclado),0,0,-1
+17.963,DONE,74,0,10,15,0,-1,71,0,0,0,0,0.08,0.01,aterrizado (PARO: teclado),0,0,-1
+18.013,DONE,74,0,10,15,0,-1,71,0,0,0,0,0.03,0.01,aterrizado (PARO: teclado),0,0,-1
+18.067,DONE,74,0,10,15,0,-1,71,0,0,0,0,0.09,0.01,aterrizado (PARO: teclado),0,0,-1

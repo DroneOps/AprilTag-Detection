@@ -1,0 +1,337 @@
+t,state,bat,h,tof,yaw,pitch,roll,temph,rc_lr,rc_fb,rc_ud,rc_yaw,state_age,video_age,reason,vgx,vgy,vgz
+0.000,IDLE,76,0,10,25,0,0,65,0,0,0,0,0.00,inf,esperando despegue (t),0,0,0
+0.050,IDLE,76,0,10,25,0,0,65,0,0,0,0,0.05,inf,esperando despegue (t),0,0,0
+0.101,IDLE,76,0,10,25,0,0,65,0,0,0,0,0.00,inf,esperando despegue (t),0,0,0
+0.151,IDLE,76,0,10,25,0,0,65,0,0,0,0,0.05,inf,esperando despegue (t),0,0,0
+0.202,IDLE,76,0,10,25,0,0,66,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+0.252,IDLE,76,0,10,25,0,0,66,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+0.302,IDLE,76,0,10,25,0,0,66,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+0.352,IDLE,76,0,10,25,0,0,66,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+0.402,IDLE,76,0,10,25,0,0,66,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+0.452,IDLE,76,0,10,25,0,0,66,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+0.502,IDLE,76,0,10,25,0,0,66,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+0.553,IDLE,76,0,10,25,0,0,66,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+0.603,IDLE,76,0,10,25,0,0,66,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+0.654,IDLE,76,0,10,25,0,0,66,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+0.704,IDLE,76,0,10,25,0,0,66,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+0.754,IDLE,76,0,10,25,0,0,66,0,0,0,0,0.05,0.03,esperando despegue (t),0,0,0
+0.804,IDLE,76,0,10,25,0,0,66,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+0.855,IDLE,76,0,10,25,0,0,66,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+0.906,IDLE,76,0,10,25,0,0,66,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+0.957,IDLE,76,0,10,25,0,0,66,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+1.007,IDLE,76,0,10,25,0,0,66,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+1.057,IDLE,76,0,10,25,0,0,66,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+1.107,IDLE,76,0,10,25,0,0,66,0,0,0,0,0.10,0.03,esperando despegue (t),0,0,0
+1.157,IDLE,76,0,10,25,0,0,66,0,0,0,0,0.02,0.01,esperando despegue (t),0,0,0
+1.207,IDLE,76,0,10,25,0,0,66,0,0,0,0,0.07,0.01,esperando despegue (t),0,0,0
+1.257,IDLE,76,0,10,25,0,0,65,0,0,0,0,0.01,0.01,esperando despegue (t),0,0,0
+1.308,IDLE,76,0,10,25,0,0,65,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+1.358,IDLE,76,0,10,25,0,0,65,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+1.408,IDLE,76,0,10,25,0,0,65,0,0,0,0,0.00,0.01,esperando despegue (t),0,0,0
+1.460,IDLE,76,0,10,25,0,0,65,0,0,0,0,0.05,0.01,esperando despegue (t),0,0,0
+1.510,IDLE,76,0,10,25,0,0,65,0,0,0,0,0.04,0.01,esperando despegue (t),0,0,0
+1.560,IDLE,76,0,10,25,0,0,65,0,0,0,0,0.09,0.01,esperando despegue (t),0,0,0
+1.610,IDLE,76,0,10,25,0,0,65,0,0,0,0,0.03,0.01,esperando despegue (t),0,0,0
+1.661,TAKEOFF,76,0,10,25,0,0,65,0,0,0,0,0.08,0.01,despegando,0,0,0
+1.711,TAKEOFF,76,0,10,25,0,0,65,0,0,0,0,0.03,0.01,despegando,0,0,0
+1.761,TAKEOFF,76,0,10,25,0,0,65,0,0,0,0,0.08,0.02,despegando,0,0,0
+1.812,TAKEOFF,76,0,10,25,0,0,65,0,0,0,0,0.04,0.02,despegando,0,0,0
+1.862,TAKEOFF,76,0,10,25,0,0,65,0,0,0,0,0.09,0.01,despegando,0,0,0
+1.912,TAKEOFF,76,0,10,25,0,0,65,0,0,0,0,0.04,0.01,despegando,0,0,0
+1.963,TAKEOFF,76,0,10,25,0,0,65,0,0,0,0,0.09,0.01,despegando,0,0,0
+2.013,TAKEOFF,76,0,10,26,0,0,65,0,0,0,0,0.03,0.03,despegando,0,0,0
+2.063,TAKEOFF,76,0,10,26,0,0,65,0,0,0,0,0.08,0.03,despegando,0,0,0
+2.113,TAKEOFF,76,0,10,27,0,0,65,0,0,0,0,0.03,0.01,despegando,0,0,0
+2.163,TAKEOFF,76,0,10,27,0,0,65,0,0,0,0,0.08,0.01,despegando,0,0,0
+2.214,TAKEOFF,76,0,10,28,0,0,66,0,0,0,0,0.02,0.01,despegando,0,0,0
+2.264,TAKEOFF,76,0,10,28,0,0,66,0,0,0,0,0.07,0.03,despegando,0,0,0
+2.314,TAKEOFF,76,0,10,29,0,0,66,0,0,0,0,0.01,0.01,despegando,0,0,0
+2.364,TAKEOFF,76,0,10,29,0,0,66,0,0,0,0,0.06,0.03,despegando,0,0,0
+2.415,TAKEOFF,76,0,10,29,-1,0,66,0,0,0,0,0.02,0.05,despegando,0,0,-2
+2.465,TAKEOFF,76,0,10,29,-1,0,66,0,0,0,0,0.07,0.01,despegando,0,0,-2
+2.515,TAKEOFF,76,0,10,29,0,0,66,0,0,0,0,0.00,0.01,despegando,0,0,-4
+2.565,TAKEOFF,76,0,10,29,0,0,66,0,0,0,0,0.06,0.01,despegando,0,0,-4
+2.615,TAKEOFF,76,10,16,29,1,0,66,0,0,0,0,0.02,0.01,despegando,0,0,-7
+2.665,TAKEOFF,76,10,16,29,1,0,66,0,0,0,0,0.07,0.03,despegando,0,0,-7
+2.715,TAKEOFF,76,20,24,29,0,0,66,0,0,0,0,0.02,0.01,despegando,0,0,-8
+2.766,TAKEOFF,76,20,24,29,0,0,66,0,0,0,0,0.07,0.03,despegando,0,0,-8
+2.816,TAKEOFF,76,20,28,29,0,0,66,0,0,0,0,0.01,0.01,despegando,0,0,-8
+2.866,TAKEOFF,76,20,28,29,0,0,66,0,0,0,0,0.06,0.01,despegando,0,0,-8
+2.916,TAKEOFF,76,30,36,29,1,0,66,0,0,0,0,0.01,0.01,despegando,0,0,-7
+2.966,TAKEOFF,76,30,36,29,1,0,66,0,0,0,0,0.06,0.01,despegando,0,0,-7
+3.016,TAKEOFF,76,40,43,29,1,0,66,0,0,0,0,0.01,0.01,despegando,0,0,-7
+3.066,TAKEOFF,76,40,43,29,1,0,66,0,0,0,0,0.06,0.01,despegando,0,0,-7
+3.117,TAKEOFF,76,40,51,29,0,0,66,0,0,0,0,0.02,0.01,despegando,0,0,-6
+3.167,TAKEOFF,76,40,51,29,0,0,66,0,0,0,0,0.07,0.03,despegando,0,0,-6
+3.217,TAKEOFF,76,50,57,29,0,0,66,0,0,0,0,0.01,0.01,despegando,0,0,-5
+3.267,TAKEOFF,76,50,57,29,0,0,66,0,0,0,0,0.06,0.01,despegando,0,0,-5
+3.320,TAKEOFF,76,60,61,29,0,0,66,0,0,0,0,0.00,0.03,despegando,0,0,-4
+3.370,TAKEOFF,76,60,61,29,0,0,66,0,0,0,0,0.05,0.01,despegando,0,0,-4
+3.420,TAKEOFF,76,60,65,29,0,0,66,0,0,0,0,0.01,0.01,despegando,0,0,-3
+3.471,TAKEOFF,76,60,65,29,0,0,66,0,0,0,0,0.06,0.01,despegando,0,0,-3
+3.521,TAKEOFF,76,60,66,29,0,0,66,0,0,0,0,0.00,0.01,despegando,0,0,-2
+3.571,TAKEOFF,76,60,66,29,0,0,66,0,0,0,0,0.05,0.03,despegando,0,0,-2
+3.621,TAKEOFF,76,60,69,29,0,0,66,0,0,0,0,0.00,0.01,despegando,0,0,-1
+3.675,TAKEOFF,76,60,69,29,0,0,66,0,0,0,0,0.05,0.01,despegando,0,0,-1
+3.726,TAKEOFF,76,70,71,29,0,0,66,0,0,0,0,0.00,0.01,despegando,0,0,-1
+3.776,TAKEOFF,76,70,71,29,0,0,66,0,0,0,0,0.05,0.01,despegando,0,0,-1
+3.826,TAKEOFF,76,70,72,29,0,0,66,0,0,0,0,0.01,0.01,despegando,0,0,-1
+3.876,TAKEOFF,76,70,72,29,0,0,66,0,0,0,0,0.06,0.01,despegando,0,0,-1
+3.926,TAKEOFF,76,70,72,29,2,0,66,0,0,0,0,0.00,0.01,despegando,0,0,0
+3.976,TAKEOFF,76,70,72,29,2,0,66,0,0,0,0,0.05,0.01,despegando,0,0,0
+4.027,TAKEOFF,76,70,73,29,0,0,66,0,0,0,0,0.00,0.03,despegando,0,0,0
+4.077,TAKEOFF,76,70,73,29,0,0,66,0,0,0,0,0.05,0.01,despegando,0,0,0
+4.127,TAKEOFF,76,70,74,29,0,0,66,0,0,0,0,0.01,0.01,despegando,0,0,0
+4.177,TAKEOFF,76,70,74,29,0,0,66,0,0,0,0,0.06,0.01,despegando,0,0,0
+4.227,TAKEOFF,76,70,73,29,0,0,66,0,0,0,0,0.01,0.01,despegando,0,0,0
+4.278,TAKEOFF,76,70,73,29,0,0,66,0,0,0,0,0.06,0.01,despegando,0,0,0
+4.328,TAKEOFF,76,70,73,29,0,0,66,0,0,0,0,0.00,0.01,despegando,0,0,0
+4.378,TAKEOFF,76,70,73,29,0,0,66,0,0,0,0,0.05,0.01,despegando,0,0,0
+4.428,TAKEOFF,76,70,74,29,0,0,66,0,0,0,0,0.01,0.01,despegando,0,0,0
+4.478,TAKEOFF,76,70,74,29,0,0,66,0,0,0,0,0.06,0.01,despegando,0,0,0
+4.528,TAKEOFF,76,70,75,29,0,0,66,0,0,0,0,0.00,0.01,despegando,0,0,0
+4.579,TAKEOFF,76,70,75,29,0,0,66,0,0,0,0,0.05,0.01,despegando,0,0,0
+4.629,TAKEOFF,76,70,75,29,0,0,66,0,0,0,0,0.00,0.03,despegando,0,0,0
+4.679,TAKEOFF,76,70,75,29,0,0,66,0,0,0,0,0.05,0.01,despegando,0,0,0
+4.729,TAKEOFF,76,70,76,29,0,0,66,0,0,0,0,0.00,0.01,despegando,0,0,0
+4.779,TAKEOFF,76,70,76,29,0,0,66,0,0,0,0,0.05,0.03,despegando,0,0,0
+4.829,TAKEOFF,76,70,77,29,0,0,66,0,0,0,0,0.00,0.01,despegando,0,0,0
+4.879,TAKEOFF,76,70,77,29,0,0,66,0,0,0,0,0.05,0.01,despegando,0,0,0
+4.929,TAKEOFF,76,70,77,29,0,0,66,0,0,0,0,0.10,0.01,despegando,0,0,0
+4.980,TAKEOFF,76,70,79,29,0,0,66,0,0,0,0,0.00,0.02,despegando,0,0,0
+5.030,TAKEOFF,76,70,79,29,0,0,66,0,0,0,0,0.05,0.01,despegando,0,0,0
+5.080,TAKEOFF,76,70,79,29,0,0,66,0,0,0,0,0.10,0.01,despegando,0,0,0
+5.130,TAKEOFF,76,70,80,29,0,0,66,0,0,0,0,0.04,0.01,despegando,0,0,0
+5.180,TAKEOFF,76,70,80,29,0,0,66,0,0,0,0,0.09,0.01,despegando,0,0,0
+5.231,TAKEOFF,76,70,80,29,0,0,66,0,0,0,0,0.14,0.01,despegando,0,0,0
+5.281,TAKEOFF,76,80,80,29,0,0,67,0,0,0,0,0.01,0.01,despegando,0,0,0
+5.331,TAKEOFF,76,80,80,29,0,0,67,0,0,0,0,0.06,0.01,despegando,0,0,0
+5.381,TAKEOFF,76,80,80,29,0,0,67,0,0,0,0,0.04,0.01,despegando,0,0,0
+5.431,TAKEOFF,76,80,82,29,0,0,67,0,0,0,0,0.04,0.05,despegando,0,0,0
+5.482,TAKEOFF,76,80,82,29,0,0,67,0,0,0,0,0.09,0.01,despegando,0,0,0
+5.532,TAKEOFF,76,80,83,29,0,0,67,0,0,0,0,0.03,0.01,despegando,0,0,0
+5.582,TAKEOFF,76,80,83,29,0,0,67,0,0,0,0,0.08,0.01,despegando,0,0,0
+5.632,TAKEOFF,76,80,82,29,0,0,67,0,0,0,0,0.03,0.01,despegando,0,0,0
+5.682,TAKEOFF,76,80,82,29,0,0,67,0,0,0,0,0.08,0.01,despegando,0,0,0
+5.732,TAKEOFF,76,80,82,29,0,0,67,0,0,0,0,0.04,0.01,despegando,0,0,0
+5.782,TAKEOFF,76,80,82,29,0,0,67,0,0,0,0,0.09,0.01,despegando,0,0,0
+5.832,TAKEOFF,76,80,83,29,0,0,67,0,0,0,0,0.02,0.03,despegando,0,0,0
+5.883,TAKEOFF,76,80,83,29,0,0,67,0,0,0,0,0.07,0.01,despegando,0,0,0
+5.933,TAKEOFF,76,80,83,29,0,0,67,0,0,0,0,0.00,0.01,despegando,0,0,0
+5.983,TAKEOFF,76,80,83,29,0,0,67,0,0,0,0,0.05,0.01,despegando,0,0,0
+6.033,TAKEOFF,76,80,84,29,0,0,67,0,0,0,0,0.01,0.01,despegando,0,0,0
+6.083,TAKEOFF,76,80,84,29,0,0,67,0,0,0,0,0.06,0.01,despegando,0,0,0
+6.133,TAKEOFF,76,80,85,29,0,0,67,0,0,0,0,0.01,0.01,despegando,0,0,0
+6.184,TAKEOFF,76,80,85,29,0,0,67,0,0,0,0,0.06,0.01,despegando,0,0,0
+6.234,TAKEOFF,76,80,86,29,0,0,66,0,0,0,0,0.01,0.01,despegando,0,0,0
+6.284,TAKEOFF,76,80,86,29,0,0,66,0,0,0,0,0.06,0.03,despegando,0,0,0
+6.334,TAKEOFF,76,80,88,29,0,0,66,0,0,0,0,0.03,0.01,despegando,0,0,0
+6.384,TAKEOFF,76,80,88,29,0,0,66,0,0,0,0,0.08,0.03,despegando,0,0,0
+6.437,TAKEOFF,76,80,88,29,0,0,66,0,0,0,0,0.01,0.01,despegando,0,0,0
+6.487,TAKEOFF,76,80,88,29,0,0,66,0,0,0,0,0.06,0.01,despegando,0,0,0
+6.538,HOVER,76,80,89,29,0,0,66,0,0,0,0,0.00,0.01,"en el aire a 78 cm (sin estabilizar, ok del Tello, despegue 4.9 s)",0,0,0
+6.588,HOVER,76,80,89,29,0,0,66,0,0,0,0,0.05,0.01,"en el aire a 78 cm (sin estabilizar, ok del Tello, despegue 4.9 s)",0,0,0
+6.638,HOVER,76,80,91,29,0,0,66,0,0,0,0,0.01,0.01,"en el aire a 78 cm (sin estabilizar, ok del Tello, despegue 4.9 s)",0,0,0
+6.688,HOVER,76,80,91,29,0,0,66,0,0,0,0,0.06,0.01,"en el aire a 78 cm (sin estabilizar, ok del Tello, despegue 4.9 s)",0,0,0
+6.738,HOVER,76,80,90,29,0,0,66,0,0,0,0,0.00,0.01,"en el aire a 78 cm (sin estabilizar, ok del Tello, despegue 4.9 s)",0,0,0
+6.789,HOVER,76,80,90,29,0,0,66,0,0,0,0,0.05,0.01,"en el aire a 78 cm (sin estabilizar, ok del Tello, despegue 4.9 s)",0,0,0
+6.839,HOVER,76,80,91,29,0,0,66,0,0,0,0,0.02,0.01,"en el aire a 78 cm (sin estabilizar, ok del Tello, despegue 4.9 s)",0,0,0
+6.889,HOVER,76,80,91,29,0,0,66,0,0,0,0,0.07,0.01,"en el aire a 78 cm (sin estabilizar, ok del Tello, despegue 4.9 s)",0,0,0
+6.939,HOVER,76,80,93,29,0,0,66,0,0,0,0,0.01,0.01,"en el aire a 78 cm (sin estabilizar, ok del Tello, despegue 4.9 s)",0,0,0
+6.990,HOVER,76,80,93,29,0,0,66,0,0,0,0,0.06,0.01,"en el aire a 78 cm (sin estabilizar, ok del Tello, despegue 4.9 s)",0,0,0
+7.041,HOVER,76,80,94,29,0,0,66,0,0,0,0,0.02,0.01,"en el aire a 78 cm (sin estabilizar, ok del Tello, despegue 4.9 s)",0,0,0
+7.091,HOVER,76,80,94,29,0,0,66,0,0,0,0,0.07,0.03,"en el aire a 78 cm (sin estabilizar, ok del Tello, despegue 4.9 s)",0,0,0
+7.141,HOVER,76,80,96,29,0,0,66,0,0,0,0,0.02,0.01,"en el aire a 78 cm (sin estabilizar, ok del Tello, despegue 4.9 s)",0,0,0
+7.191,HOVER,76,80,96,29,0,0,66,0,0,0,0,0.07,0.01,"en el aire a 78 cm (sin estabilizar, ok del Tello, despegue 4.9 s)",0,0,0
+7.241,EMERGENCY_LAND,76,80,97,29,0,0,66,0,0,0,0,0.00,0.01,PARO: teclado,0,0,0
+7.291,EMERGENCY_LAND,76,80,97,29,0,0,66,0,0,0,0,0.05,0.01,PARO: teclado,0,0,0
+7.341,EMERGENCY_LAND,76,80,100,29,0,0,66,0,0,0,0,0.01,0.01,PARO: teclado,0,0,0
+7.392,EMERGENCY_LAND,76,80,100,29,0,0,66,0,0,0,0,0.06,0.01,PARO: teclado,0,0,0
+7.442,EMERGENCY_LAND,76,80,100,29,0,0,66,0,0,0,0,0.00,0.01,PARO: teclado,0,0,0
+7.492,EMERGENCY_LAND,76,80,100,29,0,0,66,0,0,0,0,0.05,0.01,PARO: teclado,0,0,0
+7.542,EMERGENCY_LAND,76,90,102,29,0,0,66,0,0,0,0,0.00,0.01,PARO: teclado,0,0,0
+7.592,EMERGENCY_LAND,76,90,102,29,0,0,66,0,0,0,0,0.05,0.03,PARO: teclado,0,0,0
+7.642,EMERGENCY_LAND,76,90,100,29,0,0,66,0,0,0,0,0.01,0.01,PARO: teclado,0,0,0
+7.693,EMERGENCY_LAND,76,90,100,29,0,0,66,0,0,0,0,0.06,0.01,PARO: teclado,0,0,0
+7.743,EMERGENCY_LAND,76,90,100,29,0,0,66,0,0,0,0,0.11,0.01,PARO: teclado,0,0,0
+7.793,EMERGENCY_LAND,76,90,102,29,0,0,66,0,0,0,0,0.03,0.03,PARO: teclado,0,0,0
+7.843,EMERGENCY_LAND,76,90,98,29,0,0,66,0,0,0,0,0.00,0.03,PARO: teclado,0,0,0
+7.893,EMERGENCY_LAND,76,90,98,29,0,0,66,0,0,0,0,0.05,0.01,PARO: teclado,0,0,0
+7.943,EMERGENCY_LAND,76,90,98,29,0,0,66,0,0,0,0,0.10,0.01,PARO: teclado,0,0,0
+7.994,EMERGENCY_LAND,76,90,78,29,-1,0,66,0,0,0,0,0.03,0.01,PARO: teclado,-1,0,1
+8.044,EMERGENCY_LAND,76,90,72,29,-1,0,66,0,0,0,0,0.00,0.03,PARO: teclado,0,0,2
+8.094,EMERGENCY_LAND,76,90,72,29,-1,0,66,0,0,0,0,0.05,0.01,PARO: teclado,0,0,2
+8.144,EMERGENCY_LAND,76,80,67,29,0,0,66,0,0,0,0,0.00,0.01,PARO: teclado,0,0,3
+8.194,EMERGENCY_LAND,76,80,67,29,0,0,66,0,0,0,0,0.05,0.03,PARO: teclado,0,0,3
+8.245,EMERGENCY_LAND,76,80,67,29,0,0,66,0,0,0,0,0.10,0.01,PARO: teclado,0,0,3
+8.295,EMERGENCY_LAND,76,80,60,29,0,0,67,0,0,0,0,0.03,0.01,PARO: teclado,0,0,4
+8.345,EMERGENCY_LAND,76,80,60,29,0,0,67,0,0,0,0,0.08,0.01,PARO: teclado,0,0,4
+8.395,EMERGENCY_LAND,76,70,55,29,0,0,67,0,0,0,0,0.04,0.01,PARO: teclado,0,0,4
+8.445,EMERGENCY_LAND,76,70,50,29,0,0,67,0,0,0,0,0.00,0.01,PARO: teclado,0,0,4
+8.495,EMERGENCY_LAND,76,70,50,29,0,0,67,0,0,0,0,0.05,0.01,PARO: teclado,0,0,4
+8.545,EMERGENCY_LAND,76,70,50,29,0,0,67,0,0,0,0,0.10,0.01,PARO: teclado,0,0,4
+8.596,EMERGENCY_LAND,76,60,45,29,0,0,67,0,0,0,0,0.04,0.03,PARO: teclado,0,0,5
+8.646,EMERGENCY_LAND,76,60,45,29,0,0,67,0,0,0,0,0.09,0.01,PARO: teclado,0,0,5
+8.696,EMERGENCY_LAND,76,60,41,29,0,0,67,0,0,0,0,0.03,0.01,PARO: teclado,0,0,5
+8.746,EMERGENCY_LAND,76,60,41,29,0,0,67,0,0,0,0,0.08,0.01,PARO: teclado,0,0,5
+8.796,EMERGENCY_LAND,76,50,37,29,0,0,67,0,0,0,0,0.02,0.01,PARO: teclado,0,0,5
+8.846,EMERGENCY_LAND,76,50,37,29,0,0,67,0,0,0,0,0.07,0.01,PARO: teclado,0,0,5
+8.896,EMERGENCY_LAND,76,50,38,29,0,0,67,0,0,0,0,0.04,0.01,PARO: teclado,0,0,5
+8.947,EMERGENCY_LAND,76,40,34,29,0,0,67,0,0,0,0,0.01,0.01,PARO: teclado,0,0,4
+8.997,EMERGENCY_LAND,76,40,34,29,0,0,67,0,0,0,0,0.06,0.01,PARO: teclado,0,0,4
+9.048,EMERGENCY_LAND,76,40,31,29,0,-1,67,0,0,0,0,0.01,0.03,PARO: teclado,0,0,4
+9.098,EMERGENCY_LAND,76,40,31,29,0,-1,67,0,0,0,0,0.06,0.02,PARO: teclado,0,0,4
+9.148,KILLED,76,40,31,29,0,-1,67,0,0,0,0,0.11,0.01,motores apagados por el usuario,0,0,4
+9.198,KILLED,76,40,29,29,-4,-4,67,0,0,0,0,0.04,0.01,motores apagados por el usuario,0,0,4
+9.248,KILLED,76,30,10,29,-3,-3,67,0,0,0,0,0.00,0.01,motores apagados por el usuario,0,0,3
+9.298,KILLED,76,30,10,29,-3,-3,67,0,0,0,0,0.05,0.01,motores apagados por el usuario,0,0,3
+9.349,KILLED,76,20,10,28,0,0,67,0,0,0,0,0.01,0.01,motores apagados por el usuario,0,0,5
+9.401,KILLED,76,20,10,28,0,0,67,0,0,0,0,0.06,0.01,motores apagados por el usuario,0,0,5
+9.451,KILLED,76,10,10,30,-17,-14,67,0,0,0,0,0.02,0.01,motores apagados por el usuario,0,0,11
+9.501,KILLED,76,10,10,30,-17,-14,67,0,0,0,0,0.07,0.01,motores apagados por el usuario,0,0,11
+9.555,KILLED,76,0,10,37,-24,-33,67,0,0,0,0,0.00,0.01,motores apagados por el usuario,0,0,15
+9.605,KILLED,76,0,10,37,-24,-33,67,0,0,0,0,0.05,0.01,motores apagados por el usuario,0,0,15
+9.655,KILLED,76,0,10,35,-24,-29,67,0,0,0,0,0.01,0.01,motores apagados por el usuario,0,0,7
+9.706,KILLED,76,0,10,35,-24,-29,67,0,0,0,0,0.07,0.01,motores apagados por el usuario,0,0,7
+9.756,KILLED,76,0,10,32,-17,-16,67,0,0,0,0,0.02,0.01,motores apagados por el usuario,0,0,3
+9.806,KILLED,76,0,10,32,-17,-16,67,0,0,0,0,0.07,0.03,motores apagados por el usuario,0,0,3
+9.856,KILLED,76,0,10,29,-21,-22,67,0,0,0,0,0.01,0.01,motores apagados por el usuario,0,0,0
+9.906,KILLED,76,0,10,29,-21,-22,67,0,0,0,0,0.06,0.03,motores apagados por el usuario,0,0,0
+9.957,KILLED,76,0,10,30,-20,-25,67,0,0,0,0,0.03,0.01,motores apagados por el usuario,0,0,0
+10.009,KILLED,76,0,10,30,-20,-25,67,0,0,0,0,0.08,0.01,motores apagados por el usuario,0,0,0
+10.059,KILLED,76,0,10,31,-18,-19,67,0,0,0,0,0.02,0.01,motores apagados por el usuario,0,0,-1
+10.113,KILLED,76,0,10,31,-18,-19,67,0,0,0,0,0.07,0.01,motores apagados por el usuario,0,0,-1
+10.163,KILLED,76,10,10,30,-18,-22,67,0,0,0,0,0.02,0.01,motores apagados por el usuario,0,0,-2
+10.213,KILLED,76,10,10,30,-18,-22,67,0,0,0,0,0.07,0.01,motores apagados por el usuario,0,0,-2
+10.263,KILLED,76,10,10,31,-19,-23,67,0,0,0,0,0.03,0.01,motores apagados por el usuario,0,0,-2
+10.313,KILLED,76,10,10,31,-19,-23,67,0,0,0,0,0.08,0.01,motores apagados por el usuario,0,0,-2
+10.364,KILLED,76,0,10,31,-18,-20,67,0,0,0,0,0.00,0.01,motores apagados por el usuario,0,0,-2
+10.414,KILLED,76,0,10,31,-18,-20,67,0,0,0,0,0.05,0.01,motores apagados por el usuario,0,0,-2
+10.464,KILLED,76,0,10,29,-18,-21,67,0,0,0,0,0.00,0.03,motores apagados por el usuario,0,0,-2
+10.514,KILLED,76,0,10,29,-18,-21,67,0,0,0,0,0.05,0.01,motores apagados por el usuario,0,0,-2
+10.564,KILLED,76,0,10,29,-18,-21,67,0,0,0,0,0.00,0.01,motores apagados por el usuario,0,0,-2
+10.614,KILLED,76,0,10,29,-18,-21,67,0,0,0,0,0.05,0.03,motores apagados por el usuario,0,0,-2
+10.665,KILLED,76,0,10,30,-18,-21,67,0,0,0,0,0.01,0.01,motores apagados por el usuario,0,0,-2
+10.715,KILLED,76,0,10,30,-18,-21,67,0,0,0,0,0.06,0.01,motores apagados por el usuario,0,0,-2
+10.765,KILLED,76,0,10,30,-18,-21,67,0,0,0,0,0.00,0.01,motores apagados por el usuario,0,0,-2
+10.815,KILLED,76,0,10,30,-18,-21,67,0,0,0,0,0.05,0.01,motores apagados por el usuario,0,0,-2
+10.866,KILLED,76,0,10,30,-18,-21,67,0,0,0,0,0.02,0.03,motores apagados por el usuario,0,0,-2
+10.916,KILLED,76,0,10,30,-18,-21,67,0,0,0,0,0.07,0.01,motores apagados por el usuario,0,0,-2
+10.966,KILLED,76,0,10,29,-18,-21,67,0,0,0,0,0.02,0.01,motores apagados por el usuario,0,0,-2
+11.016,KILLED,76,0,10,29,-18,-21,67,0,0,0,0,0.07,0.01,motores apagados por el usuario,0,0,-2
+11.067,KILLED,76,0,10,29,-18,-21,67,0,0,0,0,0.01,0.01,motores apagados por el usuario,0,0,-1
+11.117,KILLED,76,0,10,29,-18,-21,67,0,0,0,0,0.06,0.01,motores apagados por el usuario,0,0,-1
+11.167,KILLED,76,0,10,29,-18,-21,67,0,0,0,0,0.01,0.01,motores apagados por el usuario,0,0,-1
+11.217,KILLED,76,0,10,29,-18,-21,67,0,0,0,0,0.06,0.05,motores apagados por el usuario,0,0,-1
+11.267,KILLED,76,0,10,29,-18,-21,67,0,0,0,0,0.11,0.01,motores apagados por el usuario,0,0,-1
+11.318,KILLED,76,0,10,30,-18,-21,67,0,0,0,0,0.03,0.01,motores apagados por el usuario,0,0,-1
+11.368,KILLED,76,0,10,30,-18,-21,67,0,0,0,0,0.08,0.01,motores apagados por el usuario,0,0,-1
+11.418,KILLED,76,0,10,30,-18,-21,67,0,0,0,0,0.02,0.01,motores apagados por el usuario,0,0,-1
+11.468,KILLED,76,0,10,29,-18,-21,67,0,0,0,0,0.01,0.01,motores apagados por el usuario,0,0,0
+11.518,KILLED,76,0,10,29,-18,-21,67,0,0,0,0,0.06,0.01,motores apagados por el usuario,0,0,0
+11.570,KILLED,76,0,10,29,-18,-20,67,0,0,0,0,0.01,0.01,motores apagados por el usuario,0,0,0
+11.620,KILLED,76,0,10,29,-18,-20,67,0,0,0,0,0.06,0.03,motores apagados por el usuario,0,0,0
+11.670,KILLED,76,0,10,29,-18,-21,67,0,0,0,0,0.00,0.01,motores apagados por el usuario,0,0,0
+11.720,KILLED,76,0,10,29,-18,-21,67,0,0,0,0,0.05,0.01,motores apagados por el usuario,0,0,0
+11.770,KILLED,76,0,10,29,-18,-21,67,0,0,0,0,0.00,0.01,motores apagados por el usuario,0,0,0
+11.820,KILLED,76,0,10,29,-18,-21,67,0,0,0,0,0.05,0.01,motores apagados por el usuario,0,0,0
+11.871,KILLED,76,0,10,27,-11,-21,67,0,0,0,0,0.00,0.01,motores apagados por el usuario,0,0,0
+11.921,KILLED,76,0,10,26,-11,-21,67,0,0,0,0,0.00,0.01,motores apagados por el usuario,0,0,0
+11.971,KILLED,76,0,10,26,-11,-21,67,0,0,0,0,0.05,0.01,motores apagados por el usuario,0,0,0
+12.021,KILLED,76,0,10,23,-8,-19,67,0,0,0,0,0.00,0.03,motores apagados por el usuario,0,0,0
+12.071,KILLED,76,0,10,23,-8,-19,67,0,0,0,0,0.05,0.01,motores apagados por el usuario,0,0,0
+12.122,KILLED,76,0,10,26,-13,-30,67,0,0,0,0,0.00,0.01,motores apagados por el usuario,0,0,-1
+12.172,KILLED,76,0,10,26,-13,-30,67,0,0,0,0,0.05,0.01,motores apagados por el usuario,0,0,-1
+12.222,KILLED,76,0,10,26,-13,-30,67,0,0,0,0,0.10,0.03,motores apagados por el usuario,0,0,-1
+12.272,KILLED,76,0,10,26,-13,-30,67,0,0,0,0,0.15,0.01,motores apagados por el usuario,0,0,-1
+12.322,KILLED,76,0,10,29,-16,-21,67,0,0,0,0,0.04,0.01,motores apagados por el usuario,0,0,-4
+12.372,KILLED,76,0,10,29,-20,-5,67,0,0,0,0,0.03,0.01,motores apagados por el usuario,0,0,-3
+12.422,KILLED,76,0,10,26,-23,3,67,0,0,0,0,0.00,0.01,motores apagados por el usuario,0,0,-3
+12.474,KILLED,76,0,10,26,-23,3,67,0,0,0,0,0.05,0.01,motores apagados por el usuario,0,0,-3
+12.525,KILLED,76,0,10,26,-23,3,67,0,0,0,0,0.10,0.03,motores apagados por el usuario,0,0,-3
+12.576,KILLED,76,0,10,30,-26,11,67,0,0,0,0,0.03,0.01,motores apagados por el usuario,0,0,-2
+12.626,KILLED,76,0,10,30,-26,11,67,0,0,0,0,0.08,0.01,motores apagados por el usuario,0,0,-2
+12.676,KILLED,76,0,35,35,-33,11,67,0,0,0,0,0.03,0.01,motores apagados por el usuario,0,0,-3
+12.726,KILLED,76,0,35,35,-33,11,67,0,0,0,0,0.08,0.01,motores apagados por el usuario,0,0,-3
+12.777,KILLED,76,0,43,39,-35,11,67,0,0,0,0,0.01,0.01,motores apagados por el usuario,0,0,-2
+12.827,KILLED,76,0,43,39,-35,11,67,0,0,0,0,0.06,0.03,motores apagados por el usuario,0,0,-2
+12.877,KILLED,76,0,43,50,-26,4,67,0,0,0,0,0.03,0.01,motores apagados por el usuario,0,0,4
+12.927,KILLED,76,0,43,50,-26,4,67,0,0,0,0,0.08,0.01,motores apagados por el usuario,0,0,4
+12.977,KILLED,76,0,36,50,-20,-20,67,0,0,0,0,0.04,0.02,motores apagados por el usuario,0,0,5
+13.027,KILLED,76,0,36,50,-20,-20,67,0,0,0,0,0.09,0.01,motores apagados por el usuario,0,0,5
+13.078,KILLED,76,0,67,38,-17,-14,67,0,0,0,0,0.03,0.02,motores apagados por el usuario,0,0,2
+13.128,KILLED,76,0,67,38,-17,-14,67,0,0,0,0,0.08,0.01,motores apagados por el usuario,0,0,2
+13.178,KILLED,76,0,65,25,-16,-5,67,0,0,0,0,0.03,0.01,motores apagados por el usuario,0,0,1
+13.228,KILLED,76,0,65,25,-16,-5,67,0,0,0,0,0.08,0.01,motores apagados por el usuario,0,0,1
+13.278,KILLED,76,0,64,0,-27,0,67,0,0,0,0,0.04,0.01,motores apagados por el usuario,0,0,1
+13.332,KILLED,76,0,64,0,-27,0,67,0,0,0,0,0.09,0.01,motores apagados por el usuario,0,0,1
+13.382,KILLED,76,0,48,-31,-31,3,67,0,0,0,0,0.02,0.03,motores apagados por el usuario,0,0,1
+13.432,KILLED,76,0,48,-31,-31,3,67,0,0,0,0,0.07,0.05,motores apagados por el usuario,0,0,1
+13.482,KILLED,76,0,64,-84,-22,14,67,0,0,0,0,0.01,0.02,motores apagados por el usuario,0,0,6
+13.532,KILLED,76,0,64,-84,-22,14,67,0,0,0,0,0.06,0.01,motores apagados por el usuario,0,0,6
+13.582,KILLED,76,-10,54,-123,-17,20,67,0,0,0,0,0.01,0.01,motores apagados por el usuario,0,0,14
+13.633,KILLED,76,-10,54,-123,-17,20,67,0,0,0,0,0.06,0.01,motores apagados por el usuario,0,0,14
+13.683,KILLED,76,-30,36,-163,0,18,67,0,0,0,0,0.01,0.01,motores apagados por el usuario,0,0,15
+13.733,KILLED,76,-30,36,-163,0,18,67,0,0,0,0,0.06,0.01,motores apagados por el usuario,0,0,15
+13.783,KILLED,76,-40,10,155,9,9,67,0,0,0,0,0.03,0.03,motores apagados por el usuario,0,0,10
+13.833,KILLED,76,-40,10,155,9,9,67,0,0,0,0,0.08,0.01,motores apagados por el usuario,0,0,10
+13.883,KILLED,76,-40,10,113,5,-1,67,0,0,0,0,0.01,0.01,motores apagados por el usuario,0,0,4
+13.934,KILLED,76,-40,10,113,5,-1,67,0,0,0,0,0.06,0.01,motores apagados por el usuario,0,0,4
+13.984,KILLED,76,-40,10,83,7,-3,67,0,0,0,0,0.01,0.01,motores apagados por el usuario,0,0,2
+14.034,KILLED,76,-40,10,83,7,-3,67,0,0,0,0,0.06,0.01,motores apagados por el usuario,0,0,2
+14.084,KILLED,76,-40,10,68,10,-1,67,0,0,0,0,0.01,0.01,motores apagados por el usuario,0,0,0
+14.134,KILLED,76,-40,10,68,10,-1,67,0,0,0,0,0.06,0.01,motores apagados por el usuario,0,0,0
+14.184,KILLED,76,-40,10,59,6,-1,67,0,0,0,0,0.02,0.03,motores apagados por el usuario,0,0,-1
+14.235,KILLED,76,-40,10,59,6,-1,67,0,0,0,0,0.07,0.01,motores apagados por el usuario,0,0,-1
+14.285,KILLED,76,-40,10,45,0,-1,68,0,0,0,0,0.01,0.01,motores apagados por el usuario,0,0,0
+14.338,KILLED,76,-40,10,45,0,-1,68,0,0,0,0,0.06,0.01,motores apagados por el usuario,0,0,0
+14.389,KILLED,76,0,10,43,-1,-1,68,0,0,0,0,0.02,0.03,motores apagados por el usuario,0,0,-1
+14.441,KILLED,76,0,10,43,-1,-1,68,0,0,0,0,0.07,0.05,motores apagados por el usuario,0,0,-1
+14.491,KILLED,76,0,10,43,-1,0,68,0,0,0,0,0.02,0.01,motores apagados por el usuario,0,0,-1
+14.541,KILLED,76,0,10,43,-1,0,68,0,0,0,0,0.07,0.01,motores apagados por el usuario,0,0,-1
+14.591,KILLED,76,0,10,43,-1,-1,68,0,0,0,0,0.00,0.01,motores apagados por el usuario,0,0,0
+14.641,KILLED,76,0,10,43,-1,-1,68,0,0,0,0,0.05,0.01,motores apagados por el usuario,0,0,0
+14.692,KILLED,76,0,10,41,-1,0,68,0,0,0,0,0.00,0.01,motores apagados por el usuario,0,0,0
+14.743,KILLED,76,0,10,41,-1,0,68,0,0,0,0,0.05,0.01,motores apagados por el usuario,0,0,0
+14.793,KILLED,76,0,10,20,2,-4,68,0,0,0,0,0.00,0.01,motores apagados por el usuario,0,0,-1
+14.843,KILLED,76,0,10,20,2,-4,68,0,0,0,0,0.05,0.01,motores apagados por el usuario,0,0,-1
+14.894,KILLED,76,0,10,10,3,0,68,0,0,0,0,0.00,0.01,motores apagados por el usuario,0,0,0
+14.944,KILLED,76,0,10,10,3,0,68,0,0,0,0,0.05,0.01,motores apagados por el usuario,0,0,0
+14.994,KILLED,76,0,10,5,0,0,68,0,0,0,0,0.00,0.05,motores apagados por el usuario,0,0,0
+15.044,KILLED,76,0,10,5,0,0,68,0,0,0,0,0.05,0.01,motores apagados por el usuario,0,0,0
+15.094,KILLED,76,0,10,4,1,0,68,0,0,0,0,0.00,0.01,motores apagados por el usuario,0,0,0
+15.144,KILLED,76,0,10,4,1,0,68,0,0,0,0,0.05,0.03,motores apagados por el usuario,0,0,0
+15.194,KILLED,76,0,10,6,0,0,68,0,0,0,0,0.01,0.01,motores apagados por el usuario,0,0,0
+15.246,KILLED,76,0,10,6,0,0,68,0,0,0,0,0.06,0.01,motores apagados por el usuario,0,0,0
+15.296,KILLED,76,0,10,7,0,0,67,0,0,0,0,0.00,0.01,motores apagados por el usuario,0,0,0
+15.346,KILLED,76,0,10,7,0,0,67,0,0,0,0,0.05,0.01,motores apagados por el usuario,0,0,0
+15.396,KILLED,76,0,10,7,-1,1,67,0,0,0,0,0.01,0.01,motores apagados por el usuario,0,0,0
+15.447,KILLED,76,0,10,7,-1,1,67,0,0,0,0,0.06,0.03,motores apagados por el usuario,0,0,0
+15.497,KILLED,76,0,10,7,0,0,67,0,0,0,0,0.01,0.01,motores apagados por el usuario,0,0,0
+15.547,KILLED,76,0,10,7,0,0,67,0,0,0,0,0.01,0.01,motores apagados por el usuario,0,0,0
+15.597,KILLED,76,0,10,7,0,0,67,0,0,0,0,0.06,0.01,motores apagados por el usuario,0,0,0
+15.647,KILLED,76,0,10,7,-1,1,67,0,0,0,0,0.00,0.01,motores apagados por el usuario,0,0,0
+15.697,KILLED,76,0,10,7,-1,1,67,0,0,0,0,0.05,0.03,motores apagados por el usuario,0,0,0
+15.748,KILLED,76,0,10,7,0,0,67,0,0,0,0,0.00,0.01,motores apagados por el usuario,0,0,0
+15.798,KILLED,76,0,10,7,0,0,67,0,0,0,0,0.05,0.01,motores apagados por el usuario,0,0,0
+15.848,KILLED,76,0,10,7,-1,1,67,0,0,0,0,0.00,0.03,motores apagados por el usuario,0,0,0
+15.898,KILLED,76,0,10,7,-1,1,67,0,0,0,0,0.05,0.01,motores apagados por el usuario,0,0,0
+15.948,KILLED,76,0,10,7,0,0,67,0,0,0,0,0.00,0.01,motores apagados por el usuario,0,0,0
+15.998,KILLED,76,0,10,7,0,0,67,0,0,0,0,0.05,0.01,motores apagados por el usuario,0,0,0
+16.048,KILLED,76,0,10,7,0,0,67,0,0,0,0,0.10,0.03,motores apagados por el usuario,0,0,0
+16.099,KILLED,76,0,10,7,0,1,67,0,0,0,0,0.04,0.01,motores apagados por el usuario,0,0,0
+16.149,KILLED,76,0,10,7,0,1,67,0,0,0,0,0.00,0.03,motores apagados por el usuario,0,0,0
+16.199,KILLED,76,0,10,7,0,1,67,0,0,0,0,0.05,0.01,motores apagados por el usuario,0,0,0
+16.249,KILLED,76,0,10,7,0,0,68,0,0,0,0,0.00,0.03,motores apagados por el usuario,0,0,0
+16.299,KILLED,76,0,10,7,0,0,68,0,0,0,0,0.05,0.01,motores apagados por el usuario,0,0,0
+16.350,KILLED,76,0,10,7,0,0,68,0,0,0,0,0.10,0.01,motores apagados por el usuario,0,0,0
+16.401,KILLED,76,0,10,7,0,1,68,0,0,0,0,0.04,0.01,motores apagados por el usuario,0,0,0
+16.451,KILLED,76,0,10,7,0,1,68,0,0,0,0,0.09,0.01,motores apagados por el usuario,0,0,0
+16.501,KILLED,76,0,10,7,0,0,68,0,0,0,0,0.03,0.01,motores apagados por el usuario,0,0,0
+16.551,KILLED,76,0,10,7,0,0,68,0,0,0,0,0.08,0.01,motores apagados por el usuario,0,0,0
+16.602,KILLED,76,0,10,7,0,1,68,0,0,0,0,0.04,0.01,motores apagados por el usuario,0,0,0
+16.652,KILLED,76,0,10,7,0,1,68,0,0,0,0,0.09,0.03,motores apagados por el usuario,0,0,0
+16.702,KILLED,76,0,10,7,0,0,68,0,0,0,0,0.02,0.01,motores apagados por el usuario,0,0,0
+16.752,KILLED,76,0,10,7,0,0,68,0,0,0,0,0.07,0.01,motores apagados por el usuario,0,0,0
+16.802,KILLED,76,0,10,7,0,0,68,0,0,0,0,0.02,0.01,motores apagados por el usuario,0,0,0
+16.853,KILLED,76,0,10,7,0,0,68,0,0,0,0,0.07,0.01,motores apagados por el usuario,0,0,0

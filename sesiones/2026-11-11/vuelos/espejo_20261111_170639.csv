@@ -1,0 +1,1247 @@
+t,state,bat,h,tof,yaw,pitch,roll,temph,rc_lr,rc_fb,rc_ud,rc_yaw,state_age,video_age,reason,vgx,vgy,vgz,n_tags,objetivo,tag_adelante,tag_derecha,tag_giro,altura_espejo
+0.001,IDLE,71,0,10,-9,0,0,61,0,0,0,0,0.00,inf,esperando despegue (t),0,0,0,,,,,,
+0.051,IDLE,71,0,10,-9,0,0,61,0,0,0,0,0.00,inf,esperando despegue (t),0,0,0,,,,,,
+0.106,IDLE,71,0,10,-9,0,0,61,0,0,0,0,0.06,inf,esperando despegue (t),0,0,0,,,,,,
+0.156,IDLE,71,0,10,-9,0,0,61,0,0,0,0,0.00,inf,esperando despegue (t),0,0,0,,,,,,
+0.206,IDLE,71,0,10,-9,0,0,61,0,0,0,0,0.05,0.03,esperando despegue (t),0,0,0,0,,,,,
+0.256,IDLE,71,0,10,-9,0,0,61,0,0,0,0,0.02,0.03,esperando despegue (t),0,0,0,0,,,,,
+0.308,IDLE,71,0,10,-9,0,0,61,0,0,0,0,0.07,0.03,esperando despegue (t),0,0,0,0,,,,,
+0.359,IDLE,71,0,10,-9,0,0,61,0,0,0,0,0.02,0.02,esperando despegue (t),0,0,0,0,,,,,
+0.411,IDLE,71,0,10,-9,0,0,61,0,0,0,0,0.02,0.03,esperando despegue (t),0,0,0,0,,,,,
+0.461,IDLE,71,0,10,-9,0,0,61,0,0,0,0,0.07,0.03,esperando despegue (t),0,0,0,0,,,,,
+0.511,IDLE,71,0,10,-9,0,0,61,0,0,0,0,0.02,0.02,esperando despegue (t),0,0,0,0,,,,,
+0.562,IDLE,71,0,10,-9,0,0,61,0,0,0,0,0.07,0.02,esperando despegue (t),0,0,0,0,,,,,
+0.613,IDLE,71,0,10,-9,0,0,61,0,0,0,0,0.00,0.02,esperando despegue (t),0,0,0,0,,,,,
+0.663,IDLE,71,0,10,-9,0,0,61,0,0,0,0,0.05,0.02,esperando despegue (t),0,0,0,0,,,,,
+0.713,IDLE,71,0,10,-9,0,0,61,0,0,0,0,0.10,0.03,esperando despegue (t),0,0,0,0,,,,,
+0.764,IDLE,71,0,10,-9,0,0,61,0,0,0,0,0.00,0.03,esperando despegue (t),0,0,0,0,,,,,
+0.814,IDLE,71,0,10,-9,0,0,61,0,0,0,0,0.05,0.04,esperando despegue (t),0,0,0,0,,,,,
+0.864,IDLE,71,0,10,-9,0,0,61,0,0,0,0,0.00,0.02,esperando despegue (t),0,0,0,0,,,,,
+0.915,IDLE,71,0,10,-9,0,0,61,0,0,0,0,0.01,0.02,esperando despegue (t),0,0,0,0,,,,,
+0.965,IDLE,71,0,10,-9,0,0,61,0,0,0,0,0.06,0.02,esperando despegue (t),0,0,0,0,,,,,
+1.015,IDLE,71,0,10,-9,0,0,61,0,0,0,0,0.00,0.02,esperando despegue (t),0,0,0,0,,,,,
+1.065,IDLE,71,0,10,-9,0,0,61,0,0,0,0,0.05,0.02,esperando despegue (t),0,0,0,0,,,,,
+1.117,IDLE,71,0,10,-9,0,0,61,0,0,0,0,0.01,0.02,esperando despegue (t),0,0,0,0,,,,,
+1.167,IDLE,71,0,10,-9,0,0,61,0,0,0,0,0.06,0.03,esperando despegue (t),0,0,0,0,,,,,
+1.218,TAKEOFF,71,0,10,-9,0,0,61,0,0,0,0,0.00,0.02,despegando,0,0,0,0,,,,,
+1.268,TAKEOFF,71,0,10,-9,0,0,61,0,0,0,0,0.05,0.02,despegando,0,0,0,0,,,,,
+1.319,TAKEOFF,71,0,10,-9,0,0,61,0,0,0,0,0.00,0.02,despegando,0,0,0,0,,,,,
+1.370,TAKEOFF,71,0,10,-9,0,0,61,0,0,0,0,0.05,0.03,despegando,0,0,0,0,,,,,
+1.420,TAKEOFF,71,0,10,-9,0,0,61,0,0,0,0,0.00,0.05,despegando,0,0,0,0,,,,,
+1.470,TAKEOFF,71,0,10,-9,0,0,61,0,0,0,0,0.05,0.03,despegando,0,0,0,0,,,,,
+1.523,TAKEOFF,71,0,10,-9,0,0,61,0,0,0,0,0.00,0.04,despegando,0,0,0,0,,,,,
+1.573,TAKEOFF,71,0,10,-9,0,0,61,0,0,0,0,0.05,0.02,despegando,0,0,0,0,,,,,
+1.623,TAKEOFF,71,0,10,-9,0,0,61,0,0,0,0,0.00,0.04,despegando,0,0,0,0,,,,,
+1.673,TAKEOFF,71,0,10,-9,0,0,61,0,0,0,0,0.05,0.03,despegando,0,0,0,0,,,,,
+1.723,TAKEOFF,71,0,10,-9,0,0,62,0,0,0,0,0.00,0.03,despegando,0,0,0,0,,,,,
+1.773,TAKEOFF,71,0,10,-9,0,0,62,0,0,0,0,0.05,0.02,despegando,0,0,0,0,,,,,
+1.824,TAKEOFF,71,0,10,-9,0,1,62,0,0,0,0,0.00,0.03,despegando,0,0,0,0,,,,,
+1.874,TAKEOFF,71,0,10,-9,0,1,62,0,0,0,0,0.05,0.02,despegando,0,0,0,0,,,,,
+1.924,TAKEOFF,71,0,10,-9,0,4,62,0,0,0,0,0.00,0.03,despegando,0,0,0,0,,,,,
+1.974,TAKEOFF,71,0,10,-9,0,4,62,0,0,0,0,0.05,0.03,despegando,0,0,0,0,,,,,
+2.024,TAKEOFF,71,0,10,-9,1,4,62,0,0,0,0,0.01,0.02,despegando,0,1,-1,0,,,,,
+2.075,TAKEOFF,71,0,10,-9,1,4,62,0,0,0,0,0.06,0.02,despegando,0,1,-1,0,,,,,
+2.125,TAKEOFF,71,0,10,-9,2,0,62,0,0,0,0,0.00,0.02,despegando,0,2,-4,0,,,,,
+2.175,TAKEOFF,71,0,10,-9,2,0,62,0,0,0,0,0.05,0.02,despegando,0,2,-4,0,,,,,
+2.226,TAKEOFF,71,0,11,-9,0,-4,62,0,0,0,0,0.00,0.02,despegando,0,2,-6,0,,,,,
+2.276,TAKEOFF,71,0,11,-9,0,-4,62,0,0,0,0,0.05,0.02,despegando,0,2,-6,0,,,,,
+2.327,TAKEOFF,71,10,18,-9,-2,-4,62,0,0,0,0,0.00,0.02,despegando,0,1,-7,0,,,,,
+2.377,TAKEOFF,71,10,18,-9,-2,-4,62,0,0,0,0,0.05,0.02,despegando,0,1,-7,0,,,,,
+2.427,TAKEOFF,71,10,18,-9,-2,-4,62,0,0,0,0,0.10,0.03,despegando,0,1,-7,1,,,,,
+2.477,TAKEOFF,71,20,27,-9,0,-2,62,0,0,0,0,0.03,0.01,despegando,0,0,-8,1,,,,,
+2.527,TAKEOFF,71,30,35,-9,0,-2,62,0,0,0,0,0.01,0.02,despegando,0,0,-8,1,,,,,
+2.578,TAKEOFF,71,30,35,-9,0,-2,62,0,0,0,0,0.06,0.02,despegando,0,0,-8,1,,,,,
+2.628,TAKEOFF,71,30,35,-9,0,-2,62,0,0,0,0,0.11,0.02,despegando,0,0,-8,1,,,,,
+2.678,TAKEOFF,71,30,35,-9,0,-2,62,0,0,0,0,0.16,0.04,despegando,0,0,-8,1,,,,,
+2.729,TAKEOFF,71,40,52,-9,0,-1,62,0,0,0,0,0.00,0.02,despegando,0,0,-7,1,,,,,
+2.779,TAKEOFF,71,40,52,-9,0,-1,62,0,0,0,0,0.05,0.01,despegando,0,0,-7,1,,,,,
+2.829,TAKEOFF,71,50,58,-9,0,0,62,0,0,0,0,0.00,0.01,despegando,0,0,-6,1,,,,,
+2.879,TAKEOFF,71,50,58,-9,0,0,62,0,0,0,0,0.05,0.01,despegando,0,0,-6,1,,,,,
+2.929,TAKEOFF,71,50,65,-9,0,0,62,0,0,0,0,0.00,0.02,despegando,0,0,-4,1,,,,,
+2.980,TAKEOFF,71,50,65,-9,0,0,62,0,0,0,0,0.05,0.01,despegando,0,0,-4,1,,,,,
+3.030,TAKEOFF,71,50,65,-9,0,0,62,0,0,0,0,0.10,0.01,despegando,0,0,-4,1,,,,,
+3.080,TAKEOFF,71,60,70,-9,0,0,62,0,0,0,0,0.04,0.01,despegando,0,0,-3,1,,,,,
+3.130,TAKEOFF,71,60,70,-9,0,0,62,0,0,0,0,0.09,0.01,despegando,0,0,-3,1,,,,,
+3.180,TAKEOFF,71,60,75,-9,0,0,62,0,0,0,0,0.04,0.01,despegando,0,0,-2,1,,,,,
+3.230,TAKEOFF,71,60,75,-9,0,0,62,0,0,0,0,0.09,0.01,despegando,0,0,-2,1,,,,,
+3.282,TAKEOFF,71,60,78,-9,0,0,62,0,0,0,0,0.04,0.01,despegando,0,0,-1,1,,,,,
+3.332,TAKEOFF,71,60,78,-9,0,0,62,0,0,0,0,0.09,0.02,despegando,0,0,-1,1,,,,,
+3.382,TAKEOFF,71,60,80,-9,0,0,62,0,0,0,0,0.03,0.02,despegando,0,0,0,1,,,,,
+3.432,TAKEOFF,71,60,80,-9,0,0,62,0,0,0,0,0.08,0.02,despegando,0,0,0,1,,,,,
+3.483,TAKEOFF,71,60,82,-9,0,0,62,0,0,0,0,0.02,0.01,despegando,0,0,0,1,,,,,
+3.533,TAKEOFF,71,60,82,-9,0,0,62,0,0,0,0,0.07,0.01,despegando,0,0,0,1,,,,,
+3.583,TAKEOFF,71,60,82,-9,0,0,62,0,0,0,0,0.01,0.01,despegando,0,0,0,1,,,,,
+3.633,TAKEOFF,71,60,82,-9,0,0,62,0,0,0,0,0.06,0.01,despegando,0,0,0,1,,,,,
+3.683,TAKEOFF,71,60,83,-9,0,0,62,0,0,0,0,0.01,0.02,despegando,0,0,0,1,,,,,
+3.733,TAKEOFF,71,60,83,-9,0,0,62,0,0,0,0,0.06,0.02,despegando,0,0,0,1,,,,,
+3.783,TAKEOFF,71,60,83,-9,0,0,62,0,0,0,0,0.02,0.02,despegando,0,0,0,1,,,,,
+3.833,TAKEOFF,71,60,83,-9,0,0,62,0,0,0,0,0.08,0.01,despegando,0,0,0,1,,,,,
+3.884,TAKEOFF,71,60,82,-9,0,0,62,0,0,0,0,0.02,0.01,despegando,0,0,0,1,,,,,
+3.934,TAKEOFF,71,60,82,-9,0,0,62,0,0,0,0,0.07,0.01,despegando,0,0,0,1,,,,,
+3.984,TAKEOFF,71,60,83,-9,0,0,62,0,0,0,0,0.01,0.01,despegando,0,0,0,1,,,,,
+4.035,TAKEOFF,71,60,83,-9,0,0,62,0,0,0,0,0.06,0.01,despegando,0,0,0,1,,,,,
+4.085,TAKEOFF,71,70,83,-9,0,-1,62,0,0,0,0,0.01,0.01,despegando,0,0,0,1,,,,,
+4.135,TAKEOFF,71,70,83,-9,0,-1,62,0,0,0,0,0.06,0.03,despegando,0,0,0,1,,,,,
+4.185,TAKEOFF,71,70,83,-9,0,0,62,0,0,0,0,0.00,0.05,despegando,0,0,0,1,,,,,
+4.235,TAKEOFF,71,70,83,-9,0,0,62,0,0,0,0,0.00,0.02,despegando,0,0,0,1,,,,,
+4.285,TAKEOFF,71,70,83,-9,0,0,62,0,0,0,0,0.05,0.01,despegando,0,0,0,1,,,,,
+4.338,TAKEOFF,71,70,83,-9,0,0,62,0,0,0,0,0.00,0.06,despegando,0,0,0,1,,,,,
+4.389,TAKEOFF,71,70,83,-9,0,0,62,0,0,0,0,0.05,0.02,despegando,0,0,0,1,,,,,
+4.439,TAKEOFF,71,70,83,-9,0,0,62,0,0,0,0,0.01,0.02,despegando,0,0,0,1,,,,,
+4.489,TAKEOFF,71,70,83,-9,0,0,62,0,0,0,0,0.06,0.02,despegando,0,0,0,1,,,,,
+4.539,TAKEOFF,71,70,84,-9,0,0,62,0,0,0,0,0.01,0.01,despegando,0,0,0,1,,,,,
+4.590,TAKEOFF,71,70,84,-9,0,0,62,0,0,0,0,0.06,0.01,despegando,0,0,0,1,,,,,
+4.640,TAKEOFF,71,70,84,-9,0,-1,62,0,0,0,0,0.01,0.01,despegando,0,0,0,1,,,,,
+4.690,TAKEOFF,71,70,84,-9,0,-1,62,0,0,0,0,0.06,0.01,despegando,0,0,0,1,,,,,
+4.741,TAKEOFF,71,70,84,-9,0,-1,62,0,0,0,0,0.01,0.03,despegando,0,0,0,1,,,,,
+4.791,TAKEOFF,71,70,84,-9,0,-1,62,0,0,0,0,0.06,0.01,despegando,0,0,0,1,,,,,
+4.841,TAKEOFF,71,70,84,-9,0,0,62,0,0,0,0,0.01,0.01,despegando,0,0,0,1,,,,,
+4.891,HOVER,71,70,84,-9,0,0,62,0,0,0,0,0.06,0.01,"en el aire a 74 cm (sin estabilizar, ok del Tello, despegue 3.7 s)",0,0,0,1,,,,,
+4.941,HOVER,71,70,84,-9,0,0,62,0,0,0,0,0.01,0.01,"en el aire a 74 cm (sin estabilizar, ok del Tello, despegue 3.7 s)",0,0,0,1,,,,,
+4.991,HOVER,71,70,84,-9,0,0,62,0,0,0,0,0.06,0.03,"en el aire a 74 cm (sin estabilizar, ok del Tello, despegue 3.7 s)",0,0,0,1,,,,,
+5.042,HOVER,71,70,84,-9,0,0,62,0,0,0,0,0.00,0.02,"en el aire a 74 cm (sin estabilizar, ok del Tello, despegue 3.7 s)",0,0,0,1,,,,,
+5.092,HOVER,71,70,84,-9,0,0,62,0,0,0,0,0.05,0.01,"en el aire a 74 cm (sin estabilizar, ok del Tello, despegue 3.7 s)",0,0,0,1,,,,,
+5.142,HOVER,71,70,84,-9,0,-1,62,0,0,0,0,0.00,0.03,"en el aire a 74 cm (sin estabilizar, ok del Tello, despegue 3.7 s)",0,0,0,1,,,,,
+5.192,HOVER,71,70,84,-9,0,-1,62,0,0,0,0,0.05,0.03,"en el aire a 74 cm (sin estabilizar, ok del Tello, despegue 3.7 s)",0,0,0,1,,,,,
+5.242,HOVER,71,70,84,-9,0,-1,62,0,0,0,0,0.10,0.03,"en el aire a 74 cm (sin estabilizar, ok del Tello, despegue 3.7 s)",0,0,0,1,,,,,
+5.292,HOVER,71,70,84,-9,0,0,62,0,0,0,0,0.00,0.01,"en el aire a 74 cm (sin estabilizar, ok del Tello, despegue 3.7 s)",0,0,0,1,,,,,
+5.343,HOVER,71,70,84,-9,0,0,62,0,0,0,0,0.05,0.01,"en el aire a 74 cm (sin estabilizar, ok del Tello, despegue 3.7 s)",0,0,0,1,,,,,
+5.393,HOVER,71,70,84,-9,0,0,62,0,0,0,0,0.03,0.02,"en el aire a 74 cm (sin estabilizar, ok del Tello, despegue 3.7 s)",0,0,0,1,,,,,
+5.443,HOVER,71,70,84,-9,0,0,62,0,0,0,0,0.08,0.01,"en el aire a 74 cm (sin estabilizar, ok del Tello, despegue 3.7 s)",0,0,0,1,,,,,
+5.493,HOVER,71,70,84,-9,0,0,62,0,0,0,0,0.03,0.01,"en el aire a 74 cm (sin estabilizar, ok del Tello, despegue 3.7 s)",0,0,0,1,,,,,
+5.543,HOVER,71,70,84,-9,0,0,62,0,0,0,0,0.08,0.01,"en el aire a 74 cm (sin estabilizar, ok del Tello, despegue 3.7 s)",0,0,0,1,,,,,
+5.593,HOVER,71,70,83,-10,0,0,62,0,0,0,0,0.02,0.02,"en el aire a 74 cm (sin estabilizar, ok del Tello, despegue 3.7 s)",0,0,0,1,,,,,
+5.644,HOVER,71,70,83,-10,0,0,62,0,0,0,0,0.07,0.03,"en el aire a 74 cm (sin estabilizar, ok del Tello, despegue 3.7 s)",0,0,0,1,,,,,
+5.694,HOVER,71,70,83,-10,1,0,62,0,0,0,0,0.03,0.02,"en el aire a 74 cm (sin estabilizar, ok del Tello, despegue 3.7 s)",0,0,0,1,,,,,
+5.744,HOVER,71,70,83,-10,1,0,62,0,0,0,0,0.08,0.01,"en el aire a 74 cm (sin estabilizar, ok del Tello, despegue 3.7 s)",0,0,0,1,,,,,
+5.794,HOVER,71,70,82,-10,0,0,63,0,0,0,0,0.03,0.01,"en el aire a 74 cm (sin estabilizar, ok del Tello, despegue 3.7 s)",0,0,0,1,,,,,
+5.844,HOVER,71,70,82,-10,0,0,63,0,0,0,0,0.08,0.01,"en el aire a 74 cm (sin estabilizar, ok del Tello, despegue 3.7 s)",0,0,0,1,,,,,
+5.894,HOVER,71,70,82,-10,0,0,63,0,0,0,0,0.02,0.01,"en el aire a 74 cm (sin estabilizar, ok del Tello, despegue 3.7 s)",0,0,0,1,,,,,
+5.944,HOVER,71,70,82,-10,0,0,63,0,0,0,0,0.07,0.01,"en el aire a 74 cm (sin estabilizar, ok del Tello, despegue 3.7 s)",0,0,0,1,,,,,
+5.995,HOVER,71,70,81,-10,0,2,63,0,0,0,0,0.02,0.01,"en el aire a 74 cm (sin estabilizar, ok del Tello, despegue 3.7 s)",0,0,0,1,,,,,
+6.045,HOVER,71,70,81,-10,0,2,63,0,0,0,0,0.07,0.02,"en el aire a 74 cm (sin estabilizar, ok del Tello, despegue 3.7 s)",0,0,0,1,,,,,
+6.095,HOVER,71,70,79,-10,0,1,63,0,0,0,0,0.03,0.02,"en el aire a 74 cm (sin estabilizar, ok del Tello, despegue 3.7 s)",0,0,0,1,,,,,
+6.145,HOVER,71,60,79,-10,0,0,63,0,0,0,0,0.01,0.01,"en el aire a 74 cm (sin estabilizar, ok del Tello, despegue 3.7 s)",0,0,0,1,,,,,
+6.195,HOVER,71,60,79,-10,0,0,63,0,0,0,0,0.06,0.01,"en el aire a 74 cm (sin estabilizar, ok del Tello, despegue 3.7 s)",0,0,0,1,,,,,
+6.245,HOVER,71,60,78,-10,0,0,63,0,0,0,0,0.01,0.01,"en el aire a 74 cm (sin estabilizar, ok del Tello, despegue 3.7 s)",0,0,0,1,,,,,
+6.295,HOVER,71,60,78,-10,0,0,63,0,0,0,0,0.06,0.01,"en el aire a 74 cm (sin estabilizar, ok del Tello, despegue 3.7 s)",0,0,0,1,,,,,
+6.346,HOVER,71,60,77,-11,0,-1,63,0,0,0,0,0.01,0.01,"en el aire a 74 cm (sin estabilizar, ok del Tello, despegue 3.7 s)",0,0,0,1,,,,,
+6.396,HOVER,71,60,77,-11,0,-1,63,0,0,0,0,0.06,0.01,"en el aire a 74 cm (sin estabilizar, ok del Tello, despegue 3.7 s)",0,0,0,1,,,,,
+6.446,HOVER,71,60,77,-10,0,1,63,0,0,0,0,0.00,0.02,"en el aire a 74 cm (sin estabilizar, ok del Tello, despegue 3.7 s)",0,0,0,1,,,,,
+6.496,HOVER,71,60,77,-10,0,1,63,0,0,0,0,0.05,0.02,"en el aire a 74 cm (sin estabilizar, ok del Tello, despegue 3.7 s)",0,0,0,1,,,,,
+6.547,HOVER,71,60,76,-11,0,0,63,0,0,0,0,0.02,0.02,"en el aire a 74 cm (sin estabilizar, ok del Tello, despegue 3.7 s)",0,0,0,1,,,,,
+6.597,HOVER,71,60,76,-11,0,0,63,0,0,0,0,0.07,0.02,"en el aire a 74 cm (sin estabilizar, ok del Tello, despegue 3.7 s)",0,0,0,1,,,,,
+6.647,HOVER,71,60,77,-11,0,0,63,0,0,0,0,0.01,0.01,"en el aire a 74 cm (sin estabilizar, ok del Tello, despegue 3.7 s)",0,0,0,1,,,,,
+6.697,HOVER,71,60,77,-11,0,0,63,0,0,0,0,0.06,0.01,"en el aire a 74 cm (sin estabilizar, ok del Tello, despegue 3.7 s)",0,0,0,1,,,,,
+6.747,HOVER,71,60,76,-10,0,1,63,0,0,0,0,0.01,0.01,"en el aire a 74 cm (sin estabilizar, ok del Tello, despegue 3.7 s)",0,0,0,1,,,,,
+6.797,HOVER,71,60,76,-10,0,1,63,0,0,0,0,0.06,0.01,"en el aire a 74 cm (sin estabilizar, ok del Tello, despegue 3.7 s)",0,0,0,1,,,,,
+6.847,HOVER,71,60,76,-10,0,1,63,0,0,0,0,0.01,0.01,"en el aire a 74 cm (sin estabilizar, ok del Tello, despegue 3.7 s)",0,0,0,1,,,,,
+6.898,CRUISE,71,60,76,-10,0,1,63,0,0,0,0,0.06,0.03,a altura de crucero (100 cm),0,0,0,1,,,,,
+6.948,CRUISE,70,60,76,-10,0,0,63,0,0,34,0,0.00,0.05,a altura de crucero (100 cm),0,0,0,1,,,,,
+6.998,CRUISE,70,60,76,-10,0,0,63,0,0,34,0,0.05,0.02,a altura de crucero (100 cm),0,0,0,1,,,,,
+7.048,CRUISE,70,60,76,-10,0,0,63,0,0,34,0,0.00,0.02,a altura de crucero (100 cm),0,0,0,1,,,,,
+7.100,CRUISE,70,60,76,-10,0,0,63,0,0,34,0,0.05,0.02,a altura de crucero (100 cm),0,0,0,1,,,,,
+7.150,CRUISE,70,60,76,-10,0,1,63,0,0,34,0,0.02,0.01,a altura de crucero (100 cm),0,0,0,1,,,,,
+7.200,CRUISE,70,60,76,-10,0,1,63,0,0,34,0,0.07,0.01,a altura de crucero (100 cm),0,0,0,1,,,,,
+7.250,CRUISE,70,60,78,-10,-1,3,63,0,0,34,0,0.01,0.01,a altura de crucero (100 cm),0,0,0,1,,,,,
+7.300,CRUISE,70,60,78,-10,-1,3,63,0,0,32,0,0.06,0.03,a altura de crucero (100 cm),0,0,0,1,,,,,
+7.350,CRUISE,70,60,79,-10,-1,5,63,0,0,32,0,0.00,0.02,a altura de crucero (100 cm),0,0,0,1,,,,,
+7.400,CRUISE,70,60,79,-10,-1,5,63,0,0,31,0,0.05,0.01,a altura de crucero (100 cm),0,0,0,1,,,,,
+7.453,CRUISE,70,60,79,-10,-1,4,63,0,0,31,0,0.00,0.01,a altura de crucero (100 cm),0,0,0,1,,,,,
+7.503,CRUISE,70,60,79,-10,-1,4,63,0,0,31,0,0.05,0.01,a altura de crucero (100 cm),0,0,0,1,,,,,
+7.555,CRUISE,70,60,80,-9,1,-4,63,0,0,31,0,0.00,0.01,a altura de crucero (100 cm),0,0,-1,1,,,,,
+7.605,CRUISE,70,60,80,-9,1,-4,63,0,0,30,0,0.05,0.03,a altura de crucero (100 cm),0,0,-1,0,,,,,
+7.655,CRUISE,70,60,82,-8,1,-4,63,0,0,30,0,0.00,0.02,a altura de crucero (100 cm),0,0,-1,1,,,,,
+7.705,CRUISE,70,60,82,-8,1,-4,63,0,0,28,0,0.05,0.02,a altura de crucero (100 cm),0,0,-1,1,,,,,
+7.757,CRUISE,70,70,84,-8,0,-1,63,0,0,28,0,0.00,0.02,a altura de crucero (100 cm),0,0,-2,1,,,,,
+7.807,CRUISE,70,70,84,-8,0,-1,63,0,0,26,0,0.05,0.01,a altura de crucero (100 cm),0,0,-2,1,,,,,
+7.858,CRUISE,70,70,87,-9,0,-1,63,0,0,26,0,0.00,0.01,a altura de crucero (100 cm),0,0,-2,1,,,,,
+7.908,CRUISE,70,70,87,-9,0,-1,63,0,0,23,0,0.05,0.03,a altura de crucero (100 cm),0,0,-2,1,,,,,
+7.958,CRUISE,70,70,90,-9,0,-1,63,0,0,23,0,0.00,0.01,a altura de crucero (100 cm),0,0,-2,1,,,,,
+8.008,CRUISE,70,70,90,-9,0,-1,63,0,0,20,0,0.05,0.01,a altura de crucero (100 cm),0,0,-2,1,,,,,
+8.058,CRUISE,70,80,92,-9,0,-1,63,0,0,20,0,0.00,0.02,a altura de crucero (100 cm),0,0,-2,1,,,,,
+8.108,CRUISE,70,80,92,-9,0,-1,63,0,0,18,0,0.05,0.02,a altura de crucero (100 cm),0,0,-2,1,,,,,
+8.159,CRUISE,70,80,95,-9,0,0,63,0,0,18,0,0.00,0.02,a altura de crucero (100 cm),0,0,-2,1,,,,,
+8.209,CRUISE,70,80,95,-9,0,0,63,0,0,15,0,0.05,0.01,a altura de crucero (100 cm),0,0,-2,1,,,,,
+8.259,CRUISE,70,80,96,-9,0,0,63,0,0,15,0,0.00,0.03,a altura de crucero (100 cm),0,0,-1,1,,,,,
+8.309,CRUISE,70,80,96,-9,0,0,63,0,0,15,0,0.05,0.01,a altura de crucero (100 cm),0,0,-1,1,,,,,
+8.359,CRUISE,70,80,96,-9,0,0,63,0,0,15,0,0.10,0.01,a altura de crucero (100 cm),0,0,-1,1,,,,,
+8.409,CRUISE,70,80,98,-9,0,0,63,0,0,15,0,0.05,0.01,a altura de crucero (100 cm),0,0,-1,1,,,,,
+8.460,CRUISE,70,80,98,-9,0,0,63,0,0,15,0,0.00,0.01,a altura de crucero (100 cm),0,0,-1,1,,,,,
+8.510,CRUISE,70,80,98,-9,0,0,63,0,0,15,0,0.05,0.01,a altura de crucero (100 cm),0,0,-1,1,,,,,
+8.560,CRUISE,70,80,98,-9,0,0,63,0,0,15,0,0.10,0.01,a altura de crucero (100 cm),0,0,-1,1,,,,,
+8.610,CRUISE,70,80,100,-9,0,0,63,0,0,15,0,0.04,0.01,a altura de crucero (100 cm),0,0,0,1,,,,,
+8.660,CRUISE,70,80,100,-9,0,0,63,0,0,15,0,0.09,0.03,a altura de crucero (100 cm),0,0,0,1,,,,,
+8.711,CRUISE,70,80,102,-9,0,0,63,0,0,15,0,0.02,0.02,a altura de crucero (100 cm),0,0,0,1,,,,,
+8.761,CRUISE,70,80,102,-9,0,0,63,0,0,15,0,0.07,0.01,a altura de crucero (100 cm),0,0,0,1,,,,,
+8.811,CRUISE,70,90,103,-9,0,0,65,0,0,15,0,0.01,0.01,a altura de crucero (100 cm),0,0,0,1,,,,,
+8.861,CRUISE,70,90,103,-9,0,0,65,0,0,15,0,0.06,0.02,a altura de crucero (100 cm),0,0,0,1,,,,,
+8.911,CRUISE,69,90,102,-9,0,0,65,0,0,15,0,0.04,0.01,a altura de crucero (100 cm),0,0,0,1,,,,,
+8.961,CRUISE,69,90,102,-9,0,0,65,0,0,15,0,0.09,0.01,a altura de crucero (100 cm),0,0,0,1,,,,,
+9.012,CRUISE,69,90,103,-9,0,0,65,0,0,15,0,0.04,0.01,a altura de crucero (100 cm),0,0,0,1,,,,,
+9.062,CRUISE,69,90,103,-9,0,0,65,0,0,15,0,0.09,0.01,a altura de crucero (100 cm),0,0,0,1,,,,,
+9.112,CRUISE,69,90,105,-9,0,0,65,0,0,15,0,0.04,0.01,a altura de crucero (100 cm),0,0,0,1,,,,,
+9.162,CRUISE,69,90,105,-9,0,0,65,0,0,0,0,0.09,0.01,a altura de crucero (100 cm),0,0,0,1,,,,,
+9.212,CRUISE,69,90,105,-9,0,0,65,0,0,0,0,0.00,0.04,a altura de crucero (100 cm),0,0,0,1,,,,,
+9.262,CRUISE,69,90,105,-9,0,0,65,0,0,0,0,0.05,0.03,a altura de crucero (100 cm),0,0,0,0,,,,,
+9.312,CRUISE,69,90,105,-9,0,0,65,0,0,0,0,0.00,0.03,a altura de crucero (100 cm),0,0,0,0,,,,,
+9.363,CRUISE,69,90,105,-9,0,0,65,0,0,0,0,0.00,0.03,a altura de crucero (100 cm),0,0,0,0,,,,,
+9.413,CRUISE,69,90,105,-9,0,0,65,0,0,0,0,0.05,0.03,a altura de crucero (100 cm),0,0,0,0,,,,,
+9.463,CRUISE,69,90,105,-9,0,0,65,0,0,0,0,0.00,0.03,a altura de crucero (100 cm),0,0,0,0,,,,,
+9.513,CRUISE,69,90,105,-9,0,0,65,0,0,0,0,0.05,0.03,a altura de crucero (100 cm),0,0,0,0,,,,,
+9.563,CRUISE,69,90,105,-9,0,0,65,0,0,0,0,0.00,0.03,a altura de crucero (100 cm),0,0,0,0,,,,,
+9.613,CRUISE,69,90,105,-9,0,0,65,0,0,0,0,0.05,0.02,a altura de crucero (100 cm),0,0,0,0,,,,,
+9.663,ADVANCE,69,90,105,-10,0,0,65,0,0,0,0,0.00,0.02,"avanzando a 95 cm, buscando tag",0,0,0,0,,,,,
+9.714,ADVANCE,69,90,105,-10,0,0,65,0,15,20,0,0.05,0.03,"avanzando a 95 cm, buscando tag",0,0,0,0,,,,,
+9.764,ADVANCE,69,90,105,-10,-1,-2,64,0,15,20,0,0.00,0.03,"avanzando a 95 cm, buscando tag",0,0,0,0,,,,,
+9.814,ADVANCE,69,90,105,-10,-1,-2,64,0,15,20,0,0.05,0.03,"avanzando a 95 cm, buscando tag",0,0,0,0,,,,,
+9.864,ADVANCE,69,90,105,-9,0,-1,64,0,15,20,0,0.01,0.03,"avanzando a 95 cm, buscando tag",0,0,0,0,,,,,
+9.914,ADVANCE,69,90,105,-9,0,-1,64,0,15,20,0,0.06,0.03,"avanzando a 95 cm, buscando tag",0,0,0,0,,,,,
+9.964,ADVANCE,69,90,105,-9,0,1,64,0,15,20,0,0.00,0.03,"avanzando a 95 cm, buscando tag",0,0,0,0,,,,,
+10.015,ADVANCE,69,90,105,-9,0,1,64,0,15,20,0,0.06,0.03,"avanzando a 95 cm, buscando tag",0,0,0,0,,,,,
+10.065,ADVANCE,69,90,105,-10,0,1,64,0,15,20,0,0.01,0.03,"avanzando a 95 cm, buscando tag",0,0,0,0,,,,,
+10.115,ADVANCE,69,90,105,-10,0,1,64,0,15,20,0,0.06,0.03,"avanzando a 95 cm, buscando tag",0,0,0,0,,,,,
+10.165,ADVANCE,69,90,104,-10,0,0,64,0,15,20,0,0.01,0.03,"avanzando a 95 cm, buscando tag",0,0,0,0,,,,,
+10.216,ADVANCE,69,90,104,-10,0,0,64,0,15,20,0,0.06,0.03,"avanzando a 95 cm, buscando tag",0,0,0,0,,,,,
+10.266,ADVANCE,69,90,104,-9,0,0,64,0,15,20,0,0.00,0.03,"avanzando a 95 cm, buscando tag",0,0,0,0,,,,,
+10.316,ADVANCE,69,90,104,-9,0,0,64,0,15,20,0,0.05,0.03,"avanzando a 95 cm, buscando tag",0,0,0,0,,,,,
+10.366,ADVANCE,69,90,105,-9,0,0,64,0,15,20,0,0.00,0.03,"avanzando a 95 cm, buscando tag",0,0,0,0,,,,,
+10.417,ADVANCE,69,90,105,-9,0,0,64,0,15,20,0,0.05,0.03,"avanzando a 95 cm, buscando tag",0,0,0,0,,,,,
+10.467,ADVANCE,69,90,106,-9,0,0,64,0,15,20,0,0.01,0.03,"avanzando a 95 cm, buscando tag",0,0,0,0,,,,,
+10.517,ADVANCE,69,90,106,-9,0,0,64,0,15,0,0,0.06,0.03,"avanzando a 95 cm, buscando tag",0,0,0,0,,,,,
+10.567,ADVANCE,69,90,108,-9,0,0,64,0,15,0,0,0.01,0.03,"avanzando a 95 cm, buscando tag",0,0,0,0,,,,,
+10.617,ADVANCE,69,90,108,-9,0,0,64,0,15,0,0,0.06,0.01,"avanzando a 95 cm, buscando tag",0,0,0,1,,,,,
+10.668,ADVANCE,69,90,108,-9,0,0,64,0,15,0,0,0.00,0.01,"avanzando a 95 cm, buscando tag",0,0,0,1,,,,,
+10.719,APPROACH,69,90,108,-9,0,0,64,0,15,0,0,0.06,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+42,-10,+6,106
+10.769,APPROACH,69,90,109,-9,-1,-1,65,-10,15,0,0,0.00,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+42,-10,+6,103
+10.819,APPROACH,69,90,109,-9,-1,-1,65,-10,15,0,0,0.05,0.03,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,0,1,,,,
+10.869,APPROACH,68,90,109,-9,0,0,65,0,10,0,0,0.00,0.03,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,0,1,,,,
+10.919,APPROACH,68,90,109,-9,0,0,65,0,10,0,0,0.05,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+37,-7,+6,107
+10.970,APPROACH,68,90,109,-8,0,-1,65,0,15,0,0,0.00,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+38,-7,+6,107
+11.020,APPROACH,68,90,109,-8,0,-1,65,10,0,0,0,0.05,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+38,-7,+7,107
+11.070,APPROACH,68,90,109,-7,-1,-2,65,10,10,0,0,0.00,0.03,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+38,-6,+7,106
+11.120,APPROACH,68,90,109,-7,-1,-2,65,10,10,0,0,0.05,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+38,-6,+7,106
+11.170,APPROACH,68,90,108,-8,0,0,65,10,11,0,0,0.00,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+38,-6,+7,111
+11.221,APPROACH,68,90,108,-8,0,0,65,0,13,0,0,0.05,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+38,-6,+8,111
+11.271,APPROACH,68,90,108,-9,0,0,65,0,15,0,0,0.00,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+38,-6,+8,111
+11.321,APPROACH,68,90,108,-9,0,0,65,0,15,0,0,0.05,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+32,-3,+7,107
+11.371,APPROACH,68,90,108,-9,0,0,65,0,12,0,0,0.00,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+31,-3,+7,108
+11.422,APPROACH,68,90,108,-9,0,0,65,10,10,0,0,0.05,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+29,-2,+7,108
+11.472,APPROACH,68,90,107,-8,-1,-2,65,10,0,0,0,0.00,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+29,-2,+8,105
+11.522,APPROACH,68,90,107,-8,-1,-2,65,10,0,0,0,0.05,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+29,-2,+8,106
+11.572,APPROACH,68,90,108,-8,-1,-1,65,10,0,0,0,0.00,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+29,-2,+9,107
+11.622,APPROACH,68,90,108,-8,-1,-1,65,11,-10,0,0,0.05,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+29,-2,+9,109
+11.675,APPROACH,68,90,107,-8,0,0,65,10,-10,0,0,0.00,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+29,-1,+9,109
+11.725,APPROACH,68,90,107,-8,0,0,65,10,0,0,0,0.05,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+27,+1,+8,112
+11.776,APPROACH,68,90,107,-8,0,0,65,10,0,0,0,0.10,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+25,+1,+8,110
+11.826,APPROACH,68,90,107,-8,0,1,65,10,0,0,0,0.03,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+23,+3,+8,112
+11.876,APPROACH,68,90,107,-8,0,1,65,11,0,0,0,0.08,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+19,+6,+6,110
+11.926,APPROACH,68,90,107,-8,0,0,65,15,-10,0,0,0.03,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+17,+7,+5,108
+11.976,APPROACH,68,90,107,-8,0,0,65,15,-15,0,0,0.08,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+17,+8,+5,109
+12.026,APPROACH,68,90,107,-8,0,0,65,15,-15,0,0,0.02,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+17,+8,+5,108
+12.076,APPROACH,68,90,107,-8,0,0,65,15,-15,0,0,0.07,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+17,+8,+5,109
+12.126,APPROACH,68,90,107,-8,0,-1,65,15,-15,0,0,0.01,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+19,+8,+7,110
+12.177,APPROACH,68,90,107,-8,0,-1,65,15,-15,0,0,0.06,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+19,+8,+7,110
+12.227,APPROACH,68,90,106,-8,0,0,65,15,-10,0,0,0.03,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+19,+8,+7,111
+12.277,APPROACH,68,90,106,-8,0,0,65,15,-10,0,0,0.09,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+17,+9,+7,112
+12.327,APPROACH,68,90,106,-8,1,3,65,15,10,0,0,0.03,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+15,+10,+7,113
+12.377,APPROACH,68,90,106,-8,1,3,65,13,10,0,0,0.08,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+12,+13,+5,109
+12.427,APPROACH,68,90,105,-9,1,3,65,15,0,0,0,0.02,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+9,+15,+4,109
+12.478,APPROACH,68,90,105,-9,1,3,65,15,-10,20,0,0.07,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+6,+16,+4,109
+12.528,APPROACH,68,90,105,-9,1,2,65,15,-15,20,0,0.03,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+6,+16,+4,110
+12.578,APPROACH,68,90,105,-9,1,2,65,15,-15,20,0,0.08,0.03,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+6,+16,+4,109
+12.628,APPROACH,68,90,105,-9,0,1,65,15,-15,20,0,0.03,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+6,+16,+5,109
+12.678,APPROACH,68,90,105,-9,0,1,65,15,-15,20,0,0.08,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+9,+15,+6,109
+12.728,APPROACH,68,90,105,-9,0,0,65,15,-15,20,0,0.02,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+9,+14,+6,108
+12.778,APPROACH,68,90,105,-9,0,0,65,15,-12,20,0,0.07,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+9,+12,+7,109
+12.828,APPROACH,68,90,106,-9,0,0,65,10,0,20,0,0.01,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+9,+12,+7,109
+12.879,APPROACH,68,90,106,-9,0,0,65,0,10,0,0,0.06,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+9,+11,+7,110
+12.929,APPROACH,67,90,107,-9,0,0,65,0,10,0,0,0.00,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+9,+11,+7,109
+12.979,APPROACH,67,90,107,-9,0,0,65,-10,11,0,0,0.05,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+10,+10,+7,109
+13.029,APPROACH,67,90,107,-9,0,0,65,-10,14,0,0,0.03,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+10,+9,+7,110
+13.079,APPROACH,67,90,107,-9,0,0,65,-10,14,0,0,0.08,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+11,+8,+8,110
+13.130,APPROACH,67,90,108,-9,0,0,65,-12,13,0,0,0.02,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+12,+7,+8,110
+13.180,APPROACH,67,90,108,-9,0,0,65,-12,11,0,0,0.00,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+13,+6,+8,110
+13.230,APPROACH,67,90,108,-9,0,0,65,-13,13,0,0,0.05,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+14,+4,+8,110
+13.281,APPROACH,67,90,108,-8,0,0,65,-15,15,0,0,0.00,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+14,+3,+8,110
+13.331,APPROACH,67,90,108,-8,0,0,65,-15,15,0,0,0.05,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+14,+2,+8,112
+13.381,APPROACH,67,90,109,-9,0,0,65,-15,15,0,0,0.01,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+14,+1,+8,113
+13.431,APPROACH,67,90,109,-9,0,0,65,-15,15,0,0,0.06,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+14,+1,+8,112
+13.481,APPROACH,67,90,109,-8,0,0,65,-15,15,0,0,0.01,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+14,+1,+7,113
+13.531,APPROACH,67,90,109,-8,0,0,65,-15,15,0,0,0.06,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+13,+1,+7,114
+13.582,APPROACH,67,90,109,-7,0,0,65,-15,13,0,0,0.01,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+13,+1,+7,111
+13.632,APPROACH,67,90,109,-7,0,0,65,-12,10,0,0,0.06,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+13,+0,+7,112
+13.682,APPROACH,67,90,110,-5,-1,-1,65,-10,10,0,0,0.00,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+14,+0,+6,111
+13.732,APPROACH,67,90,110,-5,-1,-1,65,-10,10,0,-20,0.05,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+15,+0,+6,112
+13.783,APPROACH,67,90,109,-4,-1,-1,65,-10,10,0,-20,0.00,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+16,+0,+5,112
+13.833,APPROACH,67,90,109,-4,-1,-1,65,0,10,0,-20,0.05,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+16,-1,+5,112
+13.884,APPROACH,67,90,109,-2,0,-1,65,-10,13,0,-20,0.00,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+16,-2,+4,112
+13.934,APPROACH,67,90,109,-2,0,-1,65,-10,14,0,-20,0.05,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+16,-2,+4,112
+13.984,APPROACH,67,90,109,-1,0,0,65,-10,15,0,-20,0.01,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+15,-2,+3,114
+14.035,APPROACH,67,90,109,-1,0,0,65,-10,14,0,-20,0.06,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+15,-1,+2,113
+14.085,APPROACH,67,90,109,-1,0,0,65,-10,13,0,-20,0.00,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+13,-1,+0,112
+14.136,APPROACH,67,90,109,-1,0,0,65,0,10,0,-20,0.05,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+13,-1,+0,114
+14.188,APPROACH,67,90,109,-1,0,0,65,0,10,0,-20,0.01,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+12,-0,-0,113
+14.238,APPROACH,67,90,109,-1,0,0,65,0,0,0,-20,0.06,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+12,-0,-0,113
+14.288,APPROACH,67,90,109,-1,0,0,65,0,0,0,-20,0.00,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+12,-0,+0,113
+14.338,APPROACH,67,90,109,-1,0,0,65,0,0,0,-20,0.05,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+12,-0,+1,112
+14.388,APPROACH,67,90,109,-1,0,0,65,0,0,0,-20,0.10,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+12,+0,+1,113
+14.439,APPROACH,67,90,108,-1,0,0,65,0,0,0,-20,0.04,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+11,+0,+1,113
+14.489,APPROACH,67,90,108,-1,0,0,65,0,0,0,-20,0.09,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+11,+0,+1,112
+14.540,APPROACH,67,90,108,-2,0,0,65,0,0,0,-20,0.05,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+11,+0,+1,113
+14.590,APPROACH,67,90,109,-2,0,0,65,0,0,0,-20,0.00,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+11,+0,+1,112
+14.640,APPROACH,67,90,109,-2,0,0,65,0,0,0,-20,0.05,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+10,+0,+1,113
+14.690,APPROACH,67,90,109,-2,0,0,65,0,0,0,-20,0.00,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+10,+0,+1,113
+14.740,APPROACH,67,90,109,-2,0,0,65,0,0,0,-20,0.05,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+10,-0,+1,113
+14.790,APPROACH,67,90,108,-3,0,0,66,0,0,0,-20,0.00,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+10,-0,+1,113
+14.840,APPROACH,67,90,108,-3,0,0,66,0,0,0,-20,0.05,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+10,-0,+1,113
+14.891,APPROACH,66,90,108,-4,0,0,66,0,0,0,-20,0.00,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+10,-1,+1,113
+14.941,APPROACH,66,90,108,-4,0,0,66,0,0,0,-20,0.05,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+10,-1,+2,112
+14.991,APPROACH,66,90,108,-5,0,0,66,0,0,0,-20,0.00,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+10,-2,+2,111
+15.041,APPROACH,66,90,108,-5,0,0,66,0,0,0,-20,0.05,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+10,-2,+3,111
+15.091,APPROACH,66,90,108,-7,0,0,66,-10,10,0,-20,0.00,0.03,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+10,-2,+3,111
+15.141,APPROACH,66,90,108,-7,0,0,66,-10,10,0,0,0.05,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+11,-2,+5,112
+15.191,APPROACH,66,90,108,-7,0,0,66,-10,10,0,0,0.10,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+11,-2,+5,112
+15.241,APPROACH,66,90,108,-8,0,0,66,-10,10,0,0,0.03,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+11,-2,+5,111
+15.291,APPROACH,66,90,108,-8,0,0,66,-10,10,0,0,0.08,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+11,-2,+5,112
+15.342,APPROACH,66,90,108,-9,0,0,66,0,10,0,0,0.05,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+11,-1,+7,110
+15.392,APPROACH,66,90,108,-9,0,0,66,0,10,0,0,0.10,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+11,-1,+7,111
+15.442,APPROACH,66,90,108,-10,0,0,66,0,10,0,0,0.04,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+11,-1,+8,111
+15.492,APPROACH,66,90,108,-10,0,0,66,0,10,0,0,0.09,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+12,-1,+9,112
+15.543,APPROACH,66,90,108,-10,0,0,66,0,10,0,0,0.03,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+12,-1,+9,111
+15.593,APPROACH,66,90,108,-10,0,0,66,0,10,0,0,0.08,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+12,-1,+9,112
+15.643,APPROACH,66,90,108,-11,0,0,66,0,10,0,0,0.02,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+12,-0,+9,111
+15.693,APPROACH,66,90,108,-11,0,0,66,0,10,0,0,0.07,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+12,-0,+9,111
+15.743,APPROACH,66,90,108,-11,0,0,66,0,10,0,0,0.01,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+13,-0,+9,111
+15.794,APPROACH,66,90,108,-11,0,0,66,0,11,0,0,0.06,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+13,-0,+9,111
+15.844,APPROACH,66,90,108,-11,0,0,66,0,13,0,0,0.03,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+13,-0,+9,111
+15.894,APPROACH,66,90,108,-11,0,0,66,0,13,0,0,0.08,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+14,-1,+10,110
+15.944,APPROACH,66,90,108,-11,0,0,66,0,13,0,0,0.02,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+14,-1,+10,111
+15.994,APPROACH,66,90,108,-11,0,0,66,0,13,0,0,0.07,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+14,-1,+10,111
+16.044,APPROACH,66,90,108,-11,0,0,66,0,13,0,0,0.01,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+14,+0,+10,110
+16.094,APPROACH,66,90,108,-11,0,0,66,0,13,0,0,0.06,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+13,+0,+10,111
+16.144,APPROACH,66,90,108,-11,0,0,66,0,11,0,0,0.01,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+13,+1,+9,110
+16.195,APPROACH,66,90,108,-11,0,0,66,0,10,0,0,0.06,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+13,+1,+9,109
+16.247,APPROACH,66,90,107,-11,0,0,66,0,10,0,0,0.00,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+13,+1,+9,109
+16.297,APPROACH,66,90,107,-11,0,0,66,0,10,0,0,0.05,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+14,+1,+10,108
+16.348,APPROACH,66,90,108,-12,0,0,66,0,10,0,0,0.02,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+14,+0,+10,109
+16.398,APPROACH,66,90,108,-12,0,0,66,0,10,0,0,0.00,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+15,+0,+11,109
+16.448,APPROACH,66,90,108,-12,0,0,66,0,10,0,0,0.05,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+16,-0,+11,109
+16.498,APPROACH,66,90,108,-12,0,0,66,0,12,0,0,0.03,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+16,-0,+11,110
+16.552,APPROACH,66,90,108,-12,0,0,66,0,14,0,0,0.08,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+15,+0,+11,110
+16.602,APPROACH,66,90,108,-12,0,0,66,0,15,0,0,0.02,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+15,+0,+11,110
+16.652,APPROACH,66,90,108,-12,0,0,66,0,14,0,0,0.07,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+14,+1,+11,110
+16.702,APPROACH,66,90,108,-12,0,0,66,0,12,0,0,0.01,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+14,+1,+11,110
+16.753,APPROACH,66,90,108,-12,0,0,66,0,10,0,0,0.06,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+14,+1,+11,110
+16.803,APPROACH,66,90,108,-12,0,0,65,0,10,0,0,0.00,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+14,+1,+11,110
+16.853,APPROACH,66,90,108,-12,0,0,65,0,10,0,0,0.05,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+14,+2,+11,111
+16.903,APPROACH,65,90,108,-11,0,0,65,0,10,0,0,0.00,0.03,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+14,+2,+11,111
+16.954,APPROACH,65,90,108,-11,0,0,65,10,10,0,0,0.05,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+14,+2,+11,111
+17.004,APPROACH,65,90,108,-11,0,0,65,10,10,0,0,0.01,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+14,+2,+10,110
+17.054,APPROACH,65,90,108,-11,0,0,65,10,10,0,0,0.06,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+14,+2,+10,109
+17.104,APPROACH,65,90,107,-11,0,0,65,10,10,0,0,0.00,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+14,+2,+10,109
+17.154,APPROACH,65,90,107,-11,0,0,65,10,10,0,0,0.05,0.03,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,0,1,,,,
+17.204,APPROACH,65,90,107,-11,-1,-1,65,0,10,0,0,0.00,0.03,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,0,1,,,,
+17.255,APPROACH,65,90,107,-11,-1,-1,65,0,10,0,0,0.05,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+18,+2,+12,110
+17.305,APPROACH,65,90,107,-11,0,0,65,0,15,0,0,0.00,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+17,+2,+11,111
+17.356,APPROACH,65,90,107,-11,0,0,65,0,15,0,0,0.05,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+16,+2,+11,114
+17.406,APPROACH,65,90,107,-12,1,1,65,0,15,0,0,0.00,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+15,+3,+10,112
+17.456,APPROACH,65,90,107,-12,1,1,65,0,14,0,0,0.05,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+14,+4,+9,111
+17.506,APPROACH,65,90,107,-11,0,1,65,0,11,0,0,0.00,0.04,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+11,+4,+9,111
+17.556,APPROACH,65,90,107,-11,0,1,65,10,10,0,0,0.06,0.04,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+11,+5,+9,109
+17.606,APPROACH,65,90,106,-11,0,0,65,10,0,0,0,0.00,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+11,+5,+9,109
+17.657,APPROACH,65,90,106,-11,0,0,65,10,0,0,0,0.05,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+11,+5,+9,110
+17.707,APPROACH,65,90,106,-11,0,0,65,12,-13,0,0,0.00,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+12,+5,+10,109
+17.757,APPROACH,65,90,106,-11,0,0,65,11,-10,0,0,0.05,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+14,+4,+10,111
+17.807,APPROACH,65,90,106,-11,0,0,65,10,0,0,0,0.00,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+14,+4,+10,110
+17.857,APPROACH,65,90,106,-11,0,0,65,10,10,0,0,0.05,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+14,+4,+10,109
+17.908,APPROACH,65,90,106,-11,0,0,65,0,10,0,0,0.01,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+13,+4,+10,110
+17.958,APPROACH,65,90,106,-11,0,0,65,0,10,0,0,0.06,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+13,+4,+10,110
+18.008,APPROACH,65,90,106,-11,0,0,65,0,11,0,0,0.00,0.03,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+12,+4,+10,110
+18.059,APPROACH,65,90,106,-11,0,0,65,0,12,0,0,0.05,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+12,+4,+10,110
+18.109,APPROACH,65,90,106,-11,0,0,65,0,10,0,0,0.00,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+11,+5,+10,111
+18.159,APPROACH,65,90,106,-11,0,0,65,0,0,0,0,0.05,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+11,+6,+10,110
+18.209,APPROACH,65,90,106,-12,0,0,65,10,0,0,0,0.00,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+11,+6,+10,110
+18.259,APPROACH,65,90,106,-12,0,0,65,10,0,0,0,0.05,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+11,+6,+9,110
+18.310,APPROACH,65,90,106,-12,0,0,65,10,0,0,0,0.00,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+11,+6,+9,110
+18.360,APPROACH,65,90,106,-12,0,0,65,10,0,0,0,0.05,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+11,+6,+9,110
+18.410,APPROACH,65,90,106,-11,0,0,65,10,0,0,0,0.00,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+12,+5,+9,109
+18.460,APPROACH,65,90,106,-11,0,0,65,10,0,0,0,0.05,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+12,+5,+9,109
+18.510,APPROACH,65,90,106,-11,0,0,65,0,10,0,0,0.10,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+12,+5,+10,109
+18.560,APPROACH,65,90,106,-11,0,0,65,0,10,0,0,0.02,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+12,+5,+10,109
+18.611,APPROACH,65,90,106,-11,0,0,65,0,10,0,0,0.07,0.01,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+12,+5,+10,109
+18.661,APPROACH,65,90,106,-11,0,0,65,0,11,0,0,0.01,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+12,+6,+10,110
+18.711,APPROACH,65,90,106,-11,0,0,65,0,11,0,0,0.06,0.02,"tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm",0,0,0,1,1,+12,+6,+10,108
+18.761,EXECUTE,65,90,106,-11,0,0,65,0,11,0,0,0.04,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,+12,+6,+10,109
+18.811,EXECUTE,65,90,106,-11,0,0,65,0,0,0,60,0.09,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,+13,+6,+10,109
+18.861,EXECUTE,65,90,106,-12,0,0,67,0,0,0,60,0.03,0.01,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,+13,+6,+10,110
+18.912,EXECUTE,65,90,106,-12,0,0,67,0,0,0,60,0.08,0.01,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,+13,+6,+10,109
+18.963,EXECUTE,64,90,105,-12,0,0,67,0,0,0,60,0.02,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,+12,+5,+10,109
+19.013,EXECUTE,64,90,105,-12,0,0,67,0,0,20,60,0.07,0.01,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,+12,+6,+10,108
+19.063,EXECUTE,64,90,105,-10,0,0,67,0,0,20,60,0.01,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,+12,+6,+10,111
+19.113,EXECUTE,64,90,105,-10,0,0,67,0,0,20,60,0.06,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,+11,+6,+10,109
+19.163,EXECUTE,64,90,105,-8,0,0,67,0,0,20,60,0.03,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,+11,+6,+10,109
+19.214,EXECUTE,64,90,105,-8,0,0,67,0,0,20,60,0.08,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,+11,+8,+9,112
+19.264,EXECUTE,64,90,105,-5,0,0,67,0,0,20,60,0.01,0.01,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,+11,+10,+9,109
+19.314,EXECUTE,64,90,105,-5,0,0,67,0,0,20,60,0.06,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,+11,+10,+6,107
+19.365,EXECUTE,64,90,106,-2,0,0,67,0,0,20,60,0.04,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,+10,+10,+3,107
+19.418,EXECUTE,64,90,106,-2,0,0,67,0,0,0,60,0.09,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,+10,+10,+3,107
+19.468,EXECUTE,64,90,106,0,0,0,67,0,0,0,60,0.03,0.01,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,+10,+10,+3,109
+19.521,EXECUTE,64,90,106,0,0,0,67,0,0,0,60,0.08,0.01,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,+9,+9,+1,108
+19.571,EXECUTE,64,90,106,4,0,0,67,0,0,0,60,0.02,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,+9,+9,-1,108
+19.621,EXECUTE,64,90,106,4,0,0,67,0,0,0,60,0.07,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,+8,+8,-3,110
+19.672,EXECUTE,64,90,107,8,0,0,67,0,0,0,60,0.01,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,+8,+8,-5,109
+19.722,EXECUTE,64,90,107,8,0,0,67,0,0,0,60,0.06,0.01,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,+8,+8,-6,110
+19.772,EXECUTE,64,90,108,12,0,0,67,0,0,0,60,0.03,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,+8,+7,-7,110
+19.822,EXECUTE,64,90,108,12,0,0,67,0,0,0,60,0.08,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,+9,+6,-9,112
+19.872,EXECUTE,64,90,108,16,0,0,66,0,0,0,60,0.00,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,+9,+6,-12,111
+19.922,EXECUTE,64,90,108,16,0,0,66,0,0,0,60,0.05,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,+8,+5,-14,111
+19.972,EXECUTE,64,90,108,20,0,0,66,0,0,0,60,0.01,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,+8,+5,-15,111
+20.024,EXECUTE,64,90,109,24,0,0,66,0,0,0,60,0.02,0.01,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,+8,+5,-17,110
+20.074,EXECUTE,64,90,109,24,0,0,66,0,0,0,60,0.07,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,+6,+5,-21,113
+20.124,EXECUTE,64,90,109,28,0,0,66,0,0,0,60,0.01,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,+5,+5,-22,114
+20.174,EXECUTE,64,90,109,28,0,0,66,0,0,0,60,0.06,0.04,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,+4,+5,-22,112
+20.225,EXECUTE,64,90,109,34,0,0,66,0,0,0,60,0.01,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,+4,+5,-23,115
+20.275,EXECUTE,64,90,109,34,0,0,66,0,0,0,60,0.06,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,+3,+5,-26,113
+20.325,EXECUTE,64,90,109,39,0,0,66,0,0,0,60,0.03,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,+3,+5,-30,113
+20.375,EXECUTE,64,90,109,39,0,0,66,0,0,0,60,0.08,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,+3,+5,-33,114
+20.426,EXECUTE,64,90,109,43,0,0,66,0,0,0,60,0.02,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,+2,+5,-34,115
+20.476,EXECUTE,64,90,109,43,0,0,66,0,0,0,60,0.07,0.01,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,+2,+5,-36,116
+20.526,EXECUTE,64,90,109,46,0,0,66,0,0,0,60,0.00,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-2,+7,-39,115
+20.576,EXECUTE,64,90,109,46,0,0,66,0,0,0,60,0.05,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-3,+7,-39,114
+20.626,EXECUTE,64,90,109,49,0,0,66,0,0,0,60,0.00,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-3,+7,-39,115
+20.676,EXECUTE,64,90,109,49,0,0,66,0,0,0,60,0.05,0.01,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-3,+7,+41,114
+20.726,EXECUTE,64,90,108,52,0,0,66,0,0,0,60,0.02,0.01,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-3,+7,+41,114
+20.777,EXECUTE,64,90,108,52,0,0,66,0,0,0,54,0.07,0.01,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-3,+7,+41,114
+20.827,EXECUTE,64,90,108,55,0,0,68,0,0,0,54,0.00,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-4,+6,+37,116
+20.877,EXECUTE,64,90,108,55,0,0,68,0,0,0,48,0.05,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-4,+6,+37,116
+20.927,EXECUTE,63,90,109,57,0,0,68,0,0,0,48,0.00,0.01,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-4,+6,+36,116
+20.977,EXECUTE,63,90,109,57,0,0,68,0,0,0,44,0.05,0.01,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-5,+5,+34,115
+21.028,EXECUTE,63,90,108,59,0,0,68,0,0,0,44,0.00,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-6,+5,+33,117
+21.078,EXECUTE,63,90,108,59,0,0,68,0,0,0,40,0.05,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-7,+4,+32,116
+21.128,EXECUTE,63,90,109,60,0,0,68,0,0,0,40,0.00,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,1,0,1,1,-7,+4,+31,115
+21.178,EXECUTE,63,90,109,60,0,0,68,0,0,0,38,0.05,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,1,0,1,1,-8,+3,+29,116
+21.228,EXECUTE,63,90,109,62,1,-2,68,0,0,0,38,0.00,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,1,0,1,1,-9,+3,+29,119
+21.278,EXECUTE,63,90,109,62,1,-2,68,0,0,0,34,0.05,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,1,0,1,1,-9,+3,+28,118
+21.329,EXECUTE,63,90,110,63,1,-2,68,0,0,0,34,0.00,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-11,+2,+27,117
+21.379,EXECUTE,63,90,110,63,1,-2,68,0,0,0,32,0.05,0.01,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-15,-1,+27,117
+21.429,EXECUTE,63,90,109,64,0,-1,68,0,0,0,32,0.00,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-17,-4,+26,118
+21.479,EXECUTE,63,90,109,64,0,-1,68,0,0,0,30,0.05,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-17,-5,+26,116
+21.529,EXECUTE,63,90,107,65,0,-1,68,0,0,0,30,0.01,0.01,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-17,-6,+26,116
+21.579,EXECUTE,63,90,107,65,0,-1,68,0,0,0,28,0.06,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-16,-6,+25,116
+21.630,EXECUTE,63,90,106,65,0,-1,68,0,0,0,28,0.00,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-15,-6,+25,116
+21.680,EXECUTE,63,90,106,65,0,-1,68,0,0,0,28,0.05,0.01,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-15,-6,+24,116
+21.730,EXECUTE,63,90,109,66,0,-1,68,0,0,0,28,0.00,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-15,-6,+24,116
+21.780,EXECUTE,63,90,109,66,0,-1,68,0,0,0,26,0.05,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-15,-6,+22,115
+21.830,EXECUTE,63,90,106,67,0,0,68,0,0,0,26,0.00,0.01,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-15,-7,+22,115
+21.881,EXECUTE,63,90,106,67,0,0,68,0,0,0,24,0.05,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-15,-7,+22,115
+21.931,EXECUTE,63,90,105,67,0,0,68,0,0,0,24,0.00,0.01,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",-1,0,0,1,1,-15,-8,+22,116
+21.981,EXECUTE,63,90,105,67,0,0,68,0,0,21,24,0.05,0.01,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",-1,0,0,1,1,-15,-8,+21,115
+22.031,EXECUTE,63,90,105,67,0,0,68,0,0,21,24,0.10,0.01,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",-1,0,0,1,1,-16,-8,+21,116
+22.081,EXECUTE,63,90,107,68,0,0,68,0,0,21,24,0.04,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",-1,0,0,1,1,-18,-8,+18,115
+22.131,EXECUTE,63,90,107,68,0,0,68,0,0,0,22,0.09,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",-1,0,0,1,1,-19,-8,+18,116
+22.181,EXECUTE,63,90,106,69,0,-2,68,0,0,0,22,0.03,0.04,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",-1,0,0,1,1,-19,-9,+18,115
+22.232,EXECUTE,63,90,106,69,0,-2,68,0,0,0,20,0.08,0.01,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",-1,0,0,1,1,-19,-10,+18,115
+22.285,EXECUTE,63,90,105,69,0,-2,68,0,0,0,20,0.04,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-21,-16,+19,114
+22.335,EXECUTE,63,90,105,69,0,-2,68,0,0,21,20,0.09,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-21,-17,+19,115
+22.386,EXECUTE,63,90,102,70,0,-1,68,0,0,21,20,0.02,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-21,-18,+19,114
+22.436,EXECUTE,63,90,102,70,0,-1,68,0,0,22,20,0.07,0.01,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-21,-19,+19,114
+22.487,EXECUTE,63,90,102,70,0,-1,68,0,0,24,20,0.02,0.01,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-21,-19,+19,114
+22.537,EXECUTE,63,90,102,70,0,-1,68,0,0,24,20,0.07,0.01,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-21,-19,+18,114
+22.587,EXECUTE,63,90,102,70,0,-1,68,0,0,24,20,0.04,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-22,-20,+18,115
+22.637,EXECUTE,63,90,102,70,0,-1,68,0,0,24,20,0.09,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-22,-20,+17,116
+22.687,EXECUTE,63,90,102,71,0,0,68,0,0,24,20,0.02,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-22,-21,+17,116
+22.737,EXECUTE,63,90,102,71,0,0,68,0,0,24,20,0.07,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-22,-21,+17,118
+22.787,EXECUTE,63,90,103,71,0,0,68,0,0,24,20,0.01,0.01,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-22,-21,+16,116
+22.838,EXECUTE,63,90,103,71,0,0,68,0,0,23,20,0.06,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-23,-22,+16,118
+22.888,EXECUTE,63,90,103,71,0,0,68,0,0,23,20,0.03,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-24,-23,+14,117
+22.938,EXECUTE,63,90,103,71,0,0,68,0,0,23,20,0.08,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-24,-23,+14,118
+22.988,EXECUTE,62,90,104,71,0,0,68,0,0,23,20,0.02,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-24,-23,+14,119
+23.038,EXECUTE,62,90,104,71,0,0,68,0,0,22,20,0.07,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-24,-24,+14,119
+23.088,EXECUTE,62,90,107,71,0,0,68,0,0,22,20,0.04,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-24,-25,+14,119
+23.138,EXECUTE,62,90,107,71,0,0,68,0,0,20,20,0.09,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-24,-28,+13,120
+23.189,EXECUTE,62,90,108,71,0,0,68,0,0,0,20,0.02,0.04,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-24,-28,+13,122
+23.239,EXECUTE,62,90,108,71,0,0,68,0,0,0,20,0.07,0.01,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-24,-29,+13,124
+23.289,EXECUTE,62,90,108,71,0,0,68,0,0,0,20,0.03,0.01,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-24,-30,+13,123
+23.339,EXECUTE,62,90,108,71,0,0,68,0,0,0,20,0.08,0.01,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-24,-35,+13,123
+23.389,EXECUTE,62,90,110,71,0,0,68,0,0,0,20,0.02,0.01,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-24,-36,+14,124
+23.439,EXECUTE,62,100,110,71,0,0,68,0,0,0,20,0.00,0.01,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-24,-39,+14,125
+23.489,EXECUTE,62,100,110,71,0,0,68,0,0,0,20,0.05,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-24,-42,+14,125
+23.539,EXECUTE,62,100,110,69,0,-3,68,0,0,0,20,0.00,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-24,-43,+13,126
+23.590,EXECUTE,62,100,110,69,0,-3,68,0,0,0,20,0.05,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-24,-45,+13,135
+23.640,EXECUTE,62,100,110,70,-2,-1,68,0,0,0,20,0.00,0.03,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,0,1,,,,
+23.691,EXECUTE,62,100,110,70,-2,-1,68,0,0,0,20,0.05,0.03,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,0,1,,,,
+23.741,EXECUTE,62,100,112,72,0,0,68,0,0,0,20,0.00,0.03,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,0,1,,,,
+23.791,EXECUTE,62,100,112,72,0,0,68,0,0,0,20,0.05,0.01,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-16,-53,+15,131
+23.841,EXECUTE,62,100,112,74,0,1,69,0,0,0,20,0.01,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-18,-52,+15,138
+23.891,EXECUTE,62,100,112,74,0,1,69,0,0,0,20,0.06,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-21,-51,+15,135
+23.941,EXECUTE,62,100,112,74,1,0,69,0,0,0,20,0.00,0.03,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-25,-51,+15,133
+23.992,EXECUTE,62,100,112,74,1,0,69,0,0,0,20,0.05,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-27,-49,+13,131
+24.042,EXECUTE,62,100,113,75,1,0,69,0,0,0,20,0.01,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-31,-43,+11,129
+24.092,EXECUTE,62,100,113,75,1,0,69,0,0,0,20,0.06,0.03,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,0,1,,,,
+24.142,EXECUTE,62,100,113,75,1,-1,69,0,0,0,20,0.01,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-38,-44,+10,130
+24.192,EXECUTE,62,100,113,75,1,-1,69,0,0,0,20,0.06,0.03,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,0,1,,,,
+24.242,EXECUTE,62,100,113,74,1,0,69,0,0,0,20,0.01,0.03,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,0,1,,,,
+24.292,EXECUTE,62,100,113,74,1,0,69,0,0,0,20,0.06,0.03,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,0,1,,,,
+24.342,EXECUTE,62,100,113,74,1,0,69,0,0,0,20,0.00,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-36,-45,+12,126
+24.393,EXECUTE,62,100,113,74,1,0,69,0,0,0,20,0.05,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-36,-44,+12,125
+24.443,EXECUTE,62,100,112,73,0,0,69,0,0,0,20,0.01,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-36,-45,+12,126
+24.493,EXECUTE,62,100,112,73,0,0,69,0,0,0,20,0.06,0.01,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-36,-45,+12,125
+24.543,EXECUTE,62,100,112,73,0,0,69,0,0,0,20,0.11,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-36,-45,+12,126
+24.593,EXECUTE,62,100,112,73,0,0,69,0,0,0,20,0.03,0.04,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-36,-45,+12,126
+24.643,EXECUTE,62,100,112,73,0,0,69,0,0,0,20,0.00,0.01,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-33,-45,+13,128
+24.693,EXECUTE,62,100,112,73,0,0,69,0,0,0,20,0.06,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-29,-46,+13,126
+24.744,EXECUTE,62,100,112,73,0,0,69,0,0,0,20,0.00,0.01,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-29,-46,+13,129
+24.794,EXECUTE,62,100,112,73,0,0,69,0,0,0,20,0.05,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-29,-46,+13,124
+24.844,EXECUTE,61,100,112,72,0,0,69,0,0,0,20,0.00,0.01,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-31,-46,+13,126
+24.894,EXECUTE,61,100,112,72,0,0,69,0,0,0,20,0.05,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-32,-46,+13,127
+24.944,EXECUTE,61,100,110,72,0,0,69,0,0,0,20,0.00,0.01,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-32,-44,+12,127
+24.994,EXECUTE,61,100,110,72,0,0,69,0,0,0,20,0.05,0.01,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-32,-44,+12,125
+25.044,EXECUTE,61,100,110,72,0,0,69,0,0,0,20,0.10,0.01,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-32,-43,+12,126
+25.095,EXECUTE,61,100,111,73,-1,0,69,0,0,0,20,0.02,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-32,-43,+12,128
+25.145,EXECUTE,61,100,110,73,0,0,69,0,0,0,20,0.00,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-32,-42,+12,130
+25.195,EXECUTE,61,100,110,73,0,0,69,0,0,0,20,0.05,0.04,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-32,-42,+12,130
+25.245,EXECUTE,61,100,110,73,0,0,69,0,0,0,20,0.10,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-32,-42,+12,128
+25.295,EXECUTE,61,100,110,74,-1,0,69,0,0,0,20,0.00,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-32,-41,+12,128
+25.345,EXECUTE,61,100,110,74,-1,0,69,0,0,0,20,0.05,0.01,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-32,-40,+11,128
+25.395,EXECUTE,61,90,110,76,-2,1,69,0,0,0,20,0.02,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-32,-39,+11,129
+25.446,EXECUTE,61,90,110,76,-2,1,69,0,0,0,0,0.07,0.01,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-32,-36,+10,133
+25.496,EXECUTE,61,90,110,76,-2,1,69,0,0,0,0,0.12,0.02,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-32,-34,+9,132
+25.546,EXECUTE,61,90,108,78,-1,2,69,0,0,0,0,0.02,0.07,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-32,-34,+9,132
+25.596,EXECUTE,61,90,108,78,-1,2,69,0,0,0,0,0.07,0.04,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-32,-33,+9,133
+25.646,EXECUTE,61,90,108,78,-1,2,69,0,0,0,0,0.12,0.09,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,1,1,-32,-33,+9,133
+25.696,EXECUTE,61,90,106,81,1,1,69,0,0,0,0,0.00,0.03,"tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)",0,0,0,0,1,,,,
+25.746,ADVANCE,61,90,106,81,1,1,69,0,0,0,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+25.797,ADVANCE,61,90,105,80,0,0,69,0,15,0,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+25.847,ADVANCE,61,90,105,80,0,0,69,0,15,20,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+25.897,ADVANCE,61,90,105,79,0,0,69,0,15,20,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+25.950,ADVANCE,61,90,105,79,0,0,69,0,15,20,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+26.000,ADVANCE,61,90,105,79,0,0,69,0,15,20,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+26.051,ADVANCE,61,90,105,79,0,0,69,0,15,20,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+26.101,ADVANCE,61,90,104,80,0,1,69,0,15,20,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+26.151,ADVANCE,61,90,104,80,0,1,69,0,15,22,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+26.201,ADVANCE,61,90,104,80,0,1,69,0,15,22,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+26.251,ADVANCE,61,90,104,80,0,1,69,0,15,22,0,0.05,0.04,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+26.301,ADVANCE,61,90,104,80,0,1,69,0,15,22,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+26.351,ADVANCE,61,90,104,79,0,1,69,0,15,22,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+26.402,ADVANCE,61,90,104,79,0,1,69,0,15,22,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+26.452,ADVANCE,61,90,105,80,1,0,69,0,15,22,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+26.502,ADVANCE,61,90,105,80,1,0,69,0,15,21,0,0.05,0.04,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+26.552,ADVANCE,61,90,105,81,0,0,69,0,15,21,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+26.602,ADVANCE,61,90,105,81,0,0,69,0,15,21,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+26.653,ADVANCE,61,90,106,82,0,0,69,0,15,21,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+26.704,ADVANCE,61,90,106,82,0,0,69,0,15,0,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+26.754,ADVANCE,61,90,106,81,0,-1,69,0,15,0,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+26.804,ADVANCE,61,90,106,81,0,-1,69,0,15,0,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+26.854,ADVANCE,60,90,106,81,0,0,69,0,15,0,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,-1,0,,,,,
+26.904,ADVANCE,60,90,106,81,0,0,69,0,15,0,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,0,-1,0,,,,,
+26.955,ADVANCE,60,90,109,81,0,0,69,0,15,0,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+27.005,ADVANCE,60,90,109,81,0,0,69,0,15,0,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+27.055,ADVANCE,60,90,110,81,0,0,69,0,15,0,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+27.105,ADVANCE,60,90,110,81,0,0,69,0,15,0,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+27.155,ADVANCE,60,90,110,81,0,-1,69,0,15,0,0,0.00,0.04,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+27.205,ADVANCE,60,90,110,81,0,-1,69,0,15,0,0,0.05,0.04,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+27.256,ADVANCE,60,90,109,80,0,-2,69,0,15,0,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+27.306,ADVANCE,60,90,109,80,0,-2,69,0,15,0,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+27.357,ADVANCE,60,100,110,80,0,-1,69,0,15,0,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+27.407,ADVANCE,60,100,110,80,0,-1,69,0,15,0,0,0.05,0.04,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+27.457,ADVANCE,60,100,111,81,0,-1,69,0,15,0,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+27.507,ADVANCE,60,100,111,81,0,-1,69,0,15,0,0,0.05,0.04,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+27.557,ADVANCE,60,100,111,81,0,0,69,0,15,0,0,0.00,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+27.607,ADVANCE,60,100,111,81,0,0,69,0,15,0,0,0.05,0.04,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+27.657,ADVANCE,60,100,110,81,0,0,69,0,15,0,0,0.00,0.04,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+27.707,ADVANCE,60,100,110,81,0,0,69,0,15,0,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+27.758,ADVANCE,60,100,110,81,0,0,69,0,15,0,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+27.808,ADVANCE,60,100,110,81,0,0,69,0,15,0,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+27.858,ADVANCE,60,100,110,81,0,0,69,0,15,0,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+27.908,ADVANCE,60,100,110,81,0,0,69,0,15,0,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+27.958,ADVANCE,60,100,111,80,0,-1,69,0,15,0,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+28.008,ADVANCE,60,100,111,80,0,-1,69,0,15,0,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+28.058,ADVANCE,60,100,110,81,0,-1,69,0,15,0,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+28.109,ADVANCE,60,100,110,81,0,-1,69,0,15,0,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+28.159,ADVANCE,60,100,110,81,0,-1,69,0,15,0,0,0.10,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+28.209,ADVANCE,60,100,112,81,0,0,69,0,15,0,0,0.02,0.04,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+28.259,ADVANCE,60,100,112,81,0,0,69,0,15,0,0,0.07,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+28.309,ADVANCE,60,100,111,82,0,0,69,0,15,0,0,0.02,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+28.360,ADVANCE,60,100,111,82,0,0,69,0,15,0,0,0.07,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+28.410,ADVANCE,60,100,110,82,0,0,69,0,15,0,0,0.01,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+28.460,ADVANCE,60,100,110,82,0,0,69,0,15,0,0,0.06,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+28.510,ADVANCE,60,100,109,82,0,0,69,0,15,0,0,0.01,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+28.560,ADVANCE,60,100,109,82,0,0,69,0,15,0,0,0.06,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+28.610,ADVANCE,60,100,109,82,0,0,69,0,15,0,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+28.660,ADVANCE,60,100,109,82,0,0,69,0,15,0,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+28.710,ADVANCE,60,90,111,82,0,0,69,0,15,0,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+28.761,ADVANCE,60,90,111,82,0,0,69,0,15,0,0,0.05,0.04,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+28.811,ADVANCE,60,90,111,81,0,0,69,0,15,0,0,0.03,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+28.861,ADVANCE,60,90,111,81,0,0,69,0,15,0,0,0.08,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+28.911,ADVANCE,59,90,109,81,0,0,70,0,15,0,0,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+28.961,ADVANCE,59,90,109,81,0,0,70,0,15,0,0,0.05,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+29.011,ADVANCE,59,90,108,81,0,0,70,0,15,0,0,0.02,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+29.061,ADVANCE,59,90,108,81,0,0,70,0,15,0,0,0.07,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+29.112,ADVANCE,59,90,111,81,0,0,70,0,15,0,0,0.02,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+29.162,ADVANCE,59,90,111,81,0,0,70,0,15,0,0,0.07,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+29.213,ADVANCE,59,90,109,82,0,0,70,0,15,0,0,0.01,0.04,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+29.264,ADVANCE,59,90,109,82,0,0,70,0,15,0,0,0.06,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+29.314,ADVANCE,59,90,109,83,0,-1,70,0,15,0,0,0.02,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+29.364,ADVANCE,59,90,109,83,0,-1,70,0,15,0,-20,0.07,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+29.414,ADVANCE,59,90,111,83,0,0,70,0,15,0,-20,0.03,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+29.464,ADVANCE,59,90,111,83,0,0,70,0,15,0,-20,0.08,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+29.514,ADVANCE,59,90,112,83,0,0,70,0,15,0,-20,0.03,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+29.564,ADVANCE,59,90,112,83,0,0,70,0,15,0,-20,0.08,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+29.615,ADVANCE,59,90,110,83,0,0,70,0,15,0,-20,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+29.665,ADVANCE,59,90,110,83,0,0,70,0,15,0,-20,0.05,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+29.715,ADVANCE,59,90,111,83,-1,1,70,0,15,0,-20,0.00,0.02,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+29.765,ADVANCE,59,90,111,83,-1,1,70,0,15,0,-20,0.05,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+29.816,ADVANCE,59,90,112,84,-3,2,70,0,15,0,-20,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+29.866,ADVANCE,59,90,112,84,-3,2,70,0,15,0,-20,0.05,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+29.916,ADVANCE,59,90,110,85,-2,1,70,0,15,0,-20,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+29.966,ADVANCE,59,90,110,85,-2,1,70,0,15,0,-20,0.05,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+30.017,ADVANCE,59,90,108,85,-1,0,70,0,15,0,-20,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+30.067,ADVANCE,59,90,108,85,-1,0,70,0,15,0,-20,0.05,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+30.117,ADVANCE,59,90,110,85,0,-1,70,0,15,0,-20,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+30.167,ADVANCE,59,90,106,85,0,0,70,0,15,0,-20,0.00,0.03,"tag 1 ejecutado, avanzando",0,0,0,0,,,,,
+30.217,ADVANCE,59,90,106,85,0,0,70,0,15,0,-20,0.05,0.02,"tag 1 ejecutado, avanzando",0,0,0,1,,,,,
+30.268,ADVANCE,59,90,108,85,0,2,70,0,15,0,-20,0.01,0.02,"tag 1 ejecutado, avanzando",0,0,0,1,,,,,
+30.318,APPROACH,59,90,108,85,0,2,70,0,15,0,-20,0.06,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+39,+12,+1,107
+30.368,APPROACH,59,90,108,85,0,2,70,10,15,0,-20,0.11,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+37,+13,+1,105
+30.418,APPROACH,59,90,109,86,1,2,70,10,15,0,-20,0.00,0.06,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+37,+13,+1,105
+30.468,APPROACH,59,90,106,86,0,1,70,10,15,0,-20,0.00,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+36,+14,+1,105
+30.518,APPROACH,59,90,106,86,0,1,70,10,15,0,-20,0.05,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+35,+14,-1,105
+30.568,APPROACH,59,90,105,87,0,0,70,10,15,0,-20,0.00,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+34,+15,-1,103
+30.619,APPROACH,59,90,105,87,0,0,70,10,15,21,-20,0.05,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+34,+15,-1,104
+30.669,APPROACH,59,90,107,87,0,0,70,15,10,21,-20,0.00,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+34,+15,-1,104
+30.719,APPROACH,59,90,107,87,0,0,70,15,10,0,-20,0.05,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+35,+14,+0,103
+30.769,APPROACH,59,90,107,86,0,0,70,12,10,0,-20,0.00,0.03,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+35,+13,+1,103
+30.819,APPROACH,59,90,107,86,0,0,70,10,12,0,-20,0.05,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+35,+12,+1,103
+30.869,APPROACH,58,90,107,86,0,0,70,10,14,0,-20,0.00,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+35,+12,+2,103
+30.919,APPROACH,58,90,107,86,0,0,70,0,15,0,-20,0.05,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+35,+12,+2,104
+30.970,APPROACH,58,90,108,85,0,1,70,0,15,0,-20,0.00,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+35,+12,+2,105
+31.020,APPROACH,58,90,108,85,0,1,70,0,15,0,-20,0.05,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+35,+12,+2,105
+31.070,APPROACH,58,90,107,85,0,0,70,10,15,0,-20,0.00,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+35,+13,+2,105
+31.120,APPROACH,58,90,107,85,0,0,70,10,15,0,-20,0.05,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+34,+13,+2,105
+31.170,APPROACH,58,90,108,85,0,0,70,10,15,0,-20,0.00,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+33,+13,+2,105
+31.220,APPROACH,58,90,108,85,0,0,70,10,15,0,-20,0.05,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+33,+12,+2,105
+31.271,APPROACH,58,90,108,85,0,0,70,10,14,0,-20,0.10,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+33,+12,+2,105
+31.321,APPROACH,58,90,107,85,0,0,70,10,12,0,-20,0.01,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+33,+11,+4,104
+31.371,APPROACH,58,90,107,85,0,0,70,10,11,0,-20,0.06,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+33,+11,+4,105
+31.421,APPROACH,58,90,106,85,0,0,70,0,13,0,-20,0.03,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+33,+10,+4,105
+31.471,APPROACH,58,90,106,85,0,0,70,0,14,0,-20,0.08,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+33,+10,+4,105
+31.521,APPROACH,58,90,107,85,0,0,70,0,15,0,-20,0.04,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+33,+10,+4,106
+31.571,APPROACH,58,90,107,85,0,0,70,0,15,0,-20,0.09,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+33,+10,+4,105
+31.621,APPROACH,58,90,108,84,0,0,70,0,15,0,-20,0.02,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+33,+10,+4,106
+31.672,APPROACH,58,90,108,84,0,0,70,0,15,0,-20,0.07,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+33,+10,+4,106
+31.722,APPROACH,58,90,108,84,0,0,70,0,15,0,-20,0.00,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+33,+10,+4,105
+31.772,APPROACH,58,90,108,84,0,0,70,0,15,0,-20,0.05,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+31,+10,+5,106
+31.822,APPROACH,58,90,108,84,0,0,70,0,15,0,-20,0.01,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+31,+10,+5,106
+31.872,APPROACH,58,90,108,84,0,0,70,10,15,0,-20,0.06,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+31,+10,+5,106
+31.922,APPROACH,58,90,108,84,0,0,70,10,13,0,-20,0.03,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+31,+10,+5,105
+31.972,APPROACH,58,90,108,84,0,0,70,10,13,0,-20,0.08,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+32,+10,+5,106
+32.022,APPROACH,58,90,108,83,0,0,70,10,13,0,-20,0.02,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+32,+10,+5,106
+32.073,APPROACH,58,90,108,83,0,0,70,10,14,0,-20,0.07,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+32,+10,+5,106
+32.123,APPROACH,58,90,109,83,0,0,70,10,14,0,-20,0.01,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+32,+10,+5,105
+32.173,APPROACH,58,90,109,83,0,0,70,10,15,0,-20,0.06,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+32,+11,+5,106
+32.223,APPROACH,58,90,108,83,0,0,70,10,15,0,-20,0.01,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+32,+11,+5,107
+32.274,APPROACH,58,90,108,83,0,0,70,10,15,0,-20,0.06,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+31,+11,+5,107
+32.324,APPROACH,58,90,109,82,0,1,70,10,15,0,-20,0.00,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+30,+11,+5,106
+32.374,APPROACH,58,90,109,82,0,1,70,10,15,0,0,0.05,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+30,+12,+5,106
+32.424,APPROACH,58,90,108,83,0,1,70,10,15,0,0,0.03,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+30,+12,+5,106
+32.474,APPROACH,58,90,108,83,0,1,70,11,13,0,-20,0.08,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+30,+12,+5,106
+32.525,APPROACH,58,90,109,82,0,0,70,11,13,0,-20,0.01,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+30,+12,+5,106
+32.575,APPROACH,58,90,109,82,0,0,70,12,13,0,0,0.06,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+31,+12,+5,105
+32.625,APPROACH,58,90,109,82,0,0,70,11,14,0,0,0.11,0.03,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+31,+12,+5,105
+32.675,APPROACH,58,90,108,82,0,0,70,10,15,0,0,0.03,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+31,+11,+6,106
+32.725,APPROACH,58,90,109,82,0,0,70,10,15,0,0,0.00,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+31,+11,+7,106
+32.776,APPROACH,58,90,109,82,0,0,70,10,15,0,0,0.05,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+31,+11,+7,106
+32.826,APPROACH,58,90,109,82,0,0,70,10,15,0,0,0.00,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+31,+11,+7,106
+32.876,APPROACH,58,90,109,82,0,0,70,0,15,0,0,0.05,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+31,+11,+7,107
+32.926,APPROACH,57,90,109,81,0,0,71,0,15,0,0,0.01,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+31,+11,+7,106
+32.977,APPROACH,57,90,109,81,0,0,71,0,15,0,0,0.06,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+31,+11,+6,107
+33.027,APPROACH,57,90,109,81,0,1,71,10,15,0,0,0.00,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+30,+12,+6,107
+33.077,APPROACH,57,90,109,81,0,1,71,10,15,0,0,0.05,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+30,+12,+6,108
+33.128,APPROACH,57,90,110,81,0,0,71,10,15,0,0,0.00,0.03,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+30,+12,+6,107
+33.178,APPROACH,57,90,110,81,0,0,71,10,14,0,0,0.05,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+29,+12,+6,108
+33.228,APPROACH,57,90,109,81,0,0,71,10,12,0,0,0.01,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+29,+12,+7,107
+33.279,APPROACH,57,90,109,82,0,0,71,10,12,0,0,0.00,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+29,+11,+7,106
+33.329,APPROACH,57,90,109,82,0,0,71,10,12,0,0,0.05,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+29,+11,+7,107
+33.379,APPROACH,57,90,110,82,0,0,71,10,12,0,0,0.01,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+30,+11,+7,107
+33.429,APPROACH,57,90,110,82,0,0,71,10,14,0,0,0.06,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+30,+12,+7,107
+33.479,APPROACH,57,90,109,83,0,0,71,10,15,0,0,0.00,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+30,+12,+6,107
+33.529,APPROACH,57,90,109,83,0,0,71,10,15,0,-20,0.05,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+29,+13,+5,106
+33.580,APPROACH,57,90,109,83,0,0,71,10,15,0,-20,0.00,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+29,+13,+5,106
+33.630,APPROACH,57,90,109,83,0,0,71,10,15,0,-20,0.05,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+29,+13,+5,105
+33.681,APPROACH,57,90,109,84,0,0,71,10,15,0,-20,0.01,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+29,+13,+5,106
+33.731,APPROACH,57,90,109,84,0,0,71,11,15,0,-20,0.06,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+30,+13,+5,105
+33.781,APPROACH,57,90,109,84,0,0,71,11,15,0,-20,0.11,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+30,+13,+5,105
+33.832,APPROACH,57,90,109,85,0,0,71,11,15,0,-20,0.05,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+30,+13,+4,105
+33.882,APPROACH,57,90,109,86,0,0,70,10,15,0,-20,0.00,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+30,+13,+4,105
+33.932,APPROACH,57,90,109,86,0,0,70,10,15,0,-20,0.05,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+30,+13,+3,106
+33.983,APPROACH,57,90,109,87,0,0,70,10,15,0,-20,0.00,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+29,+13,+2,106
+34.033,APPROACH,57,90,109,87,0,0,70,10,15,0,-20,0.05,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+29,+13,+1,107
+34.084,APPROACH,57,90,109,87,0,0,70,10,15,0,-20,0.00,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+29,+13,+0,107
+34.134,APPROACH,57,90,109,87,0,0,70,10,15,0,-20,0.05,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+28,+13,+0,107
+34.185,APPROACH,57,90,108,86,0,0,70,10,12,0,-20,0.00,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+27,+12,+0,105
+34.235,APPROACH,57,90,108,86,0,0,70,10,11,0,-20,0.05,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+27,+12,+0,106
+34.286,APPROACH,57,90,109,87,0,0,70,10,10,0,-20,0.00,0.03,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+27,+12,+0,106
+34.336,APPROACH,57,90,109,87,0,0,70,10,10,0,-20,0.05,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+27,+12,+0,106
+34.386,APPROACH,57,90,109,86,0,0,70,0,10,0,-20,0.00,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+27,+12,+0,107
+34.437,APPROACH,57,90,109,86,0,0,70,0,10,0,-20,0.05,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+27,+12,+1,108
+34.487,APPROACH,57,90,109,86,0,1,70,0,11,0,-20,0.00,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+27,+12,+1,108
+34.537,APPROACH,57,90,109,86,0,1,70,0,11,0,-20,0.05,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+26,+12,+1,108
+34.587,APPROACH,57,90,109,86,0,1,70,0,10,0,-20,0.10,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+26,+12,+1,107
+34.637,APPROACH,57,90,109,86,0,1,70,0,10,0,-20,0.03,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+25,+12,+1,108
+34.688,APPROACH,57,90,109,86,0,1,70,10,10,0,-20,0.09,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+25,+12,+1,107
+34.738,APPROACH,57,90,108,86,0,1,70,10,10,0,-20,0.05,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+25,+12,+1,109
+34.788,APPROACH,57,90,108,86,0,1,70,10,10,0,-20,0.10,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+25,+12,+1,108
+34.838,APPROACH,57,90,108,86,0,0,70,10,10,0,-20,0.03,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+25,+12,+1,108
+34.888,APPROACH,57,90,108,86,0,0,70,10,10,0,-20,0.08,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+25,+11,+1,107
+34.938,APPROACH,56,90,108,85,0,0,72,10,10,0,-20,0.02,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+25,+10,+2,108
+34.989,APPROACH,56,90,108,85,0,0,72,0,10,0,-20,0.07,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+25,+10,+2,107
+35.039,APPROACH,56,90,108,85,0,0,72,0,11,0,-20,0.01,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+26,+9,+3,108
+35.089,APPROACH,56,90,108,85,0,0,72,0,15,0,-20,0.06,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+26,+9,+3,108
+35.139,APPROACH,56,90,108,83,0,1,72,0,15,0,-20,0.04,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+26,+9,+3,108
+35.189,APPROACH,56,90,108,83,0,1,72,0,15,0,-20,0.09,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+25,+9,+4,108
+35.239,APPROACH,56,90,108,83,0,0,72,0,15,0,-20,0.02,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+24,+9,+4,109
+35.290,APPROACH,56,90,108,83,0,0,72,0,15,0,-20,0.07,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+24,+9,+5,107
+35.340,APPROACH,56,90,108,82,0,0,72,0,14,0,-20,0.01,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+24,+9,+6,106
+35.390,APPROACH,56,90,108,82,0,0,72,0,12,0,0,0.06,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+24,+8,+6,106
+35.440,APPROACH,56,90,108,83,0,-1,72,0,12,0,0,0.00,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+26,+8,+6,107
+35.490,APPROACH,56,90,108,83,0,-1,72,0,14,0,-20,0.05,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+27,+8,+6,107
+35.540,APPROACH,56,90,108,84,-1,-1,72,0,15,0,-20,0.01,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+27,+8,+6,106
+35.590,APPROACH,56,90,108,84,-1,-1,72,0,15,0,-20,0.06,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+27,+8,+6,107
+35.640,APPROACH,56,90,108,85,0,0,72,0,15,0,-20,0.02,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+27,+9,+6,107
+35.691,APPROACH,56,90,108,85,0,0,72,0,15,0,-20,0.07,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+27,+9,+5,106
+35.741,APPROACH,56,90,108,87,0,0,72,10,15,0,-20,0.01,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+26,+11,+3,107
+35.791,APPROACH,56,90,108,87,0,0,72,10,15,0,-20,0.06,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+26,+11,+3,107
+35.841,APPROACH,56,90,108,88,0,0,72,11,15,0,-20,0.01,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+25,+11,+2,107
+35.891,APPROACH,56,90,108,88,0,0,72,13,15,0,-20,0.06,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+25,+11,+1,108
+35.941,APPROACH,56,90,108,91,0,0,71,14,11,0,-20,0.00,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+24,+11,-0,106
+35.992,APPROACH,56,90,108,91,0,0,71,13,10,0,-20,0.05,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+24,+10,-1,106
+36.042,APPROACH,56,90,108,91,0,0,71,12,10,0,-20,0.00,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+24,+10,-2,107
+36.092,APPROACH,56,90,108,91,0,0,71,10,10,0,-20,0.05,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+24,+9,-3,109
+36.142,APPROACH,56,90,108,91,0,0,71,10,10,0,-20,0.00,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+24,+9,-4,107
+36.193,APPROACH,56,90,108,91,0,0,71,0,10,0,-20,0.05,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+24,+8,-4,106
+36.243,APPROACH,56,90,108,91,0,0,71,0,10,0,-20,0.00,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+24,+8,-3,107
+36.294,APPROACH,56,90,108,91,0,0,71,0,10,0,-20,0.05,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+23,+7,-3,107
+36.344,APPROACH,56,90,108,91,0,0,71,0,10,0,-20,0.00,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+23,+7,-3,107
+36.394,APPROACH,56,90,108,91,0,0,71,0,10,0,-20,0.05,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+24,+7,-3,107
+36.444,APPROACH,56,90,108,91,0,-1,71,0,12,0,-20,0.02,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+23,+7,-3,107
+36.494,APPROACH,56,90,108,91,0,-1,71,0,12,0,-20,0.07,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+23,+7,-3,107
+36.544,APPROACH,56,90,107,90,0,-1,71,0,12,0,-20,0.01,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+23,+7,-3,107
+36.595,APPROACH,56,90,107,90,0,-1,71,0,12,0,-20,0.06,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+23,+6,-3,108
+36.645,APPROACH,56,90,108,89,-1,0,71,0,12,0,-20,0.00,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+23,+6,-3,108
+36.695,APPROACH,56,90,108,89,-1,0,71,0,12,0,-20,0.05,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+23,+5,-2,107
+36.746,APPROACH,56,90,108,87,0,0,71,0,12,0,-20,0.01,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+23,+4,-0,107
+36.796,APPROACH,56,90,108,85,0,0,71,0,13,0,-20,0.00,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+23,+4,-0,108
+36.846,APPROACH,56,90,108,85,0,0,71,-10,13,0,-20,0.05,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+24,+4,-0,108
+36.896,APPROACH,56,90,108,85,0,0,71,-10,14,0,-20,0.10,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+24,+4,+1,106
+36.947,APPROACH,55,90,108,83,-1,-1,72,-10,15,0,-20,0.00,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+24,+4,+2,106
+36.997,APPROACH,55,90,108,83,-1,-1,72,-10,15,0,-20,0.05,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+24,+4,+3,106
+37.047,APPROACH,55,90,108,81,-1,-1,72,0,15,0,-20,0.00,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+24,+4,+3,106
+37.097,APPROACH,55,90,108,79,-1,0,72,0,15,0,0,0.00,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+26,+4,+6,107
+37.147,APPROACH,55,90,108,79,-1,0,72,0,15,0,0,0.05,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+26,+4,+7,107
+37.197,APPROACH,55,90,108,77,-1,0,72,0,15,0,0,0.00,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+27,+4,+8,108
+37.247,APPROACH,55,90,108,77,-1,0,72,0,15,0,0,0.05,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+27,+4,+9,107
+37.298,APPROACH,55,90,109,76,0,0,72,0,15,0,0,0.00,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+27,+6,+10,106
+37.348,APPROACH,55,90,109,76,0,0,72,10,15,0,0,0.05,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+27,+6,+11,107
+37.398,APPROACH,55,90,109,76,0,0,72,10,15,0,0,0.10,0.03,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,0,2,,,,
+37.448,APPROACH,55,90,108,75,0,0,72,0,10,0,0,0.01,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+26,+7,+13,107
+37.498,APPROACH,55,90,109,74,0,0,72,11,15,0,20,0.00,0.03,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,0,2,,,,
+37.549,APPROACH,55,90,109,74,0,0,72,0,10,0,0,0.05,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+26,+8,+15,107
+37.599,APPROACH,55,90,108,73,0,0,72,15,14,0,20,0.00,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+26,+8,+15,107
+37.649,APPROACH,55,90,108,73,0,0,72,14,13,0,20,0.05,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+26,+8,+15,107
+37.699,APPROACH,55,90,108,72,0,0,72,14,13,0,20,0.00,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+26,+8,+15,108
+37.749,APPROACH,55,90,108,72,0,0,72,12,13,0,20,0.05,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+26,+8,+15,108
+37.799,APPROACH,55,90,108,72,0,0,72,10,12,0,20,0.10,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+26,+8,+15,107
+37.849,APPROACH,55,90,108,71,0,0,72,10,12,0,20,0.04,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+25,+9,+16,107
+37.900,APPROACH,55,90,108,71,0,0,72,10,12,0,20,0.09,0.01,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+25,+9,+16,107
+37.950,APPROACH,55,90,108,70,0,0,72,10,12,0,20,0.02,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+25,+9,+16,107
+38.000,APPROACH,55,90,108,70,0,0,72,10,12,0,20,0.08,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+25,+10,+16,108
+38.050,APPROACH,55,90,108,68,0,0,72,10,12,0,20,0.01,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+25,+10,+17,108
+38.100,APPROACH,55,90,108,68,0,0,72,10,12,0,20,0.06,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+25,+10,+18,108
+38.151,APPROACH,55,90,108,67,0,0,72,10,12,0,20,0.03,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+25,+10,+18,108
+38.201,APPROACH,55,90,108,67,0,0,72,10,12,0,20,0.08,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+24,+10,+20,108
+38.252,APPROACH,55,90,108,65,0,0,72,10,11,0,20,0.00,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+23,+11,+20,108
+38.302,APPROACH,55,90,108,65,0,0,72,11,10,0,20,0.05,0.02,"tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm",0,0,0,1,2,+23,+11,+21,107
+38.354,EXECUTE,55,90,108,62,0,0,72,11,10,0,20,0.02,0.01,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+22,+11,+21,107
+38.404,EXECUTE,55,90,108,62,0,0,72,0,0,0,-60,0.07,0.01,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+22,+11,+22,108
+38.454,EXECUTE,55,90,109,60,0,0,72,0,0,0,-60,0.01,0.02,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+22,+11,+24,110
+38.505,EXECUTE,55,90,109,60,0,0,72,0,0,0,-60,0.06,0.02,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+22,+11,+24,111
+38.555,EXECUTE,55,90,109,59,0,0,72,0,0,0,-60,0.03,0.02,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+22,+11,+25,110
+38.605,EXECUTE,55,90,109,59,0,0,72,0,0,0,-60,0.08,0.01,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+20,+12,+27,110
+38.655,EXECUTE,55,90,109,57,0,0,72,0,0,0,-60,0.01,0.02,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+18,+13,+28,109
+38.705,EXECUTE,55,90,109,57,0,0,72,0,0,0,-60,0.06,0.02,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+18,+13,+28,109
+38.755,EXECUTE,55,90,108,54,0,0,72,0,0,0,-60,0.00,0.02,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+18,+13,+29,109
+38.805,EXECUTE,55,90,108,54,0,0,72,0,0,0,-60,0.05,0.01,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+18,+13,+30,109
+38.856,EXECUTE,55,90,109,51,0,0,72,0,0,0,-60,0.02,0.04,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+18,+13,+31,108
+38.906,EXECUTE,55,90,109,51,0,0,72,0,0,0,-60,0.07,0.01,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+18,+13,+32,107
+38.956,EXECUTE,54,90,108,48,0,0,73,0,0,0,-60,0.03,0.01,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+18,+13,+33,110
+39.006,EXECUTE,54,90,108,48,0,0,73,0,0,0,-60,0.08,0.01,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+18,+13,+36,109
+39.056,EXECUTE,54,90,108,44,1,1,73,0,0,0,-60,0.01,0.02,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+18,+13,+37,112
+39.106,EXECUTE,54,90,108,44,1,1,73,0,0,0,-60,0.06,0.02,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+17,+13,+39,110
+39.157,EXECUTE,54,90,108,38,3,3,73,0,0,0,-60,0.02,0.03,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+16,+13,+39,113
+39.207,EXECUTE,54,90,108,38,3,3,73,0,0,0,-60,0.07,0.02,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+14,+14,+41,112
+39.257,EXECUTE,54,90,107,30,2,1,73,0,0,0,-60,0.00,0.03,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,0,2,,,,
+39.309,EXECUTE,54,90,107,30,2,1,73,0,0,0,-60,0.05,0.02,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+1,+20,-42,109
+39.359,EXECUTE,54,90,105,22,0,-1,73,0,0,0,-60,0.01,0.02,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+4,+19,-37,108
+39.410,EXECUTE,54,90,105,22,0,-1,73,0,0,20,-60,0.06,0.02,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+8,+16,-33,106
+39.460,EXECUTE,54,90,105,14,0,0,73,0,0,21,-60,0.00,0.02,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+12,+14,-29,106
+39.510,EXECUTE,54,90,105,14,0,0,73,0,0,21,-60,0.05,0.01,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+16,+12,-27,108
+39.560,EXECUTE,54,90,105,6,0,0,73,0,0,21,-60,0.02,0.01,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+16,+12,-23,107
+39.610,EXECUTE,54,90,105,6,0,0,73,0,0,21,-60,0.07,0.02,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+16,+12,-15,108
+39.661,EXECUTE,54,90,105,-1,0,0,73,0,0,21,-60,0.01,0.01,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+16,+14,-13,106
+39.711,EXECUTE,54,90,105,-1,0,0,73,0,0,21,-48,0.06,0.02,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+16,+14,-10,106
+39.761,EXECUTE,54,90,106,-3,0,0,73,0,0,21,-48,0.00,0.02,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+16,+14,-8,107
+39.811,EXECUTE,54,90,106,-3,0,0,73,0,0,0,-44,0.05,0.01,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+17,+14,-2,106
+39.861,EXECUTE,54,90,106,-8,0,0,73,0,0,0,-44,0.00,0.01,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+18,+14,+0,108
+39.911,EXECUTE,54,90,106,-8,0,0,73,0,0,0,-34,0.05,0.01,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+18,+14,+2,110
+39.962,EXECUTE,54,90,106,-5,1,0,73,0,0,0,-34,0.01,0.02,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+18,+13,+2,112
+40.012,EXECUTE,54,90,106,-5,1,0,73,0,0,0,-40,0.06,0.02,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+17,+13,+3,108
+40.064,EXECUTE,54,90,107,-5,1,0,73,0,0,0,-40,0.00,0.02,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+16,+13,+5,108
+40.114,EXECUTE,54,90,107,-5,1,0,73,0,0,0,-40,0.05,0.01,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+16,+15,+5,107
+40.165,EXECUTE,54,90,107,-6,-1,0,73,0,0,0,-40,0.00,0.01,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+16,+15,+4,107
+40.215,EXECUTE,54,90,107,-6,-1,0,73,0,0,0,-38,0.05,0.02,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+16,+15,+4,104
+40.265,EXECUTE,54,90,107,-6,-1,0,73,0,0,0,-38,0.01,0.02,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+21,+14,+4,105
+40.316,EXECUTE,54,90,107,-6,-1,0,73,0,0,0,-38,0.06,0.01,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+23,+13,+4,106
+40.366,EXECUTE,54,90,109,-7,0,0,73,0,0,0,-38,0.00,0.01,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+26,+13,+4,109
+40.421,EXECUTE,54,90,109,-7,0,0,73,0,0,0,-36,0.05,0.02,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+26,+12,+4,110
+40.472,EXECUTE,54,90,107,-7,1,0,73,0,0,0,-36,0.00,0.02,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+26,+12,+4,110
+40.522,EXECUTE,54,90,108,-10,0,0,73,0,0,0,-36,0.00,0.02,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+24,+12,+5,111
+40.572,EXECUTE,54,90,108,-10,0,0,73,0,0,0,-30,0.05,0.01,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+19,+11,+5,111
+40.622,EXECUTE,54,90,106,-13,0,0,73,0,0,0,-30,0.00,0.01,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+17,+11,+5,110
+40.673,EXECUTE,54,90,106,-13,0,0,73,0,0,0,-24,0.05,0.01,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+16,+7,+7,110
+40.723,EXECUTE,54,90,107,-15,0,0,73,0,0,0,-24,0.00,0.02,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+16,+7,+7,108
+40.773,EXECUTE,54,90,107,-15,0,0,73,0,0,0,-20,0.05,0.01,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+16,+7,+9,109
+40.823,EXECUTE,54,90,107,-15,0,0,73,0,0,0,-20,0.10,0.02,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+17,+7,+11,108
+40.873,EXECUTE,54,90,108,-17,0,0,73,0,0,0,-20,0.05,0.01,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+17,+7,+12,111
+40.923,EXECUTE,54,90,108,-17,0,0,73,0,0,0,-20,0.10,0.02,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+17,+7,+12,111
+40.973,EXECUTE,53,90,107,-19,0,0,72,0,0,0,-20,0.04,0.01,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+17,+7,+15,109
+41.024,EXECUTE,53,90,107,-22,0,0,72,0,0,0,-20,0.00,0.01,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+15,+7,+15,109
+41.074,EXECUTE,53,90,107,-22,0,0,72,0,0,0,0,0.05,0.01,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+15,+6,+16,110
+41.124,EXECUTE,53,90,107,-25,0,0,72,0,0,0,0,0.00,0.02,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+15,+6,+17,109
+41.174,EXECUTE,53,90,107,-25,0,0,72,0,0,0,0,0.05,0.02,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+15,+6,+18,110
+41.224,EXECUTE,53,90,107,-25,0,0,72,0,0,0,0,0.10,0.04,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+15,+6,+18,110
+41.276,EXECUTE,53,90,108,-28,0,0,72,0,0,0,0,0.00,0.01,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+16,+6,+19,111
+41.327,EXECUTE,53,90,108,-28,0,0,72,0,0,0,0,0.05,0.01,"tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)",0,0,0,1,2,+16,+5,+21,110
+41.377,ADVANCE,53,90,108,-28,0,0,72,0,0,0,0,0.10,0.01,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+41.427,ADVANCE,53,90,108,-32,0,0,72,0,15,0,0,0.03,0.04,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+41.477,ADVANCE,53,90,108,-32,0,0,72,0,15,0,20,0.08,0.06,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+41.527,ADVANCE,53,90,109,-35,0,0,72,0,15,0,20,0.01,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+41.578,ADVANCE,53,90,109,-39,0,0,72,0,15,0,20,0.00,0.01,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+41.628,ADVANCE,53,90,109,-39,0,0,72,0,15,0,20,0.05,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+41.679,ADVANCE,53,90,109,-42,0,0,72,0,15,0,20,0.00,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+41.729,ADVANCE,53,90,109,-44,0,0,72,0,15,0,20,0.00,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+41.779,ADVANCE,53,90,109,-44,0,0,72,0,15,0,20,0.05,0.04,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+41.829,ADVANCE,53,90,109,-46,0,0,72,0,15,0,20,0.00,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+41.882,ADVANCE,53,90,109,-46,0,0,72,0,15,0,21,0.05,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+41.933,ADVANCE,53,90,109,-46,0,0,72,0,15,0,21,0.10,0.03,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+41.983,ADVANCE,53,90,109,-48,0,0,73,0,15,0,21,0.00,0.02,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+42.033,ADVANCE,53,90,109,-48,0,0,73,0,15,0,23,0.05,0.03,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+42.083,ADVANCE,53,90,108,-49,0,0,73,0,15,0,23,0.00,0.01,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+42.133,ADVANCE,53,90,108,-49,0,0,73,0,15,0,24,0.05,0.01,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+42.183,ADVANCE,53,90,108,-51,0,0,73,0,15,0,24,0.04,0.01,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+42.234,ADVANCE,53,90,108,-51,0,0,73,0,15,0,26,0.09,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+42.284,ADVANCE,53,90,107,-52,0,0,73,0,15,0,26,0.01,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+42.334,ADVANCE,53,90,107,-53,0,0,73,0,15,0,27,0.00,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+42.384,ADVANCE,53,90,107,-53,0,0,73,0,15,0,28,0.05,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+42.434,ADVANCE,53,90,107,-54,0,-1,73,0,15,0,28,0.00,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+42.484,ADVANCE,53,90,107,-54,0,-1,73,0,15,0,29,0.05,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+42.535,ADVANCE,53,90,107,-54,0,-1,73,0,15,0,29,0.10,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+42.585,ADVANCE,53,90,107,-54,0,0,73,0,15,0,29,0.01,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+42.635,ADVANCE,53,90,107,-54,0,0,73,0,15,0,29,0.00,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+42.685,ADVANCE,53,90,107,-54,0,0,73,0,15,0,29,0.05,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+42.735,ADVANCE,53,90,107,-54,0,0,73,0,15,0,29,0.10,0.03,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+42.785,ADVANCE,53,90,108,-54,0,0,73,0,15,0,29,0.03,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+42.836,ADVANCE,53,90,108,-54,0,0,73,0,15,0,29,0.08,0.05,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+42.888,ADVANCE,52,90,108,-54,0,0,73,0,15,0,29,0.00,0.07,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+42.938,ADVANCE,52,90,108,-54,0,0,73,0,15,0,29,0.05,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+42.988,ADVANCE,52,90,109,-53,0,0,73,0,15,0,29,0.01,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+43.039,ADVANCE,52,90,109,-53,0,0,73,0,15,0,28,0.06,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+43.089,ADVANCE,52,90,109,-52,0,0,73,0,15,0,28,0.00,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+43.139,ADVANCE,52,90,109,-52,0,0,73,0,15,0,27,0.05,0.04,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+43.189,ADVANCE,52,90,110,-52,0,0,73,0,15,0,27,0.02,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+43.239,ADVANCE,52,90,110,-52,0,0,73,0,15,0,27,0.07,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+43.289,ADVANCE,52,90,111,-51,0,0,73,0,15,0,27,0.00,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+43.339,ADVANCE,52,90,111,-51,0,0,73,0,15,0,26,0.05,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+43.390,ADVANCE,52,90,111,-50,0,0,73,0,15,0,26,0.00,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+43.440,ADVANCE,52,90,111,-50,0,0,73,0,15,0,25,0.05,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+43.490,ADVANCE,52,90,112,-50,0,0,73,0,15,0,25,0.02,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+43.541,ADVANCE,52,90,112,-50,0,0,73,0,15,0,25,0.07,0.01,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+43.591,ADVANCE,52,90,112,-49,0,0,73,0,15,0,25,0.02,0.01,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+43.641,ADVANCE,52,90,112,-49,0,0,73,0,15,0,24,0.07,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+43.691,ADVANCE,52,100,111,-49,0,0,73,0,15,0,24,0.00,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+43.741,ADVANCE,52,100,111,-49,0,0,73,0,15,0,24,0.05,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+43.792,ADVANCE,52,100,111,-48,0,0,73,0,15,0,24,0.00,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+43.842,ADVANCE,52,100,111,-48,0,0,73,0,15,0,23,0.05,0.01,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+43.892,ADVANCE,52,100,111,-48,0,0,73,0,15,0,23,0.02,0.01,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+43.942,ADVANCE,52,100,111,-48,0,0,73,0,15,0,23,0.07,0.04,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+43.992,ADVANCE,52,100,110,-47,0,0,74,0,15,0,23,0.00,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+44.042,ADVANCE,52,100,110,-47,0,0,74,0,15,0,22,0.05,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+44.093,ADVANCE,52,100,110,-47,0,0,74,0,15,0,22,0.10,0.04,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+44.143,ADVANCE,52,100,109,-47,0,0,74,0,15,0,22,0.02,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+44.193,ADVANCE,52,90,110,-47,0,0,74,0,15,0,22,0.00,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+44.243,ADVANCE,52,90,110,-47,0,0,74,0,15,0,22,0.05,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+44.293,ADVANCE,52,90,111,-46,0,0,74,0,15,0,22,0.02,0.04,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+44.343,ADVANCE,52,90,109,-46,0,0,74,0,15,0,21,0.00,0.01,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+44.394,ADVANCE,52,90,109,-46,0,0,74,0,15,0,21,0.05,0.03,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+44.444,ADVANCE,52,90,109,-46,0,0,74,0,15,0,21,0.10,0.01,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+44.494,ADVANCE,52,90,108,-45,0,0,74,0,15,0,21,0.02,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+44.544,ADVANCE,52,90,106,-45,0,0,74,0,15,0,20,0.00,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+44.594,ADVANCE,52,90,106,-45,0,0,74,0,15,0,20,0.05,0.03,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+44.645,ADVANCE,52,90,107,-44,0,0,74,0,15,0,20,0.00,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+44.695,ADVANCE,52,90,107,-44,0,0,74,0,15,0,20,0.05,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+44.747,ADVANCE,52,90,106,-43,0,0,74,0,15,0,20,0.00,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+44.797,ADVANCE,52,90,106,-43,0,0,74,0,15,0,20,0.05,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+44.848,ADVANCE,51,90,106,-43,0,0,74,0,15,0,20,0.00,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+44.898,ADVANCE,51,90,106,-43,0,0,74,0,15,0,20,0.05,0.01,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+44.949,ADVANCE,51,90,105,-42,0,0,74,0,15,0,20,0.00,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+44.999,ADVANCE,51,90,105,-42,0,0,74,0,15,21,20,0.05,0.01,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+45.049,ADVANCE,51,90,105,-42,0,0,74,0,15,21,20,0.10,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+45.099,ADVANCE,51,90,104,-41,0,0,74,0,15,21,20,0.04,0.01,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+45.149,ADVANCE,51,90,102,-39,-2,-3,74,0,15,22,20,0.00,0.03,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+45.199,ADVANCE,51,90,102,-39,-2,-3,74,0,15,24,20,0.05,0.03,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+45.250,ADVANCE,51,90,102,-39,-2,-3,74,0,15,24,20,0.10,0.03,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+45.300,ADVANCE,51,90,103,-36,-2,-4,74,0,15,24,20,0.00,0.03,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+45.353,ADVANCE,51,90,103,-36,-2,-4,74,0,15,23,20,0.05,0.03,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+45.403,ADVANCE,51,90,104,-35,0,1,74,0,15,23,20,0.00,0.03,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+45.453,ADVANCE,51,90,104,-35,0,1,74,0,15,22,20,0.05,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+45.503,ADVANCE,51,90,104,-35,0,1,74,0,15,22,20,0.10,0.04,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+45.553,ADVANCE,51,90,103,-34,1,3,74,0,15,22,20,0.01,0.01,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+45.603,ADVANCE,51,90,103,-34,1,3,74,0,15,23,20,0.06,0.08,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+45.653,ADVANCE,51,90,103,-33,1,3,74,0,15,23,20,0.00,0.08,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+45.704,ADVANCE,51,90,103,-31,0,1,74,0,15,23,20,0.00,0.03,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+45.754,ADVANCE,51,90,103,-31,0,1,74,0,15,23,20,0.05,0.03,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+45.804,ADVANCE,51,90,103,-30,0,0,74,0,15,23,20,0.00,0.04,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+45.854,ADVANCE,51,90,103,-30,0,0,74,0,15,23,20,0.05,0.03,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+45.904,ADVANCE,51,90,104,-29,0,0,74,0,15,23,20,0.00,0.03,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+45.954,ADVANCE,51,90,104,-29,0,0,74,0,15,22,20,0.05,0.03,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+46.005,ADVANCE,51,90,105,-27,0,0,74,0,15,22,20,0.00,0.03,"tag 2 ejecutado, avanzando",0,0,-1,0,,,,,
+46.055,ADVANCE,51,90,105,-27,0,0,74,0,15,21,0,0.05,0.03,"tag 2 ejecutado, avanzando",0,0,-1,0,,,,,
+46.105,ADVANCE,51,90,106,-26,0,1,74,0,15,21,0,0.00,0.03,"tag 2 ejecutado, avanzando",0,0,-1,0,,,,,
+46.155,ADVANCE,51,90,106,-26,0,1,74,0,15,0,0,0.05,0.02,"tag 2 ejecutado, avanzando",0,0,-1,0,,,,,
+46.205,ADVANCE,51,90,106,-25,0,2,74,0,15,0,0,0.00,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+46.256,ADVANCE,51,90,106,-25,0,2,74,0,15,0,0,0.05,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+46.307,ADVANCE,51,90,107,-25,1,3,74,0,15,0,0,0.01,0.01,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+46.357,ADVANCE,51,90,107,-25,1,3,74,0,15,0,0,0.06,0.03,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+46.407,ADVANCE,51,90,107,-25,0,2,74,0,15,0,0,0.00,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+46.457,ADVANCE,51,90,107,-25,0,2,74,0,15,0,0,0.05,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+46.507,ADVANCE,51,90,107,-25,-1,-2,74,0,15,0,0,0.00,0.02,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+46.557,ADVANCE,51,90,107,-25,-1,-2,74,0,15,0,0,0.05,0.03,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+46.607,ADVANCE,51,90,107,-26,-1,-2,74,0,15,0,0,0.00,0.03,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+46.658,ADVANCE,51,90,106,-26,-1,-1,74,0,15,0,0,0.00,0.03,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+46.708,ADVANCE,51,90,106,-26,-1,-1,74,0,15,0,0,0.05,0.03,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+46.758,ADVANCE,51,90,108,-26,-1,-1,74,0,15,0,0,0.00,0.03,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+46.808,ADVANCE,51,90,108,-26,-1,-1,74,0,15,0,0,0.05,0.03,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+46.858,ADVANCE,50,90,108,-26,0,0,74,0,15,0,0,0.00,0.03,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+46.908,ADVANCE,50,90,108,-26,0,0,74,0,15,0,0,0.05,0.03,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+46.958,ADVANCE,50,90,109,-26,0,0,75,0,15,0,0,0.00,0.03,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+47.008,ADVANCE,50,90,109,-26,0,0,75,0,15,0,0,0.05,0.03,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+47.059,ADVANCE,50,90,110,-26,0,0,75,0,15,0,0,0.00,0.03,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+47.109,ADVANCE,50,90,110,-26,0,0,75,0,15,0,0,0.05,0.03,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+47.159,ADVANCE,50,90,109,-26,0,0,75,0,15,0,0,0.00,0.02,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+47.209,ADVANCE,50,90,109,-26,0,0,75,0,15,0,0,0.05,0.02,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+47.259,ADVANCE,50,90,108,-26,0,0,75,0,15,0,0,0.00,0.02,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+47.309,ADVANCE,50,90,108,-26,0,0,75,0,15,0,0,0.05,0.02,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+47.359,ADVANCE,50,90,107,-27,0,-1,75,0,15,0,0,0.00,0.02,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+47.409,ADVANCE,50,90,107,-27,0,-1,75,0,15,0,0,0.05,0.02,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+47.459,ADVANCE,50,90,108,-27,0,0,75,0,15,0,0,0.00,0.03,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+47.510,ADVANCE,50,90,108,-27,0,0,75,0,15,0,0,0.05,0.02,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+47.560,ADVANCE,50,90,106,-29,-1,0,75,0,15,0,0,0.00,0.03,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+47.610,ADVANCE,50,90,106,-29,-1,0,75,0,15,0,20,0.05,0.02,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+47.660,ADVANCE,50,90,106,-29,-1,0,75,0,15,0,20,0.10,0.02,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+47.711,ADVANCE,50,90,106,-29,-1,0,75,0,15,0,20,0.01,0.03,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+47.761,ADVANCE,50,90,106,-29,-1,0,75,0,15,0,20,0.06,0.02,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+47.811,ADVANCE,50,90,105,-30,0,0,75,0,15,0,20,0.03,0.02,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+47.861,ADVANCE,50,90,105,-30,0,0,75,0,15,21,20,0.08,0.02,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+47.911,ADVANCE,50,90,105,-30,0,-1,75,0,15,21,20,0.04,0.02,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+47.962,ADVANCE,50,90,105,-30,0,-1,75,0,15,21,20,0.09,0.03,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+48.012,ADVANCE,50,90,106,-29,0,-2,75,0,15,21,20,0.01,0.02,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+48.062,ADVANCE,50,90,106,-29,0,-2,75,0,15,0,20,0.06,0.03,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+48.112,ADVANCE,50,90,105,-28,0,0,75,0,15,0,20,0.01,0.03,"tag 2 ejecutado, avanzando",0,0,0,0,,,,,
+48.162,ADVANCE,50,90,105,-28,0,0,75,0,15,21,0,0.06,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+48.212,ADVANCE,50,90,106,-27,0,3,75,0,15,21,0,0.00,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+48.262,ADVANCE,50,90,106,-27,0,3,75,0,15,0,0,0.05,0.02,"tag 2 ejecutado, avanzando",0,0,0,1,,,,,
+48.312,APPROACH,50,90,105,-26,1,3,75,0,15,0,0,0.02,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+34,-14,+19,112
+48.363,APPROACH,50,90,105,-26,1,3,75,-10,15,21,0,0.07,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+33,-13,+19,112
+48.413,APPROACH,50,90,105,-24,0,0,75,-10,15,21,0,0.01,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+30,-13,+19,106
+48.463,APPROACH,50,90,105,-24,0,0,75,-10,15,21,0,0.06,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+30,-13,+19,102
+48.513,APPROACH,50,90,105,-25,0,-1,75,-10,15,21,0,0.00,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+30,-13,+19,107
+48.563,APPROACH,50,90,105,-25,0,-1,75,-10,15,21,0,0.05,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+35,-15,+22,105
+48.613,APPROACH,50,90,105,-24,0,0,75,-13,15,21,0,0.02,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+35,-15,+22,104
+48.663,APPROACH,50,90,105,-24,0,0,75,-15,15,21,0,0.07,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+35,-15,+22,105
+48.713,APPROACH,50,90,106,-25,0,1,75,-15,15,21,0,0.01,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+35,-14,+21,110
+48.764,APPROACH,50,90,106,-25,0,1,75,-13,15,0,0,0.06,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+35,-13,+21,113
+48.815,APPROACH,50,90,107,-23,2,2,75,-11,15,0,0,0.01,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+31,-11,+21,110
+48.866,APPROACH,50,90,107,-23,2,2,75,-10,15,0,0,0.06,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+29,-10,+19,110
+48.916,APPROACH,49,90,106,-23,1,2,75,0,15,0,0,0.01,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+21,-5,+17,109
+48.966,APPROACH,49,90,106,-23,1,2,75,10,0,0,0,0.06,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+21,-5,+17,109
+49.016,APPROACH,49,90,106,-23,1,1,75,15,-13,0,0,0.03,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+21,-5,+17,108
+49.067,APPROACH,49,90,106,-23,1,1,75,15,-15,0,0,0.08,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+22,-4,+17,108
+49.117,APPROACH,49,90,105,-23,0,1,75,15,-15,0,0,0.01,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+22,-4,+18,106
+49.167,APPROACH,49,90,105,-23,0,1,75,15,-15,21,0,0.06,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+23,-4,+18,108
+49.217,APPROACH,49,90,106,-24,0,0,75,15,-15,21,0,0.00,0.04,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+25,-4,+19,106
+49.268,APPROACH,49,90,106,-24,0,0,75,15,-11,0,0,0.05,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+26,-4,+19,106
+49.318,APPROACH,49,90,106,-24,-1,-1,75,12,10,0,0,0.01,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+29,-4,+20,101
+49.368,APPROACH,49,90,106,-24,-1,-1,75,10,15,0,0,0.06,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+29,-4,+20,103
+49.419,APPROACH,49,90,108,-24,-1,-3,75,0,15,0,0,0.01,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+29,-4,+20,108
+49.469,APPROACH,49,90,108,-24,-1,-3,75,0,15,0,0,0.06,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+31,-5,+23,108
+49.519,APPROACH,49,90,108,-24,-1,-1,75,0,15,0,0,0.00,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,-1,1,7,+31,-5,+23,106
+49.570,APPROACH,49,90,108,-24,-1,-1,75,0,15,0,0,0.05,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,-1,1,7,+31,-5,+23,106
+49.620,APPROACH,49,90,109,-24,-1,-1,75,0,15,0,0,0.00,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,-1,1,7,+30,-4,+23,108
+49.670,APPROACH,49,90,109,-24,-1,-1,75,0,15,0,0,0.05,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,-1,1,7,+30,-3,+23,109
+49.720,APPROACH,49,90,110,-24,0,-1,75,0,15,0,0,0.00,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,-1,1,7,+29,-3,+23,109
+49.770,APPROACH,49,90,110,-24,0,-1,75,0,15,0,0,0.05,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,-1,1,7,+29,-2,+23,111
+49.820,APPROACH,49,90,110,-24,0,0,75,0,15,0,0,0.00,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+28,-1,+22,110
+49.870,APPROACH,49,90,110,-24,0,0,75,10,15,0,0,0.05,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+27,-0,+22,111
+49.921,APPROACH,49,100,111,-24,0,0,75,10,11,0,0,0.00,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+25,+2,+22,111
+49.971,APPROACH,49,100,111,-24,0,0,75,14,0,0,0,0.05,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+25,+2,+22,112
+50.023,APPROACH,49,100,111,-24,0,0,75,15,0,0,0,0.10,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+25,+3,+22,111
+50.073,APPROACH,49,100,111,-24,0,0,75,15,0,0,0,0.04,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+25,+3,+22,111
+50.123,APPROACH,49,100,111,-24,0,0,75,15,0,0,0,0.00,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+24,+4,+21,112
+50.173,APPROACH,49,100,111,-24,0,0,75,15,0,0,0,0.00,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+24,+5,+21,113
+50.223,APPROACH,49,100,111,-24,0,0,75,15,0,0,0,0.05,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+23,+5,+21,113
+50.274,APPROACH,49,100,111,-24,0,0,75,15,0,0,0,0.00,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+22,+6,+21,112
+50.324,APPROACH,49,100,111,-24,0,0,75,15,0,0,0,0.05,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+22,+6,+21,112
+50.374,APPROACH,49,100,110,-24,0,0,75,15,0,0,0,0.00,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+22,+6,+21,112
+50.424,APPROACH,49,100,110,-24,0,0,75,14,0,0,0,0.05,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+22,+6,+21,112
+50.474,APPROACH,49,100,110,-24,0,0,75,14,10,0,0,0.00,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+22,+6,+21,111
+50.524,APPROACH,49,100,110,-24,0,0,75,12,10,0,0,0.05,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+22,+6,+21,112
+50.575,APPROACH,49,100,110,-24,0,0,75,10,10,0,0,0.00,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+22,+6,+21,111
+50.625,APPROACH,49,100,110,-24,0,0,75,10,10,0,0,0.05,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+22,+6,+21,110
+50.675,APPROACH,49,100,109,-24,0,1,75,10,11,0,0,0.00,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+22,+6,+20,110
+50.725,APPROACH,49,100,109,-24,0,1,75,0,12,0,0,0.05,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+23,+5,+20,112
+50.775,APPROACH,49,90,108,-24,1,2,75,0,14,0,0,0.00,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+23,+5,+20,114
+50.826,APPROACH,49,90,108,-24,1,2,75,0,15,0,0,0.05,0.03,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+23,+5,+20,115
+50.876,APPROACH,49,90,108,-24,1,2,75,0,15,0,0,0.10,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+23,+5,+20,109
+50.926,APPROACH,48,90,107,-24,0,1,75,0,15,0,0,0.02,0.03,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+24,+5,+20,111
+50.976,APPROACH,48,90,107,-24,0,1,75,0,15,0,0,0.07,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+24,+5,+20,107
+51.026,APPROACH,48,90,106,-25,-1,-1,76,0,15,0,0,0.03,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+24,+5,+21,106
+51.076,APPROACH,48,90,106,-25,-1,-1,76,0,15,0,0,0.08,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+25,+3,+23,105
+51.126,APPROACH,48,90,106,-24,-1,-1,76,0,15,0,0,0.02,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+26,+2,+23,106
+51.177,APPROACH,48,90,106,-24,-1,-1,76,0,15,0,0,0.07,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+27,+2,+23,109
+51.227,APPROACH,48,90,106,-24,0,0,76,0,15,0,0,0.00,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+27,+2,+23,109
+51.277,APPROACH,48,90,106,-24,0,0,76,-10,15,0,0,0.05,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+27,+4,+21,108
+51.327,APPROACH,48,90,106,-23,0,1,76,0,15,0,0,0.02,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+25,+6,+20,108
+51.377,APPROACH,48,90,106,-23,0,1,76,0,15,0,0,0.07,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+24,+7,+19,108
+51.427,APPROACH,48,90,105,-23,0,1,76,10,15,0,0,0.04,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+20,+9,+17,107
+51.479,APPROACH,48,90,105,-23,0,1,76,14,10,21,0,0.09,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+20,+9,+17,108
+51.529,APPROACH,48,90,105,-23,0,0,76,15,0,21,0,0.03,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+20,+9,+17,108
+51.579,APPROACH,48,90,105,-23,0,0,76,15,0,21,0,0.08,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+20,+9,+18,106
+51.630,APPROACH,48,90,105,-23,0,0,76,15,-10,21,0,0.03,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+21,+9,+18,106
+51.684,APPROACH,48,90,105,-23,0,0,76,15,-10,21,0,0.08,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+23,+8,+19,106
+51.734,APPROACH,48,90,105,-23,0,0,76,15,0,21,0,0.03,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+24,+8,+19,107
+51.784,APPROACH,48,90,105,-23,0,0,76,14,0,21,0,0.08,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+24,+8,+20,107
+51.834,APPROACH,48,90,106,-24,0,0,76,10,10,21,0,0.01,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+24,+8,+20,109
+51.884,APPROACH,48,90,106,-24,0,0,76,0,15,0,0,0.06,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+23,+8,+20,109
+51.934,APPROACH,48,90,106,-24,0,2,76,0,15,0,0,0.04,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+22,+9,+20,108
+51.985,APPROACH,48,90,106,-24,0,2,76,0,15,0,0,0.09,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+21,+9,+19,109
+52.035,APPROACH,48,90,106,-24,1,3,76,0,15,0,0,0.03,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+20,+9,+19,109
+52.085,APPROACH,48,90,106,-24,1,3,76,10,10,0,0,0.08,0.03,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+19,+10,+18,109
+52.135,APPROACH,48,90,107,-24,0,0,76,10,10,0,0,0.03,0.03,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,0,7,,,,
+52.185,APPROACH,48,90,107,-24,0,0,76,0,10,0,0,0.08,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+28,+6,+23,108
+52.236,APPROACH,48,90,106,-24,-1,-1,76,0,15,0,0,0.01,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+27,+6,+22,107
+52.286,APPROACH,48,90,106,-24,-1,-1,76,0,15,0,0,0.06,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+27,+7,+22,108
+52.336,APPROACH,48,90,107,-24,0,0,76,0,15,0,0,0.01,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+25,+7,+22,108
+52.387,APPROACH,48,90,107,-24,0,0,76,0,15,0,0,0.06,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+25,+7,+22,109
+52.437,APPROACH,48,90,107,-24,0,0,76,0,15,0,0,0.00,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+25,+7,+21,110
+52.488,APPROACH,48,90,107,-24,0,0,76,0,15,0,0,0.06,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+25,+7,+21,109
+52.538,APPROACH,48,90,107,-24,0,0,76,0,15,0,0,0.00,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+23,+8,+21,108
+52.589,APPROACH,48,90,107,-24,0,0,76,0,15,0,0,0.05,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+23,+8,+21,108
+52.639,APPROACH,48,90,108,-23,0,0,76,10,0,0,0,0.00,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+23,+9,+21,108
+52.689,APPROACH,48,90,108,-23,0,0,76,10,0,0,0,0.05,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+23,+9,+20,108
+52.739,APPROACH,48,90,108,-23,0,-1,76,10,0,0,0,0.02,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+24,+9,+20,108
+52.789,APPROACH,48,90,108,-23,0,-1,76,10,10,0,0,0.07,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+24,+8,+21,108
+52.839,APPROACH,48,90,108,-23,-1,-1,76,10,10,0,0,0.01,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+25,+8,+21,109
+52.890,APPROACH,48,90,108,-23,-1,-1,76,10,11,0,0,0.06,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+25,+8,+21,109
+52.940,APPROACH,48,90,108,-24,0,0,76,10,15,0,0,0.01,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+25,+8,+21,110
+52.990,APPROACH,48,90,108,-24,0,0,76,0,15,0,0,0.06,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+25,+8,+21,109
+53.040,APPROACH,48,90,108,-23,0,0,76,0,15,0,0,0.00,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+23,+8,+21,109
+53.090,APPROACH,48,90,108,-23,0,0,76,0,15,0,0,0.05,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+23,+8,+21,109
+53.141,APPROACH,48,90,108,-23,0,0,76,0,15,0,0,0.00,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+23,+8,+20,109
+53.191,APPROACH,48,90,108,-23,0,0,76,0,13,0,0,0.05,0.04,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+23,+8,+20,109
+53.242,APPROACH,48,90,107,-23,-1,-1,76,0,13,0,0,0.00,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+23,+8,+20,109
+53.292,APPROACH,48,90,107,-23,-1,-1,76,10,10,0,0,0.05,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+23,+8,+20,108
+53.342,APPROACH,48,90,108,-24,-1,-1,76,10,10,0,0,0.01,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+24,+8,+20,107
+53.392,APPROACH,48,90,108,-24,-1,-1,76,10,11,0,0,0.06,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+24,+7,+20,108
+53.442,APPROACH,48,90,107,-24,-1,0,76,0,13,0,0,0.00,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+25,+7,+21,108
+53.492,APPROACH,48,90,107,-24,-1,0,76,0,15,0,0,0.05,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+25,+7,+21,108
+53.543,APPROACH,48,90,107,-24,0,0,76,0,15,0,0,0.00,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+25,+6,+22,108
+53.593,APPROACH,48,90,108,-24,0,0,76,0,15,0,0,0.01,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+25,+6,+22,107
+53.643,APPROACH,48,90,108,-24,0,0,76,0,15,0,0,0.06,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+25,+6,+22,109
+53.693,APPROACH,48,90,108,-24,0,0,76,0,15,0,0,0.00,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+25,+6,+22,109
+53.744,APPROACH,48,90,108,-24,0,0,76,0,15,0,0,0.05,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+24,+7,+22,110
+53.794,APPROACH,48,90,107,-24,0,0,76,0,15,0,0,0.00,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+24,+7,+21,109
+53.845,APPROACH,48,90,107,-24,0,0,76,0,13,0,0,0.05,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+23,+7,+21,109
+53.895,APPROACH,47,90,108,-24,0,0,76,0,11,0,0,0.00,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+23,+8,+21,109
+53.945,APPROACH,47,90,108,-24,0,0,76,10,10,0,0,0.05,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+22,+8,+21,108
+53.995,APPROACH,47,90,108,-24,0,0,76,10,10,0,0,0.00,0.03,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+22,+8,+21,108
+54.047,APPROACH,47,90,108,-24,0,0,76,10,10,0,0,0.05,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+22,+8,+21,109
+54.097,APPROACH,47,90,107,-24,0,0,76,10,10,0,0,0.00,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+23,+7,+21,109
+54.147,APPROACH,47,90,107,-24,0,0,76,10,10,0,0,0.05,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+23,+7,+21,109
+54.197,APPROACH,47,90,107,-24,0,0,76,10,10,0,0,0.10,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+23,+7,+21,108
+54.248,APPROACH,47,90,107,-24,0,0,76,0,11,0,0,0.04,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+23,+7,+21,108
+54.298,APPROACH,47,90,107,-24,0,0,76,0,12,0,0,0.00,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+23,+7,+21,109
+54.349,APPROACH,47,90,107,-24,0,0,76,0,14,0,0,0.05,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+23,+7,+21,109
+54.400,APPROACH,47,90,108,-24,0,0,76,0,15,0,0,0.00,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+23,+7,+21,110
+54.451,APPROACH,47,90,108,-24,0,0,76,0,15,0,0,0.05,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+23,+7,+21,109
+54.501,APPROACH,47,90,108,-24,0,0,76,0,15,0,0,0.00,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+23,+7,+21,109
+54.552,APPROACH,47,90,108,-24,0,0,76,0,14,0,0,0.05,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+23,+7,+21,109
+54.602,APPROACH,47,90,108,-24,0,0,76,0,13,0,0,0.00,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+22,+8,+21,108
+54.652,APPROACH,47,90,108,-24,0,0,76,10,11,0,0,0.05,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+22,+8,+21,108
+54.702,APPROACH,47,90,108,-25,0,0,76,10,10,0,0,0.00,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+22,+8,+21,108
+54.752,APPROACH,47,90,108,-25,0,0,76,10,10,0,0,0.05,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+22,+8,+21,107
+54.802,APPROACH,47,90,108,-25,0,0,76,10,10,0,0,0.10,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+22,+7,+21,108
+54.852,APPROACH,47,90,108,-25,0,0,76,10,10,0,0,0.04,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+23,+6,+22,109
+54.903,APPROACH,47,90,108,-25,0,0,76,0,11,0,0,0.09,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+23,+6,+22,109
+54.953,APPROACH,47,90,108,-24,0,0,76,0,13,0,0,0.03,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+23,+6,+22,109
+55.003,APPROACH,47,90,108,-24,0,0,76,0,14,0,0,0.08,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+23,+6,+22,108
+55.053,APPROACH,47,90,108,-24,0,0,76,0,15,0,0,0.02,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+23,+7,+21,109
+55.103,APPROACH,47,90,108,-24,0,0,76,0,15,0,0,0.07,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+22,+7,+21,109
+55.153,APPROACH,47,90,108,-24,0,0,76,0,15,0,0,0.02,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+22,+8,+21,110
+55.203,APPROACH,47,90,108,-24,0,0,76,0,13,0,0,0.07,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+22,+8,+21,110
+55.254,APPROACH,47,90,108,-24,0,0,76,0,12,0,0,0.01,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+22,+8,+21,108
+55.304,APPROACH,47,90,108,-24,0,0,76,10,10,0,0,0.06,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+22,+8,+21,108
+55.354,APPROACH,47,90,108,-24,-1,-1,76,10,10,0,0,0.03,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+23,+7,+21,108
+55.404,APPROACH,47,90,108,-24,-1,-1,76,10,11,0,0,0.08,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+23,+7,+21,108
+55.454,APPROACH,47,90,108,-24,0,0,76,10,13,0,0,0.03,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+24,+7,+22,108
+55.504,APPROACH,47,90,108,-24,0,0,76,0,15,0,0,0.08,0.04,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+24,+6,+22,109
+55.554,APPROACH,47,90,108,-25,0,0,76,0,15,0,0,0.03,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+24,+6,+22,109
+55.605,APPROACH,47,90,108,-25,0,0,76,0,15,0,0,0.08,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+24,+6,+22,110
+55.655,APPROACH,47,90,109,-25,0,0,76,0,15,0,0,0.02,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+24,+6,+22,110
+55.705,APPROACH,47,90,109,-25,0,0,76,0,15,0,0,0.07,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+23,+7,+21,110
+55.755,APPROACH,47,90,108,-25,0,0,76,0,15,0,0,0.02,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+23,+7,+21,110
+55.805,APPROACH,47,90,108,-25,0,0,76,0,15,0,0,0.07,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+21,+7,+21,110
+55.855,APPROACH,47,90,108,-24,0,0,76,0,11,0,0,0.01,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+21,+7,+21,110
+55.905,APPROACH,47,90,108,-24,0,0,76,10,10,0,0,0.06,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+21,+7,+21,109
+55.956,APPROACH,47,90,108,-24,0,0,76,10,10,0,0,0.00,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+21,+7,+21,110
+56.006,APPROACH,47,90,108,-24,0,0,76,10,0,0,0,0.05,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+21,+7,+21,109
+56.056,APPROACH,47,90,108,-24,0,0,76,10,0,0,0,0.03,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+22,+7,+21,109
+56.106,APPROACH,47,90,108,-24,0,0,76,10,10,0,0,0.08,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+23,+7,+21,108
+56.156,APPROACH,47,90,108,-24,0,0,76,10,10,0,0,0.02,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+23,+7,+21,109
+56.206,APPROACH,47,90,108,-24,0,0,76,0,14,0,0,0.07,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+24,+6,+21,109
+56.256,APPROACH,47,90,109,-24,0,0,76,0,15,0,0,0.02,0.01,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+24,+6,+21,109
+56.306,APPROACH,47,90,109,-24,0,0,76,0,15,0,0,0.07,0.02,"tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm",0,0,0,1,7,+24,+6,+21,109
+56.357,LANDING,47,90,108,-24,0,0,76,0,0,0,0,0.00,0.02,tag 7: aterrizar,0,0,0,1,7,+24,+6,+21,109
+56.407,LANDING,47,90,108,-24,0,0,76,0,0,0,0,0.05,0.01,tag 7: aterrizar,0,0,0,1,7,+24,+6,+21,110
+56.457,LANDING,47,90,108,-24,0,0,76,0,0,0,0,0.00,0.01,tag 7: aterrizar,0,0,0,1,7,+24,+6,+21,108
+56.507,LANDING,47,90,108,-24,0,0,76,0,0,0,0,0.05,0.02,tag 7: aterrizar,0,0,0,1,7,+23,+6,+21,109
+56.557,LANDING,47,90,109,-24,0,0,76,0,0,0,0,0.02,0.02,tag 7: aterrizar,0,0,0,1,7,+24,+6,+21,108
+56.607,LANDING,47,90,109,-24,0,0,76,0,0,0,0,0.07,0.01,tag 7: aterrizar,0,0,0,1,7,+24,+6,+21,109
+56.657,LANDING,47,90,108,-24,0,0,76,0,0,0,0,0.00,0.02,tag 7: aterrizar,0,0,0,1,7,+23,+6,+21,109
+56.707,LANDING,47,90,108,-24,0,0,76,0,0,0,0,0.05,0.01,tag 7: aterrizar,0,0,0,1,7,+23,+6,+21,108
+56.757,LANDING,47,90,108,-24,0,0,76,0,0,0,0,0.10,0.01,tag 7: aterrizar,0,0,0,1,7,+23,+6,+21,109
+56.808,LANDING,47,90,108,-24,0,0,76,0,0,0,0,0.04,0.01,tag 7: aterrizar,0,0,0,1,7,+23,+6,+21,109
+56.858,LANDING,47,90,108,-24,0,0,76,0,0,0,0,0.00,0.04,tag 7: aterrizar,0,0,0,1,7,+23,+6,+21,109
+56.908,LANDING,47,90,108,-24,0,0,76,0,0,0,0,0.05,0.01,tag 7: aterrizar,0,0,0,1,7,+23,+6,+21,108
+56.958,LANDING,47,90,108,-24,0,-1,76,0,0,0,0,0.00,0.01,tag 7: aterrizar,0,0,0,1,7,+23,+6,+22,108
+57.008,LANDING,47,90,108,-24,0,-1,76,0,0,0,0,0.05,0.01,tag 7: aterrizar,0,0,0,1,7,+23,+6,+22,109
+57.058,LANDING,47,90,108,-24,0,-1,76,0,0,0,0,0.10,0.02,tag 7: aterrizar,0,0,0,1,7,+23,+6,+22,109
+57.108,LANDING,47,90,107,-25,0,-2,77,0,0,0,0,0.02,0.02,tag 7: aterrizar,0,0,0,1,7,+23,+5,+22,108
+57.158,LANDING,47,90,106,-25,-2,-2,77,0,0,0,0,0.00,0.02,tag 7: aterrizar,0,0,1,1,7,+23,+4,+23,106
+57.208,LANDING,47,90,106,-25,-2,-2,77,0,0,0,0,0.05,0.02,tag 7: aterrizar,0,0,1,1,7,+23,+3,+24,103
+57.259,LANDING,47,90,106,-25,-2,-2,77,0,0,0,0,0.10,0.01,tag 7: aterrizar,0,0,1,1,7,+24,+3,+24,105
+57.309,LANDING,47,90,102,-24,0,0,77,0,0,0,0,0.00,0.02,tag 7: aterrizar,0,0,2,1,7,+29,+3,+25,107
+57.359,LANDING,47,90,102,-24,0,0,77,0,0,0,0,0.05,0.02,tag 7: aterrizar,0,0,2,1,7,+29,+3,+25,110
+57.409,LANDING,47,80,104,-24,8,16,77,0,0,0,0,0.00,0.03,tag 7: aterrizar,0,0,4,1,7,+29,+3,+25,109
+57.459,LANDING,47,80,104,-24,8,16,77,0,0,0,0,0.05,0.03,tag 7: aterrizar,0,0,4,0,7,,,,
+57.510,LANDING,47,80,104,-24,8,16,77,0,0,0,0,0.10,0.05,tag 7: aterrizar,0,0,4,0,7,,,,
+57.560,LANDING,47,80,104,-24,8,16,77,0,0,0,0,0.15,0.09,tag 7: aterrizar,0,0,4,0,7,,,,
+57.611,LANDING,47,80,102,-23,10,23,77,0,0,0,0,0.01,0.03,tag 7: aterrizar,0,0,7,0,7,,,,
+57.661,LANDING,47,70,89,-24,8,20,77,0,0,0,0,0.00,0.02,tag 7: aterrizar,0,0,8,1,7,+5,+39,+11,91
+57.711,LANDING,47,70,89,-24,8,20,77,0,0,0,0,0.05,0.01,tag 7: aterrizar,0,0,8,1,7,+5,+40,+11,88
+57.761,LANDING,47,70,89,-24,8,20,77,0,0,0,0,0.10,0.05,tag 7: aterrizar,0,0,8,0,7,,,,
+57.811,LANDING,47,70,89,-24,8,20,77,0,0,0,0,0.15,0.07,tag 7: aterrizar,0,0,8,0,7,,,,
+57.861,LANDING,47,60,67,-25,0,1,77,0,0,0,0,0.00,0.05,tag 7: aterrizar,0,0,6,0,7,,,,
+57.911,LANDING,47,60,67,-25,0,1,77,0,0,0,0,0.05,0.03,tag 7: aterrizar,0,0,6,0,7,,,,
+57.961,LANDING,47,60,67,-25,0,1,77,0,0,0,0,0.10,0.05,tag 7: aterrizar,0,0,6,0,7,,,,
+58.011,LANDING,47,60,67,-25,0,1,77,0,0,0,0,0.15,0.09,tag 7: aterrizar,0,0,6,0,7,,,,
+58.061,LANDING,47,60,67,-25,0,1,77,0,0,0,0,0.20,0.03,tag 7: aterrizar,0,0,6,0,7,,,,
+58.112,LANDING,47,40,52,-25,0,0,77,0,0,0,0,0.00,0.05,tag 7: aterrizar,0,0,6,0,7,,,,
+58.162,LANDING,47,40,46,-25,0,0,77,0,0,0,0,0.00,0.03,tag 7: aterrizar,0,0,5,0,7,,,,
+58.212,LANDING,47,40,46,-25,0,0,77,0,0,0,0,0.05,0.03,tag 7: aterrizar,0,0,5,0,7,,,,
+58.262,LANDING,47,30,40,-25,0,0,77,0,0,0,0,0.00,0.02,tag 7: aterrizar,0,0,5,0,7,,,,
+58.313,LANDING,47,30,40,-25,0,0,77,0,0,0,0,0.05,0.02,tag 7: aterrizar,0,0,5,0,7,,,,
+58.363,LANDING,47,20,35,-25,0,0,77,0,0,0,0,0.01,0.03,tag 7: aterrizar,0,0,5,0,7,,,,
+58.415,LANDING,47,20,35,-25,0,0,77,0,0,0,0,0.06,0.02,tag 7: aterrizar,0,0,5,0,7,,,,
+58.465,LANDING,47,20,30,-25,0,0,77,0,0,0,0,0.02,0.03,tag 7: aterrizar,0,0,4,0,7,,,,
+58.515,LANDING,47,20,30,-25,0,0,77,0,0,0,0,0.07,0.02,tag 7: aterrizar,0,0,4,0,7,,,,
+58.565,LANDING,47,10,25,-25,0,0,77,0,0,0,0,0.03,0.02,tag 7: aterrizar,0,0,4,0,7,,,,
+58.615,LANDING,47,10,25,-25,0,0,77,0,0,0,0,0.08,0.02,tag 7: aterrizar,0,0,4,0,7,,,,
+58.666,LANDING,47,10,21,-25,0,0,77,0,0,0,0,0.00,0.02,tag 7: aterrizar,0,0,4,0,7,,,,
+58.716,LANDING,47,10,21,-25,0,0,77,0,0,0,0,0.05,0.02,tag 7: aterrizar,0,0,4,0,7,,,,
+58.766,LANDING,47,0,17,-24,0,0,77,0,0,0,0,0.01,0.02,tag 7: aterrizar,0,0,3,0,7,,,,
+58.816,LANDING,47,0,17,-24,0,0,77,0,0,0,0,0.07,0.04,tag 7: aterrizar,0,0,3,0,7,,,,
+58.866,LANDING,47,0,10,7,-3,-29,77,0,0,0,0,0.00,0.03,tag 7: aterrizar,0,0,10,0,7,,,,
+58.916,LANDING,47,0,10,7,-3,-29,77,0,0,0,0,0.05,0.03,tag 7: aterrizar,0,0,10,0,7,,,,
+58.966,LANDING,47,20,10,30,21,-9,77,0,0,0,0,0.00,0.03,tag 7: aterrizar,0,0,13,0,7,,,,
+59.017,LANDING,47,20,10,30,21,-9,77,0,0,0,0,0.05,0.02,tag 7: aterrizar,0,0,13,0,7,,,,
+59.067,LANDING,47,30,10,29,-17,-11,76,0,0,0,0,0.01,0.02,tag 7: aterrizar,0,0,2,0,7,,,,
+59.117,LANDING,47,30,10,29,-17,-11,76,0,0,0,0,0.06,0.02,tag 7: aterrizar,0,0,2,0,7,,,,
+59.167,LANDING,47,30,10,22,-8,-1,76,0,0,0,0,0.00,0.02,tag 7: aterrizar,0,0,4,0,7,,,,
+59.217,LANDING,47,30,10,22,-8,-1,76,0,0,0,0,0.05,0.04,tag 7: aterrizar,0,0,4,0,7,,,,
+59.268,LANDING,47,30,10,22,-8,-1,76,0,0,0,0,0.10,0.06,tag 7: aterrizar,0,0,4,0,7,,,,
+59.318,LANDING,47,30,10,18,0,-1,76,0,0,0,0,0.00,0.02,tag 7: aterrizar,0,0,1,0,7,,,,
+59.368,LANDING,47,30,10,18,0,-1,76,0,0,0,0,0.05,0.02,tag 7: aterrizar,0,0,1,0,7,,,,
+59.418,LANDING,47,20,10,18,0,-1,76,0,0,0,0,0.00,0.05,tag 7: aterrizar,0,0,2,0,7,,,,
+59.468,LANDING,47,20,10,18,0,-1,76,0,0,0,0,0.03,0.03,tag 7: aterrizar,0,0,3,0,7,,,,
+59.518,LANDING,47,20,10,18,0,-1,76,0,0,0,0,0.08,0.04,tag 7: aterrizar,0,0,3,0,7,,,,
+59.569,LANDING,47,10,10,18,0,-1,76,0,0,0,0,0.01,0.03,tag 7: aterrizar,0,0,3,0,7,,,,
+59.619,LANDING,47,10,10,18,0,-1,76,0,0,0,0,0.06,0.04,tag 7: aterrizar,0,0,3,0,7,,,,
+59.669,LANDING,47,10,10,18,0,-1,76,0,0,0,0,0.00,0.04,tag 7: aterrizar,0,0,4,0,7,,,,
+59.719,LANDING,47,10,10,18,0,-1,76,0,0,0,0,0.05,0.04,tag 7: aterrizar,0,0,4,0,7,,,,
+59.769,LANDING,47,0,10,18,0,-1,76,0,0,0,0,0.03,0.05,tag 7: aterrizar,0,0,3,0,7,,,,
+59.819,LANDING,47,0,10,18,0,-1,76,0,0,0,0,0.08,0.04,tag 7: aterrizar,0,0,3,0,7,,,,
+59.871,LANDING,47,0,10,18,0,-1,76,0,0,0,0,0.00,0.04,tag 7: aterrizar,0,0,3,0,7,,,,
+59.922,LANDING,47,0,10,18,0,-1,76,0,0,0,0,0.05,0.05,tag 7: aterrizar,0,0,3,0,7,,,,
+59.972,LANDING,47,0,10,18,0,-1,76,0,0,0,0,0.03,0.05,tag 7: aterrizar,0,0,3,0,7,,,,
+60.022,LANDING,47,0,10,18,0,-1,76,0,0,0,0,0.08,0.04,tag 7: aterrizar,0,0,3,0,7,,,,
+60.072,LANDING,47,0,10,18,0,-1,76,0,0,0,0,0.13,0.04,tag 7: aterrizar,0,0,3,0,7,,,,
+60.123,LANDING,47,0,10,18,0,-1,76,0,0,0,0,0.00,0.05,tag 7: aterrizar,0,0,2,0,7,,,,
+60.173,LANDING,47,0,10,18,0,-1,76,0,0,0,0,0.03,0.05,tag 7: aterrizar,0,0,2,0,7,,,,
+60.223,LANDING,47,0,10,18,0,-1,76,0,0,0,0,0.08,0.04,tag 7: aterrizar,0,0,2,0,7,,,,
+60.273,LANDING,47,0,10,18,0,-1,76,0,0,0,0,0.01,0.03,tag 7: aterrizar,0,0,2,0,7,,,,
+60.324,DONE,47,0,10,18,0,-1,76,0,0,0,0,0.06,0.04,aterrizado (tag 7: aterrizar),0,0,2,0,7,,,,
+60.374,DONE,47,0,10,18,0,-1,76,0,0,0,0,0.11,0.04,aterrizado (tag 7: aterrizar),0,0,2,0,7,,,,
+60.424,DONE,47,0,10,18,0,-1,76,0,0,0,0,0.16,0.04,aterrizado (tag 7: aterrizar),0,0,2,0,7,,,,
+60.476,DONE,47,0,10,18,0,0,76,0,0,0,0,0.00,0.06,aterrizado (tag 7: aterrizar),0,0,0,0,7,,,,
+60.526,DONE,47,0,10,18,0,0,76,0,0,0,0,0.00,0.06,aterrizado (tag 7: aterrizar),0,0,0,0,7,,,,
+60.576,DONE,47,0,10,18,0,0,76,0,0,0,0,0.00,0.05,aterrizado (tag 7: aterrizar),0,0,0,0,7,,,,
+60.626,DONE,47,0,10,18,0,0,76,0,0,0,0,0.05,0.04,aterrizado (tag 7: aterrizar),0,0,0,0,7,,,,
+60.676,DONE,47,0,10,18,0,0,76,0,0,0,0,0.10,0.04,aterrizado (tag 7: aterrizar),0,0,0,0,7,,,,
+60.727,DONE,47,0,10,18,0,0,76,0,0,0,0,0.01,0.04,aterrizado (tag 7: aterrizar),0,0,0,0,7,,,,
+60.777,DONE,47,0,10,18,0,0,76,0,0,0,0,0.00,0.04,aterrizado (tag 7: aterrizar),0,0,0,0,7,,,,
+60.827,DONE,47,0,10,18,0,0,76,0,0,0,0,0.05,0.04,aterrizado (tag 7: aterrizar),0,0,0,0,7,,,,
+60.877,DONE,47,0,10,18,0,0,76,0,0,0,0,0.10,0.05,aterrizado (tag 7: aterrizar),0,0,0,0,7,,,,
+60.927,DONE,47,0,10,18,0,0,76,0,0,0,0,0.15,0.06,aterrizado (tag 7: aterrizar),0,0,0,0,7,,,,
+60.977,DONE,47,0,10,18,0,0,76,0,0,0,0,0.00,0.06,aterrizado (tag 7: aterrizar),0,0,0,0,7,,,,
+61.028,DONE,47,0,10,18,0,0,76,0,0,0,0,0.05,0.05,aterrizado (tag 7: aterrizar),0,0,0,0,7,,,,
+61.078,DONE,47,0,10,18,0,0,76,0,0,0,0,0.10,0.04,aterrizado (tag 7: aterrizar),0,0,0,0,7,,,,
+61.128,DONE,47,0,10,18,0,0,76,0,0,0,0,0.15,0.04,aterrizado (tag 7: aterrizar),0,0,0,0,7,,,,
+61.178,DONE,47,0,10,18,0,0,76,0,0,0,0,0.00,0.04,aterrizado (tag 7: aterrizar),0,0,0,0,7,,,,
+61.228,DONE,47,0,10,18,0,0,76,0,0,0,0,0.03,0.04,aterrizado (tag 7: aterrizar),0,0,0,0,7,,,,
+61.278,DONE,47,0,10,18,0,0,76,0,0,0,0,0.08,0.04,aterrizado (tag 7: aterrizar),0,0,0,0,7,,,,
+61.329,DONE,47,0,10,18,0,0,76,0,0,0,0,0.03,0.05,aterrizado (tag 7: aterrizar),0,0,0,0,7,,,,
+61.379,DONE,47,0,10,18,0,0,76,0,0,0,0,0.08,0.04,aterrizado (tag 7: aterrizar),0,0,0,0,7,,,,
+61.430,DONE,47,0,10,18,0,0,76,0,0,0,0,0.00,0.04,aterrizado (tag 7: aterrizar),0,0,0,0,7,,,,
+61.480,DONE,47,0,10,18,0,0,76,0,0,0,0,0.03,0.05,aterrizado (tag 7: aterrizar),0,0,0,0,7,,,,
+61.531,DONE,47,0,10,18,0,0,76,0,0,0,0,0.08,0.04,aterrizado (tag 7: aterrizar),0,0,0,0,7,,,,
+61.581,DONE,47,0,10,18,0,0,76,0,0,0,0,0.02,0.04,aterrizado (tag 7: aterrizar),0,0,0,0,7,,,,
+61.631,DONE,47,0,10,18,0,0,76,0,0,0,0,0.07,0.04,aterrizado (tag 7: aterrizar),0,0,0,0,7,,,,
+61.681,DONE,47,0,10,18,0,0,76,0,0,0,0,0.00,0.04,aterrizado (tag 7: aterrizar),0,0,0,0,7,,,,
+61.731,DONE,47,0,10,18,0,0,76,0,0,0,0,0.05,0.04,aterrizado (tag 7: aterrizar),0,0,0,0,7,,,,
+61.781,DONE,47,0,10,18,0,0,76,0,0,0,0,0.00,0.05,aterrizado (tag 7: aterrizar),0,0,0,0,7,,,,
+61.832,DONE,47,0,10,18,0,0,76,0,0,0,0,0.05,0.05,aterrizado (tag 7: aterrizar),0,0,0,0,7,,,,
+61.882,DONE,47,0,10,19,0,0,76,0,0,0,0,0.00,0.05,aterrizado (tag 7: aterrizar),0,0,0,0,7,,,,
+61.932,DONE,47,0,10,19,0,0,76,0,0,0,0,0.05,0.05,aterrizado (tag 7: aterrizar),0,0,0,0,7,,,,
+61.982,DONE,47,0,10,19,0,0,76,0,0,0,0,0.10,0.05,aterrizado (tag 7: aterrizar),0,0,0,0,7,,,,
+62.032,DONE,47,0,10,19,0,0,76,0,0,0,0,0.15,0.04,aterrizado (tag 7: aterrizar),0,0,0,0,7,,,,
+62.082,DONE,47,0,10,19,0,0,76,0,0,0,0,0.00,0.06,aterrizado (tag 7: aterrizar),0,0,0,0,7,,,,
+62.133,DONE,47,0,10,19,0,0,76,0,0,0,0,0.05,0.04,aterrizado (tag 7: aterrizar),0,0,0,0,7,,,,
+62.183,DONE,47,0,10,19,0,0,76,0,0,0,0,0.01,0.05,aterrizado (tag 7: aterrizar),0,0,0,0,7,,,,
+62.233,DONE,47,0,10,19,0,0,76,0,0,0,0,0.06,0.03,aterrizado (tag 7: aterrizar),0,0,0,0,7,,,,
+62.283,DONE,47,0,10,19,0,0,76,0,0,0,0,0.01,0.03,aterrizado (tag 7: aterrizar),0,0,0,0,7,,,,
+62.333,DONE,47,0,10,19,0,0,76,0,0,0,0,0.06,0.04,aterrizado (tag 7: aterrizar),0,0,0,0,7,,,,
+62.384,DONE,47,0,10,19,0,0,76,0,0,0,0,0.00,0.04,aterrizado (tag 7: aterrizar),0,0,0,0,7,,,,
+62.434,DONE,47,0,10,19,0,0,76,0,0,0,0,0.05,0.04,aterrizado (tag 7: aterrizar),0,0,0,0,7,,,,
+62.484,DONE,47,0,10,19,0,0,76,0,0,0,0,0.01,0.04,aterrizado (tag 7: aterrizar),0,0,0,0,7,,,,
+62.534,DONE,47,0,10,19,0,0,76,0,0,0,0,0.06,0.04,aterrizado (tag 7: aterrizar),0,0,0,0,7,,,,
+62.584,DONE,47,0,10,19,0,0,76,0,0,0,0,0.00,0.04,aterrizado (tag 7: aterrizar),0,0,0,0,7,,,,

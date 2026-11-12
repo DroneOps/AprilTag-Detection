@@ -1,0 +1,259 @@
+Resumen de sesión — 2026-11-11 20:17 — 32 bitácoras
+
+== vuelo_20261111_163147.csv  (vuelo)
+   vuelo 6 s | batería 100% -> 92% | temp max 54 C
+   final: KILLED — motores apagados por el usuario
+   VEREDICTO: REVISAR
+
+== vuelo_20261111_163320.csv  (vuelo)
+   vuelo 11 s | batería 96% -> 88% | temp max 60 C
+   despegue: en el aire a 59 cm (sin estabilizar, ok del Tello, despegue 6.2 s)
+   altura en vuelo: min 60 cm, max 67 cm
+   final: DONE — aterrizado (PARO: q en el aire)
+   detenido a mano: PARO: q en el aire
+   VEREDICTO: OK hasta que se detuvo a mano
+
+== vuelo_20261111_163411.csv  (vuelo)
+   vuelo 17 s | batería 80% -> 75% | temp max 70 C
+   despegue: en el aire a 64 cm (sin estabilizar, ok del Tello, despegue 6.3 s)
+   altura en vuelo: min 60 cm, max 85 cm
+   final: DONE — aterrizado (PARO: teclado)
+   detenido a mano: PARO: teclado
+   VEREDICTO: OK hasta que se detuvo a mano
+
+== vuelo_20261111_163641.csv  (vuelo)
+   vuelo 18 s | batería 87% -> 78% | temp max 62 C
+   despegue: en el aire a 65 cm (estable, ok del Tello, despegue 3.9 s)
+   altura en vuelo: min 63 cm, max 83 cm
+   final: DONE — aterrizado (fin de la prueba)
+   VEREDICTO: OK
+
+== vuelo_20261111_163722.csv  (vuelo)
+   vuelo 7 s | batería 76% -> 76% | temp max 68 C
+   despegue: en el aire a 78 cm (sin estabilizar, ok del Tello, despegue 4.9 s)
+   altura en vuelo: min 79 cm, max 86 cm
+   final: KILLED — motores apagados por el usuario
+   detenido a mano: PARO: teclado
+   VEREDICTO: REVISAR
+
+== vuelo_20261111_163749.csv  (vuelo)
+   vuelo 16 s | batería 76% -> 74% | temp max 71 C
+   despegue: en el aire a 69 cm (estable, ok del Tello, despegue 6.4 s)
+   altura en vuelo: min 58 cm, max 91 cm
+   final: DONE — aterrizado (PARO: teclado)
+   detenido a mano: PARO: teclado
+   VEREDICTO: OK hasta que se detuvo a mano
+
+== espejo_20261111_164656.csv  (espejo)
+   vuelo 33 s | batería 77% -> 64% | temp max 76 C
+   despegue: en el aire a 84 cm (sin estabilizar, ok del Tello, despegue 7.9 s)
+   altura en vuelo: min 66 cm, max 119 cm
+   EJECUTÓ tag 2 (Giro izquierda 90) centrado incompleto (adelante +20, lado -33, giro -8)
+   vio tag 2 (Giro izquierda 90) debajo: adelante +13, lado +31 cm
+   final: DONE — aterrizado (PARO: teclado)
+   problemas: acercamiento incompleto (por tiempo)
+   detenido a mano: PARO: teclado
+   VEREDICTO: OK hasta que se detuvo a mano
+
+== espejo_20261111_164909.csv  (espejo)
+   vuelo 28 s | batería 73% -> 60% | temp max 64 C
+   despegue: en el aire a 65 cm (estable, sin ok, despegue 7.7 s)
+   altura en vuelo: min 65 cm, max 106 cm
+   vio tag 2 (Giro izquierda 90) debajo: adelante +45, lado +16 cm
+   final: DONE — aterrizado (tag 2 perdido al centrarse)
+   problemas: tag perdido
+   VEREDICTO: REVISAR
+
+== espejo_20261111_165006.csv  (espejo)
+   vuelo 10 s | batería 57% -> 57% | temp max 71 C
+   despegue: en el aire a 68 cm (estable, ok del Tello, despegue 6.0 s)
+   altura en vuelo: min 26 cm, max 68 cm
+   final: KILLED — motores apagados por el usuario
+   detenido a mano: PARO: teclado
+   VEREDICTO: REVISAR
+
+== espejo_20261111_165036.csv  (espejo)
+   vuelo 10 s | batería 57% -> 57% | temp max 74 C
+   final: KILLED — motores apagados por el usuario
+   detenido a mano: PARO: teclado
+   VEREDICTO: REVISAR
+
+== espejo_20261111_165203.csv  (espejo)
+   vuelo 17 s | batería 61% -> 53% | temp max 66 C
+   despegue: en el aire a 71 cm (estable, ok del Tello, despegue 5.5 s)
+   altura en vuelo: min 69 cm, max 104 cm
+   vio tag 1 (Giro derecha 90) debajo: adelante +36, lado -46 cm
+   final: DONE — aterrizado (tag 1 perdido al centrarse)
+   problemas: tag perdido
+   VEREDICTO: REVISAR
+
+== espejo_20261111_165237.csv  (espejo)
+   vuelo 20 s | batería 51% -> 40% | temp max 72 C
+   despegue: en el aire a 77 cm (estable, sin ok, despegue 7.0 s)
+   altura en vuelo: min 59 cm, max 113 cm
+   final: KILLED — motores apagados por el usuario
+   VEREDICTO: REVISAR
+
+== espejo_20261111_165408.csv  (espejo)
+   vuelo 27 s | batería 100% -> 89% | temp max 73 C
+   despegue: en el aire a 70 cm (sin estabilizar, ok del Tello, despegue 4.9 s)
+   altura en vuelo: min 54 cm, max 112 cm
+   final: DONE — aterrizado (sin tags debajo por 12 s: fin)
+   VEREDICTO: REVISAR
+
+== espejo_20261111_165451.csv  (espejo)
+   vuelo 31 s | batería 86% -> 84% | temp max 76 C
+   despegue: en el aire a 75 cm (sin estabilizar, ok del Tello, despegue 5.2 s)
+   altura en vuelo: min 47 cm, max 114 cm
+   EJECUTÓ tag 2 (Giro izquierda 90) centrado incompleto (adelante +21, lado -33, giro +4)
+   vio tag 2 (Giro izquierda 90) debajo: adelante +31, lado +58 cm
+   final: DONE — aterrizado (el dron no obedece: pide subir y baja (-15 cm en 0.7 s); revisar IMU y helices)
+   problemas: acercamiento incompleto (por tiempo)
+   VEREDICTO: REVISAR
+
+== espejo_20261111_165630.csv  (espejo)
+   vuelo 11 s | batería 91% -> 90% | temp max 61 C
+   despegue: en el aire a 65 cm (sin estabilizar, ok del Tello, despegue 6.3 s)
+   altura en vuelo: min 65 cm, max 67 cm
+   final: DONE — aterrizado (PARO: teclado)
+   detenido a mano: PARO: teclado
+   VEREDICTO: OK hasta que se detuvo a mano
+
+== espejo_20261111_165659.csv  (espejo)
+   vuelo 13 s | batería 90% -> 86% | temp max 66 C
+   despegue: en el aire a 75 cm (sin estabilizar, ok del Tello, despegue 4.0 s)
+   altura en vuelo: min 66 cm, max 104 cm
+   vio tag 2 (Giro izquierda 90) debajo: adelante +18, lado -21 cm
+   final: DONE — aterrizado (PARO: teclado)
+   detenido a mano: PARO: teclado
+   VEREDICTO: OK hasta que se detuvo a mano
+
+== espejo_20261111_165727.csv  (espejo)
+   vuelo 11 s | batería 86% -> 85% | temp max 70 C
+   despegue: en el aire a 70 cm (estable, ok del Tello, despegue 5.8 s)
+   altura en vuelo: min 69 cm, max 73 cm
+   final: DONE — aterrizado (PARO: teclado)
+   detenido a mano: PARO: teclado
+   VEREDICTO: OK hasta que se detuvo a mano
+
+== espejo_20261111_165927.csv  (espejo)
+   vuelo 22 s | batería 84% -> 80% | temp max 65 C
+   despegue: en el aire a 67 cm (estable, ok del Tello, despegue 4.3 s)
+   altura en vuelo: min 67 cm, max 107 cm
+   vio tag 1 (Giro derecha 90) debajo: adelante +45, lado -35 cm
+   final: DONE — aterrizado (tag 1 perdido al centrarse)
+   problemas: tag perdido
+   VEREDICTO: REVISAR
+
+== espejo_20261111_170003.csv  (espejo)
+   vuelo 16 s | batería 80% -> 76% | temp max 71 C
+   despegue: en el aire a 69 cm (estable, sin ok, despegue 7.0 s)
+   altura en vuelo: min 60 cm, max 123 cm
+   final: KILLED — motores apagados por el usuario
+   VEREDICTO: REVISAR
+
+== espejo_20261111_170058.csv  (espejo)
+   vuelo 10 s | batería 76% -> 75% | temp max 76 C
+   final: DONE — aterrizado (PARO: q en el aire)
+   detenido a mano: PARO: q en el aire
+   VEREDICTO: OK hasta que se detuvo a mano
+
+== espejo_20261111_170119.csv  (espejo)
+   vuelo 13 s | batería 75% -> 75% | temp max 78 C
+   final: DONE — aterrizado (no subio (12 cm en 10 s) - h dice que si subio: algo tapa el sensor tof de abajo?)
+   problemas: no despegó bien
+   VEREDICTO: REVISAR
+
+== espejo_20261111_170151.csv  (espejo)
+   vuelo 38 s | batería 75% -> 68% | temp max 78 C
+   despegue: en el aire a 57 cm (sin estabilizar, ok del Tello, despegue 5.1 s)
+   altura en vuelo: min 52 cm, max 110 cm
+   EJECUTÓ tag 1 (Giro derecha 90) encima: adelante +5, lado +3 cm, giro -2
+   EJECUTÓ tag 2 (Giro izquierda 90) centrado incompleto (adelante -12, lado -14, giro +1)
+   vio tag 1 (Giro derecha 90) debajo: adelante +6, lado +5 cm
+   vio tag 2 (Giro izquierda 90) debajo: adelante +41, lado -17 cm
+   final: DONE — aterrizado (el dron no obedece: pide subir y baja (-15 cm en 0.7 s); revisar IMU y helices)
+   problemas: acercamiento incompleto (por tiempo)
+   VEREDICTO: REVISAR
+
+== espejo_20261111_170342.csv  (espejo)
+   vuelo 6 s | batería 69% -> 68% | temp max 73 C
+   final: DONE — aterrizado (PARO: q en el aire)
+   detenido a mano: PARO: q en el aire
+   VEREDICTO: OK hasta que se detuvo a mano
+
+== espejo_20261111_170359.csv  (espejo)
+   vuelo 7 s | batería 68% -> 68% | temp max 76 C
+   final: DONE — aterrizado (PARO: q en el aire)
+   detenido a mano: PARO: q en el aire
+   VEREDICTO: OK hasta que se detuvo a mano
+
+== espejo_20261111_170426.csv  (espejo)
+   vuelo 5 s | batería 68% -> 68% | temp max 77 C
+   final: DONE — aterrizado (PARO: q en el aire)
+   detenido a mano: PARO: q en el aire
+   VEREDICTO: OK hasta que se detuvo a mano
+
+== espejo_20261111_170612.csv  (espejo)
+   vuelo 10 s | batería 71% -> 71% | temp max 58 C
+   despegue: en el aire a 66 cm (estable, ok del Tello, despegue 5.8 s)
+   altura en vuelo: min 65 cm, max 67 cm
+   final: DONE — aterrizado (PARO: teclado)
+   detenido a mano: PARO: teclado
+   VEREDICTO: OK hasta que se detuvo a mano
+
+== espejo_20261111_170639.csv  (espejo)
+   vuelo 59 s | batería 71% -> 47% | temp max 77 C
+   despegue: en el aire a 74 cm (sin estabilizar, ok del Tello, despegue 3.7 s)
+   altura en vuelo: min 66 cm, max 103 cm
+   EJECUTÓ tag 1 (Giro derecha 90) centrado incompleto (adelante +12, lado +6, giro +10)
+   EJECUTÓ tag 2 (Giro izquierda 90) centrado incompleto (adelante +23, lado +11, giro +21)
+   vio tag 1 (Giro derecha 90) debajo: adelante +42, lado -10 cm
+   vio tag 2 (Giro izquierda 90) debajo: adelante +40, lado +11 cm
+   vio tag 7 (Aterrizar) debajo: adelante +36, lado -14 cm
+   final: DONE — aterrizado (tag 7: aterrizar)
+   problemas: acercamiento incompleto (por tiempo)
+   VEREDICTO: OK
+
+== espejo_20261111_170958.csv  (espejo)
+   vuelo 18 s | batería 54% -> 46% | temp max 61 C
+   despegue: en el aire a 66 cm (estable, ok del Tello, despegue 5.9 s)
+   altura en vuelo: min 67 cm, max 118 cm
+   vio tag 1 (Giro derecha 90) debajo: adelante +3, lado -42 cm
+   final: DONE — aterrizado (tag 1 perdido al centrarse)
+   problemas: tag perdido
+   VEREDICTO: REVISAR
+
+== espejo_20261111_171028.csv  (espejo)
+   vuelo 16 s | batería 41% -> 29% | temp max 67 C
+   despegue: en el aire a 71 cm (sin estabilizar, ok del Tello, despegue 7.5 s)
+   altura en vuelo: min 66 cm, max 103 cm
+   final: DONE — aterrizado (PARO: teclado)
+   detenido a mano: PARO: teclado
+   VEREDICTO: OK hasta que se detuvo a mano
+
+== espejo_20261111_171121.csv  (espejo)
+   vuelo 7 s | batería 55% -> 54% | temp max 70 C
+   final: DONE — aterrizado (PARO: q en el aire)
+   detenido a mano: PARO: q en el aire
+   VEREDICTO: OK hasta que se detuvo a mano
+
+== espejo_20261111_171215.csv  (espejo)
+   vuelo 13 s | batería 92% -> 84% | temp max 74 C
+   despegue: en el aire a 80 cm (sin estabilizar, ok del Tello, despegue 3.7 s)
+   altura en vuelo: min 79 cm, max 109 cm
+   final: KILLED — motores apagados por el usuario
+   detenido a mano: PARO: teclado
+   VEREDICTO: REVISAR
+
+== espejo_20261111_171241.csv  (espejo)
+   vuelo 12 s | batería 81% -> 76% | temp max 76 C
+   despegue: en el aire a 77 cm (sin estabilizar, ok del Tello, despegue 5.7 s)
+   altura en vuelo: min 12 cm, max 84 cm
+   final: KILLED — motores apagados por el usuario
+   VEREDICTO: REVISAR
+
+== enlace (test_tags.py)
+   resumen_20261111_164154.txt: enlace: 2544 frames en 86 s | intervalo mediano 34 ms | > 100 ms: 0 (0.0/min) | > 300 ms: 0 | maximo 71 ms
+   resumen_20261111_164325.txt: enlace: 2283 frames en 76 s | intervalo mediano 33 ms | > 100 ms: 0 (0.0/min) | > 300 ms: 0 | maximo 63 ms
+
