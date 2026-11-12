@@ -1,0 +1,65 @@
+Resumen de sesión — 2026-11-12 13:29 — 6 bitácoras
+
+== espejo_20261112_131739.csv  (espejo)
+   vuelo 40 s | batería 84% -> 65% | temp max 65 C
+   despegue: en el aire a 67 cm (estable, ok del Tello, despegue 6.2 s)
+   altura en vuelo: min 67 cm, max 106 cm
+   EJECUTÓ tag 1 (Giro derecha 90) encima: adelante -0, lado -1 cm, giro -1
+   vio tag 1 (Giro derecha 90) debajo: adelante -1, lado -2 cm
+   final: DONE — aterrizado (sin tags debajo por 20 s: fin)
+   VEREDICTO: REVISAR
+
+== espejo_20261112_131840.csv  (espejo)
+   vuelo 39 s | batería 57% -> 36% | temp max 73 C
+   despegue: en el aire a 64 cm (estable, sin ok, despegue 7.0 s)
+   altura en vuelo: min 63 cm, max 110 cm
+   EJECUTÓ tag 1 (Giro derecha 90) centrado incompleto (adelante +19, lado -9, giro +1)
+   vio tag 1 (Giro derecha 90) debajo: adelante +23, lado -7 cm
+   final: DONE — aterrizado (sin tags debajo por 12 s: fin)
+   problemas: acercamiento incompleto (por tiempo)
+   VEREDICTO: REVISAR
+
+== espejo_20261112_131932.csv  (espejo)
+   vuelo 46 s | batería 31% -> 30% | temp max 80 C
+   despegue: en el aire a 74 cm (sin estabilizar, ok del Tello, despegue 3.6 s)
+   altura en vuelo: min 70 cm, max 104 cm
+   EJECUTÓ tag 1 (Giro derecha 90) encima: adelante -7, lado -4 cm, giro -1
+   EJECUTÓ tag 2 (Giro izquierda 90) centrado incompleto (adelante +6, lado -5, giro +4)
+   vio tag 1 (Giro derecha 90) debajo: adelante +3, lado +0 cm
+   vio tag 2 (Giro izquierda 90) debajo: adelante +40, lado -5 cm
+   vio tag 7 (Aterrizar) debajo: adelante +40, lado +22 cm
+   final: DONE — aterrizado (tag 7: aterrizar)
+   problemas: acercamiento incompleto (por tiempo)
+   VEREDICTO: OK
+
+== espejo_20261112_132133.csv  (espejo)
+   vuelo 60 s | batería 100% -> 73% | temp max 68 C
+   despegue: en el aire a 65 cm (sin estabilizar, ok del Tello, despegue 6.0 s)
+   altura en vuelo: min 65 cm, max 111 cm
+   EJECUTÓ tag 1 (Giro derecha 90) encima: adelante -2, lado -3 cm, giro -6
+   EJECUTÓ tag 2 (Giro izquierda 90) encima: adelante +9, lado +1 cm, giro -2
+   vio tag 1 (Giro derecha 90) debajo: adelante -12, lado -1 cm
+   vio tag 2 (Giro izquierda 90) debajo: adelante +26, lado -6 cm
+   vio tag 7 (Aterrizar) debajo: adelante +45, lado +11 cm
+   final: DONE — aterrizado (tag 7: aterrizar)
+   VEREDICTO: OK
+
+== espejo_20261112_132302.csv  (espejo)
+   vuelo 5 s | batería 73% -> 73% | temp max 72 C
+   final: DONE — aterrizado (PARO: q en el aire)
+   detenido a mano: PARO: q en el aire
+   VEREDICTO: OK hasta que se detuvo a mano
+
+== espejo_20261112_132315.csv  (espejo)
+   vuelo 47 s | batería 73% -> 72% | temp max 77 C
+   despegue: en el aire a 89 cm (sin estabilizar, ok del Tello, despegue 8.8 s)
+   altura en vuelo: min 74 cm, max 114 cm
+   EJECUTÓ tag 1 (Giro derecha 90) centrado incompleto (adelante -4, lado +8, giro +0)
+   EJECUTÓ tag 2 (Giro izquierda 90) encima: adelante -1, lado +1 cm, giro +4
+   vio tag 1 (Giro derecha 90) debajo: adelante +13, lado +0 cm
+   vio tag 2 (Giro izquierda 90) debajo: adelante +31, lado -1 cm
+   vio tag 7 (Aterrizar) debajo: adelante +30, lado -6 cm
+   final: DONE — aterrizado (tag 7: aterrizar)
+   problemas: acercamiento incompleto (por tiempo)
+   VEREDICTO: OK
+

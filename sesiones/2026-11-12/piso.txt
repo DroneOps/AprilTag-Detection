@@ -1,0 +1,44 @@
+espejo_20261112_131739.csv  13:17:39  quieto, 40 s en el aire
+  control: pid
+  tags ejecutados (distancia al tag según la cámara): 1 a 1 cm
+  distancia al despegue (medida con el piso): subiendo, hasta 8 cm
+  esperando quieto arriba: media 1, máxima 1, al final 1 cm
+  altura sosteniendo: media 97 cm
+  mandos: cambian 49 rc/s, 0% del tiempo al tope de lado
+  integral del PID al final: +1.8 lado, -4.5 adelante (rc)
+
+espejo_20261112_131840.csv  13:18:40  avanzando, 40 s en el aire
+  control: pid
+  tags ejecutados (distancia al tag según la cámara): 1 a 21 cm
+  de lado al avanzar: hasta 12 cm fuera de la línea del tramo
+  altura al avanzar: mínima 92, media 100 cm
+  mandos: cambian 14 rc/s, 1% del tiempo al tope de lado
+  integral del PID al final: +6.2 lado, -12.1 adelante (rc)
+
+espejo_20261112_131932.csv  13:19:32  avanzando, 47 s en el aire
+  control: pid
+  tags ejecutados (distancia al tag según la cámara): 1 a 8 cm, 2 a 7 cm, 7 a 4 cm
+  de lado al avanzar: hasta 10 cm fuera de la línea del tramo
+  altura al avanzar: mínima 94, media 97 cm
+  mandos: cambian 28 rc/s, 0% del tiempo al tope de lado
+  integral del PID al final: +4.2 lado, -7.9 adelante (rc)
+
+espejo_20261112_132133.csv  13:21:33  avanzando, 64 s en el aire
+  control: pid
+  tags ejecutados (distancia al tag según la cámara): 1 a 4 cm, 2 a 9 cm, 7 a 33 cm
+  de lado al avanzar: hasta 11 cm fuera de la línea del tramo
+  altura al avanzar: mínima 94, media 101 cm
+  mandos: cambian 26 rc/s, 0% del tiempo al tope de lado
+  integral del PID al final: -3.1 lado, -10.0 adelante (rc)
+
+espejo_20261112_132302.csv  13:23:02  quieto, 5 s en el aire
+  control: pid
+  mandos: muy poco tiempo sosteniendo
+
+espejo_20261112_132315.csv  13:23:15  avanzando, 47 s en el aire
+  control: pid
+  tags ejecutados (distancia al tag según la cámara): 1 a 9 cm, 2 a 1 cm, 7 a 13 cm
+  de lado al avanzar: hasta 12 cm fuera de la línea del tramo
+  altura al avanzar: mínima 90, media 99 cm
+  mandos: cambian 32 rc/s, 0% del tiempo al tope de lado
+  integral del PID al final: -2.9 lado, -7.7 adelante (rc)
