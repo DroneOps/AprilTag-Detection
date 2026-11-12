@@ -1,0 +1,5 @@
+{
+  "fuente": "Tello 1, 11-nov (sesiones/2026-11-11): deriva a la derecha ~3.7 cm/s, aleatoria ~5.4; lo demás, config/sim_tello.json",
+  "deriva_lado_cm_s": 3.7,
+  "deriva_cm_s": 5.4
+}

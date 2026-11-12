@@ -24,6 +24,9 @@ Escenarios: circuito pausa giro360 sube_ciego perdido flip8 caja deriva
             piso_hundimiento piso_lado piso_tof_falso piso_imu_mal
 
 Corre en tiempo real (cada escenario tarda 30–70 s). Las bitácoras van a sim/logs/.
+Con --dron N, encima de config/sim_tello.json se usa config/sim_tello_dron<N>.json (lo que
+cambia en ese dron; el Tello 7 se va mucho más a la derecha):
+    python sim/sim_world.py espejo_circuito --dron 7
 
 El dron simulado se comporta según config/sim_tello.json (lo medido en vuelos reales; se
 ajusta con sim/comparar_vuelos.py). Con --ideal usa el modelo de antes del 11-nov:
@@ -38,7 +41,7 @@ import subprocess
 import sys
 import threading
 import time
-from dataclasses import dataclass, fields
+from dataclasses import dataclass, fields, replace
 from pathlib import Path
 
 import cv2
@@ -84,6 +87,12 @@ class SimParams:
     mando_atraso_s: float = 0.0  # el rc tarda esto en hacer efecto
     video_atraso_s: float = 0.0  # la imagen llega con este atraso (real ~0.17 s)
     deriva_cm_s: float = 2.0  # viento/deriva aleatoria con rc en 0 (desviación)
+    # deriva constante en el marco del dron, también al despegar (11-nov, medida con el piso
+    # visto por el espejo: los dos Tellos se van a la derecha, el 1 ~4 cm/s y el 7 ~14 cm/s)
+    deriva_lado_cm_s: float = 0.0  # + = a la derecha del dron
+    deriva_adelante_cm_s: float = 0.0
+    hundimiento_combo_cm_s: float = 0.0  # extra al pedir lado y adelante a la vez (11-nov: ~7–8)
+    giro_deriva_cm_s: float = 0.0  # al girar fuerte se corre hacia un lado al azar (11-nov: 26–42 cm en giros de 90°)
     hundimiento_cm_s: float | None = None  # al avanzar; None: 15 en piso y 0 en otro caso
     combo: float | None = None  # adelante y de lado a la vez; None: 0.55 en piso y 1 en otro caso
     # despegue: sube a pico y se asienta en una altura entre los dos valores; el "ok" llega
@@ -107,7 +116,27 @@ class SimParams:
 
 
 SIM_JSON = ROOT / "config" / "sim_tello.json"
-P = SimParams.load(SIM_JSON)  # --ideal lo cambia por SimParams()
+
+
+def json_dron(dron: str) -> Path:
+    return ROOT / "config" / f"sim_tello_dron{dron}.json"
+
+
+def cargar_params(dron: str | None = None) -> SimParams:
+    """config/sim_tello.json y, con dron, encima config/sim_tello_dron<N>.json (solo lo que
+    cambia en ese dron, p. ej. su deriva)."""
+    p = SimParams.load(SIM_JSON)
+    if dron:
+        path = json_dron(dron)
+        if not path.exists():
+            raise SystemExit(f"no existe {path.relative_to(ROOT)}")
+        extra = SimParams.load(path)  # valida las claves
+        data = json.loads(path.read_text())
+        p = replace(p, **{k: getattr(extra, k) for k in data})
+    return p
+
+
+P = cargar_params()  # --ideal lo cambia por SimParams() y --dron N agrega su perfil
 
 
 def mando(rc: float, zona: float, ganancia: float) -> float:
@@ -131,6 +160,7 @@ def paso_vel(v, rc, dt: float, p: SimParams, speed_factor=1.0, combo=1.0, sag=0.
             mando(ud, p.vertical_zona_muerta, p.subir_ganancia if ud > 0 else p.bajar_ganancia)]
     if want[0] and want[1]:
         want[0], want[1] = want[0] * combo, want[1] * combo
+        want[2] -= p.hundimiento_combo_cm_s  # lado y adelante a la vez: se hunde (real 11-nov)
     if sag and want[0]:
         want[2] -= sag  # se hunde avanzando, aunque se pida subir un poco (real)
     k = min(1.0, dt / max(p.respuesta_s, 1e-3))
@@ -250,6 +280,7 @@ class SimTello:
         self._rc = RcAtrasado()
         self.yaw_sigue = 0.0
         self._goal, self._ok_t, self._peaked = None, None, False
+        self._giro_dir = None
         # speed_factor: la misma rc mueve más o menos (real: rc 15 dio 12–20 cm/s entre vuelos).
         # sag: cm/s que se hunde al avanzar sin rc vertical (real: 60 -> 33 cm a 60 cm de altura).
         self.speed_factor, self.sag, self.vz_sink = speed_factor, sag, 0.0
@@ -312,6 +343,12 @@ class SimTello:
             ok_t = self._ok_t
         speed = 30.0 if goal > self.z else 15.0
         self.z = goal if abs(goal - self.z) <= speed * dt else self.z + math.copysign(speed * dt, goal - self.z)
+        if self.z > 10:  # ya despegado: la deriva también lo mueve (real 11-nov: el Tello 7 se fue a la malla)
+            self.wind = 0.98 * self.wind + self.rng.normal(0, self.drift * 0.2, 2)
+            fw, rt = self._deriva_propia(False)
+            ps = math.radians(self.yaw)
+            self.x += (fw * math.sin(ps) + rt * math.cos(ps) + self.wind[0] + self.bias[0]) * dt
+            self.y += (fw * math.cos(ps) - rt * math.sin(ps) + self.wind[1] + self.bias[1]) * dt
         if ok_t is None:
             if self.despegue == "normal" and self.z >= self._goal:  # modelo ideal: ok al llegar arriba
                 self.mode = "air"
@@ -320,6 +357,20 @@ class SimTello:
             self.mode = "air"  # ya obedece el rc
             if self.despegue != "sin_ok":
                 self.udp["responses"].append(b"ok")
+
+    def _deriva_propia(self, girando: bool) -> tuple[float, float]:
+        """(adelante, derecha) en cm/s que el dron se mueve solo: la deriva constante y, mientras
+        gira fuerte, un corrimiento hacia un lado al azar que se elige al empezar cada giro."""
+        p = self.p
+        fw, rt = p.deriva_adelante_cm_s, p.deriva_lado_cm_s
+        if girando and p.giro_deriva_cm_s:
+            if self._giro_dir is None:
+                self._giro_dir = float(self.rng.uniform(0, 2 * math.pi))
+            fw += p.giro_deriva_cm_s * math.cos(self._giro_dir)
+            rt += p.giro_deriva_cm_s * math.sin(self._giro_dir)
+        elif not girando:
+            self._giro_dir = None
+        return fw, rt
 
     def step(self, dt: float, now: float) -> None:
         """Un paso de la física (lo llama el hilo o, sin hilo, quien lo use)."""
@@ -359,8 +410,10 @@ class SimTello:
             self.yaw = F.wrap_deg(self.yaw + (self.yaw_rate + self.yaw_sigue) * dt)
             self.wind = 0.98 * self.wind + self.rng.normal(0, self.drift * 0.2, 2)
             ps = math.radians(self.yaw)
-            self.x += (self.v[0] * math.sin(ps) + self.v[1] * math.cos(ps) + self.wind[0] + self.bias[0]) * dt
-            self.y += (self.v[0] * math.cos(ps) - self.v[1] * math.sin(ps) + self.wind[1] + self.bias[1]) * dt
+            fw, rt = self._deriva_propia(abs(self.yaw_rate + self.yaw_sigue) > 15)
+            fw, rt = fw + self.v[0], rt + self.v[1]
+            self.x += (fw * math.sin(ps) + rt * math.cos(ps) + self.wind[0] + self.bias[0]) * dt
+            self.y += (fw * math.cos(ps) - rt * math.sin(ps) + self.wind[1] + self.bias[1]) * dt
             self.z = max(0.0, self.z + self.v[2] * dt)
             if self.imu_mal and now - self.t0 >= self.imu_mal[0]:
                 self.x += self.imu_mal[1] * math.sin(ps) * dt
@@ -533,6 +586,9 @@ def run(name, tags, limit=120, events=None, drift=None, boxes=(), bias=(0.0, 0.0
     vt = threading.Thread(target=video, daemon=True)
     vt.start()
     threading.Thread(target=mis.run, daemon=True).start()
+    t_espera = time.monotonic()  # despegar hasta que llegue el primer cuadro: con varios escenarios a
+    while mis.video_age > 1.0 and time.monotonic() - t_espera < 15:  # la vez tardaba y la revisión
+        time.sleep(0.05)  # previa decía "NO despega: video"
     time.sleep(0.5)
     mis.request_takeoff()
     t0, log, last = time.monotonic(), [], None
@@ -705,11 +761,21 @@ if __name__ == "__main__":
     args = sys.argv[1:]
     ideal = "--ideal" in args
     args = [a for a in args if a != "--ideal"]
+    num = None
+    if "--dron" in args:
+        k = args.index("--dron")
+        num = args[k + 1] if k + 1 < len(args) else None
+        args = args[:k] + args[k + 2:]
+        if not num:
+            raise SystemExit("--dron va con el número del dron, p. ej. --dron 7")
     if not args:
         raise SystemExit(__doc__)
     if ideal:  # el modelo de antes del 11-nov, sin lo medido en config/sim_tello.json
         P = SimParams()
-    dron = "ideal (--ideal)" if ideal else str(SIM_JSON.relative_to(ROOT)) if SIM_JSON.exists() else "ideal (no hay config/sim_tello.json)"
+    elif num:
+        P = cargar_params(num)
+    dron = ("ideal (--ideal)" if ideal else str(SIM_JSON.relative_to(ROOT)) + (f" + {json_dron(num).name}" if num else "")
+            if SIM_JSON.exists() else "ideal (no hay config/sim_tello.json)")
     print(f"[sim] dron: {dron}", flush=True)
     names = ALL if args[0] == "todos" else args
     if len(names) == 1:
@@ -717,7 +783,7 @@ if __name__ == "__main__":
     else:  # en paralelo, en tandas: con demasiados a la vez el CPU no alcanza, la visión
         # se atrasa y los acercamientos se alargan por algo que en vuelo real no pasa
         batch = 4
-        extra = ["--ideal"] if ideal else []
+        extra = (["--ideal"] if ideal else []) + (["--dron", num] if num else [])
         for i in range(0, len(names), batch):
             procs = [subprocess.Popen([sys.executable, __file__, n] + extra, stdout=subprocess.PIPE, text=True)
                      for n in names[i:i + batch]]

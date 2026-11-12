@@ -12,6 +12,7 @@ Uso:
     python sim/comparar_vuelos.py --ajustar              # además busca los valores que mejor
                                                          # reproducen los vuelos
     python sim/comparar_vuelos.py --ajustar --guardar    # ...y los guarda en config/sim_tello.json
+    python sim/comparar_vuelos.py <bitácoras del Tello 7> --dron 7   # contra el perfil de un dron
 
 Córrelo después de cada sesión de laboratorio: si el simulador ya no se parece al dron, el
 resumen lo dice y --ajustar propone los valores nuevos. Ver docs/simulador.md.
@@ -132,8 +133,8 @@ def replay(v: Vuelo, p: SW.SimParams):
                 rate, sigue = SW.paso_giro(rate, sigue, rc[3], h, p)
                 y += (rate + sigue) * h
                 z += vel[2] * h
-                a += vel[0] * h
-                r += vel[1] * h
+                a += (vel[0] + p.deriva_adelante_cm_s) * h  # la deriva constante también (la aleatoria no)
+                r += (vel[1] + p.deriva_lado_cm_s) * h
         else:  # en tierra o despegando: el dron no obedece el rc
             rate = sigue = 0.0
             vel = [0.0, 0.0, 0.0]
@@ -242,6 +243,9 @@ def rasgos(vuelos, modelos, p):
             if all(v.rc[k][1] >= 10 and v.rc[k][2] == 0 for k in seg) and abs(v.alt[j] - v.alt[i]) < 40:
                 dt = v.t[j] - v.t[i]
                 add("altura al avanzar sin rc vertical (cm/s)", (v.alt[j] - v.alt[i]) / dt, (Z[j] - Z[i]) / dt)
+            if all(v.rc[k][0] != 0 and v.rc[k][1] != 0 and v.rc[k][3] == 0 for k in seg) and abs(v.alt[j] - v.alt[i]) < 40:
+                dt = v.t[j] - v.t[i]
+                add("altura con lado y adelante a la vez (cm/s)", (v.alt[j] - v.alt[i]) / dt, (Z[j] - Z[i]) / dt)
             ud = v.rc[i][2]
             if ud > 0 and all(v.rc[k][2] == ud and v.rc[k][1] == 0 for k in seg) and abs(v.alt[j] - v.alt[i]) < 60:
                 dt = v.t[j] - v.t[i]
@@ -261,8 +265,31 @@ def rasgos(vuelos, modelos, p):
             quieto = all(v.rc[k][:2] == (0.0, 0.0) for k in range(i, j + 1))
             antes = [k for k in range(max(0, i - 40), i) if v.t[i] - v.t[k] <= 1.0]
             if quieto and all(v.rc[k][:2] == (0.0, 0.0) for k in antes):
-                add("deriva con rc 0 (cm/s, por el tag)", math.hypot(tj[0] - ti[0], tj[1] - ti[1]) / dt,
-                    1.18 * p.deriva_cm_s)  # mediana de la deriva aleatoria del simulador
+                der, ade = -(tj[1] - ti[1]) / dt, -(tj[0] - ti[0]) / dt  # el tag se mueve al revés que el dron
+                add("deriva con rc 0 (cm/s, por el tag)", math.hypot(der, ade),
+                    math.hypot(p.deriva_lado_cm_s, p.deriva_adelante_cm_s) + 1.18 * p.deriva_cm_s)
+                add("deriva a la derecha con rc 0 (cm/s, por el tag)", der, p.deriva_lado_cm_s)
+                add("deriva adelante con rc 0 (cm/s, por el tag)", ade, p.deriva_adelante_cm_s)
+        for k in range(1, n):  # giros grandes con el tag a la vista: cuánto se corrió el dron
+            if not (v.ok[k] and abs(v.rc[k][3]) >= 40 and v.rc[k - 1][3] == 0 and None not in v.tag[k]):
+                continue
+            e = k
+            while e + 1 < n and v.ok[e + 1] and (v.rc[e + 1][3] != 0 or abs(v.yaw[e + 1] - v.yaw[e]) > 0.5) \
+                    and v.t[e + 1] - v.t[k] < 4:
+                e += 1
+            while e > k and None in v.tag[e]:
+                e -= 1
+            dt = v.t[e] - v.t[k]
+            if e - k < 10 or abs(v.yaw[e] - v.yaw[k]) < 45:
+                continue
+
+            def pos(i):  # dron respecto al tag, en el marco de antes del giro
+                g = math.radians(v.yaw[i] - v.yaw[k])
+                a, b = v.tag[i]
+                return -(a * math.cos(g) - b * math.sin(g)), -(a * math.sin(g) + b * math.cos(g))
+            p0, p1 = pos(k), pos(e)
+            add("se corre al girar 90° (cm/s)", math.hypot(p1[0] - p0[0], p1[1] - p0[1]) / dt,
+                math.hypot(p.deriva_lado_cm_s, p.deriva_adelante_cm_s) + p.giro_deriva_cm_s)
     return out
 
 
@@ -305,13 +332,14 @@ GRUPOS = {  # cada parámetro se ajusta con el error de su canal (el atraso del 
                      "giro_respuesta_s": (0.05, 0.8, 0.05), "giro_sigue": (0.0, 0.8, 0.02),
                      "giro_sigue_s": (0.5, 5.0, 0.25), "mando_atraso_s": (0.0, 0.4, 0.02)}),
     "vertical": ("alt", {"subir_ganancia": (0.3, 1.5, 0.05), "bajar_ganancia": (0.1, 1.2, 0.05),
-                         "vertical_respuesta_s": (0.1, 1.5, 0.05), "hundimiento_cm_s": (0.0, 20.0, 1.0)}),
+                         "vertical_respuesta_s": (0.1, 1.5, 0.05), "hundimiento_cm_s": (0.0, 20.0, 1.0),
+                         "hundimiento_combo_cm_s": (0.0, 20.0, 1.0)}),
     "horizontal": ("xy", {"avance_ganancia": (0.8, 2.5, 0.05), "avance_zona_muerta": (2, 10, 0.5),
                           "respuesta_s": (0.1, 1.0, 0.05), "combo": (0.3, 1.0, 0.05)}),
 }
 
 
-RASGOS_CANAL = {"yaw": ("giro con rc", "sigue girando"), "alt": ("altura al avanzar", "subir con rc"),
+RASGOS_CANAL = {"yaw": ("giro con rc", "sigue girando"), "alt": ("altura al avanzar", "subir con rc", "altura con lado"),
                 "xy": ("adelante con rc",)}
 
 
@@ -348,9 +376,18 @@ def ajustar(vuelos, p: SW.SimParams) -> SW.SimParams:
 def ajustar_resto(vuelos, p: SW.SimParams, r, dsp, temps) -> SW.SimParams:
     """Despegue, deriva y temperatura: directo de lo medido."""
     cambios = {}
-    real_der = r.get("deriva con rc 0 (cm/s, por el tag)", ([], []))[0]
-    if len(real_der) >= 3:
-        cambios["deriva_cm_s"] = round(st.median(real_der) / 1.18, 1)
+    der = r.get("deriva a la derecha con rc 0 (cm/s, por el tag)", ([], []))[0]
+    ade = r.get("deriva adelante con rc 0 (cm/s, por el tag)", ([], []))[0]
+    if len(der) >= 3:  # lo constante es la mediana; lo aleatorio, lo que varía alrededor
+        cambios["deriva_lado_cm_s"] = round(st.median(der), 1)
+        cambios["deriva_adelante_cm_s"] = round(st.median(ade), 1)
+        resto = [math.hypot(a - cambios["deriva_lado_cm_s"], b - cambios["deriva_adelante_cm_s"]) for a, b in zip(der, ade)]
+        cambios["deriva_cm_s"] = round(st.median(resto) / 1.18, 1)
+    giros = r.get("se corre al girar 90° (cm/s)", ([], []))[0]
+    if len(giros) >= 3:
+        constante = math.hypot(cambios.get("deriva_lado_cm_s", p.deriva_lado_cm_s),
+                               cambios.get("deriva_adelante_cm_s", p.deriva_adelante_cm_s))
+        cambios["giro_deriva_cm_s"] = round(max(0.0, st.median(giros) - constante), 1)
     finales = sorted(d["final"] for d in dsp if "final" in d and d["final"] < 120)
     if len(finales) >= 3:
         cambios["despegue_cm"] = (finales[len(finales) // 10], finales[(9 * len(finales)) // 10])
@@ -387,7 +424,9 @@ def main() -> None:
     ap.add_argument("rutas", nargs="*", help="días de sesiones/ o bitácoras .csv")
     ap.add_argument("--ideal", action="store_true", help="comparar el modelo ideal, sin config/sim_tello.json")
     ap.add_argument("--ajustar", action="store_true", help="buscar los valores que mejor reproducen los vuelos")
-    ap.add_argument("--guardar", action="store_true", help="con --ajustar: escribir config/sim_tello.json")
+    ap.add_argument("--guardar", action="store_true", help="con --ajustar: escribir config/sim_tello.json "
+                    "(con --dron, solo lo que cambia, en config/sim_tello_dron<N>.json)")
+    ap.add_argument("--dron", help="comparar contra el perfil de ese dron (config/sim_tello_dron<N>.json)")
     args = ap.parse_args()
 
     files = buscar(args.rutas)
@@ -396,8 +435,9 @@ def main() -> None:
     if not vuelos:
         raise SystemExit("ninguna bitácora con tramos en el aire")
     dias = sorted({f.parent.parent.name if f.parent.name == "vuelos" else f.parent.name for f in files})
-    p = SW.SimParams() if args.ideal else SW.P
-    fuente = "modelo ideal" if args.ideal else "config/sim_tello.json"
+    p = SW.SimParams() if args.ideal else SW.cargar_params(args.dron)
+    fuente = ("modelo ideal" if args.ideal else "config/sim_tello.json"
+              + (f" + {SW.json_dron(args.dron).name}" if args.dron else ""))
     print(f"{len(vuelos)} vuelos con tramos en el aire ({', '.join(dias)}); simulador: {fuente}")
 
     r = informe(vuelos, p, f"simulador actual ({fuente})")
@@ -423,7 +463,15 @@ def main() -> None:
         informe(vuelos, q, "con los valores ajustados")
         data = {k: (list(v) if isinstance(v, tuple) else v) for k, v in asdict(q).items()}
         texto = json.dumps(data, indent=2, ensure_ascii=False) + "\n"
-        if args.guardar:
+        if args.guardar and args.dron:  # el perfil del dron: solo lo que difiere de la base
+            base = asdict(SW.cargar_params())
+            path = SW.json_dron(args.dron)
+            perfil = json.loads(path.read_text()) if path.exists() else {}
+            perfil.update({k: v for k, v in data.items() if k != "fuente" and v != (list(base[k]) if isinstance(base[k], tuple) else base[k])})
+            perfil["fuente"] = q.fuente
+            path.write_text(json.dumps(perfil, indent=2, ensure_ascii=False) + "\n")
+            print(f"\nguardado en {path.relative_to(ROOT)}")
+        elif args.guardar:
             SW.SIM_JSON.write_text(texto)
             print(f"\nguardado en {SW.SIM_JSON.relative_to(ROOT)}")
         else:

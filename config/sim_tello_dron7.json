@@ -1,0 +1,5 @@
+{
+  "fuente": "Tello 7, 11-nov (sesiones/2026-11-11): nunca se queda quieto; deriva a la derecha ~11.7 cm/s y aleatoria ~10.4 (sim/deriva_video.py, con el piso visto por el espejo); lo demás, config/sim_tello.json",
+  "deriva_lado_cm_s": 11.7,
+  "deriva_cm_s": 10.4
+}
