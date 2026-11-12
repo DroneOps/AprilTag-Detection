@@ -13,7 +13,9 @@ Las bitácoras de vuelo (`logs/*.csv`) y los videos están en la laptop, no en e
      `"piso_control": "pid"` y con `"kalman"` (`config/mission_espejo.json`). Ver si el Tello
      se tambalea con los mandos finos, y si `kal_dder` (la deriva estimada) se parece a la que
      medimos el 11-nov (Tello 7 ~12 cm/s, Tello 1 ~4).
-   - Luego E5 con el que salga mejor. Si gana el Kalman, juntar la branch a `main`.
+   - Luego E5 con los dos. El protocolo completo, con comandos, está en "PID contra Kalman" de
+     [`laboratorio.md`](laboratorio.md) (K1 y K2); `scripts/resumen_piso.py` resume cada vuelo.
+     Si gana el Kalman, juntar la branch a `main`.
    - Si se queda el PID: del barrido rápido, un primer candidato es `piso_kp` 1.2,
      `piso_kd` 1.2, `piso_ki` 0.3 (Tello 7 simulado: 8 de 12 circuitos contra 5). Los pasos 3
      y 5 solos casi no mejoraron al PID (ver abajo).

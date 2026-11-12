@@ -111,6 +111,7 @@ Fernando sigue el proyecto por GitHub. Nada debe quedarse solo en la laptop.
 | `sim/comparar_control.py` | compara variantes del control en el simulador en tandas (mismas semillas), p. ej. PID contra Kalman: distancia al despegue, tags, distancia al tag y qué tan bruscos son los mandos |
 | `sim/comparar_vuelos.py` | compara el simulador con vuelos reales y reajusta `config/sim_tello.json`; correr al cerrar cada sesión |
 | `scripts/resumen_vuelos.py`, `scripts/traza_vuelo.py` | analizar vuelos |
+| `scripts/resumen_piso.py` | por vuelo con espejo: quién sostuvo la posición (PID o Kalman), qué tan lejos del despegue o del tag quedó, si se hundió y qué tan bruscos fueron los mandos; `guardar_sesion.py` lo guarda en `piso.txt` |
 | `scripts/guardar_sesion.py` | subir una sesión de laboratorio a `sesiones/` |
 
 Ajustes de `config/mission_espejo.json` que más se mueven en el laboratorio:
@@ -145,6 +146,8 @@ Ajustes de `config/mission_espejo.json` que más se mueven en el laboratorio:
 python scripts/resumen_vuelos.py
 ```
 Da un veredicto de cada vuelo de hoy; con `--fecha AAAAMMDD` revisa otro día.
+
+Para comparar PID y Kalman (columna `piso_modo` de la bitácora): `python scripts/resumen_piso.py --ultimos 1`.
 
 ```bash
 python scripts/traza_vuelo.py logs/<archivo>.csv --cada 4
