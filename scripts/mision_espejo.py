@@ -109,7 +109,7 @@ class MirrorConfig:
     # explica como deriva y el NIS no lo ve; así llega a 49–83). Apagar y usar el PID. Con el Tello 7
     # simulado (deriva 12 + rachas de ~10) llega hasta ~43 en vuelos normales: con 40 se apagaba solo
     kalman_deriva_max: float = 50.0
-    kalman_centrar: bool = False  # al centrarse y sostenerse sobre el tag, sumar lo que cancela la deriva
+    kalman_centrar: bool = True  # al centrarse y sostenerse sobre el tag, sumar lo que cancela la deriva (solo con el Kalman)
     buscar_s: float = 4.0  # tag perdido al centrarse: buscarlo donde debe estar esto, luego seguir avanzando
     vista_adelante_deg: float = 0.0  # inclinación del espejo: medirla con test_tags.py --espejo
     vista_lado_deg: float = 0.0

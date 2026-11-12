@@ -179,9 +179,13 @@ constante de tiempo `kalman_respuesta_s`. Lo que se mueve de más o de menos es 
   una deriva enorme (49–83 cm/s) y el NIS no lo ve; en vuelos normales del Tello 7 simulado
   llega hasta ~43 (con 40 se apagaba solo en una racha). Sigue funcionando el seguro de
   siempre (`piso_alejandose_cm`), que apaga todo y es el que de verdad cuida la medida al revés.
-- **`kalman_centrar`:** al centrarse sobre el tag (APPROACH) y al sostenerse sobre él
-  (giros, pausa), suma al mando del centrado lo que cancela la deriva estimada. El centrado
-  sigue siendo el de siempre; solo ya no pelea contra la deriva.
+- **`kalman_centrar`** (prendido): al centrarse sobre el tag (APPROACH) y al sostenerse sobre
+  él (giros, pausa), suma al mando del centrado lo que cancela la deriva estimada. El centrado
+  sigue siendo el de siempre; solo ya no pelea contra la deriva. **De aquí sale casi toda la
+  mejora en el circuito:** con el Tello 7 simulado, sin esto el Kalman completó lo mismo que
+  el PID (5 de 12) y con esto, 10 de 12.
+- **Para usarlo:** en `config/mission_espejo.json`, `"piso_control": "kalman"`. Está en
+  `"pid"` hasta probarlo en el laboratorio.
 - **Bitácora:** `kal_der`, `kal_ade` (posición predicha), `kal_dder`, `kal_dade` (deriva
   estimada, cm/s) y `kal_nis` (≈ 0.1–0.5 si el modelo cuadra).
 
