@@ -65,7 +65,8 @@ mide mientras gira.
 | Estado | Qué hace con esa medida (`sostener_piso`) |
 |---|---|
 | HOVER, CRUISE | regresar al punto de despegue (se mide desde que empieza a despegar) |
-| ADVANCE | sostener la línea del tramo, solo de lado. El tramo nuevo empieza al terminar de ejecutar un tag |
+| ADVANCE | sostener la línea del tramo, solo de lado (con `--quieto`, los dos ejes). El tramo nuevo pasa **por el tag ejecutado** (si se ve), no por donde quedó el dron |
+| EXECUTE (giros, pausa) | `sostener_tag`: centrarse sobre el tag con su posición mientras gira. En un giro de 90° se corría 26–42 cm; así queda a ~11 cm (mediana en el simulador) |
 | APPROACH, tag perdido | ir a donde debe estar el tag, contando lo que se movió el dron; a los `buscar_s` volver a ADVANCE en vez de aterrizar |
 
 ### El control: un PID por eje
@@ -93,15 +94,26 @@ límites de siempre (`rc_limit` 20 de `config/flight.json`).
   rc y el error regresa a ~0.
   - Tope `piso_i_max`, y no junta más si ya va al máximo empujando hacia ese lado
     (anti-windup).
-  - Se reinicia en cada despegue. Entre tramos se conserva, porque la deriva medida va con el
-    dron (siempre a su derecha).
+  - En cada despegue arranca en `piso_i_inicial`, que va en `config/mision_dron<N>.json` de
+    cada dron (`python scripts/mision_espejo.py --dron 7`). Entre tramos se conserva, porque
+    la deriva medida va con el dron (siempre a su derecha).
+  - Lo que juntó queda en la bitácora en `piso_ider` y `piso_iade`. Al final de un E2b, ese es
+    el valor para `piso_i_inicial` de ese dron.
+  - **Si el dron ya no deriva, una integral precargada empuja de más al principio** y luego se
+    corrige sola. En el simulador, con un dron sin deriva: precargada en 4.5 se fue ~5 cm más
+    en los primeros 8 s; en 13, ~15 cm más. Si un dron se arregla, regresar su
+    `piso_i_inicial` a [0, 0].
 - **Zona muerta y mínimo:** con rc menor a ~5 el Tello no se mueve. Por eso un mando chico
   (< `piso_dead`) no se manda, y uno que sí se manda es de al menos `piso_min` (10).
   El costo es que con poca deriva corrige de más y queda en un vaivén de ~10 cm.
 
-**Dónde está:** `MirrorConfig` (parámetros), `FlujoPiso` (medida), `_piso_mando` (el PID de
-un eje), `_send_rc` (cuándo se aplica y el seguro) y `_goto` (qué se reinicia en cada
-estado), todo en `scripts/mision_espejo.py`.
+**Dónde está** (todo en `scripts/mision_espejo.py`):
+- `MirrorConfig`: los parámetros;
+- `ajustes_dron`: los ajustes de cada dron;
+- `FlujoPiso`: la medida;
+- `_piso_mando`: el PID de un eje;
+- `_send_rc`: cuándo se aplica, el seguro y sostenerse sobre el tag;
+- `_goto`: qué se reinicia en cada estado y cómo se ancla el tramo en el tag.
 
 **Seguro:** si, corrigiendo, se aleja más de `piso_alejandose_cm` (35) en 1.5 s, o se pasa de
 `piso_limite_cm` (150), se apaga para todo el vuelo: la medida podría estar al revés. No
@@ -128,6 +140,8 @@ laboratorio. Cambia un valor a la vez.
 | Qué se ve (video o `piso_der`/`piso_ade`) | Qué cambiar |
 |---|---|
 | Se queda corrido siempre del mismo lado | subir `piso_ki` (0.15 → 0.25) o `piso_i_max` |
+| Al despegar se va de un lado unos segundos y luego regresa | poner en `piso_i_inicial` de ese dron el `piso_ider` con que terminó un E2b |
+| Al principio empuja hacia un lado sin que haya deriva | `piso_i_inicial` de más (el dron ya no deriva tanto): bajarlo o [0, 0] |
 | Va y viene de un lado al otro, cada vez más | bajar `piso_kp` o `piso_ki`; subir `piso_kd` |
 | Se pasa de largo al regresar | subir `piso_kd` (0.8 → 1.2) o bajar `piso_ki` |
 | Regresa muy lento, o la deriva le gana | subir `piso_kp`; subir `piso_max` no sirve, porque `rc_limit` es 20 |

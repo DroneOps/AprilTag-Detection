@@ -108,6 +108,11 @@ simulador, esa medida da 88–98 % del movimiento real, de lado y adelante.
 | `--dron 1` | 0 completas; las 4 se saltan el tag 1 | 3 completas (1 → 2 → 7) | 3 completas |
 | `--dron 7` | ningún tag | 0 completas (2 llegan al 7, 2 solo el 1) | **3 completas** |
 
+Con `sostener_tag`, más el tramo anclado en el tag y la integral inicial por dron (`--dron N`
+también carga `config/mision_dron<N>.json`), 4 corridas: Tello 1 completó **4 de 4** y Tello 7,
+2 de 4 (con PID solo, iba en ~5 de 10 en varias tandas: su deriva aleatoria pesa mucho). Tras
+ejecutar un tag queda a ~11 cm de él (mediana), contra ~29 sin `sostener_tag`.
+
 Con `espejo_estacionario` (quieto 20 s), la distancia media al despegue fue: Tello 1, 46–115
 cm sin sostener, 8 cm con PD y 11–14 cm con PID; Tello 7, 262–341, 42–68 y 21–22 cm. Cómo
 funciona y cómo ajustarlo: [`arquitectura.md`](arquitectura.md).

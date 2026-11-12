@@ -1,0 +1,7 @@
+{
+  "_nota": "Ajustes de la misión con espejo para el Tello 7 (python scripts/mision_espejo.py --dron 7). piso_i_inicial: la integral con que arranca sostener_piso, en rc (lado, adelante); 4.5 es lo que juntó en el simulador con su deriva medida (~12 cm/s a la derecha). Confirmarlo con E2b: es el valor de piso_ider al final del estacionario. Si el dron ya no deriva, ponerlo en [0, 0].",
+  "piso_i_inicial": [
+    4.5,
+    0.0
+  ]
+}

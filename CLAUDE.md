@@ -122,6 +122,7 @@ Ajustes de `config/mission_espejo.json` que más se mueven en el laboratorio:
 | `ignorar_inicio` | ignorar o no el tag que ve al despegar; en las pruebas va en `false` |
 | `advance_lr` | rc lateral fijo al avanzar sin tag, para compensar si el dron se va siempre de un lado (negativo = a la izquierda); con `sostener_piso` casi no hace falta |
 | `piso_kp`, `piso_kd`, `piso_ki` | el PID que sostiene la posición con el piso; síntomas y qué cambiar en "Cómo ajustarlo" de `docs/arquitectura.md` |
+| `config/mision_dron<N>.json` | ajustes de la misión de cada dron (`--dron N`); hoy, `piso_i_inicial`: la integral con que arranca. Si el dron se arregla, ponerla en [0, 0] |
 
 ## Cómo guiar una sesión de laboratorio
 

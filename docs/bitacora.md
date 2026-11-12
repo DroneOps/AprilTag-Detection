@@ -5,7 +5,7 @@ Las bitácoras de vuelo (`logs/*.csv`) y los videos están en la laptop, no en e
 
 ## Pendiente ahora
 
-1. **Probar en el laboratorio `sostener_piso` (11-nov, sin volar todavía): E2b primero**
+1. **Probar en el laboratorio `sostener_piso` y `sostener_tag` (11-nov, sin volar todavía): E2b primero, con `--dron N`**
    ([`laboratorio.md`](laboratorio.md)), con cada dron, y luego E5. Si se aleja en vez de
    regresar, ESPACIO y `"sostener_piso": false`. Con el Tello 7, probar también
    `"center_max": 20` (en el simulador ayudó a no perder el tag al centrarse).
@@ -41,6 +41,18 @@ Las bitácoras de vuelo (`logs/*.csv`) y los videos están en la laptop, no en e
 9. Al cerrar cada sesión, correr `python sim/comparar_vuelos.py` y, si cambió el Tello o el
    clip, reajustar `config/sim_tello.json` ([`simulador.md`](simulador.md)). Las bitácoras
    del 11-nov dicen en `sesiones/2026-11-11/notas.md` qué dron fue cada una.
+
+## 11-nov (noche, 3) — Tramo anclado en el tag e integral inicial por dron
+
+- **`sostener_tag`:** al girar o pausar sobre un tag se centra con su posición, y el tramo
+  siguiente pasa por el tag. En el simulador, al terminar de ejecutar queda a ~11 cm del tag
+  (mediana), contra ~29 cm.
+- **`piso_i_inicial` por dron,** en `config/mision_dron1.json` y `config/mision_dron7.json`;
+  la misión real los carga con `--dron N`. Tello 7: 4.5 rc de lado (lo que juntó en el
+  simulador); Tello 1: 0. Se confirma con E2b (`piso_ider` al final).
+- **Si el dron ya no deriva,** la integral precargada empuja de más unos segundos y se
+  corrige sola: +5 cm con 4.5 y +15 cm con 13, en el simulador.
+- **Circuito E5 simulado:** Tello 1, 4 de 4; Tello 7, 2 de 4.
 
 ## 11-nov (noche, 2) — PID para sostener la posición
 

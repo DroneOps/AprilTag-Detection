@@ -203,14 +203,18 @@ python scripts/first_flight.py --yaw-test 90 --record espejo_giro.mp4
 Corre la misión quieta, que sube a 100 cm y espera ~20 s un tag que no hay:
 
 ```bash
-python scripts/mision_espejo.py --quieto --record e2b_piso.mp4
+python scripts/mision_espejo.py --quieto --dron 7 --record e2b_piso_dron7.mp4
 ```
+
+(`--dron 7` o `--dron 1` carga `config/mision_dron<N>.json`, con la integral con la que
+arranca ese dron.)
 
 - **Aprueba** si regresa cerca de la cinta mientras sube y no se va más de ~20–30 cm, contra
   los 50–100 cm del 11-nov.
 - **Si se aleja más rápido que antes**, la corrección empuja al revés: ESPACIO, pon
   `"sostener_piso": false` y avísale al equipo. El seguro la apaga si se aleja 35 cm en 1.5 s corrigiendo.
-- **Repítelo con cada dron:** el Tello 7 se va mucho más que el 1.
+- **Repítelo con cada dron:** el Tello 7 se va mucho más que el 1. Al final, anota el
+  `piso_ider` de la bitácora: es el `piso_i_inicial` de ese dron.
 - **Después,** revisa `piso_der` y `piso_ade` en la bitácora: es lo que midió. Si se queda
   corrido de un lado u oscila, ajusta con la tabla "Cómo ajustarlo" de
   [`arquitectura.md`](arquitectura.md), primero en el simulador

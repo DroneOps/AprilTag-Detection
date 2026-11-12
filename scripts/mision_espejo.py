@@ -72,6 +72,13 @@ class MirrorConfig:
     piso_ki: float = 0.15  # rc por cm·s: junta el empuje que hace falta contra una deriva constante
     # (sin esto, con el Tello 7 se quedaba ~26 cm corrido: el PD solo empuja si hay error)
     piso_i_max: float = 15.0  # tope de lo juntado, en rc (que no se pase de largo)
+    # integral al despegar, en rc (lado, adelante): + si el dron se va solo a la derecha / adelante.
+    # Va en config/mision_dron<N>.json de cada dron. OJO: si el dron ya no deriva, empuja de más al
+    # principio hasta que la integral se corrige sola (unos segundos)
+    piso_i_inicial: tuple = (0.0, 0.0)
+    # ejecutando un tag (giros, pausa): sostenerse sobre él con su posición (11-nov: en un giro de
+    # 90° se corría 26–42 cm), y que el tramo nuevo pase por el tag y no por donde quedó el dron
+    sostener_tag: bool = True
     piso_min: int = 10
     piso_max: int = 20
     piso_dead: float = 4.0  # mando menor que esto: nada
@@ -92,6 +99,23 @@ class MirrorConfig:
         if unknown:
             raise SystemExit(f"{path}: claves desconocidas {sorted(unknown)}")
         return cls(**data)
+
+
+def ajustes_dron(ecfg: "MirrorConfig", dron: str | None) -> list[str]:
+    """Aplica config/mision_dron<N>.json (lo que cambia en la misión con ese dron, p. ej. la
+    integral inicial). Devuelve lo que cambió."""
+    if not dron:
+        return []
+    path = ROOT / "config" / f"mision_dron{dron}.json"
+    if not path.exists():
+        raise SystemExit(f"no existe {path.relative_to(ROOT)}")
+    data = {k: v for k, v in json.loads(path.read_text()).items() if not k.startswith("_")}
+    unknown = set(data) - {f.name for f in fields(MirrorConfig)}
+    if unknown:
+        raise SystemExit(f"{path}: claves desconocidas {sorted(unknown)}")
+    for k, v in data.items():
+        setattr(ecfg, k, tuple(v) if isinstance(v, list) else v)
+    return [f"{k}={v}" for k, v in data.items()]
 
 
 class FlujoPiso:
@@ -126,9 +150,10 @@ class FlujoPiso:
                     self.t_ok = t
         self.prev, self.t_prev = (None if girando else small), t
 
-    def reiniciar(self) -> None:
+    def reiniciar(self, pos=(0.0, 0.0)) -> None:
+        """Toma la posición de ahora como pos (por defecto, el origen)."""
         with self.lock:
-            self.pos[:] = 0.0
+            self.pos[:] = pos
 
     def estado(self) -> tuple[np.ndarray, np.ndarray]:
         with self.lock:
@@ -146,7 +171,7 @@ def rot_mod90(angle: float) -> float:
 
 class MirrorMission(TagMission):
     LOG_EXTRA = ["n_tags", "objetivo", "tag_adelante", "tag_derecha", "tag_giro", "altura_espejo",
-                 "piso_der", "piso_ade", "piso_vder", "piso_vade", "piso_q"]
+                 "piso_der", "piso_ade", "piso_vder", "piso_vade", "piso_q", "piso_ider", "piso_iade"]
 
     def __init__(self, tello, cfg: FlightConfig, mcfg: MissionConfig, ecfg: MirrorConfig,
                  log_path: Path, calib: Path) -> None:
@@ -228,7 +253,8 @@ class MirrorMission(TagMission):
             else [""] * 4
         (pr, pf), (vr, vf) = self.piso.estado()
         return [len(v.dets) if v else "", tid or "", *cells,
-                f"{pr:+.1f}", f"{pf:+.1f}", f"{vr:+.1f}", f"{vf:+.1f}", f"{self.piso.q:.2f}"]
+                f"{pr:+.1f}", f"{pf:+.1f}", f"{vr:+.1f}", f"{vf:+.1f}", f"{self.piso.q:.2f}",
+                f"{self._piso_i[0]:+.1f}", f"{self._piso_i[1]:+.1f}"]
 
     # ---- sostener la posición con el piso
     def _goto(self, state: str, reason: str) -> None:
@@ -236,10 +262,22 @@ class MirrorMission(TagMission):
         super()._goto(state, reason)
         piso = getattr(self, "piso", None)
         if piso is not None and (state == "TAKEOFF" or (state == "ADVANCE" and prev == "EXECUTE")):
-            piso.reiniciar()  # el punto de despegue, o la línea del tramo nuevo (pasa por el tag ejecutado)
+            pos = (0.0, 0.0)  # el punto de despegue, o el inicio del tramo nuevo
+            if state == "ADVANCE" and self.e.sostener_tag:
+                fl = self._tag_visto()
+                if fl is not None:  # la línea del tramo pasa por el tag ejecutado, no por donde quedó el dron
+                    pos = (-fl[1], -fl[0])  # el dron respecto al tag
+            piso.reiniciar(pos)
             getattr(self, "_piso_lejos", deque()).clear()
         if state == "TAKEOFF" and hasattr(self, "_piso_i"):
-            self._piso_i[:] = 0.0  # vuelo nuevo. Entre tramos se conserva: la deriva es del dron (va con él)
+            # vuelo nuevo: la integral empieza con lo que se sabe de este dron (piso_i_inicial). Entre
+            # tramos se conserva: la deriva es del dron y va con él (siempre a su derecha)
+            self._piso_i[:] = self.e.piso_i_inicial
+
+    def _tag_visto(self):
+        """(adelante, derecha, giro) del tag objetivo si se ve ahora, si no None."""
+        v = self._vision(time.monotonic())
+        return v.tagframe.get(self._target) if (v is not None and self._target) else None
 
     def _piso_mando(self, eje: int, err: float, vel: float, dt: float) -> int:
         """PID de un eje (0 = de lado, 1 = adelante). err: cm que está corrido de donde debería
@@ -281,6 +319,14 @@ class MirrorMission(TagMission):
                 lr = lr + self._piso_mando(0, pr, vr, dt)
                 if self.state != "ADVANCE" or fb == 0:  # avanzando, adelante manda la misión (salvo --quieto)
                     fb = fb + self._piso_mando(1, pf, vf, dt)
+        elif e.sostener_tag and self.state == "EXECUTE" and self._prim \
+                and (self._prim[0] in ("yaw", "wait") or (self._prim[0] == "alt_to" and len(self._prim) < 3)):
+            # girando o en pausa: quedarse sobre el tag (con el flip no: ahí manda la recuperación)
+            v = self._vision(time.monotonic())
+            fl = v.tagframe.get(self._target) if (v is not None and self._target) else None
+            if fl is not None:
+                vf, vr = self._tag_velocity(v.t, fl[0], fl[1])
+                lr, fb = lr + self._center_axis(fl[1], vr), fb + self._center_axis(fl[0], vf)
         super()._send_rc(lr, fb, ud, yaw)
 
     # ---- avanzar mirando el piso
@@ -388,6 +434,7 @@ def main() -> None:
     ap.add_argument("--espejo", choices=["v", "h"], help="sobrescribe cómo se voltea la imagen")
     ap.add_argument("--quieto", action="store_true", help="no avanzar: esperar un tag debajo")
     ap.add_argument("--record", help="grabar el video crudo (mp4)")
+    ap.add_argument("--dron", help="ajustes de ese dron: config/mision_dron<N>.json (p. ej. --dron 7)")
     args = ap.parse_args()
 
     cfg = FlightConfig.load(Path(args.config))
@@ -397,6 +444,8 @@ def main() -> None:
         ecfg.espejo = args.espejo
     if args.quieto:
         ecfg.quieto = True
+    for cambio in ajustes_dron(ecfg, args.dron):
+        print(f"[hmi] Tello {args.dron}: {cambio}")
     cfg.hover_s, cfg.max_flight_s = mcfg.start_hover_s, mcfg.mission_max_s
     tello, reader = connect()
     log_path = ROOT / "logs" / time.strftime("espejo_%Y%m%d_%H%M%S.csv")

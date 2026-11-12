@@ -137,6 +137,7 @@ def cargar_params(dron: str | None = None) -> SimParams:
 
 
 P = cargar_params()  # --ideal lo cambia por SimParams() y --dron N agrega su perfil
+DRON: str | None = None  # --dron N: también los ajustes de misión de ese dron (config/mision_dron<N>.json)
 
 
 def mando(rc: float, zona: float, ganancia: float) -> float:
@@ -616,6 +617,8 @@ def run(name, tags, limit=120, events=None, drift=None, boxes=(), bias=(0.0, 0.0
     elif mirror:  # scripts/mision_espejo.py
         ecfg = ME.MirrorConfig.load(ROOT / "config" / "mission_espejo.json")
         ecfg.espejo = mirror
+        if DRON and (ROOT / "config" / f"mision_dron{DRON}.json").exists():
+            ME.ajustes_dron(ecfg, DRON)
         for k, v in OVER_E.items():
             setattr(ecfg, k, v)
         mis = ME.MirrorMission(sim, cfg, mcfg, ecfg, log, ROOT / "config" / "camera_tello.json")
@@ -838,6 +841,7 @@ if __name__ == "__main__":
         P = SimParams()
     elif num:
         P = cargar_params(num)
+        DRON = num
     dron = ("ideal (--ideal)" if ideal else str(SIM_JSON.relative_to(ROOT)) + (f" + {json_dron(num).name}" if num else "")
             if SIM_JSON.exists() else "ideal (no hay config/sim_tello.json)")
     print(f"[sim] dron: {dron}", flush=True)

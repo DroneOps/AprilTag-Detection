@@ -1,0 +1,7 @@
+{
+  "_nota": "Ajustes de la misión con espejo para el Tello 1 (python scripts/mision_espejo.py --dron 1). Su deriva es chica (~4 cm/s): en el simulador la integral queda en ~0, así que arranca en 0. Confirmarlo con E2b (piso_ider al final del estacionario).",
+  "piso_i_inicial": [
+    0.0,
+    0.0
+  ]
+}
