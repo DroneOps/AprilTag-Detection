@@ -1,4 +1,4 @@
-Resumen de sesión — 2026-11-12 14:52 — 16 bitácoras
+Resumen de sesión — 2026-11-12 14:57 — 18 bitácoras
 
 == espejo_20261112_131739.csv  (espejo)
    vuelo 40 s | batería 84% -> 65% | temp max 65 C
@@ -141,6 +141,26 @@ Resumen de sesión — 2026-11-12 14:52 — 16 bitácoras
    vio tag 1 (Giro derecha 90) debajo: adelante +42, lado +22 cm
    vio tag 2 (Giro izquierda 90) debajo: adelante +34, lado -3 cm
    vio tag 7 (Aterrizar) debajo: adelante +38, lado +6 cm
+   final: DONE — aterrizado (tag 7: aterrizar)
+   problemas: acercamiento incompleto (por tiempo)
+   VEREDICTO: OK
+
+== espejo_20261112_145348.csv  (espejo)
+   vuelo 15 s | batería 67% -> 62% | temp max 71 C
+   despegue: en el aire a 72 cm (estable, ok del Tello, despegue 5.4 s)
+   altura en vuelo: min 56 cm, max 121 cm
+   final: KILLED — motores apagados por el usuario
+   VEREDICTO: REVISAR
+
+== espejo_20261112_145444.csv  (espejo)
+   vuelo 59 s | batería 63% -> 35% | temp max 78 C
+   despegue: en el aire a 71 cm (sin estabilizar, ok del Tello, despegue 3.8 s)
+   altura en vuelo: min 69 cm, max 123 cm
+   EJECUTÓ tag 1 (Giro derecha 90) centrado incompleto (adelante +31, lado -10, giro +4)
+   EJECUTÓ tag 2 (Giro izquierda 90) centrado incompleto (adelante +16, lado -10, giro +6)
+   vio tag 1 (Giro derecha 90) debajo: adelante +42, lado +5 cm
+   vio tag 2 (Giro izquierda 90) debajo: adelante +47, lado +0 cm
+   vio tag 7 (Aterrizar) debajo: adelante +42, lado +11 cm
    final: DONE — aterrizado (tag 7: aterrizar)
    problemas: acercamiento incompleto (por tiempo)
    VEREDICTO: OK

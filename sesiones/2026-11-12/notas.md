@@ -24,3 +24,7 @@ Sesión vuelo estatico con dron 7: Con PID oscilo un poco en la posicion al mant
 ## 14:52
 
 Dron 7 K2 con PID: En la primera mision detecto de manera correcta el tag 1, pero al avanzar al tag dos se derivo a la derecha y lo perdio de la vista por lo que eventualmente aterrizo. En la segunda mision logro hacer el recorrido de manera correcta, no hubo muchas oscilaciones y no tuvo problemas para avanzar ni detectar los tags.
+
+## 14:57
+
+K2 con dron 7 Kalman: En la primera mision derivo hacia atras y eventualmente choco con la malla de la arena y tuve que matarla, al caer se le salio la pila. En la segunda mision tuvo mejor comportamiento pero note que oscilaba mucho, tanto al avanzar como al quedarse arriba de un tag
