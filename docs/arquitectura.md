@@ -174,10 +174,11 @@ constante de tiempo `kalman_respuesta_s`. Lo que se mueve de más o de menos es 
 - **Huecos:** mientras gira o hace un flip no hay medida; en la siguiente se re-ancla la
   posición (se conservan la velocidad y la deriva). Una medida que brinca mucho también re-ancla.
 - **Seguros:** si lo medido deja de cuadrar con lo predicho (NIS promedio >
-  `kalman_nis_max`) o la deriva estimada pasa de `kalman_deriva_max` (40 cm/s, ningún Tello
-  se va así: la medida vendría mal), se apaga y sigue con el PID, con la integral cargada con
-  la deriva estimada. Sigue funcionando el seguro de siempre (`piso_alejandose_cm`), que
-  apaga todo.
+  `kalman_nis_max`) o la deriva estimada pasa de `kalman_deriva_max` (50 cm/s), se apaga y
+  sigue con el PID, desde `piso_i_inicial`. Con la medida al revés, el filtro lo explica como
+  una deriva enorme (49–83 cm/s) y el NIS no lo ve; en vuelos normales del Tello 7 simulado
+  llega hasta ~43 (con 40 se apagaba solo en una racha). Sigue funcionando el seguro de
+  siempre (`piso_alejandose_cm`), que apaga todo y es el que de verdad cuida la medida al revés.
 - **`kalman_centrar`:** al centrarse sobre el tag (APPROACH) y al sostenerse sobre él
   (giros, pausa), suma al mando del centrado lo que cancela la deriva estimada. El centrado
   sigue siendo el de siempre; solo ya no pelea contra la deriva.

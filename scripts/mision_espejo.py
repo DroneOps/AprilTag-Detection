@@ -105,9 +105,10 @@ class MirrorConfig:
     kalman_r_cm: float = 1.5  # ruido de la medida del piso
     kalman_deriva_inicial: tuple = (0.0, 0.0)  # cm/s (derecha, adelante); 0: la mide al despegar
     kalman_nis_max: float = 8.0  # promedio de (innovación / su desviación)² arriba de esto: apagar y usar el PID
-    # deriva estimada mayor a esto (cm/s): ningún Tello se va así de rápido; la medida debe venir mal
-    # (p. ej. al revés: el filtro lo explica como deriva y el NIS no lo ve). Apagar y usar el PID
-    kalman_deriva_max: float = 40.0
+    # deriva estimada mayor a esto (cm/s): la medida debe venir mal (p. ej. al revés: el filtro lo
+    # explica como deriva y el NIS no lo ve; así llega a 49–83). Apagar y usar el PID. Con el Tello 7
+    # simulado (deriva 12 + rachas de ~10) llega hasta ~43 en vuelos normales: con 40 se apagaba solo
+    kalman_deriva_max: float = 50.0
     kalman_centrar: bool = False  # al centrarse y sostenerse sobre el tag, sumar lo que cancela la deriva
     buscar_s: float = 4.0  # tag perdido al centrarse: buscarlo donde debe estar esto, luego seguir avanzando
     vista_adelante_deg: float = 0.0  # inclinación del espejo: medirla con test_tags.py --espejo
@@ -435,8 +436,9 @@ class MirrorMission(TagMission):
                 if k.nis > e.kalman_nis_max or np.max(np.abs(d)) > e.kalman_deriva_max:
                     # lo medido ya no cuadra con el modelo: regresar al PID
                     self._kal_apagado = True
-                    m = self._modelo
-                    self._piso_i[:] = [max(-e.piso_i_max, min(e.piso_i_max, m.rc(x))) for x in d]
+                    # el PID arranca con su integral de siempre: cargarla con la deriva estimada
+                    # (en plena racha) la dejaba en el tope empujando de más
+                    self._piso_i[:] = e.piso_i_inicial
                     why = (f"no cuadra con lo medido (NIS {k.nis:.1f})" if k.nis > e.kalman_nis_max
                            else f"deriva estimada imposible ({d[0]:+.0f}, {d[1]:+.0f} cm/s)")
                     self.reason += f" | kalman APAGADO: {why}, sigo con el PID"
