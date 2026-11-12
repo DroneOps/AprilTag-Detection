@@ -69,6 +69,9 @@ class MirrorConfig:
     piso_calidad: float = 0.1  # calidad mínima de la correlación de fase para creerle
     piso_kp: float = 0.5  # rc por cm de distancia a donde debería estar
     piso_kd: float = 0.8  # rc por cm/s que se está yendo
+    piso_ki: float = 0.15  # rc por cm·s: junta el empuje que hace falta contra una deriva constante
+    # (sin esto, con el Tello 7 se quedaba ~26 cm corrido: el PD solo empuja si hay error)
+    piso_i_max: float = 15.0  # tope de lo juntado, en rc (que no se pase de largo)
     piso_min: int = 10
     piso_max: int = 20
     piso_dead: float = 4.0  # mando menor que esto: nada
@@ -162,6 +165,8 @@ class MirrorMission(TagMission):
         self._yaw_frame = None
         self._piso_apagado = False
         self._piso_lejos: deque = deque()  # (t, distancia a donde debería estar) mientras corrige
+        self._piso_i = np.zeros(2)  # parte integral (derecha, adelante), en rc
+        self._piso_t = None  # última vez que corrigió
 
     # ---- visión: imagen volteada, posición del tag sobre el piso
     def on_frame(self, bgr: np.ndarray, t: float) -> None:
@@ -233,10 +238,19 @@ class MirrorMission(TagMission):
         if piso is not None and (state == "TAKEOFF" or (state == "ADVANCE" and prev == "EXECUTE")):
             piso.reiniciar()  # el punto de despegue, o la línea del tramo nuevo (pasa por el tag ejecutado)
             getattr(self, "_piso_lejos", deque()).clear()
+        if state == "TAKEOFF" and hasattr(self, "_piso_i"):
+            self._piso_i[:] = 0.0  # vuelo nuevo. Entre tramos se conserva: la deriva es del dron (va con él)
 
-    def _piso_mando(self, err: float, vel: float) -> int:
+    def _piso_mando(self, eje: int, err: float, vel: float, dt: float) -> int:
+        """PID de un eje (0 = de lado, 1 = adelante). err: cm que está corrido de donde debería
+        estar; vel: cm/s que se está yendo. Devuelve el rc a sumar (al revés del error)."""
         e = self.e
-        u = -(e.piso_kp * err + e.piso_kd * vel)
+        pd = e.piso_kp * err + e.piso_kd * vel
+        total = pd + self._piso_i[eje]
+        # anti-windup: no juntar más si ya va al tope empujando hacia el mismo lado
+        if dt > 0 and not (abs(total) >= e.piso_max and total * err > 0):
+            self._piso_i[eje] = max(-e.piso_i_max, min(e.piso_i_max, self._piso_i[eje] + e.piso_ki * err * dt))
+        u = -(pd + self._piso_i[eje])
         return 0 if abs(u) < e.piso_dead else with_min(u, e.piso_min, e.piso_max)
 
     def _send_rc(self, lr: float, fb: float, ud: float, yaw: float) -> None:
@@ -262,9 +276,11 @@ class MirrorMission(TagMission):
                 self.reason += f" | sostener_piso APAGADO: {why} (revisar la medida del piso)"
                 print(f"[vuelo] sostener_piso apagado: {why}")
             else:
-                lr = lr + self._piso_mando(pr, vr)
-                if self.state != "ADVANCE":
-                    fb = fb + self._piso_mando(pf, vf)
+                dt = now - self._piso_t if self._piso_t is not None and now - self._piso_t < 0.5 else 0.0
+                self._piso_t = now
+                lr = lr + self._piso_mando(0, pr, vr, dt)
+                if self.state != "ADVANCE" or fb == 0:  # avanzando, adelante manda la misión (salvo --quieto)
+                    fb = fb + self._piso_mando(1, pf, vf, dt)
         super()._send_rc(lr, fb, ud, yaw)
 
     # ---- avanzar mirando el piso

@@ -42,6 +42,17 @@ Las bitácoras de vuelo (`logs/*.csv`) y los videos están en la laptop, no en e
    clip, reajustar `config/sim_tello.json` ([`simulador.md`](simulador.md)). Las bitácoras
    del 11-nov dicen en `sesiones/2026-11-11/notas.md` qué dron fue cada una.
 
+## 11-nov (noche, 2) — PID para sostener la posición
+
+- **Parte integral (`piso_ki` 0.15, tope `piso_i_max` 15).** Sin ella, contra una deriva
+  constante se quedaba corrido (Tello 7: ~26 cm en teoría y 42–68 en el simulador).
+  - Estacionario simulado de 20 s (distancia media al despegue): Tello 7, de 42–68 cm a 21–22
+    cm; Tello 1, de 8 a 11–14 cm (con poca deriva la I agrega un poco de vaivén).
+  - Circuito E5: el Tello 7 completó 3 de 4 (antes 0) y el Tello 1, 3 de 4.
+- Con `--quieto` (E2b) ahora sostiene también hacia adelante; antes solo de lado.
+- Escenario nuevo `espejo_estacionario`, y la guía "Cómo ajustarlo" en
+  [`arquitectura.md`](arquitectura.md).
+
 ## 11-nov (noche) — Simulador con la deriva de cada dron y misión que sostiene su posición
 
 Sin volar. Detalle en [`simulador.md`](simulador.md) y [`arquitectura.md`](arquitectura.md).

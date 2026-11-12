@@ -120,7 +120,8 @@ Ajustes de `config/mission_espejo.json` que más se mueven en el laboratorio:
 | `cruise_alt_cm` | altura de vuelo; más alto ve más piso |
 | `vista_adelante_deg`, `vista_lado_deg` | inclinación del clip, medida con E1; cambia con cada clip |
 | `ignorar_inicio` | ignorar o no el tag que ve al despegar; en las pruebas va en `false` |
-| `advance_lr` | rc lateral fijo al avanzar sin tag, para compensar si el dron se va siempre de un lado (negativo = a la izquierda) |
+| `advance_lr` | rc lateral fijo al avanzar sin tag, para compensar si el dron se va siempre de un lado (negativo = a la izquierda); con `sostener_piso` casi no hace falta |
+| `piso_kp`, `piso_kd`, `piso_ki` | el PID que sostiene la posición con el piso; síntomas y qué cambiar en "Cómo ajustarlo" de `docs/arquitectura.md` |
 
 ## Cómo guiar una sesión de laboratorio
 

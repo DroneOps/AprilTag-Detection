@@ -211,7 +211,10 @@ python scripts/mision_espejo.py --quieto --record e2b_piso.mp4
 - **Si se aleja más rápido que antes**, la corrección empuja al revés: ESPACIO, pon
   `"sostener_piso": false` y avísale al equipo. El seguro la apaga si se aleja 35 cm en 1.5 s corrigiendo.
 - **Repítelo con cada dron:** el Tello 7 se va mucho más que el 1.
-- **Después,** revisa `piso_der` y `piso_ade` en la bitácora: es lo que midió.
+- **Después,** revisa `piso_der` y `piso_ade` en la bitácora: es lo que midió. Si se queda
+  corrido de un lado u oscila, ajusta con la tabla "Cómo ajustarlo" de
+  [`arquitectura.md`](arquitectura.md), primero en el simulador
+  (`python sim/sim_world.py espejo_estacionario --dron N`).
 
 **E3 — Tag debajo, sin avanzar.** Tag 9 (pausa) en el piso, ~10–20 cm frente al despegue.
 Debe colocarse encima, alinearse y hacer la pausa de 5 s.

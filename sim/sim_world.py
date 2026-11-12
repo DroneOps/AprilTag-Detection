@@ -19,7 +19,7 @@ Escenarios: circuito pausa giro360 sube_ciego perdido flip8 caja deriva
             tag_bajo rc_calib sin_tags espejo_uno espejo_inicio espejo_cerca espejo_girado espejo_circuito espejo_quieto
             espejo_deriva espejo_flip espejo_inclinado espejo_inclinado_sin_config
             espejo_despegue_cae espejo_despegue_alto espejo_sin_ok
-            espejo_lab espejo_gastado espejo_gastado_sin_rescate
+            espejo_lab espejo_gastado espejo_gastado_sin_rescate espejo_estacionario
             piso_uno piso_girado piso_circuito piso_deriva piso_flip piso_lento piso_rapido
             piso_hundimiento piso_lado piso_tof_falso piso_imu_mal
 
@@ -747,6 +747,17 @@ def scenario(sc: str) -> None:
             run(sc, [floor(2, 0, 90)], mirror="v", mirror_tilt=8.0)
         elif sc == "espejo_inclinado_sin_config":  # mismo espejo sin decirle a la misión: se centra mal
             run(sc, [floor(2, 0, 90)], mirror="v", mirror_tilt=8.0)
+        elif sc == "espejo_estacionario":  # como E2b: sin tags, quieto ~20 s. ¿Se queda sobre el despegue?
+            OVER_E["quieto"], OVER_E["quieto_timeout_s"] = True, 20
+            dist = []
+
+            def ev(sim, mis, el):
+                if mis.state == "ADVANCE":  # (quieto: esperando un tag que no hay)
+                    dist.append(math.hypot(sim.x, sim.y))
+            run(sc, [], mirror="v", limit=60, events=ev)
+            if dist:
+                print(f"    quieto {len(dist) * 0.02:.0f} s: distancia al despegue media {np.mean(dist):.0f} cm, "
+                      f"máxima {max(dist):.0f}, al final {dist[-1]:.0f}")
         elif sc == "espejo_lab":  # circuito con los tags desteñidos como los del laboratorio (negro ~150)
             run(sc, [floor(1, 0, 80, desgaste="lab"), floor(2, 70, 80, desgaste="lab"),
                      floor(7, 70, 150, desgaste="lab")], mirror="v")
@@ -806,7 +817,7 @@ ALL = ["circuito", "pausa", "giro360", "sube_ciego", "perdido", "flip8", "caja",
        "espejo_flip",
        "espejo_inclinado", "espejo_inclinado_sin_config",
        "espejo_despegue_cae", "espejo_despegue_alto", "espejo_sin_ok",
-       "espejo_lab", "espejo_gastado", "espejo_gastado_sin_rescate",
+       "espejo_lab", "espejo_gastado", "espejo_gastado_sin_rescate", "espejo_estacionario",
        "piso_uno", "piso_girado", "piso_circuito", "piso_deriva", "piso_flip", "piso_lento", "piso_rapido",
        "piso_hundimiento", "piso_lado", "piso_tof_falso", "piso_imu_mal"]
 

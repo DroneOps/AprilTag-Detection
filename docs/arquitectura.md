@@ -68,12 +68,82 @@ mide mientras gira.
 | ADVANCE | sostener la línea del tramo, solo de lado. El tramo nuevo empieza al terminar de ejecutar un tag |
 | APPROACH, tag perdido | ir a donde debe estar el tag, contando lo que se movió el dron; a los `buscar_s` volver a ADVANCE en vez de aterrizar |
 
-La corrección es un PD (`piso_kp`, `piso_kd`) sumado al rc de la misión. **Seguro:** si,
-corrigiendo, se aleja más de `piso_alejandose_cm` (35) en 1.5 s, o se pasa de
+### El control: un PID por eje
+
+En cada paso del control (20 por segundo), para cada eje (de lado y adelante):
+
+```
+error = cm que está corrido de donde debería estar        (lo da FlujoPiso)
+vel   = cm/s que se está yendo                             (lo da FlujoPiso)
+I     = I + piso_ki · error · dt     (con tope ±piso_i_max)
+u     = −(piso_kp · error + piso_kd · vel + I)
+rc    = 0 si |u| < piso_dead;  si no, entre piso_min y piso_max con el signo de u
+```
+
+El rc se **suma** al que manda la misión (`MirrorMission._send_rc`), y luego pasa por los
+límites de siempre (`rc_limit` 20 de `config/flight.json`).
+
+- **P** (`piso_kp`, rc por cm): empuja hacia donde debe estar, más fuerte entre más lejos.
+- **D** (`piso_kd`, rc por cm/s): frena. Si ya va regresando rápido, empuja menos; si se va
+  yendo, empuja más antes de que el error crezca. Con el video atrasado ~0.17 s, sin D se
+  pasaría de largo.
+- **I** (`piso_ki`, rc por cm·s): junta el empuje que hace falta contra una **deriva
+  constante**. Sin I, el dron se queda corrido lo justo para que P empuje lo que la deriva
+  pide: con el Tello 7 (~12 cm/s, que pide rc ~13), 13 / 0.5 = ~26 cm. La I llega a ese
+  rc y el error regresa a ~0.
+  - Tope `piso_i_max`, y no junta más si ya va al máximo empujando hacia ese lado
+    (anti-windup).
+  - Se reinicia en cada despegue. Entre tramos se conserva, porque la deriva medida va con el
+    dron (siempre a su derecha).
+- **Zona muerta y mínimo:** con rc menor a ~5 el Tello no se mueve. Por eso un mando chico
+  (< `piso_dead`) no se manda, y uno que sí se manda es de al menos `piso_min` (10).
+  El costo es que con poca deriva corrige de más y queda en un vaivén de ~10 cm.
+
+**Dónde está:** `MirrorConfig` (parámetros), `FlujoPiso` (medida), `_piso_mando` (el PID de
+un eje), `_send_rc` (cuándo se aplica y el seguro) y `_goto` (qué se reinicia en cada
+estado), todo en `scripts/mision_espejo.py`.
+
+**Seguro:** si, corrigiendo, se aleja más de `piso_alejandose_cm` (35) en 1.5 s, o se pasa de
 `piso_limite_cm` (150), se apaga para todo el vuelo: la medida podría estar al revés. No
 cuenta lo que se fue al despegar, porque ahí el Tello ignora el rc: el Tello 7 se va más de
-80 cm. Lo que mide va en la bitácora en `piso_der`, `piso_ade`, `piso_vder`, `piso_vade` y
-`piso_q`.
+80 cm. Lo que mide va en la bitácora en `piso_der`, `piso_ade` (el error), `piso_vder`,
+`piso_vade` (la velocidad) y `piso_q` (la calidad).
+
+**En el simulador** (`espejo_estacionario`: quieto 20 s; distancia media al despegue):
+
+| Dron | Sin sostener | Solo PD | PID (`piso_ki` 0.15) |
+|---|---|---|---|
+| Tello 1 | 46–115 cm | 8 cm | 11–14 cm |
+| Tello 7 | 262–341 cm | 42–68 cm | 21–22 cm |
+
+En el circuito E5, el Tello 7 completó 3 de 4 con PID y 0 de 4 con solo PD. El Tello 1, 3 de
+4 con los dos. Con `piso_ki` 0.08 y 0.25 salió parecido; se dejó 0.15.
+
+### Cómo ajustarlo
+
+Todo va en `config/mission_espejo.json`. Primero en el simulador (`python sim/sim_world.py
+espejo_estacionario --dron N` da la distancia media al despegue), luego E2b en el
+laboratorio. Cambia un valor a la vez.
+
+| Qué se ve (video o `piso_der`/`piso_ade`) | Qué cambiar |
+|---|---|
+| Se queda corrido siempre del mismo lado | subir `piso_ki` (0.15 → 0.25) o `piso_i_max` |
+| Va y viene de un lado al otro, cada vez más | bajar `piso_kp` o `piso_ki`; subir `piso_kd` |
+| Se pasa de largo al regresar | subir `piso_kd` (0.8 → 1.2) o bajar `piso_ki` |
+| Regresa muy lento, o la deriva le gana | subir `piso_kp`; subir `piso_max` no sirve, porque `rc_limit` es 20 |
+| Vaivén chico (~10 cm) aunque casi no hay deriva | normal por `piso_min` 10; si estorba, bajar `piso_min` a 8 (abajo de ~6 el Tello no se mueve) |
+| Tiembla con correcciones chiquitas | subir `piso_dead` |
+| `piso_q` casi siempre abajo de 0.1, no corrige | el piso no tiene textura (liso, brillante, poca luz): más luz u otro piso; o bajar `piso_calidad` con cuidado |
+| `sostener_piso APAGADO` sin que se fuera mal | subir `piso_alejandose_cm` (35 → 45) |
+| `sostener_piso APAGADO` porque sí se iba al revés | la medida sale invertida: `"sostener_piso": false` y revisar `espejo` (v/h) con E1 |
+
+Casos en los que hará falta ajustarlo:
+- **Otro dron o el mismo después de una caída o de calibrar el IMU:** cambia la deriva.
+- **Otro clip o espejo,** u otra altura de vuelo (`cruise_alt_cm`): cambia la escala de la
+  medida.
+- **Otro piso:** el de la competencia puede tener otra textura o brillo, y la medida depende
+  de él.
+- **Si se cambia `advance_fb` o el centrado:** el PID se suma a esos mandos.
 
 ## Visión (`test_tags.py`)
 

@@ -8,6 +8,8 @@
   "sostener_piso": true,
   "piso_kp": 0.5,
   "piso_kd": 0.8,
+  "piso_ki": 0.15,
+  "piso_i_max": 15,
   "piso_min": 10,
   "piso_max": 20,
   "piso_dead": 4,

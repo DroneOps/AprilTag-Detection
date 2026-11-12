@@ -103,10 +103,14 @@ simulador, esa medida da 88–98 % del movimiento real, de lado y adelante.
 
 **Con `sostener_piso`** (misión del 11-nov), las mismas 4 corridas:
 
-| Perfil | Sin sostener | Sosteniendo con el piso |
-|---|---|---|
-| `--dron 1` | 0 completas; las 4 se saltan el tag 1 | **3 completas** (1 → 2 → 7) |
-| `--dron 7` | ningún tag | 2 llegan al 7 (2 → 7) y 2 ejecutan el 1 |
+| Perfil | Sin sostener | Sosteniendo, solo PD | Sosteniendo, PID |
+|---|---|---|---|
+| `--dron 1` | 0 completas; las 4 se saltan el tag 1 | 3 completas (1 → 2 → 7) | 3 completas |
+| `--dron 7` | ningún tag | 0 completas (2 llegan al 7, 2 solo el 1) | **3 completas** |
+
+Con `espejo_estacionario` (quieto 20 s), la distancia media al despegue fue: Tello 1, 46–115
+cm sin sostener, 8 cm con PD y 11–14 cm con PID; Tello 7, 262–341, 42–68 y 21–22 cm. Cómo
+funciona y cómo ajustarlo: [`arquitectura.md`](arquitectura.md).
 
 Con `center_max` 20 en vez de 15, el Tello 7 ejecutó el tag 1 en 4 de 4. No se cambió: 15
 se eligió en el laboratorio para que no oscilara; hay que probarlo ahí.
@@ -224,6 +228,7 @@ saber si falla siempre o solo a veces.
 | `espejo_quieto` | sin avanzar: el tag ya está debajo, corrido y girado |
 | `espejo_deriva`, `espejo_flip` | viento y flip con espejo |
 | `espejo_inclinado`, `espejo_inclinado_sin_config` | espejo inclinado 8°, con y sin la medida en la config |
+| `espejo_estacionario` | como E2b: sin tags, quieto ~20 s; imprime la distancia media al despegue (`sostener_piso`) |
 | `espejo_lab` | circuito con los tags desteñidos como los del laboratorio (negro ~150) |
 | `espejo_gastado`, `espejo_gastado_sin_rescate` | tag 1 manchado, 2 con pedazos faltantes y 7 muy desteñido; con y sin el rescate del detector |
 | `espejo_despegue_cae` | el despegue sube ~40 cm y regresa al piso: aterrizar con aviso |
