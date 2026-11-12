@@ -141,6 +141,60 @@ cuenta lo que se fue al despegar, porque ahí el Tello ignora el rc: el Tello 7 
 En el circuito E5, el Tello 7 completó 3 de 4 con PID y 0 de 4 con solo PD. El Tello 1, 3 de
 4 con los dos. Con `piso_ki` 0.08 y 0.25 salió parecido; se dejó 0.15.
 
+### Otra opción: filtro de Kalman (`"piso_control": "kalman"`, 12-nov, branch `kalman`)
+
+`scripts/kalman_piso.py`. En vez de reaccionar al error como el PID, **estima** por cada eje
+(de lado y adelante) tres cosas:
+
+| Estado | Qué es | De dónde sale |
+|---|---|---|
+| `p` | cm que está corrido de donde debería estar | lo mide `FlujoPiso` (atrasado) |
+| `v` | cm/s que le dan los rc que se mandaron | del modelo del dron, no se mide |
+| `d` | cm/s que se va solo: la deriva | de la diferencia entre lo que se mueve y lo que se le pidió |
+
+El modelo es el del simulador, medido en las calibraciones de rc (`docs/tello.md`):
+`velocidad pedida = kalman_ganancia · (|rc| − kalman_zona)`, y el dron llega a ella con una
+constante de tiempo `kalman_respuesta_s`. Lo que se mueve de más o de menos es la deriva.
+
+- **Atraso:** cada medida se aplica en el momento en que se tomó la imagen
+  (`kalman_atraso_video_s`, 0.17 s antes de llegar) y luego se predice hasta ahora con los rc
+  que ya se mandaron. El control usa esa predicción, no la posición atrasada (es el paso 3,
+  ya incluido).
+- **Mando:** pide la velocidad que cancela la deriva, más la que lo regresa y la que frena:
+  ```
+  vc = −d − kalman_kp · p − kalman_kd · (v + d)
+  rc = el que da esa velocidad según el modelo: kalman_zona + |vc| / kalman_ganancia (con su signo)
+  ```
+  Con τ 0.75 s, kp 1.2 y kd 1.0, el lazo regresa en ~3 s sin oscilar. Los rc salen finos
+  (6, 7, 8…) en vez de "0 o 10" (es el paso 5, ya incluido).
+- **La deriva hace el trabajo de la integral,** pero sin esperar a que haya error: el filtro ve
+  que el dron se mueve sin que se lo pidan y lo aprende en ~1–2 s, ya desde el despegue. Por
+  eso **arranca en 0 en todos los drones** (`kalman_deriva_inicial`) y no hace falta suponer
+  una deriva por dron: si un dron se arregla, no empuja de más.
+- **Huecos:** mientras gira o hace un flip no hay medida; en la siguiente se re-ancla la
+  posición (se conservan la velocidad y la deriva). Una medida que brinca mucho también re-ancla.
+- **Seguros:** si lo medido deja de cuadrar con lo predicho (NIS promedio >
+  `kalman_nis_max`) o la deriva estimada pasa de `kalman_deriva_max` (40 cm/s, ningún Tello
+  se va así: la medida vendría mal), se apaga y sigue con el PID, con la integral cargada con
+  la deriva estimada. Sigue funcionando el seguro de siempre (`piso_alejandose_cm`), que
+  apaga todo.
+- **`kalman_centrar`:** al centrarse sobre el tag (APPROACH) y al sostenerse sobre él
+  (giros, pausa), suma al mando del centrado lo que cancela la deriva estimada. El centrado
+  sigue siendo el de siempre; solo ya no pelea contra la deriva.
+- **Bitácora:** `kal_der`, `kal_ade` (posición predicha), `kal_dder`, `kal_dade` (deriva
+  estimada, cm/s) y `kal_nis` (≈ 0.1–0.5 si el modelo cuadra).
+
+**Cómo ajustarlo** (`config/mission_espejo.json`):
+
+| Qué se ve | Qué cambiar |
+|---|---|
+| `kalman APAGADO: no cuadra` o `deriva estimada imposible` | la medida o el modelo están mal: revisar `espejo` con E1 y `kalman_ganancia` con `scripts/rc_calib.py` |
+| Va y viene, o se pasa de largo | bajar `kalman_kp`; subir `kalman_kd` |
+| Regresa lento | subir `kalman_kp` (1.2 → 2.0) |
+| Tiembla o se tambalea (mandos que cambian mucho) | bajar `kalman_q_deriva` (50 → 20): sigue la deriva más despacio |
+| La deriva cambia rápido (corrientes de aire) y no la alcanza | subir `kalman_q_deriva` (50 → 200) |
+| Otro dron u otra calibración de rc | `kalman_ganancia`, `kalman_zona` y `kalman_respuesta_s`, de `scripts/rc_calib.py`; si el modelo falla poco, la deriva absorbe la diferencia |
+
 ### Cómo ajustarlo
 
 Todo va en `config/mission_espejo.json`. Primero en el simulador (`python sim/sim_world.py

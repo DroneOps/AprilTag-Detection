@@ -151,7 +151,8 @@ def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--escenarios", nargs="+", default=["espejo_estacionario", "espejo_circuito"])
     ap.add_argument("--drones", nargs="+", default=["sano", "1", "7"], help="sano = sin --dron")
-    ap.add_argument("--n", type=int, default=4, help="corridas por combinación (semillas 1..n)")
+    ap.add_argument("--n", type=int, default=4, help="corridas por combinación")
+    ap.add_argument("--desde", type=int, default=1, help="primera semilla (para seguir una tanda: --desde 5)")
     ap.add_argument("--variante", action="append", required=True, help='"nombre:banderas", p. ej. "pid:"')
     ap.add_argument("--paralelo", type=int, default=3)
     ap.add_argument("--salida", help="agrega cada corrida a este archivo (jsonl)")
@@ -164,7 +165,7 @@ def main() -> None:
         return
     variantes = [v.split(":", 1) for v in args.variante]
     # intercaladas: así, si se corta a la mitad, todas las variantes llevan corridas parecidas
-    trabajos = [(var, flags, esc, dron, sem) for sem in range(1, args.n + 1) for esc in args.escenarios
+    trabajos = [(var, flags, esc, dron, sem) for sem in range(args.desde, args.desde + args.n) for esc in args.escenarios
                 for dron in args.drones for var, flags in variantes]
     print(f"{len(trabajos)} corridas, {args.paralelo} a la vez", flush=True)
     res = correr(trabajos, args.paralelo, salida)

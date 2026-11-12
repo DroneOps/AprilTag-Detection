@@ -100,6 +100,7 @@ Fernando sigue el proyecto por GitHub. Nada debe quedarse solo en la laptop.
 | Archivo | Qué es |
 |---|---|
 | `scripts/mision_espejo.py` + `config/mission_espejo.json` | **misión principal**: sube a 100 cm, avanza hasta ver un tag debajo, se centra encima sosteniendo el rumbo (≤12 cm, máximo 8 s), ejecuta y sigue. Con `sostener_piso` mide con el piso cuánto se mueve: regresa al despegue mientras sube, avanza en línea recta y busca el tag que pierde |
+| `scripts/kalman_piso.py` | (branch `kalman`) filtro de Kalman por eje para sostener la posición con el piso: estima posición, velocidad y deriva con el modelo rc → velocidad. Se usa con `"piso_control": "kalman"`; si deja de cuadrar con lo medido, regresa al PID |
 | `scripts/mision_piso.py` + `config/mission_piso.json` | respaldo sin espejo: cámara al frente, último metro a ciegas |
 | `scripts/mission_tags.py` + `config/mission_tags.json` | base de las misiones: acciones de cada tag, flip seguro, sostener altura, "el dron no obedece" |
 | `scripts/first_flight.py` + `config/flight.json` | vuelo base, despegue, seguridad, HMI, bitácora; prueba de estacionario, giro y flip |
@@ -107,6 +108,7 @@ Fernando sigue el proyecto por GitHub. Nada debe quedarse solo en la laptop.
 | `sim/sim_world.py` + `config/sim_tello.json` | simulador 3D con el detector y la misión reales; el dron simulado se comporta como dice el JSON (un dron sano). `--dron 1` / `--dron 7` agregan la deriva de cada dron (`config/sim_tello_dron<N>.json`); `--ideal`, el modelo optimista de antes |
 | `sim/deriva_video.py` | mide cuánto se va solo cada dron con el piso visto por el espejo en los videos (`--record`); da los valores para `config/sim_tello_dron<N>.json` |
 | `sim/prueba_desgaste.py` | detección de tags gastados (desteñidos, manchas, pedazos faltantes) sin volar; antes de tocar el detector, correrla junto con `test_tags.py --selftest` |
+| `sim/comparar_control.py` | compara variantes del control en el simulador en tandas (mismas semillas), p. ej. PID contra Kalman: distancia al despegue, tags, distancia al tag y qué tan bruscos son los mandos |
 | `sim/comparar_vuelos.py` | compara el simulador con vuelos reales y reajusta `config/sim_tello.json`; correr al cerrar cada sesión |
 | `scripts/resumen_vuelos.py`, `scripts/traza_vuelo.py` | analizar vuelos |
 | `scripts/guardar_sesion.py` | subir una sesión de laboratorio a `sesiones/` |
@@ -122,6 +124,7 @@ Ajustes de `config/mission_espejo.json` que más se mueven en el laboratorio:
 | `ignorar_inicio` | ignorar o no el tag que ve al despegar; en las pruebas va en `false` |
 | `advance_lr` | rc lateral fijo al avanzar sin tag, para compensar si el dron se va siempre de un lado (negativo = a la izquierda); con `sostener_piso` casi no hace falta |
 | `piso_kp`, `piso_kd`, `piso_ki` | el PID que sostiene la posición con el piso; síntomas y qué cambiar en "Cómo ajustarlo" de `docs/arquitectura.md` |
+| `piso_control`, `kalman_*` | (branch `kalman`) `"pid"` o `"kalman"`; el Kalman y cómo ajustarlo, en `docs/arquitectura.md` |
 | `config/mision_dron<N>.json` | ajustes de la misión de cada dron (`--dron N`); hoy, `piso_i_inicial`: la integral con que arranca. Si el dron se arregla, ponerla en [0, 0] |
 
 ## Cómo guiar una sesión de laboratorio
