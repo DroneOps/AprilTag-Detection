@@ -188,6 +188,8 @@ constante de tiempo `kalman_respuesta_s`. Lo que se mueve de más o de menos es 
   y adelante a la vez hunde al Tello ~8 cm/s (11-nov). Con correcciones chicas todo el tiempo,
   el sostener altura no alcanzaba y volaba a 88–95 cm. Ahí el tag gastado de `espejo_gastado`
   no se detecta nunca, y a 95–110 cm a veces. Pasó de 0 de 4 a 2 de 4, como `main`.
+- **Resultados contra el PID** (simulador, tandas con las mismas semillas): tabla en la
+  bitácora, entrada "12-nov (noche)". Se comparan con `sim/comparar_control.py`.
 - **Para usarlo:** en `config/mission_espejo.json`, `"piso_control": "kalman"`. Está en
   `"pid"` hasta probarlo en el laboratorio.
 - **Bitácora:** `kal_der`, `kal_ade` (posición predicha), `kal_dder`, `kal_dade` (deriva
