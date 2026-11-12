@@ -5,6 +5,14 @@ Las bitácoras de vuelo (`logs/*.csv`) y los videos están en la laptop, no en e
 
 ## Pendiente ahora
 
+**Antes que nada: volar el Kalman.** Está en la branch `kalman`
+([PR #1](https://github.com/DroneOps/AprilTag-Detection/pull/1)). El 12-nov (tarde) la tanda para
+compararlo se voló en `main` por error y todo fue con el PID (ver la entrada de abajo).
+- Empezar con `git checkout kalman && git pull --rebase`.
+- `grep piso_control config/mission_espejo.json` debe imprimir una línea; en `main` no imprime nada.
+- El protocolo (K1 = E2b y K2 = E5, con cada control y cada dron) está en `laboratorio.md` de
+  esa branch.
+
 1. **Siguiente tarea principal (código): mejorar todavía más la corrección de la deriva y el
    PID, pasos 3 a 6** (propuestos el 12-nov). Cómo funciona hoy y cómo se ajusta:
    [`arquitectura.md`](arquitectura.md).
@@ -56,6 +64,26 @@ Las bitácoras de vuelo (`logs/*.csv`) y los videos están en la laptop, no en e
    clip, reajustar `config/sim_tello.json` ([`simulador.md`](simulador.md)). Las bitácoras
    del 11-nov dicen en `sesiones/2026-11-11/notas.md` qué dron fue cada una. Falta medir bien
    la deriva durante el despegue: en el simulador se corre más que en lo real.
+
+## 12-nov (tarde) — E5 con el PID en los dos Tellos; el Kalman no se voló
+
+- **La tanda para comparar PID y Kalman se voló en `main`.**
+  - No se hizo `git checkout kalman`, y en `main` el `sed` no encuentra `piso_control`, así que
+    los 5 vuelos fueron con el PID.
+  - El video `k2_dron1_kal1.mp4` también es con PID.
+  - Según Fernando, todos los vuelos fueron bien.
+- **E5 con PID.** La distancia es al tag al ejecutar, según la cámara:
+  - Tello 7: 1 de 3 (el tag 1 a 21 cm; no encontró el 2 en 12 s) y 3 de 3 (8, 7 y 4 cm).
+  - Tello 1: 3 de 3 (4, 9 y 33 cm; se voló con `--dron 7` por error) y 3 de 3 (9, 1 y 13 cm).
+  - Seis veces "centrado incompleto": a los 8 s ejecuta igual, a 6–34 cm.
+- **K1 (E2b) no quedó limpio:** había un tag 1 debajo del despegue; se centró encima y giró.
+- **Lo que mostró el PID en vuelo real:**
+  - Los mandos cambian 14–32 rc/s (en el simulador, 18–28).
+  - Al avanzar casi no se hunde: mínima de 90–94 cm.
+  - La integral de adelante termina siempre negativa (−4.5 a −12 rc), en los dos drones, como
+    si se fueran hacia adelante estando quietos. Falta revisarlo.
+- **Temperatura:** el Tello 7 llegó a 80 °C (despegó con 31 % de batería) y el Tello 1 a 77 °C.
+- La sesión está en `sesiones/2026-11-12/` (notas, `resumen.txt` y `piso.txt`).
 
 ## 12-nov — La medida del piso ya no se engaña al subir
 
