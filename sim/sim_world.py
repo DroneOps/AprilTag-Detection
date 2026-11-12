@@ -263,17 +263,68 @@ def dead(rc: float, db: float = 5) -> float:
     return 0.0 if abs(rc) <= db else math.copysign(abs(rc) - db, rc)
 
 
+# ---- piso del laboratorio: oscuro, con cuadrícula de cinta azul (videos del 11-nov)
+PISO_PX_CM = 2.0  # resolución de la textura
+PISO_LADO_CM = 1400  # textura de 14 x 14 m centrada en el despegue
+_PISO: np.ndarray | None = None
+
+
+def textura_piso() -> np.ndarray:
+    """Gris oscuro (~85) con manchas suaves, y cinta (~150) de 6 cm cada 60 cm en las dos
+    direcciones. Se genera una vez por proceso (3.9 MB)."""
+    global _PISO
+    if _PISO is None:
+        n = int(PISO_LADO_CM * PISO_PX_CM)
+        rng = np.random.default_rng(3)
+        base = cv2.resize(rng.normal(0, 1, (n // 16, n // 16)).astype(np.float32), (n, n), interpolation=cv2.INTER_CUBIC)
+        fino = rng.normal(0, 1, (n, n)).astype(np.float32)
+        tex = 85 + 7 * base + 4 * cv2.GaussianBlur(fino, (0, 0), 1.5)
+        paso, ancho = int(60 * PISO_PX_CM), int(6 * PISO_PX_CM)
+        for k in range(0, n, paso):
+            tex[:, k:k + ancho] = 150 + 4 * fino[:, k:k + ancho]
+            tex[k:k + ancho, :] = 150 + 4 * fino[k:k + ancho, :]
+        _PISO = np.clip(tex, 0, 255).astype(np.uint8)
+    return _PISO
+
+
+def piso_en_imagen(img: np.ndarray, O, r, d, f, Kc) -> None:
+    """Dibuja el piso (z = 0) que ve la cámara desde O, con la cámara sin distorsión (el piso
+    solo sirve para medir cuánto se mueve el dron; los tags se dibujan encima con la distorsión)."""
+    tex = textura_piso()
+    n, s = tex.shape[0], PISO_PX_CM
+    m = max(30.0, O[2]) * 0.9 + 25  # media ventana de piso que cubre la vista, en cm
+    x0, x1, y0, y1 = O[0] - m, O[0] + m, O[1] - m, O[1] + m
+    u0, u1 = int((x0 + PISO_LADO_CM / 2) * s), int((x1 + PISO_LADO_CM / 2) * s)
+    v0, v1 = int((PISO_LADO_CM / 2 - y1) * s), int((PISO_LADO_CM / 2 - y0) * s)
+    if u0 < 0 or v0 < 0 or u1 >= n or v1 >= n:
+        return  # fuera de la textura: piso liso
+    esquinas = [(x0, y1), (x1, y1), (x1, y0), (x0, y0)]  # en el orden del recorte (arriba-izq, ...)
+    pts = []
+    for X, Y in esquinas:
+        P = np.array([X, Y, 0.0]) - O
+        pc = np.array([r @ P, d @ P, f @ P])
+        if pc[2] <= 1:
+            return
+        pts.append((Kc[0, 0] * pc[0] / pc[2] + Kc[0, 2], Kc[1, 1] * pc[1] / pc[2] + Kc[1, 2]))
+    crop = tex[v0:v1, u0:u1]
+    h, w = crop.shape
+    H = cv2.getPerspectiveTransform(np.float32([[0, 0], [w, 0], [w, h], [0, h]]), np.float32(pts))
+    cv2.warpPerspective(crop, H, (img.shape[1], img.shape[0]), img, flags=cv2.INTER_LINEAR,
+                        borderMode=cv2.BORDER_TRANSPARENT)
+
+
 class SimTello:
     """Imita la interfaz de djitellopy que usa la misión."""
 
     def __init__(self, tags, drift=None, seed=0, boxes=(), bias=(0.0, 0.0), yaw0=0.0, bat=90.0,
                  mirror=None, mirror_tilt=0.0, speed_factor=1.0, sag=0.0, combo=1.0, glitches=(),
-                 imu_mal=None, despegue="normal", temp=None, params=None, hilo=True) -> None:
+                 imu_mal=None, despegue="normal", temp=None, params=None, hilo=True, piso=True) -> None:
         # params: SimParams (por defecto P, de config/sim_tello.json). hilo=False: sin hilo de
         # física; quien lo use llama step() (sim/comparar_vuelos.py).
         # despegue: "normal", "alto" (sube solo a ~141 cm, real 9-nov) o "cae" (sube ~40 cm y
         # regresa al piso mientras su 'h' dice que sube, real 9-nov)
         self.p = params or P
+        self.piso = piso  # con espejo: piso con textura (cuadrícula del laboratorio); False: gris liso
         drift = self.p.deriva_cm_s if drift is None else drift
         self.despegue, self.t_takeoff, self._ok_sent = despegue, None, False
         self.temp = self.p.temp_inicial_c if temp is None else temp
@@ -498,6 +549,8 @@ class SimTello:
         img = np.full((720, 960), 110, np.uint8)
         if not self.mirror:
             img[400:] = 80
+        elif self.piso:  # el piso del laboratorio, para medir con él la deriva (sostener_piso)
+            piso_en_imagen(img, O, r, d, f, Kc)
         for t in self.tags:
             if not t.visible or ((O - t.c) @ t.n) <= 0:
                 continue

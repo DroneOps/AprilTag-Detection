@@ -25,6 +25,7 @@ from __future__ import annotations
 import argparse
 import json
 import math
+import threading
 import time
 from collections import deque
 from dataclasses import dataclass, fields
@@ -62,6 +63,18 @@ class MirrorConfig:
     rot_kp: float = 1.0
     rot_tol_deg: float = 4.0
     window: int = 7  # mediana de N frames
+    # sostener la posición con el piso visto por el espejo (11-nov: los dos Tellos se iban solos
+    # a la derecha, 4–12 cm/s, y el primer tag quedaba en la orilla de la vista o fuera)
+    sostener_piso: bool = True  # quieto y subiendo: volver al punto de despegue; avanzando: sostener la línea
+    piso_calidad: float = 0.1  # calidad mínima de la correlación de fase para creerle
+    piso_kp: float = 0.5  # rc por cm de distancia a donde debería estar
+    piso_kd: float = 0.8  # rc por cm/s que se está yendo
+    piso_min: int = 10
+    piso_max: int = 20
+    piso_dead: float = 4.0  # mando menor que esto: nada
+    piso_limite_cm: float = 80.0  # seguro: si se aleja esto de donde debería estar, apagar la corrección
+    # (por si en el dron real la medida sale al revés y empuja hacia afuera)
+    buscar_s: float = 4.0  # tag perdido al centrarse: buscarlo donde debe estar esto, luego seguir avanzando
     vista_adelante_deg: float = 0.0  # inclinación del espejo: medirla con test_tags.py --espejo
     vista_lado_deg: float = 0.0
 
@@ -74,6 +87,50 @@ class MirrorConfig:
         return cls(**data)
 
 
+class FlujoPiso:
+    """Cuánto se mueve el dron sobre el piso, con la imagen del espejo: correlación de fase entre
+    un cuadro y el anterior, pasada a cm con la altura. Posición y velocidad en el marco del dron,
+    (derecha, adelante). Con el piso del laboratorio (cuadrícula de cinta) mide bien de lado;
+    hacia adelante es peor si las rayas van en la dirección del avance (videos del 11-nov)."""
+
+    TAM = (240, 180)
+
+    def __init__(self, fx: float, calidad: float) -> None:
+        self.f = fx * self.TAM[0] / 960  # px por unidad a esta resolución
+        self.calidad = calidad
+        self.win = cv2.createHanningWindow(self.TAM, cv2.CV_32F)
+        self.prev, self.t_prev = None, 0.0
+        self.pos = np.zeros(2)
+        self.vel = np.zeros(2)
+        self.q, self.t_ok = 0.0, -math.inf
+        self.lock = threading.Lock()
+
+    def actualizar(self, gray: np.ndarray, t: float, alt: float, girando: bool) -> None:
+        small = cv2.resize(gray, self.TAM, interpolation=cv2.INTER_AREA).astype(np.float32)
+        if self.prev is not None and not girando and alt > 25 and t > self.t_prev:
+            (dx, dy), q = cv2.phaseCorrelate(self.prev, small, self.win)
+            self.q = q
+            dt, cm = t - self.t_prev, alt / self.f
+            v = np.array([-dx * cm / dt, dy * cm / dt])  # el piso se mueve al revés que el dron
+            if q >= self.calidad and np.hypot(*v) < 150:  # más de 1.5 m/s: correlación equivocada
+                with self.lock:
+                    self.pos += v * dt
+                    self.vel += 0.25 * (v - self.vel)
+                    self.t_ok = t
+        self.prev, self.t_prev = (None if girando else small), t
+
+    def reiniciar(self) -> None:
+        with self.lock:
+            self.pos[:] = 0.0
+
+    def estado(self) -> tuple[np.ndarray, np.ndarray]:
+        with self.lock:
+            return self.pos.copy(), self.vel.copy()
+
+    def valido(self, now: float) -> bool:
+        return now - self.t_ok < 0.5
+
+
 def rot_mod90(angle: float) -> float:
     """Giro del tag en la imagen, llevado a [-45, 45): un tag derecho vale 0 en
     cualquiera de sus 4 orientaciones."""
@@ -81,7 +138,8 @@ def rot_mod90(angle: float) -> float:
 
 
 class MirrorMission(TagMission):
-    LOG_EXTRA = ["n_tags", "objetivo", "tag_adelante", "tag_derecha", "tag_giro", "altura_espejo"]
+    LOG_EXTRA = ["n_tags", "objetivo", "tag_adelante", "tag_derecha", "tag_giro", "altura_espejo",
+                 "piso_der", "piso_ade", "piso_vder", "piso_vade", "piso_q"]
 
     def __init__(self, tello, cfg: FlightConfig, mcfg: MissionConfig, ecfg: MirrorConfig,
                  log_path: Path, calib: Path) -> None:
@@ -95,6 +153,10 @@ class MirrorMission(TagMission):
         self._floor_hist: dict[int, deque] = {}
         self._heights: dict[int, float] = {}
         self._last_floor = (0.0, 0.0)
+        self.piso = FlujoPiso(float(self.pose_est.K[0, 0]), ecfg.piso_calidad)
+        self._pos_visto = np.zeros(2)  # posición (piso) cuando se vio el tag objetivo por última vez
+        self._yaw_frame = None
+        self._piso_apagado = False
 
     # ---- visión: imagen volteada, posición del tag sobre el piso
     def on_frame(self, bgr: np.ndarray, t: float) -> None:
@@ -102,7 +164,13 @@ class MirrorMission(TagMission):
             self.reason = f"video {bgr.shape[1]}x{bgr.shape[0]} no coincide con la calibracion"
             return
         img = cv2.flip(bgr, 0 if self.e.espejo == "v" else 1)  # un tag espejado no se decodifica
-        dets = self.detector.detect(cv2.cvtColor(img, cv2.COLOR_BGR2GRAY))
+        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        s = self.tel.snapshot()[0]
+        yaw = s.get("yaw", 0)
+        girando = self.rc[3] != 0 or (self._yaw_frame is not None and abs(((yaw - self._yaw_frame) + 180) % 360 - 180) > 1)
+        self._yaw_frame = yaw
+        self.piso.actualizar(gray, t, altitude(s), girando)
+        dets = self.detector.detect(gray)
         poses = [self.pose_est.estimate(d) if d.accepted else None for d in dets]
         confirmed = self.confirmer.update({d.tag_id for d in dets if d.accepted})
         if self.state in ("IDLE", "TAKEOFF") and altitude(self.tel.snapshot()[0]) < self.e.inicio_alt_cm:
@@ -138,7 +206,9 @@ class MirrorMission(TagMission):
                     cv2.LINE_AA)
 
     def status_lines(self) -> list[str]:
-        return ["ESPEJO: vista hacia abajo, SIN vista al frente" + (" (quieto)" if self.e.quieto else "")] \
+        piso = ("sostener piso: APAGADO (se alejo demasiado)" if self._piso_apagado else
+                f"sostener piso: {'si' if self.e.sostener_piso else 'no'}, calidad {self.piso.q:.2f}")
+        return ["ESPEJO: vista hacia abajo, SIN vista al frente" + (" (quieto)" if self.e.quieto else ""), piso] \
             + super().status_lines()
 
     def _log_extra(self) -> list:
@@ -146,7 +216,40 @@ class MirrorMission(TagMission):
         fl = v.tagframe.get(tid) if (v and tid) else None
         cells = [f"{fl[0]:+.0f}", f"{fl[1]:+.0f}", f"{fl[2]:+.0f}", f"{self._heights.get(tid, 0):.0f}"] if fl \
             else [""] * 4
-        return [len(v.dets) if v else "", tid or "", *cells]
+        (pr, pf), (vr, vf) = self.piso.estado()
+        return [len(v.dets) if v else "", tid or "", *cells,
+                f"{pr:+.1f}", f"{pf:+.1f}", f"{vr:+.1f}", f"{vf:+.1f}", f"{self.piso.q:.2f}"]
+
+    # ---- sostener la posición con el piso
+    def _goto(self, state: str, reason: str) -> None:
+        prev = getattr(self, "state", None)
+        super()._goto(state, reason)
+        piso = getattr(self, "piso", None)
+        if piso is not None and (state == "TAKEOFF" or (state == "ADVANCE" and prev == "EXECUTE")):
+            piso.reiniciar()  # el punto de despegue, o la línea del tramo nuevo (pasa por el tag ejecutado)
+
+    def _piso_mando(self, err: float, vel: float) -> int:
+        e = self.e
+        u = -(e.piso_kp * err + e.piso_kd * vel)
+        return 0 if abs(u) < e.piso_dead else with_min(u, e.piso_min, e.piso_max)
+
+    def _send_rc(self, lr: float, fb: float, ud: float, yaw: float) -> None:
+        """Quieto y subiendo: volver al punto de despegue. Avanzando sin tag: sostener la línea
+        del tramo (de lado). Solo con una medida del piso reciente; sin ella, como antes."""
+        e, piso = self.e, getattr(self, "piso", None)
+        if e.sostener_piso and piso is not None and not self._piso_apagado \
+                and self.state in ("HOVER", "CRUISE", "ADVANCE") and piso.valido(time.monotonic()):
+            (pr, pf), (vr, vf) = piso.estado()
+            lejos = abs(pr) if self.state == "ADVANCE" else math.hypot(pr, pf)
+            if lejos > e.piso_limite_cm:
+                self._piso_apagado = True
+                self.reason += f" | sostener_piso APAGADO: se alejo {lejos:.0f} cm (revisar la medida del piso)"
+                print(f"[vuelo] sostener_piso apagado: se alejó {lejos:.0f} cm de donde debía estar")
+            else:
+                lr = lr + self._piso_mando(pr, vr)
+                if self.state != "ADVANCE":
+                    fb = fb + self._piso_mando(pf, vf)
+        super()._send_rc(lr, fb, ud, yaw)
 
     # ---- avanzar mirando el piso
     def _advance(self, yaw: float, now: float, elapsed: float) -> None:
@@ -185,13 +288,20 @@ class MirrorMission(TagMission):
             return self._send_rc(0, 0, 0, 0)
         fl = v.tagframe.get(self._target)
         if fl is None:
-            # se salió por un borde: ir hacia donde estaba, despacio, antes de rendirse
-            if now - self._t_target_seen > m.lost_s:
-                return self._begin_landing("EMERGENCY_LAND", f"tag {self._target} perdido al centrarse")
+            # se salió de la vista (11-nov: por la deriva, casi siempre por la orilla): ir a donde
+            # debe estar, contando lo que el dron se movió desde que lo vio; si no aparece en
+            # buscar_s, seguir avanzando en vez de aterrizar
+            if now - self._t_target_seen > e.buscar_s:
+                return self._goto("ADVANCE", f"tag {self._target} perdido al centrarse: sigo avanzando")
             lf, lr = self._last_floor
-            return self._send_rc(math.copysign(e.center_min, lr) if abs(lr) > e.center_tol_cm else 0,
-                                 math.copysign(e.center_min, lf) if abs(lf) > e.center_tol_cm else 0, 0, 0)
+            if self.piso.valido(now):
+                d = self.piso.estado()[0] - self._pos_visto
+                lr, lf = lr - d[0], lf - d[1]
+            return self._send_rc(with_min(e.center_kp * lr, e.center_min, e.piso_max) if abs(lr) > e.center_tol_cm else 0,
+                                 with_min(e.center_kp * lf, e.center_min, e.piso_max) if abs(lf) > e.center_tol_cm else 0,
+                                 0, self._heading_rate(yaw))
         self._t_target_seen = now
+        self._pos_visto = self.piso.estado()[0]
         fwd, right, rot = fl
         self._last_floor = (fwd, right)
         vf, vr = self._tag_velocity(v.t, fwd, right)
