@@ -75,13 +75,17 @@ Todo en el simulador, en la branch `kalman` (sale de `main` en `63df8f4`). `main
 | Estacionario, Tello 1 | 10 cm | 6 | 7 | 6 |
 | Estacionario, Tello 7 (mediana de 12) | 20 cm | 19 | 22 | 20 |
 | Circuito, sano y Tello 1: completas | 8 de 8 | 8 de 8 | 8 de 8 | 8 de 8 |
-| Circuito, sano y Tello 1: distancia real al tag al ejecutar (mediana) | 8 cm | 5–8 | 8–9 | **4–5** |
-| Circuito, Tello 7: completas | 5 de 12 | 8 de 12 | 5 de 12 | **10 de 12** |
-| Circuito, Tello 7: distancia al tag al ejecutar (mediana) | 21 cm | 24 | 29 | **9** |
+| Circuito, sano y Tello 1: distancia real al tag al ejecutar (mediana) | 8 cm | 5–8 | 8–9 | **4–6** |
+| Circuito, Tello 7: completas | 5 de 12 | 8 de 12 | 5 de 12 | **10 de 12**, luego 7 de 12 (*) |
+| Circuito, Tello 7: distancia al tag al ejecutar (mediana) | 21 cm | 24 | 29 | **9–12** |
 | Mandos, dron sano: cuánto cambian (rc/s) | 18–20 | 24–32 | 33–43 | 30–42 |
 
-- **Kalman + centrar es el mejor en el circuito.** Casi toda la mejora sale de cancelar la
-  deriva al centrarse: sin eso, el Kalman completa lo mismo que el PID con el Tello 7.
+(*) La segunda tanda es con el ajuste de `kalman_lado_avanzando` (abajo); 2 de sus 5 fallas
+fueron el seguro apagándose en una racha. Con 12 corridas, 7 contra 10 cabe en el ruido.
+
+- **Kalman + centrar es el mejor en el circuito,** sobre todo en qué tan encima del tag
+  ejecuta. Casi toda la mejora sale de cancelar la deriva al centrarse: sin eso, el Kalman
+  completa lo mismo que el PID con el Tello 7.
 - **Quieto, con dron sano o Tello 1,** el Kalman queda a 6–7 cm contra 10–11 del PID de hoy;
   el PID afinado también llega a 6–7.
 - **Con el Tello 7 quieto, todos quedan en ~20 cm.** El simulador le mete rachas de deriva
@@ -104,8 +108,22 @@ Todo en el simulador, en la branch `kalman` (sale de `main` en `63df8f4`). `main
 - **Medida al revés** (`--set espejo=h`): el seguro de siempre (`piso_alejandose_cm`) apaga la
   corrección en las 8 corridas, con los dos controles. El Kalman empuja más fuerte y se aleja
   más antes de que se apague: con dron sano, distancia media de 105–182 cm contra 33–103.
-- **Se corrigió en el camino:** el umbral de "deriva imposible" pasó de 40 a 50 cm/s (con 40,
-  una racha del Tello 7 lo apagó), y al apagarse el PID arranca desde `piso_i_inicial`.
+- **Se corrigió en el camino:**
+  - el umbral de "deriva imposible" pasó de 40 a 50 cm/s (con 40, una racha del Tello 7 lo
+    apagó), y al apagarse el PID arranca desde `piso_i_inicial`;
+  - **`espejo_gastado` fallaba 4 de 4 con el Kalman** (`main`: 2 de 4; branch con PID: 3 de
+    4). El Kalman corregía de lado un poco todo el tiempo mientras avanzaba, y lado y
+    adelante a la vez hunden al Tello ~8 cm/s: volaba a 88–95 cm. Ahí el tag manchado no se
+    detecta nunca (a 95–110 cm, a veces; probado renderizando encima del tag). Ahora,
+    avanzando, no corrige de lado por menos de 4 cm/s (`kalman_lado_avanzando`): 2 de 4. **En
+    el Tello real puede pasar lo mismo:** en E2b/E5 con Kalman, revisar `tof` mientras avanza.
+- **Regresión completa** (`todos`), con PID y con Kalman: los 17 escenarios de espejo dan lo
+  mismo con los dos y sin choques. En pared y piso (no usan este código) cambió lo de siempre
+  por la deriva aleatoria (`piso_hundimiento` choca, ya se sabía; `tag_alto`, de pared, chocó
+  en una de las dos).
+- **Videos lado a lado** (izquierda PID, derecha Kalman, misma semilla), en la laptop, en
+  `sim/logs/videos_kalman/`: estacionario y circuito del Tello 7, y circuito del dron sano.
+  En esas corridas sueltas los dos completan; el Kalman ejecuta un poco más cerca del tag.
 - **Herramientas nuevas en el simulador:** `--set`, `--sim`, `--semilla`, `--log-sufijo`, la
   distancia real al tag al ejecutar y `sim/comparar_control.py`
   ([`simulador.md`](simulador.md)).
