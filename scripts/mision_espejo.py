@@ -122,24 +122,51 @@ class FlujoPiso:
     """Cuánto se mueve el dron sobre el piso, con la imagen del espejo: correlación de fase entre
     un cuadro y el anterior, pasada a cm con la altura. Posición y velocidad en el marco del dron,
     (derecha, adelante). Con el piso del laboratorio (cuadrícula de cinta) mide bien de lado;
-    hacia adelante es peor si las rayas van en la dirección del avance (videos del 11-nov)."""
+    hacia adelante es peor si las rayas van en la dirección del avance (videos del 11-nov).
+
+    Al subir o bajar, el piso se ve más chico o más grande, y la correlación confundía ese cambio
+    de escala con desplazamiento: subiendo de 30 a 100 cm "veía" +10 cm de lado y el control movía
+    al dron sin razón. Por eso, antes de comparar, el cuadro anterior se escala alrededor del centro
+    óptico según cuánto cambió la altura (velocidad vertical robusta del tof). Así el error baja a
+    ~2 cm (12-nov, en el simulador)."""
 
     TAM = (240, 180)
 
-    def __init__(self, fx: float, calidad: float) -> None:
+    def __init__(self, fx: float, calidad: float, centro: tuple[float, float] = (480.0, 360.0)) -> None:
         self.f = fx * self.TAM[0] / 960  # px por unidad a esta resolución
+        self.k = self.TAM[0] / 960
+        self.c = (centro[0] * self.k, centro[1] * self.k)  # centro óptico en la imagen ya volteada
         self.calidad = calidad
         self.win = cv2.createHanningWindow(self.TAM, cv2.CV_32F)
         self.prev, self.t_prev = None, 0.0
+        self.alts: deque = deque()  # (t, altura) del último ~0.6 s
         self.pos = np.zeros(2)
         self.vel = np.zeros(2)
         self.q, self.t_ok = 0.0, -math.inf
         self.lock = threading.Lock()
 
+    def _vz(self) -> float:
+        """Velocidad vertical (cm/s) robusta a lecturas sueltas del tof: mediana de las pendientes."""
+        h = self.alts
+        s = [(h[j][1] - h[i][1]) / (h[j][0] - h[i][0]) for i in range(len(h)) for j in range(i + 1, len(h))
+             if h[j][0] - h[i][0] > 0.05]
+        return float(np.median(s)) if len(s) >= 3 else 0.0
+
     def actualizar(self, gray: np.ndarray, t: float, alt: float, girando: bool) -> None:
         small = cv2.resize(gray, self.TAM, interpolation=cv2.INTER_AREA).astype(np.float32)
+        if not self.alts or self.alts[-1][1] != alt or t - self.alts[-1][0] > 0.09:
+            self.alts.append((t, alt))  # una por lectura nueva del tof (llegan a ~10 Hz)
+        while self.alts and t - self.alts[0][0] > 0.6:
+            self.alts.popleft()
         if self.prev is not None and not girando and alt > 25 and t > self.t_prev:
-            (dx, dy), q = cv2.phaseCorrelate(self.prev, small, self.win)
+            # el cuadro anterior, a la escala de ahora: subiendo se veía más grande (m < 1 lo achica)
+            a = float(np.median([x[1] for x in self.alts]))
+            m = min(1.1, max(0.9, (a - self._vz() * (t - self.t_prev)) / a))
+            ref = self.prev
+            if abs(m - 1) > 1e-4:
+                M = np.float32([[m, 0, (1 - m) * self.c[0]], [0, m, (1 - m) * self.c[1]]])
+                ref = cv2.warpAffine(self.prev, M, self.TAM, flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REFLECT)
+            (dx, dy), q = cv2.phaseCorrelate(ref, small, self.win)
             self.q = q
             dt, cm = t - self.t_prev, alt / self.f
             v = np.array([-dx * cm / dt, dy * cm / dt])  # el piso se mueve al revés que el dron
@@ -181,11 +208,12 @@ class MirrorMission(TagMission):
         self._started = False
         self._center_hist: deque = deque(maxlen=60)  # (t del frame, adelante, derecha) del tag objetivo
         self._start_ids: set[int] = set()  # tags vistos durante el despegue
+        centro = (float(self.pose_est.K[0, 2]), float(self.pose_est.K[1, 2]))  # cámara original = imagen ya volteada
         self.pose_est = self.pose_est.mirrored(ecfg.espejo)
         self._floor_hist: dict[int, deque] = {}
         self._heights: dict[int, float] = {}
         self._last_floor = (0.0, 0.0)
-        self.piso = FlujoPiso(float(self.pose_est.K[0, 0]), ecfg.piso_calidad)
+        self.piso = FlujoPiso(float(self.pose_est.K[0, 0]), ecfg.piso_calidad, centro)
         self._pos_visto = np.zeros(2)  # posición (piso) cuando se vio el tag objetivo por última vez
         self._yaw_frame = None
         self._piso_apagado = False

@@ -42,6 +42,18 @@ Las bitácoras de vuelo (`logs/*.csv`) y los videos están en la laptop, no en e
    clip, reajustar `config/sim_tello.json` ([`simulador.md`](simulador.md)). Las bitácoras
    del 11-nov dicen en `sesiones/2026-11-11/notas.md` qué dron fue cada una.
 
+## 12-nov — La medida del piso ya no se engaña al subir
+
+- Con un Tello perfecto en el simulador (sin deriva), el control lo movía ~10–12 cm sin
+  razón. Al subir, el piso se ve más chico, y la correlación lo tomaba como desplazamiento:
+  de 30 a 100 cm en vertical "veía" +10 cm de lado y −7 adelante.
+- **Arreglo:** escalar el cuadro anterior alrededor del centro óptico según cuánto cambió la
+  altura (tof con la mediana de las pendientes). El error al subir y bajar baja a 2–4 cm; en
+  los caminos de lado y adelante no cambia (1–3 cm). El Tello perfecto se queda a ~4 cm del
+  despegue.
+- **Circuito E5 simulado:** Tello 1, 4 de 4; Tello 7, 1 de 4 (como antes; su deriva aleatoria
+  domina).
+
 ## 11-nov (noche, 3) — Tramo anclado en el tag e integral inicial por dron
 
 - **`sostener_tag`:** al girar o pausar sobre un tag se centra con su posición, y el tramo

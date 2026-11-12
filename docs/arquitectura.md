@@ -62,6 +62,16 @@ CRUISE ─▶ ADVANCE ─▶ APPROACH ─▶ EXECUTE ─▶ ADVANCE ... (hasta e
 ms) y, con la altura, saca cuánto se movió el dron sobre el piso (derecha, adelante). No
 mide mientras gira.
 
+**Al subir o bajar, el piso cambia de tamaño en la imagen**, y la correlación confundía ese
+cambio de escala con desplazamiento. Subiendo de 30 a 100 cm en vertical "veía" +10 cm de
+lado, y el control movía al dron sin razón: un Tello perfecto, sin deriva, terminaba ~12 cm
+corrido. Desde el 12-nov, antes de comparar, el cuadro anterior se escala alrededor del
+centro óptico según cuánto cambió la altura. La velocidad vertical sale del tof con la
+mediana de las pendientes, para que una lectura suelta no la mueva. El centro óptico es el
+de la cámara original (`config/camera_tello.json`), porque la imagen ya está volteada.
+Resultado en el simulador: el error al subir o bajar bajó a 2–4 cm, y el Tello perfecto se
+queda a ~4 cm del despegue.
+
 | Estado | Qué hace con esa medida (`sostener_piso`) |
 |---|---|
 | HOVER, CRUISE | regresar al punto de despegue (se mide desde que empieza a despegar) |
