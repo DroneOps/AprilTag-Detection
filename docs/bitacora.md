@@ -13,6 +13,13 @@ compararlo se voló en `main` por error y todo fue con el PID (ver la entrada de
 - El protocolo (K1 = E2b y K2 = E5, con cada control y cada dron) está en `laboratorio.md` de
   esa branch.
 
+**También, antes de volar: E1 con cada dron, cada uno con su clip** (sin volar, ~2 min).
+- Si la inclinación sale distinta de 4.1° adelante, va en `config/mision_dron<N>.json`
+  (`vista_adelante_deg`, `vista_lado_deg`).
+- Falta además que la medida del piso use esa inclinación (ver la entrada del 12-nov tarde).
+  Mientras tanto, el despegue mueve al dron unos cm hacia adelante y la integral de adelante no
+  es una deriva: no copiar `piso_iade` a `piso_i_inicial`.
+
 1. **Siguiente tarea principal (código): mejorar todavía más la corrección de la deriva y el
    PID, pasos 3 a 6** (propuestos el 12-nov). Cómo funciona hoy y cómo se ajusta:
    [`arquitectura.md`](arquitectura.md).
@@ -80,8 +87,28 @@ compararlo se voló en `main` por error y todo fue con el PID (ver la entrada de
 - **Lo que mostró el PID en vuelo real:**
   - Los mandos cambian 14–32 rc/s (en el simulador, 18–28).
   - Al avanzar casi no se hunde: mínima de 90–94 cm.
-  - La integral de adelante termina siempre negativa (−4.5 a −12 rc), en los dos drones, como
-    si se fueran hacia adelante estando quietos. Falta revisarlo.
+  - La integral de adelante termina siempre negativa (−4.5 a −12 rc), en los dos drones. **No es
+    una deriva hacia atrás.**
+    - Al despegar, el piso mide que el dron se va 6–29 cm hacia atrás; el PID empuja hacia
+      adelante para "regresar" y la integral se carga en esos segundos.
+    - En E5 la integral de adelante solo trabaja al despegar (avanzando, adelante manda la
+      misión), así que llega al final con ese valor.
+- **La medida del piso se corre al subir y bajar.**
+  - Subiendo marca hacia atrás y bajando hacia adelante (8–25 cm al aterrizar), en proporción
+    a la altura: Tello 7 ~0.09 cm por cm y Tello 1 ~0.25.
+  - La posición del tag, aterrizando sobre el 7, da casi lo mismo.
+  - **Sospecha:** la inclinación real de cada clip no es la del JSON (4.1°, medida el 9-nov con
+    un clip). Con el simulador sale Tello 7 ~0° y Tello 1 ~−10°. Si es así, al Tello 1 también
+    lo centra ~20–25 cm corrido sobre los tags. Detalle en [`tello.md`](tello.md), "Espejo".
+  - **Además, un error en el código:** la medida del piso corrige el cambio de escala alrededor
+    del centro óptico de la imagen sin voltear (y = 386 px), cuando va volteada (y = 333).
+    - Con los 4.1° del JSON, ese error casi se cancela con la inclinación. Por eso en el
+      simulador el arreglo del 12-nov se veía bien.
+    - La medida del piso no usa `vista_adelante_deg`: aunque se mida otra inclinación con E1,
+      el piso no se entera.
+    - Arreglo propuesto: escalar alrededor del punto que queda justo debajo del dron (centro
+      volteado más la inclinación). En una prueba aparte en el simulador, subiendo y bajando
+      80 cm con la vista a 4.1°, el error de adelante baja a menos de 1 cm.
 - **Temperatura:** el Tello 7 llegó a 80 °C (despegó con 31 % de batería) y el Tello 1 a 77 °C.
 - La sesión está en `sesiones/2026-11-12/` (notas, `resumen.txt` y `piso.txt`).
 

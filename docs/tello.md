@@ -97,8 +97,21 @@ el Tello 7 no alcanza a corregir.
 
 - Un tag visto en el espejo **no se decodifica**: hay que voltear la imagen
   (`--espejo v`).
-- La vista con el clip actual quedó inclinada **7.9° hacia adelante y 4.3° de lado**
-  (medido con `test_tags.py --espejo`; está en `config/mission_espejo.json`).
+- **Inclinación de la vista** (medida con `test_tags.py --espejo`, E1):
+  - clip del 9-nov: **4.1° hacia adelante y 0.8° de lado** (está en `config/mission_espejo.json`);
+  - clip anterior: 7.9° y 4.3°.
+
+  Cada clip queda distinto, y hoy hay un solo valor para los dos drones.
+- **Al subir y bajar, la medida se corre adelante o atrás en proporción a la altura** (12-nov
+  tarde, E5 con PID).
+  - Subiendo al despegar, el piso "ve" al dron irse 6–29 cm hacia atrás; bajando al aterrizar,
+    8–25 cm hacia adelante.
+  - Por cada cm de altura: Tello 7 ~0.09 cm (tres aterrizajes iguales) y Tello 1 ~0.25 cm.
+  - La posición del tag (aterrizando sobre el 7) da casi lo mismo que el piso.
+  - **Sospecha:** la inclinación real de cada clip no es la del JSON (Tello 7 ~0°, Tello 1
+    ~−10°, calculado con el simulador). Las dos medidas la usan, así que se equivocan igual.
+    No descarta un movimiento real del dron al despegar y aterrizar.
+  - **Para salir de dudas:** E1 con cada dron y su clip.
 - Un montaje tapó el **sensor de abajo** y el dron creía estar en el piso: no despegaba.
 - Con espejo, el dron sostiene peor la altura (se vio variar de 95 a 118 cm).
 - **Los tags del laboratorio se ven desteñidos por el espejo** (videos de E5, 9-nov, ~1,400
