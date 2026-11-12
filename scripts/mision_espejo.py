@@ -35,6 +35,7 @@ import cv2
 import numpy as np
 
 from first_flight import ROOT, FlightConfig, altitude, connect, run_app, with_min
+from kalman_piso import KalmanPiso, ModeloRc, vel_eje
 from mission_tags import MissionConfig, TagMission, Vision
 from test_tags import DEFAULT_CALIB, TAG_FUNCTIONS, draw, floor_view
 
@@ -88,6 +89,26 @@ class MirrorConfig:
     # Tello ignora el rc (el Tello 7 se va >80 cm)
     piso_alejandose_cm: float = 35.0
     piso_limite_cm: float = 150.0
+    # cómo se sostiene: "pid" (piso_kp, piso_kd, piso_ki) o "kalman" (scripts/kalman_piso.py: estima
+    # posición, velocidad y deriva con el modelo rc -> velocidad, y pide lo que cancela la deriva).
+    # El Kalman se apaga solo y regresa al PID si lo medido deja de cuadrar con lo predicho
+    piso_control: str = "pid"
+    kalman_kp: float = 1.2  # cm/s pedidos por cm de distancia (1/s): qué tan rápido regresa
+    kalman_kd: float = 1.0  # cm/s pedidos en contra por cm/s que se va: frena
+    kalman_ganancia: float = 1.45  # modelo del dron: cm/s por rc arriba de la zona muerta (config/sim_tello.json)
+    kalman_zona: float = 5.0  # rc que no lo mueve
+    kalman_respuesta_s: float = 0.75  # en cuánto llega a la velocidad pedida
+    kalman_atraso_video_s: float = 0.17
+    kalman_atraso_mando_s: float = 0.04
+    kalman_q_deriva: float = 50.0  # qué tan rápido puede cambiar la deriva (cm²/s³): más = la sigue más rápido, con más ruido
+    kalman_q_vel: float = 20.0  # qué tanto puede fallar el modelo rc -> velocidad (cm²/s³)
+    kalman_r_cm: float = 1.5  # ruido de la medida del piso
+    kalman_deriva_inicial: tuple = (0.0, 0.0)  # cm/s (derecha, adelante); 0: la mide al despegar
+    kalman_nis_max: float = 8.0  # promedio de (innovación / su desviación)² arriba de esto: apagar y usar el PID
+    # deriva estimada mayor a esto (cm/s): ningún Tello se va así de rápido; la medida debe venir mal
+    # (p. ej. al revés: el filtro lo explica como deriva y el NIS no lo ve). Apagar y usar el PID
+    kalman_deriva_max: float = 40.0
+    kalman_centrar: bool = False  # al centrarse y sostenerse sobre el tag, sumar lo que cancela la deriva
     buscar_s: float = 4.0  # tag perdido al centrarse: buscarlo donde debe estar esto, luego seguir avanzando
     vista_adelante_deg: float = 0.0  # inclinación del espejo: medirla con test_tags.py --espejo
     vista_lado_deg: float = 0.0
@@ -177,14 +198,21 @@ class FlujoPiso:
                     self.t_ok = t
         self.prev, self.t_prev = (None if girando else small), t
 
-    def reiniciar(self, pos=(0.0, 0.0)) -> None:
-        """Toma la posición de ahora como pos (por defecto, el origen)."""
+    def reiniciar(self, pos=(0.0, 0.0)) -> np.ndarray:
+        """Toma la posición de ahora como pos (por defecto, el origen). Devuelve cuánto se movió el origen."""
         with self.lock:
+            delta = np.asarray(pos, float) - self.pos
             self.pos[:] = pos
+            return delta
 
     def estado(self) -> tuple[np.ndarray, np.ndarray]:
         with self.lock:
             return self.pos.copy(), self.vel.copy()
+
+    def medida(self) -> tuple[float, np.ndarray]:
+        """(tiempo en que llegó la última imagen buena, posición con ella)."""
+        with self.lock:
+            return self.t_ok, self.pos.copy()
 
     def valido(self, now: float) -> bool:
         return now - self.t_ok < 0.5
@@ -198,7 +226,8 @@ def rot_mod90(angle: float) -> float:
 
 class MirrorMission(TagMission):
     LOG_EXTRA = ["n_tags", "objetivo", "tag_adelante", "tag_derecha", "tag_giro", "altura_espejo",
-                 "piso_der", "piso_ade", "piso_vder", "piso_vade", "piso_q", "piso_ider", "piso_iade"]
+                 "piso_der", "piso_ade", "piso_vder", "piso_vade", "piso_q", "piso_ider", "piso_iade",
+                 "kal_der", "kal_ade", "kal_dder", "kal_dade", "kal_nis"]
 
     def __init__(self, tello, cfg: FlightConfig, mcfg: MissionConfig, ecfg: MirrorConfig,
                  log_path: Path, calib: Path) -> None:
@@ -220,6 +249,14 @@ class MirrorMission(TagMission):
         self._piso_lejos: deque = deque()  # (t, distancia a donde debería estar) mientras corrige
         self._piso_i = np.zeros(2)  # parte integral (derecha, adelante), en rc
         self._piso_t = None  # última vez que corrigió
+        e = ecfg
+        self._modelo = ModeloRc(e.kalman_ganancia, e.kalman_zona, e.kalman_respuesta_s, e.kalman_atraso_mando_s,
+                                e.kalman_atraso_video_s)
+        self._kal = KalmanPiso(self._modelo, e.kalman_q_deriva, e.kalman_q_vel, e.kalman_r_cm, e.kalman_deriva_inicial)
+        self._kal_t_ok = -math.inf
+        self._kal_apagado = e.piso_control != "kalman"
+        if e.piso_control not in ("pid", "kalman"):
+            raise SystemExit(f'piso_control debe ser "pid" o "kalman", no {e.piso_control!r}')
 
     # ---- visión: imagen volteada, posición del tag sobre el piso
     def on_frame(self, bgr: np.ndarray, t: float) -> None:
@@ -271,6 +308,10 @@ class MirrorMission(TagMission):
     def status_lines(self) -> list[str]:
         piso = ("sostener piso: APAGADO (se alejo demasiado)" if self._piso_apagado else
                 f"sostener piso: {'si' if self.e.sostener_piso else 'no'}, calidad {self.piso.q:.2f}")
+        if self.e.piso_control == "kalman":
+            d = self._kal.x[:, 2]
+            piso += (" | kalman APAGADO, con PID" if self._kal_apagado else
+                     f" | kalman: deriva {d[0]:+.0f} lado, {d[1]:+.0f} adelante cm/s")
         return ["ESPEJO: vista hacia abajo, SIN vista al frente" + (" (quieto)" if self.e.quieto else ""), piso] \
             + super().status_lines()
 
@@ -282,7 +323,15 @@ class MirrorMission(TagMission):
         (pr, pf), (vr, vf) = self.piso.estado()
         return [len(v.dets) if v else "", tid or "", *cells,
                 f"{pr:+.1f}", f"{pf:+.1f}", f"{vr:+.1f}", f"{vf:+.1f}", f"{self.piso.q:.2f}",
-                f"{self._piso_i[0]:+.1f}", f"{self._piso_i[1]:+.1f}"]
+                f"{self._piso_i[0]:+.1f}", f"{self._piso_i[1]:+.1f}",
+                *self._kal_log()]
+
+    def _kal_log(self) -> list:
+        """Kalman: posición predicha y deriva estimada (cm, cm/s) y NIS; vacío si no se usa."""
+        if self.e.piso_control != "kalman" or self._kal.t is None:
+            return [""] * 5
+        p, _, d = self._kal.prediccion(time.monotonic())
+        return [f"{p[0]:+.1f}", f"{p[1]:+.1f}", f"{d[0]:+.1f}", f"{d[1]:+.1f}", f"{self._kal.nis:.2f}"]
 
     # ---- sostener la posición con el piso
     def _goto(self, state: str, reason: str) -> None:
@@ -295,12 +344,51 @@ class MirrorMission(TagMission):
                 fl = self._tag_visto()
                 if fl is not None:  # la línea del tramo pasa por el tag ejecutado, no por donde quedó el dron
                     pos = (-fl[1], -fl[0])  # el dron respecto al tag
-            piso.reiniciar(pos)
+            delta = piso.reiniciar(pos)
             getattr(self, "_piso_lejos", deque()).clear()
+            if hasattr(self, "_kal"):
+                self._kal.desplazar(delta)  # el Kalman sigue el mismo origen; la deriva se queda
         if state == "TAKEOFF" and hasattr(self, "_piso_i"):
             # vuelo nuevo: la integral empieza con lo que se sabe de este dron (piso_i_inicial). Entre
             # tramos se conserva: la deriva es del dron y va con él (siempre a su derecha)
             self._piso_i[:] = self.e.piso_i_inicial
+            if hasattr(self, "_kal"):
+                self._kal.reiniciar()  # el Kalman, desde la deriva inicial (0: la mide al despegar)
+
+    def _step(self) -> None:
+        # el Kalman se alimenta en todos los estados (también despegando y centrándose), para
+        # tener la deriva medida cuando le toque sostener
+        t_ok, pos = self.piso.medida()
+        if t_ok > self._kal_t_ok:
+            self._kal_t_ok = t_ok
+            self._kal.medida(t_ok, pos)
+        super()._step()
+
+    def _kalman_mando(self, lr: float, fb: float, lado: bool, adelante: bool, now: float) -> tuple[int, int]:
+        """rc (lr, fb) con el Kalman: a lo que pide la misión en cada eje se le suma la velocidad
+        que regresa al dron a donde debe estar (lado/adelante = sostener ese eje) y cancela la deriva."""
+        e, m = self.e, self._modelo
+        p, v, d = self._kal.prediccion(now)
+        out = []
+        for k, (rc, sostener) in enumerate(((lr, lado), (fb, adelante))):
+            if not sostener:
+                out.append(rc)
+                continue
+            vc = m.vel(rc) + vel_eje(p[k], v[k], d[k], e.kalman_kp, e.kalman_kd)
+            r = m.rc(vc)
+            r = max(-e.piso_max, min(e.piso_max, r))
+            out.append(int(round(r)) if abs(r) > m.zona + 0.5 else 0)
+        return out[0], out[1]
+
+    def _kalman_centrar(self, lr: float, fb: float, now: float) -> tuple[int, int]:
+        """Centrándose sobre el tag: sumar a su mando la velocidad que cancela la deriva estimada."""
+        m, d = self._modelo, self._kal.prediccion(now)[2]
+        out = []
+        for k, rc in enumerate((lr, fb)):
+            r = m.rc(m.vel(rc) - d[k])
+            r = max(-self.e.piso_max, min(self.e.piso_max, r))
+            out.append(int(round(r)) if abs(r) > m.zona + 0.5 else 0)
+        return out[0], out[1]
 
     def _tag_visto(self):
         """(adelante, derecha, giro) del tag objetivo si se ve ahora, si no None."""
@@ -341,7 +429,22 @@ class MirrorMission(TagMission):
                     else f"esta a {lejos:.0f} cm"
                 self.reason += f" | sostener_piso APAGADO: {why} (revisar la medida del piso)"
                 print(f"[vuelo] sostener_piso apagado: {why}")
-            else:
+            elif not self._kal_apagado:
+                k = self._kal
+                d = k.prediccion(now)[2]
+                if k.nis > e.kalman_nis_max or np.max(np.abs(d)) > e.kalman_deriva_max:
+                    # lo medido ya no cuadra con el modelo: regresar al PID
+                    self._kal_apagado = True
+                    m = self._modelo
+                    self._piso_i[:] = [max(-e.piso_i_max, min(e.piso_i_max, m.rc(x))) for x in d]
+                    why = (f"no cuadra con lo medido (NIS {k.nis:.1f})" if k.nis > e.kalman_nis_max
+                           else f"deriva estimada imposible ({d[0]:+.0f}, {d[1]:+.0f} cm/s)")
+                    self.reason += f" | kalman APAGADO: {why}, sigo con el PID"
+                    print(f"[vuelo] kalman apagado: {why}")
+                else:
+                    self._piso_t = now
+                    lr, fb = self._kalman_mando(lr, fb, True, self.state != "ADVANCE" or fb == 0, now)
+            if not self._piso_apagado and self._kal_apagado:
                 dt = now - self._piso_t if self._piso_t is not None and now - self._piso_t < 0.5 else 0.0
                 self._piso_t = now
                 lr = lr + self._piso_mando(0, pr, vr, dt)
@@ -355,7 +458,14 @@ class MirrorMission(TagMission):
             if fl is not None:
                 vf, vr = self._tag_velocity(v.t, fl[0], fl[1])
                 lr, fb = lr + self._center_axis(fl[1], vr), fb + self._center_axis(fl[0], vf)
+            if e.kalman_centrar and not self._kal_apagado and piso is not None and piso.valido(time.monotonic()):
+                lr, fb = self._kalman_centrar(lr, fb, time.monotonic())
+        elif e.kalman_centrar and self.state == "APPROACH" and not self._kal_apagado and piso is not None \
+                and piso.valido(time.monotonic()):
+            lr, fb = self._kalman_centrar(lr, fb, time.monotonic())
         super()._send_rc(lr, fb, ud, yaw)
+        # lo que de verdad se mandó (con los límites); despegando, el Tello no hace caso del rc
+        self._kal.mando(time.monotonic(), (0, 0) if self.state == "TAKEOFF" else self.rc[:2])
 
     # ---- avanzar mirando el piso
     def _advance(self, yaw: float, now: float, elapsed: float) -> None:
