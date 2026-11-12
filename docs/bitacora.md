@@ -5,26 +5,23 @@ Las bitácoras de vuelo (`logs/*.csv`) y los videos están en la laptop, no en e
 
 ## Pendiente ahora
 
-1. **Siguiente tarea principal (código): mejorar todavía más la corrección de la deriva y el
-   PID, pasos 3 a 6** (propuestos el 12-nov). Cómo funciona hoy y cómo se ajusta:
-   [`arquitectura.md`](arquitectura.md).
-   - **Paso 3, compensar el atraso:** en la P de `_piso_mando`, usar la posición predicha
-     (posición + velocidad × ~0.3 s; parámetro nuevo `piso_atraso_s`) en vez de la atrasada.
-     Con un dron sin deriva no cambia nada.
-   - **Paso 4, barrido de ganancias en el simulador:** probar combinaciones de `piso_kp`,
-     `piso_kd`, `piso_ki` y `piso_min` con `espejo_estacionario` y `espejo_circuito`, con
-     `--dron 1` y `--dron 7`, y elegir. Solo cambia números del JSON.
-   - **Paso 5, mandos más finos:** en vez de "0 o al menos 10", modular (por ejemplo, 10 el
-     40 % del tiempo para pedir ~4) y quitar el vaivén de ~10 cm del Tello 1. Revisar en el
-     laboratorio que el Tello no se tambalee con eso.
-   - **Paso 6, filtro de Kalman por eje:** estima posición, velocidad y deriva con el modelo
-     rc → velocidad, y reemplaza a la integral. Volver al PID si crecen sus diferencias entre
-     lo predicho y lo medido.
-
-   **Cuidado:** lo que supone una deriva sin medirla (la integral precargada, la deriva
-   inicial del Kalman) empuja de más a un dron que ya no deriva; esos valores van por dron.
-   Antes del barrido conviene tener las bitácoras de E2b (punto 2) y reajustar con ellas el
-   simulador; si no, se afina a una deriva simulada.
+1. **Decidir entre PID y Kalman** (branch `kalman`, 12-nov noche; ver la entrada de abajo).
+   El paso 6 (filtro de Kalman) está hecho **en la branch `kalman`, no en `main`**, y ya trae
+   los pasos 3 (compensar el atraso) y 5 (mandos finos). En el simulador gana o empata en
+   todo, pero el simulador usa el mismo modelo del dron que el Kalman: falta el laboratorio.
+   - En la branch (`git checkout kalman`), E2b con cada dron dos veces: con
+     `"piso_control": "pid"` y con `"kalman"` (`config/mission_espejo.json`). Ver si el Tello
+     se tambalea con los mandos finos, y si `kal_dder` (la deriva estimada) se parece a la que
+     medimos el 11-nov (Tello 7 ~12 cm/s, Tello 1 ~4).
+   - Luego E5 con el que salga mejor. Si gana el Kalman, juntar la branch a `main`.
+   - Si se queda el PID: del barrido rápido, un primer candidato es `piso_kp` 1.2,
+     `piso_kd` 1.2, `piso_ki` 0.3 (Tello 7 simulado: 8 de 12 circuitos contra 5). Los pasos 3
+     y 5 solos casi no mejoraron al PID (ver abajo).
+   - El Kalman arranca con deriva 0 y la mide al despegar: no supone una deriva por dron
+     (`piso_i_inicial` solo cuenta para el PID).
+   - **Ojo con el seguro** `piso_alejandose_cm`: con las rachas del Tello 7 simulado se
+     dispara solo en 1–2 de cada 12 estacionarios (con cualquier control) y el dron se va
+     3–5 m. Si pasa en el laboratorio, es para hablarlo; no se cambió.
 2. **Probar en el laboratorio `sostener_piso` y `sostener_tag`** (sin volar todavía).
    - **E2b primero, con `--dron N`** ([`laboratorio.md`](laboratorio.md)), con cada dron;
      luego E5.
@@ -56,6 +53,62 @@ Las bitácoras de vuelo (`logs/*.csv`) y los videos están en la laptop, no en e
    clip, reajustar `config/sim_tello.json` ([`simulador.md`](simulador.md)). Las bitácoras
    del 11-nov dicen en `sesiones/2026-11-11/notas.md` qué dron fue cada una. Falta medir bien
    la deriva durante el despegue: en el simulador se corre más que en lo real.
+
+## 12-nov (noche) — Filtro de Kalman en la branch `kalman`, comparado en el simulador
+
+Todo en el simulador, en la branch `kalman` (sale de `main` en `63df8f4`). `main` no cambió.
+
+- **Qué es:** `scripts/kalman_piso.py`, con `"piso_control": "kalman"`. Por eje estima
+  posición, velocidad y deriva con el modelo rc → velocidad del simulador; aplica cada medida
+  en el momento de la imagen y predice hasta ahora (paso 3), y pide el rc exacto con el
+  inverso del modelo (rc 6, 7, 8…: paso 5). Con `kalman_centrar` (prendido) suma la deriva
+  estimada también al centrarse sobre el tag. Si deja de cuadrar con lo medido, regresa al
+  PID. Cómo funciona y cómo ajustarlo: [`arquitectura.md`](arquitectura.md).
+- **Cómo se comparó:** `sim/comparar_control.py` (nuevo), con las mismas semillas para todas
+  las variantes: 4 corridas por caso, y 12 con el Tello 7. "PID afinado" es el mejor del
+  barrido rápido (`piso_kp` 1.2, `piso_kd` 1.2, `piso_ki` 0.3), para que la comparación sea
+  justa con lo que daría el paso 4.
+
+| Simulador completo | PID (hoy) | PID afinado | Kalman | Kalman + centrar |
+|---|---|---|---|---|
+| Estacionario, dron sano: distancia media al despegue | 11 cm | 7 | 6 | 6 |
+| Estacionario, Tello 1 | 10 cm | 6 | 7 | 6 |
+| Estacionario, Tello 7 (mediana de 12) | 20 cm | 19 | 22 | 20 |
+| Circuito, sano y Tello 1: completas | 8 de 8 | 8 de 8 | 8 de 8 | 8 de 8 |
+| Circuito, sano y Tello 1: distancia real al tag al ejecutar (mediana) | 8 cm | 5–8 | 8–9 | **4–5** |
+| Circuito, Tello 7: completas | 5 de 12 | 8 de 12 | 5 de 12 | **10 de 12** |
+| Circuito, Tello 7: distancia al tag al ejecutar (mediana) | 21 cm | 24 | 29 | **9** |
+| Mandos, dron sano: cuánto cambian (rc/s) | 18–20 | 24–32 | 33–43 | 30–42 |
+
+- **Kalman + centrar es el mejor en el circuito.** Casi toda la mejora sale de cancelar la
+  deriva al centrarse: sin eso, el Kalman completa lo mismo que el PID con el Tello 7.
+- **Quieto, con dron sano o Tello 1,** el Kalman queda a 6–7 cm contra 10–11 del PID de hoy;
+  el PID afinado también llega a 6–7.
+- **Con el Tello 7 quieto, todos quedan en ~20 cm.** El simulador le mete rachas de deriva
+  de 20–27 cm/s que duran segundos, más de lo que da el Tello con rc 20 (~22 cm/s): ningún
+  control las alcanza. Kalman y Kalman + centrar son lo mismo sin tags, así que su diferencia
+  (22 contra 20) es el ruido entre corridas.
+- **El Kalman manda más seguido** (33–43 rc/s de cambio contra 18–20), pero en pasos chicos
+  (rc 6–9) en vez de saltos de 0 a 10. Si el Tello se tambalea con eso, se ve en E2b.
+- **De dónde sale la mejora** (modelo rápido sin video, 10 semillas): los pasos 3 y 5
+  aplicados al PID con sus ganancias de hoy casi no cambian nada (11 → 10.5–13.6 cm con dron
+  sano). Un Kalman con mandos "0 o 10" es igual de preciso que con mandos finos, solo más
+  brusco. La mejora viene de que el filtro sabe qué hace cada rc. Afinando el PID (paso 4) se
+  iguala la precisión con dron sano, pero con mandos más del doble de bruscos (96 contra 42
+  rc/s en ese modelo).
+- **Si el dron no es como el modelo** (2 corridas por caso, quieto): con el dron sano, el
+  Kalman queda a 5–8 cm en todos los casos y el PID a 8–14. Con el Tello 7, el Kalman queda
+  igual o mejor: video atrasado 0.30 s, 16 contra 32 cm; zona muerta 7, 17 contra 28; rc 30 %
+  más fuerte, 10 contra 18. Con el dron 30 % más débil, los dos se van (Kalman 65 cm, PID
+  187); ahí la deriva le gana a rc 20.
+- **Medida al revés** (`--set espejo=h`): el seguro de siempre (`piso_alejandose_cm`) apaga la
+  corrección en las 8 corridas, con los dos controles. El Kalman empuja más fuerte y se aleja
+  más antes de que se apague: con dron sano, distancia media de 105–182 cm contra 33–103.
+- **Se corrigió en el camino:** el umbral de "deriva imposible" pasó de 40 a 50 cm/s (con 40,
+  una racha del Tello 7 lo apagó), y al apagarse el PID arranca desde `piso_i_inicial`.
+- **Herramientas nuevas en el simulador:** `--set`, `--sim`, `--semilla`, `--log-sufijo`, la
+  distancia real al tag al ejecutar y `sim/comparar_control.py`
+  ([`simulador.md`](simulador.md)).
 
 ## 12-nov — La medida del piso ya no se engaña al subir
 
