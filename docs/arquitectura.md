@@ -184,6 +184,10 @@ constante de tiempo `kalman_respuesta_s`. Lo que se mueve de más o de menos es 
   sigue siendo el de siempre; solo ya no pelea contra la deriva. **De aquí sale casi toda la
   mejora en el circuito:** con el Tello 7 simulado, sin esto el Kalman completó lo mismo que
   el PID (5 de 12) y con esto, 10 de 12.
+- **Avanzando, no corrige de lado por poco** (`kalman_lado_avanzando`, 4 cm/s). Mandar de lado
+  y adelante a la vez hunde al Tello ~8 cm/s (11-nov). Con correcciones chicas todo el tiempo,
+  el sostener altura no alcanzaba y volaba a 88–95 cm. Ahí el tag gastado de `espejo_gastado`
+  no se detecta nunca, y a 95–110 cm a veces. Pasó de 0 de 4 a 2 de 4, como `main`.
 - **Para usarlo:** en `config/mission_espejo.json`, `"piso_control": "kalman"`. Está en
   `"pid"` hasta probarlo en el laboratorio.
 - **Bitácora:** `kal_der`, `kal_ade` (posición predicha), `kal_dder`, `kal_dade` (deriva

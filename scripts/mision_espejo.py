@@ -109,6 +109,10 @@ class MirrorConfig:
     # explica como deriva y el NIS no lo ve; así llega a 49–83). Apagar y usar el PID. Con el Tello 7
     # simulado (deriva 12 + rachas de ~10) llega hasta ~43 en vuelos normales: con 40 se apagaba solo
     kalman_deriva_max: float = 50.0
+    # avanzando, una corrección de lado menor a esto (cm/s) no se manda: lado y adelante a la vez
+    # hunden al Tello ~8 cm/s (11-nov) y, con correcciones chicas todo el tiempo, volaba a 88–95 cm
+    # en vez de 100 y no veía los tags gastados (espejo_gastado: 0 de 4)
+    kalman_lado_avanzando: float = 4.0
     kalman_centrar: bool = True  # al centrarse y sostenerse sobre el tag, sumar lo que cancela la deriva (solo con el Kalman)
     buscar_s: float = 4.0  # tag perdido al centrarse: buscarlo donde debe estar esto, luego seguir avanzando
     vista_adelante_deg: float = 0.0  # inclinación del espejo: medirla con test_tags.py --espejo
@@ -375,7 +379,10 @@ class MirrorMission(TagMission):
             if not sostener:
                 out.append(rc)
                 continue
-            vc = m.vel(rc) + vel_eje(p[k], v[k], d[k], e.kalman_kp, e.kalman_kd)
+            corr = vel_eje(p[k], v[k], d[k], e.kalman_kp, e.kalman_kd)
+            if k == 0 and fb and abs(corr) < e.kalman_lado_avanzando:
+                corr = 0.0  # avanzando: no mandar de lado por poco (hundiría al dron)
+            vc = m.vel(rc) + corr
             r = m.rc(vc)
             r = max(-e.piso_max, min(e.piso_max, r))
             out.append(int(round(r)) if abs(r) > m.zona + 0.5 else 0)
