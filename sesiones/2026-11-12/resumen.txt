@@ -1,4 +1,4 @@
-Resumen de sesión — 2026-11-12 14:37 — 12 bitácoras
+Resumen de sesión — 2026-11-12 14:45 — 14 bitácoras
 
 == espejo_20261112_131739.csv  (espejo)
    vuelo 40 s | batería 84% -> 65% | temp max 65 C
@@ -109,6 +109,21 @@ Resumen de sesión — 2026-11-12 14:37 — 12 bitácoras
    problemas: acercamiento incompleto (por tiempo)
    VEREDICTO: OK
 
+== espejo_20261112_144117.csv  (espejo)
+   vuelo 35 s | batería 92% -> 76% | temp max 71 C
+   despegue: en el aire a 66 cm (estable, ok del Tello, despegue 6.2 s)
+   altura en vuelo: min 64 cm, max 110 cm
+   final: LANDING — sin tags debajo por 20 s: fin
+   VEREDICTO: REVISAR
+
+== espejo_20261112_144216.csv  (espejo)
+   vuelo 36 s | batería 67% -> 66% | temp max 77 C
+   despegue: en el aire a 66 cm (sin estabilizar, ok del Tello, despegue 5.5 s)
+   altura en vuelo: min 65 cm, max 112 cm
+   final: DONE — aterrizado (sin tags debajo por 20 s: fin)
+   VEREDICTO: REVISAR
+
 == enlace (test_tags.py)
    resumen_20261112_142856.txt: enlace: 999 frames en 35 s | intervalo mediano 34 ms | > 100 ms: 1 (1.7/min) | > 300 ms: 0 | maximo 101 ms
+   resumen_20261112_144053.txt: enlace: 1046 frames en 35 s | intervalo mediano 33 ms | > 100 ms: 0 (0.0/min) | > 300 ms: 0 | maximo 96 ms
 

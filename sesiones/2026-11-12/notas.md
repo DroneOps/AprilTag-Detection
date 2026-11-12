@@ -16,3 +16,7 @@ PID en vuelo real: mandos 14-32 rc/s (el simulador da 18-28), altura al avanzar 
 ## 14:37
 
 PID1 Dron 1: Despues de detectar el primer tag este no continuo avanzando y se quedo en el mismo lugar, Kalman completo todo el circuito de manera correcta pero en el primer tag al intenter colocarse arriba del tag el dron se ponia un poco mas adelante de lo que debia, pero en general no tuvo tambaleos ni errores de deteccion.
+
+## 14:45
+
+Sesión vuelo estatico con dron 7: Con PID oscilo un poco en la posicion al mantenerse en hover pero al momento de aterrizar aterrizo a menos de 10 cm de distancia de donde habia despegado. En cambio con Kalman no oscilo tanto pero al final se movio de posicion y termino aterrizando a unos 30 cm en diagonal desde donde despego
