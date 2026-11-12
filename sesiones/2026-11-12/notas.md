@@ -20,3 +20,7 @@ PID1 Dron 1: Despues de detectar el primer tag este no continuo avanzando y se q
 ## 14:45
 
 Sesión vuelo estatico con dron 7: Con PID oscilo un poco en la posicion al mantenerse en hover pero al momento de aterrizar aterrizo a menos de 10 cm de distancia de donde habia despegado. En cambio con Kalman no oscilo tanto pero al final se movio de posicion y termino aterrizando a unos 30 cm en diagonal desde donde despego
+
+## 14:52
+
+Dron 7 K2 con PID: En la primera mision detecto de manera correcta el tag 1, pero al avanzar al tag dos se derivo a la derecha y lo perdio de la vista por lo que eventualmente aterrizo. En la segunda mision logro hacer el recorrido de manera correcta, no hubo muchas oscilaciones y no tuvo problemas para avanzar ni detectar los tags.

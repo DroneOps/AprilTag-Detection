@@ -94,3 +94,19 @@ espejo_20261112_144216.csv  14:42:16  quieto, 39 s en el aire
   altura sosteniendo: media 97 cm
   mandos: cambian 55 rc/s, 32% del tiempo al tope de lado
   deriva estimada por el Kalman: +16 lado, -1 adelante cm/s
+
+espejo_20261112_144749.csv  14:47:49  avanzando, 38 s en el aire
+  control: pid
+  tags ejecutados (distancia al tag según la cámara): 1 a 12 cm
+  de lado al avanzar: hasta 11 cm fuera de la línea del tramo
+  altura al avanzar: mínima 92, media 102 cm
+  mandos: cambian 19 rc/s, 0% del tiempo al tope de lado
+  integral del PID al final: +2.2 lado, -13.3 adelante (rc)
+
+espejo_20261112_144900.csv  14:49:00  avanzando, 64 s en el aire
+  control: pid
+  tags ejecutados (distancia al tag según la cámara): 1 a 4 cm, 2 a 6 cm, 7 a 6 cm
+  de lado al avanzar: hasta 18 cm fuera de la línea del tramo
+  altura al avanzar: mínima 88, media 97 cm
+  mandos: cambian 30 rc/s, 0% del tiempo al tope de lado
+  integral del PID al final: -1.0 lado, -9.5 adelante (rc)
