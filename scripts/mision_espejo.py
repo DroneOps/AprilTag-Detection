@@ -232,7 +232,7 @@ def rot_mod90(angle: float) -> float:
 class MirrorMission(TagMission):
     LOG_EXTRA = ["n_tags", "objetivo", "tag_adelante", "tag_derecha", "tag_giro", "altura_espejo",
                  "piso_der", "piso_ade", "piso_vder", "piso_vade", "piso_q", "piso_ider", "piso_iade",
-                 "kal_der", "kal_ade", "kal_dder", "kal_dade", "kal_nis"]
+                 "kal_der", "kal_ade", "kal_dder", "kal_dade", "kal_nis", "piso_modo"]
 
     def __init__(self, tello, cfg: FlightConfig, mcfg: MissionConfig, ecfg: MirrorConfig,
                  log_path: Path, calib: Path) -> None:
@@ -329,7 +329,16 @@ class MirrorMission(TagMission):
         return [len(v.dets) if v else "", tid or "", *cells,
                 f"{pr:+.1f}", f"{pf:+.1f}", f"{vr:+.1f}", f"{vf:+.1f}", f"{self.piso.q:.2f}",
                 f"{self._piso_i[0]:+.1f}", f"{self._piso_i[1]:+.1f}",
-                *self._kal_log()]
+                *self._kal_log(), self._piso_modo()]
+
+    def _piso_modo(self) -> str:
+        """Quién sostiene la posición con el piso: "pid", "kalman", "apagado" (el seguro la
+        apagó) o "no" (sostener_piso en false). Para comparar vuelos (scripts/resumen_piso.py)."""
+        if not self.e.sostener_piso:
+            return "no"
+        if self._piso_apagado:
+            return "apagado"
+        return "pid" if self._kal_apagado else "kalman"
 
     def _kal_log(self) -> list:
         """Kalman: posición predicha y deriva estimada (cm, cm/s) y NIS; vacío si no se usa."""
