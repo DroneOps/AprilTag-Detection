@@ -73,6 +73,26 @@ Solo 2.4 GHz. `test_tags.py` imprime al salir una línea `enlace:` con frames at
 (> 100 ms) y el máximo. Apagar el ahorro de energía del WiFi de la laptop
 (`sudo iw dev <interfaz> set power_save off`) puede ayudar.
 
+## Deriva estando quieto (11-nov)
+
+Medida con el piso visto por el espejo (`sim/deriva_video.py`, aproximada), con rc en 0:
+
+| Dron | Constante | Aleatoria (en 1 s) |
+|---|---|---|
+| Tello 1 | ~3.7 cm/s a la derecha (también sin espejo) | ~5 cm/s |
+| Tello 7 | ~12 cm/s a la derecha; en estacionario llegó a 35 cm en 1 s; nunca se queda quieto | ~10 cm/s |
+
+Sin ventiladores ni aire. Con esa deriva, a 100 cm (±52 cm de vista de lado) el primer tag
+aparece en la orilla o no aparece. Con rc 10–15 el dron corrige a solo ~7–14 cm/s, así que
+el Tello 7 no alcanza a corregir.
+
+- **Al girar 90° con rc 60** se corrió 26–42 cm (~15 cm/s) hacia lados distintos cada vez.
+- **Con lado y adelante a la vez se hunde** ~5–7 cm/s; pidiendo solo adelante, no.
+- **Inclinación:** con rc ±10–15 el Tello reporta 0° de roll y pitch; a esas velocidades
+  casi no se inclina.
+- **El Tello 1 caliente (68–78 °C)** no despegaba (no pasaba de 16 cm) o "no obedecía"
+  (bajaba 25–60 cm pidiéndole subir). Frío, a 55 °C, despegó bien.
+
 ## Espejo
 
 - Un tag visto en el espejo **no se decodifica**: hay que voltear la imagen

@@ -21,9 +21,9 @@ Las bitácoras de vuelo (`logs/*.csv`) y los videos están en la laptop, no en e
    Volarlo solo abajo de 65 °C y revisar en la app si es el que avisaba "posicionamiento
    visual no disponible".
 4. **Al perder un tag al centrarse, buscarlo en vez de aterrizar** (4 corridas del 11-nov
-   terminaron así). En el simulador, agregar una deriva constante hacia un lado y la vista
-   que se inclina al moverse, para reproducirlo: la deriva real resultó mayor que la
-   simulada (aleatoria, ~5 cm/s) y siempre hacia el mismo lado.
+   terminaron así). El simulador ya lo reproduce con `--dron 1` y `--dron 7` (deriva medida
+   de cada dron): probar ahí cualquier cambio de la misión antes de volar. Falta medir bien la
+   deriva durante el despegue: en el simulador se corre más que en lo real.
 5. Con espejo, en orden: **E5 → E6 → E7** ([`laboratorio.md`](laboratorio.md)). Ajustar
    `advance_timeout_s` y `cruise_alt_cm` según la pista. Enfriar entre corridas: el 11-nov
    se volaron 27 en 26 min.

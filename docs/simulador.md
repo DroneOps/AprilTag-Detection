@@ -35,8 +35,23 @@ completa queda en `sim/logs/<escenario>.csv`, con el mismo formato que las de vu
 ## Qué modela: `config/sim_tello.json`
 
 Cómo se comporta el dron simulado está en **`config/sim_tello.json`**, ajustado con las
-bitácoras reales por `sim/comparar_vuelos.py` (ver abajo). Con `--ideal` se usa el modelo
-de antes del 11-nov, que era más optimista:
+bitácoras reales por `sim/comparar_vuelos.py` (ver abajo). Es un **dron sano**: la dinámica
+medida y una deriva aleatoria, sin irse siempre hacia un lado. Con eso corre la regresión.
+
+**Perfiles por dron.** Lo que cambia en cada dron (sobre todo cuánto se va solo hacia un
+lado) va en `config/sim_tello_dron<N>.json`, encima de la base:
+
+```bash
+python sim/sim_world.py espejo_circuito --dron 7
+```
+
+| Perfil | Deriva constante | Deriva aleatoria | Medida |
+|---|---|---|---|
+| base (`sim_tello.json`) | 0 | ~5.4 cm/s | — |
+| `--dron 1` | **+3.7 cm/s a la derecha** | ~5.4 cm/s | 11-nov, `sim/deriva_video.py` |
+| `--dron 7` | **+11.7 cm/s a la derecha** | ~10.4 cm/s | 11-nov, `sim/deriva_video.py` |
+
+Con `--ideal` se usa el modelo de antes del 11-nov, que era más optimista:
 
 ```bash
 python sim/sim_world.py espejo_circuito --ideal
@@ -49,8 +64,9 @@ python sim/sim_world.py espejo_circuito --ideal
 | Giro | `0.75·(\|rc\| − 14)` °/s: con rc 15 casi no gira | `0.73·(\|rc\| − 6.6)` |
 | Tras soltar un giro | sigue girando ~8° más, despacio (~2 s) | se detiene en ~0.15 s |
 | Atraso del video | 170 ms | 0 |
-| Deriva con rc en 0 | ~5 cm/s, aleatoria | ~2 cm/s |
-| Hundimiento al avanzar | 1 cm/s | 15 cm/s solo en piso |
+| Deriva con rc en 0 | ~5.4 cm/s aleatoria, más la constante de cada dron (también al despegar) | ~2 cm/s |
+| Hundimiento al avanzar | 1 cm/s; con lado y adelante a la vez, ~8 cm/s más | 15 cm/s solo en piso |
+| Al girar fuerte | se corre ~12 cm/s hacia un lado al azar (giros de 90° del 11-nov: 26–42 cm) | nada |
 | Despegue | sube a 65–74 cm (+9 de pico); "ok" a los 4.5–7.8 s | 65 cm; "ok" a los 2.2 s |
 | Temperatura | empieza en 65 °C y sube 6.5 °C/min volando | siempre 65 °C |
 
@@ -71,6 +87,15 @@ Aun así, el simulador no modela desenfoque, IMU descalibrado, hélices dañadas
 sistema de visión de la panza. Si algo falla en simulación, seguro falla en el dron; al
 revés no.
 
+**Qué tanto reproduce el 11-nov** (`espejo_circuito`, 4 corridas por perfil):
+
+- `--dron 7`: ninguna ve un tag; se va 3–4.5 m a la derecha. En el laboratorio, ninguna
+  corrida del Tello 7 sin ayuda ejecutó un tag, y varias se pararon porque se iba contra la
+  malla.
+- `--dron 1`: se salta el tag 1 por la deriva del despegue y encuentra primero el 2, como las
+  corridas reales 1 y 1.4. El simulador se corre algo más (avanza ~60–100 cm corrido; en lo
+  real, ~35–50): falta medir mejor la deriva durante el despegue.
+
 ## ¿Se parece al dron? `sim/comparar_vuelos.py`
 
 Le pasa al modelo del simulador los mismos `rc` que recibió el dron en vuelos reales y
@@ -86,6 +111,22 @@ python sim/comparar_vuelos.py sesiones/2026-11-09 --ajustar            # sugiere
 ```bash
 python sim/comparar_vuelos.py sesiones/2026-11-09 --ajustar --guardar  # y los escribe
 ```
+
+Con `--dron N` compara contra el perfil de ese dron y, con `--ajustar --guardar`, escribe
+solo lo que cambia en `config/sim_tello_dron<N>.json`. Las bitácoras de cada dron salen de la
+tabla de `sesiones/<fecha>/notas.md`.
+
+**La deriva** casi no se ve en las bitácoras: el tag solo está a la vista al final de cada
+tramo. Se mide mejor con el video, `sim/deriva_video.py`. Toma el piso visto por el espejo
+con rc en 0, separa la deriva constante de la aleatoria por dron y da los valores para el
+JSON. Necesita los videos en la laptop; no se suben al repo.
+
+```bash
+python sim/deriva_video.py sesiones/2026-11-11
+```
+
+Es una medida aproximada. De lado coincide en signo con la del tag en 72 % de los tramos;
+hacia adelante es peor si las rayas del piso van en la dirección del avance.
 
 **Córrelo al terminar cada sesión de laboratorio** ([`laboratorio.md`](laboratorio.md)).
 Si cambias de Tello o de clip, reajusta con los vuelos nuevos. `--ajustar` solo mueve un
@@ -125,6 +166,15 @@ Los 46 escenarios con `config/sim_tello.json` contra `--ideal` (bitácoras local
   20 cm/s, y con lo que de verdad sube el Tello (~0.4·rc) no lo compensa; aterriza a salvo.
 - **Pared (ya no se usa):** `circuito`, `ladeado`, `angulo38_deriva` y `tag_alto` ya no
   completan, y `pausa` choca con la pared. No se corrigió: esa misión ya no es prioridad.
+
+**Con la base del 11-nov (tarde)** (deriva aleatoria también al despegar, hundimiento con
+mando combinado y corrimiento al girar), en `sim/logs/regresion_perfiles.txt`:
+
+- sin choques;
+- de los 16 escenarios con espejo, 12 ejecutan algún tag, igual que antes;
+- cambiaron varios de pared y `piso_lado`. Revisados, `pausa`, `espejo_gastado` y `piso_lado`
+  fallaron por la deriva aleatoria del despegue (`pausa` se corrió 39 cm antes de avanzar),
+  no por el código.
 
 Con la deriva aleatoria **el resultado puede cambiar entre corridas**. Si un escenario
 falla, repítelo (`python sim/sim_world.py espejo_inicio espejo_inicio espejo_inicio`) para

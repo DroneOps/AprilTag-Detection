@@ -104,7 +104,8 @@ Fernando sigue el proyecto por GitHub. Nada debe quedarse solo en la laptop.
 | `scripts/mission_tags.py` + `config/mission_tags.json` | base de las misiones: acciones de cada tag, flip seguro, sostener altura, "el dron no obedece" |
 | `scripts/first_flight.py` + `config/flight.json` | vuelo base, despegue, seguridad, HMI, bitácora; prueba de estacionario, giro y flip |
 | `scripts/test_tags.py` | visión: detector, pose, `--espejo`; prueba sin volar |
-| `sim/sim_world.py` + `config/sim_tello.json` | simulador 3D con el detector y la misión reales; el dron simulado se comporta como dice el JSON (`--ideal`: el modelo optimista de antes) |
+| `sim/sim_world.py` + `config/sim_tello.json` | simulador 3D con el detector y la misión reales; el dron simulado se comporta como dice el JSON (un dron sano). `--dron 1` / `--dron 7` agregan la deriva de cada dron (`config/sim_tello_dron<N>.json`); `--ideal`, el modelo optimista de antes |
+| `sim/deriva_video.py` | mide cuánto se va solo cada dron con el piso visto por el espejo en los videos (`--record`); da los valores para `config/sim_tello_dron<N>.json` |
 | `sim/prueba_desgaste.py` | detección de tags gastados (desteñidos, manchas, pedazos faltantes) sin volar; antes de tocar el detector, correrla junto con `test_tags.py --selftest` |
 | `sim/comparar_vuelos.py` | compara el simulador con vuelos reales y reajusta `config/sim_tello.json`; correr al cerrar cada sesión |
 | `scripts/resumen_vuelos.py`, `scripts/traza_vuelo.py` | analizar vuelos |
