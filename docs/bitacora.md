@@ -5,36 +5,50 @@ Las bitácoras de vuelo (`logs/*.csv`) y los videos están en la laptop, no en e
 
 ## Pendiente ahora
 
-1. **Probar en el laboratorio los cambios del 9-nov (noche), sin volar todavía:** rumbo más
-   firme tras los giros (`heading_min` 20), centrado de ≤12 cm con máximo 8 s, y
-   `ignorar_inicio` en `false`. Repetir **E5** sobre la pista del seguidor de línea, con el
-   dron frío y la batería arriba de 70 %.
-2. **Si se sigue yendo a la derecha al avanzar sin ver tags:** probar `advance_lr` en -10 o
-   -15 (`config/mission_espejo.json`) y revisar si hay ventilador o corriente de aire. La
-   solución de fondo propuesta, sin hacer: corregir la deriva con el **flujo del piso visto
-   por el espejo**. En el video del 9-nov, la pista del seguidor dio calidad ~0.9 con
-   correlación de fase.
-3. **Tello #1:** su sistema de visión de abajo (VPS) parece dañado; la app avisa
-   "posicionamiento visual no disponible" aun con buena luz y la panza limpia. Repararlo o
-   no usarlo. Las pruebas del 9-nov (tarde) se hicieron con otro Tello, que también usa el
-   seguidor de línea.
-4. Con espejo, en orden: **E5 → E6 → E7** ([`laboratorio.md`](laboratorio.md)). Ajustar
-   `advance_timeout_s` y `cruise_alt_cm` según la pista.
-5. Respuestas del comité: tamaño de tags, cómo es la trayectoria visible y la etiqueta de
+1. **La deriva estando quieto (11-nov), lo más urgente.** Los dos Tellos se van a la derecha
+   en estacionario: el Tello 7 de 15 a 37 cm/s y el Tello 1 ~6–7 cm/s, este también sin
+   espejo. Por eso E5 falla: los tags aparecen en la orilla de la vista y se pierden al
+   centrarse. En el próximo laboratorio:
+   - estacionario del Tello 7 **sin clip**, en el mismo lugar;
+   - estacionario de los dos **sobre otro piso**: la cuadrícula de cinta azul se repite mucho
+     y podría confundir a la cámara de abajo (sospecha, sin medir);
+   - calibrar el IMU antes.
+2. **Corregir la deriva con el piso visto por el espejo.** El 11-nov, la medición de lado con
+   correlación de fase coincidió en signo con la del tag en 72 % de los tramos. Hacia
+   adelante cuesta, porque las rayas de la pista van en la dirección del avance. Mientras,
+   probar `advance_lr` en -10 y acortar el tiempo quieto antes de avanzar (`start_hover_s`).
+3. **El Tello 1 falla caliente:** a 68–78 °C no despega o "no obedece"; frío (55 °C) va bien.
+   Volarlo solo abajo de 65 °C y revisar en la app si es el que avisaba "posicionamiento
+   visual no disponible".
+4. **Al perder un tag al centrarse, buscarlo en vez de aterrizar** (4 corridas del 11-nov
+   terminaron así). En el simulador, agregar una deriva constante hacia un lado y la vista
+   que se inclina al moverse, para reproducirlo: la deriva real resultó mayor que la
+   simulada (aleatoria, ~5 cm/s) y siempre hacia el mismo lado.
+5. Con espejo, en orden: **E5 → E6 → E7** ([`laboratorio.md`](laboratorio.md)). Ajustar
+   `advance_timeout_s` y `cruise_alt_cm` según la pista. Enfriar entre corridas: el 11-nov
+   se volaron 27 en 26 min.
+6. Respuestas del comité: tamaño de tags, cómo es la trayectoria visible y la etiqueta de
    inicio ([`competencia.md`](competencia.md)).
-6. **Deriva al despegar (visto en el simulador realista, 11-nov):** entre el despegue y la
-   subida a 100 cm pasan ~12 s sin ninguna referencia de posición. Con ~5 cm/s de deriva, a
-   veces se corre 35 cm o más y no ve el primer tag. Hay que decidir en equipo; ideas sin
-   probar: sostenerse sobre el tag de inicio mientras sube, o subir más rápido. **Antes,
-   revisar con vuelos reales si la deriva del simulador es demasiado pesimista** (fuera del
-   laboratorio): hoy es un viento aleatorio sin nada que lo regrese, y el Tello real, con su
-   visión de la panza, tiende a regresar a su lugar. Por eso la regresión realista falla
-   unas veces sí y otras no.
-7. **Tags gastados (11-nov):** en el laboratorio, comparar la detección con y sin el rescate
-   sobre los tags más gastados, sin volar: `python scripts/test_tags.py --source tello
-   --espejo` y luego con `--sin-rescate`. Si alguno no se detecta ni así, reimprimirlo.
-8. Al cerrar cada sesión, correr `python sim/comparar_vuelos.py` y, si cambió el Tello o el
-   clip, reajustar `config/sim_tello.json` ([`simulador.md`](simulador.md)).
+7. Al cerrar cada sesión, correr `python sim/comparar_vuelos.py` y, si cambió el Tello o el
+   clip, reajustar `config/sim_tello.json` ([`simulador.md`](simulador.md)). Las bitácoras
+   del 11-nov dicen en `sesiones/2026-11-11/notas.md` qué dron fue cada una.
+
+## 11-nov (tarde) — E5 con dos Tellos
+
+Detalle y bitácoras en [`../sesiones/2026-11-11/`](../sesiones/2026-11-11/).
+
+- **E5 no salió sin ayuda.** De 27 corridas (19 del Tello 1, 8 del Tello 7), solo la 7.7
+  completó 1 → 2 → 7, y con la mano sosteniéndolo sobre los tags. Sin mano, lo mejor fue la
+  1.9: ejecutó 1 y 2 y aterrizó por "el dron no obedece".
+- **Deriva a la derecha estando quieto, en los dos drones** (medida con el piso visto por el
+  espejo, aproximada). Los tags aparecían en la orilla de la vista y, al ir por ellos, se
+  salían: el dron se inclina para moverse y la vista del espejo se inclina con él.
+- **El Tello 1 falla caliente:** 6 despegues malos y 4 "no obedece", todos a 68–78 °C.
+- **Lo que sí funcionó:**
+  - el rumbo tras los giros (88°, ya no se pasa como el 9-nov);
+  - la detección de tags gastados: el tag 4 de 62 a 238 cuadros con el rescate, sin IDs
+    falsos.
+- Los paros con `k` fueron porque los drones se iban contra la malla de la arena.
 
 ## 11-nov — Simulador ajustado a los vuelos reales y tags gastados
 
