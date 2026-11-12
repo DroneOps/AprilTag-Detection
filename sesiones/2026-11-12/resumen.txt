@@ -1,4 +1,4 @@
-Resumen de sesión — 2026-11-12 13:29 — 6 bitácoras
+Resumen de sesión — 2026-11-12 14:37 — 12 bitácoras
 
 == espejo_20261112_131739.csv  (espejo)
    vuelo 40 s | batería 84% -> 65% | temp max 65 C
@@ -62,4 +62,53 @@ Resumen de sesión — 2026-11-12 13:29 — 6 bitácoras
    final: DONE — aterrizado (tag 7: aterrizar)
    problemas: acercamiento incompleto (por tiempo)
    VEREDICTO: OK
+
+== espejo_20261112_142915.csv  (espejo)
+   vuelo 32 s | batería 90% -> 74% | temp max 68 C
+   despegue: en el aire a 77 cm (sin estabilizar, ok del Tello, despegue 4.3 s)
+   altura en vuelo: min 58 cm, max 123 cm
+   final: DONE — aterrizado (sin tags debajo por 20 s: fin)
+   VEREDICTO: REVISAR
+
+== espejo_20261112_143020.csv  (espejo)
+   vuelo 36 s | batería 66% -> 64% | temp max 75 C
+   despegue: en el aire a 73 cm (sin estabilizar, ok del Tello, despegue 4.8 s)
+   altura en vuelo: min 73 cm, max 124 cm
+   final: DONE — aterrizado (sin tags debajo por 20 s: fin)
+   VEREDICTO: REVISAR
+
+== espejo_20261112_143154.csv  (espejo)
+   NO DESPEGÓ: NO despega: temperatura 80 C < 80 C
+   batería 63.0%, temperatura 81.0 C
+   VEREDICTO: sin vuelo
+
+== espejo_20261112_143210.csv  (espejo)
+   vuelo 43 s | batería 63% -> 62% | temp max 80 C
+   despegue: en el aire a 61 cm (estable, sin ok, despegue 7.0 s)
+   altura en vuelo: min 59 cm, max 131 cm
+   EJECUTÓ tag 1 (Giro derecha 90) encima: adelante +2, lado +2 cm, giro -7
+   vio tag 1 (Giro derecha 90) debajo: adelante -9, lado +8 cm
+   final: DONE — aterrizado (sin tags debajo por 20 s: fin)
+   VEREDICTO: REVISAR
+
+== espejo_20261112_143337.csv  (espejo)
+   NO DESPEGÓ: esperando despegue (t)
+   batería 61.0%, temperatura 84.0 C
+   VEREDICTO: sin vuelo
+
+== espejo_20261112_143357.csv  (espejo)
+   vuelo 48 s | batería 61% -> 56% | temp max 79 C
+   despegue: en el aire a 75 cm (sin estabilizar, ok del Tello, despegue 3.6 s)
+   altura en vuelo: min 60 cm, max 121 cm
+   EJECUTÓ tag 1 (Giro derecha 90) centrado incompleto (adelante +23, lado -1, giro +3)
+   EJECUTÓ tag 2 (Giro izquierda 90) encima: adelante +1, lado +4 cm, giro +6
+   vio tag 1 (Giro derecha 90) debajo: adelante -7, lado +0 cm
+   vio tag 2 (Giro izquierda 90) debajo: adelante +34, lado +2 cm
+   vio tag 7 (Aterrizar) debajo: adelante +48, lado +22 cm
+   final: DONE — aterrizado (tag 7: aterrizar)
+   problemas: acercamiento incompleto (por tiempo)
+   VEREDICTO: OK
+
+== enlace (test_tags.py)
+   resumen_20261112_142856.txt: enlace: 999 frames en 35 s | intervalo mediano 34 ms | > 100 ms: 1 (1.7/min) | > 300 ms: 0 | maximo 101 ms
 

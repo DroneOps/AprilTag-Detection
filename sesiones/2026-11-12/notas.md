@@ -12,3 +12,7 @@ Tanda K1/K2 (PID contra Kalman), pero en main: no se hizo git checkout kalman, e
 - 13:23 Tello 1: PARO a mano con q al despegar (5 s).
 - 13:23 Tello 1, E5 (grabado como k2_dron1_kal1, pero con PID): 1, 2 y 7 a 9, 1 y 13 cm.
 PID en vuelo real: mandos 14-32 rc/s (el simulador da 18-28), altura al avanzar mínima 90-94 cm (casi no se hunde) y la integral de adelante termina siempre negativa (-4.5 a -12 rc).
+
+## 14:37
+
+PID1 Dron 1: Despues de detectar el primer tag este no continuo avanzando y se quedo en el mismo lugar, Kalman completo todo el circuito de manera correcta pero en el primer tag al intenter colocarse arriba del tag el dron se ponia un poco mas adelante de lo que debia, pero en general no tuvo tambaleos ni errores de deteccion.
