@@ -260,6 +260,21 @@ mismas pistas para cada dron, se obtienen así:
 python sim/comparar_control.py --escenarios espejo_competencia --drones sano 1 7 --n 8 --variante "hoy:"
 ```
 
+**Videos.** `sim/grabar.py` graba un escenario cuadro por cuadro: el mapa visto desde arriba,
+con el camino esperado, lo que ve la cámara, el rastro real del dron y los tags ejecutados en
+verde, más la imagen del detector. `sim/componer.py` junta dos o más grabaciones lado a lado, en
+mp4 y GIF:
+
+```bash
+python sim/grabar.py espejo_competencia --semilla 2 --titulo "AHORA: pista 2" --salida sim/logs/videos_pistas/p2_ahora
+```
+```bash
+python sim/componer.py sim/logs/videos_pistas/p2_antes sim/logs/videos_pistas/p2_ahora --salida sim/logs/videos_pistas/pista2
+```
+
+Graba en tiempo real. No grabar mientras corre una tanda: la carga extra atrasa el video del
+simulador y cambia el resultado. Los videos van en `sim/logs/` (no se suben).
+
 Cuenta como en la competencia: un punto por tag bien ejecutado, en orden, hasta el primero que
 falla. También dice a qué distancia real del tag ejecutó y por qué terminó. Tarda ~1.5–3 min
 por pista, de 3 en 3: 24 pistas son ~25 min, mejor en segundo plano. Resultados del 12-nov en
