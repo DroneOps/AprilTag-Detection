@@ -39,11 +39,11 @@ def num(x: str | None) -> float | None:
         return None
 
 
-def crucero() -> float:
+def ajuste(clave: str, defecto: float) -> float:
     try:
-        return float(json.loads((ROOT / "config" / "mission_espejo.json").read_text())["cruise_alt_cm"])
+        return float(json.loads((ROOT / "config" / "mission_espejo.json").read_text())[clave])
     except (OSError, KeyError, ValueError):
-        return 100.0
+        return defecto
 
 
 def modos(filas: list[dict], t0: float) -> str:
@@ -78,7 +78,7 @@ def suavidad(filas: list[dict]) -> str:
     return f"mandos: cambian {cambio / dur:.0f} rc/s, {tope:.0%} del tiempo al tope de lado"
 
 
-def analizar(path: Path, alt_crucero: float) -> list[str] | None:
+def analizar(path: Path, alt_crucero: float, advance_fb: float) -> list[str] | None:
     try:
         filas = [f for f in csv.DictReader(path.open()) if num(f.get("t")) is not None]
     except (OSError, csv.Error):
@@ -92,10 +92,10 @@ def analizar(path: Path, alt_crucero: float) -> list[str] | None:
         return [f"{path.name}  {hora}  no despegó"]
     aire = float(filas[-1]["t"]) - despegue
 
-    # avanzando o quieto: avanzando, el mando de adelante casi siempre es advance_fb
-    adv = [int(num(f["rc_fb"]) or 0) for f in filas if f["state"] == "ADVANCE"]
-    comun = st.mode(adv) if adv else 0
-    avanza = comun > 0 and adv.count(comun) > 0.6 * len(adv)
+    # avanzando o quieto: avanzando, el mando de adelante es exactamente advance_fb en ~99 % de
+    # las filas; quieto, en ~1 % (el PID puede empujar adelante todo el rato, pero no siempre a 15)
+    adv = [num(f["rc_fb"]) or 0 for f in filas if f["state"] == "ADVANCE"]
+    avanza = bool(adv) and sum(v == advance_fb for v in adv) > 0.8 * len(adv)
     out = [f"{path.name}  {hora}  {'avanzando' if avanza else 'quieto'}, {aire:.0f} s en el aire",
            f"  control: {modos(filas, despegue)}"]
 
@@ -168,8 +168,8 @@ def main() -> None:
     else:
         logs = sorted((ROOT / "logs").glob(f"*_{args.fecha}_*.csv"))
     logs.sort(key=lambda p: p.name)
-    alt = crucero()
-    bloques = [b for p in logs if (b := analizar(p, alt))]
+    alt, fb = ajuste("cruise_alt_cm", 100.0), ajuste("advance_fb", 15.0)
+    bloques = [b for p in logs if (b := analizar(p, alt, fb))]
     if args.ultimos:
         bloques = bloques[-args.ultimos:]
     if not bloques:
