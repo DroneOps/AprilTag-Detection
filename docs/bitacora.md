@@ -20,6 +20,12 @@ Las bitácoras de vuelo (`logs/*.csv`) y los videos están en la laptop, no en e
   un video de E5. Si el espejo se mueve en vuelo, la idea de seguir la inclinación con los tags
   está en el issue #2.
 
+**Probar en el laboratorio lo de las pistas al azar** (12-nov noche, 3).
+- **E7 con tags repetidos** (dos "giro derecha") **y un 3 u 8 que lo regrese a un tag ya
+  ejecutado.** `python sim/pista.py <N>` da una pista armada: posiciones en cm y orden.
+- **Revisar que el rumbo no se desvíe** a lo largo de la pista.
+- **Revisar que tras el flip siga sobre el tag.**
+
 **Tello 7: revisar el dron antes de volarlo.** El 12-nov (tarde) chocó con la malla.
 - Pidiéndole adelante a fondo se fue ~75 cm hacia atrás y subió solo a 130 cm, y se le salió la
   pila al caer.
@@ -67,6 +73,60 @@ Las bitácoras de vuelo (`logs/*.csv`) y los videos están en la laptop, no en e
    clip, reajustar `config/sim_tello.json` ([`simulador.md`](simulador.md)). Las bitácoras
    del 11-nov dicen en `sesiones/2026-11-11/notas.md` qué dron fue cada una. Falta medir bien
    la deriva durante el despegue: en el simulador se corre más que en lo real.
+
+## 12-nov (noche, 3) — Pistas al azar como la competencia: de 34 % a 73–90 % de los puntos
+
+Todo en el simulador; falta probarlo en el laboratorio.
+
+- **Herramienta nueva:** `sim/pista.py` arma pistas al azar como las de la competencia (escenario
+  `espejo_competencia`):
+  - de 5 a 8 tags, con las 10 funciones, separados 70–150 cm y girados hasta ±45°;
+  - con regresos a un tag tras un 180°;
+  - con tags repetidos.
+
+  `sim/comparar_control.py` las corre en tandas y da puntos como en la competencia. Ver
+  [`simulador.md`](simulador.md).
+- **Primera tanda** (10 pistas por dron): **26 % de los puntos con el dron sano, 24 % con el
+  Tello 1 y 7 % con el Tello 7, ninguna pista completa.** Casi siempre terminaba en "sin tags
+  debajo por 12 s".
+- **Lo que se encontró y se arregló** en `mision_espejo.py`:
+  1. **Tags repetidos y regresos tras un 180°.** Un número ya ejecutado se ignoraba mientras
+     se viera, porque cada cuadro renovaba el tiempo. Así se perdía un segundo "giro derecha",
+     y también el tag al que se regresa tras un 180°.
+     - Ahora se sigue al tag recién ejecutado cuadro por cuadro (`mismo_tag_cm` 35).
+     - Uno ya ejecutado antes solo cuenta si está en la línea del tramo (`pasillo_cm` 40).
+     - La visión ya no mezcla dos tags con el mismo número que se vean a la vez.
+     - En los circuitos de prueba (1, 2, 7) nunca se repite un número, por eso no se había
+       visto.
+  2. **El rumbo se iba desviando.** Cada giro se contaba desde el yaw medido al llegar, y el
+     error se sumaba: tras 6–8 tags iba ~10° chueco y pasaba a ~45 cm del tag. Ahora el rumbo
+     de salida es el del tramo más el giro del tag.
+  3. **En el flip** (subir a 130, voltear, recuperarse: ~15 s) no se sostenía sobre el tag y se
+     iba ~1 m. Ahora se sostiene sobre el tag, solo de lado y adelante.
+  4. **`advance_timeout_s` de 12 a 18 s.** Con tramos de 1.5 m y la velocidad real (~9 cm/s),
+     12 s alcanzan para ~1.1 m.
+- **En el generador:** con la vista inclinada se ve ~60 cm hacia atrás, y un tag detrás del
+  despegue se tomaba primero. Ahora la pista no pone tags donde el dron los vería al arrancar
+  un tramo.
+- **Resultado**, en las mismas 24 pistas (8 por dron):
+
+| Dron | Antes de los arreglos | Después |
+|---|---|---|
+| Sano | 20 de 59 puntos (34 %), 0 completas | 43–46 de 59 (73–78 %), 5 completas |
+| Tello 1 | 19 de 59 (32 %), 0 completas | 42–53 de 59 (71–90 %), 4–6 completas |
+| Tello 7 | 11 de 59 (19 %) | 11 de 59 (19 %) |
+
+  - Cada pista se repitió en dos tandas; la diferencia entre ellas es ruido.
+  - Ejecuta a una mediana de ~7 cm del tag.
+  - **El Tello 7 simulado no mejora:** su deriva (11.7 cm/s constante más 10.4 al azar) lo
+    saca de la línea y pierde el siguiente tag.
+- **Regresión de espejo** (17 escenarios): sin choques, todos como antes.
+- **Lo que todavía falla:**
+  - **Tramos largos después de bajar a 70 cm (tag 6):** ahí solo se ven ~12 cm adelante y
+    ±36 de lado.
+  - **El tramo después de un flip:** queda hasta ~45 cm del tag y llega al siguiente casi en la
+    orilla de la vista.
+  - **Algunos regresos tras un 180° con tramos de ~1.4 m.**
 
 ## 12-nov (noche, 2) — Inclinación del espejo corregida: −10.3°, y la medida del piso la usa
 
