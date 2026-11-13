@@ -5,22 +5,20 @@ Las bitácoras de vuelo (`logs/*.csv`) y los videos están en la laptop, no en e
 
 ## Pendiente ahora
 
-**Antes que nada: la inclinación del espejo está mal en el JSON**
-([issue #2](https://github.com/DroneOps/AprilTag-Detection/issues/2)).
-- **Qué se midió:** en vuelo, con los tags de los videos (`scripts/inclinacion_vuelo.py`), la vista
-  está inclinada **~−10.5° adelante y ~−1° de lado en los dos drones**. El JSON dice +4.1°.
-- **Qué hace eso:** a 100 cm, cuando la misión cree estar "encima" de un tag, queda ~25 cm
-  corrida, probablemente adelante (Fernando lo vio en el Tello 1). Además, al subir, la medida
-  del piso cree que el dron se fue hacia atrás.
-- **El arreglo va junto:**
-  1. `vista_adelante_deg` ≈ −10.5 y `vista_lado_deg` ≈ −1 en `config/mission_espejo.json`;
-  2. que `FlujoPiso` escale alrededor del punto bajo el dron (centro volteado más esa
-     inclinación).
-
-  Primero en el simulador (con `mirror_tilt` −10.5); luego E5 en el laboratorio, mirando de
-  lado si de verdad queda encima de cada tag.
-- **E1 con el dron en la mano no sirve para esto:** dio −5.7° y −7.0°, y −13° de lado en el
-  Tello 7, por cómo se sostiene.
+**Antes que nada: verificar en el laboratorio el arreglo de la inclinación** (12-nov noche;
+[issue #2](https://github.com/DroneOps/AprilTag-Detection/issues/2)).
+- **Qué cambió:** el JSON ya tiene la inclinación medida en vuelo (−10.3° adelante, −0.5° de
+  lado), y la medida del piso la usa.
+- **Qué revisar:**
+  - **E5 con el PID, mirando de lado** si de verdad queda encima de cada tag. Antes quedaba
+    ~20 cm corrido.
+  - **En `python scripts/resumen_piso.py --ultimos 1`,** "subiendo, hasta X cm" debe bajar a
+    unos cm. Antes, 6–29.
+- **Ahora el espejo solo ve ~20 cm hacia adelante** (y ~60 hacia atrás): un tag aparece cuando
+  ya está casi debajo. Si se pasa de los tags al avanzar, bajar `advance_fb`.
+- **Con el clip nuevo,** volver a medir la inclinación con `scripts/inclinacion_vuelo.py` sobre
+  un video de E5. Si el espejo se mueve en vuelo, la idea de seguir la inclinación con los tags
+  está en el issue #2.
 
 **Tello 7: revisar el dron antes de volarlo.** El 12-nov (tarde) chocó con la malla.
 - Pidiéndole adelante a fondo se fue ~75 cm hacia atrás y subió solo a 130 cm, y se le salió la
@@ -69,6 +67,46 @@ Las bitácoras de vuelo (`logs/*.csv`) y los videos están en la laptop, no en e
    clip, reajustar `config/sim_tello.json` ([`simulador.md`](simulador.md)). Las bitácoras
    del 11-nov dicen en `sesiones/2026-11-11/notas.md` qué dron fue cada una. Falta medir bien
    la deriva durante el despegue: en el simulador se corre más que en lo real.
+
+## 12-nov (noche, 2) — Inclinación del espejo corregida: −10.3°, y la medida del piso la usa
+
+Todo en el simulador; falta verificarlo en el laboratorio.
+
+- **El JSON** (`config/mission_espejo.json`) pasa de +4.1° y +0.8° (E1 del 9-nov, en la mano) a
+  **−10.3° adelante y −0.5° de lado**. Es la mediana de 2430 tags en 6 videos de vuelo de los dos
+  drones (`scripts/inclinacion_vuelo.py`): cada video da entre −8.9° y −11.9°.
+- **La medida del piso** (`FlujoPiso`) escala alrededor del punto bajo el dron
+  (`punto_bajo_dron`: centro de la cámara espejada más la inclinación). Antes usaba el centro sin
+  voltear y sin inclinación.
+- **El simulador** ahora tiene la vista inclinada como la real (`espejo_inclinacion_deg` −10.3
+  en `config/sim_tello.json`); antes estaba a 0°.
+- **Antes contra ahora**, en el simulador con la vista a −10.3° y las mismas semillas (4
+  corridas por caso; 12 con el Tello 7 quieto):
+
+| | Antes | Ahora |
+|---|---|---|
+| Circuito, dron sano: distancia real al tag al ejecutar (mediana) | 18 cm | **7** |
+| Circuito, Tello 1 | 21 cm | **8** |
+| Circuito, Tello 7 | 32 cm (2 de 4 completas) | 30 cm (1 de 4) |
+| Tags gastados, dron sano | 8 tags, a 30 cm | 10 tags, a **10** cm |
+| Quieto, dron sano: distancia media al despegue | 18 cm | **12** |
+| Quieto, Tello 1 | 22 cm | **11** |
+| Quieto, Tello 7 (sin contar las que el seguro se apagó) | ~26 cm; seguro apagado en 2 de 12 | ~20 cm; 2 de 12 |
+| Subir 70 cm en vertical, sin moverse: lo que "ve" adelante | −13 cm | +4 a +5 |
+| Bajar 70 cm | +16 cm | +3 a +5 |
+
+- **El "antes" del simulador se parece a lo real:** subiendo marca hacia atrás y bajando hacia
+  adelante, y se centra ~20 cm corrido. La cámara del 12-nov reportaba ~6 cm del tag con el
+  PID, pero con la inclinación mal esa medida también estaba corrida.
+- **El Tello 7 sigue mal en el circuito simulado:** su deriva aleatoria domina, y 1 contra 2 de 4
+  cabe en el ruido. El seguro se apaga solo en sus rachas igual que antes (2 de 12).
+- **Queda un corrimiento fijo al subir y bajar:** +3 a +5 cm adelante y −1 a −4 de lado, del
+  mismo lado en las dos direcciones. No se sabe de dónde sale (issue #2).
+- **Con la vista real, el espejo ve ~20 cm hacia adelante y ~60 hacia atrás** (antes suponíamos
+  ±39). `espejo_quieto` tenía el tag 15 cm adelante y solo lo veía porque la medida mala empujaba
+  al dron hacia allá. Se movió a 5 cm atrás.
+- **Regresión de espejo** (17 escenarios): sin choques; todos ejecutan lo esperado.
+  `espejo_gastado` falló el tag 2 en una corrida, como antes.
 
 ## 12-nov (tarde, 2) — PID contra Kalman en el laboratorio; el espejo está inclinado −10.5°
 
