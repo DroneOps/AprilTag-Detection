@@ -50,7 +50,22 @@ def leer(out: str) -> dict:
     if m:
         r["al_ejecutar"] = [(int(a), float(b)) for a, b in re.findall(r"tag (\d+) a (\d+) cm", m.group(1))]
     r["apagado"] = sorted(set(re.findall(r"\[vuelo\] (\S+) apagad[oa]", out)))
+    m = re.search(r"\[pista\].*visitas: (\[[\d, ]*\])", out)  # espejo_competencia: lo que haría un dron perfecto
+    if m:
+        r["esperado"] = json.loads(m.group(1))
+        fin = re.findall(r"\s\d+\.\ds (LANDING|EMERGENCY_LAND|DONE)\s+(.*?)  \[", out)
+        r["fin"] = fin[0][1] if fin else ""
     return r
+
+
+def puntos(r: dict) -> int:
+    """Tags bien ejecutados en orden hasta el primero que falla (después ya va fuera de la pista)."""
+    n = 0
+    for a, b in zip(r["ejecutados"], r["esperado"]):
+        if a != b:
+            break
+        n += 1
+    return n
 
 
 def suavidad(log: Path) -> dict:
@@ -103,6 +118,12 @@ def correr(trabajos: list[tuple], paralelo: int, salida: Path | None) -> list[di
 def resumen_corrida(r: dict) -> str:
     if "media" in r:
         txt = f"media {r['media']:.0f} cm, máx {r['maxima']:.0f}, final {r['final_cm']:.0f}"
+    elif "esperado" in r:
+        txt = f"{puntos(r)} de {len(r['esperado'])} puntos; ejecutó {r['ejecutados']} de {r['esperado']}"
+        if r["al_ejecutar"]:
+            txt += " a " + "/".join(f"{d:.0f}" for _, d in r["al_ejecutar"]) + " cm"
+        if puntos(r) < len(r["esperado"]):
+            txt += f"; terminó: {r['fin']}"
     else:
         txt = f"{r['final']} ejecutó {r['ejecutados']}"
         if r["al_ejecutar"]:
@@ -126,6 +147,13 @@ def tabla(res: list[dict]) -> str:
             med = [r["media"] for r in rs]
             txt = (f"media {np.mean(med):.0f} cm (de {min(med):.0f} a {max(med):.0f}); "
                    f"máxima {max(r['maxima'] for r in rs):.0f}; al final {np.mean([r['final_cm'] for r in rs]):.0f}")
+        elif all("esperado" in r for r in rs):
+            pts, tot = sum(puntos(r) for r in rs), sum(len(r["esperado"]) for r in rs)
+            dist = [d for r in rs for _, d in r["al_ejecutar"]]
+            txt = (f"**{pts} de {tot} puntos** ({100 * pts / tot:.0f} %); "
+                   f"{sum(puntos(r) == len(r['esperado']) for r in rs)} pistas completas")
+            if dist:
+                txt += f"; al ejecutar, a {np.median(dist):.0f} cm del tag (mediana), máx {max(dist):.0f}"
         else:
             completo = COMPLETO.get(esc)
             n_ok = sum(r["ejecutados"] == completo for r in rs) if completo else None

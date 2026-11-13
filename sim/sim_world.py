@@ -143,6 +143,7 @@ P = cargar_params()  # --ideal lo cambia por SimParams() y --dron N agrega su pe
 DRON: str | None = None  # --dron N: también los ajustes de misión de ese dron (config/mision_dron<N>.json)
 LOG_SUFIJO = ""  # --log-sufijo X: sim/logs/<escenario>X.csv (para no pisarse en tandas)
 SEMILLA = 0  # --semilla N: otra serie de deriva aleatoria (para comparar en tandas con las mismas)
+PISTA = None  # --pista N: qué pista al azar usa espejo_competencia (por defecto, la de la semilla)
 
 
 def mando(rc: float, zona: float, ganancia: float) -> float:
@@ -794,6 +795,14 @@ def scenario(sc: str) -> None:
             run(sc, [floor(2, 0, 90), floor(7, -70, 90)], mirror="v", despegue="alto")
         elif sc == "espejo_sin_ok":  # el Tello no contesta "ok" al despegar (real 9-nov, 2 de 14)
             run(sc, [floor(2, 0, 90), floor(7, -70, 90)], mirror="v", despegue="sin_ok")
+        elif sc == "espejo_competencia":  # pista al azar como la de la competencia (sim/pista.py)
+            import pista as PI
+            p = PI.generar(SEMILLA if PISTA is None else PISTA)
+            print(p.texto(), flush=True)
+            tags = [floor(tid, x, y, g) for tid, x, y, g in p.tags]
+            if p.inicio:
+                tags.append(floor(p.inicio[0], 0, 0, p.inicio[1]))
+            run(sc, tags, mirror="v", limit=40 + 35 * len(p.visitas))
         else:
             raise SystemExit(f"escenario desconocido: {sc}")
     # ---- tags en el piso con la cámara al frente (sin espejo)
@@ -876,6 +885,10 @@ if __name__ == "__main__":
         k = args.index("--semilla")
         SEMILLA = int(args[k + 1])
         args = args[:k] + args[k + 2:]
+    if "--pista" in args:
+        k = args.index("--pista")
+        PISTA = int(args[k + 1])
+        args = args[:k] + args[k + 2:]
     if "--log-sufijo" in args:
         k = args.index("--log-sufijo")
         LOG_SUFIJO = args[k + 1]
@@ -908,7 +921,8 @@ if __name__ == "__main__":
         batch = 4
         extra = (["--ideal"] if ideal else []) + (["--dron", num] if num else []) \
             + [x for kv in cambios["--set"] for x in ("--set", kv)] \
-            + [x for kv in cambios["--sim"] for x in ("--sim", kv)] + ["--semilla", str(SEMILLA)]
+            + [x for kv in cambios["--sim"] for x in ("--sim", kv)] + ["--semilla", str(SEMILLA)] \
+            + (["--pista", str(PISTA)] if PISTA is not None else [])
         for i in range(0, len(names), batch):
             procs = [subprocess.Popen([sys.executable, __file__, n] + extra, stdout=subprocess.PIPE, text=True)
                      for n in names[i:i + batch]]
