@@ -127,6 +127,14 @@ Todo en el simulador; falta probarlo en el laboratorio.
   - **El tramo después de un flip:** queda hasta ~45 cm del tag y llega al siguiente casi en la
     orilla de la vista.
   - **Algunos regresos tras un 180° con tramos de ~1.4 m.**
+  - **Vistas en los videos:**
+    - **En un giro de 90° se corrió ~40 cm** y al terminar no vio el tag. El tramo siguiente
+      arrancó fuera de la línea y no encontró el siguiente tag (pista 2; en las tandas salió
+      bien).
+    - **Se saltó un tag 4 repetido justo después de otro 4** (pista 5).
+    - **El Tello 7 simulado** se va de lado desde el despegue y no ve el primer tag (pista 6).
+- **Videos** lado a lado, antes y ahora, de las pistas 1, 2 y 5, en la laptop, en
+  `sim/logs/videos_pistas/`. Se hacen con `sim/grabar.py` y `sim/componer.py`.
 
 ## 12-nov (noche, 2) — Inclinación del espejo corregida: −10.3°, y la medida del piso la usa
 
