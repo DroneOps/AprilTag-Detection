@@ -3,7 +3,7 @@
   "quieto": false,
   "cruise_alt_cm": 100,
   "advance_fb": 15,
-  "advance_timeout_s": 12,
+  "advance_timeout_s": 18,
   "advance_lr": 0,
   "sostener_piso": true,
   "piso_kp": 0.5,

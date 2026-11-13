@@ -662,9 +662,9 @@ def run(name, tags, limit=120, events=None, drift=None, boxes=(), bias=(0.0, 0.0
         if (mis.state, mis.reason) != last:
             if mis.state == "EXECUTE" and (not last or last[0] != "EXECUTE"):
                 tid = getattr(mis, "_target", None)
-                tg = [t for t in tags if t.id == tid]
-                if tg:
-                    al_ejecutar.append((tid, math.hypot(sim.x - tg[0].c[0], sim.y - tg[0].c[1])))
+                tg = [math.hypot(sim.x - t.c[0], sim.y - t.c[1]) for t in tags if t.id == tid]
+                if tg:  # al más cercano con ese número (puede haber dos)
+                    al_ejecutar.append((tid, min(tg)))
             last = (mis.state, mis.reason)
             log.append(f"{time.monotonic() - t0:5.1f}s {mis.state:9s} {mis.reason}  "
                        f"[x={sim.x:.0f} y={sim.y:.0f} z={sim.z:.0f} yaw={sim.yaw:.0f}]")

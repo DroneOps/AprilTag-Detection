@@ -235,6 +235,36 @@ Con la deriva aleatoria **el resultado puede cambiar entre corridas**. Si un esc
 falla, repítelo (`python sim/sim_world.py espejo_inicio espejo_inicio espejo_inicio`) para
 saber si falla siempre o solo a veces.
 
+## Pistas de competencia al azar: `espejo_competencia`
+
+`sim/pista.py` arma una pista como la de la competencia, a partir de una semilla:
+- de 5 a 8 tags, el último el 7, y un tag de inicio (ID 0) debajo del despegue;
+- separaciones de 70 a 150 cm, tags girados hasta ±45° y corridos hasta ±8 cm de la línea;
+- cada tramo sigue el rumbo que deja la acción del tag anterior. Si al frente ya hay un tag
+  (p. ej. tras un 180° se regresa al anterior), se vuelve a visitar.
+- **Se descartan las pistas donde el dron vería un tag que no toca:** en el camino de otro
+  tramo, o detrás o debajo al arrancar (con la vista a −10.3° se ven ~60 cm hacia atrás).
+- La altura queda entre 70 y 130 cm tras subir o bajar.
+
+```bash
+python sim/pista.py 3
+```
+```bash
+python sim/sim_world.py espejo_competencia --semilla 3
+```
+
+La pista sale de la semilla (o de `--pista N`). Los puntos por intento, en tandas con las
+mismas pistas para cada dron, se obtienen así:
+
+```bash
+python sim/comparar_control.py --escenarios espejo_competencia --drones sano 1 7 --n 8 --variante "hoy:"
+```
+
+Cuenta como en la competencia: un punto por tag bien ejecutado, en orden, hasta el primero que
+falla. También dice a qué distancia real del tag ejecutó y por qué terminó. Tarda ~1.5–3 min
+por pista, de 3 en 3: 24 pistas son ~25 min, mejor en segundo plano. Resultados del 12-nov en
+`bitacora.md`.
+
 ## Escenarios
 
 **Tags en pared** (`mission_tags.py`)

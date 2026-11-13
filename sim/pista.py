@@ -25,6 +25,7 @@ from dataclasses import dataclass
 GIRO = {1: 90, 2: -90, 3: 180, 4: 0, 5: 0, 6: 0, 8: 180, 9: 0, 10: 0}  # cómo cambia el rumbo (+ = derecha)
 ALTURA = {5: 30, 6: -30}  # la misión sostiene la altura nueva después de subir o bajar
 PASILLO = 50.0  # cm de lado: un tag más cerca que esto del camino se ve al pasar (a 100 cm se ven ±52)
+ATRAS = 65.0  # cm: con la vista inclinada hacia atrás (−10.3°) se ve hasta ~60 cm detrás del dron
 
 
 @dataclass
@@ -65,10 +66,15 @@ def _intento(rng: random.Random, n: int, sep: tuple[float, float], giro_tag: flo
              alt: tuple[float, float], alt0: float, flips: bool, caja: float) -> tuple[list, list] | None:
     tags: list[tuple[int, float, float, float]] = []
     tramos: list[tuple[tuple[float, float], float, float]] = []  # (desde, rumbo, largo)
+    salidas: list[tuple[tuple[float, float], float, int | None]] = []  # (desde, rumbo, tag de ahí)
     visitas: list[int] = []
     vistos: set[tuple[int, int]] = set()
     pos, rumbo, h, actual = (0.0, 0.0), 0.0, alt0, None
     while True:
+        # al arrancar, un tag que se vea detrás o debajo (que no sea el de ahí) se lo llevaría
+        salidas.append((pos, rumbo, actual))
+        if any(_al_arrancar(pos, rumbo, (x, y)) for i, (_, x, y, _) in enumerate(tags) if i != actual):
+            return None
         # ¿hay un tag al frente, en el pasillo? (el de debajo y los de atrás no cuentan)
         delante = []
         for i, (_, x, y, _) in enumerate(tags):
@@ -88,7 +94,8 @@ def _intento(rng: random.Random, n: int, sep: tuple[float, float], giro_tag: flo
                 d, lado = rng.uniform(*sep), rng.uniform(-desvio, desvio)
                 u, r = _ejes(rumbo)
                 q = (pos[0] + d * u[0] + lado * r[0], pos[1] + d * u[1] + lado * r[1])
-                if _cabe(q, pos, rumbo, d, tags, tramos, actual, caja):
+                if _cabe(q, pos, rumbo, d, tags, tramos, actual, caja) \
+                        and not any(_al_arrancar(p0, rb, q) for p0, rb, _ in salidas):
                     break
             else:
                 return None
@@ -107,6 +114,12 @@ def _intento(rng: random.Random, n: int, sep: tuple[float, float], giro_tag: flo
         h += ALTURA.get(tid, 0)
         if not alt[0] <= h <= alt[1]:
             return None
+
+
+def _al_arrancar(desde, rumbo, q) -> bool:
+    """¿q se ve al arrancar desde ahí (detrás, debajo o apenas adelante)?"""
+    f, l = _relativo(desde, q, rumbo)
+    return -ATRAS < f <= 20 and abs(l) < PASILLO + 5
 
 
 def _elegir(rng: random.Random, h: float, alt: tuple[float, float], flips: bool) -> int | None:

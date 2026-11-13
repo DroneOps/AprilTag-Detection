@@ -56,6 +56,27 @@ CRUISE ─▶ ADVANCE ─▶ APPROACH ─▶ EXECUTE ─▶ ADVANCE ... (hasta e
   `yaw`, `alt_to`, `flip_go`, `wait`, `land`. El flip sube primero a 130 cm, voltea
   alejándose del tag y luego recupera la altura en tres fases: frenar, sostener y asentar.
 
+**Con espejo, qué tag se ejecuta al avanzar** (`_ignorar`, desde el 12-nov):
+- **El recién ejecutado se sigue cuadro por cuadro**, porque al avanzar sigue a la vista
+  ~60 cm detrás.
+  - Uno con su número a menos de `mismo_tag_cm` (35) de donde debe estar (su última posición,
+    corrida con lo que avanzó el dron según el piso) es el mismo y se ignora.
+  - En otra parte, es otro tag con el mismo número y se ejecuta.
+  - Si no se vio al arrancar el tramo, se ignora por número, como antes.
+- **Uno ya ejecutado antes (no el último)** solo cuenta si está en la línea del tramo:
+  adelante y a menos de `pasillo_cm` (40) de lado. Así funciona regresar a un tag después de
+  un 180°, y no se toma uno viejo que quedó a un lado.
+- **Uno nuevo,** siempre.
+- **Antes,** cualquier número ya ejecutado se ignoraba mientras se viera, así que se perdían
+  los tags repetidos y los regresos tras un 180°.
+
+**El rumbo de salida** (con espejo) es el rumbo del tramo más los giros del tag, no el yaw
+medido al llegar. Si no, el error de cada giro se sumaba, y tras 6–8 tags iba ~10° chueco.
+
+**Durante el flip** (la subida a 130 cm, la vuelta y la recuperación) se sostiene sobre el tag,
+pero solo de lado y adelante; la altura la manda la recuperación. Antes se iba ~1 m en esos
+~15 s.
+
 ## Sostener la posición con el piso (`mision_espejo.py`, 11-nov)
 
 `FlujoPiso` compara cada cuadro del espejo con el anterior (correlación de fase a 240×180, ~2

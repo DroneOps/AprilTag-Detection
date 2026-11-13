@@ -255,6 +255,10 @@ espejo no se haya movido (si se movió, repite E1).
 ejemplo 9 → 1 → 3 → 4 → 2 → 7), con 0.7–1.5 m entre ellos y un tag que no sea del 1 al 10, o
 cualquiera, debajo del despegue como "inicio". Haz **3 intentos** cronometrados, como en la
 competencia, y anota cuántos tags ejecutó bien cada uno. Mismo comando que E4.
+- **Incluye casos que antes fallaban:** dos tags con el mismo número (por ejemplo dos
+  "giro derecha"), y un 3 u 8 que lo regrese a un tag ya ejecutado.
+- **Para armar la pista, sirve `python sim/pista.py <N>`:** da las posiciones en cm (x a la
+  derecha del despegue, y adelante) y el orden en que debe ejecutarlos.
 
 ---
 
