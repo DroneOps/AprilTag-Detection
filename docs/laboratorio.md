@@ -173,11 +173,11 @@ sola y lo anota en la bitácora.
 
 | Parámetro | Para qué |
 |---|---|
-| `cruise_alt_cm` | altura de vuelo; más alto ve más piso (a 100 cm: ±39 cm adelante, ±52 de lado) |
+| `cruise_alt_cm` | altura de vuelo; más alto ve más piso. A 100 cm, con la vista inclinada −10.3° (12-nov), ve **~20 cm adelante y ~60 atrás**, y ±52 de lado |
 | `advance_fb`, `advance_timeout_s` | qué tan rápido y cuánto tiempo avanza buscando el siguiente tag |
 | `ignorar_inicio` | `true` ignora el tag que ve al despegar. **En las pruebas va en `false`**: no hay tag de inicio especial y, si el tag 1 queda cerca del despegue, lo ignoraría (pasó el 9-nov). Para la competencia, decidir cuando se sepa cuál es el tag de inicio |
 | `alinear_bordes` | `true` solo si los tags siempre van derechos respecto a la pista |
-| `vista_adelante_deg`, `vista_lado_deg` | inclinación del clip, medida con E1 |
+| `vista_adelante_deg`, `vista_lado_deg` | inclinación del clip, medida en vuelo con `scripts/inclinacion_vuelo.py` (12-nov: −10.3 y −0.5) |
 
 **E1 — Detección y orientación** (sin volar). Sostén el dron a ~80 cm sobre un tag en el piso:
 
@@ -191,9 +191,16 @@ Revisa:
 - La flecha amarilla "ADELANTE" debe apuntar hacia la **nariz** del dron: con el tag frente
   a la nariz, `adelante` debe ser positivo. **Si sale al revés,** usa `--espejo h` aquí y en
   la misión, y pon `"espejo": "h"` en `config/mission_espejo.json`.
-- Al salir se imprime `espejo: inclinacion de la vista ...`. **Copia esos dos números** a
-  `config/mission_espejo.json` (`vista_adelante_deg` y `vista_lado_deg`). Sin ellos, el dron
-  se coloca mal encima del tag (~11 cm de error a 80 cm con un espejo inclinado 8°).
+- Al salir se imprime `espejo: inclinacion de la vista ...`. **Ese número sirve solo de
+  referencia:** con el dron en la mano, la mano también se inclina (12-nov: −5.7° y −7.0° en
+  la mano, contra −10.3° en vuelo).
+- **La inclinación que va en `config/mission_espejo.json`** (`vista_adelante_deg` y
+  `vista_lado_deg`) se mide **en vuelo**, con los videos de E4 o E5:
+  ```bash
+  python scripts/inclinacion_vuelo.py espejo_m1.mp4
+  ```
+  Sin la inclinación correcta, el dron se coloca mal encima del tag (~25 cm a 100 cm con la
+  del 12-nov) y la medida del piso se corre al subir y bajar.
 
 **E2 — Estacionario y giro con espejo.** Aprueba si no deriva más que sin espejo y si el
 espejo no se mueve.

@@ -125,6 +125,9 @@ el Tello 7 no alcanza a corregir.
       mueve con los movimientos del dron (Fernando lo ha visto).
     - Lo más sólido es un clip más firme; en el código se puede seguir la inclinación con los
       tags ([issue #2](https://github.com/DroneOps/AprilTag-Detection/issues/2)).
+- **Lo que se ve con la vista a −10.3°:** a 100 cm, ~20 cm hacia adelante y ~60 hacia atrás
+  (±52 de lado). Avanzando, un tag aparece cuando ya está casi debajo; uno que esté 15 cm
+  adelante del despegue queda en la orilla.
 - **Velocidad hacia adelante con espejo (12-nov):** con rc 15, el piso mide 5–11 cm/s (mediana
   ~9) en los dos drones. La tabla de `rc` de arriba, sin espejo, daba más.
 - Un montaje tapó el **sensor de abajo** y el dron creía estar en el piso: no despegaba.

@@ -44,7 +44,7 @@ from test_tags import DEFAULT_CALIB, TAG_FUNCTIONS, draw, floor_view
 class MirrorConfig:
     espejo: str = "v"  # cómo se voltea la imagen (ver test_tags.py --espejo)
     quieto: bool = False  # True: no avanza, espera a que haya un tag debajo
-    cruise_alt_cm: float = 100.0  # más alto = ve más piso debajo (a 100 cm: ±39 cm adelante, ±52 de lado)
+    cruise_alt_cm: float = 100.0  # más alto = ve más piso debajo (a 100 cm, vista a −10.3°: ~20 cm adelante, ~60 atrás, ±52 de lado)
     advance_fb: int = 15  # rc 15 ≈ 16–20 cm/s (calibración real)
     advance_timeout_s: float = 12.0  # sin ver tag debajo por esto: fin (sin vista al frente)
     advance_lr: int = 0  # rc lateral fijo al avanzar sin tag, para compensar si el dron se va de un lado
@@ -154,16 +154,21 @@ class FlujoPiso:
 
     Al subir o bajar, el piso se ve más chico o más grande, y la correlación confundía ese cambio
     de escala con desplazamiento: subiendo de 30 a 100 cm "veía" +10 cm de lado y el control movía
-    al dron sin razón. Por eso, antes de comparar, el cuadro anterior se escala alrededor del centro
-    óptico según cuánto cambió la altura (velocidad vertical robusta del tof). Así el error baja a
-    ~2 cm (12-nov, en el simulador)."""
+    al dron sin razón. Por eso, antes de comparar, el cuadro anterior se escala según cuánto cambió
+    la altura (velocidad vertical robusta del tof), alrededor del punto de la imagen que queda
+    justo debajo del dron (punto_bajo_dron).
+
+    Antes se escalaba alrededor del centro óptico de la imagen SIN voltear (y = 386 px, cuando la
+    imagen va volteada: 333) y sin la inclinación del espejo. Con la vista real (−10.3°, 12-nov),
+    subir del piso a 100 cm "veía" al dron irse 6–29 cm hacia atrás, y el PID lo empujaba de más
+    hacia adelante (issue #2)."""
 
     TAM = (240, 180)
 
     def __init__(self, fx: float, calidad: float, centro: tuple[float, float] = (480.0, 360.0)) -> None:
         self.f = fx * self.TAM[0] / 960  # px por unidad a esta resolución
         self.k = self.TAM[0] / 960
-        self.c = (centro[0] * self.k, centro[1] * self.k)  # centro óptico en la imagen ya volteada
+        self.c = (centro[0] * self.k, centro[1] * self.k)  # punto bajo el dron, en la imagen ya volteada
         self.calidad = calidad
         self.win = cv2.createHanningWindow(self.TAM, cv2.CV_32F)
         self.prev, self.t_prev = None, 0.0
@@ -225,6 +230,16 @@ class FlujoPiso:
         return now - self.t_ok < 0.5
 
 
+def punto_bajo_dron(K: np.ndarray, vista_adelante_deg: float, vista_lado_deg: float) -> tuple[float, float]:
+    """Pixel de la imagen ya volteada (960x720) que queda justo debajo del dron: el centro óptico
+    de la cámara espejada (K de PoseEstimator.mirrored) corrido por la inclinación de la vista.
+    Inclinada hacia adelante, lo de abajo del dron sale más abajo en la imagen (hacia atrás);
+    inclinada a la derecha, sale a la izquierda. Al subir o bajar en vertical, el piso crece o se
+    encoge alrededor de este punto."""
+    return (float(K[0, 2] - K[0, 0] * math.tan(math.radians(vista_lado_deg))),
+            float(K[1, 2] + K[1, 1] * math.tan(math.radians(vista_adelante_deg))))
+
+
 def rot_mod90(angle: float) -> float:
     """Giro del tag en la imagen, llevado a [-45, 45): un tag derecho vale 0 en
     cualquiera de sus 4 orientaciones."""
@@ -244,8 +259,8 @@ class MirrorMission(TagMission):
         self._started = False
         self._center_hist: deque = deque(maxlen=60)  # (t del frame, adelante, derecha) del tag objetivo
         self._start_ids: set[int] = set()  # tags vistos durante el despegue
-        centro = (float(self.pose_est.K[0, 2]), float(self.pose_est.K[1, 2]))  # cámara original = imagen ya volteada
         self.pose_est = self.pose_est.mirrored(ecfg.espejo)
+        centro = punto_bajo_dron(self.pose_est.K, ecfg.vista_adelante_deg, ecfg.vista_lado_deg)
         self._floor_hist: dict[int, deque] = {}
         self._heights: dict[int, float] = {}
         self._last_floor = (0.0, 0.0)

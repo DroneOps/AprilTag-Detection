@@ -754,9 +754,11 @@ def scenario(sc: str) -> None:
         elif sc == "espejo_circuito":  # 1 (derecha) -> 2 (izquierda) -> 7 (aterrizar), a 70 cm
             run(sc, [floor(1, 0, 80), floor(2, 70, 80), floor(7, 70, 150)], mirror="v")
         elif sc == "espejo_quieto":  # sin avanzar: el tag ya está debajo, desplazado y girado
+            # (con la vista real, −10.3° hacia atrás, a 100 cm solo se ve ~20 cm adelante: antes
+            # estaba 15 cm adelante y se veía solo porque la medida mala empujaba al dron hacia allá)
             OVER_E["quieto"] = True
             OVER_E["quieto_timeout_s"] = 8
-            run(sc, [floor(9, 10, 15, -20)], mirror="v", limit=70)
+            run(sc, [floor(9, 10, -5, -20)], mirror="v", limit=70)
         elif sc == "espejo_deriva":
             run(sc, [floor(2, 0, 90)], mirror="v", bias=(3.0, 0.0))
         elif sc == "espejo_flip":

@@ -122,7 +122,7 @@ Ajustes de `config/mission_espejo.json` que más se mueven en el laboratorio:
 | `advance_timeout_s` | cuánto avanza buscando el siguiente tag antes de terminar |
 | `advance_fb` | qué tan rápido avanza buscando |
 | `cruise_alt_cm` | altura de vuelo; más alto ve más piso |
-| `vista_adelante_deg`, `vista_lado_deg` | inclinación del clip, medida con E1; cambia con cada clip |
+| `vista_adelante_deg`, `vista_lado_deg` | inclinación del clip, medida **en vuelo** con `scripts/inclinacion_vuelo.py` (E1 en la mano no sirve); cambia con cada clip. También la usa la medida del piso |
 | `ignorar_inicio` | ignorar o no el tag que ve al despegar; en las pruebas va en `false` |
 | `advance_lr` | rc lateral fijo al avanzar sin tag, para compensar si el dron se va siempre de un lado (negativo = a la izquierda); con `sostener_piso` casi no hace falta |
 | `piso_kp`, `piso_kd`, `piso_ki` | el PID que sostiene la posición con el piso; síntomas y qué cambiar en "Cómo ajustarlo" de `docs/arquitectura.md` |
@@ -175,7 +175,7 @@ Síntomas que ya conocemos:
 | Se va siempre a la derecha (o izquierda) al avanzar sin ver tags | el rumbo sigue rotando tras un giro, o deriva propia del dron o una corriente de aire | revisar `rc_yaw` y `yaw` en la bitácora; ajustar `advance_lr`; apagar ventiladores |
 | `sostener_piso APAGADO: se alejo ... corrigiendo` | la corrección empujó al dron hacia afuera (medida al revés) | ver `piso_der`/`piso_ade` y `piso_q` en la bitácora; si sale al revés, `"sostener_piso": false` y avisar; hacer E2b |
 | Pasa encima de un tag y no lo ve, aunque está en el centro | tag gastado o desteñido (por el espejo el negro ya se ve gris, ~150) | revisar que `deteccion_rescate` esté en `true` (`config/mission_tags.json`); reimprimir el tag; probar con `test_tags.py --espejo` |
-| No encuentra el siguiente tag | estaba lejos o fuera de lo que ve debajo (±39 cm adelante a 100 cm) | subir `advance_timeout_s` o `cruise_alt_cm` |
+| No encuentra el siguiente tag | estaba lejos o fuera de lo que ve debajo (a 100 cm, con la vista inclinada −10.3°: ~20 cm adelante, ~60 atrás, ±52 de lado) | subir `advance_timeout_s` o `cruise_alt_cm` |
 | Ignora el primer tag del recorrido | se vio al despegar | revisar `ignorar_inicio` e `inicio_alt_cm` |
 | `flip omitido: bateria` | menos de 50 % | cambiar de batería |
 | `NO despega: temperatura` | ≥ 80 °C | apagar y ventilador 3–5 min |

@@ -66,6 +66,9 @@ Cómo se comporta el dron simulado está en **`config/sim_tello.json`**, ajustad
 bitácoras reales por `sim/comparar_vuelos.py` (ver abajo). Es un **dron sano**: la dinámica
 medida y una deriva aleatoria, sin irse siempre hacia un lado. Con eso corre la regresión.
 
+Con espejo, la vista del simulador está inclinada como la real: `espejo_inclinacion_deg`
+(−10.3°, medida en vuelo el 12-nov). Los escenarios `espejo_inclinado*` usan la suya (8°).
+
 **Perfiles por dron.** Lo que cambia en cada dron (sobre todo cuánto se va solo hacia un
 lado) va en `config/sim_tello_dron<N>.json`, encima de la base:
 

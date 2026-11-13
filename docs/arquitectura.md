@@ -65,12 +65,19 @@ mide mientras gira.
 **Al subir o bajar, el piso cambia de tamaño en la imagen**, y la correlación confundía ese
 cambio de escala con desplazamiento. Subiendo de 30 a 100 cm en vertical "veía" +10 cm de
 lado, y el control movía al dron sin razón: un Tello perfecto, sin deriva, terminaba ~12 cm
-corrido. Desde el 12-nov, antes de comparar, el cuadro anterior se escala alrededor del
-centro óptico según cuánto cambió la altura. La velocidad vertical sale del tof con la
-mediana de las pendientes, para que una lectura suelta no la mueva. El centro óptico es el
-de la cámara original (`config/camera_tello.json`), porque la imagen ya está volteada.
-Resultado en el simulador: el error al subir o bajar bajó a 2–4 cm, y el Tello perfecto se
-queda a ~4 cm del despegue.
+corrido. Desde el 12-nov, antes de comparar, el cuadro anterior se escala según cuánto
+cambió la altura. La velocidad vertical sale del tof con la mediana de las pendientes, para
+que una lectura suelta no la mueva.
+
+**Alrededor de qué punto se escala.** Del punto de la imagen que queda justo debajo del dron
+(`punto_bajo_dron`): el centro óptico de la cámara espejada, corrido por la inclinación de la
+vista (`vista_adelante_deg`, `vista_lado_deg`).
+- **Hasta el 12-nov (tarde)** se usaba el centro óptico sin voltear y sin la inclinación.
+  Con la vista real (−10.3°), al despegar "veía" al dron irse 6–29 cm hacia atrás, y el PID lo
+  empujaba hacia adelante ([issue #2](https://github.com/DroneOps/AprilTag-Detection/issues/2)).
+- **Si cambia el clip,** hay que volver a medir la inclinación (con
+  `scripts/inclinacion_vuelo.py`, en vuelo): de ella dependen la posición de los tags y esta
+  medida.
 
 | Estado | Qué hace con esa medida (`sostener_piso`) |
 |---|---|
