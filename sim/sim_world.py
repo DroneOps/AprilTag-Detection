@@ -102,6 +102,9 @@ class SimParams:
     despegue_ok_s: tuple | None = None
     temp_inicial_c: float = 65.0
     temp_c_por_min: float = 0.0  # cuánto se calienta volando
+    # con espejo: grados que la vista se inclina hacia adelante (real 12-nov, medida en vuelo con
+    # scripts/inclinacion_vuelo.py: ~-10.3, hacia atrás). La misión supone vista_adelante_deg.
+    espejo_inclinacion_deg: float = 0.0
 
     @classmethod
     def load(cls, path: Path) -> SimParams:
@@ -586,7 +589,7 @@ OVER_P: dict = {}  # cambios a FloorConfig por escenario
 
 
 def run(name, tags, limit=120, events=None, drift=None, boxes=(), bias=(0.0, 0.0), yaw0=0.0, bat=90.0,
-        flip_test=None, rc_calib=False, mirror=None, mirror_tilt=0.0, start=(0.0, 0.0), piso=False,
+        flip_test=None, rc_calib=False, mirror=None, mirror_tilt=None, start=(0.0, 0.0), piso=False,
         speed_factor=1.0, sag=None, combo=None, glitches=(), imu_mal=None, despegue="normal", temp=None):
     # hundimiento y mando combinado: los de config/sim_tello.json; en el modelo ideal, solo en
     # piso (lo visto en vuelo real el 27-oct)
@@ -594,6 +597,8 @@ def run(name, tags, limit=120, events=None, drift=None, boxes=(), bias=(0.0, 0.0
         sag = P.hundimiento_cm_s if P.hundimiento_cm_s is not None else (15.0 if piso else 0.0)
     if combo is None:
         combo = P.combo if P.combo is not None else (0.55 if piso else 1.0)
+    if mirror_tilt is None:  # la del espejo real (config/sim_tello.json), salvo que el escenario diga otra
+        mirror_tilt = P.espejo_inclinacion_deg
     cfg = F.FlightConfig.load(ROOT / "config" / "flight.json")
     mcfg = M.MissionConfig.load(ROOT / "config" / "mission_tags.json")
     cfg.hover_s, cfg.max_flight_s = mcfg.start_hover_s, mcfg.mission_max_s
@@ -760,6 +765,7 @@ def scenario(sc: str) -> None:
             OVER_E["vista_adelante_deg"] = 8.0
             run(sc, [floor(2, 0, 90)], mirror="v", mirror_tilt=8.0)
         elif sc == "espejo_inclinado_sin_config":  # mismo espejo sin decirle a la misión: se centra mal
+            OVER_E["vista_adelante_deg"], OVER_E["vista_lado_deg"] = 0.0, 0.0
             run(sc, [floor(2, 0, 90)], mirror="v", mirror_tilt=8.0)
         elif sc == "espejo_estacionario":  # como E2b: sin tags, quieto ~20 s. ¿Se queda sobre el despegue?
             OVER_E["quieto"], OVER_E["quieto_timeout_s"] = True, 20

@@ -1,5 +1,5 @@
 {
-  "fuente": "ajustado con 14 vuelos de 2026-11-09 (sim/comparar_vuelos.py); el atraso del video se midió aparte (docs/tello.md). 11-nov (sesiones/2026-11-11, Tello 1): deriva aleatoria ~5.4 cm/s (sim/deriva_video.py), hundimiento con lado y adelante a la vez ~8 cm/s, corrimiento al girar ~12 cm/s. Es un dron sano: la deriva constante de cada dron va en config/sim_tello_dron<N>.json (--dron N)",
+  "fuente": "ajustado con 14 vuelos de 2026-11-09 (sim/comparar_vuelos.py); el atraso del video se midió aparte (docs/tello.md). 11-nov (sesiones/2026-11-11, Tello 1): deriva aleatoria ~5.4 cm/s (sim/deriva_video.py), hundimiento con lado y adelante a la vez ~8 cm/s, corrimiento al girar ~12 cm/s. Es un dron sano: la deriva constante de cada dron va en config/sim_tello_dron<N>.json (--dron N). 12-nov: la vista del espejo está inclinada ~-10.3° (hacia atrás; 6 videos, 2430 tags), medida en vuelo con los tags de los videos (scripts/inclinacion_vuelo.py)",
   "avance_ganancia": 1.45,
   "avance_zona_muerta": 5.0,
   "subir_ganancia": 0.4,
@@ -31,5 +31,6 @@
     7.8
   ],
   "temp_inicial_c": 65.0,
-  "temp_c_por_min": 6.5
+  "temp_c_por_min": 6.5,
+  "espejo_inclinacion_deg": -10.3
 }
