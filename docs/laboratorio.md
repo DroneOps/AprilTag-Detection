@@ -7,6 +7,9 @@ está en [`bitacora.md`](bitacora.md).
 **Orden actual (con espejo):** Revisar el dron (con el clip puesto) → E1 → E2 → E3 → E4 →
 E5 → E6 → E7 (ensayo de competencia). Las de piso sin espejo (F1–F4) quedan de respaldo.
 
+**El Kalman no se usa** (12-nov: en el laboratorio se centró peor que el PID). La sección
+"PID contra Kalman" de abajo queda solo por si algún día se vuelve a comparar.
+
 ---
 
 ## Antes de salir
@@ -245,6 +248,151 @@ espejo no se haya movido (si se movió, repite E1).
 ejemplo 9 → 1 → 3 → 4 → 2 → 7), con 0.7–1.5 m entre ellos y un tag que no sea del 1 al 10, o
 cualquiera, debajo del despegue como "inicio". Haz **3 intentos** cronometrados, como en la
 competencia, y anota cuántos tags ejecutó bien cada uno. Mismo comando que E4.
+
+---
+
+## PID contra Kalman (ya no se usa)
+
+**Ya se hizo el 12-nov y ganó el PID:** el Kalman queda apagado (ver `scripts/kalman_piso.py`).
+Esto queda por si se vuelve a comparar, después de arreglar la medida del piso y reajustar su
+modelo.
+
+Compara las dos formas de sostener la posición con el piso.
+- **Cómo funciona el Kalman:** [`arquitectura.md`](arquitectura.md), "Otra opción: filtro de Kalman".
+- **Qué salió en el simulador:** [`bitacora.md`](bitacora.md), entrada "12-nov (noche)".
+
+**Orden:** Revisar el dron → E1, solo si el clip es nuevo o se movió → **K1** → **K2**. Si sobra
+tiempo, E6 y E7 con el que gane.
+
+### Preparar (al llegar, 5 min)
+
+1. Pasarse a la branch: `git checkout kalman && git pull --rebase`.
+2. Revisar que el entorno de Python esté activo: `python -c "import cv2, djitellopy; print('entorno ok')"`.
+   Si falla, actívalo como dice el [README](../README.md).
+3. Probar la branch en el simulador (~40 s), con el Kalman y el Tello 7 simulado:
+   ```bash
+   python sim/sim_world.py espejo_estacionario --dron 7 --set piso_control=kalman
+   ```
+   Lee su resumen, que se ve igual al de un vuelo real:
+   ```bash
+   python scripts/resumen_piso.py sim/logs/espejo_estacionario.csv
+   ```
+4. Ver con qué control está: `grep piso_control config/mission_espejo.json`. Debe decir `"pid"`.
+
+**Cambiar de control:** solo cambia `piso_control` en `config/mission_espejo.json`.
+- A Kalman:
+  ```bash
+  sed -i 's/"piso_control": "pid"/"piso_control": "kalman"/' config/mission_espejo.json && grep piso_control config/mission_espejo.json
+  ```
+- A PID:
+  ```bash
+  sed -i 's/"piso_control": "kalman"/"piso_control": "pid"/' config/mission_espejo.json && grep piso_control config/mission_espejo.json
+  ```
+
+Con el Kalman, la HMI dice `kalman: deriva ... cm/s` junto a `sostener piso`. Si dice
+`kalman APAGADO, con PID`, lo medido dejó de cuadrar con el modelo y siguió con el PID.
+
+**Para que la comparación sea justa:**
+- **Alterna:** PID, Kalman, PID, Kalman. Así la batería y la temperatura no favorecen a uno.
+- **Mismo `--dron N`** que el dron que vuela.
+- **Abajo de ~70 °C** antes de cada despegue.
+- **Video con nombre distinto** en cada vuelo.
+
+**Después de cada vuelo:**
+```bash
+python scripts/resumen_piso.py --ultimos 1
+```
+Muestra:
+- con qué control voló, y si cambió en el aire (`kalman -> pid`) o el seguro lo apagó;
+- qué tan lejos del despegue anduvo, según lo que mide el piso;
+- a qué distancia del tag ejecutó cada uno;
+- si se hundió al avanzar;
+- qué tan bruscos fueron los mandos (en el simulador: PID ~18–28 rc/s, Kalman ~32–43);
+- la deriva que estimó el Kalman. El 11-nov medimos ~12 cm/s a la derecha en el Tello 7 y
+  ~4 en el Tello 1.
+
+Aparte, anota lo que el log no ve:
+- la distancia a la cinta a ojo (máxima y al final);
+- si se tambaleó o hizo ruido raro;
+- si algún paro fue a mano.
+
+### K1 — E2b con los dos controles, por dron
+
+Montaje de E2b: sin tags, con el despegue marcado con cinta. Por cada dron, al menos un vuelo
+con cada control; mejor dos:
+
+```bash
+python scripts/mision_espejo.py --quieto --dron 7 --record k1_dron7_pid1.mp4
+```
+```bash
+python scripts/mision_espejo.py --quieto --dron 7 --record k1_dron7_kal1.mp4
+```
+
+(Cambia de control entre uno y otro; para el Tello 1, `--dron 1` y `k1_dron1_...`).
+
+- **Aprueba** igual que E2b: no se va más de ~20–30 cm de la cinta.
+- **Si con el Kalman se aleja más rápido o se tambalea fuerte:** ESPACIO, regresa a `"pid"` y
+  anótalo. No sigas con K2 para ese control.
+
+### K2 — E5 con los dos controles, por dron
+
+Montaje de E5: tag 1 a 80 cm al frente, tag 2 a 70 cm a la derecha del 1 y tag 7 a 70 cm
+adelante del 2. Solo con el control que pasó K1 en ese dron. **Aquí es donde el simulador
+vio la diferencia:** el Kalman ejecutó más cerca del tag (Tello 7: 9–12 cm contra 21).
+
+```bash
+python scripts/mision_espejo.py --dron 7 --record k2_dron7_pid1.mp4
+```
+```bash
+python scripts/mision_espejo.py --dron 7 --record k2_dron7_kal1.mp4
+```
+
+Fíjate en:
+- cuántos tags ejecutó y si quedó encima de cada uno;
+- `se hunde al avanzar` en el resumen. Si sale con el Kalman y no con el PID, es el
+  hundimiento por mandar de lado y adelante a la vez: anótalo.
+
+### Guardar y subir, después de cada par de vuelos
+
+```bash
+python scripts/guardar_sesion.py --notas "K1 dron 7: PID se fue ~25 cm de la cinta y regresó; Kalman ~15 cm, sin tambaleo"
+```
+```bash
+git add sesiones/ && git commit -m "Sesión: K1 dron 7, PID contra Kalman" && git pull --rebase --autostash && git push
+```
+
+- **`--autostash`:** el JSON puede estar cambiado a `"kalman"`, y sin eso `git pull --rebase` no deja.
+- **El JSON no se sube:** el comando solo agrega `sesiones/`.
+- **Dónde queda:** `guardar_sesion.py` guarda el resumen en `sesiones/<fecha>/piso.txt`, en la
+  branch `kalman`, y se ve en el PR.
+
+### Al terminar
+
+1. Regresa el JSON a `"pid"` (comando de arriba). `git status` no debe mostrar cambios en
+   `config/`.
+2. Revisa el día completo con `python scripts/resumen_piso.py` y `python scripts/resumen_vuelos.py`.
+3. Escribe la entrada en [`bitacora.md`](bitacora.md) y comenta el resultado en el PR.
+
+**El Kalman gana si**, con cada dron:
+- se va igual o menos de la cinta;
+- ejecuta igual o más cerca del tag;
+- completa igual o más circuitos;
+- no se tambalea;
+- no se hunde más que el PID;
+- no se apaga solo (`kalman -> pid`).
+
+Si empatan, se decide en equipo; el PID es más simple.
+
+| Dron | Prueba | Control | Batería | Temp. | Cinta: máx. / final (cm) | Tags / distancia | ¿Tambalea? | Notas |
+|---|---|---|---|---|---|---|---|---|
+| 7 | K1 | PID | | | | — | | |
+| 7 | K1 | Kalman | | | | — | | |
+| 7 | K2 | PID | | | — | | | |
+| 7 | K2 | Kalman | | | — | | | |
+| 1 | K1 | PID | | | | — | | |
+| 1 | K1 | Kalman | | | | — | | |
+| 1 | K2 | PID | | | — | | | |
+| 1 | K2 | Kalman | | | — | | | |
 
 ---
 

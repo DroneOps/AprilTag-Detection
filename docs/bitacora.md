@@ -5,41 +5,39 @@ Las bitácoras de vuelo (`logs/*.csv`) y los videos están en la laptop, no en e
 
 ## Pendiente ahora
 
-**Antes que nada: volar el Kalman.** Está en la branch `kalman`
-([PR #1](https://github.com/DroneOps/AprilTag-Detection/pull/1)). El 12-nov (tarde) la tanda para
-compararlo se voló en `main` por error y todo fue con el PID (ver la entrada de abajo).
-- Empezar con `git checkout kalman && git pull --rebase`.
-- `grep piso_control config/mission_espejo.json` debe imprimir una línea; en `main` no imprime nada.
-- El protocolo (K1 = E2b y K2 = E5, con cada control y cada dron) está en `laboratorio.md` de
-  esa branch.
+**Antes que nada: la inclinación del espejo está mal en el JSON**
+([issue #2](https://github.com/DroneOps/AprilTag-Detection/issues/2)).
+- **Qué se midió:** en vuelo, con los tags de los videos (`scripts/inclinacion_vuelo.py`), la vista
+  está inclinada **~−10.5° adelante y ~−1° de lado en los dos drones**. El JSON dice +4.1°.
+- **Qué hace eso:** a 100 cm, cuando la misión cree estar "encima" de un tag, queda ~25 cm
+  corrida, probablemente adelante (Fernando lo vio en el Tello 1). Además, al subir, la medida
+  del piso cree que el dron se fue hacia atrás.
+- **El arreglo va junto:**
+  1. `vista_adelante_deg` ≈ −10.5 y `vista_lado_deg` ≈ −1 en `config/mission_espejo.json`;
+  2. que `FlujoPiso` escale alrededor del punto bajo el dron (centro volteado más esa
+     inclinación).
 
-**También, antes de volar: E1 con cada dron, cada uno con su clip** (sin volar, ~2 min).
-- Si la inclinación sale distinta de 4.1° adelante, va en `config/mision_dron<N>.json`
-  (`vista_adelante_deg`, `vista_lado_deg`).
-- Falta además que la medida del piso use esa inclinación (ver la entrada del 12-nov tarde).
-  Mientras tanto, el despegue mueve al dron unos cm hacia adelante y la integral de adelante no
-  es una deriva: no copiar `piso_iade` a `piso_i_inicial`.
+  Primero en el simulador (con `mirror_tilt` −10.5); luego E5 en el laboratorio, mirando de
+  lado si de verdad queda encima de cada tag.
+- **E1 con el dron en la mano no sirve para esto:** dio −5.7° y −7.0°, y −13° de lado en el
+  Tello 7, por cómo se sostiene.
 
-1. **Siguiente tarea principal (código): mejorar todavía más la corrección de la deriva y el
-   PID, pasos 3 a 6** (propuestos el 12-nov). Cómo funciona hoy y cómo se ajusta:
-   [`arquitectura.md`](arquitectura.md).
-   - **Paso 3, compensar el atraso:** en la P de `_piso_mando`, usar la posición predicha
-     (posición + velocidad × ~0.3 s; parámetro nuevo `piso_atraso_s`) en vez de la atrasada.
-     Con un dron sin deriva no cambia nada.
-   - **Paso 4, barrido de ganancias en el simulador:** probar combinaciones de `piso_kp`,
-     `piso_kd`, `piso_ki` y `piso_min` con `espejo_estacionario` y `espejo_circuito`, con
-     `--dron 1` y `--dron 7`, y elegir. Solo cambia números del JSON.
-   - **Paso 5, mandos más finos:** en vez de "0 o al menos 10", modular (por ejemplo, 10 el
-     40 % del tiempo para pedir ~4) y quitar el vaivén de ~10 cm del Tello 1. Revisar en el
-     laboratorio que el Tello no se tambalee con eso.
-   - **Paso 6, filtro de Kalman por eje:** estima posición, velocidad y deriva con el modelo
-     rc → velocidad, y reemplaza a la integral. Volver al PID si crecen sus diferencias entre
-     lo predicho y lo medido.
+**Tello 7: revisar el dron antes de volarlo.** El 12-nov (tarde) chocó con la malla.
+- Pidiéndole adelante a fondo se fue ~75 cm hacia atrás y subió solo a 130 cm, y se le salió la
+  pila al caer.
+- Antes de volarlo: hélices, que la pila quede firme, calibrar el IMU, estacionario, y revisar
+  en la app si dice "posicionamiento visual no disponible".
 
-   **Cuidado:** lo que supone una deriva sin medirla (la integral precargada, la deriva
-   inicial del Kalman) empuja de más a un dron que ya no deriva; esos valores van por dron.
-   Antes del barrido conviene tener las bitácoras de E2b (punto 2) y reajustar con ellas el
-   simulador; si no, se afina a una deriva simulada.
+1. **Se queda el PID; el Kalman no se usa** (decidido el 12-nov; resultados en la entrada
+   "12-nov (tarde, 2)"). La branch `kalman` se juntó a `main` con `"piso_control": "pid"`: trae
+   las herramientas (`resumen_piso.py`, `inclinacion_vuelo.py`, `comparar_control.py`, la columna
+   `piso_modo`) y el Kalman apagado. Qué haría falta para retomarlo, en el encabezado de
+   `scripts/kalman_piso.py`.
+   - Si después se afina el PID: el primer candidato del barrido rápido es `piso_kp` 1.2,
+     `piso_kd` 1.2, `piso_ki` 0.3.
+   - **Ojo con los seguros:** ninguno paró el choque del Tello 7. Avanzando, el seguro del piso
+     solo mira de lado, y el de "no obedece" solo lo vertical. Hablar en equipo si se agrega uno
+     para "pide adelante y se va para atrás".
 2. **Probar en el laboratorio `sostener_piso` y `sostener_tag`** (sin volar todavía).
    - **E2b primero, con `--dron N`** ([`laboratorio.md`](laboratorio.md)), con cada dron;
      luego E5.
@@ -71,6 +69,70 @@ compararlo se voló en `main` por error y todo fue con el PID (ver la entrada de
    clip, reajustar `config/sim_tello.json` ([`simulador.md`](simulador.md)). Las bitácoras
    del 11-nov dicen en `sesiones/2026-11-11/notas.md` qué dron fue cada una. Falta medir bien
    la deriva durante el despegue: en el simulador se corre más que en lo real.
+
+## 12-nov (tarde, 2) — PID contra Kalman en el laboratorio; el espejo está inclinado −10.5°
+
+Desde la branch `kalman`. Las sesiones con las notas de Fernando están en `sesiones/2026-11-12/`.
+
+**E5 (K2) en todo el día**, contando los vuelos con PID de las 13:18. Distancia al tag al
+ejecutar, según la cámara:
+
+| Dron | PID | Kalman |
+|---|---|---|
+| Tello 1 | 3 de 3 (4, 9, 33 cm) y 3 de 3 (9, 1, 13) | 3 de 3 (22, 4, 14) |
+| Tello 7 | 1 de 3, 3 de 3 (8, 7, 4), 1 de 3 y 3 de 3 (4, 6, 6) | choque (abajo) y 3 de 3 (31, 19, 24) |
+
+- **Con el PID, 4 de 6 circuitos completos, a una mediana de ~6 cm del tag.** Los dos que
+  fallaron fueron con el Tello 7: se fue a la derecha y perdió el tag 2.
+- **Con el Kalman, 2 de 2 completos (sin contar el choque), a una mediana de ~20 cm.** Fernando:
+  en el Tello 1 "en el primer tag se ponía un poco más adelante"; en el Tello 7 "oscilaba
+  mucho, tanto al avanzar como encima de un tag".
+- **K1 (E2b, quieto):**
+  - **Tello 7.** PID: media 17 cm del despegue (según el piso), máximo 49; aterrizó a menos de
+    10 cm de donde despegó. Kalman: media 16, máximo 33; aterrizó a ~30 cm en diagonal.
+  - **El Kalman estimó +16 cm/s de deriva a la derecha en el Tello 7,** parecida a la del 11-nov
+    (~12).
+  - **Tello 1 con PID (14:29):** empujó adelante a fondo los 20 s y el piso lo midió a 71–95 cm
+    del despegue, con la altura entre 70 y 132 cm. Falta saber qué se vio.
+  - Tello 1 con Kalman: media 12 cm, máximo 33.
+  - El vuelo de las 14:32 (`k1_dron1_pid1`) tenía el tag 1 cerca: lo ejecutó y esperó 20 s,
+    porque era `--quieto`. No es E5 con PID; ese no se voló.
+- **Mandos:** el Kalman cambia 52–55 rc/s quieto, contra 29 del PID; avanzando, parecidos
+  (24–30).
+- **El modelo del Kalman no cuadra con el dron real.**
+  - Con rc 15 adelante, el piso mide 5–11 cm/s (mediana ~9) en los dos drones; el modelo supone
+    14.5.
+  - El filtro toma la diferencia como una deriva hacia atrás (−5 a −8 cm/s al centrarse), y con
+    `kalman_centrar` empuja de más hacia adelante.
+  - En el simulador no se veía porque usa el mismo modelo.
+- **El choque del Tello 7 con el Kalman (14:53) fue del dron, no del control.**
+  - Desde que quedó en el aire pidió adelante a fondo (rc 20, luego 15) por 10 s, y el piso lo
+    midió yéndose ~75 cm hacia atrás; Fernando lo vio irse para atrás hasta la malla.
+  - Además subió solo de 100 a 130 cm.
+  - El Kalman calculó una deriva de −46 cm/s, todavía abajo de su límite de 50; ningún seguro
+    lo paró y Fernando usó `k`. Al caer se le salió la pila.
+  - Es el síntoma de "el dron no obedece".
+- **Inclinación del espejo, medida en vuelo** con los tags de los videos
+  (`scripts/inclinacion_vuelo.py`, nuevo):
+
+  | Video | Adelante | Lado |
+  |---|---|---|
+  | Tello 1, `k1_dron1_pid1` | −10.1° | 0.0° |
+  | Tello 1, `k2_dron1_kal1` | −11.9° | −0.4° |
+  | Tello 7, `k2_dron7_pid2` | −10.5° | −0.9° |
+  | Tello 7, `k2_dron7_kal2` | −9.9° | −1.6° |
+
+  - **El JSON dice +4.1°** (E1 del 9-nov).
+  - **E1 en la mano dio** −5.7° (Tello 1) y −7.0° con −13.2° de lado (Tello 7): la mano
+    también se inclina.
+  - **Cuadra con la cámara del Tello**, que ve 11° hacia abajo, reflejada en un espejo a 45°.
+  - **Explica** que la medida del piso marque hacia atrás al subir y hacia adelante al bajar
+    ([issue #2](https://github.com/DroneOps/AprilTag-Detection/issues/2)), y que al centrarse
+    quede adelante del tag.
+- **Temperatura:** 75–84 °C. El Tello 1 no despegó a 84 °C.
+- **`resumen_piso.py` confundía un vuelo quieto con uno avanzando** cuando el PID empujaba
+  adelante todo el rato. Ahora lo distingue porque, avanzando, el mando de adelante es
+  exactamente `advance_fb`.
 
 ## 12-nov (tarde) — E5 con el PID en los dos Tellos; el Kalman no se voló
 
@@ -106,11 +168,85 @@ compararlo se voló en `main` por error y todo fue con el PID (ver la entrada de
       simulador el arreglo del 12-nov se veía bien.
     - La medida del piso no usa `vista_adelante_deg`: aunque se mida otra inclinación con E1,
       el piso no se entera.
-    - Arreglo propuesto: escalar alrededor del punto que queda justo debajo del dron (centro
+    - Arreglo propuesto ([issue #2](https://github.com/DroneOps/AprilTag-Detection/issues/2)): escalar alrededor del punto que queda justo debajo del dron (centro
       volteado más la inclinación). En una prueba aparte en el simulador, subiendo y bajando
       80 cm con la vista a 4.1°, el error de adelante baja a menos de 1 cm.
 - **Temperatura:** el Tello 7 llegó a 80 °C (despegó con 31 % de batería) y el Tello 1 a 77 °C.
 - La sesión está en `sesiones/2026-11-12/` (notas, `resumen.txt` y `piso.txt`).
+
+## 12-nov (noche) — Filtro de Kalman en la branch `kalman`, comparado en el simulador
+
+Todo en el simulador, en la branch `kalman` (sale de `main` en `63df8f4`). `main` no cambió.
+
+- **Qué es:** `scripts/kalman_piso.py`, con `"piso_control": "kalman"`. Por eje estima
+  posición, velocidad y deriva con el modelo rc → velocidad del simulador; aplica cada medida
+  en el momento de la imagen y predice hasta ahora (paso 3), y pide el rc exacto con el
+  inverso del modelo (rc 6, 7, 8…: paso 5). Con `kalman_centrar` (prendido) suma la deriva
+  estimada también al centrarse sobre el tag. Si deja de cuadrar con lo medido, regresa al
+  PID. Cómo funciona y cómo ajustarlo: [`arquitectura.md`](arquitectura.md).
+- **Cómo se comparó:** `sim/comparar_control.py` (nuevo), con las mismas semillas para todas
+  las variantes: 4 corridas por caso, y 12 con el Tello 7. "PID afinado" es el mejor del
+  barrido rápido (`piso_kp` 1.2, `piso_kd` 1.2, `piso_ki` 0.3), para que la comparación sea
+  justa con lo que daría el paso 4.
+
+| Simulador completo | PID (hoy) | PID afinado | Kalman | Kalman + centrar |
+|---|---|---|---|---|
+| Estacionario, dron sano: distancia media al despegue | 11 cm | 7 | 6 | 6 |
+| Estacionario, Tello 1 | 10 cm | 6 | 7 | 6 |
+| Estacionario, Tello 7 (mediana de 12) | 20 cm | 19 | 22 | 20 |
+| Circuito, sano y Tello 1: completas | 8 de 8 | 8 de 8 | 8 de 8 | 8 de 8 |
+| Circuito, sano y Tello 1: distancia real al tag al ejecutar (mediana) | 8 cm | 5–8 | 8–9 | **4–6** |
+| Circuito, Tello 7: completas | 5 de 12 | 8 de 12 | 5 de 12 | **10 de 12**, luego 7 de 12 (*) |
+| Circuito, Tello 7: distancia al tag al ejecutar (mediana) | 21 cm | 24 | 29 | **9–12** |
+| Mandos, dron sano: cuánto cambian (rc/s) | 18–20 | 24–32 | 33–43 | 30–42 |
+
+(*) La segunda tanda es con el ajuste de `kalman_lado_avanzando` (abajo); 2 de sus 5 fallas
+fueron el seguro apagándose en una racha. Con 12 corridas, 7 contra 10 cabe en el ruido.
+
+- **Kalman + centrar es el mejor en el circuito,** sobre todo en qué tan encima del tag
+  ejecuta. Casi toda la mejora sale de cancelar la deriva al centrarse: sin eso, el Kalman
+  completa lo mismo que el PID con el Tello 7.
+- **Quieto, con dron sano o Tello 1,** el Kalman queda a 6–7 cm contra 10–11 del PID de hoy;
+  el PID afinado también llega a 6–7.
+- **Con el Tello 7 quieto, todos quedan en ~20 cm.** El simulador le mete rachas de deriva
+  de 20–27 cm/s que duran segundos, más de lo que da el Tello con rc 20 (~22 cm/s): ningún
+  control las alcanza. Kalman y Kalman + centrar son lo mismo sin tags, así que su diferencia
+  (22 contra 20) es el ruido entre corridas.
+- **El Kalman manda más seguido** (33–43 rc/s de cambio contra 18–20), pero en pasos chicos
+  (rc 6–9) en vez de saltos de 0 a 10. Si el Tello se tambalea con eso, se ve en E2b.
+- **De dónde sale la mejora** (modelo rápido sin video, 10 semillas): los pasos 3 y 5
+  aplicados al PID con sus ganancias de hoy casi no cambian nada (11 → 10.5–13.6 cm con dron
+  sano). Un Kalman con mandos "0 o 10" es igual de preciso que con mandos finos, solo más
+  brusco. La mejora viene de que el filtro sabe qué hace cada rc. Afinando el PID (paso 4) se
+  iguala la precisión con dron sano, pero con mandos más del doble de bruscos (96 contra 42
+  rc/s en ese modelo).
+- **Si el dron no es como el modelo** (2 corridas por caso, quieto): con el dron sano, el
+  Kalman queda a 5–8 cm en todos los casos y el PID a 8–14. Con el Tello 7, el Kalman queda
+  igual o mejor: video atrasado 0.30 s, 16 contra 32 cm; zona muerta 7, 17 contra 28; rc 30 %
+  más fuerte, 10 contra 18. Con el dron 30 % más débil, los dos se van (Kalman 65 cm, PID
+  187); ahí la deriva le gana a rc 20.
+- **Medida al revés** (`--set espejo=h`): el seguro de siempre (`piso_alejandose_cm`) apaga la
+  corrección en las 8 corridas, con los dos controles. El Kalman empuja más fuerte y se aleja
+  más antes de que se apague: con dron sano, distancia media de 105–182 cm contra 33–103.
+- **Se corrigió en el camino:**
+  - el umbral de "deriva imposible" pasó de 40 a 50 cm/s (con 40, una racha del Tello 7 lo
+    apagó), y al apagarse el PID arranca desde `piso_i_inicial`;
+  - **`espejo_gastado` fallaba 4 de 4 con el Kalman** (`main`: 2 de 4; branch con PID: 3 de
+    4). El Kalman corregía de lado un poco todo el tiempo mientras avanzaba, y lado y
+    adelante a la vez hunden al Tello ~8 cm/s: volaba a 88–95 cm. Ahí el tag manchado no se
+    detecta nunca (a 95–110 cm, a veces; probado renderizando encima del tag). Ahora,
+    avanzando, no corrige de lado por menos de 4 cm/s (`kalman_lado_avanzando`): 2 de 4. **En
+    el Tello real puede pasar lo mismo:** en E2b/E5 con Kalman, revisar `tof` mientras avanza.
+- **Regresión completa** (`todos`), con PID y con Kalman: los 17 escenarios de espejo dan lo
+  mismo con los dos y sin choques. En pared y piso (no usan este código) cambió lo de siempre
+  por la deriva aleatoria (`piso_hundimiento` choca, ya se sabía; `tag_alto`, de pared, chocó
+  en una de las dos).
+- **Videos lado a lado** (izquierda PID, derecha Kalman, misma semilla), en la laptop, en
+  `sim/logs/videos_kalman/`: estacionario y circuito del Tello 7, y circuito del dron sano.
+  En esas corridas sueltas los dos completan; el Kalman ejecuta un poco más cerca del tag.
+- **Herramientas nuevas en el simulador:** `--set`, `--sim`, `--semilla`, `--log-sufijo`, la
+  distancia real al tag al ejecutar y `sim/comparar_control.py`
+  ([`simulador.md`](simulador.md)).
 
 ## 12-nov — La medida del piso ya no se engaña al subir
 

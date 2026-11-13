@@ -12,3 +12,19 @@ Tanda K1/K2 (PID contra Kalman), pero en main: no se hizo git checkout kalman, e
 - 13:23 Tello 1: PARO a mano con q al despegar (5 s).
 - 13:23 Tello 1, E5 (grabado como k2_dron1_kal1, pero con PID): 1, 2 y 7 a 9, 1 y 13 cm.
 PID en vuelo real: mandos 14-32 rc/s (el simulador da 18-28), altura al avanzar mínima 90-94 cm (casi no se hunde) y la integral de adelante termina siempre negativa (-4.5 a -12 rc).
+
+## 14:37
+
+PID1 Dron 1: Despues de detectar el primer tag este no continuo avanzando y se quedo en el mismo lugar, Kalman completo todo el circuito de manera correcta pero en el primer tag al intenter colocarse arriba del tag el dron se ponia un poco mas adelante de lo que debia, pero en general no tuvo tambaleos ni errores de deteccion.
+
+## 14:45
+
+Sesión vuelo estatico con dron 7: Con PID oscilo un poco en la posicion al mantenerse en hover pero al momento de aterrizar aterrizo a menos de 10 cm de distancia de donde habia despegado. En cambio con Kalman no oscilo tanto pero al final se movio de posicion y termino aterrizando a unos 30 cm en diagonal desde donde despego
+
+## 14:52
+
+Dron 7 K2 con PID: En la primera mision detecto de manera correcta el tag 1, pero al avanzar al tag dos se derivo a la derecha y lo perdio de la vista por lo que eventualmente aterrizo. En la segunda mision logro hacer el recorrido de manera correcta, no hubo muchas oscilaciones y no tuvo problemas para avanzar ni detectar los tags.
+
+## 14:57
+
+K2 con dron 7 Kalman: En la primera mision derivo hacia atras y eventualmente choco con la malla de la arena y tuve que matarla, al caer se le salio la pila. En la segunda mision tuvo mejor comportamiento pero note que oscilaba mucho, tanto al avanzar como al quedarse arriba de un tag

@@ -138,6 +138,8 @@ def cargar_params(dron: str | None = None) -> SimParams:
 
 P = cargar_params()  # --ideal lo cambia por SimParams() y --dron N agrega su perfil
 DRON: str | None = None  # --dron N: también los ajustes de misión de ese dron (config/mision_dron<N>.json)
+LOG_SUFIJO = ""  # --log-sufijo X: sim/logs/<escenario>X.csv (para no pisarse en tandas)
+SEMILLA = 0  # --semilla N: otra serie de deriva aleatoria (para comparar en tandas con las mismas)
 
 
 def mando(rc: float, zona: float, ganancia: float) -> float:
@@ -579,6 +581,7 @@ class SimTello:
 
 
 OVER_E: dict = {}  # cambios a MirrorConfig por escenario
+OVER_E_CLI: dict = {}  # ...y desde la línea de comandos (--set), encima de los del escenario
 OVER_P: dict = {}  # cambios a FloorConfig por escenario
 
 
@@ -598,9 +601,9 @@ def run(name, tags, limit=120, events=None, drift=None, boxes=(), bias=(0.0, 0.0
         setattr(mcfg, k, v)
     sim = SimTello(tags, drift=drift, boxes=boxes, bias=bias, yaw0=yaw0, bat=bat, mirror=mirror,
                    mirror_tilt=mirror_tilt, speed_factor=speed_factor, sag=sag, combo=combo, glitches=glitches,
-                   imu_mal=imu_mal, despegue=despegue, temp=temp)
+                   imu_mal=imu_mal, despegue=despegue, temp=temp, seed=SEMILLA)
     sim.x, sim.y = start
-    log = ROOT / "sim" / "logs" / f"{name}.csv"
+    log = ROOT / "sim" / "logs" / f"{name}{LOG_SUFIJO}.csv"
     if flip_test:  # prueba de first_flight.py --flip-test, sin misión
         mis = F.Flight(sim, cfg, log, None, flip_test)
         mis.executed, mis._turned = [], 0.0
@@ -619,7 +622,7 @@ def run(name, tags, limit=120, events=None, drift=None, boxes=(), bias=(0.0, 0.0
         ecfg.espejo = mirror
         if DRON and (ROOT / "config" / f"mision_dron{DRON}.json").exists():
             ME.ajustes_dron(ecfg, DRON)
-        for k, v in OVER_E.items():
+        for k, v in {**OVER_E, **OVER_E_CLI}.items():
             setattr(ecfg, k, v)
         mis = ME.MirrorMission(sim, cfg, mcfg, ecfg, log, ROOT / "config" / "camera_tello.json")
     else:
@@ -648,8 +651,14 @@ def run(name, tags, limit=120, events=None, drift=None, boxes=(), bias=(0.0, 0.0
     time.sleep(0.5)
     mis.request_takeoff()
     t0, log, last = time.monotonic(), [], None
+    al_ejecutar = []  # (tag, distancia real en cm) al empezar a ejecutar cada tag
     while time.monotonic() - t0 < limit and mis.state not in F.TERMINAL:
         if (mis.state, mis.reason) != last:
+            if mis.state == "EXECUTE" and (not last or last[0] != "EXECUTE"):
+                tid = getattr(mis, "_target", None)
+                tg = [t for t in tags if t.id == tid]
+                if tg:
+                    al_ejecutar.append((tid, math.hypot(sim.x - tg[0].c[0], sim.y - tg[0].c[1])))
             last = (mis.state, mis.reason)
             log.append(f"{time.monotonic() - t0:5.1f}s {mis.state:9s} {mis.reason}  "
                        f"[x={sim.x:.0f} y={sim.y:.0f} z={sim.z:.0f} yaw={sim.yaw:.0f}]")
@@ -663,6 +672,8 @@ def run(name, tags, limit=120, events=None, drift=None, boxes=(), bias=(0.0, 0.0
     print(f"===== {name}: final {mis.state} | choque: {sim.crash} | min pared {sim.min_wall:.0f} cm | "
           f"ejecutados: {mis.executed} | giro acumulado {mis._turned:.0f} | flips {sim.flips} | "
           f"altura min en vuelo {sim.min_z_after_takeoff:.0f} cm")
+    if al_ejecutar:  # qué tan encima del tag quedó de verdad (la misión solo sabe lo que ve)
+        print("    al ejecutar (real): " + ", ".join(f"tag {t} a {d:.0f} cm" for t, d in al_ejecutar))
     for line in log:
         print("   ", line)
 
@@ -835,6 +846,32 @@ if __name__ == "__main__":
         args = args[:k] + args[k + 2:]
         if not num:
             raise SystemExit("--dron va con el número del dron, p. ej. --dron 7")
+    # --set clave=valor: cambia un ajuste de la misión con espejo (como en config/mission_espejo.json)
+    # --sim clave=valor: cambia el dron simulado (como en config/sim_tello.json)
+    # p. ej. --set piso_control=kalman --sim avance_ganancia=1.1
+    cambios = {"--set": [], "--sim": []}
+    for flag in cambios:
+        while flag in args:
+            k = args.index(flag)
+            if k + 1 >= len(args) or "=" not in args[k + 1]:
+                raise SystemExit(f"{flag} va con clave=valor, p. ej. {flag} piso_kp=0.6")
+            cambios[flag].append(args[k + 1])
+            args = args[:k] + args[k + 2:]
+
+    def valor(txt: str):
+        try:
+            v = json.loads(txt)
+        except json.JSONDecodeError:
+            return txt  # texto sin comillas, p. ej. piso_control=kalman
+        return tuple(v) if isinstance(v, list) else v
+    if "--semilla" in args:
+        k = args.index("--semilla")
+        SEMILLA = int(args[k + 1])
+        args = args[:k] + args[k + 2:]
+    if "--log-sufijo" in args:
+        k = args.index("--log-sufijo")
+        LOG_SUFIJO = args[k + 1]
+        args = args[:k] + args[k + 2:]
     if not args:
         raise SystemExit(__doc__)
     if ideal:  # el modelo de antes del 11-nov, sin lo medido en config/sim_tello.json
@@ -842,6 +879,16 @@ if __name__ == "__main__":
     elif num:
         P = cargar_params(num)
         DRON = num
+    for kv in cambios["--set"]:
+        k, v = kv.split("=", 1)
+        if k not in {f.name for f in fields(ME.MirrorConfig)}:
+            raise SystemExit(f"--set: {k} no es un ajuste de config/mission_espejo.json")
+        OVER_E_CLI[k] = valor(v)
+    for kv in cambios["--sim"]:
+        k, v = kv.split("=", 1)
+        if k not in {f.name for f in fields(SimParams)}:
+            raise SystemExit(f"--sim: {k} no es un parámetro de config/sim_tello.json")
+        P = replace(P, **{k: valor(v)})
     dron = ("ideal (--ideal)" if ideal else str(SIM_JSON.relative_to(ROOT)) + (f" + {json_dron(num).name}" if num else "")
             if SIM_JSON.exists() else "ideal (no hay config/sim_tello.json)")
     print(f"[sim] dron: {dron}", flush=True)
@@ -851,7 +898,9 @@ if __name__ == "__main__":
     else:  # en paralelo, en tandas: con demasiados a la vez el CPU no alcanza, la visión
         # se atrasa y los acercamientos se alargan por algo que en vuelo real no pasa
         batch = 4
-        extra = (["--ideal"] if ideal else []) + (["--dron", num] if num else [])
+        extra = (["--ideal"] if ideal else []) + (["--dron", num] if num else []) \
+            + [x for kv in cambios["--set"] for x in ("--set", kv)] \
+            + [x for kv in cambios["--sim"] for x in ("--sim", kv)] + ["--semilla", str(SEMILLA)]
         for i in range(0, len(names), batch):
             procs = [subprocess.Popen([sys.executable, __file__, n] + extra, stdout=subprocess.PIPE, text=True)
                      for n in names[i:i + batch]]

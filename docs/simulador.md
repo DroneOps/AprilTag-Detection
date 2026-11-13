@@ -20,7 +20,35 @@ python sim/sim_world.py todos > sim/logs/regresion.txt 2>&1   # los ~49, unos 13
 ```
 
 Corre en tiempo real: cada escenario tarda 30–70 s. Para `todos`, mándalo a un archivo
-y en segundo plano. Más de 4 a la vez satura el CPU y la visión se atrasa.
+y en segundo plano. Más de 4 a la vez satura el CPU y la visión se atrasa (no grabes ni
+corras otra cosa pesada mientras comparas: con el video atrasado, el control empeora).
+
+Opciones para probar cambios sin tocar los JSON (12-nov):
+
+| Opción | Qué hace |
+|---|---|
+| `--set clave=valor` | cambia un ajuste de la misión con espejo, como en `config/mission_espejo.json` (p. ej. `--set piso_control=kalman`) |
+| `--sim clave=valor` | cambia el dron simulado, como en `config/sim_tello.json` (p. ej. `--sim video_atraso_s=0.3`) |
+| `--semilla N` | otra serie de deriva aleatoria (por defecto 0). Para comparar dos variantes, usar las mismas semillas |
+| `--log-sufijo X` | la bitácora va a `sim/logs/<escenario>X.csv` (para que corridas a la vez no se pisen) |
+
+Con tags, al final imprime además **a qué distancia real del tag** empezó a ejecutar cada uno
+(`al ejecutar (real): tag 1 a 6 cm, ...`); la misión solo sabe lo que ve.
+
+**Comparar variantes en tandas: `sim/comparar_control.py`.** Corre cada escenario con cada
+dron N veces por variante, con las mismas semillas, y da una tabla: distancia al despegue en
+`espejo_estacionario`; corridas completas, tags y distancia al tag en los circuitos; y qué tan
+bruscos son los mandos (rc/s que cambian y % del tiempo al tope).
+
+```bash
+python sim/comparar_control.py --variante pid: --variante "kalman:--set piso_control=kalman" --n 4 --salida sim/logs/comp.jsonl
+```
+```bash
+python sim/comparar_control.py --solo-tabla --salida sim/logs/comp.jsonl   # la tabla otra vez, sin correr
+```
+
+Por defecto: `espejo_estacionario` y `espejo_circuito`, con dron sano, Tello 1 y Tello 7, 3 a
+la vez (~25 min para 2 variantes × 4 semillas). `--desde 5` sigue con las semillas 5, 6, …
 
 Al final de cada escenario imprime una línea como esta:
 

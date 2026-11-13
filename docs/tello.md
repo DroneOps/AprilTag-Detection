@@ -111,7 +111,14 @@ el Tello 7 no alcanza a corregir.
   - **Sospecha:** la inclinación real de cada clip no es la del JSON (Tello 7 ~0°, Tello 1
     ~−10°, calculado con el simulador). Las dos medidas la usan, así que se equivocan igual.
     No descarta un movimiento real del dron al despegar y aterrizar.
-  - **Para salir de dudas:** E1 con cada dron y su clip.
+  - **Confirmado en vuelo (12-nov):** con los tags de los videos (`scripts/inclinacion_vuelo.py`),
+    la vista está inclinada **~−10.5° adelante y ~−1° de lado en los dos drones**
+    (cuatro videos: −9.9° a −11.9°).
+    - Cuadra con la cámara del Tello, que ve 11° hacia abajo, en un espejo a 45°.
+    - E1 en la mano dio −5.7° y −7.0° (y −13° de lado): la mano también se inclina. Mejor
+      medirla en vuelo.
+- **Velocidad hacia adelante con espejo (12-nov):** con rc 15, el piso mide 5–11 cm/s (mediana
+  ~9) en los dos drones. La tabla de `rc` de arriba, sin espejo, daba más.
 - Un montaje tapó el **sensor de abajo** y el dron creía estar en el piso: no despegaba.
 - Con espejo, el dron sostiene peor la altura (se vio variar de 95 a 118 cm).
 - **Los tags del laboratorio se ven desteñidos por el espejo** (videos de E5, 9-nov, ~1,400
