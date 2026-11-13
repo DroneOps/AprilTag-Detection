@@ -112,6 +112,7 @@ Fernando sigue el proyecto por GitHub. Nada debe quedarse solo en la laptop.
 | `sim/comparar_vuelos.py` | compara el simulador con vuelos reales y reajusta `config/sim_tello.json`; correr al cerrar cada sesión |
 | `scripts/resumen_vuelos.py`, `scripts/traza_vuelo.py` | analizar vuelos |
 | `scripts/resumen_piso.py` | por vuelo con espejo: quién sostuvo la posición (PID o Kalman), qué tan lejos del despegue o del tag quedó, si se hundió y qué tan bruscos fueron los mandos; `guardar_sesion.py` lo guarda en `piso.txt` |
+| `scripts/inclinacion_vuelo.py` | inclinación del espejo medida en vuelo con los tags de los videos (`--record`); mejor que E1 en la mano |
 | `scripts/guardar_sesion.py` | subir una sesión de laboratorio a `sesiones/` |
 
 Ajustes de `config/mission_espejo.json` que más se mueven en el laboratorio:
