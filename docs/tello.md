@@ -117,6 +117,14 @@ el Tello 7 no alcanza a corregir.
     - Cuadra con la cámara del Tello, que ve 11° hacia abajo, en un espejo a 45°.
     - E1 en la mano dio −5.7° y −7.0° (y −13° de lado): la mano también se inclina. Mejor
       medirla en vuelo.
+  - **En vuelo la inclinación no es fija** (12-nov):
+    - La mediana de cada tramo de 4 s va de −4° a −17° adelante y de −4° a +3° de lado, dentro
+      del mismo vuelo.
+    - En el simulador, con la inclinación fija, el mismo cálculo da ±0.6°: casi toda la
+      variación es real. Es la inclinación del propio dron al moverse, más el espejo que se
+      mueve con los movimientos del dron (Fernando lo ha visto).
+    - Lo más sólido es un clip más firme; en el código se puede seguir la inclinación con los
+      tags ([issue #2](https://github.com/DroneOps/AprilTag-Detection/issues/2)).
 - **Velocidad hacia adelante con espejo (12-nov):** con rc 15, el piso mide 5–11 cm/s (mediana
   ~9) en los dos drones. La tabla de `rc` de arriba, sin espejo, daba más.
 - Un montaje tapó el **sensor de abajo** y el dron creía estar en el piso: no despegaba.
