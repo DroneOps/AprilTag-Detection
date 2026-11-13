@@ -28,18 +28,11 @@ Las bitácoras de vuelo (`logs/*.csv`) y los videos están en la laptop, no en e
 - Antes de volarlo: hélices, que la pila quede firme, calibrar el IMU, estacionario, y revisar
   en la app si dice "posicionamiento visual no disponible".
 
-1. **PID o Kalman: en el laboratorio el Kalman no fue mejor** (12-nov tarde; ver la entrada).
-   - **Con el Kalman se centró peor:** ejecutó a ~20 cm del tag contra ~6 del PID, según la
-     cámara, y Fernando lo vio oscilar más en E5.
-   - **Por qué, probablemente:** su modelo del dron no cuadra con lo real. Con rc 15 el piso
-     mide ~9 cm/s, no los 14.5 que supone, así que cree que hay una deriva hacia atrás y, al
-     centrarse, empuja de más hacia adelante.
-   - **Recomendación:** quedarse con el PID (`"piso_control": "pid"`, como está) y no
-     prender el Kalman hasta arreglar la medida del piso y reajustar su modelo con los
-     vuelos reales (`kalman_ganancia`).
-   - **Decidir:** juntar la branch a `main` con el PID por defecto, o dejarla aparte. Juntarla
-     trae las herramientas (`resumen_piso.py`, `inclinacion_vuelo.py`, `comparar_control.py`,
-     la columna `piso_modo`) y las sesiones de esta tarde, que hoy solo están en la branch.
+1. **Se queda el PID; el Kalman no se usa** (decidido el 12-nov; resultados en la entrada
+   "12-nov (tarde, 2)"). La branch `kalman` se juntó a `main` con `"piso_control": "pid"`: trae
+   las herramientas (`resumen_piso.py`, `inclinacion_vuelo.py`, `comparar_control.py`, la columna
+   `piso_modo`) y el Kalman apagado. Qué haría falta para retomarlo, en el encabezado de
+   `scripts/kalman_piso.py`.
    - Si después se afina el PID: el primer candidato del barrido rápido es `piso_kp` 1.2,
      `piso_kd` 1.2, `piso_ki` 0.3.
    - **Ojo con los seguros:** ninguno paró el choque del Tello 7. Avanzando, el seguro del piso

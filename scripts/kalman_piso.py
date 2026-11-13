@@ -1,5 +1,22 @@
 """Filtro de Kalman para sostener la posición con el piso (mision_espejo.py, piso_control "kalman").
 
+NO SE USA (decisión del 12-nov): la misión se queda con el PID ("piso_control": "pid"). Este
+código se guarda apagado como opción para más adelante. Por qué:
+  - En el laboratorio del 12-nov no fue mejor que el PID. En E5 ejecutó a ~20 cm del tag (el
+    PID, a ~6), oscilaba más, y quieto mandaba casi el doble de seguido (52-55 rc/s contra 29).
+  - Su modelo del dron no cuadra con el Tello real. Supone que rc 15 da 14.5 cm/s; con el
+    espejo, el piso mide ~9. La diferencia la toma como una deriva hacia atrás y, al centrarse
+    sobre el tag (kalman_centrar), empuja de más hacia adelante.
+  - En el simulador ganaba porque el simulador usa el mismo modelo que el filtro.
+  - La medida del piso que usa tiene un error al subir y bajar: la inclinación del espejo está
+    mal en el JSON (issue #2). Mientras eso no se arregle, ningún control fino sirve de mucho.
+Para volver a probarlo:
+  1. arreglar la medida del piso (issue #2);
+  2. reajustar kalman_ganancia, kalman_zona y kalman_respuesta_s con vuelos reales;
+  3. compararlo otra vez con sim/comparar_control.py y en el laboratorio (K1 y K2, en
+     docs/laboratorio.md).
+Resultados completos en docs/bitacora.md, entradas "12-nov (noche)" y "12-nov (tarde, 2)".
+
 Por cada eje del dron (0 = de lado, + a la derecha; 1 = adelante) estima tres cosas:
 
     p  posición (cm) respecto a donde debería estar      (la mide FlujoPiso, atrasada)

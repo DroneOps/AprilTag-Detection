@@ -100,7 +100,7 @@ Fernando sigue el proyecto por GitHub. Nada debe quedarse solo en la laptop.
 | Archivo | Qué es |
 |---|---|
 | `scripts/mision_espejo.py` + `config/mission_espejo.json` | **misión principal**: sube a 100 cm, avanza hasta ver un tag debajo, se centra encima sosteniendo el rumbo (≤12 cm, máximo 8 s), ejecuta y sigue. Con `sostener_piso` mide con el piso cuánto se mueve: regresa al despegue mientras sube, avanza en línea recta y busca el tag que pierde |
-| `scripts/kalman_piso.py` | (branch `kalman`) filtro de Kalman por eje para sostener la posición con el piso: estima posición, velocidad y deriva con el modelo rc → velocidad. Se usa con `"piso_control": "kalman"`; si deja de cuadrar con lo medido, regresa al PID |
+| `scripts/kalman_piso.py` | **no se usa** (12-nov: en el laboratorio se centró peor que el PID; por qué, en su encabezado). Filtro de Kalman por eje para sostener la posición con el piso: estima posición, velocidad y deriva con el modelo rc → velocidad. Se usa con `"piso_control": "kalman"`; si deja de cuadrar con lo medido, regresa al PID |
 | `scripts/mision_piso.py` + `config/mission_piso.json` | respaldo sin espejo: cámara al frente, último metro a ciegas |
 | `scripts/mission_tags.py` + `config/mission_tags.json` | base de las misiones: acciones de cada tag, flip seguro, sostener altura, "el dron no obedece" |
 | `scripts/first_flight.py` + `config/flight.json` | vuelo base, despegue, seguridad, HMI, bitácora; prueba de estacionario, giro y flip |
@@ -126,7 +126,7 @@ Ajustes de `config/mission_espejo.json` que más se mueven en el laboratorio:
 | `ignorar_inicio` | ignorar o no el tag que ve al despegar; en las pruebas va en `false` |
 | `advance_lr` | rc lateral fijo al avanzar sin tag, para compensar si el dron se va siempre de un lado (negativo = a la izquierda); con `sostener_piso` casi no hace falta |
 | `piso_kp`, `piso_kd`, `piso_ki` | el PID que sostiene la posición con el piso; síntomas y qué cambiar en "Cómo ajustarlo" de `docs/arquitectura.md` |
-| `piso_control`, `kalman_*` | (branch `kalman`) `"pid"` o `"kalman"`; el Kalman y cómo ajustarlo, en `docs/arquitectura.md` |
+| `piso_control`, `kalman_*` | dejar `"pid"`: el Kalman no se usa (ver `scripts/kalman_piso.py`) |
 | `config/mision_dron<N>.json` | ajustes de la misión de cada dron (`--dron N`); hoy, `piso_i_inicial`: la integral con que arranca. Si el dron se arregla, ponerla en [0, 0] |
 
 ## Cómo guiar una sesión de laboratorio

@@ -141,7 +141,12 @@ cuenta lo que se fue al despegar, porque ahí el Tello ignora el rc: el Tello 7 
 En el circuito E5, el Tello 7 completó 3 de 4 con PID y 0 de 4 con solo PD. El Tello 1, 3 de
 4 con los dos. Con `piso_ki` 0.08 y 0.25 salió parecido; se dejó 0.15.
 
-### Otra opción: filtro de Kalman (`"piso_control": "kalman"`, 12-nov, branch `kalman`)
+### Otra opción: filtro de Kalman (`"piso_control": "kalman"`, 12-nov) — NO SE USA
+
+**Se queda el PID.** En el laboratorio del 12-nov el Kalman se centró peor sobre los tags (~20
+cm contra ~6) y oscilaba más. Su modelo del dron (rc 15 → 14.5 cm/s) no cuadra con el real
+(~9 cm/s medido con el piso). El código queda apagado como opción; por qué y qué haría falta
+para retomarlo, en el encabezado de `scripts/kalman_piso.py`.
 
 `scripts/kalman_piso.py`. En vez de reaccionar al error como el PID, **estima** por cada eje
 (de lado y adelante) tres cosas:

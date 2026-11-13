@@ -92,6 +92,8 @@ class MirrorConfig:
     # cómo se sostiene: "pid" (piso_kp, piso_kd, piso_ki) o "kalman" (scripts/kalman_piso.py: estima
     # posición, velocidad y deriva con el modelo rc -> velocidad, y pide lo que cancela la deriva).
     # El Kalman se apaga solo y regresa al PID si lo medido deja de cuadrar con lo predicho
+    # NO SE USA el Kalman desde el 12-nov: en el laboratorio se centró peor que el PID (ver
+    # scripts/kalman_piso.py). Dejar "pid".
     piso_control: str = "pid"
     kalman_kp: float = 1.2  # cm/s pedidos por cm de distancia (1/s): qué tan rápido regresa
     kalman_kd: float = 1.0  # cm/s pedidos en contra por cm/s que se va: frena

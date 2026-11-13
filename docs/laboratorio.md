@@ -7,9 +7,8 @@ está en [`bitacora.md`](bitacora.md).
 **Orden actual (con espejo):** Revisar el dron (con el clip puesto) → E1 → E2 → E3 → E4 →
 E5 → E6 → E7 (ensayo de competencia). Las de piso sin espejo (F1–F4) quedan de respaldo.
 
-**Mientras esté abierto el PR del Kalman:** Revisar el dron → E1 (si el clip es nuevo o se
-movió) → K1 y K2 en ["PID contra Kalman"](#pid-contra-kalman-branch-kalman-) → E6 y E7 con el
-que gane.
+**El Kalman no se usa** (12-nov: en el laboratorio se centró peor que el PID). La sección
+"PID contra Kalman" de abajo queda solo por si algún día se vuelve a comparar.
 
 ---
 
@@ -252,10 +251,13 @@ competencia, y anota cuántos tags ejecutó bien cada uno. Mismo comando que E4.
 
 ---
 
-## PID contra Kalman (branch `kalman`) ⭐
+## PID contra Kalman (ya no se usa)
 
-Compara las dos formas de sostener la posición con el piso, para decidir si el Kalman se
-junta a `main` ([PR #1](https://github.com/DroneOps/AprilTag-Detection/pull/1)).
+**Ya se hizo el 12-nov y ganó el PID:** el Kalman queda apagado (ver `scripts/kalman_piso.py`).
+Esto queda por si se vuelve a comparar, después de arreglar la medida del piso y reajustar su
+modelo.
+
+Compara las dos formas de sostener la posición con el piso.
 - **Cómo funciona el Kalman:** [`arquitectura.md`](arquitectura.md), "Otra opción: filtro de Kalman".
 - **Qué salió en el simulador:** [`bitacora.md`](bitacora.md), entrada "12-nov (noche)".
 
