@@ -77,6 +77,24 @@ medido al llegar. Si no, el error de cada giro se sumaba, y tras 6–8 tags iba 
 pero solo de lado y adelante; la altura la manda la recuperación. Antes se iba ~1 m en esos
 ~15 s.
 
+**Al girar sobre un tag** (16-nov). Con la vista inclinada, un tag a más de ~10 cm hacia adelante
+ya está en la orilla de la vista. Al girar, el dron se corre (~12 cm/s), y en algún momento del
+giro el tag salía de la vista. Desde ahí ya no corregía, y si al terminar no lo veía, el tramo
+arrancaba desde donde quedó el dron y no pasaba por el siguiente tag. Ahora:
+- **Si deja de verlo girando, deja de girar** y va a donde debe estar: su última posición, girada
+  con lo que giró el dron y corrida con lo que midió el piso (`_donde_objetivo`). Al verlo otra
+  vez, sigue el giro. Si no aparece en `buscar_s`, sigue como antes. En la terminal sale
+  `tag N perdido girando: dejo de girar y regreso a él`.
+- **La velocidad del tag con la que frena** (`_tag_velocity`) se calcula sin el giro. Antes,
+  girando sobre un tag a 10 cm, parecía moverse ~6 cm/s y el freno empujaba de lado.
+- **Si al terminar no lo ve,** el tramo pasa por donde debe estar el tag (sale
+  `tramo nuevo desde donde debe estar el tag N`).
+- **Avanzando, si ignora un tag ya ejecutado** por estar fuera del pasillo, lo avisa una vez por
+  tramo (`tag N ignorado (ya ejecutado, fuera del pasillo)`). Si se pasa de un tag repetido, ahí
+  se ve por qué.
+- **El tope del mando** para sostenerse sobre el tag es `sostener_tag_max` (15). Con 20 fue
+  peor.
+
 ## Sostener la posición con el piso (`mision_espejo.py`, 11-nov)
 
 `FlujoPiso` compara cada cuadro del espejo con el anterior (correlación de fase a 240×180, ~2
@@ -103,8 +121,8 @@ vista (`vista_adelante_deg`, `vista_lado_deg`).
 | Estado | Qué hace con esa medida (`sostener_piso`) |
 |---|---|
 | HOVER, CRUISE | regresar al punto de despegue (se mide desde que empieza a despegar) |
-| ADVANCE | sostener la línea del tramo, solo de lado (con `--quieto`, los dos ejes). El tramo nuevo pasa **por el tag ejecutado** (si se ve), no por donde quedó el dron |
-| EXECUTE (giros, pausa) | `sostener_tag`: centrarse sobre el tag con su posición mientras gira. En un giro de 90° se corría 26–42 cm; así queda a ~11 cm (mediana en el simulador) |
+| ADVANCE | sostener la línea del tramo, solo de lado (con `--quieto`, los dos ejes). El tramo nuevo pasa **por el tag ejecutado** (si no se ve, por donde debe estar), no por donde quedó el dron |
+| EXECUTE (giros, pausa, flip) | `sostener_tag`: centrarse sobre el tag con su posición mientras gira. En un giro de 90° se corría 26–42 cm; así queda a ~11 cm (mediana en el simulador). Si lo deja de ver girando, deja de girar y regresa a él (16-nov) |
 | APPROACH, tag perdido | ir a donde debe estar el tag, contando lo que se movió el dron; a los `buscar_s` volver a ADVANCE en vez de aterrizar |
 
 ### El control: un PID por eje

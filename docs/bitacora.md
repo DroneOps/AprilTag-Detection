@@ -25,6 +25,12 @@ Las bitácoras de vuelo (`logs/*.csv`) y los videos están en la laptop, no en e
   ejecutado.** `python sim/pista.py <N>` da una pista armada: posiciones en cm y orden.
 - **Revisar que el rumbo no se desvíe** a lo largo de la pista.
 - **Revisar que tras el flip siga sobre el tag.**
+- **Mirar la terminal en los giros** (16-nov): si sale `tag N perdido girando`, el dron debe
+  dejar de girar, regresar encima del tag y terminar el giro. Mirarlo de lado.
+- **En el simulador todavía fallan** (entrada 16-nov abajo): el tramo después de un flip, un 4
+  repetido justo después de otro 4, algunos regresos tras un 8, y el Tello 7 por su deriva. El
+  simulador avanza más rápido que el dron real (~14 contra ~9 cm/s): sus puntajes son
+  optimistas.
 
 **Usar `python lab.py` en el laboratorio con un Tello de verdad** (16-nov; solo se probó en modo
 práctica). Revisar que reconozca el dron por su WiFi, que el vuelo y el resumen salgan bien y
@@ -79,6 +85,69 @@ compañero haga los 13 retos de [`aprende/`](aprende/README.md) (simulador, sin 
    clip, reajustar `config/sim_tello.json` ([`simulador.md`](simulador.md)). Las bitácoras
    del 11-nov dicen en `sesiones/2026-11-11/notas.md` qué dron fue cada una. Falta medir bien
    la deriva durante el despegue: en el simulador se corre más que en lo real.
+
+## 16-nov (noche) — Giros: si pierde el tag girando, deja de girar y regresa a él
+
+Todo en el simulador; falta probarlo en el laboratorio.
+
+- **El problema** (pista 2 del 12-nov): en un giro de 90° el dron se corrió ~40 cm, al terminar
+  no veía el tag y el tramo siguiente arrancó fuera de la línea.
+- **Por qué pasaba:**
+  - Con la vista inclinada, un tag a más de ~10 cm hacia adelante ya está en la orilla.
+  - Al girar, el dron se corre (~12 cm/s en el simulador, como el real del 11-nov) y en algún
+    momento del giro el tag sale por la orilla de adelante. Desde ahí `sostener_tag` ya no
+    corregía nada.
+  - La velocidad del tag con la que frena incluía el giro mismo: un tag a 10 cm parecía
+    moverse ~6 cm/s y el freno empujaba de lado.
+  - Si al terminar no lo veía, el tramo pasaba por donde quedó el dron, no por el tag.
+- **Lo que se cambió** en `mision_espejo.py` (detalle en `arquitectura.md`, "Al girar sobre un
+  tag"):
+  - **Si deja de ver el tag girando, deja de girar** y va a donde debe estar: su última
+    posición, girada con lo que giró el dron. Al verlo otra vez sigue girando; si no aparece en
+    `buscar_s` (4 s), sigue como antes.
+  - **La velocidad del tag se calcula sin el giro.**
+  - **Si al terminar no lo ve, el tramo pasa por donde debe estar el tag.**
+  - **Avisos nuevos en la terminal:** `tag N perdido girando`,
+    `tramo nuevo desde donde debe estar el tag N` y `tag N ignorado (ya ejecutado, fuera del
+    pasillo)`.
+- **Herramientas nuevas:**
+  - **Escenario `espejo_giros`:** zigzag de 4 giros de 90° (1, 2, 1, 2, 7) a 120 cm.
+  - **Medida `al salir (real)`:** qué tan lejos del tag arranca cada tramo, también en
+    `comparar_control.py`.
+- **Resultados:**
+  - **`espejo_giros` con el corrimiento normal:** casi igual. Completa casi siempre y sale a
+    12–16 cm del tag (mediana). Con tramos de 120 cm, salir corrido aún alcanza a ver el
+    siguiente.
+  - **`espejo_giros` con más corrimiento al girar (`--sim giro_deriva_cm_s=18`), 6 corridas:**
+
+    | | Completas | Tags | Al salir, mediana / máx |
+    |---|---|---|---|
+    | Antes | 4 | 25 de 30 | 24 / 67 cm |
+    | Ahora | 6 | 30 de 30 | 14 / 41 cm |
+
+  - **Pistas al azar, las mismas 24 del 12-nov (semillas 1–8):**
+
+    | Dron | 12-nov (2 tandas) | Ahora |
+    |---|---|---|
+    | Sano | 46 y 43 de 59 (73–78 %) | **51 de 59 (86 %)**, 6 completas |
+    | Tello 1 | 42 y 53 de 59 (71–90 %) | 49 de 59 (83 %), 5 completas |
+    | Tello 7 | 11 de 59 (19 %) | **19 de 59 (32 %)** |
+
+  - **Con tope 20 en el mando para sostenerse** (`sostener_tag_max`) fue peor: 45 de 59 con el
+    sano y con el Tello 1. Se queda en 15.
+- **Lo que todavía falla en las pistas:**
+  - el tramo después de un flip (sale hasta ~50 cm del tag);
+  - un 4 repetido justo después de otro 4;
+  - algunos regresos tras un 8 (180° y flip);
+  - una vez tomó un 5 viejo que quedó enfrente tras girar;
+  - el Tello 7 sigue perdiéndose por su deriva.
+- **Regresión completa** (51 escenarios): sin choques y lo de espejo como antes. Una cosa que
+  ya pasaba antes: `espejo_gastado` falla ~1 de cada 2 veces. Pasa sobre el tag 1 manchado sin
+  detectarlo, en el primer tramo; con el código de antes, igual (2 corridas de cada uno).
+- **El simulador avanza más rápido que el dron real:** ~14.5 cm/s con rc 15 (9–19 según la
+  corrida), contra ~9 del dron real con espejo (12-nov). Sus puntajes en tramos largos son
+  optimistas. Para corregirlo hay que reajustar `avance_ganancia` en `config/sim_tello.json` con
+  vuelos con espejo.
 
 ## 12-nov (noche, 3) — Pistas al azar como la competencia: de 34 % a 73–90 % de los puntos
 

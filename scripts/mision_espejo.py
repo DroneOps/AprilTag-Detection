@@ -80,6 +80,10 @@ class MirrorConfig:
     # ejecutando un tag (giros, pausa): sostenerse sobre él con su posición (11-nov: en un giro de
     # 90° se corría 26–42 cm), y que el tramo nuevo pase por el tag y no por donde quedó el dron
     sostener_tag: bool = True
+    # rc máximo para quedarse sobre el tag mientras lo ejecuta. Con 20 (por si al girar no le
+    # alcanzaba contra los ~12 cm/s que se corre) fue peor en las pistas al azar: 76 % de los puntos
+    # contra 86 % con 15 (16-nov)
+    sostener_tag_max: int = 15
     # el tag recién ejecutado se sigue cuadro por cuadro: un tag con su número a menos de esto de
     # donde debe estar (su última posición, corrida con lo que avanzó el dron) es el mismo y se
     # ignora; en otra parte es OTRO tag y se ejecuta. Antes se ignoraba por número y se perdían los
@@ -272,7 +276,10 @@ class MirrorMission(TagMission):
         # seguimiento del recién ejecutado: (adelante, derecha) la última vez que se vio y la posición del
         # piso en ese momento; None si no se vio al arrancar el tramo (entonces se ignora por número)
         self._ult_track: tuple[float, float, np.ndarray] | None = None
-        self._target_visto: tuple | None = None  # (t, adelante, derecha, piso) la última vez que se vio el objetivo
+        # (t, adelante, derecha, piso, yaw) la última vez que se vio el objetivo: para saber dónde quedó si
+        # se deja de ver (p. ej. girando sobre él)
+        self._target_visto: tuple | None = None
+        self._avisados: set[int] = set()  # tags ignorados ya avisados en este tramo
         self.pose_est = self.pose_est.mirrored(ecfg.espejo)
         centro = punto_bajo_dron(self.pose_est.K, ecfg.vista_adelante_deg, ecfg.vista_lado_deg)
         self._floor_hist: dict[int, deque] = {}
@@ -337,7 +344,7 @@ class MirrorMission(TagMission):
         for tid in set(self._floor_hist) - set(floor):
             del self._floor_hist[tid]
         if self._target in floor:
-            self._target_visto = (t, floor[self._target][0], floor[self._target][1], self.piso.estado()[0])
+            self._target_visto = (t, floor[self._target][0], floor[self._target][1], self.piso.estado()[0], yaw)
         self._shown = img
         with self._vis_lock:
             self._vis = Vision(t, dets, poses, confirmed, floor)  # tagframe = (adelante, derecha, giro)
@@ -403,7 +410,17 @@ class MirrorMission(TagMission):
         if piso is not None and (state == "TAKEOFF" or (state == "ADVANCE" and prev == "EXECUTE")):
             pos = (0.0, 0.0)  # el punto de despegue, o el inicio del tramo nuevo
             if state == "ADVANCE":
+                self._avisados = set()
                 fl = self._tag_visto()
+                if fl is None:
+                    # justo ahora no se ve (se corrió al girar, parpadeo): donde debe estar, desde la
+                    # última vez que se vio. Antes el tramo arrancaba desde donde quedó el dron y, si
+                    # se había corrido ~40 cm al girar, no pasaba por el siguiente tag (pista 2, 12-nov)
+                    pred = self._donde_objetivo(time.monotonic(), 2.0)
+                    fl = None if pred is None else (pred[0], pred[1], 0.0)
+                    if pred is not None:
+                        print(f"[vuelo] tramo nuevo desde donde debe estar el tag {self._target}, que no se ve "
+                              f"(adelante {pred[0]:+.0f}, lado {pred[1]:+.0f} cm)")
                 # dónde queda el tag recién ejecutado en el piso del tramo: para no volver a
                 # ejecutarlo, pero sí a otro con el mismo número (ver mismo_tag_cm)
                 self._ult_ejecutado = self._target
@@ -413,10 +430,6 @@ class MirrorMission(TagMission):
             delta = piso.reiniciar(pos)
             if state == "ADVANCE":
                 self._ult_track = None if fl is None else (fl[0], fl[1], piso.estado()[0])
-                tv = self._target_visto
-                if fl is None and tv is not None and time.monotonic() - tv[0] < 2.0:
-                    # justo en este cuadro no se vio (tag girado, parpadeo): desde la última vez
-                    self._ult_track = (tv[1], tv[2], tv[3] + delta)  # su piso, pasado al origen nuevo
             getattr(self, "_piso_lejos", deque()).clear()
             if hasattr(self, "_kal"):
                 self._kal.desplazar(delta)  # el Kalman sigue el mismo origen; la deriva se queda
@@ -512,6 +525,20 @@ class MirrorMission(TagMission):
             return not (fl[0] > -10 and abs(fl[1]) < self.e.pasillo_cm)
         return self._ult_ejecutado is None and self._ignored(tid, now)
 
+    def _donde_objetivo(self, now: float, max_s: float) -> tuple[float, float] | None:
+        """(adelante, derecha) donde debe estar ahora el tag objetivo aunque no se vea: donde se vio
+        la última vez, girado con lo que giró el dron desde entonces y corrido con lo que se movió
+        (medida del piso; girando no mide, así que ahí cuenta solo el giro). None si hace más de
+        max_s que no se ve."""
+        tv = self._target_visto
+        if tv is None or now - tv[0] > max_s:
+            return None
+        _, f, r, p0, yaw0 = tv
+        th = math.radians(wrap_deg(self.tel.snapshot()[0].get("yaw", 0) - yaw0))
+        f, r = f * math.cos(th) + r * math.sin(th), -f * math.sin(th) + r * math.cos(th)  # girar a la derecha: lo de adelante queda a la izquierda
+        d = self.piso.estado()[0] - p0  # (derecha, adelante) que se movió
+        return f - d[1], r - d[0]
+
     def _tag_visto(self):
         """(adelante, derecha, giro) del tag objetivo si se ve ahora, si no None."""
         v = self._vision(time.monotonic())
@@ -578,11 +605,28 @@ class MirrorMission(TagMission):
             # girando, en pausa, subiendo/bajando (también antes y después del flip): quedarse sobre
             # el tag. Solo de lado y adelante; la altura la manda la recuperación del flip. Antes no
             # se sostenía en el flip y en sus ~15 s se iba ~1 m (simulador, 12-nov)
-            v = self._vision(time.monotonic())
+            now = time.monotonic()
+            v = self._vision(now)
             fl = v.tagframe.get(self._target) if (v is not None and self._target) else None
             if fl is not None:
-                vf, vr = self._tag_velocity(v.t, fl[0], fl[1])
-                lr, fb = lr + self._center_axis(fl[1], vr), fb + self._center_axis(fl[0], vf)
+                self._aviso_perdido = False
+                vf, vr = self._tag_velocity(v.t, fl[0], fl[1], self.tel.snapshot()[0].get("yaw", 0))
+                tope = e.sostener_tag_max
+                lr, fb = lr + self._center_axis(fl[1], vr, tope), fb + self._center_axis(fl[0], vf, tope)
+            else:
+                # se dejó de ver (al girar, si se corrió más de ~20 cm, el tag sale por la orilla de
+                # adelante de la vista: 16-nov). Dejar de girar e ir a donde debe estar; al volver a
+                # verlo sigue el giro. Si no aparece en buscar_s, seguir como antes
+                pred = self._donde_objetivo(now, e.buscar_s)
+                if pred is not None:
+                    pf, pr = pred
+                    if yaw and not getattr(self, "_aviso_perdido", False):
+                        self._aviso_perdido = True
+                        print(f"[vuelo] tag {self._target} perdido girando: dejo de girar y regreso a él "
+                              f"(adelante {pf:+.0f}, lado {pr:+.0f} cm)")
+                    yaw = 0
+                    lr += with_min(e.center_kp * pr, e.center_min, e.sostener_tag_max) if abs(pr) > e.center_tol_cm else 0
+                    fb += with_min(e.center_kp * pf, e.center_min, e.sostener_tag_max) if abs(pf) > e.center_tol_cm else 0
             if e.kalman_centrar and not self._kal_apagado and piso is not None and piso.valido(time.monotonic()):
                 lr, fb = self._kalman_centrar(lr, fb, time.monotonic())
         elif e.kalman_centrar and self.state == "APPROACH" and not self._kal_apagado and piso is not None \
@@ -607,9 +651,19 @@ class MirrorMission(TagMission):
                     for tid in self._start_ids:
                         self._last_seen[tid] = now
                 print(f"[vuelo] ADVANCE: ignorando el tag de inicio {sorted(self._start_ids)}")
-        cands = [(abs(v.tagframe[d.tag_id][0]) + abs(v.tagframe[d.tag_id][1]), d.tag_id)
-                 for d in v.dets if d.tag_id in v.confirmed and d.tag_id in v.tagframe
-                 and not self._ignorar(d.tag_id, v.tagframe[d.tag_id], now)]
+        cands = []
+        for d in v.dets:
+            if d.tag_id not in v.confirmed or d.tag_id not in v.tagframe:
+                continue
+            fl = v.tagframe[d.tag_id]
+            if not self._ignorar(d.tag_id, fl, now):
+                cands.append((abs(fl[0]) + abs(fl[1]), d.tag_id))
+            elif d.tag_id != self._ult_ejecutado and d.tag_id not in self._avisados:
+                # un tag ya ejecutado antes que se ve fuera de la línea del tramo: avisar una vez por
+                # tramo (si se pasa de uno así, aquí se ve por qué; 16-nov)
+                self._avisados.add(d.tag_id)
+                print(f"[vuelo] ADVANCE: tag {d.tag_id} ignorado (ya ejecutado, fuera del pasillo): "
+                      f"adelante {fl[0]:+.0f}, lado {fl[1]:+.0f} cm")
         if cands:
             _, tid = min(cands)
             fwd, right, rot = v.tagframe[tid]
@@ -645,7 +699,7 @@ class MirrorMission(TagMission):
         self._pos_visto = self.piso.estado()[0]
         fwd, right, rot = fl
         self._last_floor = (fwd, right)
-        vf, vr = self._tag_velocity(v.t, fwd, right)
+        vf, vr = self._tag_velocity(v.t, fwd, right, yaw)
         fb, lr = self._center_axis(fwd, vf), self._center_axis(right, vr)
         if e.alinear_bordes:
             # tag girado a la derecha en la imagen (+): girar el dron a la derecha lo endereza
@@ -664,28 +718,39 @@ class MirrorMission(TagMission):
         if elapsed > e.centrar_max_s:
             self._start_execute(now, f"centrado incompleto (adelante {fwd:+.0f}, lado {right:+.0f}, giro {rot:+.0f})")
 
-    def _tag_velocity(self, t_frame: float, fwd: float, right: float) -> tuple[float, float]:
-        """Velocidad del tag respecto al dron (cm/s) en el último ~0.5 s, una muestra por frame."""
+    def _tag_velocity(self, t_frame: float, fwd: float, right: float, yaw: float | None = None) -> tuple[float, float]:
+        """Velocidad del tag respecto al dron (cm/s) en el último ~0.5 s, una muestra por frame.
+        Con yaw, sin lo que se mueve solo porque el dron gira: cada muestra se pasa al rumbo de
+        ahora. Si no, girando sobre un tag a 10 cm parecía moverse ~6 cm/s y el freno empujaba
+        de lado (16-nov)."""
         h = self._center_hist
         if not h or t_frame > h[-1][0]:
-            h.append((t_frame, fwd, right))
+            h.append((t_frame, fwd, right, yaw))
         pts = [p for p in h if t_frame - p[0] <= 0.5]
         if len(pts) < 4 or pts[-1][0] - pts[0][0] < 0.25:
             return 0.0, 0.0
-        t = [p[0] for p in pts]
-        return float(np.polyfit(t, [p[1] for p in pts], 1)[0]), float(np.polyfit(t, [p[2] for p in pts], 1)[0])
+        t, fs, rs = [p[0] for p in pts], [p[1] for p in pts], [p[2] for p in pts]
+        if yaw is not None and all(p[3] is not None for p in pts):
+            fs, rs = [], []
+            for _, f, r, y in pts:
+                th = math.radians(wrap_deg(yaw - y))
+                fs.append(f * math.cos(th) + r * math.sin(th))
+                rs.append(-f * math.sin(th) + r * math.cos(th))
+        return float(np.polyfit(t, fs, 1)[0]), float(np.polyfit(t, rs, 1)[0])
 
-    def _center_axis(self, err: float, vel: float) -> int:
+    def _center_axis(self, err: float, vel: float, tope: float | None = None) -> int:
         """Mando de un eje para quedar encima del tag. Con el retraso del video y la
         inercia, sin frenar se pasaba y oscilaba; aquí la velocidad resta: si ya va
-        hacia el tag lo bastante rápido, no empuja, y si se pasa, manda en contra."""
+        hacia el tag lo bastante rápido, no empuja, y si se pasa, manda en contra.
+        tope: rc máximo (center_max si no se dice)."""
         e = self.e
+        tope = e.center_max if tope is None else tope
         u = e.center_kp * err + e.center_kd * vel  # vel = cambio de err; acercarse la hace negativa
         if abs(err) > e.center_tol_cm and abs(vel) < e.center_vel_tol and u * err > 0:
-            return with_min(u, e.center_min, e.center_max)  # lejos y quieto: empujar hacia el tag
+            return with_min(u, e.center_min, tope)  # lejos y quieto: empujar hacia el tag
         if abs(u) < e.center_dead:
             return 0
-        return with_min(u, e.center_min, e.center_max)
+        return with_min(u, e.center_min, tope)
 
 
 def main() -> None:

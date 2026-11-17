@@ -33,7 +33,10 @@ Opciones para probar cambios sin tocar los JSON (12-nov):
 | `--log-sufijo X` | la bitácora va a `sim/logs/<escenario>X.csv` (para que corridas a la vez no se pisen) |
 
 Con tags, al final imprime además **a qué distancia real del tag** empezó a ejecutar cada uno
-(`al ejecutar (real): tag 1 a 6 cm, ...`); la misión solo sabe lo que ve.
+(`al ejecutar (real): tag 1 a 6 cm, ...`); la misión solo sabe lo que ve. También **a qué
+distancia terminó de ejecutarlo** (`al salir (real): ...`): de ahí arranca el tramo siguiente,
+y si al girar se corrió mucho, puede no pasar por el siguiente tag (desde el 16-nov; también en
+`comparar_control.py`).
 
 **Comparar variantes en tandas: `sim/comparar_control.py`.** Corre cada escenario con cada
 dron N veces por variante, con las mismas semillas, y da una tabla: distancia al despegue en
@@ -320,6 +323,7 @@ por pista, de 3 en 3: 24 pistas son ~25 min, mejor en segundo plano. Resultados 
 | `espejo_sin_ok` | el Tello no contesta "ok" al despegar: seguir tras asentarse |
 | `espejo_lejos` | tag 2 a 2 m del despegue y luego el 7. El simulador avanza ~13 cm/s: con `--set advance_timeout_s=12` no llega (aterriza a ~1.6 m) y con 18 sí. El dron real va a ~9 cm/s: por eso la hoja de competencia pide distancia ÷ 8. Para el reto 4 de `docs/aprende/`; no va en `todos` |
 | `espejo_competencia` | pista al azar como la de la competencia (`--semilla N`); ver abajo. No va en `todos` |
+| `espejo_giros` | zigzag de 4 giros de 90° a 120 cm (1, 2, 1, 2, 7), con números repetidos: ¿sigue sobre el tag al girar y arranca cada tramo desde él? Mirar `al salir`. Con `--sim giro_deriva_cm_s=18` se corre más al girar (normal: 12) |
 
 **Tags en el piso, cámara al frente** (`mision_piso.py`)
 

@@ -188,6 +188,8 @@ Síntomas que ya conocemos:
 | Pasa encima de un tag y no lo ve, aunque está en el centro | tag gastado o desteñido (por el espejo el negro ya se ve gris, ~150) | revisar que `deteccion_rescate` esté en `true` (`config/mission_tags.json`); reimprimir el tag; probar con `test_tags.py --espejo` |
 | No encuentra el siguiente tag | estaba lejos o fuera de lo que ve debajo (a 100 cm, con la vista inclinada −10.3°: ~20 cm adelante, ~60 atrás, ±52 de lado) | subir `advance_timeout_s` o `cruise_alt_cm` |
 | Ignora el primer tag del recorrido | se vio al despegar | revisar `ignorar_inicio` e `inicio_alt_cm` |
+| Sale `tag N perdido girando: dejo de girar y regreso a él` | al girar sobre el tag se corrió y el tag salió de la vista | normal: debe regresar encima y terminar el giro. Si sale en cada giro, revisar la deriva del dron ("Revisar el dron") |
+| Sale `tag N ignorado (ya ejecutado, fuera del pasillo)` y no ejecuta un tag repetido | pasó a más de `pasillo_cm` (40) de lado de un tag cuyo número ya ejecutó | si era el que tocaba, el dron venía corrido: revisar la deriva o `advance_lr` |
 | `flip omitido: bateria` | menos de 50 % | cambiar de batería |
 | `NO despega: temperatura` | ≥ 80 °C | apagar y ventilador 3–5 min |
 
