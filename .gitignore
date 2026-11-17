@@ -1,6 +1,7 @@
 __pycache__/
 capturas/
 *.mp4
+videos/
 logs/
 sim/logs/
 .venv/

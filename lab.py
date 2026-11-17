@@ -8,7 +8,7 @@ Qué hace por ti:
 - detecta qué Tello es por el nombre de su WiFi (config/drones.json), para no equivocarse
   de --dron;
 - antes de volar te recuerda el montaje, la seguridad y cuándo "aprueba" la prueba;
-- le pone nombre al video solo (e5_dron7_2.mp4);
+- le pone nombre al video solo (videos/e5_dron7_2.mp4);
 - al aterrizar te pregunta qué viste, guarda la sesión y la sube a GitHub (si no hay
   internet, la sube después);
 - cambia ajustes del JSON sin que tengas que editarlo a mano, y te deja probarlos en el
@@ -216,12 +216,15 @@ def tag_cm() -> str:
     return f"{json.loads((ROOT / 'config' / 'mission_tags.json').read_text()).get('tag_cm', 8):g}"
 
 
+VIDEOS = ROOT / "videos"  # los videos de vuelo (no van a GitHub: pesan mucho)
+
+
 def nombre_video(clave: str, dron: str | None) -> str:
-    """e5_dron7_1.mp4, e5_dron7_2.mp4, ... (el primero que no exista)."""
+    """videos/e5_dron7_1.mp4, videos/e5_dron7_2.mp4, ... (el primero que no exista)."""
     base, k = f"{clave}_dron{dron or 'X'}", 1
-    while (ROOT / f"{base}_{k}.mp4").exists():
+    while (VIDEOS / f"{base}_{k}.mp4").exists():
         k += 1
-    return f"{base}_{k}.mp4"
+    return f"videos/{base}_{k}.mp4"
 
 
 def volar(p: dict, dron: str | None) -> str | None:
@@ -369,13 +372,13 @@ def cambiar_ajuste() -> None:
 # ---------------------------------------------------------------- inclinación del espejo
 def medir_inclinacion() -> None:
     titulo("Medir la inclinación del espejo con los videos de vuelo")
-    videos = sorted((p for p in ROOT.glob("*.mp4") if p.name.split("_")[0] in ("e4", "e5", "e6", "e7", "intento")),
+    videos = sorted((p for p in VIDEOS.glob("*.mp4") if p.name.split("_")[0] in ("e4", "e5", "e6", "e7", "intento")),
                     key=lambda p: p.stat().st_mtime)[-3:]
     if not videos:
         aviso("No hay videos de E4, E5, E6, E7 o de un intento. Vuela uno de esos primero.")
         return
     print("Uso los últimos: " + ", ".join(v.name for v in videos) + " (tarda ~1 min por video)")
-    correr([PY, "scripts/documentar/inclinacion_vuelo.py", *[v.name for v in videos]])
+    correr([PY, "scripts/documentar/inclinacion_vuelo.py", *[str(v.relative_to(ROOT)) for v in videos]])
     print("Si los números son distintos a los del JSON por más de ~2°, cámbialos con la opción c.")
 
 
