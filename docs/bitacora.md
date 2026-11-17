@@ -126,7 +126,22 @@ Para que el equipo nuevo encuentre las cosas sin perderse. No cambia cómo vuela
 - **Documentación:** se actualizaron las rutas de los documentos vigentes, `docs/aprende/` y
   "Pendiente ahora". En `laboratorio.md` y `arquitectura.md`, el Kalman quedó en un resumen
   corto; el protocolo completo de K1/K2 está en el historial de git.
-- **Verificación:** ver el final de esta entrada.
+- **Verificación:**
+  - **Arranque:** todos los scripts arrancan desde su carpeta (`--help`), y pasan
+    `test_tags.py --selftest` y el menú en `--practica`: E5 arma
+    `scripts/principales/mision_espejo.py ... --record videos/...`, y "ver último vuelo",
+    ajustes e inclinación funcionan.
+  - **Regresión completa:** 51 escenarios, lo de espejo igual que el 16-nov.
+    - Un choque en `piso_hundimiento`, la prueba de estrés de la misión sin espejo (pausada):
+      ya chocaba a veces (el 12-nov era "el único choque" de la regresión).
+    - `espejo_gastado` sigue fallando ~1 de 2, como antes.
+  - **Pistas al azar (mismas 16):** sano 56 de 59 (95 %; el 16-nov, 51) y Tello 1 38 de 59
+    (64 %; el 16-nov, 49). Pista por pista hay cambios para los dos lados, y el 12-nov dos
+    tandas iguales del Tello 1 ya daban 42 y 53. Es ruido del simulador: la reorganización no
+    toca la lógica.
+  - **Falla nueva vista** (pendiente; no viene de la reorganización): en la pista 3, el Tello 1
+    ejecutó dos veces el primer tag 10 (giro de 360°). Revisar si lo de dejar de girar al
+    perder el tag (16-nov) confunde el seguimiento del tag tras un 360°.
 
 ## 16-nov (noche) — Giros: si pierde el tag girando, deja de girar y regresa a él
 
