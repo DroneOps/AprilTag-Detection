@@ -54,7 +54,7 @@ del reto 1 quedó en `sim/logs/espejo_circuito.csv`. Si ya corriste otra simulac
 circuito, repite el reto 1 primero.
 
 ```bash
-python scripts/traza_vuelo.py sim/logs/espejo_circuito.csv --cada 5
+python scripts/documentar/traza_vuelo.py sim/logs/espejo_circuito.csv --cada 5
 ```
 
 En cada renglón:
@@ -130,7 +130,7 @@ python sim/sim_world.py espejo_circuito --set tag_cm=15
 1. ¿Ejecutó los tres tags? ¿Algún centrado dice "incompleto"?
 2. Mira la bitácora durante `APPROACH`:
    ```bash
-   python scripts/traza_vuelo.py sim/logs/espejo_circuito.csv --cada 2
+   python scripts/documentar/traza_vuelo.py sim/logs/espejo_circuito.csv --cada 2
    ```
    Compara `altura_espejo` (la altura que calcula con el tag) con `tof − 10` (la altura de
    verdad). ¿Qué notas?
@@ -161,8 +161,8 @@ python sim/sim_world.py espejo_estacionario --dron 7 --set sostener_piso=false
 ```
 
 1. Compara la línea `quieto 20 s: distancia al despegue media ..., máxima ...` de las dos.
-2. ¿Qué hace `sostener_piso`? Lee su comentario en `scripts/mision_espejo.py` (busca
-   `sostener_piso: bool`).
+2. ¿Qué hace `sostener_piso`? Lee su comentario en `scripts/principales/espejo_config.py` (busca
+   `sostener_piso: bool`) y la explicación de `SostenerPiso` en `scripts/principales/piso.py`.
 3. ¿Por qué la hoja de competencia solo dice apagarlo si sale `sostener_piso APAGADO` o si el
    piso es liso?
 
@@ -194,7 +194,7 @@ python sim/sim_world.py espejo_gastado_sin_rescate
 ```
 
 1. ¿Cuántos tags ejecutó cada uno?
-2. Busca `deteccion_rescate` en `config/mission_tags.json` y en `scripts/mission_tags.py`. ¿Qué
+2. Busca `deteccion_rescate` en `config/mission_tags.json` y en `scripts/principales/mission_tags.py`. ¿Qué
    hace?
 3. Si en la competencia el dron pasa encima de un tag y no lo ve, ¿qué revisarías primero?
 
@@ -211,7 +211,7 @@ grep -rn "lo que buscas" scripts/
 
 ### Reto 11. Qué hace cada tag
 
-Abre `scripts/mission_tags.py` y busca `ACTIONS`.
+Abre `scripts/principales/mission_tags.py` y busca `ACTIONS`.
 
 1. ¿Qué tag hace dos cosas? ¿Cuáles?
 2. ¿Qué significa `("yaw", -90)`? ¿Y `("climb", +1)`?
@@ -221,7 +221,7 @@ Abre `scripts/mission_tags.py` y busca `ACTIONS`.
    python sim/sim_world.py espejo_quieto --set wait_s=2
    ```
    ¿Cuántos segundos duró `EXECUTE`? ¿Por qué el texto sigue diciendo "Pausa 5 s"? Pista:
-   búscalo en `scripts/test_tags.py`.
+   búscalo en `scripts/principales/test_tags.py`.
 
 ### Reto 12. Un vigilante de seguridad
 

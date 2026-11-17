@@ -36,7 +36,7 @@ repo: pídeselo al equipo. Aquí va lo que importa para el código.
 
 Verificado el 17-oct: los tags de la Figura 1 del reglamento decodifican a los IDs 1–10
 en el orden de la figura, así que **ID = número de función** (`TAG_FUNCTIONS` en
-`scripts/test_tags.py`).
+`scripts/principales/test_tags.py`).
 
 ## Puntuación
 
@@ -68,11 +68,11 @@ importante:
 
 ## Estrategia actual
 
-- **Con espejo, la principal** (`scripts/mision_espejo.py`): la cámara ve hacia abajo y
+- **Con espejo, la principal** (`scripts/principales/mision_espejo.py`): la cámara ve hacia abajo y
   el dron se centra encima de cada tag sin girar (sostiene el rumbo del tramo). Es más
   preciso, pero no ve hacia adelante: avanza hasta 18 s buscando el siguiente tag. Los
   prototipos del clip están en `anexos/prompt_espejo_3d.md`.
-- **Sin espejo, de respaldo** (`scripts/mision_piso.py`): la cámara al frente ve los tags
+- **Sin espejo, de respaldo** (`scripts/pausados/mision_piso.py`): la cámara al frente ve los tags
   del piso entre ~1 y ~1.7 m adelante y recorre a ciegas el último metro.
-- **Misión de pared** (`scripts/mission_tags.py`): quedó como base de las otras dos (las
+- **Misión de pared** (`scripts/principales/mission_tags.py`): quedó como base de las otras dos (las
   acciones, el flip y la seguridad viven ahí). Los tags no irán en pared.

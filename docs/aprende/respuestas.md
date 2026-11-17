@@ -174,7 +174,7 @@ Dos corridas de cada una:
    - Si en un cuadro no encuentra ningún tag, lo intenta otra vez con la imagen "erosionada":
      engorda el negro.
    - Así recupera tags manchados, desteñidos o con pedazos faltantes.
-   - Lo dice el comentario de `deteccion_rescate` en `scripts/mission_tags.py`.
+   - Lo dice el comentario de `deteccion_rescate` en `scripts/principales/mission_tags.py`.
 3. **En la competencia:**
    - Primero, que `deteccion_rescate` siga en `true`.
    - Luego, la opción 2 del menú (E1) sobre ese tag, para ver si lo detecta.
@@ -194,11 +194,11 @@ Dos corridas de cada una:
    - `("climb", +1)`: subir **una vez `climb_cm`**, que son 30 cm (`config/mission_tags.json`).
      Por eso el tag 6 es `("climb", -1)`: bajar 30.
 3. **Los 5 s salen de `wait_s`** (5.0 en `config/mission_tags.json`). El código lo usa en
-   `scripts/mission_tags.py`, donde dice `done = el > m.wait_s`.
+   `scripts/principales/mission_tags.py`, donde dice `done = el > m.wait_s`.
 4. **Con `wait_s=2`:**
    - `EXECUTE` empezó a los 16.0 s y volvió a `ADVANCE` a los 18.0: **2 s**.
    - El texto sigue diciendo "Pausa 5 s" porque es solo una etiqueta, escrita a mano en
-     `TAG_FUNCTIONS` de `scripts/test_tags.py`.
+     `TAG_FUNCTIONS` de `scripts/principales/test_tags.py`.
    - Lección: el comportamiento sale del JSON; los nombres que se imprimen no siempre se
      actualizan solos.
 
@@ -208,7 +208,7 @@ Dos corridas de cada una:
    `el despegue se vino abajo (subio a 41 y volvio a 13 cm): el Tello no sostiene la altura -
    revisa que el clip no tape los sensores de abajo`. Terminó en `DONE`, en el piso, sin
    ejecutar nada.
-2. **Dónde está:** en `scripts/first_flight.py`, en la parte de `TAKEOFF` (cerca del renglón
+2. **Dónde está:** en `scripts/principales/first_flight.py`, en la parte de `TAKEOFF` (cerca del renglón
    340). Se dispara si:
    - durante el despegue ya había subido al menos `takeoff_min_height_cm`;
    - y la altura (`tof − 10`) vuelve a 15 cm o menos.

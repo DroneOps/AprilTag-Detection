@@ -1,7 +1,12 @@
 # Bitácora del proyecto
 
 Qué se probó en cada sesión, qué se aprendió y qué se cambió. Lo más reciente va arriba.
-Las bitácoras de vuelo (`logs/*.csv`) y los videos están en la laptop, no en el repo.
+Las bitácoras de vuelo (`logs/*.csv`) y los videos (`videos/`) están en la laptop, no en el repo.
+
+> **Desde el 17-nov los scripts están en carpetas:** `scripts/principales/`,
+> `scripts/documentar/` y `scripts/pausados/`. Las entradas de antes de esa fecha usan las rutas
+> de entonces (`scripts/mision_espejo.py`); la nueva de cada script está en
+> [`../scripts/README.md`](../scripts/README.md).
 
 ## Pendiente ahora
 
@@ -12,11 +17,11 @@ Las bitácoras de vuelo (`logs/*.csv`) y los videos están en la laptop, no en e
 - **Qué revisar:**
   - **E5 con el PID, mirando de lado** si de verdad queda encima de cada tag. Antes quedaba
     ~20 cm corrido.
-  - **En `python scripts/resumen_piso.py --ultimos 1`,** "subiendo, hasta X cm" debe bajar a
+  - **En `python scripts/documentar/resumen_piso.py --ultimos 1`,** "subiendo, hasta X cm" debe bajar a
     unos cm. Antes, 6–29.
 - **Ahora el espejo solo ve ~20 cm hacia adelante** (y ~60 hacia atrás): un tag aparece cuando
   ya está casi debajo. Si se pasa de los tags al avanzar, bajar `advance_fb`.
-- **Con el clip nuevo,** volver a medir la inclinación con `scripts/inclinacion_vuelo.py` sobre
+- **Con el clip nuevo,** volver a medir la inclinación con `scripts/documentar/inclinacion_vuelo.py` sobre
   un video de E5. Si el espejo se mueve en vuelo, la idea de seguir la inclinación con los tags
   está en el issue #2.
 
@@ -31,6 +36,10 @@ Las bitácoras de vuelo (`logs/*.csv`) y los videos están en la laptop, no en e
   repetido justo después de otro 4, algunos regresos tras un 8, y el Tello 7 por su deriva. El
   simulador avanza más rápido que el dron real (~14 contra ~9 cm/s): sus puntajes son
   optimistas.
+
+**Primer vuelo con el código reorganizado** (17-nov): empezar con "Revisar el dron" y E2b
+desde `python lab.py`, para confirmar que la misión arranca desde `scripts/principales/` y que
+el video queda en `videos/`. En el simulador todo salió igual que antes.
 
 **Usar `python lab.py` en el laboratorio con un Tello de verdad** (16-nov; solo se probó en modo
 práctica). Revisar que reconozca el dron por su WiFi, que el vuelo y el resumen salgan bien y
@@ -48,7 +57,7 @@ compañero haga los 13 retos de [`aprende/`](aprende/README.md) (simulador, sin 
    "12-nov (tarde, 2)"). La branch `kalman` se juntó a `main` con `"piso_control": "pid"`: trae
    las herramientas (`resumen_piso.py`, `inclinacion_vuelo.py`, `comparar_control.py`, la columna
    `piso_modo`) y el Kalman apagado. Qué haría falta para retomarlo, en el encabezado de
-   `scripts/kalman_piso.py`.
+   `scripts/pausados/kalman_piso.py`.
    - Si después se afina el PID: el primer candidato del barrido rápido es `piso_kp` 1.2,
      `piso_kd` 1.2, `piso_ki` 0.3.
    - **Ojo con los seguros:** ninguno paró el choque del Tello 7. Avanzando, el seguro del piso
@@ -85,6 +94,39 @@ compañero haga los 13 retos de [`aprende/`](aprende/README.md) (simulador, sin 
    clip, reajustar `config/sim_tello.json` ([`simulador.md`](simulador.md)). Las bitácoras
    del 11-nov dicen en `sesiones/2026-11-11/notas.md` qué dron fue cada una. Falta medir bien
    la deriva durante el despegue: en el simulador se corre más que en lo real.
+
+## 17-nov — Limpieza: misión más corta y scripts en tres carpetas
+
+Para que el equipo nuevo encuentre las cosas sin perderse. No cambia cómo vuela el dron.
+
+- **Se quitó el Kalman de la misión.**
+  - No se usa desde el 12-nov y ocupaba ~110 líneas de `mision_espejo.py`, con ajustes en
+    `config/mission_espejo.json` (`piso_control`, `kalman_*`) y columnas `kal_*` en la
+    bitácora.
+  - El filtro sigue en `scripts/pausados/kalman_piso.py`. Cómo estaba conectado:
+    `git show 02a4a11:scripts/mision_espejo.py`.
+- **La misión con espejo se dividió** (786 → 451 líneas):
+  - `espejo_config.py`: los ajustes, cada uno con su comentario;
+  - `piso.py`: `FlujoPiso` y `SostenerPiso`, que junta el PID, su integral y su seguro, antes
+    repartidos en la misión;
+  - `mision_espejo.py`: los estados y qué tag tomar;
+  - `rot_mod90` pasó a `test_tags.py`.
+- **Tres carpetas, cada una con su README:**
+  - `scripts/principales/`: lo que vuela (misión, configuración, piso, base de misiones, vuelo
+    base, visión);
+  - `scripts/documentar/`: medir, analizar y guardar, y preparar (calibrar la cámara, generar
+    tags);
+  - `scripts/pausados/`: Kalman, misión sin espejo y calibración de rc.
+  - `lab.py` y `sim/` ya usan las rutas nuevas.
+- **En la raíz:**
+  - los 137 videos pasaron a `videos/` (`lab.py` graba ahí y la opción `i` los busca ahí; al
+    grabar se crea la carpeta);
+  - las capturas sueltas, a `capturas/`;
+  - se quitó `HANDOFF.md` (12-nov), que repetía "Pendiente ahora".
+- **Documentación:** se actualizaron las rutas de los documentos vigentes, `docs/aprende/` y
+  "Pendiente ahora". En `laboratorio.md` y `arquitectura.md`, el Kalman quedó en un resumen
+  corto; el protocolo completo de K1/K2 está en el historial de git.
+- **Verificación:** ver el final de esta entrada.
 
 ## 16-nov (noche) — Giros: si pierde el tag girando, deja de girar y regresa a él
 

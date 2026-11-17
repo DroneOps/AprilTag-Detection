@@ -13,6 +13,9 @@ Si eres nuevo en el proyecto, léelos en este orden:
 6. [`bitacora.md`](bitacora.md): qué se probó en cada sesión, qué salió, qué está pendiente
    y las decisiones que conviene no deshacer.
 
+El código está en [`../scripts/`](../scripts/README.md), en tres carpetas: `principales/` (lo
+que vuela), `documentar/` (medir y analizar) y `pausados/` (lo que no se usa hoy).
+
 Cada día de laboratorio, con sus bitácoras de vuelo, notas y veredictos, está en
 [`../sesiones/`](../sesiones/). Las instrucciones para Claude Code están en
 [`../CLAUDE.md`](../CLAUDE.md).
@@ -37,7 +40,7 @@ Cada día de laboratorio, con sus bitácoras de vuelo, notas y veredictos, está
 
 ## Mantener esto al día
 
-- Al terminar una sesión de laboratorio: `python scripts/guardar_sesion.py --notas "..."`,
+- Al terminar una sesión de laboratorio: `python scripts/documentar/guardar_sesion.py --notas "..."`,
   y una entrada en `bitacora.md`.
 - Si cambia el protocolo, actualiza `laboratorio.md`.
 - Si medimos algo nuevo del dron, va en `tello.md`.

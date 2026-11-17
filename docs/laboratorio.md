@@ -17,8 +17,8 @@ está en [`bitacora.md`](bitacora.md).
 **Orden actual (con espejo):** Revisar el dron (con el clip puesto) → E1 → E2 → E3 → E4 →
 E5 → E6 → E7 (ensayo de competencia). Las de piso sin espejo (F1–F4) quedan de respaldo.
 
-**El Kalman no se usa** (12-nov: en el laboratorio se centró peor que el PID). La sección
-"PID contra Kalman" de abajo queda solo por si algún día se vuelve a comparar.
+**El Kalman no se usa** (12-nov: en el laboratorio se centró peor que el PID) y desde el 17-nov
+ya no está conectado a la misión (`scripts/pausados/`).
 
 ---
 
@@ -59,7 +59,7 @@ del dron, no del código: ninguna misión va a funcionar así.
    ventilador y el dron apagado entre corridas).
 4. **Prueba de estacionario,** sin tags:
    ```bash
-   python scripts/first_flight.py --record estacionario.mp4
+   python scripts/principales/first_flight.py --record estacionario.mp4
    ```
    Durante los 10 s quieto **no debe moverse más de ~30 cm ni subir o bajar más de
    ~10 cm**. Si lo hace, repite la calibración del IMU antes de seguir.
@@ -88,7 +88,7 @@ haz "Revisar el dron".
 izquierdo.
 
 ```bash
-python scripts/mision_piso.py --record piso_m1.mp4
+python scripts/pausados/mision_piso.py --record piso_m1.mp4
 ```
 
 Debe avanzar, centrarse, ir recto, recorrer ~1 m a ciegas, detenerse **encima del tag**,
@@ -124,7 +124,7 @@ esté girado el tag (el reglamento pide eso).
 ```
 
 ```bash
-python scripts/mision_piso.py --record piso_circuito.mp4
+python scripts/pausados/mision_piso.py --record piso_circuito.mp4
 ```
 
 **F4 — Flip en el piso** (batería ≥ 70 % y ~1.7 m libres hacia arriba). Tag **4** a 1.7 m.
@@ -137,7 +137,7 @@ giro sube a fondo hasta frenar la caída, sostiene esa altura 2 s y baja suave a
 crucero. Necesita batería ≥ 70 % y nada encima del dron hasta ~1.7 m.
 
 ```bash
-python scripts/first_flight.py --flip-test b --record flip.mp4
+python scripts/principales/first_flight.py --flip-test b --record flip.mp4
 ```
 
 En la consola debe aparecer, en orden:
@@ -187,12 +187,12 @@ sola y lo anota en la bitácora.
 | `advance_fb`, `advance_timeout_s` | qué tan rápido y cuánto tiempo avanza buscando el siguiente tag |
 | `ignorar_inicio` | `true` ignora el tag que ve al despegar. **En las pruebas va en `false`**: no hay tag de inicio especial y, si el tag 1 queda cerca del despegue, lo ignoraría (pasó el 9-nov). Para la competencia, decidir cuando se sepa cuál es el tag de inicio |
 | `alinear_bordes` | `true` solo si los tags siempre van derechos respecto a la pista |
-| `vista_adelante_deg`, `vista_lado_deg` | inclinación del clip, medida en vuelo con `scripts/inclinacion_vuelo.py` (12-nov: −10.3 y −0.5) |
+| `vista_adelante_deg`, `vista_lado_deg` | inclinación del clip, medida en vuelo con `scripts/documentar/inclinacion_vuelo.py` (12-nov: −10.3 y −0.5) |
 
 **E1 — Detección y orientación** (sin volar). Sostén el dron a ~80 cm sobre un tag en el piso:
 
 ```bash
-python scripts/test_tags.py --source tello --espejo --tag-cm 8 --record espejo1.mp4
+python scripts/principales/test_tags.py --source tello --espejo --tag-cm 8 --record espejo1.mp4
 ```
 
 Revisa:
@@ -207,7 +207,7 @@ Revisa:
 - **La inclinación que va en `config/mission_espejo.json`** (`vista_adelante_deg` y
   `vista_lado_deg`) se mide **en vuelo**, con los videos de E4 o E5:
   ```bash
-  python scripts/inclinacion_vuelo.py espejo_m1.mp4
+  python scripts/documentar/inclinacion_vuelo.py espejo_m1.mp4
   ```
   Sin la inclinación correcta, el dron se coloca mal encima del tag (~25 cm a 100 cm con la
   del 12-nov) y la medida del piso se corre al subir y bajar.
@@ -216,14 +216,14 @@ Revisa:
 espejo no se mueve.
 
 ```bash
-python scripts/first_flight.py --yaw-test 90 --record espejo_giro.mp4
+python scripts/principales/first_flight.py --yaw-test 90 --record espejo_giro.mp4
 ```
 
 **E2b — Sostener la posición con el piso** (sin tags debajo; marca el despegue con cinta).
 Corre la misión quieta, que sube a 100 cm y espera ~20 s un tag que no hay:
 
 ```bash
-python scripts/mision_espejo.py --quieto --dron 7 --record e2b_piso_dron7.mp4
+python scripts/principales/mision_espejo.py --quieto --dron 7 --record e2b_piso_dron7.mp4
 ```
 
 (`--dron 7` o `--dron 1` carga `config/mision_dron<N>.json`, con la integral con la que
@@ -244,14 +244,14 @@ arranca ese dron.)
 Debe colocarse encima, alinearse y hacer la pausa de 5 s.
 
 ```bash
-python scripts/mision_espejo.py --quieto --record espejo_quieto.mp4
+python scripts/principales/mision_espejo.py --quieto --record espejo_quieto.mp4
 ```
 
 **E4 — Avanzar y encontrar el tag.** Tag 2 en el piso ~1 m adelante, con el lado izquierdo
 libre. Avanza despacio, se coloca encima, gira a la izquierda, avanza 8 s y aterriza.
 
 ```bash
-python scripts/mision_espejo.py --record espejo_m1.mp4
+python scripts/principales/mision_espejo.py --record espejo_m1.mp4
 ```
 
 **E5 — Circuito en el piso.** Tag 1 a 80 cm al frente; tag 2 a 70 cm a la derecha del 1;
@@ -272,173 +272,38 @@ competencia, y anota cuántos tags ejecutó bien cada uno. Mismo comando que E4.
 
 ---
 
-## PID contra Kalman (ya no se usa)
+## PID contra Kalman (pausado)
 
-**Ya se hizo el 12-nov y ganó el PID:** el Kalman queda apagado (ver `scripts/kalman_piso.py`).
-Esto queda por si se vuelve a comparar, después de arreglar la medida del piso y reajustar su
-modelo.
-
-Compara las dos formas de sostener la posición con el piso.
-- **Cómo funciona el Kalman:** [`arquitectura.md`](arquitectura.md), "Otra opción: filtro de Kalman".
-- **Qué salió en el simulador:** [`bitacora.md`](bitacora.md), entrada "12-nov (noche)".
-
-**Orden:** Revisar el dron → E1, solo si el clip es nuevo o se movió → **K1** → **K2**. Si sobra
-tiempo, E6 y E7 con el que gane.
-
-### Preparar (al llegar, 5 min)
-
-1. Pasarse a la branch: `git checkout kalman && git pull --rebase`.
-2. Revisar que el entorno de Python esté activo: `python -c "import cv2, djitellopy; print('entorno ok')"`.
-   Si falla, actívalo como dice el [README](../README.md).
-3. Probar la branch en el simulador (~40 s), con el Kalman y el Tello 7 simulado:
-   ```bash
-   python sim/sim_world.py espejo_estacionario --dron 7 --set piso_control=kalman
-   ```
-   Lee su resumen, que se ve igual al de un vuelo real:
-   ```bash
-   python scripts/resumen_piso.py sim/logs/espejo_estacionario.csv
-   ```
-4. Ver con qué control está: `grep piso_control config/mission_espejo.json`. Debe decir `"pid"`.
-
-**Cambiar de control:** solo cambia `piso_control` en `config/mission_espejo.json`.
-- A Kalman:
-  ```bash
-  sed -i 's/"piso_control": "pid"/"piso_control": "kalman"/' config/mission_espejo.json && grep piso_control config/mission_espejo.json
-  ```
-- A PID:
-  ```bash
-  sed -i 's/"piso_control": "kalman"/"piso_control": "pid"/' config/mission_espejo.json && grep piso_control config/mission_espejo.json
-  ```
-
-Con el Kalman, la HMI dice `kalman: deriva ... cm/s` junto a `sostener piso`. Si dice
-`kalman APAGADO, con PID`, lo medido dejó de cuadrar con el modelo y siguió con el PID.
-
-**Para que la comparación sea justa:**
-- **Alterna:** PID, Kalman, PID, Kalman. Así la batería y la temperatura no favorecen a uno.
-- **Mismo `--dron N`** que el dron que vuela.
-- **Abajo de ~70 °C** antes de cada despegue.
-- **Video con nombre distinto** en cada vuelo.
-
-**Después de cada vuelo:**
-```bash
-python scripts/resumen_piso.py --ultimos 1
-```
-Muestra:
-- con qué control voló, y si cambió en el aire (`kalman -> pid`) o el seguro lo apagó;
-- qué tan lejos del despegue anduvo, según lo que mide el piso;
-- a qué distancia del tag ejecutó cada uno;
-- si se hundió al avanzar;
-- qué tan bruscos fueron los mandos (en el simulador: PID ~18–28 rc/s, Kalman ~32–43);
-- la deriva que estimó el Kalman. El 11-nov medimos ~12 cm/s a la derecha en el Tello 7 y
-  ~4 en el Tello 1.
-
-Aparte, anota lo que el log no ve:
-- la distancia a la cinta a ojo (máxima y al final);
-- si se tambaleó o hizo ruido raro;
-- si algún paro fue a mano.
-
-### K1 — E2b con los dos controles, por dron
-
-Montaje de E2b: sin tags, con el despegue marcado con cinta. Por cada dron, al menos un vuelo
-con cada control; mejor dos:
-
-```bash
-python scripts/mision_espejo.py --quieto --dron 7 --record k1_dron7_pid1.mp4
-```
-```bash
-python scripts/mision_espejo.py --quieto --dron 7 --record k1_dron7_kal1.mp4
-```
-
-(Cambia de control entre uno y otro; para el Tello 1, `--dron 1` y `k1_dron1_...`).
-
-- **Aprueba** igual que E2b: no se va más de ~20–30 cm de la cinta.
-- **Si con el Kalman se aleja más rápido o se tambalea fuerte:** ESPACIO, regresa a `"pid"` y
-  anótalo. No sigas con K2 para ese control.
-
-### K2 — E5 con los dos controles, por dron
-
-Montaje de E5: tag 1 a 80 cm al frente, tag 2 a 70 cm a la derecha del 1 y tag 7 a 70 cm
-adelante del 2. Solo con el control que pasó K1 en ese dron. **Aquí es donde el simulador
-vio la diferencia:** el Kalman ejecutó más cerca del tag (Tello 7: 9–12 cm contra 21).
-
-```bash
-python scripts/mision_espejo.py --dron 7 --record k2_dron7_pid1.mp4
-```
-```bash
-python scripts/mision_espejo.py --dron 7 --record k2_dron7_kal1.mp4
-```
-
-Fíjate en:
-- cuántos tags ejecutó y si quedó encima de cada uno;
-- `se hunde al avanzar` en el resumen. Si sale con el Kalman y no con el PID, es el
-  hundimiento por mandar de lado y adelante a la vez: anótalo.
-
-### Guardar y subir, después de cada par de vuelos
-
-```bash
-python scripts/guardar_sesion.py --notas "K1 dron 7: PID se fue ~25 cm de la cinta y regresó; Kalman ~15 cm, sin tambaleo"
-```
-```bash
-git add sesiones/ && git commit -m "Sesión: K1 dron 7, PID contra Kalman" && git pull --rebase --autostash && git push
-```
-
-- **`--autostash`:** el JSON puede estar cambiado a `"kalman"`, y sin eso `git pull --rebase` no deja.
-- **El JSON no se sube:** el comando solo agrega `sesiones/`.
-- **Dónde queda:** `guardar_sesion.py` guarda el resumen en `sesiones/<fecha>/piso.txt`, en la
-  branch `kalman`, y se ve en el PR.
-
-### Al terminar
-
-1. Regresa el JSON a `"pid"` (comando de arriba). `git status` no debe mostrar cambios en
-   `config/`.
-2. Revisa el día completo con `python scripts/resumen_piso.py` y `python scripts/resumen_vuelos.py`.
-3. Escribe la entrada en [`bitacora.md`](bitacora.md) y comenta el resultado en el PR.
-
-**El Kalman gana si**, con cada dron:
-- se va igual o menos de la cinta;
-- ejecuta igual o más cerca del tag;
-- completa igual o más circuitos;
-- no se tambalea;
-- no se hunde más que el PID;
-- no se apaga solo (`kalman -> pid`).
-
-Si empatan, se decide en equipo; el PID es más simple.
-
-| Dron | Prueba | Control | Batería | Temp. | Cinta: máx. / final (cm) | Tags / distancia | ¿Tambalea? | Notas |
-|---|---|---|---|---|---|---|---|---|
-| 7 | K1 | PID | | | | — | | |
-| 7 | K1 | Kalman | | | | — | | |
-| 7 | K2 | PID | | | — | | | |
-| 7 | K2 | Kalman | | | — | | | |
-| 1 | K1 | PID | | | | — | | |
-| 1 | K1 | Kalman | | | | — | | |
-| 1 | K2 | PID | | | — | | | |
-| 1 | K2 | Kalman | | | — | | | |
+**Ya se hizo el 12-nov y ganó el PID.** Desde el 17-nov el Kalman ya no está conectado a la
+misión, así que las pruebas K1 y K2 de antes ya no se pueden correr tal cual. Lo que salió está
+en [`bitacora.md`](bitacora.md), entradas "12-nov (tarde, 2)" y "12-nov (noche)". Cómo
+retomarlo: [`scripts/pausados/README.md`](../scripts/pausados/README.md). El protocolo
+completo de K1 y K2 está en el historial de git (este archivo, antes del 17-nov).
 
 ---
 
 ## Pruebas de pared (ya no son prioridad)
 
 Los tags irán en el piso, pero estas pruebas siguen sirviendo para probar acciones, flips
-y control con la misión de pared (`scripts/mission_tags.py`). Montaje común: tag pegado
+y control con la misión de pared (`scripts/principales/mission_tags.py`). Montaje común: tag pegado
 **vertical** en una caja, con el centro a ~80 cm del piso, a ~2 m frente al despegue.
 
 | Prueba | Montaje y comando | Aprueba si |
 |---|---|---|
-| **P2** flip en misión | tag **4**; espacio libre detrás (el flip es hacia atrás). `python scripts/mission_tags.py --record mision_flip.mp4` | en "ejecutados": `4=Flip 360 (flip HECHO) (minima tras el flip XX cm)` con XX ≥ 40 |
-| **P3** calibración de `rc` | cualquier tag de 8 cm a ~90 cm de altura y ~1.5 m; ~1 m libre alrededor. `python scripts/rc_calib.py --record rccal.mp4` (dura ~70 s; `--ejes fb lr` para la versión corta) | imprime la tabla y la guarda en `capturas/rc_calib_*.txt` |
-| **P4** tag alto | tag **2** a ~105 cm de altura. `python scripts/mission_tags.py --record mision_alto.mp4` | sube de ~80 a ~100 cm mientras se acerca y ejecuta |
-| **P5** tag girado | tag **2** con la caja girada ~25° y el dron ladeado ~10°. `python scripts/mission_tags.py --record mision_alineado.mp4` | `EXECUTE: tag 2 ... a ~60–70 cm, lateral ±5 cm, angulo ±3` |
-| **P6** tag 8 | como P2 con el tag **8** (el flip sale hacia adelante). `python scripts/mission_tags.py --record mision_flip8.mp4` | gira 180°, voltea y recupera altura |
-| **P7** tags de 15 cm | como P2 o P5. `python scripts/mission_tags.py --mission config/mission_tags_15cm.json --record mision_15cm.mp4` | igual que con los de 8 cm |
-| **P8** enlace WiFi | sin volar: `python scripts/test_tags.py --source tello --tag-cm 8` 60 s; luego `sudo iw dev <interfaz> set power_save off` y repetir | menos frames > 100 ms y un máximo menor en la línea `enlace:` |
+| **P2** flip en misión | tag **4**; espacio libre detrás (el flip es hacia atrás). `python scripts/principales/mission_tags.py --record mision_flip.mp4` | en "ejecutados": `4=Flip 360 (flip HECHO) (minima tras el flip XX cm)` con XX ≥ 40 |
+| **P3** calibración de `rc` | cualquier tag de 8 cm a ~90 cm de altura y ~1.5 m; ~1 m libre alrededor. `python scripts/pausados/rc_calib.py --record rccal.mp4` (dura ~70 s; `--ejes fb lr` para la versión corta) | imprime la tabla y la guarda en `capturas/rc_calib_*.txt` |
+| **P4** tag alto | tag **2** a ~105 cm de altura. `python scripts/principales/mission_tags.py --record mision_alto.mp4` | sube de ~80 a ~100 cm mientras se acerca y ejecuta |
+| **P5** tag girado | tag **2** con la caja girada ~25° y el dron ladeado ~10°. `python scripts/principales/mission_tags.py --record mision_alineado.mp4` | `EXECUTE: tag 2 ... a ~60–70 cm, lateral ±5 cm, angulo ±3` |
+| **P6** tag 8 | como P2 con el tag **8** (el flip sale hacia adelante). `python scripts/principales/mission_tags.py --record mision_flip8.mp4` | gira 180°, voltea y recupera altura |
+| **P7** tags de 15 cm | como P2 o P5. `python scripts/principales/mission_tags.py --mission config/mission_tags_15cm.json --record mision_15cm.mp4` | igual que con los de 8 cm |
+| **P8** enlace WiFi | sin volar: `python scripts/principales/test_tags.py --source tello --tag-cm 8` 60 s; luego `sudo iw dev <interfaz> set power_save off` y repetir | menos frames > 100 ms y un máximo menor en la línea `enlace:` |
 
 ---
 
 ## Al terminar (2 min)
 
 ```bash
-python scripts/resumen_vuelos.py
+python scripts/documentar/resumen_vuelos.py
 ```
 
 Imprime un **VEREDICTO** por cada vuelo de hoy y lo guarda en
@@ -452,12 +317,12 @@ Anota también lo que las bitácoras no ven: si tocó la red, si se movió raro,
 fue a mano y por qué. **Súbelo al repo** (también en cada pausa, no solo al final):
 
 ```bash
-python scripts/guardar_sesion.py --notas "qué se probó, qué salió y qué se vio"
+python scripts/documentar/guardar_sesion.py --notas "qué se probó, qué salió y qué se vio"
 ```
 
 Luego haz commit y push de `sesiones/`. Al cerrar el día, agrega una entrada a
 [`bitacora.md`](bitacora.md). Para ver un vuelo estado por estado:
-`python scripts/traza_vuelo.py logs/<archivo>.csv`.
+`python scripts/documentar/traza_vuelo.py logs/<archivo>.csv`.
 
 Por último, revisa si el simulador se sigue pareciendo al dron (toma la sesión que acabas de
 guardar; ver [`simulador.md`](simulador.md)):

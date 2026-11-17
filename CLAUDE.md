@@ -5,7 +5,7 @@ AprilTags** del Autonomous Mechatronics Grand Prix 2026 (5 de diciembre de 2026,
 Hidalgo). Un DJI Tello estándar, controlado desde una laptop por WiFi, recorre una pista con
 etiquetas AprilTag tag25h9 **en el piso**, detecta cada una y ejecuta su acción. La
 estrategia principal es un **espejo** frente a la cámara que la hace ver hacia abajo
-(`scripts/mision_espejo.py`).
+(`scripts/principales/mision_espejo.py`).
 
 El equipo trabaja en español: responde siempre en español, claro y con comandos listos para
 copiar. Varias personas trabajan en este repo y el responsable (Fernando) revisa el avance
@@ -36,7 +36,7 @@ Fernando sigue el proyecto por GitHub. Nada debe quedarse solo en la laptop.
 - **Después de cada vuelo o tanda de vuelos** en el laboratorio, guarda la sesión con lo que
   la persona observó (qué hizo el dron, qué salió bien o mal) y súbela:
   ```bash
-  python scripts/guardar_sesion.py --notas "E5: ejecutó 1 y 2; en el 7 se pasó ~15 cm; el clip se movió tras el aterrizaje"
+  python scripts/documentar/guardar_sesion.py --notas "E5: ejecutó 1 y 2; en el 7 se pasó ~15 cm; el clip se movió tras el aterrizaje"
   ```
   ```bash
   git add sesiones/ && git commit -m "Sesión: E5 con clip nuevo" && git pull --rebase && git push
@@ -97,27 +97,34 @@ Fernando sigue el proyecto por GitHub. Nada debe quedarse solo en la laptop.
 
 ## Cómo está el código
 
+Los scripts están en tres carpetas, cada una con su `README.md`: `scripts/principales/` (lo que
+vuela), `scripts/documentar/` (medir, analizar, guardar y preparar; no vuelan) y
+`scripts/pausados/` (lo que no se usa hoy). Los videos de vuelo van en `videos/` (no van a git).
+
 | Archivo | Qué es |
 |---|---|
 | `lab.py` | **menú del laboratorio** para el equipo: pruebas con montaje y seguridad, dron por WiFi (`config/drones.json`), video con nombre, notas → `guardar_sesion.py` → commit y push (si no hay internet, después), cambiar ajustes con validación, simulador y cierre del día con entrada en la bitácora; opción 9, un intento de competencia. `--practica` no vuela ni sube nada |
-| `scripts/mision_espejo.py` + `config/mission_espejo.json` | **misión principal**: sube a 100 cm, avanza hasta ver un tag debajo, se centra encima sosteniendo el rumbo (≤12 cm, máximo 8 s), ejecuta y sigue. Con `sostener_piso` mide con el piso cuánto se mueve: regresa al despegue mientras sube, avanza en línea recta y busca el tag que pierde |
-| `scripts/kalman_piso.py` | **no se usa** (12-nov: en el laboratorio se centró peor que el PID; por qué, en su encabezado). Filtro de Kalman por eje para sostener la posición con el piso: estima posición, velocidad y deriva con el modelo rc → velocidad. Se usa con `"piso_control": "kalman"`; si deja de cuadrar con lo medido, regresa al PID |
-| `scripts/mision_piso.py` + `config/mission_piso.json` | respaldo sin espejo: cámara al frente, último metro a ciegas |
-| `scripts/mission_tags.py` + `config/mission_tags.json` | base de las misiones: acciones de cada tag, flip seguro, sostener altura, "el dron no obedece" |
-| `scripts/first_flight.py` + `config/flight.json` | vuelo base, despegue, seguridad, HMI, bitácora; prueba de estacionario, giro y flip |
-| `scripts/test_tags.py` | visión: detector, pose, `--espejo`; prueba sin volar |
+| `scripts/principales/mision_espejo.py` + `config/mission_espejo.json` | **misión principal**: sube a 100 cm, avanza hasta ver un tag debajo, se centra encima sosteniendo el rumbo (≤12 cm, máximo 8 s), ejecuta y sigue. Con `sostener_piso` mide con el piso cuánto se mueve: regresa al despegue mientras sube, avanza en línea recta y busca el tag que pierde; si pierde el tag girando, deja de girar y regresa a él |
+| `scripts/principales/espejo_config.py` | los ajustes de la misión con espejo (`MirrorConfig`), cada uno con su comentario; `ajustes_dron` aplica `config/mision_dron<N>.json` |
+| `scripts/principales/piso.py` | `FlujoPiso` (cuánto se mueve el dron, con el piso del espejo), `punto_bajo_dron` y `SostenerPiso` (el PID por eje con su seguro) |
+| `scripts/pausados/kalman_piso.py` | **pausado y desconectado de la misión** desde el 17-nov (12-nov: en el laboratorio se centró peor que el PID). Cómo estaba conectado y cómo retomarlo: `scripts/pausados/README.md` |
+| `scripts/pausados/mision_piso.py` + `config/mission_piso.json` | respaldo sin espejo (pausado): cámara al frente, último metro a ciegas |
+| `scripts/pausados/rc_calib.py` | calibración de rc contra un tag en la pared (pausado: con espejo la velocidad se mide con el piso) |
+| `scripts/principales/mission_tags.py` + `config/mission_tags.json` | base de las misiones: acciones de cada tag, flip seguro, sostener altura, "el dron no obedece" |
+| `scripts/principales/first_flight.py` + `config/flight.json` | vuelo base, despegue, seguridad, HMI, bitácora; prueba de estacionario, giro y flip |
+| `scripts/principales/test_tags.py` | visión: detector, pose, `--espejo`; prueba sin volar |
 | `sim/sim_world.py` + `config/sim_tello.json` | simulador 3D con el detector y la misión reales; el dron simulado se comporta como dice el JSON (un dron sano). `--dron 1` / `--dron 7` agregan la deriva de cada dron (`config/sim_tello_dron<N>.json`); `--ideal`, el modelo optimista de antes |
 | `docs/aprende/` | retos con el simulador para el equipo nuevo (`retos.md`) y lo que salió al probarlos (`respuestas.md`); si cambia la misión o el simulador, revisar que las respuestas sigan saliendo |
 | `sim/pista.py` | pistas al azar como las de la competencia (escenario `espejo_competencia`); con `sim/comparar_control.py --escenarios espejo_competencia` da puntos por intento en tandas |
 | `sim/grabar.py`, `sim/componer.py` | videos del simulador: mapa desde arriba + cámara, y lado a lado (antes | ahora) en mp4 y GIF |
 | `sim/deriva_video.py` | mide cuánto se va solo cada dron con el piso visto por el espejo en los videos (`--record`); da los valores para `config/sim_tello_dron<N>.json` |
 | `sim/prueba_desgaste.py` | detección de tags gastados (desteñidos, manchas, pedazos faltantes) sin volar; antes de tocar el detector, correrla junto con `test_tags.py --selftest` |
-| `sim/comparar_control.py` | compara variantes del control en el simulador en tandas (mismas semillas), p. ej. PID contra Kalman: distancia al despegue, tags, distancia al tag y qué tan bruscos son los mandos |
+| `sim/comparar_control.py` | compara variantes del control en el simulador en tandas (mismas semillas), p. ej. dos valores de un ajuste o el código de antes contra el de ahora: distancia al despegue, tags, distancia al tag y qué tan bruscos son los mandos |
 | `sim/comparar_vuelos.py` | compara el simulador con vuelos reales y reajusta `config/sim_tello.json`; correr al cerrar cada sesión |
-| `scripts/resumen_vuelos.py`, `scripts/traza_vuelo.py` | analizar vuelos |
-| `scripts/resumen_piso.py` | por vuelo con espejo: quién sostuvo la posición (PID o Kalman), qué tan lejos del despegue o del tag quedó, si se hundió y qué tan bruscos fueron los mandos; `guardar_sesion.py` lo guarda en `piso.txt` |
-| `scripts/inclinacion_vuelo.py` | inclinación del espejo medida en vuelo con los tags de los videos (`--record`); mejor que E1 en la mano |
-| `scripts/guardar_sesion.py` | subir una sesión de laboratorio a `sesiones/` |
+| `scripts/documentar/resumen_vuelos.py`, `scripts/documentar/traza_vuelo.py` | analizar vuelos |
+| `scripts/documentar/resumen_piso.py` | por vuelo con espejo: cómo sostuvo la posición (el PID; en bitácoras de antes del 17-nov también el Kalman), qué tan lejos del despegue o del tag quedó, si se hundió y qué tan bruscos fueron los mandos; `guardar_sesion.py` lo guarda en `piso.txt` |
+| `scripts/documentar/inclinacion_vuelo.py` | inclinación del espejo medida en vuelo con los tags de los videos (`--record`); mejor que E1 en la mano |
+| `scripts/documentar/guardar_sesion.py` | subir una sesión de laboratorio a `sesiones/` |
 
 Ajustes de `config/mission_espejo.json` que más se mueven en el laboratorio:
 
@@ -126,11 +133,10 @@ Ajustes de `config/mission_espejo.json` que más se mueven en el laboratorio:
 | `advance_timeout_s` | cuánto avanza buscando el siguiente tag antes de terminar |
 | `advance_fb` | qué tan rápido avanza buscando |
 | `cruise_alt_cm` | altura de vuelo; más alto ve más piso |
-| `vista_adelante_deg`, `vista_lado_deg` | inclinación del clip, medida **en vuelo** con `scripts/inclinacion_vuelo.py` (E1 en la mano no sirve); cambia con cada clip. También la usa la medida del piso |
+| `vista_adelante_deg`, `vista_lado_deg` | inclinación del clip, medida **en vuelo** con `scripts/documentar/inclinacion_vuelo.py` (E1 en la mano no sirve); cambia con cada clip. También la usa la medida del piso |
 | `ignorar_inicio` | ignorar o no el tag que ve al despegar; en las pruebas va en `false` |
 | `advance_lr` | rc lateral fijo al avanzar sin tag, para compensar si el dron se va siempre de un lado (negativo = a la izquierda); con `sostener_piso` casi no hace falta |
 | `piso_kp`, `piso_kd`, `piso_ki` | el PID que sostiene la posición con el piso; síntomas y qué cambiar en "Cómo ajustarlo" de `docs/arquitectura.md` |
-| `piso_control`, `kalman_*` | dejar `"pid"`: el Kalman no se usa (ver `scripts/kalman_piso.py`) |
 | `config/mision_dron<N>.json` | ajustes de la misión de cada dron (`--dron N`); hoy, `piso_i_inicial`: la integral con que arranca. Si el dron se arregla, ponerla en [0, 0] |
 
 ## Cómo guiar una sesión de laboratorio
@@ -155,14 +161,14 @@ preguntan por uno, guíalos a descubrirlo antes de darles la respuesta.
 ## Cómo analizar un vuelo
 
 ```bash
-python scripts/resumen_vuelos.py
+python scripts/documentar/resumen_vuelos.py
 ```
 Da un veredicto de cada vuelo de hoy; con `--fecha AAAAMMDD` revisa otro día.
 
-Para comparar PID y Kalman (columna `piso_modo` de la bitácora): `python scripts/resumen_piso.py --ultimos 1`.
+Cómo sostuvo la posición con el piso en el último vuelo con espejo: `python scripts/documentar/resumen_piso.py --ultimos 1`.
 
 ```bash
-python scripts/traza_vuelo.py logs/<archivo>.csv --cada 4
+python scripts/documentar/traza_vuelo.py logs/<archivo>.csv --cada 4
 ```
 Muestra estado por estado. También sirve con `sesiones/<fecha>/vuelos/<archivo>.csv`.
 
@@ -198,4 +204,4 @@ Síntomas que ya conocemos:
 - Instalación en `README.md`: venv y `pip install -r requirements.txt`.
 - Configura tu identidad de git: `git config user.name` y `git config user.email`.
 - La calibración de la cámara (`config/camera_tello.json`) es de **nuestro** Tello. Con otro
-  Tello hay que recalibrar (`scripts/calibrate_camera.py`) y repetir E1 con su clip.
+  Tello hay que recalibrar (`scripts/documentar/calibrate_camera.py`) y repetir E1 con su clip.

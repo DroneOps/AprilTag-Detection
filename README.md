@@ -8,7 +8,7 @@ corre en una laptop conectada al Tello por WiFi.
 
 ## Estado (9-nov)
 
-- **Estrategia principal: espejo hacia abajo** (`scripts/mision_espejo.py`), con un clip
+- **Estrategia principal: espejo hacia abajo** (`scripts/principales/mision_espejo.py`), con un clip
   impreso.
 - **En simulación funciona todo:** detección, misión con espejo, flips seguros, sostener
   altura y aterrizaje si el dron no obedece (~43 escenarios).
@@ -67,14 +67,14 @@ pip install -r requirements.txt
 ### 2. Probar sin dron
 
 ```bash
-python scripts/test_tags.py --selftest
+python scripts/principales/test_tags.py --selftest
 ```
 
 Debe decir `selftest: 1440/1440 correctos (100.0 %)`. Con la webcam y un tag impreso
 (`tags/tags_8cm.pdf`, al 100 % sin "ajustar a la página"):
 
 ```bash
-python scripts/test_tags.py --source 0 --tag-cm 8
+python scripts/principales/test_tags.py --source 0 --tag-cm 8
 ```
 
 Una misión completa en el simulador (sin ventana: imprime lo que hace y tarda ~40 s):
@@ -88,12 +88,12 @@ python sim/sim_world.py piso_uno
 1. Enciende el Tello y conecta la laptop a su red WiFi (`TELLO-XXXXXX`).
 2. Sin volar, con el dron en la mano:
    ```bash
-   python scripts/test_tags.py --source tello --tag-cm 8
+   python scripts/principales/test_tags.py --source tello --tag-cm 8
    ```
 3. Antes de volar lee [`docs/laboratorio.md`](docs/laboratorio.md) (seguridad y "Revisar el
    dron"). El primer vuelo es solo despegar, quedarse quieto 10 s y aterrizar:
    ```bash
-   python scripts/first_flight.py --record estacionario.mp4
+   python scripts/principales/first_flight.py --record estacionario.mp4
    ```
 
 **Teclas en todos los programas que vuelan** (con la ventana enfocada):
@@ -108,26 +108,28 @@ python sim/sim_world.py piso_uno
 ## Qué hay en el repo
 
 ```
-scripts/
-  test_tags.py          visión: detector, pose (PnP) y prueba de detección sin volar
-  first_flight.py       vuelo base: estados, seguridad, HMI y bitácora; prueba de flip y giro
-  mission_tags.py       misión base: acciones de cada tag, flip seguro, sostener altura
-  mision_espejo.py      MISIÓN PRINCIPAL: tags en el piso viendo hacia abajo con un espejo
-  mision_piso.py        respaldo: tags en el piso con la cámara al frente, sin espejo
-  calibrate_camera.py   calibración de la cámara con tablero de ajedrez
-  rc_calib.py           mide la velocidad real del dron según el rc
-  resumen_vuelos.py     veredicto de cada vuelo de la sesión, leyendo logs/
-  traza_vuelo.py        una bitácora de vuelo condensada, estado por estado
-  guardar_sesion.py     sube una sesión de laboratorio a sesiones/
-  make_tags.py          PDF de los tags 1–10 al tamaño que quieras
-sim/
-  sim_world.py          simulador 3D con el detector y la misión reales
+lab.py                  menú del laboratorio (empieza aquí)
+scripts/                cada carpeta tiene su README con los comandos
+  principales/          lo que vuela en la competencia
+    mision_espejo.py      MISIÓN PRINCIPAL: tags en el piso viendo hacia abajo con un espejo
+    espejo_config.py      sus ajustes (config/mission_espejo.json), con qué hace cada uno
+    piso.py               medir con el piso cuánto se mueve el dron y sostenerlo (PID)
+    mission_tags.py       base: acciones de cada tag, flip seguro, sostener altura
+    first_flight.py       vuelo base: estados, seguridad, ventana del dron y bitácora
+    test_tags.py          visión: detector, pose (PnP) y prueba de detección sin volar
+  documentar/           medir, analizar y guardar (no vuelan)
+    guardar_sesion.py, resumen_vuelos.py, resumen_piso.py, traza_vuelo.py,
+    inclinacion_vuelo.py, calibrate_camera.py, make_tags.py
+  pausados/             no se usan hoy; se pueden retomar
+    kalman_piso.py, mision_piso.py (respaldo sin espejo), rc_calib.py
+sim/                    simulador 3D con el detector y la misión reales, y sus herramientas
 config/                 todos los parámetros ajustables (JSON)
 tags/                   PDFs listos para imprimir: tags de 8 y 15 cm y tablero de calibración
 docs/                   documentación (empieza por docs/README.md)
 sesiones/               cada día de laboratorio: notas, veredictos y bitácoras de vuelo
 CLAUDE.md               instrucciones para Claude Code
 logs/  capturas/        se crean al volar; no van a git (se suben con guardar_sesion.py)
+videos/                 los videos de vuelo (lab.py graba aquí); no van a git
 ```
 
 ## Documentación
@@ -155,7 +157,7 @@ Empieza por [`docs/README.md`](docs/README.md): dice qué leer y en qué orden.
 - **Todo se sube en cuanto pasa.** Después de cada cambio, prueba o tanda de vuelos: commit y
   push. Así el equipo ve el avance desde GitHub.
 - **En el laboratorio:** después de cada tanda de vuelos,
-  `python scripts/guardar_sesion.py --notas "qué se probó y qué salió"`, y luego commit y
+  `python scripts/documentar/guardar_sesion.py --notas "qué se probó y qué salió"`, y luego commit y
   push de `sesiones/`. Al cerrar el día, una entrada en `docs/bitacora.md`.
 - **Git:**
   - se trabaja en `main`, con `git pull --rebase` antes de cada push;

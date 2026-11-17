@@ -13,9 +13,13 @@ first_flight.py     Flight: máquina de estados de vuelo, seguridad, HMI, bitác
      │
 mission_tags.py     TagMission: acciones de cada tag, flip seguro, sostener altura,
      │              "el dron no obedece". Acercamiento a tags de PARED.
-     ├── mision_piso.py     FloorMission: tags en el piso con la cámara al frente
+     ├── mision_piso.py     FloorMission: tags en el piso con la cámara al frente (pausada)
      └── mision_espejo.py   MirrorMission: tags en el piso viendo hacia abajo con espejo
+            ├── espejo_config.py   MirrorConfig: sus ajustes
+            └── piso.py            FlujoPiso (medir con el piso) y SostenerPiso (el PID)
 ```
+
+Todos están en `scripts/principales/`, salvo `mision_piso.py`, que está en `scripts/pausados/`.
 
 Cada misión hereda de la anterior y solo cambia la visión (`on_frame`) y las fases
 `ADVANCE` y `APPROACH`. Las acciones, el flip, el paro y los vigilantes se comparten.
@@ -95,7 +99,7 @@ arrancaba desde donde quedó el dron y no pasaba por el siguiente tag. Ahora:
 - **El tope del mando** para sostenerse sobre el tag es `sostener_tag_max` (15). Con 20 fue
   peor.
 
-## Sostener la posición con el piso (`mision_espejo.py`, 11-nov)
+## Sostener la posición con el piso (`piso.py`, 11-nov)
 
 `FlujoPiso` compara cada cuadro del espejo con el anterior (correlación de fase a 240×180, ~2
 ms) y, con la altura, saca cuánto se movió el dron sobre el piso (derecha, adelante). No
@@ -115,7 +119,7 @@ vista (`vista_adelante_deg`, `vista_lado_deg`).
   Con la vista real (−10.3°), al despegar "veía" al dron irse 6–29 cm hacia atrás, y el PID lo
   empujaba hacia adelante ([issue #2](https://github.com/DroneOps/AprilTag-Detection/issues/2)).
 - **Si cambia el clip,** hay que volver a medir la inclinación (con
-  `scripts/inclinacion_vuelo.py`, en vuelo): de ella dependen la posición de los tags y esta
+  `scripts/documentar/inclinacion_vuelo.py`, en vuelo): de ella dependen la posición de los tags y esta
   medida.
 
 | Estado | Qué hace con esa medida (`sostener_piso`) |
@@ -151,7 +155,7 @@ límites de siempre (`rc_limit` 20 de `config/flight.json`).
   - Tope `piso_i_max`, y no junta más si ya va al máximo empujando hacia ese lado
     (anti-windup).
   - En cada despegue arranca en `piso_i_inicial`, que va en `config/mision_dron<N>.json` de
-    cada dron (`python scripts/mision_espejo.py --dron 7`). Entre tramos se conserva, porque
+    cada dron (`python scripts/principales/mision_espejo.py --dron 7`). Entre tramos se conserva, porque
     la deriva medida va con el dron (siempre a su derecha).
   - Lo que juntó queda en la bitácora en `piso_ider` y `piso_iade`. Al final de un E2b, ese es
     el valor para `piso_i_inicial` de ese dron.
@@ -163,13 +167,14 @@ límites de siempre (`rc_limit` 20 de `config/flight.json`).
   (< `piso_dead`) no se manda, y uno que sí se manda es de al menos `piso_min` (10).
   El costo es que con poca deriva corrige de más y queda en un vaivén de ~10 cm.
 
-**Dónde está** (todo en `scripts/mision_espejo.py`):
-- `MirrorConfig`: los parámetros;
-- `ajustes_dron`: los ajustes de cada dron;
-- `FlujoPiso`: la medida;
-- `_piso_mando`: el PID de un eje;
-- `_send_rc`: cuándo se aplica, el seguro y sostenerse sobre el tag;
-- `_goto`: qué se reinicia en cada estado y cómo se ancla el tramo en el tag.
+**Dónde está** (en `scripts/principales/`):
+- `espejo_config.py`: `MirrorConfig` (los parámetros) y `ajustes_dron` (los ajustes de cada
+  dron);
+- `piso.py`: `FlujoPiso` (la medida) y `SostenerPiso` (el PID de cada eje, su integral y el
+  seguro);
+- `mision_espejo.py`, `_send_rc`: cuándo se aplica y sostenerse sobre el tag;
+- `mision_espejo.py`, `_goto`: qué se reinicia en cada estado y cómo se ancla el tramo en el
+  tag.
 
 **Seguro:** si, corrigiendo, se aleja más de `piso_alejandose_cm` (35) en 1.5 s, o se pasa de
 `piso_limite_cm` (150), se apaga para todo el vuelo: la medida podría estar al revés. No
@@ -187,75 +192,17 @@ cuenta lo que se fue al despegar, porque ahí el Tello ignora el rc: el Tello 7 
 En el circuito E5, el Tello 7 completó 3 de 4 con PID y 0 de 4 con solo PD. El Tello 1, 3 de
 4 con los dos. Con `piso_ki` 0.08 y 0.25 salió parecido; se dejó 0.15.
 
-### Otra opción: filtro de Kalman (`"piso_control": "kalman"`, 12-nov) — NO SE USA
+### Otra opción: filtro de Kalman (12-nov) — pausado
 
 **Se queda el PID.** En el laboratorio del 12-nov el Kalman se centró peor sobre los tags (~20
 cm contra ~6) y oscilaba más. Su modelo del dron (rc 15 → 14.5 cm/s) no cuadra con el real
-(~9 cm/s medido con el piso). El código queda apagado como opción; por qué y qué haría falta
-para retomarlo, en el encabezado de `scripts/kalman_piso.py`.
+(~9 cm/s medido con el piso).
 
-`scripts/kalman_piso.py`. En vez de reaccionar al error como el PID, **estima** por cada eje
-(de lado y adelante) tres cosas:
-
-| Estado | Qué es | De dónde sale |
-|---|---|---|
-| `p` | cm que está corrido de donde debería estar | lo mide `FlujoPiso` (atrasado) |
-| `v` | cm/s que le dan los rc que se mandaron | del modelo del dron, no se mide |
-| `d` | cm/s que se va solo: la deriva | de la diferencia entre lo que se mueve y lo que se le pidió |
-
-El modelo es el del simulador, medido en las calibraciones de rc (`docs/tello.md`):
-`velocidad pedida = kalman_ganancia · (|rc| − kalman_zona)`, y el dron llega a ella con una
-constante de tiempo `kalman_respuesta_s`. Lo que se mueve de más o de menos es la deriva.
-
-- **Atraso:** cada medida se aplica en el momento en que se tomó la imagen
-  (`kalman_atraso_video_s`, 0.17 s antes de llegar) y luego se predice hasta ahora con los rc
-  que ya se mandaron. El control usa esa predicción, no la posición atrasada (es el paso 3,
-  ya incluido).
-- **Mando:** pide la velocidad que cancela la deriva, más la que lo regresa y la que frena:
-  ```
-  vc = −d − kalman_kp · p − kalman_kd · (v + d)
-  rc = el que da esa velocidad según el modelo: kalman_zona + |vc| / kalman_ganancia (con su signo)
-  ```
-  Con τ 0.75 s, kp 1.2 y kd 1.0, el lazo regresa en ~3 s sin oscilar. Los rc salen finos
-  (6, 7, 8…) en vez de "0 o 10" (es el paso 5, ya incluido).
-- **La deriva hace el trabajo de la integral,** pero sin esperar a que haya error: el filtro ve
-  que el dron se mueve sin que se lo pidan y lo aprende en ~1–2 s, ya desde el despegue. Por
-  eso **arranca en 0 en todos los drones** (`kalman_deriva_inicial`) y no hace falta suponer
-  una deriva por dron: si un dron se arregla, no empuja de más.
-- **Huecos:** mientras gira o hace un flip no hay medida; en la siguiente se re-ancla la
-  posición (se conservan la velocidad y la deriva). Una medida que brinca mucho también re-ancla.
-- **Seguros:** si lo medido deja de cuadrar con lo predicho (NIS promedio >
-  `kalman_nis_max`) o la deriva estimada pasa de `kalman_deriva_max` (50 cm/s), se apaga y
-  sigue con el PID, desde `piso_i_inicial`. Con la medida al revés, el filtro lo explica como
-  una deriva enorme (49–83 cm/s) y el NIS no lo ve; en vuelos normales del Tello 7 simulado
-  llega hasta ~43 (con 40 se apagaba solo en una racha). Sigue funcionando el seguro de
-  siempre (`piso_alejandose_cm`), que apaga todo y es el que de verdad cuida la medida al revés.
-- **`kalman_centrar`** (prendido): al centrarse sobre el tag (APPROACH) y al sostenerse sobre
-  él (giros, pausa), suma al mando del centrado lo que cancela la deriva estimada. El centrado
-  sigue siendo el de siempre; solo ya no pelea contra la deriva. **De aquí sale casi toda la
-  mejora en el circuito:** con el Tello 7 simulado, sin esto el Kalman completó lo mismo que
-  el PID (5 de 12) y con esto, 10 de 12.
-- **Avanzando, no corrige de lado por poco** (`kalman_lado_avanzando`, 4 cm/s). Mandar de lado
-  y adelante a la vez hunde al Tello ~8 cm/s (11-nov). Con correcciones chicas todo el tiempo,
-  el sostener altura no alcanzaba y volaba a 88–95 cm. Ahí el tag gastado de `espejo_gastado`
-  no se detecta nunca, y a 95–110 cm a veces. Pasó de 0 de 4 a 2 de 4, como `main`.
-- **Resultados contra el PID** (simulador, tandas con las mismas semillas): tabla en la
-  bitácora, entrada "12-nov (noche)". Se comparan con `sim/comparar_control.py`.
-- **Para usarlo:** en `config/mission_espejo.json`, `"piso_control": "kalman"`. Está en
-  `"pid"` hasta probarlo en el laboratorio.
-- **Bitácora:** `kal_der`, `kal_ade` (posición predicha), `kal_dder`, `kal_dade` (deriva
-  estimada, cm/s) y `kal_nis` (≈ 0.1–0.5 si el modelo cuadra).
-
-**Cómo ajustarlo** (`config/mission_espejo.json`):
-
-| Qué se ve | Qué cambiar |
-|---|---|
-| `kalman APAGADO: no cuadra` o `deriva estimada imposible` | la medida o el modelo están mal: revisar `espejo` con E1 y `kalman_ganancia` con `scripts/rc_calib.py` |
-| Va y viene, o se pasa de largo | bajar `kalman_kp`; subir `kalman_kd` |
-| Regresa lento | subir `kalman_kp` (1.2 → 2.0) |
-| Tiembla o se tambalea (mandos que cambian mucho) | bajar `kalman_q_deriva` (50 → 20): sigue la deriva más despacio |
-| La deriva cambia rápido (corrientes de aire) y no la alcanza | subir `kalman_q_deriva` (50 → 200) |
-| Otro dron u otra calibración de rc | `kalman_ganancia`, `kalman_zona` y `kalman_respuesta_s`, de `scripts/rc_calib.py`; si el modelo falla poco, la deriva absorbe la diferencia |
+**Desde el 17-nov ya no está conectado a la misión:** el filtro quedó en
+`scripts/pausados/kalman_piso.py`. Cómo funcionaba, cómo estaba conectado (`git show
+02a4a11:scripts/mision_espejo.py`) y qué haría falta para retomarlo están en su encabezado y en
+[`scripts/pausados/README.md`](../scripts/pausados/README.md). Esta sección, completa, está en el
+historial de git.
 
 ### Cómo ajustarlo
 
@@ -335,7 +282,7 @@ clave no existe en la clase, el programa no arranca (así se detectan errores de
 | `mission_tags.json` | `MissionConfig` | tamaño de tag, confirmación, crucero, sostener altura, acercamiento a pared |
 | `mission_tags_15cm.json` | `MissionConfig` | lo mismo para tags de 15 cm |
 | `mission_piso.json` | `FloorConfig` | misión de piso: centrar, recto, tramo a ciegas |
-| `mission_espejo.json` | `MirrorConfig` | misión con espejo: volteo e inclinación del espejo |
+| `mission_espejo.json` | `MirrorConfig` (`espejo_config.py`) | misión con espejo: volteo e inclinación del espejo, avance, centrado, sostener con el piso |
 | `camera_tello.json` | — | calibración de la cámara (K y distorsión, 960×720) |
 
 ## Lo que se guarda en cada vuelo
@@ -347,7 +294,7 @@ clave no existe en la clase, el programa no arranca (así se detectan errores de
 - Video, si se corre con `--record nombre.mp4`.
 
 `logs/`, `capturas/` y `*.mp4` están en `.gitignore`: se quedan en la laptop. Para
-compartir una sesión, `scripts/guardar_sesion.py` copia sus bitácoras y resúmenes a
+compartir una sesión, `scripts/documentar/guardar_sesion.py` copia sus bitácoras y resúmenes a
 `sesiones/`, que sí va a git.
 
 ## Herramientas

@@ -34,7 +34,7 @@ frontal.
 - **Despegue:** el Tello sube por su cuenta hasta 50–110 cm e ignora los mandos hasta
   contestar `ok`. El programa espera ese `ok`.
 
-## Velocidad según `rc` (calibración del 24-oct, `scripts/rc_calib.py`)
+## Velocidad según `rc` (calibración del 24-oct, `scripts/pausados/rc_calib.py`)
 
 | `rc` | adelante | atrás | derecha | izquierda | arriba | abajo |
 |---|---|---|---|---|---|---|
@@ -111,7 +111,7 @@ el Tello 7 no alcanza a corregir.
   - **Sospecha:** la inclinación real de cada clip no es la del JSON (Tello 7 ~0°, Tello 1
     ~−10°, calculado con el simulador). Las dos medidas la usan, así que se equivocan igual.
     No descarta un movimiento real del dron al despegar y aterrizar.
-  - **Confirmado en vuelo (12-nov):** con los tags de los videos (`scripts/inclinacion_vuelo.py`),
+  - **Confirmado en vuelo (12-nov):** con los tags de los videos (`scripts/documentar/inclinacion_vuelo.py`),
     la vista está inclinada **~−10.5° adelante y ~−1° de lado en los dos drones**
     (cuatro videos: −9.9° a −11.9°).
     - Cuadra con la cámara del Tello, que ve 11° hacia abajo, en un espejo a 45°.

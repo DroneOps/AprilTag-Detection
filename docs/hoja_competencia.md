@@ -64,8 +64,7 @@ lo regresas igual. Los valores de "Hoy" son los del 16-nov; el menú muestra los
 
 ## Lo que NO se mueve en la competencia
 
-- El control: `piso_kp`, `piso_kd`, `piso_ki`, `center_*` y `piso_control` (el Kalman no se
-  usa). Están afinados con muchos vuelos.
+- El control: `piso_kp`, `piso_kd`, `piso_ki` y `center_*`. Están afinados con muchos vuelos.
 - Ningún vigilante de seguridad: batería, temperatura, `desobedece_*`, video perdido.
 - Los archivos `.py`. Si algo parece necesitar código, se para y se habla con Fernando.
 

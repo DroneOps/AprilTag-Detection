@@ -44,7 +44,7 @@ dron N veces por variante, con las mismas semillas, y da una tabla: distancia al
 bruscos son los mandos (rc/s que cambian y % del tiempo al tope).
 
 ```bash
-python sim/comparar_control.py --variante pid: --variante "kalman:--set piso_control=kalman" --n 4 --salida sim/logs/comp.jsonl
+python sim/comparar_control.py --variante hoy: --variante "tope20:--set sostener_tag_max=20" --n 4 --salida sim/logs/comp.jsonl
 ```
 ```bash
 python sim/comparar_control.py --solo-tabla --salida sim/logs/comp.jsonl   # la tabla otra vez, sin correr
@@ -374,7 +374,7 @@ Resultado del 11-nov (200 cuadros por desgaste; % con el ID correcto):
 
 En los videos reales: 1,634 → 1,685 cuadros con tag, el tag 2 dañado de 6 a 20, y ningún
 ID falso. **Antes de cambiar el detector, corre esta prueba y `python
-scripts/test_tags.py --selftest`: un ID equivocado es peor que no ver el tag.** Juntar
+scripts/principales/test_tags.py --selftest`: un ID equivocado es peor que no ver el tag.** Juntar
 "umbral sensible" con "contornos menos exigentes" en una misma pasada dio IDs falsos con
 ruido. Sin el filtro de forma, aparecieron un 6 falso sobre una raya del piso y otro en una
 manchita de 12 px.
