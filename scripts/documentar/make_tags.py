@@ -2,8 +2,8 @@
 """Genera un PDF imprimible con los AprilTags tag25h9 del reglamento (IDs 1-10).
 
 Uso:
-    python scripts/make_tags.py                 # tags/tags_15cm.pdf, uno por hoja carta
-    python scripts/make_tags.py --size-cm 8     # tags más chicos (prueba de distancia)
+    python scripts/documentar/make_tags.py                 # tags/tags_15cm.pdf, uno por hoja carta
+    python scripts/documentar/make_tags.py --size-cm 8     # tags más chicos (prueba de distancia)
 
 Imprimir al 100 % ("tamaño real"), NO "ajustar a la página", y medir el
 cuadro negro con una regla: debe medir exactamente --size-cm.
@@ -11,11 +11,14 @@ cuadro negro con una regla: debe medir exactamente --size-cm.
 from __future__ import annotations
 
 import argparse
+import sys
 from pathlib import Path
 
 import cv2
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "principales"))  # la base: first_flight, test_tags...
 
 from test_tags import TAG_FUNCTIONS
 

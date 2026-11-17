@@ -13,9 +13,9 @@ ATENCIÓN: con el espejo cubriendo toda la cámara NO hay vista al frente: el dr
 no ve paredes ni obstáculos. Avanza como máximo advance_timeout_s sin ver tags.
 
 Uso:
-    python scripts/mision_espejo.py --record espejo_m1.mp4
-    python scripts/mision_espejo.py --quieto            # no avanza: espera un tag debajo
-    python scripts/mision_espejo.py --espejo h          # si "adelante" sale al revés en test_tags
+    python scripts/principales/mision_espejo.py --record espejo_m1.mp4
+    python scripts/principales/mision_espejo.py --quieto            # no avanza: espera un tag debajo
+    python scripts/principales/mision_espejo.py --espejo h          # si "adelante" sale al revés en test_tags
 
 Parámetros propios en config/mission_espejo.json (más config/mission_tags.json
 y config/flight.json).

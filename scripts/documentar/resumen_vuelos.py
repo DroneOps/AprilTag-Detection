@@ -2,9 +2,9 @@
 """Resumen de una sesión de pruebas: qué pasó en cada vuelo, sin abrir los CSV.
 
 Uso:
-    python scripts/resumen_vuelos.py                # vuelos de hoy
-    python scripts/resumen_vuelos.py --ultimos 3    # los 3 más recientes
-    python scripts/resumen_vuelos.py --fecha 20261021
+    python scripts/documentar/resumen_vuelos.py                # vuelos de hoy
+    python scripts/documentar/resumen_vuelos.py --ultimos 3    # los 3 más recientes
+    python scripts/documentar/resumen_vuelos.py --fecha 20261021
 
 Lee logs/*.csv (first_flight, mission_tags, rc_calib) y capturas/ (calibración
 de rc y enlace de test_tags). Imprime un veredicto por vuelo y guarda todo en
@@ -18,7 +18,7 @@ import re
 import time
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parents[2]  # scripts/<carpeta>/x.py
 AIR = {"HOVER", "YAW_TEST", "FLIP_CLIMB", "FLIP_TEST", "FLIP_RECOVER", "CRUISE", "ADVANCE", "APPROACH",
        "EXECUTE", "RC_ALT", "RC_STEP"}
 PROBLEMS = {  # texto en el motivo -> descripción corta

@@ -22,7 +22,7 @@ ciegas_cms solo se usa si no se pudo medir. Las acciones, el flip seguro,
 el paro y los vigilantes son los de mission_tags.py / first_flight.py.
 
 Uso:
-    python scripts/mision_piso.py --record piso_m1.mp4
+    python scripts/pausados/mision_piso.py --record piso_m1.mp4
 """
 from __future__ import annotations
 
@@ -32,10 +32,13 @@ import math
 import time
 from collections import deque
 from dataclasses import dataclass, fields
+import sys
 from pathlib import Path
 
 import cv2
 import numpy as np
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "principales"))  # la base: first_flight, test_tags...
 
 from first_flight import ROOT, FlightConfig, connect, run_app, with_min
 from mission_tags import MissionConfig, TagMission, Vision

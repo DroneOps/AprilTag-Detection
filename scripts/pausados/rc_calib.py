@@ -7,9 +7,9 @@ y de lado se mide con el tag (PnP); arriba/abajo con el tof. Así sabemos la
 zona muerta real y los mínimos que hay que usar en config/mission_tags.json.
 
 Uso:
-    python scripts/rc_calib.py                 # adelante, lado y vertical (~70 s de vuelo)
-    python scripts/rc_calib.py --ejes fb lr    # solo algunos ejes
-    python scripts/rc_calib.py --tag-cm 15
+    python scripts/pausados/rc_calib.py                 # adelante, lado y vertical (~70 s de vuelo)
+    python scripts/pausados/rc_calib.py --ejes fb lr    # solo algunos ejes
+    python scripts/pausados/rc_calib.py --tag-cm 15
 
 Montaje: tag vertical a la altura del vuelo (~90 cm), a ~1.5 m frente al
 despegue, con ~1 m libre a los lados y detrás del dron.
@@ -22,10 +22,13 @@ import argparse
 import threading
 import time
 from collections import deque
+import sys
 from pathlib import Path
 
 import cv2
 import numpy as np
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "principales"))  # la base: first_flight, test_tags...
 
 from first_flight import AIRBORNE, ROOT, Flight, FlightConfig, altitude, connect, run_app
 from test_tags import DEFAULT_CALIB, TAG_FUNCTIONS, PoseEstimator, TagDetector, draw

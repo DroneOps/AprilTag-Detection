@@ -4,12 +4,12 @@
 No vuela: solo abre una fuente de video, detecta y muestra.
 
 Uso:
-    python scripts/test_tags.py --source 0                 # webcam /dev/video0
-    python scripts/test_tags.py --source tello             # Tello, cámara frontal
-    python scripts/test_tags.py --source tello --downward  # intenta cámara inferior
-    python scripts/test_tags.py --source video.mp4         # repetir una grabación
-    python scripts/test_tags.py --source tello --record vuelo.mp4
-    python scripts/test_tags.py --selftest                 # prueba sintética sin cámara
+    python scripts/principales/test_tags.py --source 0                 # webcam /dev/video0
+    python scripts/principales/test_tags.py --source tello             # Tello, cámara frontal
+    python scripts/principales/test_tags.py --source tello --downward  # intenta cámara inferior
+    python scripts/principales/test_tags.py --source video.mp4         # repetir una grabación
+    python scripts/principales/test_tags.py --source tello --record vuelo.mp4
+    python scripts/principales/test_tags.py --selftest                 # prueba sintética sin cámara
 
 Teclas: q/ESC salir · espacio pausa · s guardar captura.
 """
@@ -43,7 +43,7 @@ TAG_FUNCTIONS: dict[int, str] = {
     10: "Giro 360",
 }
 
-DEFAULT_CALIB = Path(__file__).resolve().parent.parent / "config" / "camera_tello.json"
+DEFAULT_CALIB = Path(__file__).resolve().parents[2] / "config" / "camera_tello.json"
 
 GREEN = (0, 200, 0)
 YELLOW = (0, 220, 255)
@@ -482,6 +482,7 @@ def run_live(args: argparse.Namespace, detector: TagDetector, pose_est: PoseEsti
                 if args.record:
                     if writer is None:
                         h, w = frame.shape[:2]
+                        Path(args.record).parent.mkdir(parents=True, exist_ok=True)  # p. ej. videos/
                         writer = cv2.VideoWriter(args.record, cv2.VideoWriter_fourcc(*"mp4v"), 30, (w, h))
                     writer.write(frame)  # crudo: para repetirlo con --espejo igual que en vivo
                 if args.espejo:

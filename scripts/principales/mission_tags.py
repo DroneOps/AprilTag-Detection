@@ -7,8 +7,8 @@ mision_piso.py (o mision_espejo.py con espejo), que heredan de aquí las
 acciones de cada tag, el flip seguro, el sostener altura y los vigilantes.
 
 Uso:
-    python scripts/mission_tags.py
-    python scripts/mission_tags.py --record mision1.mp4
+    python scripts/principales/mission_tags.py
+    python scripts/principales/mission_tags.py --record mision1.mp4
 
 Controles iguales a first_flight.py: t despega, ESPACIO / clic en la barra =
 PARO, k mata motores. Parámetros en config/mission_tags.json y config/flight.json.

@@ -5,10 +5,10 @@ Sin calibración no se puede estimar a qué distancia está un tag (solvePnP).
 La calibración vale para UNA resolución: el Tello transmite a 960x720.
 
 Uso:
-    python scripts/calibrate_camera.py --make-board            # tags/tablero_25mm.pdf
-    python scripts/calibrate_camera.py --source tello --square-mm 25
-    python scripts/calibrate_camera.py --source 0 --squares 9x6 --square-mm 30   # otro tablero
-    python scripts/calibrate_camera.py --from-dir capturas/calib_20261021_101500 --square-mm 25
+    python scripts/documentar/calibrate_camera.py --make-board            # tags/tablero_25mm.pdf
+    python scripts/documentar/calibrate_camera.py --source tello --square-mm 25
+    python scripts/documentar/calibrate_camera.py --source 0 --squares 9x6 --square-mm 30   # otro tablero
+    python scripts/documentar/calibrate_camera.py --from-dir capturas/calib_20261021_101500 --square-mm 25
 
 Durante la captura: mueve el TABLERO (o el dron) para cubrir todo el
 cuadro: centro, esquinas, cerca, lejos e inclinado. Se captura solo cuando la
@@ -19,10 +19,13 @@ from __future__ import annotations
 import argparse
 import json
 import time
+import sys
 from pathlib import Path
 
 import cv2
 import numpy as np
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "principales"))  # la base: first_flight, test_tags...
 
 from test_tags import CvSource, Source, TelloSource, hud
 

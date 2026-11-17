@@ -4,10 +4,10 @@ actitud y las columnas de visión de cada misión. Es la forma rápida de ver qu
 hizo el dron y por qué.
 
 Uso:
-    python scripts/traza_vuelo.py logs/espejo_20261109_141631.csv
-    python scripts/traza_vuelo.py sesiones/2026-11-09/vuelos/espejo_20261109_141631.csv --cada 4
-    python scripts/traza_vuelo.py <csv> --desde 12 --hasta 20      # solo ese tramo (s desde el inicio)
-    python scripts/traza_vuelo.py <csv> --estados ADVANCE APPROACH
+    python scripts/documentar/traza_vuelo.py logs/espejo_20261109_141631.csv
+    python scripts/documentar/traza_vuelo.py sesiones/2026-11-09/vuelos/espejo_20261109_141631.csv --cada 4
+    python scripts/documentar/traza_vuelo.py <csv> --desde 12 --hasta 20      # solo ese tramo (s desde el inicio)
+    python scripts/documentar/traza_vuelo.py <csv> --estados ADVANCE APPROACH
 
 Columnas: t (s desde el primer registro), estado y fase, tof y h, rc enviados
 (lr fb ud yaw), roll/pitch/yaw, y después las columnas propias de la misión

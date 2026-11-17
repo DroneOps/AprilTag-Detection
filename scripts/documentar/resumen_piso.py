@@ -3,10 +3,10 @@
 Kalman en el laboratorio con números, no solo a ojo.
 
 Uso:
-    python scripts/resumen_piso.py                     # vuelos con espejo de hoy (logs/)
-    python scripts/resumen_piso.py --ultimos 2         # los 2 más recientes
-    python scripts/resumen_piso.py --fecha 20261113
-    python scripts/resumen_piso.py sesiones/2026-11-13/vuelos/espejo_20261113_101500.csv
+    python scripts/documentar/resumen_piso.py                     # vuelos con espejo de hoy (logs/)
+    python scripts/documentar/resumen_piso.py --ultimos 2         # los 2 más recientes
+    python scripts/documentar/resumen_piso.py --fecha 20261113
+    python scripts/documentar/resumen_piso.py sesiones/2026-11-13/vuelos/espejo_20261113_101500.csv
 
 Por vuelo:
 - quién sostuvo la posición (columna piso_modo: pid, kalman, apagado) y si cambió en vuelo;
@@ -28,7 +28,7 @@ import statistics as st
 import time
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parents[2]  # scripts/<carpeta>/x.py
 SOSTIENE = ("HOVER", "CRUISE", "ADVANCE")
 
 

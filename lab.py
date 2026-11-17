@@ -164,45 +164,45 @@ SEGURIDAD = [
 ]
 
 PRUEBAS = [
-    {"clave": "estacionario", "nombre": "Revisar el dron: estacionario", "script": "scripts/first_flight.py",
+    {"clave": "estacionario", "nombre": "Revisar el dron: estacionario", "script": "scripts/principales/first_flight.py",
      "args": [], "dron": False,
      "antes": ["Las 4 hélices bien (ninguna astillada, doblada o floja).",
                "Si se cayó o se porta raro: calibrar el IMU y el centro de gravedad en la app Tello.",
                "Sin tags debajo."],
      "aprueba": "En los 10 s quieto no se mueve más de ~30 cm ni sube o baja más de ~10 cm."},
-    {"clave": "e1", "nombre": "E1: el espejo con el dron en la mano (no vuela)", "script": "scripts/test_tags.py",
+    {"clave": "e1", "nombre": "E1: el espejo con el dron en la mano (no vuela)", "script": "scripts/principales/test_tags.py",
      "args": ["--source", "tello", "--espejo", "--tag-cm", "{tag_cm}"], "dron": False, "vuela": False,
      "antes": ["Sostén el dron a ~80 cm sobre un tag. Sal con q.",
                "Sirve para revisar que vea los tags y que 'ADELANTE' apunte a la nariz.",
                "La inclinación que imprime es solo de referencia: la buena se mide en vuelo (opción i)."],
      "aprueba": "Detecta el tag, la altura se parece a la cinta métrica (±5 cm) y 'ADELANTE' apunta a la nariz."},
-    {"clave": "e2b", "nombre": "E2b: quieto sobre la cinta", "script": "scripts/mision_espejo.py",
+    {"clave": "e2b", "nombre": "E2b: quieto sobre la cinta", "script": "scripts/principales/mision_espejo.py",
      "args": ["--quieto"], "dron": True,
      "antes": ["Marca el despegue con cinta. NINGÚN tag a menos de ~1 m.",
                "Sube a 100 cm y espera ~20 s."],
      "aprueba": "No se va más de ~20–30 cm de la cinta. Fíjate también si quedó adelante de la cinta."},
-    {"clave": "e3", "nombre": "E3: tag debajo, sin avanzar", "script": "scripts/mision_espejo.py",
+    {"clave": "e3", "nombre": "E3: tag debajo, sin avanzar", "script": "scripts/principales/mision_espejo.py",
      "args": ["--quieto"], "dron": True,
      "antes": ["Tag 9 (pausa) en el piso, justo debajo del despegue o un poco atrás."],
      "aprueba": "Se coloca encima del tag, hace la pausa de 5 s y aterriza."},
-    {"clave": "e4", "nombre": "E4: un tag adelante", "script": "scripts/mision_espejo.py", "args": [], "dron": True,
+    {"clave": "e4", "nombre": "E4: un tag adelante", "script": "scripts/principales/mision_espejo.py", "args": [], "dron": True,
      "antes": ["Tag 2 en el piso ~1 m adelante. Lado izquierdo libre."],
      "aprueba": "Avanza, se pone ENCIMA del tag (míralo de lado), gira a la izquierda, avanza y aterriza."},
-    {"clave": "e5", "nombre": "E5: circuito 1 → 2 → 7", "script": "scripts/mision_espejo.py", "args": [],
+    {"clave": "e5", "nombre": "E5: circuito 1 → 2 → 7", "script": "scripts/principales/mision_espejo.py", "args": [],
      "dron": True,
      "antes": ["Tag 1 a 80 cm al frente; tag 2 a 70 cm a la derecha del 1; tag 7 a 70 cm adelante del 2."],
      "aprueba": "Ejecuta 1, 2 y 7 quedando ENCIMA de cada uno (míralo de lado)."},
-    {"clave": "e6", "nombre": "E6: flip", "script": "scripts/mision_espejo.py", "args": [], "dron": True,
+    {"clave": "e6", "nombre": "E6: flip", "script": "scripts/principales/mision_espejo.py", "args": [], "dron": True,
      "antes": ["Batería de 70 % o más y ~1.7 m libres hacia arriba.", "Solo con el clip firme.",
                "Tag 4 a ~1 m adelante; luego el 8."],
      "aprueba": "Hace el flip, recupera la altura y el espejo no se movió (si se movió: repetir E1)."},
-    {"clave": "e7", "nombre": "E7: ensayo de competencia", "script": "scripts/mision_espejo.py", "args": [],
+    {"clave": "e7", "nombre": "E7: ensayo de competencia", "script": "scripts/principales/mision_espejo.py", "args": [],
      "dron": True,
      "antes": ["Varios tags en orden al azar, a 0.7–1.5 m entre ellos (o usa una pista: python sim/pista.py 4).",
                "Incluye dos tags con el mismo número y un 3 u 8 que lo regrese a un tag ya hecho.",
                "3 intentos cronometrados, como en la competencia."],
      "aprueba": "Cuenta cuántos tags ejecutó bien en orden: es su puntaje."},
-    {"clave": "intento", "nombre": "Competencia: un intento", "script": "scripts/mision_espejo.py", "args": [],
+    {"clave": "intento", "nombre": "Competencia: un intento", "script": "scripts/principales/mision_espejo.py", "args": [],
      "dron": True,
      "antes": ["Ajustes revisados con lo que dijeron los jueces (docs/hoja_competencia.md).",
                "Batería al 100 % y temperatura abajo de 70 °C. Hélices bien y clip firme.",
@@ -268,16 +268,16 @@ def _hay_bitacora_nueva(desde: float) -> bool:
 
 
 def guardar_y_subir(notas: str, mensaje: str) -> None:
-    correr([PY, "scripts/guardar_sesion.py", "--notas", notas], vuela=PRACTICA)
+    correr([PY, "scripts/documentar/guardar_sesion.py", "--notas", notas], vuela=PRACTICA)
     subir(["sesiones/"], mensaje)
 
 
 def ver_ultimo_vuelo(espejo: bool = True) -> None:
     titulo("Cómo salió el último vuelo")
-    correr([PY, "scripts/resumen_vuelos.py", "--ultimos", "1"])
+    correr([PY, "scripts/documentar/resumen_vuelos.py", "--ultimos", "1"])
     con_espejo = sorted((ROOT / "logs").glob("espejo_*.csv"), key=lambda p: p.stat().st_mtime)
     if espejo and con_espejo:
-        correr([PY, "scripts/resumen_piso.py", str(con_espejo[-1].relative_to(ROOT))])
+        correr([PY, "scripts/documentar/resumen_piso.py", str(con_espejo[-1].relative_to(ROOT))])
 
 
 # ---------------------------------------------------------------- cambiar un ajuste
@@ -375,7 +375,7 @@ def medir_inclinacion() -> None:
         aviso("No hay videos de E4, E5, E6, E7 o de un intento. Vuela uno de esos primero.")
         return
     print("Uso los últimos: " + ", ".join(v.name for v in videos) + " (tarda ~1 min por video)")
-    correr([PY, "scripts/inclinacion_vuelo.py", *[v.name for v in videos]])
+    correr([PY, "scripts/documentar/inclinacion_vuelo.py", *[v.name for v in videos]])
     print("Si los números son distintos a los del JSON por más de ~2°, cámbialos con la opción c.")
 
 
@@ -433,7 +433,7 @@ MESES = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "
 
 def terminar_dia() -> None:
     titulo("Terminar el día")
-    correr([PY, "scripts/resumen_vuelos.py"])
+    correr([PY, "scripts/documentar/resumen_vuelos.py"])
     print("\nContesta en pocas palabras; queda en docs/bitacora.md para que el equipo lo lea en GitHub.")
     tema = preguntar("Título del día (p. ej. 'E5 con el Tello 1 y clip nuevo'):")
     if not tema:
@@ -461,7 +461,7 @@ def terminar_dia() -> None:
     else:
         ruta.write_text(texto[:i + 1] + entrada + texto[i + 1:])
         bien("Entrada agregada a docs/bitacora.md.")
-    correr([PY, "scripts/guardar_sesion.py"], vuela=PRACTICA)
+    correr([PY, "scripts/documentar/guardar_sesion.py"], vuela=PRACTICA)
     subir(["sesiones/", "docs/bitacora.md"], f"Bitácora: {tema}")
     aviso("Al terminar: apaga los drones, pon a cargar las baterías y deja el espejo limpio.")
 

@@ -25,7 +25,7 @@ import cv2
 import numpy as np
 
 ROOT = Path(__file__).resolve().parent.parent
-sys.path[:0] = [str(ROOT / "sim"), str(ROOT / "scripts")]
+sys.path[:0] = [str(ROOT / "sim"), str(ROOT / "scripts" / "principales")]
 sys.argv = sys.argv[:1] + sys.argv[1:]  # sim_world solo lee argumentos en su __main__
 
 import sim_world as SW  # noqa: E402

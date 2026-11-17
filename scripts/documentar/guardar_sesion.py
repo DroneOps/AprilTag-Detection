@@ -7,9 +7,9 @@ capturas/ (calibración de rc, enlace), genera resumen.txt con resumen_vuelos.py
 piso.txt con resumen_piso.py (vuelos con espejo), y agrega tus notas a notas.md. Los videos y las imágenes NO se copian.
 
 Uso:
-    python scripts/guardar_sesion.py --notas "E5 con clip nuevo: ejecutó 1 y 2, el 7 se le pasó"
-    python scripts/guardar_sesion.py                    # sin notas (se pueden agregar después)
-    python scripts/guardar_sesion.py --fecha 20261027   # otra fecha
+    python scripts/documentar/guardar_sesion.py --notas "E5 con clip nuevo: ejecutó 1 y 2, el 7 se le pasó"
+    python scripts/documentar/guardar_sesion.py                    # sin notas (se pueden agregar después)
+    python scripts/documentar/guardar_sesion.py --fecha 20261027   # otra fecha
 
 Después: git add sesiones/ && git commit -m "Sesión ..." && git pull --rebase && git push
 """
@@ -22,7 +22,7 @@ import sys
 import time
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parents[2]  # scripts/<carpeta>/x.py
 
 
 def main() -> None:
@@ -53,12 +53,12 @@ def main() -> None:
             textos.append(p.name)
 
     if copied:
-        res = subprocess.run([sys.executable, str(ROOT / "scripts" / "resumen_vuelos.py"), "--fecha", f],
+        res = subprocess.run([sys.executable, str(ROOT / "scripts" / "documentar" / "resumen_vuelos.py"), "--fecha", f],
                              capture_output=True, text=True, cwd=ROOT)
         lines = [ln for ln in res.stdout.splitlines() if not ln.startswith("guardado en")]
         (out / "resumen.txt").write_text("\n".join(lines) + "\n")
         # vuelos con espejo: cómo sostuvo la posición con el piso (PID o Kalman)
-        res = subprocess.run([sys.executable, str(ROOT / "scripts" / "resumen_piso.py"), "--fecha", f],
+        res = subprocess.run([sys.executable, str(ROOT / "scripts" / "documentar" / "resumen_piso.py"), "--fecha", f],
                              capture_output=True, text=True, cwd=ROOT)
         if res.returncode == 0 and not res.stdout.startswith("no hay vuelos"):
             (out / "piso.txt").write_text(res.stdout)

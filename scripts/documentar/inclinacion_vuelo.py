@@ -6,8 +6,8 @@ E1 (test_tags.py --espejo) la mide con el dron en la mano, y la mano también se
 el dron nivelado, los dos drones dieron ~−10.5° adelante y ~−1° de lado.
 
 Uso:
-    python scripts/inclinacion_vuelo.py k2_dron7_pid2.mp4 k2_dron7_kal2.mp4
-    python scripts/inclinacion_vuelo.py *.mp4 --min-alt 60
+    python scripts/documentar/inclinacion_vuelo.py k2_dron7_pid2.mp4 k2_dron7_kal2.mp4
+    python scripts/documentar/inclinacion_vuelo.py *.mp4 --min-alt 60
 
 Toma la mediana de todos los tags detectados arriba de --min-alt cm (en el aire, no en la
 mano ni aterrizando). Cada frame suelto varía ±6° porque el dron se inclina al moverse; la
@@ -24,8 +24,8 @@ from pathlib import Path
 import cv2
 import numpy as np
 
-ROOT = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(ROOT / "scripts"))
+ROOT = Path(__file__).resolve().parents[2]  # scripts/<carpeta>/x.py
+sys.path.insert(0, str(ROOT / "scripts" / "principales"))
 import test_tags as TT  # noqa: E402
 from mission_tags import TAG_FUNCTIONS  # noqa: E402
 

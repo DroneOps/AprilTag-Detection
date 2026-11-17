@@ -2,10 +2,10 @@
 """Primer vuelo: despegar, mantenerse con send_rc_control, aterrizar y paro.
 
 Uso:
-    python scripts/first_flight.py                    # despega, se mantiene, aterriza
-    python scripts/first_flight.py --yaw-test 90      # además gira 90° por rc en lazo cerrado
-    python scripts/first_flight.py --flip-test b      # además un flip hacia atrás (f, b, l, r)
-    python scripts/first_flight.py --record vuelo1.mp4
+    python scripts/principales/first_flight.py                    # despega, se mantiene, aterriza
+    python scripts/principales/first_flight.py --yaw-test 90      # además gira 90° por rc en lazo cerrado
+    python scripts/principales/first_flight.py --flip-test b      # además un flip hacia atrás (f, b, l, r)
+    python scripts/principales/first_flight.py --record vuelo1.mp4
 
 Controles (con la ventana enfocada):
     t                       despegar (solo si el chequeo previo está en verde)
@@ -39,7 +39,7 @@ import numpy as np
 
 from test_tags import hud
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parents[2]  # scripts/<carpeta>/x.py
 AIRBORNE = {"TAKEOFF", "HOVER", "YAW_TEST", "FLIP_CLIMB", "FLIP_TEST", "FLIP_RECOVER"}
 LANDING = {"LANDING", "EMERGENCY_LAND"}
 TERMINAL = {"DONE", "KILLED", "ABORTED"}
@@ -665,6 +665,7 @@ def run_app(flight: Flight, tello, reader, record: str | None, title: str) -> No
                 if record:
                     if writer is None:
                         hh, ww = last_frame.shape[:2]
+                        Path(record).parent.mkdir(parents=True, exist_ok=True)  # p. ej. videos/
                         writer = cv2.VideoWriter(record, cv2.VideoWriter_fourcc(*"mp4v"), 30, (ww, hh))
                     writer.write(last_frame)
                 flight.on_frame(last_frame, t_frame)

@@ -51,7 +51,7 @@ import cv2
 import numpy as np
 
 ROOT = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(ROOT / "scripts"))
+sys.path[:0] = [str(ROOT / "scripts" / "principales"), str(ROOT / "scripts" / "pausados")]  # misiones (las de piso y rc_calib, pausadas)
 import first_flight as F  # noqa: E402
 import mission_tags as M  # noqa: E402
 import rc_calib as RC  # noqa: E402
@@ -109,7 +109,7 @@ class SimParams:
     temp_inicial_c: float = 65.0
     temp_c_por_min: float = 0.0  # cuánto se calienta volando
     # con espejo: grados que la vista se inclina hacia adelante (real 12-nov, medida en vuelo con
-    # scripts/inclinacion_vuelo.py: ~-10.3, hacia atrás). La misión supone vista_adelante_deg.
+    # scripts/documentar/inclinacion_vuelo.py: ~-10.3, hacia atrás). La misión supone vista_adelante_deg.
     espejo_inclinacion_deg: float = 0.0
 
     @classmethod
@@ -650,17 +650,17 @@ def run(name, tags, limit=120, events=None, drift=None, boxes=(), bias=(0.0, 0.0
     if flip_test:  # prueba de first_flight.py --flip-test, sin misión
         mis = F.Flight(sim, cfg, log, None, flip_test)
         mis.executed, mis._turned = [], 0.0
-    elif rc_calib:  # scripts/rc_calib.py
+    elif rc_calib:  # scripts/pausados/rc_calib.py
         cfg.hover_s, cfg.max_flight_s = 3.0, 150.0
         mis = RC.RcCalib(sim, cfg, log, ROOT / "config" / "camera_tello.json", 8.0, ["fb", "lr", "ud"],
                          report_dir=ROOT / "sim" / "logs")  # no mezclar con las calibraciones reales
         mis.executed, mis._turned = [], 0.0
-    elif piso:  # scripts/mision_piso.py
+    elif piso:  # scripts/pausados/mision_piso.py
         fcfg = MP.FloorConfig.load(ROOT / "config" / "mission_piso.json")
         for k, v in OVER_P.items():
             setattr(fcfg, k, v)
         mis = MP.FloorMission(sim, cfg, mcfg, fcfg, log, ROOT / "config" / "camera_tello.json")
-    elif mirror:  # scripts/mision_espejo.py
+    elif mirror:  # scripts/principales/mision_espejo.py
         ecfg = ME.MirrorConfig.load(ROOT / "config" / "mission_espejo.json")
         ecfg.espejo = mirror
         if DRON and (ROOT / "config" / f"mision_dron{DRON}.json").exists():
