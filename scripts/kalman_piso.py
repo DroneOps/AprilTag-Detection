@@ -1,7 +1,10 @@
-"""Filtro de Kalman para sostener la posición con el piso (mision_espejo.py, piso_control "kalman").
+"""Filtro de Kalman para sostener la posición con el piso. PAUSADO: ya no está conectado a la misión.
 
-NO SE USA (decisión del 12-nov): la misión se queda con el PID ("piso_control": "pid"). Este
-código se guarda apagado como opción para más adelante. Por qué:
+NO SE USA (decisión del 12-nov): la misión se queda con el PID. Desde el 17-nov este archivo ya
+no está conectado a mision_espejo.py (se quitó para que la misión sea más corta y clara). Cómo
+estaba conectado (piso_control "kalman", kalman_* en MirrorConfig, _kalman_mando y
+_kalman_centrar, y el Kalman alimentado con la medida del piso en _step) se ve en el commit
+02a4a11: `git show 02a4a11:scripts/mision_espejo.py`. Por qué se pausó:
   - En el laboratorio del 12-nov no fue mejor que el PID. En E5 ejecutó a ~20 cm del tag (el
     PID, a ~6), oscilaba más, y quieto mandaba casi el doble de seguido (52-55 rc/s contra 29).
   - Su modelo del dron no cuadra con el Tello real. Supone que rc 15 da 14.5 cm/s; con el
@@ -11,6 +14,7 @@ código se guarda apagado como opción para más adelante. Por qué:
   - La medida del piso que usa tiene un error al subir y bajar: la inclinación del espejo está
     mal en el JSON (issue #2). Mientras eso no se arregle, ningún control fino sirve de mucho.
 Para volver a probarlo:
+  0. reconectarlo a la misión como estaba en el commit 02a4a11;
   1. arreglar la medida del piso (issue #2);
   2. reajustar kalman_ganancia, kalman_zona y kalman_respuesta_s con vuelos reales;
   3. compararlo otra vez con sim/comparar_control.py y en el laboratorio (K1 y K2, en

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Compara variantes del control (p. ej. PID contra Kalman) en el simulador, en tandas.
+"""Compara variantes de la misión o del control en el simulador, en tandas (p. ej. dos valores
+de un ajuste, o el código de antes contra el de ahora corriendo cada uno desde su carpeta).
 
 Corre cada escenario con cada dron N veces por variante, con las mismas semillas de deriva
 aleatoria para todas las variantes, y resume:
@@ -8,9 +9,9 @@ aleatoria para todas las variantes, y resume:
   empezó a ejecutar cada uno.
 
 Uso:
-    python sim/comparar_control.py --variante pid: --variante "kalman:--set piso_control=kalman"
-    python sim/comparar_control.py --escenarios espejo_circuito --drones 7 --n 8 \\
-        --variante pid: --variante "kalman:--set piso_control=kalman" --salida sim/logs/comp.jsonl
+    python sim/comparar_control.py --variante hoy: --variante "tope20:--set sostener_tag_max=20"
+    python sim/comparar_control.py --escenarios espejo_competencia --drones sano 1 7 --n 8 \\
+        --variante hoy: --variante "rapido:--set advance_fb=20" --salida sim/logs/comp.jsonl
 
 Cada variante es "nombre:banderas de sim_world.py" (--set clave=valor, --sim clave=valor).
 Corre en tiempo real: ~40 s por estacionario y ~60–90 s por circuito, de --paralelo en

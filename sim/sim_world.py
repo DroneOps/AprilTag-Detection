@@ -603,7 +603,7 @@ def valor_set(txt: str):
     try:
         v = json.loads(txt)
     except json.JSONDecodeError:
-        return txt  # texto sin comillas, p. ej. piso_control=kalman
+        return txt  # texto sin comillas, p. ej. espejo=h
     return tuple(v) if isinstance(v, list) else v
 
 
@@ -921,7 +921,7 @@ if __name__ == "__main__":
     # --set clave=valor: cambia un ajuste solo en esta simulación (de config/mission_espejo.json,
     # mission_tags.json o flight.json; ver aplicar_set)
     # --sim clave=valor: cambia el dron simulado (como en config/sim_tello.json)
-    # p. ej. --set piso_control=kalman --sim avance_ganancia=1.1
+    # p. ej. --set advance_fb=20 --sim avance_ganancia=1.1
     cambios = {"--set": [], "--sim": []}
     for flag in cambios:
         while flag in args:
