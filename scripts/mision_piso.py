@@ -39,8 +39,7 @@ import numpy as np
 
 from first_flight import ROOT, FlightConfig, connect, run_app, with_min
 from mission_tags import MissionConfig, TagMission, Vision
-from mision_espejo import rot_mod90
-from test_tags import DEFAULT_CALIB, TAG_FUNCTIONS, draw, floor_from_front
+from test_tags import DEFAULT_CALIB, TAG_FUNCTIONS, draw, floor_from_front, rot_mod90
 
 
 @dataclass

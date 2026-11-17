@@ -23,211 +23,19 @@ y config/flight.json).
 from __future__ import annotations
 
 import argparse
-import json
 import math
-import threading
 import time
 from collections import deque
-from dataclasses import dataclass, fields
 from pathlib import Path
 
 import cv2
 import numpy as np
 
+from espejo_config import MirrorConfig, ajustes_dron  # noqa: F401 (sim_world usa ME.MirrorConfig)
 from first_flight import ROOT, FlightConfig, altitude, connect, run_app, with_min, wrap_deg
 from mission_tags import ACTIONS, MissionConfig, TagMission, Vision
-from test_tags import DEFAULT_CALIB, TAG_FUNCTIONS, draw, floor_view
-
-
-@dataclass
-class MirrorConfig:
-    espejo: str = "v"  # cómo se voltea la imagen (ver test_tags.py --espejo)
-    quieto: bool = False  # True: no avanza, espera a que haya un tag debajo
-    cruise_alt_cm: float = 100.0  # más alto = ve más piso debajo (a 100 cm, vista a −10.3°: ~20 cm adelante, ~60 atrás, ±52 de lado)
-    advance_fb: int = 15  # rc 15 ≈ 16–20 cm/s (calibración real)
-    advance_timeout_s: float = 12.0  # sin ver tag debajo por esto: fin (sin vista al frente)
-    advance_lr: int = 0  # rc lateral fijo al avanzar sin tag, para compensar si el dron se va de un lado
-    # (se va a la derecha: negativo, p. ej. -10)
-    alinear_bordes: bool = False  # True: girar para alinearse con los bordes del tag (supone tags derechos)
-    ignorar_inicio: bool = True  # ignorar el tag que se ve mientras despega (el de inicio)
-    inicio_alt_cm: float = 70.0  # ...solo el visto abajo de esta altura, aún sobre el punto de despegue
-    quieto_timeout_s: float = 20.0
-    center_kp: float = 0.6
-    center_kd: float = 1.0  # rc por cm/s: frena según qué tan rápido se acerca (real 9-nov: oscilaba ±15–20 cm)
-    center_min: int = 10
-    center_max: int = 15
-    center_dead: float = 5.0  # mando calculado menor que esto: no mandar nada (el Tello frena solo)
-    center_tol_cm: float = 6.0
-    center_vel_tol: float = 4.0  # cm/s: para ejecutar, además de cerca, casi quieto
-    centrar_max_s: float = 8.0  # si no se estabiliza encima en este tiempo, ejecuta igual (el punto es por el tag)
-    rot_kp: float = 1.0
-    rot_tol_deg: float = 4.0
-    window: int = 7  # mediana de N frames
-    # sostener la posición con el piso visto por el espejo (11-nov: los dos Tellos se iban solos
-    # a la derecha, 4–12 cm/s, y el primer tag quedaba en la orilla de la vista o fuera)
-    sostener_piso: bool = True  # quieto y subiendo: volver al punto de despegue; avanzando: sostener la línea
-    piso_calidad: float = 0.1  # calidad mínima de la correlación de fase para creerle
-    piso_kp: float = 0.5  # rc por cm de distancia a donde debería estar
-    piso_kd: float = 0.8  # rc por cm/s que se está yendo
-    piso_ki: float = 0.15  # rc por cm·s: junta el empuje que hace falta contra una deriva constante
-    # (sin esto, con el Tello 7 se quedaba ~26 cm corrido: el PD solo empuja si hay error)
-    piso_i_max: float = 15.0  # tope de lo juntado, en rc (que no se pase de largo)
-    # integral al despegar, en rc (lado, adelante): + si el dron se va solo a la derecha / adelante.
-    # Va en config/mision_dron<N>.json de cada dron. OJO: si el dron ya no deriva, empuja de más al
-    # principio hasta que la integral se corrige sola (unos segundos)
-    piso_i_inicial: tuple = (0.0, 0.0)
-    # ejecutando un tag (giros, pausa): sostenerse sobre él con su posición (11-nov: en un giro de
-    # 90° se corría 26–42 cm), y que el tramo nuevo pase por el tag y no por donde quedó el dron
-    sostener_tag: bool = True
-    # rc máximo para quedarse sobre el tag mientras lo ejecuta. Con 20 (por si al girar no le
-    # alcanzaba contra los ~12 cm/s que se corre) fue peor en las pistas al azar: 76 % de los puntos
-    # contra 86 % con 15 (16-nov)
-    sostener_tag_max: int = 15
-    # el tag recién ejecutado se sigue cuadro por cuadro: un tag con su número a menos de esto de
-    # donde debe estar (su última posición, corrida con lo que avanzó el dron) es el mismo y se
-    # ignora; en otra parte es OTRO tag y se ejecuta. Antes se ignoraba por número y se perdían los
-    # tags repetidos y los que se vuelven a visitar tras un 180° (pistas al azar, 12-nov)
-    mismo_tag_cm: float = 35.0  # la mitad de la separación mínima entre tags (70 cm)
-    # un tag ya ejecutado antes (no el último) solo cuenta si está en la línea del tramo: adelante y a
-    # menos de esto de lado (al regresar tras un 180° está enfrente; uno viejo a un lado no se toma)
-    pasillo_cm: float = 40.0
-    piso_min: int = 10
-    piso_max: int = 20
-    piso_dead: float = 4.0  # mando menor que esto: nada
-    # seguro, por si en el dron real la medida sale al revés y la corrección empuja hacia afuera:
-    # apagarla si, corrigiendo, se aleja piso_alejandose_cm en 1.5 s (al revés, deriva y corrección
-    # suman >30 cm/s) o si se pasa de piso_limite_cm. No cuenta lo que se fue al despegar: ahí el
-    # Tello ignora el rc (el Tello 7 se va >80 cm)
-    piso_alejandose_cm: float = 35.0
-    piso_limite_cm: float = 150.0
-    buscar_s: float = 4.0  # tag perdido al centrarse: buscarlo donde debe estar esto, luego seguir avanzando
-    vista_adelante_deg: float = 0.0  # inclinación del espejo: medirla con test_tags.py --espejo
-    vista_lado_deg: float = 0.0
-
-    @classmethod
-    def load(cls, path: Path) -> MirrorConfig:
-        data = json.loads(path.read_text()) if path.exists() else {}
-        unknown = set(data) - {f.name for f in fields(cls)}
-        if unknown:
-            raise SystemExit(f"{path}: claves desconocidas {sorted(unknown)}")
-        return cls(**data)
-
-
-def ajustes_dron(ecfg: "MirrorConfig", dron: str | None) -> list[str]:
-    """Aplica config/mision_dron<N>.json (lo que cambia en la misión con ese dron, p. ej. la
-    integral inicial). Devuelve lo que cambió."""
-    if not dron:
-        return []
-    path = ROOT / "config" / f"mision_dron{dron}.json"
-    if not path.exists():
-        raise SystemExit(f"no existe {path.relative_to(ROOT)}")
-    data = {k: v for k, v in json.loads(path.read_text()).items() if not k.startswith("_")}
-    unknown = set(data) - {f.name for f in fields(MirrorConfig)}
-    if unknown:
-        raise SystemExit(f"{path}: claves desconocidas {sorted(unknown)}")
-    for k, v in data.items():
-        setattr(ecfg, k, tuple(v) if isinstance(v, list) else v)
-    return [f"{k}={v}" for k, v in data.items()]
-
-
-class FlujoPiso:
-    """Cuánto se mueve el dron sobre el piso, con la imagen del espejo: correlación de fase entre
-    un cuadro y el anterior, pasada a cm con la altura. Posición y velocidad en el marco del dron,
-    (derecha, adelante). Con el piso del laboratorio (cuadrícula de cinta) mide bien de lado;
-    hacia adelante es peor si las rayas van en la dirección del avance (videos del 11-nov).
-
-    Al subir o bajar, el piso se ve más chico o más grande, y la correlación confundía ese cambio
-    de escala con desplazamiento: subiendo de 30 a 100 cm "veía" +10 cm de lado y el control movía
-    al dron sin razón. Por eso, antes de comparar, el cuadro anterior se escala según cuánto cambió
-    la altura (velocidad vertical robusta del tof), alrededor del punto de la imagen que queda
-    justo debajo del dron (punto_bajo_dron).
-
-    Antes se escalaba alrededor del centro óptico de la imagen SIN voltear (y = 386 px, cuando la
-    imagen va volteada: 333) y sin la inclinación del espejo. Con la vista real (−10.3°, 12-nov),
-    subir del piso a 100 cm "veía" al dron irse 6–29 cm hacia atrás, y el PID lo empujaba de más
-    hacia adelante (issue #2)."""
-
-    TAM = (240, 180)
-
-    def __init__(self, fx: float, calidad: float, centro: tuple[float, float] = (480.0, 360.0)) -> None:
-        self.f = fx * self.TAM[0] / 960  # px por unidad a esta resolución
-        self.k = self.TAM[0] / 960
-        self.c = (centro[0] * self.k, centro[1] * self.k)  # punto bajo el dron, en la imagen ya volteada
-        self.calidad = calidad
-        self.win = cv2.createHanningWindow(self.TAM, cv2.CV_32F)
-        self.prev, self.t_prev = None, 0.0
-        self.alts: deque = deque()  # (t, altura) del último ~0.6 s
-        self.pos = np.zeros(2)
-        self.vel = np.zeros(2)
-        self.q, self.t_ok = 0.0, -math.inf
-        self.lock = threading.Lock()
-
-    def _vz(self) -> float:
-        """Velocidad vertical (cm/s) robusta a lecturas sueltas del tof: mediana de las pendientes."""
-        h = self.alts
-        s = [(h[j][1] - h[i][1]) / (h[j][0] - h[i][0]) for i in range(len(h)) for j in range(i + 1, len(h))
-             if h[j][0] - h[i][0] > 0.05]
-        return float(np.median(s)) if len(s) >= 3 else 0.0
-
-    def actualizar(self, gray: np.ndarray, t: float, alt: float, girando: bool) -> None:
-        small = cv2.resize(gray, self.TAM, interpolation=cv2.INTER_AREA).astype(np.float32)
-        if not self.alts or self.alts[-1][1] != alt or t - self.alts[-1][0] > 0.09:
-            self.alts.append((t, alt))  # una por lectura nueva del tof (llegan a ~10 Hz)
-        while self.alts and t - self.alts[0][0] > 0.6:
-            self.alts.popleft()
-        if self.prev is not None and not girando and alt > 25 and t > self.t_prev:
-            # el cuadro anterior, a la escala de ahora: subiendo se veía más grande (m < 1 lo achica)
-            a = float(np.median([x[1] for x in self.alts]))
-            m = min(1.1, max(0.9, (a - self._vz() * (t - self.t_prev)) / a))
-            ref = self.prev
-            if abs(m - 1) > 1e-4:
-                M = np.float32([[m, 0, (1 - m) * self.c[0]], [0, m, (1 - m) * self.c[1]]])
-                ref = cv2.warpAffine(self.prev, M, self.TAM, flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REFLECT)
-            (dx, dy), q = cv2.phaseCorrelate(ref, small, self.win)
-            self.q = q
-            dt, cm = t - self.t_prev, alt / self.f
-            v = np.array([-dx * cm / dt, dy * cm / dt])  # el piso se mueve al revés que el dron
-            if q >= self.calidad and np.hypot(*v) < 150:  # más de 1.5 m/s: correlación equivocada
-                with self.lock:
-                    self.pos += v * dt
-                    self.vel += 0.25 * (v - self.vel)
-                    self.t_ok = t
-        self.prev, self.t_prev = (None if girando else small), t
-
-    def reiniciar(self, pos=(0.0, 0.0)) -> np.ndarray:
-        """Toma la posición de ahora como pos (por defecto, el origen). Devuelve cuánto se movió el origen."""
-        with self.lock:
-            delta = np.asarray(pos, float) - self.pos
-            self.pos[:] = pos
-            return delta
-
-    def estado(self) -> tuple[np.ndarray, np.ndarray]:
-        with self.lock:
-            return self.pos.copy(), self.vel.copy()
-
-    def medida(self) -> tuple[float, np.ndarray]:
-        """(tiempo en que llegó la última imagen buena, posición con ella)."""
-        with self.lock:
-            return self.t_ok, self.pos.copy()
-
-    def valido(self, now: float) -> bool:
-        return now - self.t_ok < 0.5
-
-
-def punto_bajo_dron(K: np.ndarray, vista_adelante_deg: float, vista_lado_deg: float) -> tuple[float, float]:
-    """Pixel de la imagen ya volteada (960x720) que queda justo debajo del dron: el centro óptico
-    de la cámara espejada (K de PoseEstimator.mirrored) corrido por la inclinación de la vista.
-    Inclinada hacia adelante, lo de abajo del dron sale más abajo en la imagen (hacia atrás);
-    inclinada a la derecha, sale a la izquierda. Al subir o bajar en vertical, el piso crece o se
-    encoge alrededor de este punto."""
-    return (float(K[0, 2] - K[0, 0] * math.tan(math.radians(vista_lado_deg))),
-            float(K[1, 2] + K[1, 1] * math.tan(math.radians(vista_adelante_deg))))
-
-
-def rot_mod90(angle: float) -> float:
-    """Giro del tag en la imagen, llevado a [-45, 45): un tag derecho vale 0 en
-    cualquiera de sus 4 orientaciones."""
-    return (angle + 45.0) % 90.0 - 45.0
+from piso import FlujoPiso, SostenerPiso, punto_bajo_dron
+from test_tags import DEFAULT_CALIB, TAG_FUNCTIONS, draw, floor_view, rot_mod90
 
 
 class MirrorMission(TagMission):
@@ -260,10 +68,7 @@ class MirrorMission(TagMission):
         self.piso = FlujoPiso(float(self.pose_est.K[0, 0]), ecfg.piso_calidad, centro)
         self._pos_visto = np.zeros(2)  # posición (piso) cuando se vio el tag objetivo por última vez
         self._yaw_frame = None
-        self._piso_apagado = False
-        self._piso_lejos: deque = deque()  # (t, distancia a donde debería estar) mientras corrige
-        self._piso_i = np.zeros(2)  # parte integral (derecha, adelante), en rc
-        self._piso_t = None  # última vez que corrigió
+        self.sostener = SostenerPiso(ecfg)  # el PID que sostiene la posición con el piso (piso.py)
 
     # ---- visión: imagen volteada, posición del tag sobre el piso
     def on_frame(self, bgr: np.ndarray, t: float) -> None:
@@ -330,7 +135,7 @@ class MirrorMission(TagMission):
                     cv2.LINE_AA)
 
     def status_lines(self) -> list[str]:
-        piso = ("sostener piso: APAGADO (se alejo demasiado)" if self._piso_apagado else
+        piso = ("sostener piso: APAGADO (se alejo demasiado)" if self.sostener.apagado else
                 f"sostener piso: {'si' if self.e.sostener_piso else 'no'}, calidad {self.piso.q:.2f}")
         return ["ESPEJO: vista hacia abajo, SIN vista al frente" + (" (quieto)" if self.e.quieto else ""), piso] \
             + super().status_lines()
@@ -343,7 +148,7 @@ class MirrorMission(TagMission):
         (pr, pf), (vr, vf) = self.piso.estado()
         return [len(v.dets) if v else "", tid or "", *cells,
                 f"{pr:+.1f}", f"{pf:+.1f}", f"{vr:+.1f}", f"{vf:+.1f}", f"{self.piso.q:.2f}",
-                f"{self._piso_i[0]:+.1f}", f"{self._piso_i[1]:+.1f}",
+                f"{self.sostener.i[0]:+.1f}", f"{self.sostener.i[1]:+.1f}",
                 self._piso_modo()]
 
     def _piso_modo(self) -> str:
@@ -352,7 +157,7 @@ class MirrorMission(TagMission):
         del 17-nov también puede decir "kalman")."""
         if not self.e.sostener_piso:
             return "no"
-        return "apagado" if self._piso_apagado else "pid"
+        return "apagado" if self.sostener.apagado else "pid"
 
     # ---- sostener la posición con el piso
     def _goto(self, state: str, reason: str) -> None:
@@ -382,11 +187,11 @@ class MirrorMission(TagMission):
             piso.reiniciar(pos)
             if state == "ADVANCE":
                 self._ult_track = None if fl is None else (fl[0], fl[1], piso.estado()[0])
-            getattr(self, "_piso_lejos", deque()).clear()
-        if state == "TAKEOFF" and hasattr(self, "_piso_i"):
+            self.sostener.nuevo_tramo()
+        if state == "TAKEOFF" and hasattr(self, "sostener"):
             # vuelo nuevo: la integral empieza con lo que se sabe de este dron (piso_i_inicial). Entre
             # tramos se conserva: la deriva es del dron y va con él (siempre a su derecha)
-            self._piso_i[:] = self.e.piso_i_inicial
+            self.sostener.nuevo_vuelo()
 
     def _start_execute(self, now: float, how: str) -> None:
         giro = sum(p[1] for p in ACTIONS.get(self._target, []) if p[0] == "yaw")
@@ -454,46 +259,19 @@ class MirrorMission(TagMission):
         v = self._vision(time.monotonic())
         return v.tagframe.get(self._target) if (v is not None and self._target) else None
 
-    def _piso_mando(self, eje: int, err: float, vel: float, dt: float) -> int:
-        """PID de un eje (0 = de lado, 1 = adelante). err: cm que está corrido de donde debería
-        estar; vel: cm/s que se está yendo. Devuelve el rc a sumar (al revés del error)."""
-        e = self.e
-        pd = e.piso_kp * err + e.piso_kd * vel
-        total = pd + self._piso_i[eje]
-        # anti-windup: no juntar más si ya va al tope empujando hacia el mismo lado
-        if dt > 0 and not (abs(total) >= e.piso_max and total * err > 0):
-            self._piso_i[eje] = max(-e.piso_i_max, min(e.piso_i_max, self._piso_i[eje] + e.piso_ki * err * dt))
-        u = -(pd + self._piso_i[eje])
-        return 0 if abs(u) < e.piso_dead else with_min(u, e.piso_min, e.piso_max)
-
     def _send_rc(self, lr: float, fb: float, ud: float, yaw: float) -> None:
         """Quieto y subiendo: volver al punto de despegue. Avanzando sin tag: sostener la línea
         del tramo (de lado). Solo con una medida del piso reciente; sin ella, como antes."""
         e, piso = self.e, getattr(self, "piso", None)
-        if e.sostener_piso and piso is not None and not self._piso_apagado \
+        if e.sostener_piso and piso is not None and not self.sostener.apagado \
                 and self.state in ("HOVER", "CRUISE", "ADVANCE") and piso.valido(time.monotonic()):
-            (pr, pf), (vr, vf) = piso.estado()
-            now = time.monotonic()
-            lejos = abs(pr) if self.state == "ADVANCE" else math.hypot(pr, pf)
-            h = self._piso_lejos
-            if h and (h[-1][2] != (self.state == "ADVANCE") or now - h[-1][0] > 0.5):
-                h.clear()  # otro tipo de corrección, o hubo una pausa
-            h.append((now, lejos, self.state == "ADVANCE"))
-            while now - h[0][0] > 1.5:
-                h.popleft()
-            alejo = lejos - min(x[1] for x in h)
-            if alejo > e.piso_alejandose_cm or lejos > e.piso_limite_cm:
-                self._piso_apagado = True
-                why = f"se alejo {alejo:.0f} cm en 1.5 s corrigiendo" if alejo > e.piso_alejandose_cm \
-                    else f"esta a {lejos:.0f} cm"
-                self.reason += f" | sostener_piso APAGADO: {why} (revisar la medida del piso)"
-                print(f"[vuelo] sostener_piso apagado: {why}")
-            if not self._piso_apagado:
-                dt = now - self._piso_t if self._piso_t is not None and now - self._piso_t < 0.5 else 0.0
-                self._piso_t = now
-                lr = lr + self._piso_mando(0, pr, vr, dt)
-                if self.state != "ADVANCE" or fb == 0:  # avanzando, adelante manda la misión (salvo --quieto)
-                    fb = fb + self._piso_mando(1, pf, vf, dt)
+            avanzando = self.state == "ADVANCE"  # avanzando, adelante manda la misión (salvo --quieto)
+            dlr, dfb, apagado = self.sostener.mando(*piso.estado(), avanzando, not avanzando or fb == 0,
+                                                    time.monotonic())
+            if apagado:
+                self.reason += f" | sostener_piso APAGADO: {apagado} (revisar la medida del piso)"
+                print(f"[vuelo] sostener_piso apagado: {apagado}")
+            lr, fb = lr + dlr, fb + dfb
         elif e.sostener_tag and self.state == "EXECUTE" and self._prim \
                 and (self._prim[0] in ("yaw", "wait", "alt_to")):
             # girando, en pausa, subiendo/bajando (también antes y después del flip): quedarse sobre

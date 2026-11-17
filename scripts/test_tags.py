@@ -259,6 +259,12 @@ def floor_from_front(pose: TagPose, pitch_deg: float) -> tuple[float, float, flo
     return float(t[2]), float(t[0]), float(t[1]), math.degrees(math.atan2(top[0], top[2])), float(-n[1])
 
 
+def rot_mod90(angle: float) -> float:
+    """Giro del tag en la imagen, llevado a [-45, 45): un tag derecho vale 0 en
+    cualquiera de sus 4 orientaciones."""
+    return (angle + 45.0) % 90.0 - 45.0
+
+
 class Confirmer:
     """Un ID se confirma si se ve en el frame actual y en n de los últimos `ventana` frames
     (ventana = n: n seguidos, como antes). Con tags gastados la detección parpadea; con 3 de 5
