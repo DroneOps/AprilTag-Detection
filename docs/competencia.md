@@ -52,6 +52,9 @@ no la velocidad. Hay que estar presente al iniciar la ronda (2 min de tolerancia
 - **Se permite** un accesorio como el espejo.
 - El trazo no está definido: hay que darle continuidad al recorrido **sin conocer el orden**.
 
+Qué ajuste mover si el día de la competencia algo no es como esperábamos (tamaño de los tags,
+distancias, techo, etiqueta de inicio): [`hoja_competencia.md`](hoja_competencia.md).
+
 ## Preguntas abiertas
 
 Lo que el comité no ha respondido está en el correo (`anexos/correo_comite.md`). Lo más
@@ -67,7 +70,7 @@ importante:
 
 - **Con espejo, la principal** (`scripts/mision_espejo.py`): la cámara ve hacia abajo y
   el dron se centra encima de cada tag sin girar (sostiene el rumbo del tramo). Es más
-  preciso, pero no ve hacia adelante: avanza hasta 12 s buscando el siguiente tag. Los
+  preciso, pero no ve hacia adelante: avanza hasta 18 s buscando el siguiente tag. Los
   prototipos del clip están en `anexos/prompt_espejo_3d.md`.
 - **Sin espejo, de respaldo** (`scripts/mision_piso.py`): la cámara al frente ve los tags
   del piso entre ~1 y ~1.7 m adelante y recorre a ciegas el último metro.

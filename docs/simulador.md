@@ -245,6 +245,9 @@ saber si falla siempre o solo a veces.
 - **Se descartan las pistas donde el dron vería un tag que no toca:** en el camino de otro
   tramo, o detrás o debajo al arrancar (con la vista a −10.3° se ven ~60 cm hacia atrás).
 - La altura queda entre 70 y 130 cm tras subir o bajar.
+- Los tags de todos los escenarios miden lo que diga `tag_cm` (`config/mission_tags.json`):
+  si en la competencia son de otro tamaño, el simulador prueba con ese (16-nov: con 15 cm el
+  circuito se centra a 7 y 11 cm).
 
 ```bash
 python sim/pista.py 3

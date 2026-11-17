@@ -26,6 +26,11 @@ Las bitácoras de vuelo (`logs/*.csv`) y los videos están en la laptop, no en e
 - **Revisar que el rumbo no se desvíe** a lo largo de la pista.
 - **Revisar que tras el flip siga sobre el tag.**
 
+**Usar `python lab.py` en el laboratorio con un Tello de verdad** (16-nov; solo se probó en modo
+práctica). Revisar que reconozca el dron por su WiFi, que el vuelo y el resumen salgan bien y
+que suba a GitHub. Antes de la competencia, imprimir
+[`hoja_competencia.md`](hoja_competencia.md) y ensayar un intento con la opción 9.
+
 **Tello 7: revisar el dron antes de volarlo.** El 12-nov (tarde) chocó con la malla.
 - Pidiéndole adelante a fondo se fue ~75 cm hacia atrás y subió solo a 130 cm, y se le salió la
   pila al caer.

@@ -17,6 +17,12 @@ Cada día de laboratorio, con sus bitácoras de vuelo, notas y veredictos, está
 [`../sesiones/`](../sesiones/). Las instrucciones para Claude Code están en
 [`../CLAUDE.md`](../CLAUDE.md).
 
+## Para el día de la competencia
+
+- [`hoja_competencia.md`](hoja_competencia.md): para imprimir. Qué preguntar a los jueces,
+  qué revisar antes de cada intento, qué ajuste mover si algo es diferente y qué significa
+  cada mensaje con que aterriza.
+
 ## Anexos
 
 - [`anexos/correo_comite.md`](anexos/correo_comite.md): dudas que le mandamos al comité.

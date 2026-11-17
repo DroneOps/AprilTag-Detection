@@ -171,7 +171,7 @@ PRUEBAS = [
                "Sin tags debajo."],
      "aprueba": "En los 10 s quieto no se mueve más de ~30 cm ni sube o baja más de ~10 cm."},
     {"clave": "e1", "nombre": "E1: el espejo con el dron en la mano (no vuela)", "script": "scripts/test_tags.py",
-     "args": ["--source", "tello", "--espejo", "--tag-cm", "8"], "dron": False, "vuela": False,
+     "args": ["--source", "tello", "--espejo", "--tag-cm", "{tag_cm}"], "dron": False, "vuela": False,
      "antes": ["Sostén el dron a ~80 cm sobre un tag. Sal con q.",
                "Sirve para revisar que vea los tags y que 'ADELANTE' apunte a la nariz.",
                "La inclinación que imprime es solo de referencia: la buena se mide en vuelo (opción i)."],
@@ -202,7 +202,18 @@ PRUEBAS = [
                "Incluye dos tags con el mismo número y un 3 u 8 que lo regrese a un tag ya hecho.",
                "3 intentos cronometrados, como en la competencia."],
      "aprueba": "Cuenta cuántos tags ejecutó bien en orden: es su puntaje."},
+    {"clave": "intento", "nombre": "Competencia: un intento", "script": "scripts/mision_espejo.py", "args": [],
+     "dron": True,
+     "antes": ["Ajustes revisados con lo que dijeron los jueces (docs/hoja_competencia.md).",
+               "Batería al 100 % y temperatura abajo de 70 °C. Hélices bien y clip firme.",
+               "Dron sobre el despegue, con la nariz hacia el primer tramo."],
+     "aprueba": "Cuenta los tags que ejecutó bien en orden: es el puntaje del intento."},
 ]
+
+
+def tag_cm() -> str:
+    """El tamaño de tag que usa la misión (config/mission_tags.json), para E1."""
+    return f"{json.loads((ROOT / 'config' / 'mission_tags.json').read_text()).get('tag_cm', 8):g}"
 
 
 def nombre_video(clave: str, dron: str | None) -> str:
@@ -227,7 +238,7 @@ def volar(p: dict, dron: str | None) -> str | None:
             aviso(linea)
     if p["dron"] and not dron:
         dron = preguntar("¿Qué número de Tello vas a volar? (1 o 7):") or None
-    cmd = [PY, p["script"], *p["args"]]
+    cmd = [PY, p["script"], *(tag_cm() if a == "{tag_cm}" else a for a in p["args"])]
     if p["dron"] and dron:
         if (ROOT / "config" / f"mision_dron{dron}.json").exists():
             cmd += ["--dron", dron]
@@ -295,7 +306,14 @@ AJUSTES = [
     ("config/mission_espejo.json", "advance_lr",
      "Empujón de lado fijo al avanzar (rc; negativo = izquierda), si siempre se va de un lado.", int, -20, 20),
     ("config/flight.json", "flip_min_alt_cm",
-     "Altura a la que sube antes de un flip (cm). Bájala si el techo o la red están bajos.", int, 90, 160),
+     "Altura a la que sube antes de un flip (cm). Bájala si el techo o la red están bajos: techo − 40, "
+     "nunca menos de 110 (tras el flip cae ~45 cm).", int, 110, 160),
+    ("config/mission_espejo.json", "mismo_tag_cm",
+     "La mitad de la distancia más corta entre dos tags (cm). Bájalo si hay tags a menos de 70 cm.",
+     float, 15, 60),
+    ("config/mission_tags.json", "mission_max_s",
+     "Tiempo máximo en el aire por intento (s); al pasarlo aterriza. ~30 s por tag: súbelo si hay más de 7.",
+     int, 60, 600),
 ]
 
 
@@ -351,10 +369,10 @@ def cambiar_ajuste() -> None:
 # ---------------------------------------------------------------- inclinación del espejo
 def medir_inclinacion() -> None:
     titulo("Medir la inclinación del espejo con los videos de vuelo")
-    videos = sorted((p for p in ROOT.glob("*.mp4") if p.name.split("_")[0] in ("e4", "e5", "e6", "e7")),
+    videos = sorted((p for p in ROOT.glob("*.mp4") if p.name.split("_")[0] in ("e4", "e5", "e6", "e7", "intento")),
                     key=lambda p: p.stat().st_mtime)[-3:]
     if not videos:
-        aviso("No hay videos de E4, E5, E6 o E7. Vuela uno de esos primero.")
+        aviso("No hay videos de E4, E5, E6, E7 o de un intento. Vuela uno de esos primero.")
         return
     print("Uso los últimos: " + ", ".join(v.name for v in videos) + " (tarda ~1 min por video)")
     correr([PY, "scripts/inclinacion_vuelo.py", *[v.name for v in videos]])

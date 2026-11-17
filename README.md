@@ -32,6 +32,9 @@ Un menú en español para el laboratorio:
 - **El dron:** detecta cuál es por su WiFi y le pone nombre al video.
 - **Al aterrizar:** pregunta qué viste, guarda la sesión y la sube a GitHub.
 - **Ajustes y simulador:** también cambia ajustes sin editar el JSON y practica en el simulador.
+- **El día de la competencia:** la opción 9 corre un intento. Qué ajuste mover si algo es
+  distinto (tamaño de los tags, distancias, techo): [`docs/hoja_competencia.md`](docs/hoja_competencia.md),
+  para imprimir.
 
 Cada opción muestra el comando que corre por dentro. Para conocerlo sin dron y sin subir nada:
 `python lab.py --practica`.
@@ -131,6 +134,7 @@ Empieza por [`docs/README.md`](docs/README.md): dice qué leer y en qué orden.
 | Documento | De qué trata |
 |---|---|
 | [`competencia.md`](docs/competencia.md) | reglas, puntuación, respuestas del comité, preguntas abiertas |
+| [`hoja_competencia.md`](docs/hoja_competencia.md) | para imprimir: qué ajuste mover si en la competencia algo es diferente |
 | [`tello.md`](docs/tello.md) | lo que medimos del dron real |
 | [`arquitectura.md`](docs/arquitectura.md) | cómo está hecho el código |
 | [`simulador.md`](docs/simulador.md) | cómo probar sin volar |

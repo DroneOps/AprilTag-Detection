@@ -61,6 +61,9 @@ K, D = np.array(CAL["K"]), np.array(CAL["dist"])
 PITCH = math.radians(11)  # medido en las pruebas de piso
 DICT = cv2.aruco.getPredefinedDictionary(cv2.aruco.DICT_APRILTAG_25h9)
 OVER: dict = {}  # cambios a MissionConfig por escenario
+# los tags del simulador miden lo que dice la misión (config/mission_tags.json): si en la
+# competencia cambian de tamaño y se cambia tag_cm, el simulador prueba con ese tamaño
+TAG_CM = float(json.loads((ROOT / "config" / "mission_tags.json").read_text()).get("tag_cm", 8.0))
 
 
 @dataclass
@@ -195,7 +198,8 @@ class Tag:
     """Tag en una pared (facing = hacia dónde mira) o en el piso (facing = (0,0,1) y
     top = hacia dónde apunta su borde de arriba, p. ej. (0,1,0) = norte)."""
 
-    def __init__(self, tag_id: int, pos, facing, size: float = 8.0, top=(0, 0, 1), desgaste=None) -> None:
+    def __init__(self, tag_id: int, pos, facing, size: float | None = None, top=(0, 0, 1), desgaste=None) -> None:
+        size = TAG_CM if size is None else size
         self.id, self.c = tag_id, np.array(pos, float)
         self.n = np.array(facing, float) / np.linalg.norm(facing)
         up = np.array(top, float) / np.linalg.norm(top)

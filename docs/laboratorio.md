@@ -8,6 +8,7 @@
 >
 > Esta guía sigue siendo la referencia: explica cada prueba y qué hacer si algo sale raro.
 > Para conocer el menú sin volar ni subir nada: `python lab.py --practica`.
+> Para la competencia: opción 9 y [`hoja_competencia.md`](hoja_competencia.md) (qué mover si algo es diferente).
 
 Guía para llegar y solo ejecutar comandos. Las pruebas van **en orden de prioridad**: si
 se acaba el tiempo, lo que falte es lo menos importante. Qué se probó antes y qué salió

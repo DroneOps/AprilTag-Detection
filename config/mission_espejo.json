@@ -25,6 +25,7 @@
   "alinear_bordes": false,
   "ignorar_inicio": false,
   "inicio_alt_cm": 70,
+  "mismo_tag_cm": 35,
   "quieto_timeout_s": 20,
   "center_kp": 0.6,
   "center_kd": 1.0,

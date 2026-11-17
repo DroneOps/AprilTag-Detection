@@ -99,7 +99,7 @@ Fernando sigue el proyecto por GitHub. Nada debe quedarse solo en la laptop.
 
 | Archivo | Qué es |
 |---|---|
-| `lab.py` | **menú del laboratorio** para el equipo: pruebas con montaje y seguridad, dron por WiFi (`config/drones.json`), video con nombre, notas → `guardar_sesion.py` → commit y push (si no hay internet, después), cambiar ajustes con validación, simulador y cierre del día con entrada en la bitácora. `--practica` no vuela ni sube nada |
+| `lab.py` | **menú del laboratorio** para el equipo: pruebas con montaje y seguridad, dron por WiFi (`config/drones.json`), video con nombre, notas → `guardar_sesion.py` → commit y push (si no hay internet, después), cambiar ajustes con validación, simulador y cierre del día con entrada en la bitácora; opción 9, un intento de competencia. `--practica` no vuela ni sube nada |
 | `scripts/mision_espejo.py` + `config/mission_espejo.json` | **misión principal**: sube a 100 cm, avanza hasta ver un tag debajo, se centra encima sosteniendo el rumbo (≤12 cm, máximo 8 s), ejecuta y sigue. Con `sostener_piso` mide con el piso cuánto se mueve: regresa al despegue mientras sube, avanza en línea recta y busca el tag que pierde |
 | `scripts/kalman_piso.py` | **no se usa** (12-nov: en el laboratorio se centró peor que el PID; por qué, en su encabezado). Filtro de Kalman por eje para sostener la posición con el piso: estima posición, velocidad y deriva con el modelo rc → velocidad. Se usa con `"piso_control": "kalman"`; si deja de cuadrar con lo medido, regresa al PID |
 | `scripts/mision_piso.py` + `config/mission_piso.json` | respaldo sin espejo: cámara al frente, último metro a ciegas |
@@ -136,7 +136,8 @@ Ajustes de `config/mission_espejo.json` que más se mueven en el laboratorio:
 
 Los compañeros de primer semestre usan **`python lab.py`**: guíalos con las opciones del menú
 (p. ej. "opción 6, E5") en vez de comandos sueltos. El menú ya guarda y sube cada vuelo; si algo
-no está en el menú, entonces sí da el comando.
+no está en el menú, entonces sí da el comando. En la competencia, si algo es diferente (tags,
+distancias, techo), guíalos con `docs/hoja_competencia.md`.
 
 1. `git pull --rebase` y activar el entorno (ver `README.md`).
 2. "Revisar el dron" (`docs/laboratorio.md`). Si el estacionario falla, no sigas con misiones.
