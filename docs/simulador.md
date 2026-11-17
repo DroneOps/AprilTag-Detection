@@ -27,7 +27,7 @@ Opciones para probar cambios sin tocar los JSON (12-nov):
 
 | Opción | Qué hace |
 |---|---|
-| `--set clave=valor` | cambia un ajuste de la misión con espejo, como en `config/mission_espejo.json` (p. ej. `--set piso_control=kalman`) |
+| `--set clave=valor` | cambia un ajuste solo en esa simulación (el JSON no cambia). Busca la clave en `config/mission_espejo.json`, luego en `mission_tags.json` y luego en `flight.json` (p. ej. `--set advance_fb=20`, `--set tag_cm=15`, `--set flip_min_alt_cm=120`). También en `sim/grabar.py` |
 | `--sim clave=valor` | cambia el dron simulado, como en `config/sim_tello.json` (p. ej. `--sim video_atraso_s=0.3`) |
 | `--semilla N` | otra serie de deriva aleatoria (por defecto 0). Para comparar dos variantes, usar las mismas semillas |
 | `--log-sufijo X` | la bitácora va a `sim/logs/<escenario>X.csv` (para que corridas a la vez no se pisen) |
@@ -318,6 +318,8 @@ por pista, de 3 en 3: 24 pistas son ~25 min, mejor en segundo plano. Resultados 
 | `espejo_despegue_cae` | el despegue sube ~40 cm y regresa al piso: aterrizar con aviso |
 | `espejo_despegue_alto` | el despegue sube solo a ~141 cm: bajar a crucero y seguir |
 | `espejo_sin_ok` | el Tello no contesta "ok" al despegar: seguir tras asentarse |
+| `espejo_lejos` | tag 2 a 2 m del despegue y luego el 7. El simulador avanza ~13 cm/s: con `--set advance_timeout_s=12` no llega (aterriza a ~1.6 m) y con 18 sí. El dron real va a ~9 cm/s: por eso la hoja de competencia pide distancia ÷ 8. Para el reto 4 de `docs/aprende/`; no va en `todos` |
+| `espejo_competencia` | pista al azar como la de la competencia (`--semilla N`); ver abajo. No va en `todos` |
 
 **Tags en el piso, cámara al frente** (`mision_piso.py`)
 

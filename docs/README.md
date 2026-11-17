@@ -17,6 +17,12 @@ Cada día de laboratorio, con sus bitácoras de vuelo, notas y veredictos, está
 [`../sesiones/`](../sesiones/). Las instrucciones para Claude Code están en
 [`../CLAUDE.md`](../CLAUDE.md).
 
+## Para aprender sin dron
+
+- [`aprende/`](aprende/README.md): 13 retos con el simulador, de correr una simulación a leer
+  el código. Cada ajuste de la hoja de competencia tiene el suyo. Respuestas en
+  [`aprende/respuestas.md`](aprende/respuestas.md).
+
 ## Para el día de la competencia
 
 - [`hoja_competencia.md`](hoja_competencia.md): para imprimir. Qué preguntar a los jueces,

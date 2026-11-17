@@ -4,6 +4,7 @@ el dron de verdad, qué ve la cámara, qué tags ya ejecutó) y la imagen que ve
 
     python sim/grabar.py espejo_competencia --semilla 2 --salida sim/logs/videos_pistas/p2_ahora
     python sim/grabar.py espejo_circuito --dron 7 --salida sim/logs/videos/circuito_t7
+    python sim/grabar.py espejo_circuito --set advance_fb=25 --salida sim/logs/videos/rapido
 
 Guarda un JPG por cada 0.1 s de vuelo (~60 KB) en --salida, más resultado.json. No junta los
 cuadros en memoria: con dos grabaciones a la vez así se colgó la app (11-nov). Para hacer el
@@ -156,6 +157,8 @@ def main() -> None:
     ap.add_argument("--semilla", type=int, default=0)
     ap.add_argument("--dron", help="perfil del dron simulado (1, 7)")
     ap.add_argument("--titulo", default="")
+    ap.add_argument("--set", action="append", default=[], metavar="CLAVE=VALOR",
+                    help="cambia un ajuste solo en esta grabación (como sim_world.py --set)")
     args = ap.parse_args()
 
     salida = Path(args.salida)
@@ -165,13 +168,16 @@ def main() -> None:
     SW.SEMILLA = args.semilla
     if args.dron:
         SW.P, SW.DRON = SW.cargar_params(args.dron), args.dron
+    for kv in args.set:
+        print(f"[grabar] {kv} (de {SW.aplicar_set(kv)}), solo en esta grabación")
     esperado = visitas_xy = None
     if args.escenario == "espejo_competencia":
         import pista
         p = pista.generar(args.semilla)
         esperado = p.esperado()
         visitas_xy = [(p.tags[i][1], p.tags[i][2]) for i in p.visitas]
-    titulo = args.titulo or f"{args.escenario} semilla {args.semilla}" + (f" Tello {args.dron}" if args.dron else "")
+    titulo = args.titulo or (f"{args.escenario} semilla {args.semilla}" + (f" Tello {args.dron}" if args.dron else "")
+                             + "".join(f" {kv}" for kv in args.set))
     rec: dict = {}
     run_original = SW.run
 

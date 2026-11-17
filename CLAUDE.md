@@ -107,6 +107,7 @@ Fernando sigue el proyecto por GitHub. Nada debe quedarse solo en la laptop.
 | `scripts/first_flight.py` + `config/flight.json` | vuelo base, despegue, seguridad, HMI, bitácora; prueba de estacionario, giro y flip |
 | `scripts/test_tags.py` | visión: detector, pose, `--espejo`; prueba sin volar |
 | `sim/sim_world.py` + `config/sim_tello.json` | simulador 3D con el detector y la misión reales; el dron simulado se comporta como dice el JSON (un dron sano). `--dron 1` / `--dron 7` agregan la deriva de cada dron (`config/sim_tello_dron<N>.json`); `--ideal`, el modelo optimista de antes |
+| `docs/aprende/` | retos con el simulador para el equipo nuevo (`retos.md`) y lo que salió al probarlos (`respuestas.md`); si cambia la misión o el simulador, revisar que las respuestas sigan saliendo |
 | `sim/pista.py` | pistas al azar como las de la competencia (escenario `espejo_competencia`); con `sim/comparar_control.py --escenarios espejo_competencia` da puntos por intento en tandas |
 | `sim/grabar.py`, `sim/componer.py` | videos del simulador: mapa desde arriba + cámara, y lado a lado (antes | ahora) en mp4 y GIF |
 | `sim/deriva_video.py` | mide cuánto se va solo cada dron con el piso visto por el espejo en los videos (`--record`); da los valores para `config/sim_tello_dron<N>.json` |
@@ -137,7 +138,9 @@ Ajustes de `config/mission_espejo.json` que más se mueven en el laboratorio:
 Los compañeros de primer semestre usan **`python lab.py`**: guíalos con las opciones del menú
 (p. ej. "opción 6, E5") en vez de comandos sueltos. El menú ya guarda y sube cada vuelo; si algo
 no está en el menú, entonces sí da el comando. En la competencia, si algo es diferente (tags,
-distancias, techo), guíalos con `docs/hoja_competencia.md`.
+distancias, techo), guíalos con `docs/hoja_competencia.md`. Para aprender sin dron están los
+retos de `docs/aprende/` (simulador con `--set clave=valor`, que no toca el JSON); si te
+preguntan por uno, guíalos a descubrirlo antes de darles la respuesta.
 
 1. `git pull --rebase` y activar el entorno (ver `README.md`).
 2. "Revisar el dron" (`docs/laboratorio.md`). Si el estacionario falla, no sigas con misiones.

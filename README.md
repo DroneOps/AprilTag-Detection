@@ -39,6 +39,9 @@ Un menú en español para el laboratorio:
 Cada opción muestra el comando que corre por dentro. Para conocerlo sin dron y sin subir nada:
 `python lab.py --practica`.
 
+**¿Eres nuevo en el equipo?** Haz los retos de [`docs/aprende/`](docs/aprende/README.md): con el
+simulador, sin dron, ves qué hace cada ajuste y dónde está cada cosa en el código.
+
 ## Inicio rápido
 
 ### 1. Instalar
@@ -135,6 +138,7 @@ Empieza por [`docs/README.md`](docs/README.md): dice qué leer y en qué orden.
 |---|---|
 | [`competencia.md`](docs/competencia.md) | reglas, puntuación, respuestas del comité, preguntas abiertas |
 | [`hoja_competencia.md`](docs/hoja_competencia.md) | para imprimir: qué ajuste mover si en la competencia algo es diferente |
+| [`aprende/`](docs/aprende/README.md) | retos con el simulador para aprender qué hace cada ajuste y dónde está en el código |
 | [`tello.md`](docs/tello.md) | lo que medimos del dron real |
 | [`arquitectura.md`](docs/arquitectura.md) | cómo está hecho el código |
 | [`simulador.md`](docs/simulador.md) | cómo probar sin volar |

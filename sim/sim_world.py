@@ -20,10 +20,13 @@ Escenarios: circuito pausa giro360 sube_ciego perdido flip8 caja deriva
             espejo_deriva espejo_flip espejo_inclinado espejo_inclinado_sin_config
             espejo_despegue_cae espejo_despegue_alto espejo_sin_ok
             espejo_lab espejo_gastado espejo_gastado_sin_rescate espejo_estacionario
+            espejo_competencia (con --semilla N) espejo_lejos (no va en "todos")
             piso_uno piso_girado piso_circuito piso_deriva piso_flip piso_lento piso_rapido
             piso_hundimiento piso_lado piso_tof_falso piso_imu_mal
 
 Corre en tiempo real (cada escenario tarda 30–70 s). Las bitácoras van a sim/logs/.
+Para probar un ajuste sin tocar el JSON (solo en esa simulación):
+    python sim/sim_world.py espejo_circuito --set advance_fb=20 --set tag_cm=15
 Con --dron N, encima de config/sim_tello.json se usa config/sim_tello_dron<N>.json (lo que
 cambia en ese dron; el Tello 7 se va mucho más a la derecha):
     python sim/sim_world.py espejo_circuito --dron 7
@@ -590,7 +593,35 @@ class SimTello:
 
 OVER_E: dict = {}  # cambios a MirrorConfig por escenario
 OVER_E_CLI: dict = {}  # ...y desde la línea de comandos (--set), encima de los del escenario
+OVER_M_CLI: dict = {}  # --set de config/mission_tags.json (MissionConfig)
+OVER_F_CLI: dict = {}  # --set de config/flight.json (FlightConfig)
 OVER_P: dict = {}  # cambios a FloorConfig por escenario
+
+
+def valor_set(txt: str):
+    """El valor de --set clave=valor: número, true/false, lista o texto sin comillas."""
+    try:
+        v = json.loads(txt)
+    except json.JSONDecodeError:
+        return txt  # texto sin comillas, p. ej. piso_control=kalman
+    return tuple(v) if isinstance(v, list) else v
+
+
+def aplicar_set(kv: str) -> str:
+    """--set clave=valor: cambia un ajuste solo en esta simulación (el JSON no se toca). Busca la
+    clave en config/mission_espejo.json, luego en mission_tags.json y luego en flight.json (algunas,
+    como advance_fb, están en dos: la misión con espejo usa la de mission_espejo.json). Devuelve
+    el archivo donde está."""
+    if "=" not in kv:
+        raise SystemExit(f"--set va con clave=valor, p. ej. --set advance_fb=20 (no {kv!r})")
+    k, v = kv.split("=", 1)
+    for clase, destino, archivo in ((ME.MirrorConfig, OVER_E_CLI, "mission_espejo.json"),
+                                    (M.MissionConfig, OVER_M_CLI, "mission_tags.json"),
+                                    (F.FlightConfig, OVER_F_CLI, "flight.json")):
+        if k in {f.name for f in fields(clase)}:
+            destino[k] = valor_set(v)
+            return archivo
+    raise SystemExit(f"--set: {k} no es un ajuste de config/mission_espejo.json, mission_tags.json ni flight.json")
 
 
 def run(name, tags, limit=120, events=None, drift=None, boxes=(), bias=(0.0, 0.0), yaw0=0.0, bat=90.0,
@@ -606,9 +637,11 @@ def run(name, tags, limit=120, events=None, drift=None, boxes=(), bias=(0.0, 0.0
         mirror_tilt = P.espejo_inclinacion_deg
     cfg = F.FlightConfig.load(ROOT / "config" / "flight.json")
     mcfg = M.MissionConfig.load(ROOT / "config" / "mission_tags.json")
-    cfg.hover_s, cfg.max_flight_s = mcfg.start_hover_s, mcfg.mission_max_s
-    for k, v in OVER.items():
+    for k, v in {**OVER, **OVER_M_CLI}.items():
         setattr(mcfg, k, v)
+    for k, v in OVER_F_CLI.items():
+        setattr(cfg, k, v)
+    cfg.hover_s, cfg.max_flight_s = mcfg.start_hover_s, mcfg.mission_max_s
     sim = SimTello(tags, drift=drift, boxes=boxes, bias=bias, yaw0=yaw0, bat=bat, mirror=mirror,
                    mirror_tilt=mirror_tilt, speed_factor=speed_factor, sag=sag, combo=combo, glitches=glitches,
                    imu_mal=imu_mal, despegue=despegue, temp=temp, seed=SEMILLA)
@@ -756,6 +789,10 @@ def scenario(sc: str) -> None:
             run(sc, [floor(1, 0, 35)], mirror="v")
         elif sc == "espejo_girado":  # tag 1 girado 30°: el giro de 90° es respecto al rumbo, no al tag
             run(sc, [floor(1, 0, 100, 30)], mirror="v")
+        elif sc == "espejo_lejos":  # tag 2 a 2 m del despegue, luego el 7: ¿le alcanza advance_timeout_s?
+            # aquí avanza ~13 cm/s: con 12 s no llega (aterriza a ~1.6 m) y con 18 sí. El dron real va a
+            # ~9, por eso la hoja de competencia pide distancia ÷ 8 (reto 4 de docs/aprende/)
+            run(sc, [floor(2, 0, 200), floor(7, -70, 200)], mirror="v", limit=90)
         elif sc == "espejo_circuito":  # 1 (derecha) -> 2 (izquierda) -> 7 (aterrizar), a 70 cm
             run(sc, [floor(1, 0, 80), floor(2, 70, 80), floor(7, 70, 150)], mirror="v")
         elif sc == "espejo_quieto":  # sin avanzar: el tag ya está debajo, desplazado y girado
@@ -867,7 +904,8 @@ if __name__ == "__main__":
         args = args[:k] + args[k + 2:]
         if not num:
             raise SystemExit("--dron va con el número del dron, p. ej. --dron 7")
-    # --set clave=valor: cambia un ajuste de la misión con espejo (como en config/mission_espejo.json)
+    # --set clave=valor: cambia un ajuste solo en esta simulación (de config/mission_espejo.json,
+    # mission_tags.json o flight.json; ver aplicar_set)
     # --sim clave=valor: cambia el dron simulado (como en config/sim_tello.json)
     # p. ej. --set piso_control=kalman --sim avance_ganancia=1.1
     cambios = {"--set": [], "--sim": []}
@@ -879,12 +917,6 @@ if __name__ == "__main__":
             cambios[flag].append(args[k + 1])
             args = args[:k] + args[k + 2:]
 
-    def valor(txt: str):
-        try:
-            v = json.loads(txt)
-        except json.JSONDecodeError:
-            return txt  # texto sin comillas, p. ej. piso_control=kalman
-        return tuple(v) if isinstance(v, list) else v
     if "--semilla" in args:
         k = args.index("--semilla")
         SEMILLA = int(args[k + 1])
@@ -905,15 +937,13 @@ if __name__ == "__main__":
         P = cargar_params(num)
         DRON = num
     for kv in cambios["--set"]:
-        k, v = kv.split("=", 1)
-        if k not in {f.name for f in fields(ME.MirrorConfig)}:
-            raise SystemExit(f"--set: {k} no es un ajuste de config/mission_espejo.json")
-        OVER_E_CLI[k] = valor(v)
+        archivo = aplicar_set(kv)
+        print(f"[sim] {kv} (de {archivo}), solo en esta simulación: el JSON no cambia", flush=True)
     for kv in cambios["--sim"]:
         k, v = kv.split("=", 1)
         if k not in {f.name for f in fields(SimParams)}:
             raise SystemExit(f"--sim: {k} no es un parámetro de config/sim_tello.json")
-        P = replace(P, **{k: valor(v)})
+        P = replace(P, **{k: valor_set(v)})
     dron = ("ideal (--ideal)" if ideal else str(SIM_JSON.relative_to(ROOT)) + (f" + {json_dron(num).name}" if num else "")
             if SIM_JSON.exists() else "ideal (no hay config/sim_tello.json)")
     print(f"[sim] dron: {dron}", flush=True)
@@ -932,5 +962,5 @@ if __name__ == "__main__":
                      for n in names[i:i + batch]]
             for p in procs:
                 out = p.communicate()[0]
-                print("".join(ln for ln in out.splitlines(True) if not ln.startswith("[sim] dron:")),
+                print("".join(ln for ln in out.splitlines(True) if not ln.startswith("[sim] ")),
                       end="", flush=True)

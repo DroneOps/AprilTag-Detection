@@ -384,10 +384,11 @@ def simular(escenario: str, extra: list[str]) -> None:
     r = correr([PY, "sim/sim_world.py", escenario, *extra], capturar=True)
     if r is None:
         return
+    resumen = False  # lo de "=====" en adelante: resultado, qué tan encima quedó y cada estado
     for linea in r.stdout.splitlines():
-        if linea.startswith("=====") or "al ejecutar (real)" in linea or linea.startswith("[pista]") \
-                or "distancia al despegue" in linea:
-            print(linea[:220])
+        resumen = resumen or linea.startswith("=====")
+        if resumen or linea.startswith("[pista]") or linea.startswith("[sim] "):
+            print(linea[:200])
     if r.returncode != 0:
         error(r.stderr.strip()[-400:])
 
@@ -397,8 +398,11 @@ def practicar() -> None:
     print(" 1) Circuito 1 → 2 → 7          (~1 min)")
     print(" 2) Pista al azar de competencia (~2–3 min)")
     print(" 3) Quieto sobre el despegue     (~40 s)")
+    print(" 4) Otro escenario (por nombre; los retos de docs/aprende/ dicen cuál)")
     op = preguntar("¿Cuál?")
     esc = {"1": "espejo_circuito", "2": "espejo_competencia", "3": "espejo_estacionario"}.get(op)
+    if op == "4":
+        esc = preguntar("Nombre del escenario (p. ej. espejo_lejos):")
     if not esc:
         return
     extra = []
@@ -407,6 +411,13 @@ def practicar() -> None:
     d = preguntar("¿Qué dron simulado? (Enter = uno sano, 1 o 7 = con la deriva de ese dron):")
     if d in ("1", "7"):
         extra += ["--dron", d]
+    cambios = preguntar("¿Cambiar ajustes solo en esta simulación? (p. ej. advance_fb=20 tag_cm=15; "
+                        "Enter = no; el JSON no cambia):")
+    for kv in cambios.split():
+        if "=" not in kv:
+            error(f"'{kv}' no sirve: escribe clave=valor, p. ej. advance_fb=20")
+            return
+        extra += ["--set", kv]
     if si("¿Grabo un video para verlo después?"):
         carpeta = f"sim/logs/videos_practica/{esc}_{int(time.time())}"
         correr([PY, "sim/grabar.py", esc, "--salida", carpeta, *extra])
