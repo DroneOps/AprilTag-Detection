@@ -21,6 +21,21 @@ sus bitácoras de vuelo, está en [`sesiones/`](sesiones/).
 **¿Trabajas con Claude?** Las instrucciones para él están en [`CLAUDE.md`](CLAUDE.md) y las
 lee solo al empezar.
 
+## En el laboratorio: un solo comando
+
+```bash
+python lab.py
+```
+
+Un menú en español para el laboratorio:
+- **Vuelos:** cada prueba (E2b, E5, E7...) con su montaje, la seguridad y cuándo "aprueba".
+- **El dron:** detecta cuál es por su WiFi y le pone nombre al video.
+- **Al aterrizar:** pregunta qué viste, guarda la sesión y la sube a GitHub.
+- **Ajustes y simulador:** también cambia ajustes sin editar el JSON y practica en el simulador.
+
+Cada opción muestra el comando que corre por dentro. Para conocerlo sin dron y sin subir nada:
+`python lab.py --practica`.
+
 ## Inicio rápido
 
 ### 1. Instalar

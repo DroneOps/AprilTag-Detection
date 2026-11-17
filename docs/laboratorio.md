@@ -1,5 +1,14 @@
 # Protocolo de laboratorio
 
+> **La forma fácil: `python lab.py`.** Un menú que hace los pasos de esta guía:
+> - el montaje y la seguridad de cada prueba;
+> - el vuelo, con el dron detectado por su WiFi y el video con nombre;
+> - el resumen, tus notas, `guardar_sesion.py` y la subida a GitHub;
+> - cambiar ajustes y terminar el día con la entrada de la bitácora.
+>
+> Esta guía sigue siendo la referencia: explica cada prueba y qué hacer si algo sale raro.
+> Para conocer el menú sin volar ni subir nada: `python lab.py --practica`.
+
 Guía para llegar y solo ejecutar comandos. Las pruebas van **en orden de prioridad**: si
 se acaba el tiempo, lo que falte es lo menos importante. Qué se probó antes y qué salió
 está en [`bitacora.md`](bitacora.md).

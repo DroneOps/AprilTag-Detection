@@ -155,15 +155,18 @@ def main() -> None:
         out += analyze(p) + [""]
 
     caps = ROOT / "capturas"
-    stamp = args.fecha if not args.ultimos else ""
-    for f in sorted(caps.glob(f"rc_calib_{stamp}*.txt")):
-        out += [f"== {f.name}", f.read_text(), ""]
+    # con --ultimos, solo las capturas del día de esos vuelos (antes salían las de todos los días)
+    fechas = sorted({m.group(1) for p in logs if (m := re.search(r"_(\d{8})_", p.name))}) if args.ultimos \
+        else [args.fecha]
     links = []
-    for f in sorted(caps.glob(f"resumen_{stamp}*.txt")):
-        text = f.read_text()
-        link = [ln for ln in text.splitlines() if ln.startswith("enlace:")]
-        if link:
-            links.append(f"   {f.name}: {link[0]}")
+    for stamp in fechas:
+        for f in sorted(caps.glob(f"rc_calib_{stamp}*.txt")):
+            out += [f"== {f.name}", f.read_text(), ""]
+        for f in sorted(caps.glob(f"resumen_{stamp}*.txt")):
+            text = f.read_text()
+            link = [ln for ln in text.splitlines() if ln.startswith("enlace:")]
+            if link:
+                links.append(f"   {f.name}: {link[0]}")
     if links:
         out += ["== enlace (test_tags.py)", *links, ""]
 
