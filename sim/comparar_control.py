@@ -33,12 +33,13 @@ import numpy as np
 
 ROOT = Path(__file__).resolve().parent.parent
 SIM = ROOT / "sim" / "sim_world.py"
-COMPLETO = {"espejo_circuito": [1, 2, 7], "espejo_lab": [1, 2, 7], "espejo_gastado": [1, 2, 7]}
+COMPLETO = {"espejo_circuito": [1, 2, 7], "espejo_lab": [1, 2, 7], "espejo_gastado": [1, 2, 7],
+            "espejo_giros": [1, 2, 1, 2, 7]}
 
 
 def leer(out: str) -> dict:
     """Lo que interesa de la salida de una corrida de sim_world.py."""
-    r: dict = {"final": None, "choque": None, "ejecutados": [], "al_ejecutar": [], "apagado": []}
+    r: dict = {"final": None, "choque": None, "ejecutados": [], "al_ejecutar": [], "al_salir": [], "apagado": []}
     m = re.search(r"=====.*final (\S+) \| choque: (\S+) .*ejecutados: (\[.*?\]) \| giro", out)
     if m:
         r["final"], r["choque"] = m.group(1), None if m.group(2) == "None" else m.group(2)
@@ -49,6 +50,9 @@ def leer(out: str) -> dict:
     m = re.search(r"al ejecutar \(real\): (.*)", out)
     if m:
         r["al_ejecutar"] = [(int(a), float(b)) for a, b in re.findall(r"tag (\d+) a (\d+) cm", m.group(1))]
+    m = re.search(r"al salir \(real\): (.*)", out)
+    if m:  # qué tan lejos del tag quedó al terminar de ejecutarlo (de ahí arranca el tramo)
+        r["al_salir"] = [(int(a), float(b)) for a, b in re.findall(r"tag (\d+) a (\d+) cm", m.group(1))]
     r["apagado"] = sorted(set(re.findall(r"\[vuelo\] (\S+) apagad[oa]", out)))
     m = re.search(r"\[pista\].*visitas: (\[[\d, ]*\])", out)  # espejo_competencia: lo que haría un dron perfecto
     if m:
@@ -128,6 +132,8 @@ def resumen_corrida(r: dict) -> str:
         txt = f"{r['final']} ejecutó {r['ejecutados']}"
         if r["al_ejecutar"]:
             txt += " a " + "/".join(f"{d:.0f}" for _, d in r["al_ejecutar"]) + " cm"
+    if r.get("al_salir"):
+        txt += "; al salir " + "/".join(f"{d:.0f}" for _, d in r["al_salir"]) + " cm"
     if r.get("cambio_rc_s") is not None:
         txt += f"; mandos {r['cambio_rc_s']:.0f} rc/s, {100 * r['al_tope']:.0f}% al tope"
     if r["choque"]:
@@ -162,6 +168,9 @@ def tabla(res: list[dict]) -> str:
             txt = (f"{n_ok} completas; " if completo else "") + f"{tags} tags ejecutados"
             if dist:
                 txt += f"; al ejecutar, a {np.median(dist):.0f} cm del tag (mediana), máx {max(dist):.0f}"
+        sal = [d for r in rs for _, d in r.get("al_salir", [])]
+        if sal:  # de dónde arranca cada tramo (tras girar, el flip, la pausa)
+            txt += f"; al salir, a {np.median(sal):.0f} cm del tag (mediana), máx {max(sal):.0f}"
         cr = [r["cambio_rc_s"] for r in rs if r.get("cambio_rc_s") is not None]
         if cr:
             txt += f"; mandos {np.mean(cr):.0f} rc/s, {100 * np.mean([r['al_tope'] for r in rs if 'al_tope' in r]):.0f}% al tope"

@@ -20,7 +20,7 @@ Escenarios: circuito pausa giro360 sube_ciego perdido flip8 caja deriva
             espejo_deriva espejo_flip espejo_inclinado espejo_inclinado_sin_config
             espejo_despegue_cae espejo_despegue_alto espejo_sin_ok
             espejo_lab espejo_gastado espejo_gastado_sin_rescate espejo_estacionario
-            espejo_competencia (con --semilla N) espejo_lejos (no va en "todos")
+            espejo_competencia (con --semilla N) espejo_lejos (no va en "todos") espejo_giros
             piso_uno piso_girado piso_circuito piso_deriva piso_flip piso_lento piso_rapido
             piso_hundimiento piso_lado piso_tof_falso piso_imu_mal
 
@@ -695,13 +695,21 @@ def run(name, tags, limit=120, events=None, drift=None, boxes=(), bias=(0.0, 0.0
     mis.request_takeoff()
     t0, log, last = time.monotonic(), [], None
     al_ejecutar = []  # (tag, distancia real en cm) al empezar a ejecutar cada tag
+    al_salir = []  # (tag, distancia real en cm) al terminar de ejecutarlo y arrancar el tramo
+    salir_de = None  # (número, posición) del tag que está ejecutando
     while time.monotonic() - t0 < limit and mis.state not in F.TERMINAL:
         if (mis.state, mis.reason) != last:
             if mis.state == "EXECUTE" and (not last or last[0] != "EXECUTE"):
                 tid = getattr(mis, "_target", None)
-                tg = [math.hypot(sim.x - t.c[0], sim.y - t.c[1]) for t in tags if t.id == tid]
+                tg = [(math.hypot(sim.x - t.c[0], sim.y - t.c[1]), t.c) for t in tags if t.id == tid]
                 if tg:  # al más cercano con ese número (puede haber dos)
-                    al_ejecutar.append((tid, min(tg)))
+                    d, c = min(tg, key=lambda x: x[0])
+                    al_ejecutar.append((tid, d))
+                    salir_de = (tid, c)
+            elif mis.state == "ADVANCE" and last and last[0] == "EXECUTE" and salir_de:
+                # p. ej. tras un giro: si se corrió, el tramo nuevo puede arrancar fuera de la línea
+                al_salir.append((salir_de[0], math.hypot(sim.x - salir_de[1][0], sim.y - salir_de[1][1])))
+                salir_de = None
             last = (mis.state, mis.reason)
             log.append(f"{time.monotonic() - t0:5.1f}s {mis.state:9s} {mis.reason}  "
                        f"[x={sim.x:.0f} y={sim.y:.0f} z={sim.z:.0f} yaw={sim.yaw:.0f}]")
@@ -717,6 +725,8 @@ def run(name, tags, limit=120, events=None, drift=None, boxes=(), bias=(0.0, 0.0
           f"altura min en vuelo {sim.min_z_after_takeoff:.0f} cm")
     if al_ejecutar:  # qué tan encima del tag quedó de verdad (la misión solo sabe lo que ve)
         print("    al ejecutar (real): " + ", ".join(f"tag {t} a {d:.0f} cm" for t, d in al_ejecutar))
+    if al_salir:  # ...y al terminar de ejecutarlo (giros, flip, pausa): de ahí arranca el tramo
+        print("    al salir (real): " + ", ".join(f"tag {t} a {d:.0f} cm" for t, d in al_salir))
     for line in log:
         print("   ", line)
 
@@ -793,6 +803,10 @@ def scenario(sc: str) -> None:
             # aquí avanza ~13 cm/s: con 12 s no llega (aterriza a ~1.6 m) y con 18 sí. El dron real va a
             # ~9, por eso la hoja de competencia pide distancia ÷ 8 (reto 4 de docs/aprende/)
             run(sc, [floor(2, 0, 200), floor(7, -70, 200)], mirror="v", limit=90)
+        elif sc == "espejo_giros":  # zigzag de 4 giros de 90° a 120 cm (1, 2, 1, 2, 7): al girar se corre
+            # ~30 cm (real 11-nov: 26–42 cm); ¿sigue sobre el tag y arranca cada tramo desde él?
+            run(sc, [floor(1, 0, 100), floor(2, 120, 100), floor(1, 120, 220), floor(2, 240, 220),
+                     floor(7, 240, 340)], mirror="v", limit=150)
         elif sc == "espejo_circuito":  # 1 (derecha) -> 2 (izquierda) -> 7 (aterrizar), a 70 cm
             run(sc, [floor(1, 0, 80), floor(2, 70, 80), floor(7, 70, 150)], mirror="v")
         elif sc == "espejo_quieto":  # sin avanzar: el tag ya está debajo, desplazado y girado
@@ -889,7 +903,7 @@ ALL = ["circuito", "pausa", "giro360", "sube_ciego", "perdido", "flip8", "caja",
        "espejo_flip",
        "espejo_inclinado", "espejo_inclinado_sin_config",
        "espejo_despegue_cae", "espejo_despegue_alto", "espejo_sin_ok",
-       "espejo_lab", "espejo_gastado", "espejo_gastado_sin_rescate", "espejo_estacionario",
+       "espejo_lab", "espejo_gastado", "espejo_gastado_sin_rescate", "espejo_estacionario", "espejo_giros",
        "piso_uno", "piso_girado", "piso_circuito", "piso_deriva", "piso_flip", "piso_lento", "piso_rapido",
        "piso_hundimiento", "piso_lado", "piso_tof_falso", "piso_imu_mal"]
 
