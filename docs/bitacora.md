@@ -10,6 +10,10 @@ Las bitácoras de vuelo (`logs/*.csv`) y los videos (`videos/`) están en la lap
 
 ## Pendiente ahora
 
+> **24-nov: no vamos a la competencia.** Lo de abajo queda por si se retoma. Para otros retos
+> con el Tello, el simulador y los controladores están en
+> [DroneOps/Tello-Sim-Lab](https://github.com/DroneOps/Tello-Sim-Lab) (entrada del 24-nov).
+
 **Antes que nada: verificar en el laboratorio el arreglo de la inclinación** (12-nov noche;
 [issue #2](https://github.com/DroneOps/AprilTag-Detection/issues/2)).
 - **Qué cambió:** el JSON ya tiene la inclinación medida en vuelo (−10.3° adelante, −0.5° de
@@ -94,6 +98,52 @@ compañero haga los 13 retos de [`aprende/`](aprende/README.md) (simulador, sin 
    clip, reajustar `config/sim_tello.json` ([`simulador.md`](simulador.md)). Las bitácoras
    del 11-nov dicen en `sesiones/2026-11-11/notas.md` qué dron fue cada una. Falta medir bien
    la deriva durante el despegue: en el simulador se corre más que en lo real.
+
+## 24-nov — No vamos a la competencia: el simulador y los controladores, en un repo aparte
+
+- **Decisión:** el equipo no irá al AMGP 2026. Para reutilizar lo que sirve en los otros retos
+  del grupo (líneas, compuertas, aterrizaje), el simulador y los controladores que estabilizan
+  el Tello pasaron a [DroneOps/Tello-Sim-Lab](https://github.com/DroneOps/Tello-Sim-Lab):
+  público, licencia MIT, código y documentación en inglés. Este repo no cambia: allá hay una
+  copia generalizada.
+- **Qué tiene:**
+  - **`tellosim`**, un reemplazo directo de `djitellopy.Tello`. Se cambia un import, o se corre
+    el programa sin tocarlo con `python -m tellosim.run programa.py`.
+    - El dron se comporta como los Tellos del laboratorio: `lab_healthy`, `lab_tello1` y
+      `lab_tello7` salen de `config/sim_tello*.json`.
+    - Cámara al frente o con espejo, en color, con nuestra calibración.
+    - Mapas en YAML con AprilTags, ArUco, líneas en el piso, plataformas, compuertas, cajas y
+      paredes.
+  - **`tellolab`:** sostener altura, rumbo y posición (el PID con el piso), centrarse sobre un
+    objetivo, el flip seguro, los vigilantes de seguridad y un `Pilot` que los junta. Sirven
+    igual con el dron real.
+  - **Lo demás:**
+    - 6 ejemplos que vuelan en el simulador y con `--real`;
+    - `tools/fit_model.py`, que ajusta el modelo del dron con bitácoras de vuelo (también lee
+      las de este repo);
+    - 37 pruebas que corren en GitHub Actions.
+- **Paridad con `sim/sim_world.py`:** con la misma semilla dan lo mismo, dentro del ruido, el
+  despegue, la deriva, la velocidad con rc 15 y el giro.
+- **Resultados de los ejemplos en el simulador:**
+  - estacionario con el Tello 7: a lo más 41 cm del punto (sin sostener la posición, 4.2 m);
+  - seguidor de línea: 6 cm de la línea (mediana);
+  - 3 de 3 compuertas de color;
+  - aterrizaje a 5 cm del centro de la plataforma;
+  - 117 cm frente a un ArUco (se pedían 120);
+  - misión de AprilTags: ejecutó 1, 2 y 7.
+- **Se aprendió de las bitácoras reales** (espejo, 11 y 12-nov):
+  - `vgx` y `vgy` van en el marco del rumbo que tenía el dron al despegar: no giran con él;
+  - `vgz` es positivo hacia **abajo**.
+- **El código del grupo, sin cambiarle nada:**
+  - **Gate_tmr_color:** corre. Su control es proporcional al error en pixeles, hasta rc 100:
+    zigzaguea, y en una corrida chocó con el marco de la primera compuerta.
+  - **TMR_Landing** (`tests/test_tracking.py`, con las teclas `t` y `l` programadas): corre.
+    - Los signos están bien con el espejo del laboratorio.
+    - Quedó a 19–34 cm de la plataforma: con 15 cm de error ya manda el máximo (±50).
+  - **Line_Follower:** no se corrió, porque necesita PySide6 y pyvisual.
+  - El detalle está en `docs/your-code.md` del repo nuevo.
+- **No se verificó:** que los controladores de `tellolab` vuelen igual en el dron real. Para
+  eso, empezar con `examples/hover_hold.py --real`.
 
 ## 17-nov — Limpieza: misión más corta y scripts en tres carpetas
 

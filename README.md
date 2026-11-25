@@ -6,6 +6,11 @@ Hidalgo). Un DJI Tello recorre una pista, detecta etiquetas AprilTag **tag25h9 e
 y ejecuta la acción de cada una (girar, flip, subir, aterrizar...). Todo el procesamiento
 corre en una laptop conectada al Tello por WiFi.
 
+> **24-nov: el equipo no irá a la competencia.** El simulador y los controladores que
+> estabilizan el Tello se separaron, generalizados y documentados (en inglés), en
+> [DroneOps/Tello-Sim-Lab](https://github.com/DroneOps/Tello-Sim-Lab), para usarlos en otros
+> retos con el Tello. Este repo queda como está.
+
 ## Estado (9-nov)
 
 - **Estrategia principal: espejo hacia abajo** (`scripts/principales/mision_espejo.py`), con un clip
