@@ -135,8 +135,12 @@ compañero haga los 13 retos de [`aprende/`](aprende/README.md) (simulador, sin 
   - `vgx` y `vgy` van en el marco del rumbo que tenía el dron al despegar: no giran con él;
   - `vgz` es positivo hacia **abajo**.
 - **El código del grupo, sin cambiarle nada:**
-  - **Gate_tmr_color:** corre. Su control es proporcional al error en pixeles, hasta rc 100:
-    zigzaguea, y en una corrida chocó con el marco de la primera compuerta.
+  - **Gate_tmr_color:** corre. *Corregido el 25-nov:*
+    - con una sola compuerta a 5 m, su versión PnP (la de su último commit) la cruzó 2 de 2
+      veces, sin zigzag;
+    - el zigzag fuerte que vimos primero venía del mapa, no de su control: con tres
+      compuertas en fila, sus barras se encimaban en la imagen y formaban rectángulos falsos,
+      y su detector seguía alguno de esos.
   - **TMR_Landing** (`tests/test_tracking.py`, con las teclas `t` y `l` programadas): corre.
     - Los signos están bien con el espejo del laboratorio.
     - Quedó a 19–34 cm de la plataforma: con 15 cm de error ya manda el máximo (±50).
